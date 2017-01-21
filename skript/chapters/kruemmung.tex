@@ -6,4 +6,111 @@
 \chapter{Krümmung\label{skript:chapter:kruemmung}}
 \lhead{Krümmung}
 \rhead{}
+Das Konzept der Krümmung einer Kurve wird bereits im ersten Semester
+in der Analysis eingeführt.
+Die Kurve kann zum Beispiel durch die Länge entlang der Kurve
+parametrisiert werden.
+Durch Festlegung eines Nullpunkts der Längenmessung erhält die
+Kurve damit ein Koordinatensystem, welches die Punkte auf der
+Kurve eindeutig identifizieren lässt.
+Es stellt sich heraus, dass Krümmung eine Eigenschaft der Einbettung
+einer Kurve in einen höherdimensionalen Raum ist.
+Durch Messungen allein innerhalb der Kurve, also durch Verwendung
+des eben beschriebenen Koordinatensystems lassen sich verschiedene
+gekrümmte Kurven nicht unterscheiden.
+
+Dies ändert in höheren Dimension.
+Eine Fläche kann zwar immer noch auf ganz verschiedene Art in
+einen dreidimensionalen Raum eingebettet werden.
+Ein Stück Papier kann man sich zum Beispiel als Ausschnitt einer
+Ebene vorstellen, man kann es aber auch zu einem Zylinder oder
+Kegel zusammenrollen.
+Durch Messungen allein innerhalb der Fläche, sind diese verschiedenen
+Einbettungen nicht unterscheidbar.
+Eine Ameise auf der Fläche könnte keinen Unterschied feststellen.
+Eine Kugeloberfläche dagegen liesse sich sehr wohl durch Messungen
+allein innerhalb der Fläche unterscheiden.
+Misst man zum Beispiel von einem Kreis um einen Punkt den Umfang,
+dann stellt man fest, dass der auf einer Ebene der Umfang immer $2\pi r$ ist.
+Auf einer Kugeloberfläche dagegen ist der Umfang kleiner.
+Der Radius wird ja nicht in gerader Linie in einer Eben gemessen,
+sondern entlang einer gekrümmten Linie, die sich von der Tangentialebene
+entfernt.
+
+Die Physik seit Galileo und Newton machte die Annahme, dass die
+Geometrie des Raumes durch ein dreidimensionales rechtwinkliges
+Koordinatensystem mit der Längenmessungsformel
+\begin{equation}
+l=\sqrt{\Delta x^2+\Delta y^2+\Delta z^2}
+\label{skript:kruemmung:pytagoras}
+\end{equation}
+adäquat beschrieben wird.
+Diese Annahme entsprach zwar der Erfahrung, doch es gab keine
+Begründung dafür.
+Der Philosoph Emanuel Kant konnte sich zwar keine andere Geometrie
+vorstellen, doch mit den Erkenntnissen von Bolyai, Lobaschevski
+und Gauss wurde klar, dass es durchaus denkbare andere Geometrien
+gibt.
+Bernhard Riemann hat dann auch Methoden entwickelt, wie man die
+Geometrie studieren kann, indem man ausschliesslich die Längenmessung
+innerhalb des Raumes verwendet.
+Damit ist die Geometrie unseres Raumes nicht länger einfach das
+Resultat einer axiomatischen Beschreibung, wie Euklid sie gegeben hat,
+vielmehr ist sie zu einer experimentellen Wissenschaft geworden.
+
+In diesem Kapitel wird daher untersucht, wie die Geometrie des Raumes
+mit der Längenmessung zusammenhängt und wie Krümmung charakterisiert
+werden kann.
+Dazu wird der Begriff der Geodäten verwendet, der auch zum Beispiel
+in der Vermessung eine Rolle spielt.
+Auch die Ausbreitung des Lichts in einem Medium ist einer solchen
+Beschreibung zugänglich.
+Das Licht wählt immer den Weg mit der geringsten Laufzeit, nicht
+unbedingt den geometrisch würzesten Weg.
+Daher können sich Lichtstrahlen in einem inhomogenen Medium
+krümmen.
+Aus der Perspektive des Lichtes ist aber nicht die Bahn gekrümmt,
+es folgt der in dieser Geometrie geradest möglichen Bahn.
+Nicht die Bahn ist gekrümmt, sondern die Längenmessung weicht von
+der üblichen \eqref{skript:kruemmung:pytagoras} ab, der Raum ist
+gekrümmt.
+
+Schon aus diesen Beispielen wird klar, dass man sich einen gekrümmten
+Raum nicht unbedingt als etwas vorstellen muss, was ``krumm'' in einen
+grösseren Raum eingebettet ist. 
+Es ist zwar so, das auf diese Weise gekrümmte Räume entstehen können,
+aber das allgemeine Verständnis sagt einfach nur, dass die Längenmessung
+nicht so funktioniert wie \eqref{skript:kruemmung:pytagoras} suggeriert.
+
+Wir werden wie folgt vorgehen.
+Im ersten Abschnitt wird die Krümmung in einer Dimension definiert war,
+es geht hier vor allem darum daran zu erinnern, wie die zweiten
+Ableitungen eingehen.
+Im zweiten Abschnitt wird der Begriff der Längenmessung auf einer
+Fläche und allgemein in einem höherdimensionalen Raum beschrieben
+und an einigen Bespielen studiert.
+Der kürzeste Weg zwischen zwei Punkten heisst Geodäte, die Gleichung
+einer Geodäten wird im dritten Abschnitt hergeleitet.
+Dazu entwickeln wir einen umfangreichen Formalismus, der später auch
+zur Berechnung der Krümmung nützlich sein wird.
+Im vierten Abschnitt untersuchen wir, wie der Versuch, einen Tangentialvektor
+entlang einer Kurve zu transportieren, in gewissen Fällen vom 
+Weg abhängt.
+Wir werden dies als ein Anzeichen von Krümmung werten.
+Es folgt die Definition einer Grösse, mit der man die Krümmung messen
+kann.
+
+In den folgenden Abschnitten geben wir einen Ausblick darauf, wie 
+die moderne Physik unseren Raum als einen gekrümmten Raum beschreibt.
+An einfachen Modellen soll gezeigt werden, wie man sich die Graviationswirkung
+als die Wirkung eines gekrümmten Raumes vorstellen kann, wie schwarze Löcher
+beschrieben werden können, und wie alle diese Dinge tatsächlich gemessen
+werden können.
+
+\input{chapters/k-1d.tex}
+\input{chapters/k-laenge.tex}
+\input{chapters/k-geodaeten.tex}
+\input{chapters/k-kruemmung.tex}
+
+
 

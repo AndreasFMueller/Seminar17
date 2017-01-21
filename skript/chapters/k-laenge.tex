@@ -1,0 +1,319 @@
+%
+% k-laenge.tex -- Längenmessung in einer Fläche oder in einem Raum
+%
+% (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\section{Längenmessung
+\label{skript:kruemmung:section:laengenmessung}}
+\rhead{Längenmessung}
+Da wir nicht weiter annehmen wollen, dass sich der Raum mit Hilfe
+eines rechtwinkligen Koordinatensystems adäquat beschreiben lässt,
+müssen wir automatisch beliebige Koordinatensysteme zulassen.
+Je nach Wahl eines Koordinatensystems werden dann Vektoren, die
+wir für die Beschreibung der physikalischen Gesetze benötigen,
+verschiedenen Koordinaten haben.
+Da alle diese Koordinatensystem gleichberechtigt sind, müssen
+wir Vektoren auf einheitliche Art umrechnen können.
+Ausserdem müssen die Naturgesetzt so formuliert sein, dass
+sie in jedem beliebigen Koordinatensystem gleich aussehen.
+
+In diesem Abschnitt beginnen wir damit, den Begriff der Längenmessung
+auf beliebige Koordinatensysteme auszudehnen.
+
+\subsection{Vektoren und Koordinatentransformation}
+
+\subsection{Metrik}
+Einen Pfad im Raum k"onnen wir mit Hilfe eines einzigen Parameters $t$
+beschreiben, von dem die Koordinaten $x^\mu$ abhängen. 
+Wir schreiben daher $x^\mu(t)$ dafür.
+In einem rechtwinkligen Koordinatensystem können wir die Länge
+einer Kurve durch Zerlegen in beliebig kleine Teilstücke 
+\begin{align*}
+l
+&\simeq
+\sum_{i=1}^n \sqrt{\sum_{\mu} (x^{\mu}(t_i)-x^{\mu}(t_{i-1}))^2}
+\\
+&\rightarrow
+\int_{t_0}^{t_n} \sqrt{\sum_{\mu}\biggl(\frac{dx^{\mu}(t)}{dt}\biggr)^2}\,dt
+\end{align*}
+bestimmen.
+Unter der Wurzel sehen wir die Quadratsummen wieder, die für den
+Satz des Pythagoras charakteristisch sind.
+
+In einem beliebigen Koordinatensystem funktioniert dies jedoch nicht
+mehr.
+Wir müssen zulassen, dass die Koordinaten entlang verschiedener
+Achsen nicht mehr direkt der Länge entsprechen, dass wir als
+entlang der Achsen Skalierungsfaktoren haben.
+Weiter ist damit zu rechnen, dass auch gemischte Termen auftauchen.
+Die allgemeinstmögliche Form einer Längenmessungsformel ist daher
+\begin{equation}
+l
+=
+\int_{t_0}^{t_1}
+\sqrt{\sum_{\mu,\nu} g_{\mu\nu} \frac{dx^{\mu}(t)}{dt}\frac{dx^{\nu}(t)}{dt}}\,dt.
+\label{skript:kruemmung:metrikformel}
+\end{equation}
+Die Zahlen $g_{\mu\nu}$ k"onnen dabei auch noch von den Koordinaten
+abhängen.
+Wir verlangen ausserdem, dass $g_{\mu\nu}=g_{\nu\mu}$ ist, denn
+diese beiden Terme sind in \eqref{skript:kruemmung:metrikformel}
+auf symmetrische Art und Weise vertreten.
+
+\begin{definition}
+Die Zahlen $g_{\mu\nu}$ heissen der metrische Tensor.
+\end{definition}
+
+%
+% Beispiel für Längenmessung in einem Koordinatensystem mit nicht
+% orthogonalen Achsen.
+%
+\begin{beispiel}
+Wir untersuchen die Längenmessung mit nicht orthogonalen Achsen.
+Statt des gew"ohnlichen Koordinatensystems in einer Ebene verwenden
+wir die Koordinaten $x'=x$ und $y'=x+y$.
+In den ungestrichenen Koordinaten ist der Abstand zwischen zwei
+Punkten durch den Satz von Pytagoras
+\begin{equation}
+l^2 = \Delta x^2 + \Delta y^2
+\label{skript:kruemmung:p2}
+\end{equation}
+gegeben.
+Um den Abstand in $x'$-$y'$-Koordinaten auszudrücken, müssen wir diese
+erst wieder in $x$-$y$-Koordinaten umrechnen. 
+Man findet
+\[
+x=x'
+\qquad\text{und}\qquad
+y=y'-x=y'-x'.
+\]
+Eingesetzt in die Formel \eqref{skript:kruemmung:p2} finden wir
+\begin{align*}
+l^2
+&=
+\Delta x^2 + \Delta y^2
+=
+\Delta x^{\prime 2}
++
+(\Delta y'- \Delta x')^2
+=
+\Delta x^{\prime 2}
++
+\Delta y^{\prime 2}-2\Delta x'\Delta y' + \Delta x^{\prime 2}
+\\
+&= 2 \Delta x^{\prime 2} - 2 \Delta x'\Delta y'+\Delta y^{\prime 2}.
+\end{align*}
+Die zugeh"origen Koeffizienten $g_{\mu\nu}$ sind
+\[
+g_{11} = 2,\quad
+g_{12}=g_{21}=-1\quad\text{und}\quad
+g_{22}=1.
+\]
+Diese Koeffizienten beschreiben die gleiche Längenmessung in den 
+gestrichenen Koordinaten wie der Satz von Pythagoras in den ursprünglichen
+Koordinaten.
+\end{beispiel}
+
+Die Formel \eqref{skript:kruemmung:metrikformel} ist etwas unhandlich.
+Seit Einstein ist es üblich, bei Indizes, die in einer Formel sowohl oben
+als auch unten auftreten, automatisch die Summation anzunehmen, ohne
+dies explizit hinzuschreiben.
+Ausserdem kann man die Ableitungen nach $t$ auch mit einem Punkt abkürzen.
+Mit dieser {\em Einsteinschen Summationskonvention} l"asst sich die
+Längenmessung daher etwas kompakter als
+\[
+l=\int_{t_0}^{t_1} \sqrt{g_{\mu\nu}\dot x^{\mu}(t) \dot x^{\nu}(t)}\,dt
+\]
+schreiben.
+
+\subsection{Beispiele}
+Wir betrachten drei für die Anendungen wichtige Bespiele von
+Koordinatensystemen des gewöhnlichen dreidimensionalen Raumes
+und berechnen die zugehörigen metrischen Tensoren.
+
+\subsubsection{Polarkoordinaten}
+Punkte in der Ebene können statt in rechtwinkligen $x$-$y$-Koordinaten
+auch mit Hilfe von Polarkoordinaten $(r,\varphi)$0nach der Umrechnungsregel
+\begin{align*}
+x&=r\cos\varphi\\
+y&=r\sin\varphi
+\end{align*}
+beschrieben werden.
+Um den metrischen Tensor zu bestimmen, müssen die Ableitungen von $x$ 
+und $y$ nach $t$ durch Ableitungen von $r$ und $\varphi$ nach $t$ 
+ausdrücken.
+Die Produktregel liefert:
+\begin{align*}
+\dot x&= \dot r\cos \varphi - r\dot\varphi \sin\varphi 
+\\
+\dot y&= \dot r\sin\varphi + r\dot\varphi\cos\varphi.
+\end{align*}
+Eingesetzt in den Satz von Pythagoras folgt
+\begin{align*}
+\dot x^2 + \dot y^2
+&=
+\dot r^2\cos^2\varphi -2r\dot r\dot\varphi\cos\varphi\sin\varphi +r^2\dot \varphi^2\sin^2\varphi
++
+\dot r^2\sin^2\varphi +2r\dot r\dot\varphi\sin\varphi\cos\varphi +r^2\dot\varphi^2\cos^2\varphi
+\\
+&=
+\dot r^2(\cos^2\varphi+\sin^2\varphi)+ r^2\dot\varphi^2(\sin^2\varphi+\cos^2\varphi)
+\\
+&=\dot r^2 + r^2\dot\varphi^2.
+\end{align*}
+Die gemischten Terme haben sich weggehoben.
+Man liest daraus für die Koeffizienten des metrischen Tensors
+\[
+g_{11}=r^2,\qquad g_{12}=g_{21}=0\qquad\text{und}\qquad g_{22}=r^2\dot\varphi^2
+\]
+ab.
+Die Koeffizienten hängen zwar von den Koordinanten ab, doch bedeutet
+das noch nicht, dass ein gekrümmter Raum vorliegt.
+Diese $g_{\mu\nu}$ beschreiben ja die gleiche Lägenmessung wie der Satz
+des Pythagoras in $x$-$y$-Koordinaten.
+
+\subsubsection{Zylinderkoordinaten}
+Zylinderkoordinaten beschreiben die Punkte des dreidimensionalen
+Raumes mit Polarkoordinaten in der $x$-$y$-Ebene und der $z$-Koordinate.
+Da wir die Metrik in der $x$-$y$-Ebene schon durch $(r,\varphi)$
+ausgedrückt haben, können wir auch die Metrik in Polarkoordinaten
+bekommen, indem wir die $z$-Koordinaten ergänzen:
+\[
+\dot x^2+\dot y^2 +\dot z^2
+=
+\dot r^2 + r^2\dot\varphi^2 + \dot z^2.
+\]
+Der zugehörige metrische Tensor hat daher die Koeffizienten
+\[
+g_{11}=\dot r^2,\qquad
+g_{22}=r^2\dot\varphi^2
+\qquad\text{und}\qquad
+g_{33}=1,
+\]
+alle anderen Koeffizienten sind $0$.
+
+\subsubsection{Zylinderoberfläche}
+Beschränken wir uns auf die Punkte im Abstand $1$ zur $z$-Achse, erhalten
+wir eine Zylinderfläche, welche mit Koordinaten $\varphi$ und $z$
+beschrieben werden kann.
+Die Längenmessung in dieser Fläche wird durch den metrischen
+Tensor der Zylinderkoordinaten beschrieben, in dem wir $r=1$ einsetzen.
+Wir erhalten
+\[
+\dot\varphi^2+\dot z^2.
+\]
+Dies ist der metrische Tensor einer Ebene mit rechtwinkligen Koordinaten.
+
+\subsubsection{Kugelkoordinaten}
+Kugelkoordinaten beschreiben die Punkte eines dreidimensionalen Raumes
+durch die Entfernung $r$ vom Nullpunkt, die geographische Länge
+$\varphi$, die von
+der $x$-Koordinate gemessen wird, und durch die geograpische Breite
+$\vartheta$,
+die als Winkel von der $z$-Achse gemessen wird.
+Die Umrechnung in kartesische Koordinaten erfolgt mit den Formeln
+\begin{align*}
+x&= r\sin\vartheta\cos\varphi\\
+y&= r\sin\vartheta\sin\varphi\\
+z&= r\cos\vartheta
+\end{align*}
+Wir bestimmen wieder die Koeffizienten des metrischen Tensors.
+Dazu leiten wir zunächst nach $t$ ab.
+\begin{align*}
+\dot x
+&=
+\dot r\sin\vartheta\cos\varphi
++
+r\dot\vartheta \cos\vartheta\cos\varphi
+-
+r\dot\varphi \sin\vartheta\sin\varphi
+\\
+\dot y
+&=
+\dot r\sin\vartheta\sin\varphi
++
+r\dot\vartheta\cos\vartheta\sin\varphi
++
+r\dot\varphi\sin\vartheta\cos\varphi
+\\
+\dot z
+&=
+\dot r\cos\vartheta
+-
+r\dot\vartheta \sin\vartheta
+\end{align*}
+Bei der Berechnung der Länge werden sich wieder viele Terme
+wegen der verschiedenen Vorzeichen des letzten Terms im
+Ausdruck für $\dot x$ und $\dot y$ wegheben.
+F"ur den Ausdruck $ \dot x^2 + \dot y^2 + \dot z^2$ findet man
+\[
+\begin{array}{clclclcl}
+ &
+\dot r^2\sin^2\vartheta\cos^2\varphi
+	&+&r^2\dot\vartheta^2\cos^2\vartheta\cos^2\varphi
+		&+&r^2\dot\varphi^2\sin^2\vartheta\sin^2\varphi
+			&+&2r\dot r\dot\vartheta\sin\vartheta\cos\vartheta\cos^2\varphi
+\\
++&
+\dot r^2\sin^2\vartheta\sin^2\varphi
+	&+&r^2\dot\vartheta^2\cos^2\vartheta\sin^2\varphi
+		&+&r^2\dot\varphi^2\sin^2\vartheta\cos^2\varphi
+			&+&2r\dot r\dot\vartheta\sin\vartheta\cos\vartheta\sin^2\varphi
+\\
++&
+\dot r^2\cos^2\vartheta
+	&+&r^2\dot\vartheta^2\sin^2\vartheta
+		& &
+			&-&2r\dot r\dot\vartheta \sin\vartheta \cos\vartheta
+\\
+\end{array}
+\]
+In den Spalten ergänzen sich in den ersten beiden Zeilen jeweils
+$\cos^2\varphi$ und $\sin^2\varphi$ zu $1$.
+In den ersten beiden Spalten lassen sich danach auch noch
+$\cos^2\vartheta$ und $\sin^2\vartheta$ zu $1$ zusammenfassen,
+w"ahrend sich die Terme in der vierten Spalte wegheben.
+Damit bekommt man
+\begin{equation}
+\dot x^2 + \dot y^2 + \dot z^2
+=
+\dot r^2+r^2\dot\vartheta^2 + r^2\dot\varphi^2\sin^2\vartheta
+\label{skript:kruemmung:kugelkoordinaten}
+\end{equation}
+für die Längenmessung, und
+\[
+g_{11}=\dot r^2,\qquad
+g_{22}=r^2\dot\vartheta^2
+\qquad\text{und}\qquad
+g_{33}= r^2\dot\varphi^2\sin^2\vartheta
+\]
+für die nicht verschwindenden Komponenten des metrischen Tensors.
+
+\subsubsection{Kugeloberfläche}
+Aus dem metrischen Tensor der Kugelkoordinaten lässt sich durch festhalten
+des Radius der metrische Tensor einer Kugeloberfläche ableiten.
+Aus dem Ausruck \eqref{skript:kruemmung:kugelkoordinaten}
+erhalten wir
+\[
+\dot\vartheta^2+\dot\varphi^2\sin^2\vartheta.
+\]
+Der $\sin$-Term deutet an, dass wir hier nicht mehr direkt eine flache
+Metrik haben.
+Den Nachweis können wir aber erst führen, wenn wir den Begriff der
+Krümmung zur Verfügung haben.
+Für die nicht verschwindenden Komponenten des metrischen Tensors
+finden wir
+\[
+g_{11} = 1
+\qquad\text{und}\qquad
+g_{22}=\sin^2\vartheta.
+\]
+Man erkennt, dass der Koeffizient $g_{22}$ bei $\vartheta \in\{0,\pi\}$
+verschwindet.
+Man spricht von einer Singularität der Längenmessung.
+Dies ist jedoch nur ein Artefakt der Tatsache, dass die Kugelkoordinaten
+bei den Polen nicht mehr eindeutig sind.
+Zur Beschreibung der Pole sind alle möglichen Werte der geographischen
+Länge gleichermassen geeignet.
+
+
