@@ -19,13 +19,87 @@ sie in jedem beliebigen Koordinatensystem gleich aussehen.
 
 In diesem Abschnitt beginnen wir damit, den Begriff der Längenmessung
 auf beliebige Koordinatensysteme auszudehnen.
+Ein Punkt wird beschrieben durch seine Koordinaten, die wir mit
+$x^\mu$ bezeichnen, wobei $\mu$ von $1$ bis $n$ läuft, $n$
+ist die Dimension. 
+Die etwas ungewohnte Schreibweise für die Indizes wie Exponenten
+hat einen tieferen Grund in der Tensorrechnung, und wird später
+verständlich werden.
 
 \subsection{Vektoren und Koordinatentransformation}
+Eine Koordinatentransformation zwischen zwei Koordinatensystemen ist
+eine Abbildung, die die Koordinaten $x^\mu$ des einen Koordinatensystems
+in die Koordinaten $y^\nu$ des anderen Koordinatensystems umrechnet.
+Man kann also schreiben
+\begin{equation}
+y^{\nu}=y^{\nu}(x^1,\dots,x^n).
+\label{skript:kruemmung:umrechnung}
+\end{equation}
+Uns interessiert vor allem die Beschreibung von Bahnkurven, wir möchten
+ja zum Beispiel den Absturz in ein schwarzes Loch berechnen können.
+Eine Bahnkurve erhält man, indem man die Koordinaten mit der Zeit
+varieren lässt.
+Eine Kurve wird also beschrieben durch Funktionen $x^\mu(t)$.
+
+In der physikalischen Beschreibung werden meistens Vektoren wie
+Geschwindigkeit und Beschleunigung verwendet.
+Sie sind die Ableitung der Koordinaten eines Bahnpunktes nach
+der Zeit.
+Dies lässt sich direkt auch auf die Koordinaten übertragen,
+wir erhalten für den Geschwindigkeitsvektor
+\[
+v^{\mu} = \frac{dx^\mu(t)}{dt}.
+\]
+
+Wie sieht der Geschwindigkeitsvektor in $y^{\nu}$ Koordinaten aus?
+Dazu setzen wir die Bahnkurve in die Umrechnungsformeln
+\eqref{skript:kruemmung:umrechnung} ein.
+Die Kettenregel liefert
+\begin{align*}
+y^{\nu}(t)&=y^{\nu}(x^1(t),\dots,x^n(t))
+\\
+u^{\nu}
+=
+\frac{dy^{\nu}(t)}{dt}
+&=
+\frac{\partial y^{\nu}}{\partial x^1}\frac{dx^1(t)}{dt}
++\dots+
+\frac{\partial y^{\nu}}{\partial x^n}\frac{dx^n(t)}{dt}
+=
+\sum_{\mu=1}^n
+\frac{\partial y^{\nu}}{\partial x^{\mu}}\frac{dx^{\mu}(t)}{dt}
+\end{align*}
+Auf der rechten Seite steht eine Summe von Termen, in denen
+der Summationsindex sowohl oben als auch unten auftritt.
+Diese Art von Summe kommt in der zu entwickelnden Theorie sehr
+häufig vor, daher schreiben wir in Zukunft die Summe nicht mehr.
+Diese {\em Einsteinsche Summenkonvention} bedeutet also, dass in
+einem Term, in dem der gleiche Index oben und unten vorkommt,
+über die möglichen Werte dieses Index summiert werden muss.
+\index{Summenkonvention!Einsteinsche}
+
+Die Koeffizienten 
+\[
+\alpha_\mu^\nu=\frac{\partial y^{\nu}}{\partial x^{\mu}}
+\]
+dienen also der Umrechnung der Komponenten eines Vektors vom
+$x^{\mu}$-Koordinatensystem ins $y^{\nu}$-Koordinatensystem.
+Man kann die Rechnung auch in Matrixform schreiben:
+\[
+\begin{pmatrix}y^1\\\vdots\\y^n\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{\partial y^1}{\partial x^1}&\dots&\frac{\partial y^1}{\partial x^n}\\
+\vdots&\ddots&\vdots\\
+\frac{\partial y^n}{\partial x^1}&\dots&\frac{\partial y^n}{\partial x^n}
+\end{pmatrix}
+\begin{pmatrix}x^1\\\vdots\\x^n\end{pmatrix}.
+\]
+Die Summationskonvention lässt sich zum Beispiel dadurch rechtfertigen,
+dass bei der Matrizenmultiplikation die Summation ja auch nicht
+explizit hingeschrieben wird.
 
 \subsection{Metrik}
-Einen Pfad im Raum k"onnen wir mit Hilfe eines einzigen Parameters $t$
-beschreiben, von dem die Koordinaten $x^\mu$ abhängen. 
-Wir schreiben daher $x^\mu(t)$ dafür.
 In einem rechtwinkligen Koordinatensystem können wir die Länge
 einer Kurve durch Zerlegen in beliebig kleine Teilstücke 
 \begin{align*}
@@ -54,7 +128,7 @@ l
 \sqrt{\sum_{\mu,\nu} g_{\mu\nu} \frac{dx^{\mu}(t)}{dt}\frac{dx^{\nu}(t)}{dt}}\,dt.
 \label{skript:kruemmung:metrikformel}
 \end{equation}
-Die Zahlen $g_{\mu\nu}$ k"onnen dabei auch noch von den Koordinaten
+Die Zahlen $g_{\mu\nu}$ können dabei auch noch von den Koordinaten
 abhängen.
 Wir verlangen ausserdem, dass $g_{\mu\nu}=g_{\nu\mu}$ ist, denn
 diese beiden Terme sind in \eqref{skript:kruemmung:metrikformel}
@@ -62,6 +136,7 @@ auf symmetrische Art und Weise vertreten.
 
 \begin{definition}
 Die Zahlen $g_{\mu\nu}$ heissen der metrische Tensor.
+\index{Tensor!metrischer}
 \end{definition}
 
 %
@@ -70,7 +145,7 @@ Die Zahlen $g_{\mu\nu}$ heissen der metrische Tensor.
 %
 \begin{beispiel}
 Wir untersuchen die Längenmessung mit nicht orthogonalen Achsen.
-Statt des gew"ohnlichen Koordinatensystems in einer Ebene verwenden
+Statt des gewöhnlichen Koordinatensystems in einer Ebene verwenden
 wir die Koordinaten $x'=x$ und $y'=x+y$.
 In den ungestrichenen Koordinaten ist der Abstand zwischen zwei
 Punkten durch den Satz von Pytagoras
@@ -103,7 +178,7 @@ l^2
 \\
 &= 2 \Delta x^{\prime 2} - 2 \Delta x'\Delta y'+\Delta y^{\prime 2}.
 \end{align*}
-Die zugeh"origen Koeffizienten $g_{\mu\nu}$ sind
+Die zugehörigen Koeffizienten $g_{\mu\nu}$ sind
 \[
 g_{11} = 2,\quad
 g_{12}=g_{21}=-1\quad\text{und}\quad
@@ -115,19 +190,17 @@ Koordinaten.
 \end{beispiel}
 
 Die Formel \eqref{skript:kruemmung:metrikformel} ist etwas unhandlich.
-Seit Einstein ist es üblich, bei Indizes, die in einer Formel sowohl oben
-als auch unten auftreten, automatisch die Summation anzunehmen, ohne
-dies explizit hinzuschreiben.
+Wir können aber wieder die Einsteinsche Summenkonvention verwenden,
+um das Summenzeichen los zu werden.
 Ausserdem kann man die Ableitungen nach $t$ auch mit einem Punkt abkürzen.
-Mit dieser {\em Einsteinschen Summationskonvention} l"asst sich die
-Längenmessung daher etwas kompakter als
+Damit lässt sich die Längenmessung daher etwas kompakter als
 \[
 l=\int_{t_0}^{t_1} \sqrt{g_{\mu\nu}\dot x^{\mu}(t) \dot x^{\nu}(t)}\,dt
 \]
 schreiben.
 
 \subsection{Beispiele}
-Wir betrachten drei für die Anendungen wichtige Bespiele von
+Wir betrachten drei für die Anwendungen wichtige Bespiele von
 Koordinatensystemen des gewöhnlichen dreidimensionalen Raumes
 und berechnen die zugehörigen metrischen Tensoren.
 
@@ -245,7 +318,7 @@ r\dot\vartheta \sin\vartheta
 Bei der Berechnung der Länge werden sich wieder viele Terme
 wegen der verschiedenen Vorzeichen des letzten Terms im
 Ausdruck für $\dot x$ und $\dot y$ wegheben.
-F"ur den Ausdruck $ \dot x^2 + \dot y^2 + \dot z^2$ findet man
+Für den Ausdruck $ \dot x^2 + \dot y^2 + \dot z^2$ findet man
 \[
 \begin{array}{clclclcl}
  &
@@ -272,7 +345,7 @@ In den Spalten ergänzen sich in den ersten beiden Zeilen jeweils
 $\cos^2\varphi$ und $\sin^2\varphi$ zu $1$.
 In den ersten beiden Spalten lassen sich danach auch noch
 $\cos^2\vartheta$ und $\sin^2\vartheta$ zu $1$ zusammenfassen,
-w"ahrend sich die Terme in der vierten Spalte wegheben.
+während sich die Terme in der vierten Spalte wegheben.
 Damit bekommt man
 \begin{equation}
 \dot x^2 + \dot y^2 + \dot z^2
