@@ -1,0 +1,32 @@
+g: matrix( [1, 0], [0, 1] );
+ginverse: invert(g);
+x: [phi,z];
+
+x[1];
+
+x[2];
+
+Christoffel1(alpha,mu,nu) := (1/2) * (diff(g[nu,alpha], x[mu])
+	+ diff(g[mu,alpha], x[nu]) - diff(g[mu,nu], x[alpha]));
+
+Christoffel1(1,1,1);
+Christoffel1(1,1,2);
+Christoffel1(1,2,1);
+Christoffel1(1,2,2);
+Christoffel1(2,1,1);
+Christoffel1(2,1,2);
+Christoffel1(2,2,1);
+Christoffel1(2,2,2);
+
+Christoffel2(sigma,mu,nu) :=
+	ginverse[sigma,1] * Christoffel1(1,mu,nu)
+	+ ginverse[sigma,2] * Christoffel1(2,mu,nu);
+
+Christoffel2(1,1,1);
+Christoffel2(1,1,2);
+Christoffel2(1,2,1);
+Christoffel2(1,2,2);
+Christoffel2(2,1,1);
+Christoffel2(2,1,2);
+Christoffel2(2,2,1);
+Christoffel2(2,2,2);

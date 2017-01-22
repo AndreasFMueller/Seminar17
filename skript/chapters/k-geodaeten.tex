@@ -6,4 +6,362 @@
 \section{Geodäten
 \label{skript:kruemmung:section:geodaeten}}
 \rhead{Geodäten}
+In der Ebene ist die kürzeste Verbindung zwischen zwei Punkten
+eine Gerade.
+Auf einem Zylinder oder Kegel kann man die kürzeste Verbindung finden,
+indem man die Fläche in eine Ebene abrollt, und dann dort verwendet,
+dass die kürzeste Verbindung in der Ebene eine Gerade ist.
+Dies zeigt dass die kürzsten Verbindung nichts mit der speziellen
+Einbettung einer Fläche zu tun hat, sondern eine Eigenschaft ist,
+die sich allein aus der Längenmessung in der Fläche ist, man nennt
+dies auch eine intrinsische Eigenschaft.
+
+Auf einer Kugeloberfläche kann man die kürzesten Verbindungen ebenfalls
+direkt angeben, es sind die Grosskreise.
+Man kann dabei so argumentieren: von allen Schnitten der Kugeloberfläche
+mit Ebenen durch die zwei gegeben Punkte ist der Grosskreis derjenige
+mit der kleinsten Krümmung, und daher die ``direkteste'' Verbindung.
+Dieses Argument ist allerdings nicht ganz exakt, denn man vergisst dabei,
+dass es noch viele weitere Kurven gibt, die die beiden Punkte verbinden.
+Es ist auch nicht wirklich auf noch allgemeinere Situationen übertragbar,
+denn es nützt aus, dass die Kugeloberfläche homogen ist, in jedem Punkt
+ist die ``Krümmung'' (ein im Moment noch nicht definierter Begriff) 
+gleich gross.
+
+In diesem Abschnitt suchen wir daher nach einer allgemeinen Methode,
+die kürzeste Verbindung, die sogenannten Geodäten zu finden.
+
+\subsection{Paralleltransport}
+Die Beispiele von kürzesten Verbindungen suggerieren, dass die kürzeste
+Verbindung auch die ``geradeste'' ist, sie weicht möglichst wenig von
+der Richtung des aktuellen Tangentialvektors ab.
+Das Problem bei dieser Interpretation ist allerdings, dass wir Vektoren
+in zwei verschiedenen Punkten der Fläche nicht unmittelbar vergleichen
+können.
+Auf der Kugeloberfläche liegen die Tangentialvektoren an eine Kurve in
+verschiedenen Punkten zum Beispiel in verschiedenen Tangentialebenen
+an die Kugel.
+
+Wir müssen also zunächst in der Lage sein, Vektoren in zwei verschiedenen
+Punkten miteinander zu vergleichen.
+Wir können das tun, indem wir einen Vektor entlang einer Kurve transportieren,
+wobei wir versuchen, in so parallel zu sich selbst wie möglich zu sich
+selbst zu halten.
+Auch dies ist im Moment noch ein etwas schwammiger Begriff. 
+Es ist aber klar, dass die Komponenten des transportierten Vektors
+sowohl von der Transportrichtung wie auch vom ursprünglichen Vektor
+abhöngen.
+Seien $A^\mu$ die Komponenten eines Vektors, die Richtung mit Komponenten
+$\Delta x^\nu$ transport werden soll.
+Dann wird der transportierte die Form
+\[
+\tilde A^\alpha
+=
+A^\alpha - \Gamma_{\mu\nu}^\alpha A^\mu \Delta x^\nu
+\]
+haben.
+Die Wahl des Vorzeichnes von $\Gamma_{\mu\nu}^\alpha$ ist im Wesentlichen
+eine Frage der Konvention.
+Die instantane Änderung zur Zeit $t=0$ entlang der Kurve ist
+\[
+\frac{d}{dt}\tilde A^\alpha\bigg|_{t=0}
+=
+\Gamma_{\mu\nu}^\alpha A^\mu \dot x^\nu.
+\]
+
+Bis jetzt haben wir die Metrik nicht verwendet.
+Wir möchten dass der Paralleltransport die Länge des Vektors beim
+Transport entlang einer Kurve nicht verändert.
+Die Länge des Vektors wird durch $g_{\mu\nu}\tilde A^\mu \tilde A^\nu$
+gegeben.
+Die Ableitung entlang der Kurve $x^\mu(t)$ ist
+\[
+\frac{d}{dt} g_{\mu\nu}\tilde A^\mu \tilde A^\nu\bigg|_{t=0}
+=
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}A^\mu A^\nu\dot x^\alpha
+-
+g_{\mu\nu}A^\mu\Gamma_{\alpha\beta}^\nu A^\alpha \dot x^\beta
+-
+g_{\mu\nu}\Gamma_{\alpha\beta}^\mu A^\alpha \dot x^\beta A^\nu
+=
+0.
+\]
+In diesem Ausdruck kommen in allen Termen $A^\mu$ und $\dot x^\beta$ mit
+verschiedenen Indizes vor.
+Damit wir diese Faktoren ausklammern können, bennen wir die Indizes um,
+so dass sie in allen Termen gleich sind.
+Wir erhalten dann die Gleichung
+\[
+\biggl(
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+-
+g_{\mu\beta}\Gamma_{\nu\alpha}^\beta
+-
+g_{\beta\nu}\Gamma_{\mu\alpha}^\beta
+\biggr)
+A^\mu A^\nu\dot x^\alpha
+=
+0
+\]
+F"ur die Koeffizienten $\Gamma$.
+Diese Gleichung muss f"ur jede beliebige Wahl von $A^\mu$ und jede
+beliebige Richtung der Kurve $\dot x^\alpha$ erfüllt sein, wenn der
+Klammerausdruck verschwindget für alle Werte der freien, also nicht durch
+die Summationskonvention als Laufindizes ausgezeichnten, Indizes.
+Wir erhalten also
+\[
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+-
+g_{\mu\beta}\Gamma_{\nu\alpha}^\beta
+-
+g_{\beta\nu}\Gamma_{\mu\alpha}^\beta
+=
+0,
+\]
+ein System von Gleichungen für die $n^3$ Grössen $\Gamma_{\mu\nu}^\alpha$.
+Wir können die $\Gamma$ auch allein auf der linken Seite haben:
+\[
+g_{\mu\beta}\Gamma_{\nu\alpha}^\beta
++
+g_{\beta\nu}\Gamma_{\mu\alpha}^\beta
+=
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+\]
+Durch zyklische Vertauschung der drei Indizes $\mu$, $\nu$ und $\alpha$
+erhalten wir drei Gleichungen
+\[
+\def\arraystretch{2.0}
+\begin{linsys}{3}
+g_{\mu\beta}\Gamma_{\nu\alpha}^\beta &+& g_{\beta\nu}\Gamma_{\mu\alpha}^\beta
+& &
+&=&
+\displaystyle
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+\\
+& &g_{\nu\beta}\Gamma_{\alpha\mu}^\beta &+& g_{\beta\alpha}\Gamma_{\nu\mu}^\beta
+&=&
+\displaystyle
+\frac{\partial g_{\nu\alpha}}{\partial x^\mu}
+\\
+g_{\beta\mu}\Gamma_{\alpha\nu}^\beta
+& &
+&+&g_{\alpha\beta}\Gamma_{\mu\nu}^\beta 
+&=&
+\displaystyle
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+\end{linsys}
+\]
+Da sowohl $g$ als auch $\Gamma$ in den unteren Indizes symmetrisch
+sind, können wir die Gleichungen weiter vereinfachen:
+\[
+\def\arraystretch{2.0}
+\begin{linsys}{3}
+g_{\mu\beta}\Gamma_{\nu\alpha}^\beta
+	&+& g_{\nu\beta}\Gamma_{\mu\alpha}^\beta
+		& &
+&=&
+\displaystyle
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+\\
+	& &g_{\nu\beta}\Gamma_{\mu\alpha}^\beta
+		&+& g_{\alpha\beta}\Gamma_{\nu\mu}^\beta
+&=&
+\displaystyle
+\frac{\partial g_{\nu\alpha}}{\partial x^\mu}
+\\
+g_{\mu\beta}\Gamma_{\nu\alpha}^\beta
+	& &
+		&+&g_{\alpha\beta}\Gamma_{\nu\mu}^\beta 
+&=&
+\displaystyle
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+\end{linsys}
+\]
+Subtrahieren wir die erste Zeile von der Summe der letzten beiden,
+heben sich ersten Terme weg, es bleibt
+\[
+g_{\alpha\beta}\Gamma_{\nu\mu}^\beta
+=
+\biggl(
+\frac{\partial g_{\nu\alpha}}{\partial x^\mu}
++
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+-
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+\biggr).
+\]
+Bezeichen wir die inverse Matrix von $g_{\alpha\beta}$ mit
+$g^{\alpha\beta}$, dann k"onnen wir nach $\Gamma_{\mu\nu}^\beta$ aufl"osen:
+\[
+g^{\sigma\alpha}
+\biggl(
+\frac{\partial g_{\nu\alpha}}{\partial x^\mu}
++
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+-
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+\biggr)
+=
+g^{\sigma\alpha}
+g_{\alpha\beta}\Gamma_{\mu\nu}^\beta
+=
+\delta^\sigma_\beta\Gamma_{\mu\nu}^\beta
+=
+\Gamma_{\mu\nu}^\sigma.
+\]
+
+\begin{definition}
+Sei $g_{\mu\nu}$ ein metrischer Tensor. 
+Dann heissen die
+\[
+\Gamma_{\alpha,\mu\nu}
+=
+\frac12
+\biggl(
+\frac{\partial g_{\nu\alpha}}{\partial x^\mu}
++
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+-
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+\biggr)
+\]
+die {\em Christoffelsymbole 1.~Art}
+und
+\[
+\Gamma_{\mu\nu}^\sigma
+=
+g^{\sigma\alpha} \Gamma_{\alpha,\mu\nu}
+=
+\frac12
+g^{\sigma\alpha}
+\biggl(
+\frac{\partial g_{\nu\alpha}}{\partial x^\mu}
++
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+-
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+\biggr)
+\]
+heissen {\em Christoffelsymbole 2.~Art} oder {\em Zusammenhangskoeffizienten}.
+\end{definition}
+
+\subsection{Beispiele}
+In den nachfolgenden Beispielen wollen wir die Christoffelsymbole erster
+und zweiter Art für Zylinder- und Kugeloberfläche berechnen.
+
+\subsubsection{Zylinderkoordinaten}
+Da die Komponenten des metrischen Tensors sind konstant, damit verschwinden
+alle Ableitungen
+\[
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}=0
+\qquad\Rightarrow\qquad
+\Gamma_{\alpha,\mu\nu}=0
+\qquad\Rightarrow\qquad
+\Gamma_{\mu\nu}^\alpha=0.
+\]
+
+\subsubsection{Kugelkoordinaten}
+Die Kugeloberfläche verwendet die Koordinaten $(\vartheta,\varphi)$.
+Zun"achst brauchen wir die Ableitungen der Komponenten des metrischen
+Tensors
+\begin{align*}
+\frac{\partial g_{11}}{\partial \vartheta} &=0
+&
+\frac{\partial g_{12}}{\partial \vartheta} &=0
+&
+\frac{\partial g_{21}}{\partial \vartheta} &=0
+&
+\frac{\partial g_{22}}{\partial \vartheta} &=\sin2\vartheta
+\\
+\frac{\partial g_{11}}{\partial \varphi} &=0
+&
+\frac{\partial g_{12}}{\partial \varphi} &=0
+&
+\frac{\partial g_{21}}{\partial \varphi} &=0
+&
+\frac{\partial g_{22}}{\partial \varphi} &=0
+\\
+\end{align*}
+Daraus können wir die Christoffelsymbole erster Art ableiten:
+\begin{align*}
+ \Gamma_{1,11}
+&=
+\frac12\biggl(\frac{\partial g_{11}}{\partial \vartheta}
+	+ \frac{\partial g_{11}}{\partial \vartheta}
+	- \frac{\partial g_{11}}{\partial \vartheta}\biggr)=0,
+&\Gamma_{1,12}
+&=
+\frac12\biggl(\frac{\partial g_{11}}{\partial \varphi}
+	+ \frac{\partial g_{21}}{\partial \vartheta}
+	- \frac{\partial g_{12}}{\partial \vartheta}\biggr)=0,
+\\
+\Gamma_{1,21}
+&=
+\frac12\biggl(\frac{\partial g_{12}}{\partial \vartheta}
+	+ \frac{\partial g_{11}}{\partial \varphi}
+	- \frac{\partial g_{21}}{\partial \vartheta}\biggr)=0,
+&\Gamma_{1,22}
+&=
+\frac12\biggl(\frac{\partial g_{12}}{\partial \varphi}
+	+ \frac{\partial g_{12}}{\partial \varphi}
+	- \frac{\partial g_{22}}{\partial \vartheta}\biggr)=-\frac12\sin2\vartheta,
+\\
+\Gamma_{2,11}
+&=
+\frac12\biggl(\frac{\partial g_{12}}{\partial \vartheta}
+	+ \frac{\partial g_{12}}{\partial \vartheta}
+	- \frac{\partial g_{11}}{\partial \varphi}\biggr)=0,
+&\Gamma_{2,12}
+&=
+\frac12\biggl(\frac{\partial g_{12}}{\partial \varphi}
+	+ \frac{\partial g_{22}}{\partial \vartheta}
+	- \frac{\partial g_{12}}{\partial \varphi}\biggr)=\frac12\sin2\vartheta,
+\\
+\Gamma_{2,21}
+&=
+\frac12\biggl(\frac{\partial g_{12}}{\partial \varphi}
+	+ \frac{\partial g_{22}}{\partial \vartheta}
+	- \frac{\partial g_{21}}{\partial \varphi}\biggr)=\frac12\sin2\vartheta,
+&\Gamma_{2,22}
+&=
+\frac12\biggl(\frac{\partial g_{22}}{\partial \varphi}
+	+ \frac{\partial g_{22}}{\partial \varphi}
+	- \frac{\partial g_{22}}{\partial \varphi}\biggr)=0.
+\end{align*}
+Die inverse Matrix von $g_{\mu\nu}$ hat die nicht verschwindenen
+Komponenten
+\[
+g^{11} = 1
+\qquad\text{und}\qquad
+g^{22} = \frac1{\sin^2\vartheta}
+\]
+und die Christoffelsymbole 2.~Art
+\begin{align*}
+ \Gamma_{11}^1
+&=0,
+&\Gamma_{12}^1
+&=0,
+&\Gamma_{21}^1
+&=0,
+&\Gamma_{22}^1
+&=-\frac12\sin2\vartheta,
+\\
+ \Gamma_{11}^2
+&=0,
+&\Gamma_{12}^2
+&=\cot\vartheta,
+&\Gamma_{21}^2
+&=\cot\vartheta,
+&\Gamma_{22}^2
+&=0.
+\end{align*}
+
+\subsection{Geodätengleichung}
+
+\subsection{Variationsprinzip}
+
+
+
+
+
 
