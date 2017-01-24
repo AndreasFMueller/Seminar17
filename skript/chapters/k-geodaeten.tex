@@ -250,6 +250,53 @@ heissen {\em Christoffelsymbole 2.~Art} oder {\em Zusammenhangskoeffizienten}.
 In den nachfolgenden Beispielen wollen wir die Christoffelsymbole erster
 und zweiter Art für Zylinder- und Kugeloberfläche berechnen.
 
+\subsubsection{Polarkoordinaten}
+Die nicht verschwinden Komponenten
+des metrischen Tensors in Polarkoordinaten $(r,\varphi)$
+sind $g_{11}=1$ und $g_{22}=r^2$.
+Davon brauchen wir die Ableitungen
+\[
+\begin{aligned}
+\frac{\partial g_{11}}{\partial x^1} &=0,&
+\frac{\partial g_{12}}{\partial x^1} &=0,&
+\frac{\partial g_{21}}{\partial x^1} &=0,&
+\frac{\partial g_{22}}{\partial x^1} &=2r,&
+\\
+\frac{\partial g_{11}}{\partial x^2} &=0,&
+\frac{\partial g_{12}}{\partial x^2} &=0,&
+\frac{\partial g_{21}}{\partial x^2} &=0,&
+\frac{\partial g_{22}}{\partial x^2} &=0
+\end{aligned}
+\]
+Die Christoffelsymbole erster Art sind daher 
+\[
+\begin{aligned}
+\Gamma_{1,11} &=  0,&
+\Gamma_{1,12} &=  0,&
+\Gamma_{1,21} &=  0,&
+\Gamma_{1,22} &= -1,
+\\
+\Gamma_{2,11} &=  0,&
+\Gamma_{2,12} &=  1,&
+\Gamma_{2,21} &=  1,&
+\Gamma_{2,22} &=  0
+\end{aligned}
+\]
+und die Christoffelsymbole zweiter Art sind
+\[
+\begin{aligned}
+\Gamma_{11}^1 &= 0,&
+\Gamma_{12}^1 &= 0,&
+\Gamma_{21}^1 &= 0,&
+\Gamma_{22}^1 &=-1,
+\\
+\Gamma_{11}^2 &= 0,&
+\Gamma_{12}^2 &= \frac1{r^2},&
+\Gamma_{21}^2 &= \frac1{r^2},&
+\Gamma_{22}^2 &= 0.
+\end{aligned}
+\]
+
 \subsubsection{Zylinderkoordinaten}
 Da die Komponenten des metrischen Tensors sind konstant, damit verschwinden
 alle Ableitungen
@@ -406,6 +453,14 @@ x^\alpha(t)=x^\alpha(0) + t \dot x^\alpha(0),
 \]
 also einer Geradengleichung.
 In flachen Räumen sind die Geodäten Geraden.
+
+\subsubsection{Polarkoordinaten}
+Die Geodätengleichungen in Polarkoordinante sind
+\begin{align*}
+\ddot r &= -\dot \varphi^2,
+\\
+\ddot \varphi &= 2\biggl(\frac{\dot r}{r}\biggr)^2.
+\end{align*}
 
 \subsubsection{Kugeloberfläche}
 Die Christoffelsymbole zweiter Art für die Kugeloberfläche haben wir
