@@ -63,11 +63,12 @@ haben.
 Die Wahl des Vorzeichnes von $\Gamma_{\mu\nu}^\alpha$ ist im Wesentlichen
 eine Frage der Konvention.
 Die instantane Änderung zur Zeit $t=0$ entlang der Kurve ist
-\[
+\begin{equation}
 \frac{d}{dt}\tilde A^\alpha\bigg|_{t=0}
 =
 \Gamma_{\mu\nu}^\alpha A^\mu \dot x^\nu.
-\]
+\label{skript:kruemmung:ableitung}
+\end{equation}
 
 Bis jetzt haben wir die Metrik nicht verwendet.
 Wir möchten dass der Paralleltransport die Länge des Vektors beim
@@ -336,7 +337,8 @@ g^{11} = 1
 g^{22} = \frac1{\sin^2\vartheta}
 \]
 und die Christoffelsymbole 2.~Art
-\begin{align*}
+\begin{equation}
+\begin{aligned}
  \Gamma_{11}^1
 &=0,
 &\Gamma_{12}^1
@@ -354,9 +356,172 @@ und die Christoffelsymbole 2.~Art
 &=\cot\vartheta,
 &\Gamma_{22}^2
 &=0.
-\end{align*}
+\end{aligned}
+\label{skript:kruemmung:christoffelkugel}
+\end{equation}
 
 \subsection{Geodätengleichung}
+Die Rolle der Geraden in der Ebene müssen die jenigen Kurven auf der
+Fläche übernehmen, die so gerade wie möglich sind. 
+Eine Gerade ist dadurch charakterisiert, dass sie überall die gleiche
+Richtung hat. 
+Diese Formulierung ist aber nur möglich, weil Tangentialvektoren in
+beliebigen Punkten unmittelbar miteinander vergleichen können.
+Für einen allgemeinen Raum müssen wir diesen Vergleich mit Hilfe
+des Paralleltransportes durchführen.
+Die Forderung an die Kurve wird dann, dass der Tangentialvektor
+an die Kurve durch Paralleltransport wieder in einen Tangentialvektor
+an die Kurve übergeht.
+
+Etwas formaler setzen wir den Tangentialvektor $\dot x^\mu$ an die
+Kurve in die Gleichung \eqref{skript:kruemmung:ableitung} ein und
+erhalten die Differentialgleichung 
+\begin{equation}
+\ddot x^\alpha=\Gamma_{\mu\nu}^\alpha \dot x^\mu\dot x^\nu.
+\label{skript:kruemmung:geodatengleichung}
+\end{equation}
+\index{Geodäte}
+
+\begin{definition}
+Eine Kurve in einem Riemannschen Raum heisst eine Geodäte, wenn sie
+die Differentialgleichung~\eqref{skript:kruemmung:geodatengleichung}
+erfüllt.
+\end{definition}
+
+In den nachfolgenden Beispielen wollen wir die Geodäten für diejenigen
+Räume berechnen, für die wir die Christoffelsymbole bereits bestimmt
+haben.
+
+%
+% XXX Geschwindigkeitsinvarianz
+%
+
+\subsubsection{Flache R"aume}
+In flachen Räumen wie der Ebene oder der Zylinderoberfläche verschwinden
+alle Christoffelsymbole.
+Die Geodätengleichung ist daher nur nocht
+$\ddot x^\alpha=0$, was gleichbedeutend ist mit
+\[
+x^\alpha(t)=x^\alpha(0) + t \dot x^\alpha(0),
+\]
+also einer Geradengleichung.
+In flachen Räumen sind die Geodäten Geraden.
+
+\subsubsection{Kugeloberfläche}
+Die Christoffelsymbole zweiter Art für die Kugeloberfläche haben wir
+in \eqref{skript:kruemmung:christoffelkugel} berechnet.
+Statt die Differentialgleichung der Geodäten direkt zu lösen, versuchen
+wir nur, die Parameterdarstellung eines Grosskreises in die
+Differentialgleichung einzusetzen und damit zu zeigen, dass die
+Grosskreise Lösungen der Geodätengleichung sind.
+Da es durch jeden Punkt der Kugeloberflächen und zu jeder Tangentialrichtung
+einen Grosskreis gibt, und die Lösungen der Geodätengleichung eindeutig
+sind, können schliessen, dass alle Geodäten Grosskreise sind.
+
+Der Äquator der Kugel hat eine besonders einfache Parametrisierung mit
+\[
+\begin{aligned}
+x^1(t)=\vartheta(t)&=\frac{\pi}2,
+&\qquad&&
+x^2(t)=\varphi(t)&=t
+\end{aligned}
+\]
+mit den Ableitungen
+\[
+\begin{aligned}
+\dot x^1(t)&=0,
+&\qquad&&
+\dot x^2(t)&=1.
+\end{aligned}
+\]
+Die zweiten Ableitungen der Koordinaten verschwinden, da die ersten
+Ableitungen konstant sind.
+Wir setzen die ersten Ableitungen in die Geodätengleichung ein.
+Es bleiben nur die Terme mit $\mu=\nu=2$ stehen, da $\dot x^1=0$ ist,
+also
+\begin{align}
+\ddot x^1
+&=
+\Gamma_{\mu\nu}^1\dot x^\mu\dot x^\nu=\Gamma_{22}^1=-\frac12\sin2\theta
+=
+-\frac12\sin\biggl( 2\cdot\frac{\pi}2\biggr)
+=
+-\frac12\sin\pi=0,
+\label{skript:kruemmung:geodaete:breitenkreis}
+\\
+\ddot x^2
+&=
+\Gamma_{\mu\nu}^2\dot x^\mu\dot x^\nu=\Gamma_{22}^2=0.
+\notag
+\end{align}
+Die Geodätengleichung ist für den Äquator erfüllt, der Äquator ist
+eine Geodäte.
+
+An dieser Stelle könnten wir mit den Rechnungen eigentlich aufhören, 
+denn jeder andere Grosskreis entsteht aus dem Äquator durch eine
+Drehung des dreidimensionalen Raumes.
+Die Eigenschaft einer Kurve, eine Geodäte zu sein, hängt aber nur von
+der Metrik ab, die sich bei einer solchen Drehung nicht ändert.
+Jeder andere Grosskreis ist also automatisch auch eine Geodäte.
+Trotzdem wollen wir im folgenden für jeden beliebigen Grosskreis
+zeigen, dass er die Differentialgleichung der Geodäten erfüllt.
+
+Ein Breitenkreis ist nach der gleichen Rechnung keine Geodäte.
+Er ist charakterisiert durch $x^(t)=\vartheta\ne\frac{\pi}2$,
+die Differentialgleichung
+\eqref{skript:kruemmung:geodaete:breitenkreis}
+wird damit zu
+\[
+\ddot x^1
+=
+\Gamma_{\mu\nu}^1\dot x^\mu\dot x^\nu=\Gamma_{22}^1=-\frac12\sin2\theta
+\ne
+0,
+\]
+die Differentialgleichung der Geodäten ist nicht erfüllt.
+Die rechte Seite ist sogar konstant, dies besagt dass der Breitenkreis
+im Bezug zu einer Geodäten so gekrümmt ist, dass er ganz
+auf einer Seite des Grosskreises mit gleichem Anfangspunkt und
+Anfangsgeschwindigkeit liegt.
+
+Als nächstes betrachten wir die Meridiane der Kugel.
+Eine Merian hat die Parameterdarstellung
+\[
+\begin{aligned}
+x^1(t)=\vartheta(t)&=t,
+&\qquad&&
+x^2(t)=\varphi(t)&=0.
+\end{aligned}
+\]
+Die Tangentialvektoren sind daher
+\[
+\begin{aligned}
+\dot x^1(t)&=1,
+&\qquad&&
+\dot x^2(t)&=0.
+\end{aligned}
+\]
+Wiederum verschwinden
+die zweiten Ableitungen von $x^\mu$.
+Wir setzen dies jetzt in die Geodäten\-gleichung ein und erhalten
+\begin{align*}
+\ddot x^1
+&=
+\Gamma_{\mu\nu}\dot x^\mu \dot x^\nu
+=
+\Gamma_{22}^1\dot x^2 \dot x^2=0,
+\\
+\ddot x^2
+&=
+\Gamma_{\mu\nu}^2\dot x^\mu \dot x^\nu
+=
+\Gamma_{11}^2\dot x^1\dot x^1=\Gamma_{11}^2=0.
+\end{align*}
+Die Differentialgleichungen für eine Geodäte sind für Meridiane erfüllt,
+damit ist gezeigt, dass Meridiane Geodäten sind.
+
+Die Berechnung für einen beliebigen Grosskreis ist dagegen sehr 
+kompliziert und nicht sehr instruktiv.
 
 \subsection{Variationsprinzip}
 
