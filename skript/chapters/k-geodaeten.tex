@@ -579,9 +579,300 @@ Die Berechnung für einen beliebigen Grosskreis ist dagegen sehr
 kompliziert und nicht sehr instruktiv.
 
 \subsection{Variationsprinzip}
+Wir möchten in diesem Abschnitt verstehen, dass die Geodäten tatsächlich 
+die kürzesten Kurven sind.
+Dazu müssen wir für eine beliebige mit dem Parameter $t$ parametrisierte
+Kurve $x^\alpha(t)$ die Länge berechnen.
+Dies kann mit dem Integral
+\begin{equation}
+l=\int_{t_0}^{t_1} \sqrt{g_{\mu\nu}(x^\alpha(t)) \dot x^\mu(t)\dot x^\nu(t)}\,dt
+\label{skript:variation:laenge}
+\end{equation}
+geschehen.
+Gesucht wird jetzt unter allen möglichen Kurven, die zwei Punkte miteinander
+verbinden, diejenige für die das Integral \eqref{skript:variation:laenge}
+minimal wird.
 
+\subsubsection{Euler-Lagrange-Gleichung}
+Wir lösen gleich ein etwas allgemeineres Problem.
+Gegeben ist eine Funktion $L(x^\alpha, \dot x^\alpha, t)$, welche
+von den Koordinaten $x^\mu$, den Geschwindigkeiten $\dot x^\mu$ und
+der Zeit abhängt.
+Gesucht ist eine Kurve $x^\alpha(t)$, welche 
+den Punkt $x^\alpha(t_0)$ mit dem Punkt $x^\alpha(t_1)$ verbindet,
+und das Integral
+\begin{equation}
+\int_{t_0}^{t_1} F(x^\alpha(t), \dot x^\alpha(t), t)\,dt
+\label{skript:variation:funktional}
+\end{equation}
+minimiert.
 
+Wenn $x^\alpha(t)$ das Integral \eqref{skript:variation:funktional}
+minimiert, dann wird es grösser, wenn man die Kurve etwas ändert.
+Wir wählen also eine Kurve $\eta^\alpha(t)$ und berechnen, die
+um $\eta^\mu(t)$ verschobene Kurve wird ein grösseres Integral
+\eqref{skript:variation:funktional} ergeben.
+Wir bilden daher
+\[
+I(s)
+=
+\int_{t_0}^{t_1}
+F(x^\alpha(t) + s\eta^\alpha(t), \dot x^\alpha(t) + s \dot \eta^\alpha(t), t)
+\,dt.
+\]
+Dieses Integral soll minimal werden für $s=0$, also muss die Ableitung
+dort verschwinden.
+Wir leiten daher nach $s$ ab:
+\begin{align*}
+\frac{dI(s)}{ds}
+&=
+\int_{t_0}^{t_1}
+\frac{\partial F}{\partial x^\alpha}(x^\alpha(t)+s\eta^\alpha(t),
+\dot x^\alpha(t) + s\dot\eta^\alpha(t), t) \eta^\alpha(t)
++
+\frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t) + s\eta^\alpha(t),
+\dot x^\alpha(t) + s\dot\eta^\alpha(t), t) \dot\eta^\alpha(t)
+\,dt
+\\
+\frac{dI(0)}{ds}
+&=
+\int_{t_0}^{t_1}
+\frac{\partial F}{\partial x^\alpha}(x^\alpha(t), \dot x^\alpha(t), t)
+\eta^\alpha(t)
++
+\frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t),
+\dot x^\alpha(t), t)
+\dot\eta^\alpha(t)
+\,dt
+\\
+\intertext{
+Den zweiten Term können wir mit partieller Integration vereinfachen
+und erhalten}
+&=
+\int_{t_0}^{t_1}
+\frac{\partial F}{\partial x^\alpha}(x^\alpha(t), \dot x^\alpha(t), t)
+\eta^\alpha(t)\,dt
++
+\biggl[
+\frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t),
+\dot x^\alpha(t), t)
+\eta^\alpha(t)
+\biggr]_{t_0}^{t_1}
+\\
+&\qquad\qquad
+-
+\int_{t_0}^{t_1}
+\frac{d}{dt}\frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t),
+\dot x^\alpha(t), t)
+\eta^\alpha(t)
+\,dt
+\intertext{Da die verschobene Kurve immer noch die beiden Punkte
+$x^\alpha(t_0)$ und $x^\alpha(t_1)$ verbindet, ist $\eta^\alpha(t_0)=0$
+und $\eta^\alpha(t_1)=0$, und damit verschwindet der mittlere Term.
+Die rechte Seite wird damit zu}
+&=
+\int_{t_0}^{t_1}
+\biggl(
+\frac{\partial F}{\partial x^\alpha}(x^\alpha(t), \dot x^\alpha(t), t)
+-
+\frac{d}{dt}\frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t),
+\dot x^\alpha(t), t)
+\biggr)
+\eta^\alpha(t)
+\,dt
+\end{align*}
+Das Integral auf der rechten Seite verschwindet nur dann für jede
+beliebige Wahl der Verschiebung $\eta^\alpha(t)$, wenn die grosse Klammer
+verschwindet.
+Eine Lösung des Minimalproblems erfüllt also notwendigerweise die
+sogenannten {\em Euler-Lagrange-Gleichungen}
+\[
+\frac{\partial F}{\partial x^\alpha}(x^\alpha(t), \dot x^\alpha(t), t)
+-
+\frac{d}{dt}\frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t), \dot x^\alpha(t), t)=0.
+\]
+Etwas kompakter geschrieben lauten diese
+\begin{equation}
+\frac{\partial F}{\partial x^\alpha}
+-
+\frac{d}{dt}\frac{\partial F}{\partial \dot x^\alpha}
+=0.
+\label{skript:variation:euler-lagrange}
+\end{equation}
 
+\subsubsection{Parametrisierung}
+Wir vermuten, dass Geodäten die kürzesten Verbindungen sind.
+Mit den Euler-Lagrange-Gleichungen können wir dies nachprüfen.
+Wenn die Vermutung stimmt, müssten die Euler-Lagrange-Gleichungen 
+\eqref{skript:variation:euler-lagrange}
+für die Funktion
+\[
+L(x^\alpha, \dot x^\beta) =\sqrt{g_{\mu\nu}(x^\alpha)\dot x^\mu\dot x^\nu}
+\]
+die Differentialgleichungen der Geodäten liefern.
+Wegen der Wurzel ist allerdings damit zu rechnen, dass die
+Ableitungen, die wir für die Euler-Lagrange-Gleichungen brauchen sehr
+kompliziert werden.
+
+Die Geodäten-Gleichungen haben aber noch eine zusätzliche Eigenschaft.
+Wir sind nämlich davon ausgegangen, dass der Tangentialvektor (der
+Geschwindigkeitsvektor) immer die gleiche Länge hat, dass also
+\[
+\frac{d}{dt}L=0.
+\]
+Unter Verwendung dieser Eigenschaft können wir die Euler-Lagrange-Gleichung
+wesentlich vereinfachen.
+Dazu schreiben wir zunächst
+\[
+F=\frac12 L^2
+\]
+und berechnen die partiellen Ableitungen mit der Kettenregel:
+\[
+\begin{aligned}
+\frac{\partial F}{\partial x^\alpha}
+&=
+L
+\frac{\partial L}{\partial x^\alpha}
+&&\text{und}
+&
+\frac{\partial F}{\partial \dot x^\alpha}
+&=
+L\frac{\partial L}{\partial\dot x^\alpha}
+\end{aligned}
+\]
+Damit können wir jetzt die Euler-Lagrange-Gleichungen für $F$ aufstellen:
+\begin{align*}
+\frac{d}{dt}
+\frac{\partial F}{\partial \dot x^\alpha}
+&=
+\frac{dL}{dt} \frac{\partial L}{\partial\dot x^\alpha}
++
+L\frac{d}{dt}\frac{\partial L}{\partial\dot x^\alpha}
+\\
+\frac{d}{dt}
+\frac{\partial F}{\partial \dot x^\alpha}
+-
+\frac{\partial F}{\partial x^\alpha}
+&=
+\underbrace{\frac{dL}{dt}}_{\displaystyle =0}
+\frac{\partial L}{\partial\dot x^\alpha}
++
+L\frac{d}{dt}\frac{\partial L}{\partial\dot x^\alpha}
+-
+L
+\frac{\partial L}{\partial x^\alpha}
+=
+L\biggl(
+\frac{d}{dt}\frac{\partial L}{\partial\dot x^\alpha}
+-
+\frac{\partial L}{\partial x^\alpha}
+\biggr)
+\end{align*}
+Die Klammer auf der rechten Seite ist die Euler-Lagrange-Gleichung für
+$L$.
+Wenn wir also $dL/dt=0$ voraussetzen, dann ist die Euler-Lagrange-Gleichung
+für $L$ gleichbedeutend mit der Euler-Lagrange-Gleichung für $F$.
+
+\subsubsection{Lagrange-Gleichung für Geodäten}
+Wir suchen jetzt also die Euler-Lagrange-Gleichungen f"ur die Funktion
+\[
+F(x^\alpha, \dot x^\alpha) = \frac12 g_{\mu\nu} \dot x^\mu \dot x^\nu.
+\]
+Wir berechnen daher die Ableitungen
+\begin{align*}
+\frac{\partial F}{\partial x^\alpha}
+&=
+\frac12\frac{\partial g_{\mu\nu}}{\partial x^\alpha} \dot x^\mu \dot x^\nu,
+\\
+\frac{\partial F}{\partial \dot x^\alpha}
+&=
+\frac12 g_{\mu\nu}\frac{\partial \dot x^\mu}{\partial \dot x^\alpha}\dot x^\nu
++
+\frac12 g_{\mu\nu}\dot x^\mu \frac{\partial \dot x^\nu}{\partial \dot x^\alpha}
+=
+\frac12 g_{\mu\nu}\delta^\mu_\alpha \dot x^\nu
++
+\frac12 g_{\mu\nu}\dot x^\mu \delta^\nu_\alpha 
+=
+\frac12 g_{\alpha\nu}\dot x^\nu
++
+\frac12 g_{\mu\alpha}\dot x^\mu 
+\\
+\frac{d}{dt}\frac{\partial F}{\partial \dot x^\alpha}
+&=
+\frac12\frac{\partial g_{\alpha\nu}}{\partial x_{\beta}}\dot x^\beta\dot x^\nu
++
+\frac12\frac{\partial g_{\mu\alpha}}{\partial x_{\beta}}\dot x^\mu\dot x^\beta
++
+\frac12g_{\alpha\nu}\ddot x^\nu
++
+\frac12g_{\mu\alpha}\ddot x^\mu.
+\end{align*}
+Damit wird die Euler-Lagrange-Gleichung
+\begin{align*}
+0=
+\frac{d}{dt}\frac{\partial F}{\partial \dot x^\alpha}
+-
+\frac{\partial F}{\partial x^\alpha}
+&=
+\frac12
+\frac{\partial g_{\alpha\nu}}{\partial x_{\beta}}\dot x^\beta\dot x^\nu
++
+\frac12
+\frac{\partial g_{\mu\alpha}}{\partial x_{\beta}}\dot x^\mu\dot x^\beta
++
+\frac12
+g_{\alpha\nu}\ddot x^\nu
++
+\frac12
+g_{\mu\alpha}\ddot x^\mu
+-
+\frac12\frac{\partial g_{\mu\nu}}{\partial x^\alpha} \dot x^\mu \dot x^\nu
+\\
+\intertext{Darin fassen im ersten Term auf der rechten Seite
+$\beta$ durch $\mu$ und im zweiten Term $\beta$ durch $\nu$.
+Ausserdem fassen wir die zwei Terme mit zweiten Ableitungen zusammen:}
+&=
+g_{\alpha\nu}\ddot x^\nu
++
+\frac12
+\biggl(
+\frac{\partial g_{\alpha\nu}}{\partial x_\mu}
++
+\frac{\partial g_{\mu\alpha}}{\partial x_\nu}
+-
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+\biggr)\dot x^\mu\dot x^\nu.
+\end{align*}
+Wir multiplizieren mit $g^{\sigma\alpha}$ und verwenden,
+dass $g^{\sigma\alpha}g_{\alpha\nu} = \delta_\nu^\alpha$, da $g^{\sigma\alpha}$
+die zu $g_{\mu\nu}$ inverse Matrix ist.
+Dann folgt auch
+$g^{\sigma\alpha}g_{\alpha\nu}\ddot x^\nu
+=
+\delta_\nu^\alpha\ddot x^\nu
+=
+\ddot x^\alpha$, und
+wir bekommen für die Differentialgleichung der Geodäten:
+\begin{align*}
+0=
+\ddot x^\sigma
++
+g^{\sigma\alpha}\frac12\biggl(
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+-
+\frac{\partial g_{\alpha\nu}}{\partial x_{\mu}}
+-
+\frac{\partial g_{\mu\alpha}}{\partial x_{\nu}}
+\biggr)
+\dot x^\mu\dot x^\nu
+&=
+\ddot x^\sigma
++
+\Gamma_{\mu\nu}^\sigma \dot x^\mu\dot x^\nu.
+\end{align*}
+Damit ist gezeigt, dass die Lösungen der Geodäten-Gleichung tatsächlich
+kürzeste Verbindungen sind.
 
 
 
