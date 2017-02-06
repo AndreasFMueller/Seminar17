@@ -1,5 +1,6 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage{german}
+\usepackage[english,ngerman]{babel}
+\usepackage[utf8]{inputenc}
 \usepackage{times}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -35,20 +36,20 @@ innerhalb des gr"osseren Seminar-Projektes, welches als Ziel das
 Seminar-Buch hat.
 
 Sie sind daher auch nicht ganz frei in der Wahl der Werkzeuge, die Sie
-zur Formattierung der Seminararbeit verwenden, und erst recht nicht
+zur Formatierung der Seminararbeit verwenden, und erst recht nicht
 in der Art und Weise, wie Ihr Beitrag Eingang ins Gesamtprojekt findet.
 
 Die Wahl dieser Werkzeuge ist Ihnen bereits abgenommen worden.
-Sie ist weder willk"urlich noch durch pers"ohnliche Vorlieben diktiert,
+Sie ist weder willk"urlich noch durch pers"onliche Vorlieben diktiert,
 sondern entspricht dem Standard in Mathematik und Physik und vielen
 technischen Wissenschaften.
 Viele Zeitschriften in diesen Gebieten erwarten Manuskripte typischerweise
-formattiert in \LaTeX, und auch an der HSR ist seine Verwendung 
+formatiert in \LaTeX, und auch an der HSR ist seine Verwendung 
 vor allem im Studiengang E das Werkzeug der Wahl f"ur Studien- und
 Bachelor-Arbeiten.
 
 Die Zusammenarbeit der vielen Autoren wird vereinfacht durch das
-Versionsveraltungssystem GIT.
+Versionsverwaltungssystem GIT.
 Es wurde urspr"unglich von Linus Torvalds f"ur die Verwaltung des
 Source Code des Linux Kernel geschrieben.
 Es hat sich aber mehr oder weniger zu einem Standard entwickelt,
@@ -77,12 +78,12 @@ und \verb+main.bib+ (f"ur das Literaturverzeichnis) im Unterverzeichnis,
 das Ihrer Arbeit zugewiesen ist.
 
 Ihren Text geben Sie als eine Mischung von reinem Text und sogenannte
-Kontrol-Sequenzen oder Makros ein.
+Kontroll-Sequenzen oder Makros ein.
 Die Makros erm"oglichen Sonderzeichen darzustellen, die im Textzeichensatz
 nicht zur Verf"ugung stehen.
 Bei der Verwendung von ASCII zum Beispiel ben"otigen bereits die Umlaute
 "a, "o und "u
-die Kontrol-Sequenzen 
+die Kontroll-Sequenzen 
 \verb+"a+,
 \verb+"o+ und
 \verb+"u+.
@@ -175,7 +176,7 @@ optimal dargestellt werden.
 Bei Buchdruck werden sehr viel h"ohere Aufl"osungen verwendet als
 beim Laserdruck, Pixelgraphiken k"onnen beim Laserdruck akzeptabel
 aussehen, bei h"oheren Aufl"osungen werden die Defizite sichtbar.
-JPG Bilder sind also dann zweckm"assig f"ur fotographische Bilder.
+JPG Bilder sind also dann zweckm"assig f"ur photographische Bilder.
 
 Zudem sollten Sie in Ihren Bildern Transparenz vermeiden, da gewisse
 Druckmaschinen damit Schwierigkeiten haben. Der PDF-Standard, der
@@ -184,7 +185,7 @@ in der Druckvorstufe "ublich ist, ist deutlich "alter als was von
 
 \subsection{Literaturverzeichnis}
 Jede Seminararbeit hat ihr eigenes Literaturverzeichnis.
-Um die Formattierung der einzelnen Eintr"age brauchen Sie sich nicht
+Um die Formatierung der einzelnen Eintr"age brauchen Sie sich nicht
 zu k"ummern, auch dies "ubernimmt \TeX.
 Sie m"ussen aber die bibliographischen Angaben in strukturierte
 Form bereitstellen. 
@@ -198,7 +199,7 @@ Ihre Erkenntnisse sollen Sie auch in einer Pr"asentation ihren Kollegen
 vorstellen.
 In der Wahl Ihrer Pr"asentationsmittel sind Sie frei, doch das Sie
 bereits bereits f"ur Ihre Seminararbeit \LaTeX\ eingesetzt haben, 
-liegt es einigemassen nahe, dasselbe Werkzeug auch f"ur die Pr"asentation
+liegt es einigermassen nahe, dasselbe Werkzeug auch f"ur die Pr"asentation
 zu verwenden.
 Dies erlaubt Ihnen Graphiken und Formeln direkt wieder zu verwenden.
 
@@ -256,7 +257,7 @@ In der Unix-Umgebung ist naheliegend, die Verwaltung der Abh"angigkeiten
 mit dem immer vorhandenen Werkzeug \texttt{make} vorzunehmen.
 Die Makefiles beschreiben, wie die verschiedenen Produkte des Projektes
 aus den Source-Files erzeugt werden m"ussen.
-Es gen"ugt, im \texttt{skript}-Verzeichnes den Befehl \texttt{make} zu geben, 
+Es gen"ugt, im \texttt{skript}-Verzeichnis den Befehl \texttt{make} zu geben, 
 worauf das Programm \texttt{make} das gesamte Skript neu baut.
 Das \texttt{make}-Kommando leitet aus den Makefiles ab, was alles gemacht
 werden muss, wenn einzelne Files ge"andert werden.
@@ -267,7 +268,7 @@ zu kommen.
 Alternativ kann man sich auch eine virtuelle Maschine mit einem
 Linux-Betriebssystem einrichten.
 Moderne Linux-Distributionen enthalten alle Werkzeuge, die f"ur die
-Formattierung des Buches n"otig sind, darin eingschlossen die
+Formatierung des Buches n"otig sind, darin eingeschlossen die
 Erzeugung aller Bilder.
 Da nur einfach Textfiles editiert werden m"ussen, kann jeder beliebige
 Text-Editor dazu verwendet werden, was auch relativ leicht zu erlernen ist.
@@ -310,7 +311,7 @@ abweisen, die "Anderungen an Files anderer Projektteilnehmer vornehmen.
 \includegraphics[width=\hsize]{fork.png}
 \caption{Projekt \texttt{SeminarDGL} des Benutzers \texttt{AndreasFMueller},
 bereit zum Forken durch den Benutzer \texttt{SeminarTeilnehmer}.
-Forken erfolgt duch den Knopf {\bf Fork} in der rechten oberen Ecke.
+Forken erfolgt durch den Knopf {\bf Fork} in der rechten oberen Ecke.
 \label{fork}}
 \end{figure}
 \begin{figure}
@@ -327,7 +328,7 @@ Suchen Sie dazu das Projekt \texttt{SeminarDGL} des Benutzers
 \texttt{AndreasFMueller}.
 In der rechten oberen Ecke des Webinterfaces finden Sie einen Knopf
 \textbf{Fork} (Abbildung~\ref{fork}).
-Klick darauf erzeugt eine Kopie des Projektes in ihrem eigenen Akkount
+Klick darauf erzeugt eine Kopie des Projektes in ihrem eigenen Account
 (Abbildung~\ref{forked}).
 In diesem Fork f"ugen Sie ihre Seminararbeit hinzu und bearbeiten
 Sie, bis sie bereit ist, in das "ubergeordnete Projekt integriert
@@ -452,7 +453,7 @@ Die Erzeugung eines Pull-Request ist in den Abbildungen
 und
 \ref{pullresult} dargestellt.
 In Abbildung~\ref{newpullrequest} sieht man den Knopf, mit dem der
-Benutzer~\texttt{SeminarTeilnehmer} den Pull-Request anfordet.
+Benutzer~\texttt{SeminarTeilnehmer} den Pull-Request anfordert.
 Github untersucht dann, ob der Pull-Request "uberhaupt sinnvoll
 erzeugt werden kann, und zeigt die Elemente, die der
 Pull-Request enthalten wird (Abbildung~\ref{openpull}).
@@ -481,7 +482,7 @@ Der Autor eines Dokumentes k"ummert sich ausschliesslich um den Inhalt,
 er "uberl"asst die graphische Darstellung "uberl"asst er dem System.
 Der Input besteht daher aus reinen Text-Files, die neben dem eigentlichen
 Text einzelne Instruktionen enthalten, die \TeX\ mitteilen, ob es sich
-bei dem Text um einen Titel, ene Bildunteschrift, oder eine Fussnote
+bei dem Text um einen Titel, eine Bildunterschrift, oder eine Fussnote
 handelt.
 F"ur die Unterteilung des Textes in Abs"atze ist "uberhaupt
 kein spezieller Markup n"otig, eine leere Zeile signalisiert
