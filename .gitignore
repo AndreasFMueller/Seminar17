@@ -1,0 +1,19 @@
+# Files to ignore
+*.aux
+*-blx.bib
+*.bbl
+*.blg
+*.idx
+*.ilg
+*.ind
+*.log
+*.out
+*.run.xml
+*.swp
+*.synctex.gz
+*.toc
+
+# ignore all pdf files
+*.pdf
+
+# Files to allow (start with !)
