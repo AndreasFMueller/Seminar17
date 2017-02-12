@@ -15,6 +15,126 @@ konstruieren, und damit auch die späteren Terme der Entwicklung
 genauer zu untersuchen.
 
 
+\subsection{Dipol}
+Wir betrachten das Feld eines Paares von entgegengesetzen Ladungen
+in den Punkten $(0,0,a)$ und $(0,0,-a)$.
+Der Einfachheit halber führen wir die Rechnung zunächst nur
+in der $x$-$z$-Ebene durchführen und erst später mit Hilfe einer
+vektoriellen Schreibweise auf drei Dimensionen erweitern.
 
+Entlang der $z$-Achse kennen wir das Potential bereits aus
+dem vorangegangenen Abschnitt.
+Entlang der $x$-Achse verschwindet das Potential, denn die Punkte
+auf der $x$-Achse sind von den beiden Ladungn gleich weit entfernt,
+haben als entgegengesetzt gleiches Potential bezüglich beiden Ladungen
+und damit totales Potential 0.
+
+Wir betrachten jetzt das Potential im Punkt $(x,z)$, es ist
+\[
+f(x,z)
+=
+\frac{q}{45\pi\varepsilon_0}
+\biggl(
+\frac{1}{\sqrt{x^2 + (z-a)^2}}
+-
+\frac{1}{\sqrt{x^2 + (z+a)^2}}
+\biggr)
+\]
+Offenbar müssen wir die Nenner besser verstehen, um diese Summe 
+umformen zu können.
+Speziell müssen wir die Abhängigkeit von der Entfernung
+$r=\sqrt{x^2+z^2}$ vom Nullpunkt
+und die Richtungsabhängigkeit voneinander trennen.
+Dazu betrachten wir nur einen einzelnen Term
+\[
+\frac{1}{\sqrt{x^2+(z+a)^2}}
+=
+\frac{1}{\sqrt{x^2+z^2+2az+a^2}}
+=
+\frac{1}{\sqrt{x^2+z^2}} \cdot \frac{1}{\sqrt{1+\frac{2az+a^2}{x^2+z^2}}}
+=
+\frac{1}{r} \cdot \frac{1}{\sqrt{1+\frac{2az+a^2}{r^2}}}
+\]
+Offenbar ist es notwendig, einen Term der Form
+\[
+\frac{1}{\sqrt{1+t}}
+=
+(1+t)^{-\frac12}
+\]
+besser zu verstehen.
+Die Taylor-Reihe kann für eine allgemeinere Art von Reihe bestimmt werden,
+nämlich $g(t)=(1+t)^\alpha$.
+Dazu müssen die Ableitungen bestimmt werden
+\begin{align*}
+g'(t)
+&=
+\alpha(1+t)^{\alpha-1}
+&
+g'(0)&=\alpha
+\\
+g''(t)
+&=
+\alpha(\alpha-1)(1+t)^{\alpha-2}
+&
+g''(0)&=\alpha(\alpha-1)
+\\
+&\;\vdots
+\\
+g^{(n)}(t)
+&=
+\alpha(\alpha-1)(\alpha-2)\dots(\alpha-n+1) (1+t)^{\alpha -n}
+&
+g^{(n)}(0)&=\alpha(\alpha-1)(\alpha-2)\dots(\alpha -n +1)
+\end{align*}
+Der Term zur Potenz $n$ ist
+\[
+\frac{\alpha(\alpha-1)(\alpha-2)\dots(\alpha-n+1)}{n!} t^n
+\]
+Der Bruch sieht genau so aus wie der Binomialkoeffizient, daher schreibt
+man auch für nicht ganzzahlige $\alpha$
+\[
+\binom{\alpha}{n}
+=
+\frac{\alpha(\alpha-1)(\alpha-2)\dots(\alpha-n+1)}{n!}.
+\]
+Mit dieser Schreibweise bekommen wir die Taylorreihe
+\[
+(1+t)^\alpha=\sum_{k=1}^\infty \binom{\alpha}{k} t^k
+\]
+für die Funktion $(1+t)^\alpha$.
+Diese Reihe ist konvergent für $|t|<1$.
+
+Wir interessieren uns speziell f"ur den Fälle $\alpha=\pm\frac12$.
+Wir betrachten erst den Fall $\alpha=-\frac12$.
+Der Term zur Potenz $n$ ist
+\[
+\frac{
+\bigl(-\frac12\bigr)
+\bigl(-\frac32\bigr)
+\bigl(-\frac52\bigr)
+\cdots
+\bigl(-\frac{2n+1}2\bigr)}{n!} t^n
+=
+(-1)^n \frac{1\cdot 3\cdot 5 \cdots (2n + 1)}{2^n\cdot 1\cdot 2\cdot 3\cdots n}
+=
+(-1)^n \frac{1\cdot 3\cdot 5 \cdots (2n+1)}{2\cdot 4\cdot 6\cdots (2n)}
+\]
+Die zugehörige Potenzreihe ist daher
+\[
+\frac1{\sqrt{1+t}}
+=
+1-\frac12t+\frac3{8}t^2-\frac{15}{48}t^3+\frac{105}{354}t^4-\dots
+\]
+F"ur 
+\[
+\frac1{\sqrt{1+t}}
+=
+1-\frac12 t
++ \frac12\frac32\frac12 t^2
+- \frac 12\frac32\frac 52\frac1{3!} t^3
++ \frac 12\frac32\frac 52\frac72\frac1{4!} t^4
+- \frac 12\frac32\frac 52\frac72\frac92\frac1{5!} t^4
++\dots
+\]
 
 
