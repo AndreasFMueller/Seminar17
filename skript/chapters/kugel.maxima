@@ -4,14 +4,14 @@
  */
 
 /*
- * Metrik, Inverse der Metrik und Koordinaten
+ * Metrik, Inverse der Metrik (zum Hochziehen von Indizes) und Koordinaten
  */
 g: matrix( [1, 0], [0, sin(theta)^2] );
 ginverse: invert(g);
 x: [theta,phi];
 
 /*
- * Chrstoffel-Symbole erster Art
+ * Christoffel-Symbole erster Art
  *
  * \Gamma_{\alpha,\mu\nu}
  */
