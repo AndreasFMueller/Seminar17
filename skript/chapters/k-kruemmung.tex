@@ -931,6 +931,8 @@ R^1\mathstrut_{212}
 \Gamma_{\nu2}^1
 \\
 &=
+\frac{\partial}{\partial\vartheta}\biggl(-\frac12\sin2\vartheta\biggr)
++
 \Gamma_{22}^1
 \Gamma_{11}^1
 +
@@ -944,6 +946,9 @@ R^1\mathstrut_{212}
 \Gamma_{22}^1
 \\
 &=
+\sin^2\vartheta - \cos^2\vartheta
+\frac{\partial}{\partial\vartheta}\biggl(-\frac12\sin2\vartheta\biggr)
++
 \Gamma_{22}^1
 \underbrace{\Gamma_{11}^1}_{=0}
 +
@@ -952,18 +957,63 @@ R^1\mathstrut_{212}
 -
 \underbrace{\Gamma_{21}^1}_{=0}
 \underbrace{\Gamma_{12}^1}_{=0}
+\mathstrut
 -
 \Gamma_{21}^2
 \Gamma_{22}^1
 \\
-&=\frac12 \cot \vartheta \sin2\vartheta
-=\sin\vartheta\cos\vartheta\frac{\cos\vartheta}{\sin\vartheta}
-=\cos^2\vartheta
+&=
+\sin^2\vartheta - \cos^2\vartheta
++
+\frac12 \cot \vartheta \sin2\vartheta
+=
+\sin^2\vartheta - \cos^2\vartheta
++
+\sin\vartheta\cos\vartheta\frac{\cos\vartheta}{\sin\vartheta}
+\\
+&=
+\sin^2\vartheta - \cos^2\vartheta
++
+\cos^2\vartheta
+=
+\sin^2\vartheta
 \end{align*}
-
-
+Bis auf den Faktor $\sin^2\vartheta$, der vom Flächenelement herrührt,
+ist die Krümmung konstant.
 \end{beispiel}
 
+Zusätzlich zum eben berechneten Riemann-Tensor wird auf auch ein
+modifizierter Tensor gebildet, bei dem alle Indizes unten sind,
+also
+\[
+R_{\alpha\beta\gamma\delta} = g_{\alpha\nu}R^\nu\mathstrut_{\beta\gamma\delta}.
+\]
+
+\begin{beispiel}
+In Kugelkoordinaten bekommt man für die nicht verschwindenden Komponenten
+des Riemann-Tensors nach längerer Rechnung
+\[
+R_{1212}
+=
+-R_{2112}
+=
+-R_{1221}
+=
+R_{2121}
+=
+\sin^2\vartheta.
+\qedhere
+\]
+\end{beispiel}
+
+\subsubsection{Berechnung des Riemann-Tensors}
+Die Berechnung schon der Christoffelsymbole und erst recht des
+Riemann-Tensors ist ausgesprochen mühseelig, es empfiehlt sich
+daher, für diese Berechnungen ein Computer-Algebra-System (CAS) einzusetzen.
+Der nachstehende Code kann mit dem CAS Maxima verwendet werden, um
+Christoffelsymbole und Krümmugstensor für die Kugel zu berechnen.
+
+\lstinputlisting[style=Maxima]{chapters/kugel.maxima}
 
 \subsection{Ricci-Krümmung}
 
