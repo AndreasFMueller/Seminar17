@@ -141,6 +141,7 @@ von der Kurve $c$ berandet ist, dann gilt
    -\frac{\partial f}{\partial y}\biggr)\,dx\,dy
 \]
 \end{satz}
+\index{Green!Satz von}
 
 \begin{proof}[Beweis]
 Wir gehen davon aus, dass wir das Gebiet $D$ durch die Kurven $x_1(y)$
@@ -210,14 +211,759 @@ also die Aussage des Satzes von Green.
 \end{proof}
 
 \subsubsection{Der Satz von Stokes}
-Der Satz von Stokes stellt einen Zusammenhang her zwischen dem Verhalten
-eines Vektorfeldes entlang einer geschlossenen Kurve und den Ableitungen
-des Vektorfeldes im inneren der Kurve.
+Der Satz von Stokes verallgemeinert das zweidimensionale Resultat des
+Satzes von Green auf beliebige Dimensionen.
+Die Form, die wir hier formulieren, ist noch nicht die allgemeinst
+mögliche.
+Der allgemeine Satz von Stokes stellt einen Zusammenhang her zwischen
+einem Integral über die ``Ableitung'' in einem Gebiet und einem
+Integral über den Rand.
+Die integrierten Objekte sind allerdings etwas komplizierter als was
+wir bisher angetroffen haben.
+Die Theorie der Differentialformen verallgemeinert die Theorie der
+Vektorfelder auf beliebige Dimensionen.
+Insbesondere definiert sie sinnvolle Begriffe für die Ableitung eines
+Vektorfeldes, mit denen sich der Satz von Stokes überhaupt erst formulieren
+lässt.
+
+Wir beschränken uns auf den Fall eines in einen mehrdimensionalen Raum
+eingebetteten Flächen\-stückes.
+Die Parametrisierung dieses Flächenstückes gibt uns eine Möglichkeit,
+Integration über das Flächen\-stück wie auch über den Rand zu definieren.
+Es entsteht so eine Situation ähnlich dem Satz von Green, wir erwarten
+daher, dass es wieder ein Formel gibt, welche ein Randintegral mit einem
+Flächenintegral in Beziehung setzt.
+
+In drei Dimensionen tritt eine spezielle Situation ein, die sich zum
+Beispiel auch in der Existenz des Vektorproduktes äussert.
+Die Berechnung von Flächeninhalten in drei Dimensionen ist mit Vektoren
+möglich, ein Parallelogramm im dreidimensionalen Raum kann mit dem
+Vektorprodukt aus den beiden Kantenvektoren beschrieben werden.
+Dies hängt damit zusammen, dass es zu jeder Achsenrichtung eine dazu
+senkrechte Ebene gibt.
+In höheren Dimensionen funtioniert das nicht mehr.
+In einem vierdimensionalen Raum gibt es $\binom{4}{2}=6$ verschiedene
+Koordinaten-Ebenen, aber nur vier Achsenrichtungen.
+Wir erwarten in drei Dimensionen also eine spezielle Form des
+Satzes von Stokes.
+
+Als erstes müssen wir jetzt also eine Beschreibung eines Flächenstückes
+und seines Randes haben.
+Wir brauchen dazu Gebiet $D\subset\mathbb R^2$, die Koordinaten darin
+schreiben wir $u$ und $v$.
+Ein Flächenstück im Raum ist dann gegeben durch eine Abbildung
+\[
+x^\mu\colon D\to \mathbb R^n\colon (u,v)\mapsto x^\mu(u,v).
+\]
+Der Rand $C=\partial D$ des Gebietes $D$ ist eine geschlossene Kurve
+in $\mathbb R^2$, also eine Abbildung $t\mapsto (u(t),v(t))$.
+Zusammen mit der Abbildung $x^\mu$ bekommen wir so auch die Parametrisierung
+\[
+t\mapsto x^\mu(u(t),v(t)) = x^\mu(t)
+\]
+der Randkurve des Flächenstückes in $\mathbb R^n$.
 
 Sei also $A_i$ ein Vektorfeld und $x^i(t)$ eine Kurve.
-Dann kann man das Kurvenintegral entlang der 
+Dann kann man das Kurvenintegral entlang der Kurve auf die gleiche Art
+wie in zwei Dimensionen definieren
+\[
+\oint A_\mu dx^\mu = \int A_\mu(x(t)) \dot x^\mu(t)\,dt.
+\]
+Die Ableitung von $x^\mu(t)$ kann mit der Kettenregel berechnet
+werden, man erhält.
+\[
+\dot x^\mu(t)
+=
+\frac{d}{dt} x^\mu(u(t), v(t))
+=
+\frac{\partial x^\mu}{\partial u} \frac{du}{dt}
++
+\frac{\partial x^\mu}{\partial v} \frac{dv}{dt}.
+\]
+Damit bekommt das Wegintegral die Form
+\begin{align}
+\oint_c A_\mu dx^\mu
+&=
+\int
+A_\mu(x(t))
+\frac{\partial x^\mu}{\partial u}\dot u
++
+A_\mu(x(t))
+\frac{\partial x^\mu}{\partial u}\dot v
+\,dt
+=
+\int
+\biggl(
+\underbrace{A_\mu \frac{\partial x^\mu}{\partial u}}_{\displaystyle=f}\,du
++
+\underbrace{A_\mu \frac{\partial x^\mu}{\partial v}}_{\displaystyle=g}\,dv
+\biggr)
+\notag
+\\
+\intertext{%
+deren rechte Seite genau die Form des Satzes von Green hat.
+Wir wenden den Satz von Green darauf an und erhalten}
+&=
+\int
+\frac{\partial}{\partial u}
+\underbrace{A_\mu\frac{\partial x^\mu}{\partial v}}_{\displaystyle=g}
+-
+\frac{\partial}{\partial v}
+\underbrace{A_\mu\frac{\partial x^\mu}{\partial u}}_{\displaystyle=f}
+\,du\,dv
+\notag
+\\
+&=
+\int
+\frac{\partial A_\mu}{\partial u}\frac{\partial x^\mu}{\partial v}
++A_\mu\frac{\partial^2 x^\mu}{\partial u\,\partial v}
+-
+\frac{\partial A_\mu}{\partial v}\frac{\partial x^\mu}{\partial u}
+-A_\mu\frac{\partial^2 x^\mu}{\partial v\,\partial u}
+\,du\,dv
+\notag
+\\
+\intertext{Die zweiten Ableitungen stimmen überein, diese Terme heben
+sich also weg und es bleibt}
+&=
+\int
+\frac{\partial A_\mu}{\partial u}\frac{\partial x^\mu}{\partial v}
+-
+\frac{\partial A_\mu}{\partial v}\frac{\partial x^\mu}{\partial u}
+\,du\,dv
+\notag
+\\
+\intertext{Die Ableitungen von $A_\mu$ müssen wir jetzt noch durch
+Ableitungen nach den Koordinaten ausdrücken.
+Wieder unter Verwendung der Kettenregel erhalten wir}
+&=
+\int
+\frac{\partial A_\mu}{\partial x^\nu}\frac{\partial x^\nu}{\partial u}\frac{\partial x^\mu}{\partial v}
+-
+\frac{\partial A_\mu}{\partial x^\nu}\frac{\partial x^\nu}{\partial v}\frac{\partial x^\mu}{\partial u}
+\,du\,dv
+=
+\int
+\frac{\partial A_\mu}{\partial x^\nu}
+\biggl(\frac{\partial x^\nu}{\partial u}\frac{\partial x^\mu}{\partial v}
+-
+\frac{\partial x^\nu}{\partial v}\frac{\partial x^\mu}{\partial u}
+\biggr)
+\,du\,dv.
+\label{skript:kruemmung:stokes1}
+\end{align}
+Auf der rechten Seite kommen die beiden Indizes noch in unsymmetrischer
+Form vor.
+Wir schreiben die rechte Seite von \eqref{skript:kruemmung:stokes1}
+abkürzend als $I(\mu,\nu)$.
+Wenn man die Indizes $\mu$ und $\nu$ vertauscht ändert sich der Wert nicht,
+denn die Indizes sind ja nur Namen für die Laufindizes der Summe, die
+die Summationskonvention verlangt.
+Man kann die rechte Seite also durch
+$\frac12\bigl(I(\mu,\nu)+I(\nu,\mu)\bigr)$
+ersetzen.
 
-\subsubsection{Der Krümmiunmgstensor}
+Wir berechnen daher zunächst $I(\nu,\mu)$ und erhalten
+\begin{align*}
+I(\nu,\mu)
+&=
+\int
+\frac{\partial A_\nu}{\partial x^\mu}
+\biggl(\frac{\partial x^\mu}{\partial u}\frac{\partial x^\nu}{\partial v}
+-
+\frac{\partial x^\mu}{\partial v}\frac{\partial x^\nu}{\partial u}
+\biggr)
+\,du\,dv
+\\
+&=
+-
+\int
+\frac{\partial A_\nu}{\partial x^\nu}
+\biggl(\frac{\partial x^\nu}{\partial u}\frac{\partial x^\mu}{\partial v}
+-
+\frac{\partial x^\mu}{\partial v}\frac{\partial x^\mu}{\partial u}
+\biggr)
+\,du\,dv.
+\end{align*}
+Damit können wir die rechte Seite jetzt endgültig schreiben als
+\begin{align*}
+I(\mu,\nu)
+&=
+\frac12\biggl( I(\mu,\nu)+I(\nu,\mu)\biggr)
+=
+\frac12
+\int
+\biggl(
+\frac{\partial A_\mu}{\partial x^\nu}
+-
+\frac{\partial A_\nu}{\partial x^\mu}
+\biggr)
+\biggl(
+\frac{\partial x^\nu}{\partial u}\frac{\partial x^\mu}{\partial v}
+-
+\frac{\partial x^\nu}{\partial v}\frac{\partial x^\mu}{\partial u}
+\biggr)
+\,du\,dv
+\\
+&=
+\int
+\biggl(
+\frac{\partial A_\mu}{\partial x^\nu}
+-
+\frac{\partial A_\nu}{\partial x^\mu}
+\biggr)
+\frac12
+\biggl(
+\frac{\partial x^\nu}{\partial u}\frac{\partial x^\mu}{\partial v}
+-
+\frac{\partial x^\nu}{\partial v}\frac{\partial x^\mu}{\partial u}
+\biggr)
+\,du\,dv.
+\end{align*}
+Der zweite Faktor im Integranden enthält das Vektorfeld $A_\mu$ nicht,
+sagt also nur etwas aus über die Geometrie eines kleinen Parallelograms,
+welches entsteht, wenn man ein kleines Rechteck von $u$- und $v$-Koordinaten
+abbildet.
+Es ist daher gerechtfertigt, diesen Term zusammen mit den formalen
+Faktoren $du\,dv$ als das {\em Flächenelement} zu bezeichnen.
+\begin{definition}
+Ist $x^\mu\colon D\to\mathbb R^n:(u,v)\mapsto x^\mu(u,v)$ die Parametrisierung
+eines Flächenstücks in $\mathbb R^n$, dann heisst 
+\[
+df^{\nu\mu}
+=
+\frac12
+\biggl(
+\frac{\partial x^\nu}{\partial u}\frac{\partial x^\mu}{\partial v}
+-
+\frac{\partial x^\nu}{\partial v}\frac{\partial x^\mu}{\partial u}
+\biggr)
+\,du\,dv
+\]
+das $\nu\mu$-Flächenelement.
+\end{definition}
+
+\begin{satz}[Stokes]
+Sei $A_\mu$ ein Vektorfeld und $x^\mu(t)$ eine geschlossene Kurve $c$,
+die ein zweidimensionales Flächenstück $S$ berandet, also $\partial S=c$.
+Dann gilt
+\[
+\oint_c A_\mu\,dx^\mu
+=
+\int_S \biggl(
+\frac{\partial A_\mu}{\partial x^\nu}-\frac{\partial A_\nu}{\partial x^\mu}
+\biggr) \,df^{\nu\mu}.
+\]
+Man beachte, dass wegen der Einsteinschen Summenkonvention über all
+Indexpaare $\mu\nu$ summiert werden muss.
+\end{satz}
+
+Natürlich ist der ursprüngliche Satz von Green als Spezialfall in dieser
+Formel enthalten.
+Setzt man nämlich $x^1=u$ und $x^2=v$, dann wird der Satz von Stokes zu
+der Aussage
+\begin{align*}
+\oint c A_1\,du + A_2\,dv
+&=
+\int
+\biggl(
+\frac{\partial A_2}{\partial u}-\frac{\partial A_1}{\partial v}
+\biggr)
+\biggl(
+\underbrace{\frac{\partial x^1}{\partial u}}_{=1}
+\underbrace{\frac{\partial x^2}{\partial v}}_{=1}
+-
+\underbrace{\frac{\partial x^2}{\partial u}}_{=0}
+\underbrace{\frac{\partial x^1}{\partial v}}_{=0}
+\biggr)
+\,du\,dv
+\\
+&=
+\int
+\frac{\partial A_2}{\partial u}-\frac{\partial A_1}{\partial v}
+\,du\,dv,
+\end{align*}
+genau wie im Satz von Green.
+
+In drei Dimensionen lässt sich der Satz von Stokes noch etwas konkreter
+formulieren.
+Die partiellen Ableitungen von $x^\mu$ nach $u$ und $v$ sind die 
+Tangentialvektoren an die $u$- und $v$-Koordinatenlinien auf dem 
+Flächenstück.
+Die Terme
+\[
+\frac{\partial x^\nu}{\partial u} \frac{\partial x^\mu}{\partial v}
+-
+\frac{\partial x^\mu}{\partial u} \frac{\partial x^\nu}{\partial v}
+\]
+sind die Komponenten des Vektorproduktes dieser Tagentialvektoren:
+\[
+\def\arraystretch{2.0}
+\begin{pmatrix}
+\displaystyle \frac{\partial x^1}{\partial u}\\
+\displaystyle \frac{\partial x^2}{\partial u}\\
+\displaystyle \frac{\partial x^3}{\partial u}
+\end{pmatrix}
+\times
+\begin{pmatrix}
+\displaystyle \frac{\partial x^1}{\partial v}\\
+\displaystyle \frac{\partial x^2}{\partial v}\\
+\displaystyle \frac{\partial x^3}{\partial v}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\displaystyle
+\frac{\partial x^2}{\partial u}\frac{\partial x^3}{\partial v}
+-
+\frac{\partial x^3}{\partial u}\frac{\partial x^2}{\partial v}
+\\
+\displaystyle
+\frac{\partial x^3}{\partial u}\frac{\partial x^1}{\partial v}
+-
+\frac{\partial x^1}{\partial u}\frac{\partial x^3}{\partial v}
+\\
+\displaystyle
+\frac{\partial x^1}{\partial u}\frac{\partial x^2}{\partial v}
+-
+\frac{\partial x^2}{\partial u}\frac{\partial x^1}{\partial v}
+\end{pmatrix}.
+\]
+Dies ist ein Vektor, der senkrecht steht auf dem Parallelogramm,
+aufgespannt von den beiden Tangentialvektoren, und seine Länge ist
+der Flächeninhalt des Parallelogramms.
+Die Summe (man beachte die Einsteinsche Summenkonvention) umfasst
+drei wesentlich verschiedene Terme, nämlich für die Indexpaare
+$12$, $13$ und $23$.
+Jeder solche Term kommt aber zwei mal in verschiedenen Reihenfolgen
+vor.
+Da die Vertauschung der Indizes in beiden Faktoren das Vorzeichen 
+kehrt, kann man auch einfach nur jeweils einen Summanden doppelt
+zählen, wodurch der Faktor $\frac12$ wegfällt.
+In drei Dimensionen kann man also die drei Flächenelement als Vektor
+schreben $d\vec f$.
+
+Aus den Termen
+\[
+\frac{\partial A_\mu}{\partial x^\nu}
+-
+\frac{\partial A_\nu}{\partial x^\mu}
+\]
+für Indextripel mit verschiedenen Indizes kann man einen Vektor
+formen, der ebenfalls formal ebenfalls als ein Vektorprodukt
+geschrieben werden kann:
+\[
+{
+\def\arraystretch{1.9}
+\begin{pmatrix}
+\displaystyle \frac{\partial}{\partial x^1}\\
+\displaystyle \frac{\partial}{\partial x^2}\\
+\displaystyle \frac{\partial}{\partial x^3}
+\end{pmatrix}
+}
+\times
+\begin{pmatrix}
+A_1\\A_2\\A_3
+\end{pmatrix}
+=
+{
+\def\arraystretch{1.9}
+\begin{pmatrix}
+\displaystyle
+\frac{\partial A_3}{\partial x^2}-\frac{\partial A_2}{\partial x^3}\\
+\displaystyle
+\frac{\partial A_1}{\partial x^3}-\frac{\partial A_3}{\partial x^1}\\
+\displaystyle
+\frac{\partial A_2}{\partial x^1}-\frac{\partial A_1}{\partial x^2}
+\end{pmatrix}
+}
+=
+\operatorname{rot}\vec A.
+\]
+Dieser Vektor heisst auch die {\em Rotation} des Vektorfeldes $\vec A$.
+\index{Rotation eines Vektorfeldes}.
+
+Mit diesen Notationen kann man die Summe im Integral auch als Skalaprodukt
+schreiben:
+\[
+{
+\def\arraystretch{2.0}
+\begin{pmatrix}
+\displaystyle
+\frac{\partial A_3}{\partial x^2}-\frac{\partial A_2}{\partial x^3}\\
+\displaystyle
+\frac{\partial A_1}{\partial x^3}-\frac{\partial A_3}{\partial x^1}\\
+\displaystyle
+\frac{\partial A_2}{\partial x^1}-\frac{\partial A_1}{\partial x^2}
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+\displaystyle
+\frac{\partial x^2}{\partial u}\frac{\partial x^3}{\partial v}
+-
+\frac{\partial x^3}{\partial u}\frac{\partial x^2}{\partial v}
+\\
+\displaystyle
+\frac{\partial x^3}{\partial u}\frac{\partial x^1}{\partial v}
+-
+\frac{\partial x^1}{\partial u}\frac{\partial x^3}{\partial v}
+\\
+\displaystyle
+\frac{\partial x^1}{\partial u}\frac{\partial x^2}{\partial v}
+-
+\frac{\partial x^2}{\partial u}\frac{\partial x^1}{\partial v}
+\end{pmatrix}
+\,du\,dv
+}
+=
+\operatorname{rot}\vec A\cdot
+\begin{pmatrix}
+df^{23}\\
+df^{31}\\
+df^{12}
+\end{pmatrix}
+=
+\operatorname{rot}\vec A
+\cdot
+d\vec f.
+\]
+Im Wegintegral des Satzes von Stokes kann man den Term 
+$A_\mu\,dx^\mu=A_\mu \dot x^\mu\,dt$ ebenfalls als ein
+Skalaprodukt schreiben, nämlich
+\[
+A_\mu \dot x^\mu\,dt = \vec A\cdot \dot{\vec x}\,dt.
+\]
+Mit diesen Schreibweisen kann man jetzt den Satz von Stokes in
+drei Dimensionen sehr elegant formulieren.
+
+\begin{satz}[Stokes]
+Ist $S$ ein durch die Kurve $C=\partial S$ berandetes Flächenstück
+im dreidimensionalen Raum, und ist $\vec A$ ein Vektorfeld, dann gilt
+\[
+\oint_C \vec A\cdot d\vec{x} = \int_S\operatorname{rot}\vec A\cdot \,d\vec f.
+\]
+\end{satz}
+
+\subsubsection{Der Krümmunmgstensor}
+Krümmung äussert sich dadurch, dass beim Paralleltransport eines Vektors
+entlang eines geschlossenen Weges die Richtung des Vektors ändert.
+Der Satz von Stokes besagt, dass Information, die entlang eines
+Weges kumulieren können, wie eben die Drehung eines Vektors, auch durch
+Integration über die gesamte Fläche gefunden werden kann.
+Wir suchen daher eine Grösse, die das Ausmass der krümmungsbedingten
+Drehung in einem beliebigen kleinen Parallelogram beschreibt.
+
+Um eine klarere Vorstellung davon zu bekommen, was wir überhaupt erwarten
+können beginnen mit der Diskussion im Falle $n=2$, also einer gekrümmten
+Fläche.
+Wir möchten also wissen, wie in Vektor sich verändert, wenn wir ihn
+entlang einer geschlossene Kurve verschieben.
+Der Einfachheit halber verwenden wir als geschlossen Kurve
+ein Koordinaten-Rechteck, wobei wir die Koordinaten immer so wählen
+können, dass dieses in der Form
+\[
+D=\{ (x^1,x^2)\,|\,
+0\le x^1 \le \Delta x^1, 
+0\le x^2 \le \Delta x^2 \}
+\]
+beschrieben werden kann.
+
+Da $n=2$ ist, ist der paralleltransportierte Vektor immer ein
+Tangentialvektor.
+Da der Paralleltransport die Skalarprodukte erhält wird jeder beliebige
+Tangentialvektor bei der Rückkehr zum Ausgangspunkt um den gleichen
+Winkel gedreht worden sein, und seine Länge wird nicht ändern.
+Ausgehend von einem rechtwinkligen Koordinatensystem im Ausgangspunkt
+suchen wir also eine Drehmatrix, die die Drehung um einen festen Winkel
+beschreibt, eine solche Matrix ist
+\[
+D_{\alpha}
+=
+\begin{pmatrix}
+\cos\alpha&-\sin\alpha\\
+\sin\alpha& \cos\alpha
+\end{pmatrix}.
+\]
+Wir suchen eine Grösse, die den Drehwinkel $\alpha$ auf die
+Fläche $F$ bezieht, zum Beispiel $\alpha=kF$.
+Uns interessiert also eigentlich die Grösse
+\[
+\frac{1}{F}(D_{\alpha}-E)
+=
+\frac{k}{\alpha}(D_{\alpha}-E).
+\]
+Wir streben aber an, das Parallelogram beleibig klein werden zu lassen.
+In diesem Grenzwert wird auch der Winkel $\alpha$ gegen $0$ gehen.
+Wir interessieren uns also eigentlich für
+\begin{equation}
+\lim_{F\to 0}\frac{1}{F}(D_{\alpha}-E)
+=
+k \lim_{\alpha\to 0}
+\frac{D_\alpha - E}{\alpha}
+=
+k \frac{dD_\alpha}{d\alpha}
+=
+k
+\begin{pmatrix}
+0&-1\\
+1&0
+\end{pmatrix}.
+\label{skript:kruemmung:matrix}
+\end{equation}
+Wir suchen also ein Zahl $k$, die als Proportionalitätsfaktor den Zusammenhang
+zwischen dem Flächenelement und der Matrix~\eqref{skript:kruemmung:matrix}
+herstellt.
+In unserer Notation wäre so eine Matrix als $R^\mu\mathstrut_\nu$ zu
+schreiben, wobei
+\[
+k
+\begin{pmatrix}
+0&-1\\
+1&0
+\end{pmatrix}
+=
+\begin{pmatrix}
+R^1\mathstrut_1&R^1\mathstrut_2\\
+R^2\mathstrut_1&R^2\mathstrut_2
+\end{pmatrix}
+\]
+zu setzen ist.
+
+Darin fehlt jetzt aber noch die explizite Abhängigkeit von den Kanten
+des Parallelograms, also von $\Delta x^1$ und $\Delta x^2$.
+Wir möchten aber auch sicherstellen, dass wir ein beliebiges Parallelogramm
+mit Kantenvektoren
+\[
+\begin{pmatrix}u^1\\u^2\end{pmatrix}
+\qquad\text{und}\qquad
+\begin{pmatrix}v^1\\v^2\end{pmatrix}
+\]
+verwenden können.
+Dazu brauchen wir in $R^\mu\mathstrut_\nu$ zwei zusätzliche Indizes
+derart, dass die Summationskonvention gerade dazu führt, dass
+\[
+R^\mu\mathstrut_{\nu\alpha\beta}u^\alpha v^\beta
+\]
+die gesuchte Matrix ergibt (die beiden Indizes $\mu$ und $\nu$ sind frei).
+Der Vektor $A_\mu$ würde dann entlang des Parallelogramms um den
+Vektor
+\[
+R^\mu\mathstrut_{\nu\alpha\beta} A_\mu u^\alpha v^\beta
+\]
+verändert.
+
+Der Tensor $R^\mu\mathstrut_{\nu\alpha\beta}$ hat $2^4=16$ Komponenten,
+aber wir wissen bereits, dass bei festem $\alpha$ und $\beta$
+immer eine antisymmetrische Matrix herauskommen muss.
+Und wir wissen auch, das die Summation über $\alpha$ und $\beta$
+die Matrix \eqref{skript:kruemmung:matrix} mit dem Flächeninhalt
+multiplizeren muss.
+Das geht nur, wenn
+\begin{align*}
+R^\mu\mathstrut_{\nu11}
+&=
+R^\mu\mathstrut_{\nu22}=0
+\\
+R^\mu\mathstrut_{\nu12}
+&=
+-R^\mu\mathstrut_{\nu21}
+=
+\begin{pmatrix}0&-k\\k&0\end{pmatrix}
+\end{align*}
+gewält wird.
+
+Im allgemeinen Fall suchen wir auch wieder eine Matrix, die
+die Drehung eines Vektors in Abhängigkeit vom Flächeninhalt der
+umlaufenen Fläche $F$ beschreibt.
+Da jetzt der Vektor $n$-dimensional ist, wird es eine $n\times n$-Matrix
+sein.
+Beim Paralleltransport werden Winkel und Längen erhalten, also muss es
+eine orthogonale $D(F)\in O(n)$ Matrix sein.
+Wie im 2-dimensionalen Fall interessiert uns aber wieder nur die Ableitung
+nach dem Flächeninhalt, also die Matrix
+\[
+\frac{d}{dF}D(F)\bigg|_{F=0}
+\]
+Eine solche Matrix ist aber nicht beliebig, den orthogonale Matrizen
+sind dadurch charakterisiert, dass $D(F)^tD(F)=E$ ist.
+Leitet man diese Beziehung nach $F$ ab und setzt $F=0$, bekommt man
+\[
+0
+=
+\frac{d}{dF}(D(F)^tD(F))\bigg|_{F=0}
+=
+D'(0)^t D(0) + D(0)^t D'(F).
+\]
+Wegen $D(0)=E$ folgt, dass die Ableitung $D'(0)$ die Gleichung
+\[
+D'(0)^t+D'(0)=0
+\qquad\Rightarrow\qquad
+D'(0)^t=-D'(0)
+\]
+erfüllt.
+Die gesuchte Matrix ist also antisymmetrisch.
+
+Wir suchen jetzt also ein Grösse $R^\mu\mathstrut_{\nu\alpha\beta}$
+die in den Indizes $\mu$ und $\nu$ sowie $\alpha$ und $\beta$
+antisymmetrisch ist, und die infinitesimale Drehung eines Vektors
+berechnet, der um ein beliebig kleines Parallelogram herum parallel
+transportiert wird.
+
+Wir betrachten einen Weg, der ein zweidimensionales Fächenstück berandet.
+Wir wissen bereits, wie wir den Paralleltransport eines Vektors entlang
+eines geschlossenen Pfades funktionert, die Änderung des Vektors ist
+\[
+\Delta A_\mu
+= 
+\oint \Gamma_{\mu\sigma}^\nu A_\nu\,dx^\sigma.
+\]
+Auf das Kurvenintegral können wir jetzt den Satz von Stokes anwenden
+und bekommen
+\begin{align*}
+\Delta A_\mu
+&=
+\int
+\frac{\partial}{\partial x^\varrho}
+(\Gamma_{\mu\sigma}^\nu A_\nu)
+-
+\frac{\partial}{\partial x^\sigma}
+(\Gamma_{\mu\varrho}^\nu A_\nu)
+\,df^{\varrho\sigma}
+\\
+&=\int
+\frac{\partial \Gamma_{\mu\sigma}^\nu}{\partial x^\varrho}A_\nu
+-
+\frac{\partial \Gamma_{\mu\varrho}^\nu}{\partial x^\sigma}A_\nu
++
+\Gamma_{\mu\sigma}^\nu
+\frac{\partial A_\nu}{\partial x^\varrho}
+-
+\Gamma_{\mu\varrho}^\nu
+\frac{\partial A_\nu}{\partial x^\sigma}
+\,df^{\varrho\sigma}
+\end{align*}
+Die Ableitungen von $A_\mu$ können berechnet werden, da wir ja aus
+den Formeln für den Paralleltransport wissen, dass
+\[
+\frac{\partial A_\mu}{\partial x^\nu}=\Gamma^{\sigma}_{\mu\nu}A_\sigma.
+\]
+Setzen wir dies in den Ausdruck für $\Delta A_\mu$ ein, erhalten
+wir
+\begin{equation}
+\Delta A_\mu
+=\int
+\frac{\partial \Gamma_{\mu\sigma}^\nu}{\partial x^\varrho}A_\nu
+-
+\frac{\partial \Gamma_{\mu\varrho}^\nu}{\partial x^\sigma}A_\nu
++
+\Gamma_{\mu\sigma}^\nu
+\Gamma_{\nu\varrho}^\alpha
+A_\alpha
+-
+\Gamma_{\mu\varrho}^\nu
+\Gamma_{\nu\sigma}^\alpha
+A_\alpha
+\,df^{\varrho\sigma}
+\end{equation}
+Wir interessieren uns nun aber nur für die infinitesimale Änderung
+im Bezug auf ein Flächenelement $\Delta f^{\nu\sigma}$, so dass wir
+das Integral weglassen können.
+Ausserdem wollen wir den Faktor $A$ ausklammern, dazu müssen wir aber
+sicherstellen, dass überall der gleiche Index vorkommt.
+Wir können dies erreichen, indem wir im zweitletzen Term die
+Summationsindizes $\alpha$ und $\sigma$ vertauschen.
+So bekommen wir
+\[
+\Delta A_\mu
+=
+\biggl(
+\frac{\partial \Gamma_{\mu\sigma}^\alpha}{\partial x^\varrho}
+-
+\frac{\partial \Gamma_{\mu\varrho}^\alpha}{\partial x^\sigma}
++
+\Gamma_{\mu\sigma}^\nu
+\Gamma_{\nu\varrho}^\alpha
+-
+\Gamma_{\mu\varrho}^\nu
+\Gamma_{\nu\sigma}^\alpha
+\biggr)
+A_\alpha
+\Delta f^{\varrho\sigma}
+\]
+Das gesuchte Mass für die Krümmung ist also der Ausdruck
+\begin{equation}
+R^\alpha\mathstrut_{\mu\varrho\sigma}
+=
+\frac{\partial \Gamma_{\mu\sigma}^\alpha}{\partial x^\varrho}
+-
+\frac{\partial \Gamma_{\mu\varrho}^\alpha}{\partial x^\sigma}
++
+\Gamma_{\mu\sigma}^\nu
+\Gamma_{\nu\varrho}^\alpha
+-
+\Gamma_{\mu\varrho}^\nu
+\Gamma_{\nu\sigma}^\alpha,
+\label{skript:kruemmung:riemannmixed}
+\end{equation}
+Er heisst der {\em Riemannsche Krümmungstensor}.
+\index{Krümmungstensor, Riemannscher}
+\index{Riemannscher Krümmungstensor}
+
+\begin{beispiel}
+Krümmungstensor der Kugeloberfläche.
+Die Christoffel-Symbole zweiter Art sind bereits
+in~\eqref{skript:kruemmung:christoffelkugel}
+berechnet worden.
+Da auf Grund der Symmetrieeigenschaften des Riemann-Tensors nur eine
+einzige unabhängige Komponenten vorhanden ist, reicht es den
+Term $R^1\mathstrut_{212}$ zu berechnen.
+Die Definition des Riemann-Tensors liefert
+\begin{align*}
+R^1\mathstrut_{212}
+&=
+\frac{\partial \Gamma_{22}^1}{\partial x^1}
+-
+\frac{\partial \Gamma_{21}^1}{\partial x^2}
++
+\Gamma_{22}^\nu
+\Gamma_{\nu1}^1
+-
+\Gamma_{21}^\nu
+\Gamma_{\nu2}^1
+\\
+&=
+\Gamma_{22}^1
+\Gamma_{11}^1
++
+\Gamma_{22}^2
+\Gamma_{21}^1
+-
+\Gamma_{21}^1
+\Gamma_{12}^1
+-
+\Gamma_{21}^2
+\Gamma_{22}^1
+\\
+&=
+\Gamma_{22}^1
+\underbrace{\Gamma_{11}^1}_{=0}
++
+\underbrace{\Gamma_{22}^2}_{=0}
+\underbrace{\Gamma_{21}^1}_{=0}
+-
+\underbrace{\Gamma_{21}^1}_{=0}
+\underbrace{\Gamma_{12}^1}_{=0}
+-
+\Gamma_{21}^2
+\Gamma_{22}^1
+\\
+&=\frac12 \cot \vartheta \sin2\vartheta
+=\sin\vartheta\cos\vartheta\frac{\cos\vartheta}{\sin\vartheta}
+=\cos^2\vartheta
+\end{align*}
+
+
+\end{beispiel}
+
 
 \subsection{Ricci-Krümmung}
 
