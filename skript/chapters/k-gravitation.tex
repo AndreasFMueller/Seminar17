@@ -8,6 +8,8 @@
 Albert Einstein hat erkannt, dass die Wirkung der Gravitation 
 durch die Krümmung des Raumes beschrieben werden muss.
 
+\subsection{Physikalische Bedeutung der Krümmung}
+
 \subsection{Einstein-Tensor}
 
 \subsection{Feldgleichungen}
@@ -15,6 +17,59 @@ durch die Krümmung des Raumes beschrieben werden muss.
 \subsection{Schwarzschild-Metrik}
 Die Feldgleichungen schränken die Metriken ein, die in einem Raumzeit-Gebiet
 überhaupt möglich sind.
+Damit stellt sich automatisch die Frage, wie die Einsteinsche Theorie 
+das Gravitationsfeld in der Umgegung eines Sterns beschreiben kann.
+Schon wenige Monate nachdem Einstein seine allgemeine Relativitätstheorie
+veröffentlich hat, hat Karl Schwarzschild eine Lösung der Einsteinschen
+Feldgleichungen gefunden.
+Daraus lassen sich die Bewegungsgleichungen eines Körpers in der Nähe
+eines Sterns ableiten und es sollte möglich sein, den Unterschied zwischen
+der Newtonschen Gravitations-Theorie und Einsteinschen  zu quantifizieren
+und damit Tests der allgmeinen Relativitätstheorie zu ermöglichen.
+
+Karl Schwarzschild suchte eine Metrik, die sich mit der Zeit nicht ändert,
+also
+\[
+\frac{\partial g_{\mu\nu}}{\partial t}=0,
+\]
+und die ausserdem kugelsymmetrisch sein soll.
+Diese Metrik sollte eine erste Approximation für die Gravitation in
+der Umgebung eines Sterns sein.
+Natürlich berücksichtigt dieses Modell weder, dass sich Sterne mit
+der Zeit entwickeln, noch die Tatsache, dass sich Sterne normalerweise
+um eine Achse drehen, dass man also gar nicht eine rotationssymmetrische
+Lösung erwarten darf.
+
+Die Längenmessung
+\begin{equation}
+ds^2
+=
+-c^2\,dt^2 + dr^2 + r^2 d\Omega^2
+\qquad
+d\Omega^2 = d\vartheta^2 + \sin^2\vartheta\,d\varphi^2
+\label{skript:kruemmung:euklid}
+\end{equation}
+im Raum mit Kugelkoordinaten ist natürlich eine solche Metrik,
+doch da dies nur eine andere Parametrisierung des euklidischen
+Raumes ist, ist diese Geometrie flach.
+Sie kann also sich nicht ein Modell eines Sternes sein.
+
+Man kann eine Lösung der Feldgleichungen finden, indem man den
+einzelnen Termen der euklischen Metrik~\eqref{skript:kruemmung:euklid}
+zunächst unbestimmte Faktoren hinzufügt, die nur von $r$ abhängt,
+und dann mit Hilfe der Feldgleichungen dafür Differentialgleichungen
+herleitet.
+Wir wollen diesen beschwerlichen Weg nicht gehen, und uns mit dem
+Resultate zufriedenstellen, es lautet
+\begin{equation}
+ds^2
+=
+-\biggl(1-\frac{2M}r\biggr)c^2\,dt^2
++\frac1{\displaystyle 1-\frac{2M}r}\,dr^2 + r^2\,d\Omega^2.
+\end{equation}
+Man kann nachrechnen, zum Beispiel mit Hilfe der früher vorgestellen
+Maxima-Programme, dass der Einstein-Tensor für diese Metrik überall
+verschwindet.
 
 \subsection{Robertson-Walker-Metrik}
 
