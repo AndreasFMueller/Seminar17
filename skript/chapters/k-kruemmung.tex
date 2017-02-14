@@ -1012,9 +1012,12 @@ Die Berechnung schon der Christoffelsymbole und erst recht des
 Riemann-Tensors ist ausgesprochen mühseelig, es empfiehlt sich
 daher, für diese Berechnungen ein Computer-Algebra-System (CAS) einzusetzen.
 Der nachstehende Code kann mit dem CAS Maxima verwendet werden, um
-Christoffelsymbole und Krümmugstensor für die Kugel zu berechnen.
+Christoffelsymbole und Krümmugstensor zu berechnen.
+Bevor er importiert wird, muss der metrische Tensor als Matrix
+definiert sein und der Vektor {\tt x} muss die Namen der Koordinaten
+enthalten.
 
-\lstinputlisting[style=Maxima]{chapters/kugel.maxima}
+\lstinputlisting[style=Maxima]{chapters/curvature.maxima}
 
 Die weiter oben dargestellten Resultate kann man aus dem folgenden Output
 des Maxima-Programmes herauslesen:

@@ -1,0 +1,73 @@
+/*
+ * Berechnung der Christoffelsymbole und der Kruemmungstensoren von
+ * Riemann und Ricci
+ *
+ * (c) 2017 Prof Dr Andreas Mueller, Hochschule Rapperswil
+ */
+
+/*
+ * Metrik und verwendete Koordinaten müssen bereits definiert sein,
+ * zum Beispiel wie hier für die Kugel:
+ *
+ * g: matrix( [1, 0], [0, sin(theta)^2] );
+ * x: [theta,phi];
+ */
+
+/*
+ * Inverse der Metrik (zum Hochziehen von Indizes)
+ */
+ginverse: invert(g);
+
+/*
+ * Christoffel-Symbole erster Art
+ *
+ * \Gamma_{\alpha,\mu\nu}
+ */
+
+Christoffel1(alpha,mu,nu) := (1/2) * (
+    diff(g[nu,alpha], x[mu]) + diff(g[mu,alpha], x[nu])
+    - diff(g[mu,nu], x[alpha])
+);
+
+/*
+ * Christoffelsymbole zweiter Art
+ *
+ * Gamma_{mu,nu}^\sigma
+ */
+Christoffel2(sigma,mu,nu) :=
+    sum(ginverse[sigma,i] * Christoffel1(1,mu,nu), i, 1, length(g));
+
+/*
+ * Riemann-Tensor
+ */
+Riemann(alpha,mu,rho,sigma) :=
+    diff(Christoffel2(alpha,mu,sigma), x[rho])
+   -diff(Christoffel2(alpha,mu,rho), x[sigma])
+   +sum(Christoffel2(i,mu,sigma)*Christoffel2(alpha,i,rho), i, 1, length(g))
+   -sum(Christoffel2(i,mu,rho)*Christoffel2(alpha,i,sigma), i, 1, length(g));
+
+/*
+ * kovarianter Riemann-Tensor
+ */
+Riemann2(alpha,mu,rho,sigma) :=
+     sum(g[alpha,i] * Riemann(i,mu,rho,sigma), i, 1, length(g));
+
+/*
+ * Ricci Tensor
+ */
+Ricci(alpha, beta) := sum(Riemann(i, alpha, i, beta), i, 1, length(g));
+
+/*
+ * Krümmungsskalar
+ */
+RicciSkalar() :=
+    sum(
+        sum(ginverse[i, j] * Ricci(i, j), i, 1, length(g)),
+      j, 1, length(g));
+
+/*
+ * Einstein-Tensor
+ */
+Einstein(alpha,beta) :=
+     Ricci(alpha,beta) - 1/2 * RicciSkalar() * g[alpha, beta];
+
