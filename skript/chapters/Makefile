@@ -4,5 +4,5 @@
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
 
-kugel.out:	kugel.maxima
+kugel.out:	kugel.maxima curvature.maxima
 	maxima -b kugel.maxima | expand > kugel.out

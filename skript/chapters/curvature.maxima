@@ -6,8 +6,8 @@
  */
 
 /*
- * Metrik und verwendete Koordinaten müssen bereits definiert sein,
- * zum Beispiel wie hier für die Kugel:
+ * Metrik und verwendete Koordinaten muessen bereits definiert sein,
+ * zum Beispiel wie hier fuer die Kugel:
  *
  * g: matrix( [1, 0], [0, sin(theta)^2] );
  * x: [theta,phi];
@@ -35,10 +35,12 @@ Christoffel1(alpha,mu,nu) := (1/2) * (
  * Gamma_{mu,nu}^\sigma
  */
 Christoffel2(sigma,mu,nu) :=
-    sum(ginverse[sigma,i] * Christoffel1(1,mu,nu), i, 1, length(g));
+    sum(ginverse[sigma,i] * Christoffel1(i,mu,nu), i, 1, length(g));
 
 /*
  * Riemann-Tensor
+ *
+ * R^\alpha_\mu\rho\sigma
  */
 Riemann(alpha,mu,rho,sigma) :=
     diff(Christoffel2(alpha,mu,sigma), x[rho])
@@ -48,26 +50,32 @@ Riemann(alpha,mu,rho,sigma) :=
 
 /*
  * kovarianter Riemann-Tensor
+ *
+ * R_\alpha\mu\rho\sigma
  */
 Riemann2(alpha,mu,rho,sigma) :=
      sum(g[alpha,i] * Riemann(i,mu,rho,sigma), i, 1, length(g));
 
 /*
  * Ricci Tensor
+ *
+ * R_\alpha\beta
  */
 Ricci(alpha, beta) := sum(Riemann(i, alpha, i, beta), i, 1, length(g));
 
 /*
- * Krümmungsskalar
+ * Kruemmungsskalar R
  */
-RicciSkalar() :=
+RicciScalar() :=
     sum(
         sum(ginverse[i, j] * Ricci(i, j), i, 1, length(g)),
       j, 1, length(g));
 
 /*
  * Einstein-Tensor
+ *
+ * G_\alpha\beta = R_\alpha\beta - 1/2 g_\mu\nu R
  */
 Einstein(alpha,beta) :=
-     Ricci(alpha,beta) - 1/2 * RicciSkalar() * g[alpha, beta];
+     Ricci(alpha,beta) - 1/2 * RicciScalar() * g[alpha, beta];
 

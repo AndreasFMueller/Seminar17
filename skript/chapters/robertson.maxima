@@ -1,13 +1,18 @@
 /*
- * kugel.maxima -- Berechnung der Christoffelsymbole und es Riemann-Tensors
- *                 fuer die Kugel
+ * Berechnung der Christoffelsymbole und es Riemann-Tensors fuer
+ * die Robertson-Walker Metrik
  */
 
 /*
  * Metrik, Inverse der Metrik (zum Hochziehen von Indizes) und Koordinaten
  */
-g: matrix( [1, 0], [0, sin(theta)^2] );
-x: [theta, phi];
+g: matrix(
+    [-1,    0,          0,                         0 ],
+    [ 0, a(t),          0,                         0 ],
+    [ 0,    0, a(t) * r^2,                         0 ],
+    [ 0,    0,          0, a(t) * r^2 * sin(theta)^2 ]
+);
+x: [t, r, theta, phi];
 
 batchload("curvature.maxima");
 
@@ -50,32 +55,31 @@ Riemann(1,2,2,1);
 Riemann(2,1,1,2);
 Riemann(2,1,2,1);
 
+/**
+ * Ricci Tensor
+ */
+
+Ricci(1, 1);
+Ricci(1, 2);
+Ricci(1, 3);
+Ricci(1, 4);
+Ricci(2, 2);
+Ricci(2, 3);
+Ricci(2, 4);
+Ricci(3, 3);
+Ricci(3, 4);
+Ricci(4, 4);
+
+/*
+ * Krümmungsskalar
+ */
+RicciSkalar();
+
 /*
  * kovarianter Riemann-Tensor
  */
-
 Riemann2(1,2,1,2);
 Riemann2(1,2,2,1);
 Riemann2(2,1,1,2);
 Riemann2(2,1,2,1);
-
-/*
- * Ricci Tensor
- */
-Ricci(1,1);
-Ricci(1,2);
-Ricci(2,2);
-
-/*
- * Kruemmungs-Skalar
- */
-RicciScalar();
-
-/*
- * Einstein Tensor
- *
- */
-Einstein(1,1);
-Einstein(1,2);
-Einstein(2,2);
 

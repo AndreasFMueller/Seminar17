@@ -1,17 +1,10 @@
+/*
+ * polar.maxima -- Krümmung in Polarkoordinaten
+ */
 g: matrix( [1, 0], [0, r^2] );
-ginverse: invert(g);
 x: [r,phi];
 
-x[1];
-
-x[2];
-
-/*
- * \Gamma_{\alpha,\mu\nu}
- */
-
-Christoffel1(alpha,mu,nu) := (1/2) * (diff(g[nu,alpha], x[mu])
-	+ diff(g[mu,alpha], x[nu]) - diff(g[mu,nu], x[alpha]));
+batchload("curvature.maxima");
 
 Christoffel1(1,1,1);
 Christoffel1(1,1,2);
@@ -22,13 +15,6 @@ Christoffel1(2,1,2);
 Christoffel1(2,2,1);
 Christoffel1(2,2,2);
 
-/*
- * Gamma_{mu,nu}^\sigma
- */
-Christoffel2(sigma,mu,nu) :=
-	ginverse[sigma,1] * Christoffel1(1,mu,nu)
-	+ ginverse[sigma,2] * Christoffel1(2,mu,nu);
-
 Christoffel2(1,1,1);
 Christoffel2(1,1,2);
 Christoffel2(1,2,1);
@@ -38,22 +24,10 @@ Christoffel2(2,1,2);
 Christoffel2(2,2,1);
 Christoffel2(2,2,2);
 
-Riemann(alpha,mu,rho,sigma) :=
-diff(Christoffel2(alpha,mu,sigma), x[rho])
--diff(Christoffel2(alpha,mu,rho), x[sigma])
-+Christoffel2(1,mu,sigma)*Christoffel2(alpha,1, rho)
-+Christoffel2(2,mu,sigma)*Christoffel2(alpha,2, rho)
--Christoffel2(1,mu,rho)*Christoffel2(alpha,1, sigma)
--Christoffel2(2,mu,rho)*Christoffel2(alpha,2, sigma);
-
 Riemann(1,2,1,2);
 Riemann(1,2,2,1);
 Riemann(2,1,1,2);
 Riemann(2,1,2,1);
-
-Riemann2(alpha,mu,rho,sigma) :=
-	g[alpha,1] * Riemann(1,mu,rho,sigma)
-      + g[alpha,2] * Riemann(2,mu,rho,sigma);
 
 Riemann2(1,2,1,2);
 Riemann2(1,2,2,1);
