@@ -27,6 +27,7 @@ eines Sterns ableiten und es sollte möglich sein, den Unterschied zwischen
 der Newtonschen Gravitations-Theorie und Einsteinschen  zu quantifizieren
 und damit Tests der allgmeinen Relativitätstheorie zu ermöglichen.
 
+\subsubsection{Eine kugelsymmetrische, statische Lösung}
 Karl Schwarzschild suchte eine Metrik, die sich mit der Zeit nicht ändert,
 also
 \[
@@ -64,12 +65,258 @@ Resultate zufriedenstellen, es lautet
 \begin{equation}
 ds^2
 =
--\biggl(1-\frac{2M}r\biggr)c^2\,dt^2
-+\frac1{\displaystyle 1-\frac{2M}r}\,dr^2 + r^2\,d\Omega^2.
+-\biggl(1-\frac{r_g}r\biggr)c^2\,dt^2
++\frac1{\displaystyle 1-\frac{r_g}r}\,dr^2 + r^2\,d\Omega^2.
 \end{equation}
 Man kann nachrechnen, zum Beispiel mit Hilfe der früher vorgestellen
 Maxima-Programme, dass der Einstein-Tensor für diese Metrik überall
 verschwindet.
 
+\subsubsection{Der Fall $r=r_g$}
+Es scheint, dass die Metrik für $r=r_g$ nicht wohldefiniert ist,
+da dann der Nenner im zweiten Term nicht wohldefiniert ist.
+Dem ist jedoch nicht so, wie man durch Wahl eines anderen Koordinatensystems
+zeigen kann.
+Wir ersetzen die Zeitkoordinaten $t$ durch $\tau$, und die $r$-Koordinate
+durch $R$ mit der vorläufig noch unbestimmten Funktion $f(r)$.
+Es soll gelten
+\begin{align}
+c\tau
+&=
+ct + \int\frac{f(r)\,dr}{\displaystyle 1-\frac{r_g}{r}}
+&
+R
+&=
+\int\frac{dr}{\displaystyle \biggl(1-\frac{r_g}{r}\biggr)f(r)}
+\label{skript:kruemmung:finkelsteindefinition}
+\end{align}
+mit einer vorläufig noch unbestimmten Funktion $f(r)$.
+Die Integrationskonstante in den beiden unbestimmten Integralen
+entspricht einer Wahl des $t$- bzw.~$\tau$-Nullpunktes und ist
+daher nicht von Bedeutung.
+Um die Metrik in $\tau$ und $R$ ausdrücken zu können, müssen wir 
+den Zusammenhang zwischen $dr$, $dR$, $dt$ und $d\tau$ kennen.
+Wir finden diesen durch Ableiten der beiden Definitionsgleichungen
+\eqref{skript:kruemmung:finkelsteindefinition}:
+\begin{align*}
+c\,d\tau
+&=
+c\,dt + \frac{f(r)}{\displaystyle 1-\frac{r_g}{r}}\,dr
+\\
+dR
+&=
+c\,dt
++
+\frac{1}{\displaystyle\biggl(1-\frac{r_g}{r}\biggr)f(r)}\,dr
+\end{align*}
+Für die Schwarzschild-Metrik brauchen wir die Quadrate davon:
+\begin{align*}
+c^2\,d\tau ^2
+&=
+c^2\,dt^2 + 2\frac{cf(r)}{\displaystyle 1-\frac{r_g}{r}}\,dt\,dr
++\frac{f(r)^2}{\biggl(\displaystyle 1-\frac{r_g}{r}\biggr)^2}\,dr^2
+\\
+dR^2
+&=
+c^2\,dt^2 + 2\frac{c}{\displaystyle\biggl(1-\frac{r_g}{r}\biggr)f(r)}\,dt\,dr
++
+\frac{1}{\displaystyle \biggl(1-\frac{r_g}{r}\biggr)^2f(r)^2}\,dr^2
+\end{align*}
+Wir müssen diese beiden Ausdrücke so kombinieren, dass der gemischte
+Term $dt\,dr$ wegfällt, denn dieser kommt in der Schwarzschild-Metrik
+nicht vor.
+Dazu multiplizieren wir die zweite Zeile mit $f(r)^2$, und subtrahieren.
+Wir erhalten
+\begin{equation}
+c^2\,d\tau^2 - f(r)^2\,dR^2
+=
+(1-f(r)^2)c^2\,dt^2
++\frac{f(r)^2-1}{\displaystyle\biggl(1-\frac{r_g}{r}\biggr)^2}\,dr^2.
+\end{equation}
+Damit daraus die Schwarzschild-Metrik wird, müssen wir vor dem $dt^2$
+Term einen Faktor der Form $(1-r_g/r)$ haben, wir müssen also zunächst
+alles durch $1-f(r)^2$ dividieren, und dann mit $1-r_g/r$ multiplizieren.
+Wir kehren ausserdem das Vorzeichen und erhalten
+\[
+\frac{\displaystyle 1-\frac{r_g}{r}}{1-f(r)^2}
+(-c^2\,d\tau^2 + f(r)^2\,dR^2)
+=
+-\biggl(1-\frac{r_g}{r}\biggr)c^2\,dt^2
++\frac{1}{\displaystyle 1-\frac{r_g}{r}}\,dr^2
+\]
+Bis auf die Terme $d\Omega^2$ steht auf der rechten Seite die
+Schwarzschild-Metrik.
+Von den Termen auf der linken Seite ist nur der Bruch
+\[
+\frac{\displaystyle 1-\frac{r_g}{r}}{1-f(r)^2}
+\]
+problematisch, allerdings nur, wenn der Nenner $1-f(r)^2$ eine
+Nullstelle hat.
+Wir können den ganzen Bruch zum Verschwinden bringen, indem wir die
+Wahlmöglichkeiten für $f(r)$ ausnützen und 
+\[
+f(r)=\sqrt{\frac{r_g}{r}}
+\]
+wählen.
+Setzen wir dies ein, erhalten wir die Metrik in $\tau$-$R$-Koordinaten
+jetzt in der Form
+\begin{equation}
+ds^2
+=
+-c^2\,d\tau^2 + \frac{r_g}{r}\,dR^2 + r^2 d\Omega^2,
+\label{skript:kruemmung:finkelstein}
+\end{equation}
+aber natürlich müssen $r$ ebenfalls durch die Koordinaten $\tau$ und $R$
+ausdrücken.
+
+Da jetzt $f(r)$ bekannt ist, können wir die
+Integrale~\eqref{skript:kruemmung:finkelsteindefinition} auswerten.
+Wir berechnen
+\begin{align*}
+R-c\tau
+&=
+\int\frac{dr}{\displaystyle \biggl(1-\frac{r_g}{r}\biggr)f(r)}
+- \int\frac{f(r)\,dr}{\displaystyle 1-\frac{r_g}{r}}
+=
+\int\frac{1-f(r)^2}{\displaystyle\biggl(1-\frac{r_g}{r}\biggr) f(r)}\,dr
+=
+\int\frac{1}{f(r)}\,dr
+=
+\frac{1}{\sqrt{\mathstrut r_g}}\int\frac{dr}{\sqrt{r}}
+\\
+&=
+\frac{1}{\sqrt{\mathstrut r_g}} \frac{3}{2}r^{\frac{3}{2}}
+\end{align*}
+Damit kann man jetzt $r$ durch $R-c\tau$ ausdrücken
+\[
+r
+=
+\biggl(\frac{2}{3}(R-c\tau)r_g^{\frac{1}{2}}\biggr)^{\frac23}
+=
+\biggl(\frac{2}{3}(R-c\tau)\biggr)^{\frac23} r_g^{\frac13}
+\]
+Der $r$-Koordinate $r_g$ entspricht jetzt die Gerade
+\[
+R-c\tau = \frac32 r_g.
+\]
+Setzen wir dies in die Metrik~\eqref{skript:kruemmung:finkelstein}
+ein, erhalten
+wir
+\[
+ds^2
+=
+-c^2 \,d\tau^2
++r_g^{\frac23}\biggl(\frac32(R-c\tau)\biggr)^{\frac23}\,dR^2
++ r_g^{\frac23}\biggl(\frac32(R-c\tau)\biggr)^{\frac43}\,d\Omega^2.
+\]
+Es ist klar, dass in diesen Koordinaten in keinem Term für $r=r_g$
+eine Singularität auftritt.
+Die hier berechneten Koordinaten $\tau$ und $R$ heissen
+Finkelstein-Koordinaten.
+
+\subsubsection{Absturz ins Zentrum}
+In Finkelstein-Koordinaten verschwindet die Singularität bei $r=r_g$,
+es sollte daher auch einfacher werden, die Bahn eines radial ins
+Zentrum des Feldes stürzenden Teilchens zu berechnen.
+Dazu können wir die Winkel-Koordinaten $\vartheta$ und $\varphi$
+vernachlässigen, und nur mit den Koordinaten $\tau$ und $R$ und der
+Metrik
+\[
+ds^2
+=
+-c^2 \,d\tau^2
++r_g^{\frac23}\biggl(\frac32(R-c\tau)\biggr)^{\frac23}\,dR^2
+\]
+arbeiten.
+Zur Berechnung der Bahnkurven brauchen wir die Christoffel-Symbole
+2.~Art.
+Die Berechnung mit Maxima ergibt
+\begin{align*}
+\Gamma^1_{11} &= 0,&
+\Gamma^1_{12} &= 0,&
+\Gamma^1_{21} &= 0,&
+\Gamma^1_{22} &= \frac{2^{\frac23}r_g^{\frac23}}{(3(R-c\tau))^{\frac53}},\\
+\Gamma^2_{11} &= 0,&
+\Gamma^2_{12} &= \frac1{3(R-c\tau)},&
+\Gamma^2_{21} &= \frac1{3(R-c\tau)},&
+\Gamma^2_{22} &= -\frac1{3(R-c\tau)}.
+\end{align*}
+
+\subsubsection{Ereignishorizont}
+
 \subsection{Robertson-Walker-Metrik}
+Die Robertson-Walker-Metrik wurde entwickelt, um ein homogenes,
+isotropes und expandierendes Universum zu modellieren.
+Wir beginnen mit einem flachen Universum mit der
+Metrik
+\[
+ds^2
+=
+-c^2\,dt^2 + dr^2 + r^2\,d\vartheta^2 + r^2\sin^2\vartheta \,d\varphi^2
+=
+-c^2\,dt^2 + dr^2 + d\Omega^2.
+\]
+Wenn dieses Universum expandiert, ändert sich die Längenmessung für die
+Raum-Koordinaten, nicht aber für die Zeitkoordinate.
+Wir können dies mit einem zeitabhängigen Skalierungsfaktor $a(t)$ 
+modellieren:
+\[
+ds^2
+=
+-c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\vartheta^2 + a(t)r^2 \sin^2\vartheta\,d\varphi^2
+=
+-c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\Omega^2.
+\]
+Natürlich bleibt dies ein flaches Universum.
+
+Wir müssen aber auch zulassen, dass das Universum gekrümmt ist.
+Dies bedeutet, dass der Umfang eines Kreises nicht um den Nullpunkt
+nicht proportional mit $r$ wächst.
+Alternativ kann man auch sagen, dass die $r$-Koorindate eines Punktes 
+eines Kreises vom Umfang $2\pi R$ nicht unbedingt $R$ sein muss, also
+$r \ne R$.
+Wir müssen also den Term $dr^2$ ersetzen durch etwas, was mit zunehmendem
+$r$ grösser oder kleiner als $1$ sein wird.
+\[
+ds^2
+=
+-c^2\,dt^2
++ a(t)^2 \biggl(
+\frac{R^2}{R^2-kr^2} dr^2
++
+r^2\, d\Omega^2
+\biggr)
+\]
+
+Der Faktor $a(t)$ heisst der Skalierungsfaktor, er beschreibt, wie stark
+das Universum sich zur Zeit $t$ bereits gestreckt hat.
+
+Der Einstein-Tensor dieser Metrik kann in einer sehr langwierigen oder
+noch besser mechanischen Rechnung ermittelt werden.
+Er ist diagonal und hat die folgenden Diagonal-Elemente:
+\begin{align*}
+G_{00}
+&=
+\frac{3}{4}\biggl(\frac{\dot a(t)}{a(t)}\biggr)^2
+\\
+G_{11}
+&=
+-\ddot a(t) +\frac{\dot a(t)^2}{4a(t)}
+\\
+G_{22}
+&=
+G_{11} r^2
+\\
+G_{33}
+&=
+G_{11} r^2\sin^2\vartheta
+\end{align*}
+In den Ausdrücken für $G_{22}$ und $G_{33}$ fällt auf, dass sie gegenüber
+$G_{11}$ nur die zusätzlichen Faktoren enthalten, die auch in der Definition
+der Robertson-Walker-Metrik evident sind.
+Um die Feldgleichungen aufzustellen reicht es daher, mit $G_{00}$ und
+$G_{11}$ zu arbeiten.
+Dies wird später auf die Friedmann-Gleichungen führen.
+
+
 
