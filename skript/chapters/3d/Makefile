@@ -3,7 +3,7 @@
 #
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
-all:	flach sphere
+all:	blackhole flach sphere
 
 w = 3840
 h = 2160
@@ -31,4 +31,13 @@ sphere.png:	sphere.pov
 sphere.jpg:	sphere.png
 	convert sphere.png -scale $(scale)% -density 300 -units PixelsPerInch \
 		sphere.jpg
+
+blackhole:	blackhole.jpg
+blackhole.png:	blackhole.pov
+	sh ../../../povray $(povrayoptions) $(dimensions) -Oblackhole.png \
+		blackhole.pov
+blackhole.jpg:	blackhole.png
+	convert blackhole.png -scale $(scale)% \
+		-density 300 -units PixelsPerInch \
+		blackhole.jpg
 

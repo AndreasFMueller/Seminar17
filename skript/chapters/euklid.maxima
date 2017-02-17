@@ -1,0 +1,26 @@
+/*
+ * euklid.maxima
+ *
+ * (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+ */
+
+g: matrix(
+    [ -1, 0,   0,                  0 ],
+    [  0, 1,   0,                  0 ],
+    [  0, 0, r^2,                  0 ],
+    [  0, 0,   0, r^2 * sin(theta)^2 ]
+);
+x: [t, r, theta, phi];
+
+batchload("curvature.maxima");
+
+Einstein(1,1);
+Einstein(1,2);
+Einstein(1,3);
+Einstein(1,4);
+Einstein(2,2);
+Einstein(2,3);
+Einstein(2,4);
+Einstein(3,3);
+Einstein(3,4);
+Einstein(4,4);

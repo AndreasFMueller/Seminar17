@@ -1,0 +1,19 @@
+/*
+ * kerr.maxima -- Kerr-Metrik eines rotierenden Körpers
+ *
+ * (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+ */
+Delta: r^2 - rg * r + a^2;
+rho: sqrt(r^2 + a^2 * cos(theta)^2);
+l: rg * r / rho^2;
+g: matrix(
+   [ -(1 - l),             0,     0, -l * a * sin(theta)^2 ],
+   [        0, rho^2 / Delta,     0, 0 ],
+   [        0,             0, rho^2, 0 ],
+   [        -l * a * sin(theta)^2,             0,     0, (r^2 + a^2 * (1 + l * sin(theta)^2)) * sin(theta)^2 ]
+);
+x: [t, r, theta, phi];
+
+batchload("curvature.maxima");
+
+ratsimp(Einstein(1, 1));
