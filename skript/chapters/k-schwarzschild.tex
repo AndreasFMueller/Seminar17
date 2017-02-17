@@ -57,6 +57,7 @@ ds^2
 =
 -\biggl(1-\frac{r_g}r\biggr)c^2\,dt^2
 +\frac1{\displaystyle 1-\frac{r_g}r}\,dr^2 + r^2\,d\Omega^2.
+\label{skript:kruemmung:schwarzschildmetrik}
 \end{equation}
 Man kann nachrechnen, zum Beispiel mit Hilfe der früher vorgestellen
 Maxima-Programme, dass der Einstein-Tensor für diese Metrik überall
@@ -253,9 +254,6 @@ Die Geodätengleichungen lauten
 \Gamma^2_{12}\frac{d\tau(s)}{ds}\frac{dR(s)}{ds}
 +
 \Gamma^2_{22}\biggl(\frac{dR(s)}{ds}\biggr)^2.
-%=
-%\frac{1}{3(R(s)-c\tau(s))}
-%\biggl(2\frac{d\tau(s)}{ds}-\frac{R(s)}{ds}\biggr)\frac{dR(s)}{ds}
 \end{align*}
 Da für die Anfangsbedinung $\dot R=0$ ist und auf der rechten Seite
 $\dot R$ in jedem Term vorkommt, folgt aus der zweiten Gleichung
@@ -271,4 +269,61 @@ r(\tau)=\biggl(\frac32(R_0-c\tau)\biggr)^{\frac23}r_g^{\frac13}.
 \]
 
 \subsubsection{Ereignishorizont}
+Wir betrachten wieder die
+Schwarzschild-Metrik~\eqref{skript:kruemmung:schwarzschildmetrik}
+und möchten genauer verstehen, was bei $r=r_g$ passiert.
+Dazu überlegen wir uns, wie ein Geodäte eines realen Teilchens 
+aussieht.
+Wir wissen, dass reale Teilchen sich so bewegen müssen, dass der
+Tangentialvektor negative Metrik hat.
+Ein Teilchen in Ruhe hat zum Beispiel $\dot r=0$, $\dot \vartheta=0$ und
+$\dot varphi=0$, einzig $\dot t\ne 0$.
+Da der Koeffizient von $dt^2$
+\[
+-\biggl(1-\frac{r_g}{r}\biggr)
+\quad
+\begin{cases}
+<0&\qquad r > r_g
+\\
+>0&\qquad r < r_g
+\end{cases}
+\]
+für $r>r_g$
+negativ ist folgt, dass es tatsächlich möglich ist, dass sich ein Teilchen
+in festem Abstand vom Zentrum aufhalten kann.
+Sobald aber $r<r_g$ ist, ist der Koeffizient von $dt^2$ positiv,
+fester Abstand vom Zentrum ist nicht mehr möglich.
+
+Für $r<r_g$ wechselt aber auch das Vorzeichen des Koeffizienten
+\[
+\frac1{\displaystyle1-\frac{r_g}{r}}
+\quad
+\begin{cases}
+>0&\qquad r>r_g
+\\
+<0&\qquad r<r_g
+\end{cases}
+\]
+von $dr^2$, damit wird plötzlich der Vektor $\dot t=0$, $\dot r\ne 0$,
+$\dot\vartheta=\dot\varphi=0$ zeitartig.
+Sobald ein Teilchen sich innerhalb des Radius $r_g$ befindet, kann
+sein Radius nur noch abnehmen.
+Die Berechnung der Bahn eines solchen Teilchens zeigt auch, dass
+es unausweichlich in endlicher Zeit ins Zentrum stürzen wird.
+
+
+
+\subsubsection{Was spürt man am Ereignishorizont?}
+Der Riemannsche Krümmungstensor gibt an, wie schnell Geodäten von Teilchen
+wegen unterschiedlicher Gravitationswirkung sich voneinander entfernen.
+Er bestimmt also die Gezeitenkräfte, die ein Astronaut spürt, der in
+diesem Gravitationsfeld abstürzt.
+die Gezeitenkräfte, die ein Astronaut spürt, der in
+diesem Gravitationsfeld abstürzt.
+Die Berechnung des Riemann-Tensors mit Maxima ergibt aber:
+\begin{align*}
+R_{1212}&=-\frac{r_g}{r^3},
+\end{align*}
+die Gezeitenkräfte in radialer Richtung werden für den Astronauten
+also zwar immer grösser, aber bei $r=r_g$ spürt er nichts besonderes.
 
