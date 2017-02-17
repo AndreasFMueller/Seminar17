@@ -23,6 +23,8 @@ function radius = r(tau, r)
 	radius = (3/2 * (r - c * tau))^(2/3) * rg^(1/3);
 endfunction
 
+R(rg)
+
 r(0, R(rg))
 
 function der = f(x)
@@ -40,7 +42,7 @@ endfunction
 #x0 = [ 0; R(3 * rg); 1; -0.0001 ]
 #t = linspace(0, 6.887, 100);
 
-steps = 1000
+steps = 100
 
 x0 = [ 0; R(1.5 * rg); 1; -0.0001 ]
 t = linspace(0, 0.89117, steps);
