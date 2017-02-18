@@ -3,7 +3,7 @@
 #
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
-all:	lichtkegel geodaete blackhole flach sphere
+all:	kurve lichtkegel geodaete blackhole flach sphere
 
 w = 3840
 h = 2160
@@ -46,7 +46,7 @@ lichtkegel.jpg: lichtkegel.png
 	convert -extract 2750x2160+610+0 lichtkegel.png \
 		-units PixelsPerInch -density 300 \
 		-scale 50% lichtkegel.jpg
-lichtkegel.png: lichtkegel.pov lichtkegel.ini
+lichtkegel.png: lichtkegel.pov
 	sh ../../../povray $(povrayoptions) +W3840 +H2160 -Olichtkegel.png \
 		lichtkegel.pov
 
@@ -55,7 +55,16 @@ geodaete.jpg:   geodaete.png
 	convert -extract 3104x2070+416+0 geodaete.png \
 		-units PixelsPerInch -density 300 \
 		-scale 50% geodaete.jpg
-geodaete.png:   geodaete.pov geodaete.ini
+geodaete.png:   geodaete.pov
 	sh ../../../povray $(povrayoptions) +W3840 +H2160 -Ogeodaete.png \
 		geodaete.pov
+
+kurve:	kurve.jpg
+kurve.jpg:   kurve.png
+	convert -extract 3104x2070+416+0 kurve.png \
+		-units PixelsPerInch -density 300 \
+		-scale 50% kurve.jpg
+kurve.png:   kurve.pov
+	sh ../../../povray $(povrayoptions) +W3840 +H2160 -Okurve.png \
+		kurve.pov
 
