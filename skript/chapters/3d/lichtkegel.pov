@@ -106,6 +106,19 @@ cone {
 	}
 }
 
+cone {
+	<0,0,0>, 0,
+	<0,-si,0>, si
+	open
+	pigment {
+		color rgb<1,1,0>
+	}
+	finish {
+		specular 0.9
+		metallic
+	}
+}
+
 text {
 	internal 1 "x"
 	0.2, <0,0,0>

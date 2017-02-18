@@ -22,6 +22,7 @@ CHAPTERS = 								\
 	chapters/k-kruemmung.tex					\
 	chapters/k-laenge.tex						\
 	chapters/k-schwarzschild.tex					\
+	chapters/k-speziell.tex						\
 	chapters/m-1dim.tex						\
 	chapters/m-kugelfunktionen.tex					\
 	chapters/m-multipole.tex					\
