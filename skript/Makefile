@@ -13,10 +13,22 @@ images:
 		cd $${d}; make images; cd ..; \
 	done
 
-CHAPTERS = chapters/einleitung.tex 	\
-	chapters/kruemmung.tex		\
-	chapters/multipol.tex		\
-	chapters/friedmann.tex
+CHAPTERS = 								\
+	chapters/einleitung.tex						\
+	chapters/kruemmung.tex						\
+	chapters/k-1d.tex						\
+	chapters/k-geodaeten.tex					\
+	chapters/k-gravitation.tex					\
+	chapters/k-kruemmung.tex					\
+	chapters/k-laenge.tex						\
+	chapters/k-schwarzschild.tex					\
+	chapters/m-1dim.tex						\
+	chapters/m-kugelfunktionen.tex					\
+	chapters/m-multipole.tex					\
+	chapters/multipol.tex						\
+	chapters/friedmann.tex						\
+	chapters/f-beispiele.tex					\
+	chapters/f-friedmann.tex
 
 SKRIPTFILES = vorwort.tex uebersicht.tex \
 	$(CHAPTERS) \
