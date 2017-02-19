@@ -1,0 +1,84 @@
+%
+% robertson.tex -- Robertson Walker Metrik
+%
+% (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\chapter{Robertson-Walker-Metrik%
+\label{skript:chapter:robertson}}
+\lhead{Robertson-Walker-Metrik}
+\rhead{}
+Die Robertson-Walker-Metrik wurde entwickelt, um ein homogenes,
+isotropes und expandierendes Universum zu modellieren.
+Wir beginnen mit einem flachen Universum mit der
+Metrik
+\[
+ds^2
+=
+-c^2\,dt^2 + dr^2 + r^2\,d\vartheta^2 + r^2\sin^2\vartheta \,d\varphi^2
+=
+-c^2\,dt^2 + dr^2 + d\Omega^2.
+\]
+Wenn dieses Universum expandiert, ändert sich die Längenmessung für die
+Raum-Koordinaten, nicht aber für die Zeitkoordinate.
+Wir können dies mit einem zeitabhängigen Skalierungsfaktor $a(t)$ 
+modellieren:
+\[
+ds^2
+=
+-c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\vartheta^2 + a(t)r^2 \sin^2\vartheta\,d\varphi^2
+=
+-c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\Omega^2.
+\]
+Natürlich bleibt dies ein flaches Universum.
+
+Wir müssen aber auch zulassen, dass das Universum gekrümmt ist.
+Dies bedeutet, dass der Umfang eines Kreises um den Nullpunkt
+nicht proportional mit $r$ wächst.
+Alternativ kann man auch sagen, dass die $r$-Koorindate eines Punktes 
+eines Kreises vom Umfang $2\pi R$ nicht unbedingt $R$ sein muss, also
+$r \ne R$.
+Wir müssen also den Term $dr^2$ ersetzen durch etwas, was mit zunehmendem
+$r$ grösser oder kleiner als $1$ sein wird.
+\[
+ds^2
+=
+-c^2\,dt^2
++ a(t)^2 \biggl(
+\frac{R^2}{R^2-kr^2} dr^2
++
+r^2\, d\Omega^2
+\biggr)
+\]
+
+Der Faktor $a(t)$ heisst der Skalierungsfaktor, er beschreibt, wie stark
+das Universum sich zur Zeit $t$ bereits gestreckt hat.
+
+Der Einstein-Tensor dieser Metrik kann in einer sehr langwierigen oder
+noch besser mechanischen Rechnung ermittelt werden.
+Er ist diagonal und hat die folgenden Diagonal-Elemente:
+\begin{align*}
+G_{00}
+&=
+\frac{3}{4}\biggl(\frac{\dot a(t)}{a(t)}\biggr)^2
+\\
+G_{11}
+&=
+-\ddot a(t) +\frac{\dot a(t)^2}{4a(t)}
+\\
+G_{22}
+&=
+G_{11} r^2
+\\
+G_{33}
+&=
+G_{11} r^2\sin^2\vartheta
+\end{align*}
+In den Ausdrücken für $G_{22}$ und $G_{33}$ fällt auf, dass sie gegenüber
+$G_{11}$ nur die zusätzlichen Faktoren enthalten, die auch in der Definition
+der Robertson-Walker-Metrik evident sind.
+Um die Feldgleichungen aufzustellen reicht es daher, mit $G_{00}$ und
+$G_{11}$ zu arbeiten.
+Dies wird später auf die Friedmann-Gleichungen führen.
+
+
+

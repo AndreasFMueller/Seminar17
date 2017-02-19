@@ -3,11 +3,12 @@
 %
 % (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 %
-
-\section{Schwarzschild-Metrik}
-\rhead{Schwarzschild-Metrik}
-Die Feldgleichungen schränken die Metriken ein, die in einem Raumzeit-Gebiet
-überhaupt möglich sind.
+\chapter{Schwarzschild-Metrik und schwarze Löcher%
+\label{skript:chapter:schwarzschild}}
+\lhead{Schwarzschild-Metrik}
+\rhead{}
+Die Einsteinschen Feldgleichungen schränken die Metriken ein,
+die in einem Raumzeit-Gebiet über\-haupt möglich sind.
 Damit stellt sich automatisch die Frage, wie die Einsteinsche Theorie 
 das Gravitationsfeld in der Umgegung eines Sterns beschreiben kann.
 Schon wenige Monate nachdem Einstein seine allgemeine Relativitätstheorie
@@ -18,7 +19,8 @@ eines Sterns ableiten und es sollte möglich sein, den Unterschied zwischen
 der Newtonschen Gravitations-Theorie und Einsteinschen  zu quantifizieren
 und damit Tests der allgmeinen Relativitätstheorie zu ermöglichen.
 
-\subsection{Eine kugelsymmetrische, statische Lösung}
+\section{Eine kugelsymmetrische, statische Lösung}
+\rhead{Schwarzschild-Metrik}
 Karl Schwarzschild suchte eine Metrik, die sich mit der Zeit nicht ändert,
 also
 \[
@@ -64,7 +66,8 @@ Man kann nachrechnen, zum Beispiel mit Hilfe der früher vorgestellen
 Maxima-Programme, dass der Einstein-Tensor für diese Metrik überall
 verschwindet.
 
-\subsection{Der Fall $r=r_g$}
+\section{Der Fall $r=r_g$}
+\rhead{Der Fall $r=r_g$}
 Es scheint, dass die Metrik für $r=r_g$ nicht wohldefiniert ist,
 da dann der Nenner im zweiten Term nicht wohldefiniert ist.
 Dem ist jedoch nicht so, wie man durch Wahl eines anderen Koordinatensystems
@@ -212,7 +215,8 @@ eine Singularität auftritt.
 Die hier berechneten Koordinaten $\tau$ und $R$ heissen
 Finkelstein-Koordinaten.
 
-\subsection{Absturz ins Zentrum}
+\section{Absturz ins Zentrum}
+\rhead{Absturz ins Zentrum}
 \begin{figure}
 \centering
 \includegraphics{chapters/tikz/absturz.pdf}
@@ -284,7 +288,9 @@ kann man damit auch $r$ für den radialen Absturz angeben:
 r(\tau)=\biggl(\frac32(R_0-c\tau)\biggr)^{\frac23}r_g^{\frac13}.
 \]
 
-\subsection{Ereignishorizont}
+\section{Ereignishorizont%
+\label{skript:section:ereignishorizont}}
+\rhead{Ereignishorizont}
 Wir betrachten wieder die
 Schwarzschild-Metrik~\eqref{skript:kruemmung:schwarzschildmetrik}
 und möchten genauer verstehen, was bei $r=r_g$ passiert.
@@ -339,7 +345,9 @@ immer vollständig im inneren des Gebietes $r<r_g$.
 \end{figure}
 
 
-\subsection{Was spürt man am Ereignishorizont?}
+\section{Was spürt man am Ereignishorizont?%
+\label{skript:section:wasspuertman}}
+\rhead{Was spürt man am Ereignishorizont?}
 Der Riemannsche Krümmungstensor gibt an, wie schnell Geodäten von Teilchen
 wegen unterschiedlicher Gravitationswirkung sich voneinander entfernen.
 Er bestimmt also die Gezeitenkräfte, die ein Astronaut spürt, der in
@@ -352,4 +360,14 @@ R_{1212}&=-\frac{r_g}{r^3},
 \end{align*}
 die Gezeitenkräfte in radialer Richtung werden für den Astronauten
 also zwar immer grösser, aber bei $r=r_g$ spürt er nichts besonderes.
+
+\section{Bedeutung von $r_g$}
+\rhead{Bedeutung von $r_g$}
+In Abschnitt~\ref{skript:section:ereignishorizont} haben wir gefunden,
+dass sich bei der Koordinaten $r=r_g$ der Ereignishorizont befindet.
+Es ist auch einigermassen klar, dass dieser Radius $r_g$ mit der
+Masse des Objektes zusammenhängen muss.
+Doch wie gross ist eiegentlich der Gravitations-Radius $r_g$ verschiedener
+uns umgebender Himmelskörper? Kann es überhaupt einen Körper geben, der
+so dicht ist, dass er kleiner ist als sein Gravitationsradius?
 
