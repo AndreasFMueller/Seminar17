@@ -139,6 +139,31 @@ Die Zahlen $g_{\mu\nu}$ heissen der metrische Tensor.
 \index{Tensor!metrischer}
 \end{definition}
 
+Die Schreibweise~\eqref{skript:kruemmung:metrikformel} ist nicht
+sehr handlich.
+Wesentlich an der Notation ist einzig, wie die Koeffizienten $g_{\mu\nu}$
+mit den Koordinateninkrementen $dx^\mu$ kombiniert werden müssen.
+Wir können daher formal auch schreiben:
+\[
+ds^2
+=
+g_{\mu\nu}\,dx^\mu\,dx^\nu.
+\]
+Diese Notation ist konsistent, denn die Längenberechnung ist
+\begin{equation}
+\int\,ds
+=
+\int \sqrt{g_{\mu\nu}\,dx^\mu\,dx^\nu}
+=
+\int \sqrt{g_{\mu\nu}\,\dot x^\mu\,\dot x^\nu}\,dt,
+\label{skript:kruemmung:laengenelement}
+\end{equation}
+wozu man einzig die Konvention braucht, dass man in Integralen
+$dx^\mu=\dot x^\mu\,dt$ schreiben kann.
+Man nennt \eqref{skript:kruemmung:laengenelement} das {\em Längenelement}
+der Metrik $g_{\mu\nu}$.
+\index{Längenelement}
+
 %
 % Beispiel für Längenmessung in einem Koordinatensystem mit nicht
 % orthogonalen Achsen.
@@ -234,12 +259,19 @@ Eingesetzt in den Satz von Pythagoras folgt
 \\
 &=\dot r^2 + r^2\dot\varphi^2.
 \end{align*}
-Die gemischten Terme haben sich aufgehoben.
+Die gemischten Terme haben sich weggehoben.
 Man liest daraus für die Koeffizienten des metrischen Tensors
 \[
 g_{11}=1,\qquad g_{12}=g_{21}=0\qquad\text{und}\qquad g_{22}=r^2
 \]
 ab.
+Das Längenelement in Polarkoordinaten ist daher
+\[
+ds^2
+=
+dr^2 + r^2\,d\varphi^2.
+\]
+\index{Längenelement!in Polarkoordinaten}
 Die Koeffizienten hängen zwar von den Koordinaten ab, doch bedeutet
 das noch nicht, dass ein gekrümmter Raum vorliegt.
 Diese $g_{\mu\nu}$ beschreiben ja die gleiche Längenmessung wie der Satz
@@ -264,6 +296,13 @@ g_{22}=r^2
 g_{33}=1,
 \]
 alle anderen Koeffizienten sind $0$.
+Das Längenelement in Zylinderkoordinaten ist
+\[
+ds^2
+=
+dr^2+r^2\,d\varphi^2 + dz^2.
+\]
+\index{Längenelement!in Zylinderkoordinaten}
 
 \subsubsection{Zylinderoberfläche}
 Beschränken wir uns auf die Punkte im Abstand $1$ zur $z$-Achse, erhalten
@@ -275,7 +314,24 @@ Wir erhalten
 \[
 \dot\varphi^2+\dot z^2.
 \]
+Das Längenelement auf der Zylinderoberfläche $r=1$ mit den Koordinaten
+$\varphi$ und $z$ ist daher
+\[
+ds^2
+=
+d\varphi^2+dz^2,
+\]
+\index{Längenelement!auf der Zylinderoberfläche}
+die Koeffizienten des metrischen Tensors sind
+\[
+g_{11}=1,\qquad
+g_{12}=g_{21}=0
+\qquad\text{und}\qquad
+g_{22}=1.
+\]
 Dies ist der metrische Tensor einer Ebene mit rechtwinkligen Koordinaten.
+Daraus können wir bereits ablesen, dass die Zylinderoberfläche sich durch
+Längenmessung nicht von einer Ebene unterscheiden lässt.
 
 \subsubsection{Kugelkoordinaten}
 Kugelkoordinaten beschreiben die Punkte eines dreidimensionalen Raumes
@@ -361,6 +417,14 @@ g_{22}=r^2
 g_{33}= r^2\sin^2\vartheta
 \]
 für die nicht verschwindenden Komponenten des metrischen Tensors.
+Alternativ kann man dies auch als
+\[
+ds^2
+=
+dr^2 + r^2\,d\vartheta^2 + r^2\sin^2\vartheta\,d\varphi^2,
+\]
+also als Längenelement schreiben.
+\index{Längenelement!in Kugelkoordinaten}
 
 \subsubsection{Kugeloberfläche}
 Aus dem metrischen Tensor der Kugelkoordinaten lässt sich durch festhalten
@@ -381,6 +445,14 @@ g_{11} = 1
 \qquad\text{und}\qquad
 g_{22}=\sin^2\vartheta.
 \]
+Etwas übersichtlicher ist 
+\[
+ds^2
+=
+d\vartheta^2 + \sin^2\vartheta\,d\varphi^2,
+\]
+das Längenelement auf der Kugeloberfläche.
+\index{Längenelement!auf der Kugeloberfläche}
 Man erkennt, dass der Koeffizient $g_{22}$ bei $\vartheta \in\{0,\pi\}$
 verschwindet.
 Man spricht von einer Singularität der Längenmessung.
