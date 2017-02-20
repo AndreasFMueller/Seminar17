@@ -481,11 +481,74 @@ In flachen Räumen sind die Geodäten Geraden.
 
 \subsection{Polarkoordinaten}
 Die Geodätengleichungen in Polarkoordinaten sind
-\begin{align*}
-\ddot r &= -\dot \varphi^2,
+\begin{equation}
+\begin{aligned}
+\ddot r &= -r\dot \varphi^2,
 \\
-\ddot \varphi &= 2\biggl(\frac{\dot r}{r}\biggr)^2.
+\ddot \varphi &= 2\frac{\dot r}{r}\dot\varphi.
+\end{aligned}
+\label{skript:geodaten:dglpolar}
+\end{equation}
+Radiale geraden haben $\dot\phi=0$, aus der ersten Gleichung folgt dann
+$\ddot r=0$ oder $\dot r=\operatorname{const}$.
+Geodäten durch den Nullpunkt sind also mit konstanter Geschwindigkeit
+durchlaufene Geraden.
+
+Wir dürfen natürlich davon ausgehen, dass jede beliebige andere Gerade
+ebenfalls eine Geodäte ist.
+Um dies nachzuprüfen betrachten wir eine Gerade senkrecht auf die
+$r=0$-Achse, in $x$-$y$-Koordinaten können wir sie als
+$t\mapsto (x_0,t)$ beschreiben.
+Die zugehörigen Polarkoordinaten sind
+\[
+\begin{aligned}
+r(t)&=\sqrt{x_0^2+t^2}
+&&\text{und}&
+\varphi(t)&=\arctan\frac{t}{x_0}.
+\end{aligned}
+\]
+Wir prüfen durch einsetzen, ob diese Funktionen die
+Geodätendiffgerentialgleichung~\eqref{skript:geodaten:dglpolar}
+erfüllen.
+Die Ableitungen von $r(t)$ und $\varphi(t)$ sind
+\begin{align*}
+\dot r(t)
+&=\frac{t}{r}
+&
+\ddot r(t)
+&=
+\frac{1}{r}-\frac{t^2}{r^3}
+=
+\frac{r^2-t^2}{r^3}
+=
+\frac{x_0^2}{r^3}
+\\
+\dot\varphi(t)
+&=
+\frac{x_0}{r^2}
+&
+\ddot\varphi(t)
+&=
+-\frac{2tx_0}{r^4}
 \end{align*}
+Setzen wir dies in die Differentialgleichungen~\eqref{skript:geodaeten:dglpolar}
+ein, erhalten wir
+\begin{align*}
+-r\dot\varphi^2
+&=
+-r\frac{x_0^2}{r^4}
+=
+-\frac{x_0^2}{r^3}
+=
+\ddot r
+\\
+2\frac{\dot r}{r}\dot\varphi
+&=
+2\frac{t}{r}\frac1{r}\frac{x_0}{r^2}=\frac{2tx_0}{r^4}
+=
+\ddot\varphi
+\end{align*}
+Wie erwartet erfüllt also die Gerade die Geodätengleichung.
 
 \subsection{Kugeloberfläche}
 Die Christoffelsymbole zweiter Art für die Kugeloberfläche haben wir
