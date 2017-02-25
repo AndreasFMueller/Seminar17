@@ -3,7 +3,7 @@
 #
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
-all:	kurve lichtkegel geodaete blackhole flach sphere
+all:	transport kurve lichtkegel geodaete blackhole flach sphere
 
 w = 3840
 h = 2160
@@ -67,4 +67,13 @@ kurve.jpg:   kurve.png
 kurve.png:   kurve.pov
 	sh ../../../povray $(povrayoptions) +W3840 +H2160 -Okurve.png \
 		kurve.pov
+
+transport:	transport.jpg
+transport.jpg:   transport.png
+	convert -extract 2328x2160+912+0 transport.png \
+		-units PixelsPerInch -density 300 \
+		-scale 50% transport.jpg
+transport.png:   transport.pov
+	sh ../../../povray $(povrayoptions) +W3840 +H2160 -Otransport.png \
+		transport.pov
 
