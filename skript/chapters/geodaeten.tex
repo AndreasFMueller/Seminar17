@@ -76,32 +76,92 @@ Wir müssen also zunächst in der Lage sein, Vektoren in zwei verschiedenen
 Punkten miteinander zu vergleichen.
 Wir können das tun, indem wir einen Vektor entlang einer Kurve transportieren,
 wobei wir versuchen, in so parallel zu sich selbst wie möglich zu sich
-selbst zu halten.
+selbst zu halten (Abbildung~\ref{skript:geodaten:fig:transport}).
 Auch dies ist im Moment noch ein etwas schwammiger Begriff. 
 Es ist aber klar, dass die Komponenten des transportierten Vektors
 sowohl von der Transportrichtung wie auch vom ursprünglichen Vektor
 abhängen.
+
 Seien $A^\mu$ die Komponenten eines Vektors, die Richtung mit Komponenten
 $\Delta x^\nu$ transport werden soll.
-Dann wird der transportierte die Form
+Wenn wir uns entlang einer Kurve in diese Richtung bewegen, werden sich
+die Komponenten $A^\mu$ einfach deshalb ändern, weil die Komponenten von
+den Koordinaten abhängig sind.
+Bei einem paralleltransportierten Vektor wird ein Teil dieser Änderung
+komponsiert auf geeignete Art komponsiert sein müssen.
+Die Kompensation wird linear vom Vektor $A^\mu$ und von der
+Bewegungsrichtung abhängen.
+Wir schreiben dafür
 \[
-\tilde A^\alpha
+\nabla_\nu A^\mu\cdot \Delta x^\nu
 =
-A^\alpha - \Gamma_{\mu\nu}^\alpha A^\mu \Delta x^\nu
+\biggl(\frac{\partial A^\mu}{\partial x^\nu}
++
+\Gamma^\mu_{\alpha\nu}A^\alpha\biggr)\Delta x^\nu.
 \]
-haben.
-Die Wahl des Vorzeichens von $\Gamma_{\mu\nu}^\alpha$ ist im Wesentlichen
-eine Frage der Konvention.
-Die instantane Änderung zur Zeit $t=0$ entlang der Kurve ist
+Die Funktionen $\Gamma^\mu_{\alpha\nu}$ sind vorerst noch nicht bekannt,
+wir werden sie noch bestimmen müssen.
+
+\begin{definition}
+Die {\em kovariante Ableitung} eines Vektorfeldes $A^\mu$ ist der 
+\index{kovariante Ableitung}
+\index{Ableitung, kovariante}
+Ausdruck
 \begin{equation}
-\frac{d}{dt}\tilde A^\alpha\bigg|_{t=0}
+\nabla_\nu A^\mu
 =
-\Gamma_{\mu\nu}^\alpha A^\mu \dot x^\nu.
-\label{skript:kruemmung:ableitung}
+\frac{\partial A^\mu}{\partial x^\nu}
++
+\Gamma^\mu_{\alpha\nu}A^\alpha,
 \end{equation}
+die Koeffizienten $\Gamma^\mu_{\alpha\nu}$ heissen Christoffelsymbole
+zweiter Art oder Zusammenhangskoeffizienten.
+Eine weiter verbreitete Schreibweise für die kovariante Ableitung
+ist
+\[
+\nabla_\nu A^\mu
+=
+A^\mu\mathstrut_{;\nu}.
+\]
+\end{definition}
+
+Die kovariante Ableitung soll ausdrücken, wie sich die Komponenten eines
+Vektors entlang einer Kurve ändern, unabhängig von der konkreten Wahl
+des Koordinatensystems.
+Paralleltransport soll heissen, dass sich entlang einer Kurve die
+Komponenten eines Vektors nicht ändern,
+dass also $\nabla_\nu A^\mu=0$.
+Insbesondere möchten wir später den Tangentialvektor einer Kurve entlang
+der Kurve selbst transportieren.
+Die kovariante Ableitung des Tangentialvektors $\dot x^\mu$ entlang
+einer Kurve wird dann sein
+\[
+\nabla_\nu\dot x^\mu
+=
+\frac{\partial \dot x^\mu}{\partial x^\nu}
++
+\Gamma^\mu_{\alpha\nu}\dot x^\alpha
+\]
+und die zeitliche Änderung entlang der Kurve wird
+\[
+\nabla_\nu\dot x^\mu\cdot \dot x^\nu
+=
+\frac{\partial \dot x^\mu}{\partial x^\nu}\dot x^\nu
++
+\Gamma^\mu_{\alpha\nu}\dot x^\alpha \dot x^\nu.
+\]
+Im letzten Ausdruck kommen $x^\alpha$ und $x^\nu$ in symmetrischer
+Art und Weise vor.
+Dies suggeriert, dass wir die $\Gamma^\mu_{\alpha\nu}$ möglicherweise
+sogar symmetrisch wählen können, dass also
+$\Gamma^\mu_{\alpha\nu}=\Gamma^\mu_{\nu\alpha}$
+gewählt werden kann.
+Wir fordern daher zusätzlich, dass die Zusammenhangskoeffizienten
+symmetrisch sein sollen.
+Es wird sich gleich zeigen, dass dies tatsächlich möglich ist.
 
 Bis jetzt haben wir die Metrik nicht verwendet.
-Wir möchten dass der Paralleltransport die Länge des Vektors beim
+Wir möchten, dass der Paralleltransport die Länge des Vektors beim
 Transport entlang einer Kurve nicht verändert.
 Die Länge des Vektors wird durch $g_{\mu\nu}\tilde A^\mu \tilde A^\nu$
 gegeben.
@@ -119,7 +179,7 @@ g_{\mu\nu}\Gamma_{\alpha\beta}^\mu A^\alpha \dot x^\beta A^\nu
 \]
 In diesem Ausdruck kommen in allen Termen $A^\mu$ und $\dot x^\beta$ mit
 verschiedenen Indizes vor.
-Damit wir diese Faktoren ausklammern können, nennen wir die Indizes um,
+Damit wir diese Faktoren ausklammern können, benennen wir die Indizes um,
 so dass sie in allen Termen gleich sind.
 Wir erhalten dann die Gleichung
 \[
@@ -274,6 +334,10 @@ g^{\sigma\alpha}
 \biggr)
 \]
 heissen {\em Christoffelsymbole 2.~Art} oder {\em Zusammenhangskoeffizienten}.
+Die auf diese Weise aus der Metrik gewonnenen Zusammenhangskoeffizienten
+sind auch als der
+{\em Levi-Civita-Zusammenhang} bekannt.
+\index{Levi-Civita-Zusammenhang}
 \end{definition}
 
 \section{Beispiele}
@@ -314,7 +378,7 @@ Die Christoffelsymbole erster Art sind daher
 \end{aligned}
 \]
 und die Christoffelsymbole zweiter Art sind
-\[
+\begin{equation}
 \begin{aligned}
 \Gamma_{11}^1 &= 0,&
 \Gamma_{12}^1 &= 0,&
@@ -326,7 +390,8 @@ und die Christoffelsymbole zweiter Art sind
 \Gamma_{21}^2 &= \frac1{r},&
 \Gamma_{22}^2 &= 0.
 \end{aligned}
-\]
+\label{skript:geodaeten:christoffel:polar}
+\end{equation}
 
 \subsection{Zylinderkoordinaten}
 Da die Komponenten des metrischen Tensors sind konstant, damit verschwinden
@@ -456,7 +521,7 @@ Etwas formaler setzen wir den Tangentialvektor $\dot x^\mu$ an die
 Kurve in die Gleichung \eqref{skript:kruemmung:ableitung} ein und
 erhalten die Differentialgleichung 
 \begin{equation}
-\ddot x^\alpha=\Gamma_{\mu\nu}^\alpha \dot x^\mu\dot x^\nu.
+\ddot x^\alpha+\Gamma_{\mu\nu}^\alpha \dot x^\mu\dot x^\nu=0.
 \label{skript:kruemmung:geodatengleichung}
 \end{equation}
 \index{Geodäte}
@@ -487,16 +552,21 @@ also einer Geradengleichung.
 In flachen Räumen sind die Geodäten Geraden.
 
 \subsection{Polarkoordinaten}
-Die Geodätengleichungen in Polarkoordinaten sind
+Die Geodätengleichungen in Polarkoordinaten erhält man durch
+Einsetzen der Christoffelsymbole von
+\eqref{skript:geodaeten:christoffel:polar}
+in
+\eqref{skript:kruemmung:geodatengleichung}.
+Die Gleichungen lauten
 \begin{equation}
 \begin{aligned}
-\ddot r &= -r\dot \varphi^2,
+\ddot r &= r\dot \varphi^2,
 \\
-\ddot \varphi &= 2\frac{\dot r}{r}\dot\varphi.
+\ddot \varphi &= -2\frac{\dot r}{r}\dot\varphi.
 \end{aligned}
-\label{skript:geodaten:dglpolar}
+\label{skript:geodaeten:dglpolar}
 \end{equation}
-Radiale geraden haben $\dot\phi=0$, aus der ersten Gleichung folgt dann
+Radiale Geraden haben $\dot\varphi=0$, aus der ersten Gleichung folgt dann
 $\ddot r=0$ oder $\dot r=\operatorname{const}$.
 Geodäten durch den Nullpunkt sind also mit konstanter Geschwindigkeit
 durchlaufene Geraden.
@@ -515,12 +585,12 @@ r(t)&=\sqrt{x_0^2+t^2}
 \end{aligned}
 \]
 Wir prüfen durch einsetzen, ob diese Funktionen die
-Geodätendiffgerentialgleichung~\eqref{skript:geodaten:dglpolar}
+Geodätendifferentialgleichung~\eqref{skript:geodaten:dglpolar}
 erfüllen.
 Die Ableitungen von $r(t)$ und $\varphi(t)$ sind
 \begin{align*}
 \dot r(t)
-&=\frac{t}{r}
+&=\frac{t}{r},
 &
 \ddot r(t)
 &=
@@ -528,32 +598,35 @@ Die Ableitungen von $r(t)$ und $\varphi(t)$ sind
 =
 \frac{r^2-t^2}{r^3}
 =
-\frac{x_0^2}{r^3}
+\frac{x_0^2}{r^3},
 \\
 \dot\varphi(t)
 &=
-\frac{x_0}{r^2}
+\frac{x_0}{r^2},
 &
 \ddot\varphi(t)
 &=
--\frac{2tx_0}{r^4}
+-\frac{2tx_0}{r^4}.
 \end{align*}
-Setzen wir dies in die Differentialgleichungen~\eqref{skript:geodaeten:dglpolar}
+Setzen wir dies in die
+Differentialgleichungen~\eqref{skript:geodaeten:dglpolar}
 ein, erhalten wir
 \begin{align*}
--r\dot\varphi^2
+r\dot\varphi^2
 &=
--r\frac{x_0^2}{r^4}
+r\frac{x_0^2}{r^4}
 =
--\frac{x_0^2}{r^3}
+\frac{x_0^2}{r^3}
 =
-\ddot r
+\ddot r,
 \\
-2\frac{\dot r}{r}\dot\varphi
+-2\frac{\dot r}{r}\dot\varphi
 &=
-2\frac{t}{r}\frac1{r}\frac{x_0}{r^2}=\frac{2tx_0}{r^4}
+-2\frac{t}{r}\frac1{r}\frac{x_0}{r^2}
 =
-\ddot\varphi
+-\frac{2tx_0}{r^4}
+=
+\ddot\varphi.
 \end{align*}
 Wie erwartet erfüllt also die Gerade die Geodätengleichung.
 
@@ -592,16 +665,22 @@ also
 \begin{align}
 \ddot x^1
 &=
-\Gamma_{\mu\nu}^1\dot x^\mu\dot x^\nu=\Gamma_{22}^1=-\frac12\sin2\theta
+-\Gamma_{\mu\nu}^1\dot x^\mu\dot x^\nu
 =
--\frac12\sin\biggl( 2\cdot\frac{\pi}2\biggr)
+-\Gamma_{22}^1=\frac12\sin2\theta
 =
--\frac12\sin\pi=0,
+\frac12\sin\biggl( 2\cdot\frac{\pi}2\biggr)
+=
+\frac12\sin\pi
+=
+0,
 \label{skript:kruemmung:geodaete:breitenkreis}
 \\
 \ddot x^2
 &=
-\Gamma_{\mu\nu}^2\dot x^\mu\dot x^\nu=\Gamma_{22}^2=0.
+-\Gamma_{\mu\nu}^2\dot x^\mu\dot x^\nu
+=
+-\Gamma_{22}^2=0.
 \notag
 \end{align}
 Die Geodätengleichung ist für den Äquator erfüllt, der Äquator ist
@@ -624,7 +703,11 @@ wird damit zu
 \[
 \ddot x^1
 =
-\Gamma_{\mu\nu}^1\dot x^\mu\dot x^\nu=\Gamma_{22}^1=-\frac12\sin2\theta
+-\Gamma_{\mu\nu}^1\dot x^\mu\dot x^\nu
+=
+-\Gamma_{22}^1
+=
+\frac12\sin2\theta
 \ne
 0,
 \]
@@ -657,15 +740,21 @@ Wir setzen dies jetzt in die Geodäten\-gleichung ein und erhalten
 \begin{align*}
 \ddot x^1
 &=
-\Gamma_{\mu\nu}\dot x^\mu \dot x^\nu
+-\Gamma_{\mu\nu}\dot x^\mu \dot x^\nu
 =
-\Gamma_{22}^1\dot x^2 \dot x^2=0,
+-\Gamma_{22}^1\dot x^2 \dot x^2
+=
+0,
 \\
 \ddot x^2
 &=
-\Gamma_{\mu\nu}^2\dot x^\mu \dot x^\nu
+-\Gamma_{\mu\nu}^2\dot x^\mu \dot x^\nu
 =
-\Gamma_{11}^2\dot x^1\dot x^1=\Gamma_{11}^2=0.
+-\Gamma_{11}^2\dot x^1\dot x^1
+=
+-\Gamma_{11}^2
+=
+0.
 \end{align*}
 Die Differentialgleichungen für eine Geodäte sind für Meridiane erfüllt,
 damit ist gezeigt, dass Meridiane Geodäten sind.
@@ -690,6 +779,12 @@ verbinden, diejenige für die das Integral \eqref{skript:variation:laenge}
 minimal wird.
 
 \subsection{Euler-Lagrange-Gleichung}
+\begin{figure}
+\includegraphics{chapters/tikz/lagrange.pdf}
+\caption{Nachbarkurven der Lösungskurve eines Variationsproblems
+für die Herleitung der Euler-Lagrange-Gleichung.
+\label{skript:geodaeten:fig:lagrange}}
+\end{figure}
 Wir lösen gleich ein etwas allgemeineres Problem.
 Gegeben ist eine Funktion $F(x^\alpha, \dot x^\alpha, t)$, welche
 von den Koordinaten $x^\mu$, den Geschwindigkeiten $\dot x^\mu$ und
@@ -782,6 +877,7 @@ beliebige Wahl der Verschiebung $\eta^\alpha(t)$, wenn die grosse Klammer
 verschwindet.
 Eine Lösung des Minimalproblems erfüllt also notwendigerweise die
 sogenannten {\em Euler-Lagrange-Gleichungen}
+\index{Euler-Lagrange-Gleichungen}%
 \[
 \frac{\partial F}{\partial x^\alpha}(x^\alpha(t), \dot x^\alpha(t), t)
 -

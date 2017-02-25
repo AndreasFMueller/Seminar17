@@ -39,8 +39,8 @@ blackhole.png:	blackhole.pov
 	sh ../../../povray $(povrayoptions) $(dimensions) -Oblackhole.png \
 		blackhole.pov
 blackhole.jpg:	blackhole.png
-	convert blackhole.png -scale $(scale)% \
-		-density 300 -units PixelsPerInch \
+	convert -extract 2572x2160+860+0 blackhole.png \
+		-scale $(scale)% -density 300 -units PixelsPerInch \
 		blackhole.jpg
 
 lichtkegel:	lichtkegel.jpg
