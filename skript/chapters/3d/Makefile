@@ -21,7 +21,8 @@ flach.png:	flach.pov
 	sh ../../../povray $(povrayoptions) $(dimensions) -Oflach.png 	\
 		flach.pov
 flach.jpg:	flach.png
-	convert flach.png -scale $(scale)% -density 300 -units PixelsPerInch \
+	convert -extract 2376x2160+775+0 flach.png \
+		-scale $(scale)% -density 300 -units PixelsPerInch \
 		flach.jpg
 
 sphere:	sphere.jpg
@@ -29,7 +30,8 @@ sphere.png:	sphere.pov
 	sh ../../../povray $(povrayoptions) $(dimensions) -Osphere.png 	\
 		sphere.pov
 sphere.jpg:	sphere.png
-	convert sphere.png -scale $(scale)% -density 300 -units PixelsPerInch \
+	convert -extract 2420x2160+735+0 sphere.png \
+		-scale $(scale)% -density 300 -units PixelsPerInch \
 		sphere.jpg
 
 blackhole:	blackhole.jpg
