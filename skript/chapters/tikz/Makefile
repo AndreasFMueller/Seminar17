@@ -5,6 +5,8 @@
 #
 all:	lagrange.pdf lichtkegel.pdf absturz.pdf
 
+images:	all
+
 absturz.pdf:	absturz.tex
 	pdflatex absturz.tex
 
