@@ -139,6 +139,37 @@ noch von ihm beeinflusst werden.
 Sie müssen daher als die Gegenwart des Nullpunktes bezeichnet
 werden.
 
+Der Formalismus einer Metrik passt ganz hervorragend auf die hier
+vorliegende Situation.
+Verwenden wir als Koordinaten
+\begin{align*}
+x^0 &= ct,
+&
+x^1&=x,
+&
+x^2&=y,
+&
+x^3&=z,
+\end{align*}
+dann kann $s^2$ mit der Metrik
+\begin{equation}
+g_{\mu\nu}
+=
+\begin{pmatrix}
+-1&0&0&0\\
+ 0&1&0&0\\
+ 0&0&1&0\\
+ 0&0&0&1
+\end{pmatrix}
+\label{skript:speziell:metrik}
+\end{equation}
+berechnet werden.
+Die spezielle Relativitätstheorie beschreibt die Welt also einen
+vierdimensionalen Raum, die Raum-Zeit, der Raumkoordinaten und Zeitkoordinate
+in einem einzigen mathematischen Modell kombiniert.
+Die Metrik~\eqref{skript:speziell:metrik} beschreibt dann die
+Kausalitätsstruktur der Welt.
+
 In diesem Bild gibt es also keinen sinnvollen Begriff der Gleichzeitigkeit
 mehr.
 Wäre das Universum nicht aus einem Punkt entstanden, wie das Big Bang-Modell
@@ -152,6 +183,12 @@ Auch Einstein ging davon aus, was ihn später in seiner allgemeinene
 Relativitätstheorie dazu gebracht hat, einen nicht weiter erklärbaren
 Term hinzuzufügen, einzig um zu erreichen, dass das Universum statisch 
 sein kann.
+
+Wenn die Frage ``Wann ist das Universum entstanden'' überhaupt eine
+sinnvolle Antwort haben soll, dann nur, wenn das Universum zur Zeit
+der Entstehung nur ein Punkt gewesen ist.
+Wenn das Universum ausgedehnt entstanden ist, dann ist die Frage
+nach dem Entstehungszeitpunkt sinnlos.
 
 \section{Lorentztransformation}
 \rhead{Lorentztransformation}
@@ -205,35 +242,35 @@ das, dass
 &=
 -(c^2a_{11}^2 - a_{21}^2)t^2
 +2(-c^2a_{11}a_{12}+a_{21}a_{22})tx
-+(-c^2a_{12}^2 + a_{22}^2)x^2
++(-c^2a_{12}^2 + a_{22}^2)x^2.
 \end{align*}
 Da dies für beliebige Werte von $x$ und $t$ gelten muss, müssen die
 Koeffizienten der beiden Seiten übereinstimmen. 
 Wir erhalten damit für die Koeffizienten $a_{ik}$ die Gleichungen
 \[
 \begin{aligned}
-c^2a_{11}^2-a_{21}^2&=c^2
+c^2a_{11}^2-a_{21}^2&=c^2,
 &&\Rightarrow&
 a_{11}^2
 -
 \biggl(\frac{a_{21}}{c}\biggr)^2
-&=1
+&=1,
 \\
--c^2a_{12}^2+a_{22}^2&=1
+-c^2a_{12}^2+a_{22}^2&=1,
 &&\Rightarrow
 &
-a_{22}^2 - (ca_{12})^2&=1
+a_{22}^2 - (ca_{12})^2&=1,
 \\
-a_{21}a_{22}&=c^2a_{11}a_{12}
+a_{21}a_{22}&=c^2a_{11}a_{12}.
 \end{aligned}
 \]
 Da die Differenz der Quadrate jeweils $1$ ist, können die Basen
 als Werte des hyperbolischen Kosinus und Sinus dargestellt werden:
 \[
 \begin{aligned}
-a_{11}&=\cosh\beta  &&&\frac{a_{21}}{c}&=\sinh\beta
+a_{11}&=\cosh\beta, &&&\frac{a_{21}}{c}&=\sinh\beta,
 \\
-a_{22}&=\cosh\gamma &&&ca_{12}&=\sinh\gamma
+a_{22}&=\cosh\gamma,&&&ca_{12}&=\sinh\gamma.
 \end{aligned}
 \]
 Die dritte Gleichung lautet dann
@@ -270,7 +307,15 @@ x' = c\sinh\beta t
 Im $(t',x')$-Koordinatensystem bewegt sich also der Nullpunkt des 
 $(t,x)$-Koordinatensystems mit der Geschwindigkeit
 \[
-v=c\sinh\beta
+v=c\sinh\beta.
+\]
+Der zugehörige Wert von $\cosh \beta$ ist
+\[
+\cosh^2\beta - \sinh^2\beta = 1
+\qquad \Rightarrow \qquad
+\cosh^2\beta = 1+\sinh^2\beta
+\qquad \Rightarrow \qquad
+\cosh\beta = \sqrt{1+\biggl(\frac{v}{c}\biggr)^2}.
 \]
 Der Parameter $\sinh\beta$ hat also die Bedeutung einer in Einheiten
 der Lichtgeschwindigkeit gemessenen Geschwindigkeit.
@@ -283,10 +328,10 @@ a_{21}&a_{22}
 \end{pmatrix}
 =
 \begin{pmatrix}
-\displaystyle\sqrt{1-\biggl(\frac{v}{c}\biggr)^2}
+\displaystyle\sqrt{1+\biggl(\frac{v}{c}\biggr)^2}
 	&\displaystyle\frac{v}{c^2} \\
 v
-	&\displaystyle\sqrt{1-\biggl(\frac{v}{c}\biggr)^2}
+	&\displaystyle\sqrt{1+\biggl(\frac{v}{c}\biggr)^2}
 \end{pmatrix}
 \label{skript:kruemmung:lorentz}
 \end{equation}
@@ -296,7 +341,187 @@ Die Transformation
 heisst {\em Lorentz-Transformation}.
 \index{Lorentz-Transformation}
 
+Befindet sich ein Beobachter im ursprünglichen $t$-$x$-System in Ruhe
+im Nullpunkt, dann ist seine Zeitkoordinate im $t'$-$x'$-System
+\begin{equation}
+t'=t\sqrt{1+\biggl(\frac{v}{c}\biggr)^2},
+\label{skript:speziell:zeitdilatation}
+\end{equation}
+der Lauf der Zeit ist in den beiden Koordinatensystemen verschieden.
+Im $t'$-$x'$-Koordinatensystem läuft die Zeit um den Faktor
+\eqref{skript:speziell:zeitdilatation} gedehnt.
+
+Die Darstellung \eqref{skript:kruemmung:lorentz} der Lorenztransformation
+ist nicht sehr symmetrisch.
+Dies liegt daran, dass die Zeit-Koordinate eine ganz andere Masseinheit
+verwendet.
+Schreibt man für die Koordinaten 
+\[
+\begin{aligned}
+x^0&=ct,&
+x^1&=x,&
+x^2&=y,&
+x^3&=z&
+\end{aligned}
+\]
+dann wird die Lorentztransformation
+\begin{equation}
+\begin{pmatrix}
+x^{0\prime}\\
+x^{1\prime}\\
+x^{2\prime}\\
+x^{3\prime}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\sqrt{1+\biggl(\displaystyle\frac{v}{c}\biggr)^2} & \displaystyle\frac{v}{c} & 0 & 0 \\
+\displaystyle\frac{v}{c} & \sqrt{1+\biggl(\displaystyle\frac{v}{c}\biggr)^2} & 0 & 0 \\
+      0     &                                      & 1 & 0 \\
+      0     &                                      & 0 & 1 
+\end{pmatrix}
+\begin{pmatrix}
+x^0\\x^1\\x^2\\x^3
+\end{pmatrix}.
+\label{skript:speziell:4lorentz}
+\end{equation}
+In dieser Form ist die Lorentztransformation klar symmetrischer.
+
+\section{Weltlinien und Eigenzeit}
+\rhead{Weltlinien und Eigenzeit}
+Die Bewegung eines Teilchens in der Raum-Zeit ist eine Kurve
+$(t(\tau), x(\tau), y(\tau), z(\tau)$
+mit dem Parameter $\tau$, die man auch {\em Weltlinie} nennt.
+\index{Weltlinie}
+Da sich das Teilchen nicht mit Lichtgeschwindigkeit bewegen kann, muss
+\[
+-c^2t'(\tau)^2
++ x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2
+<
+0
+\]
+gelten, darin bezeichnet der Apostroph die Ableitung nach dem 
+Parameter $\tau$.
+Offenbar bewegt sich das Teilchen mit der Geschwindigkeit
+\[
+v^2 = \frac{x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}{t'(\tau)^2}
+\]
+durch die Raumzeit.
+Da sich das Teilchen bewegt, läuft die Zeit in einem Koordinatensystem,
+das sich mit dem Teilchen mitbewegt, um den Faktor
+\eqref{skript:speziell:zeitdilatation}
+langsam.
+Setzt man die Definitionen ein, erhält man
+\begin{align*}
+\sqrt{1+\frac{v^2}{c^2}}
+&=
+\sqrt{1+ \frac{x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}{c^2t'(\tau)^2}}
+\\
+&=
+-
+\sqrt{-c^2t'(\tau)^2+x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}\frac{1}{ct'(\tau)}
+\end{align*}
+Die im bewegten Koordinatensystem gemessene Zeit ist
+\begin{align*}
+\int
+\sqrt{1+\frac{v^2}{c^2}}\,dt
+&=
+\sqrt{-c^2t'(\tau)^2+x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}\frac{1}{ct'(\tau)}
+\,dt
+\\
+&=
+\int
+\sqrt{-c^2t'(\tau)^2+x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}\frac{1}{ct'(\tau)}
+t'(\tau)\,d\tau
+\\
+&=
+\int
+\frac1c
+\sqrt{-c^2t'(\tau)^2+x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}
+\,d\tau
+\end{align*}
+In $x^\mu$-Koordinaten bedeutet dies, dass
+\begin{equation}
+\int
+\sqrt{1-\frac{v^2}{c^2}}\,dt
+=
+\int \frac1{c}\sqrt{-g_{\mu\nu}\dot x^\mu(\tau) \dot x^\nu(\tau)}\,d\tau
+\label{skript:speziell:eigenzeit}
+\end{equation}
+die Zeit ist, die entlang der Kurve $x^\mu(\tau)$ für den
+mitbewegten Beobachter vergangen ist.
+Man nennt~\eqref{skript:speziell:eigenzeit} die {\em Eigenzeit} des
+Beobachters, der sich entlang der Weltlinie $x^\mu(\tau)$ bewegt.
+\index{Eigenzeit}
 
 \section{Energie und Impuls}
 \rhead{Energie und Impuls}
+Ein Teilchen der Masse $m$, die im Nullpunkt ruht, hat keinen
+Impuls.
+In einem anderen Koordinatensystem nimmt hat das Teilchen dagegen
+eine Geschwindigkeit, und damit auch einen Impuls.
+Dies zeigt, dass eine koordinatensystemunabhägngige Beschreibung
+nicht nur mit dem Impuls funktionieren kann.
+Wir brauchen eine erweiterte Erhaltungsgrösse, die wir zur Beschreibung
+der Bewegung eines Teilchens verwenden können.
+
+Die Kurve $x^\mu(\tau)$ und die Ableitung nach dem Kurvenparameter sind
+offenbar keine geeigneten Grössen, denn der Kurvenparameter ist
+keine vom Koordinatensystem unabhängige Grösse.
+Die Eigenzeit ist aber eine solche koordinatensystemunabhängige
+Grösse, wir schliessen daraus, dass die Ableitung der Position
+nach der Eigenzeit, die sogenannte Vierergeschwindigket, der einzig
+sinnvolle Ersatz für die Geschwindigkeit.
+
+Ein ruhendes Teilchen hat die Weltlinie
+\[
+t\mapsto (t, x, y, z)=(t,0,0,0),
+\]
+der Parameter ist die Koordinatenzeit.
+Da das Teilchen keine Geschwindigkeit hat, ist $t$ auch die Eigenzeit,
+und die Vierergeschwdingkeit $u^\mu$ ist der Vektor.
+\[
+\begin{aligned}
+u^0 &= c
+&
+u^1&=u^2=u^3 = 0
+\end{aligned}
+\]
+Seine Länge gemessen mit der Metrik ist
+\[
+g_{\mu\nu}u^\mu u^\nu=-c^2,
+\]
+sie ist eine koordinatensystemunabhängige Grösse.
+
+Wendet man darauf eine Lorentztransformation mit Geschwindigkeit $v$ an,
+erhält man den Vektor
+\[
+\begin{aligned}
+u^0
+&=
+c\sqrt{1+\biggl(\frac{v}{c}\biggr)^2},
+&
+u^1
+&=
+\frac{v}{c}c
+&&\text{und}
+&
+u^2&=u^3=0.
+\end{aligned}
+\]
+Wir rechnen das Skalarprodukt mit Hilfe der Metrik nach:
+\[
+-(u^0)^2 + (u^1)^2 + (u^2)^2 + (u^3)^2
+=
+-c^2\biggl(1+\biggl(\frac{v}{c}\biggr)^2\biggr) + \frac{v^2}{c^2} c^2
+=
+-c^2 - v^2  + v^2
+= 
+-c^2.
+\]
+
+
+
+
+
+
 
