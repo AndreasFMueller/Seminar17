@@ -5,6 +5,8 @@
 #
 all:	transport kurve lichtkegel geodaete blackhole flach sphere
 
+images:	all
+
 w = 3840
 h = 2160
 scale=50

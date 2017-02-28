@@ -10,7 +10,7 @@ SUBDIRECTORIES = chapters uebungsaufgaben
 images:
 	for d in $(SUBDIRECTORIES); \
 	do \
-		cd $${d}; make images; cd ..; \
+		(cd $${d}; make images); \
 	done
 
 CHAPTERS = 								\
@@ -51,7 +51,7 @@ skript.pdf:	skript.tex $(TEXFILES) skript.ind $(BLXFILES)
 	pdflatex skript.tex
 	bibtex skript
 
-skript.idx:	skript.tex $(TEXFILES)
+skript.idx:	skript.tex $(TEXFILES) images
 	touch skript.ind
 	pdflatex skript.tex
 
