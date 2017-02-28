@@ -94,7 +94,7 @@ s^2
 +
 (y_1-y_2)^2
 +
-(z_1-z_2)^2}_{\text{Raumabstand}}
+(z_1-z_2)^2}_{\displaystyle\text{Raumabstand}}
 \label{skript:kruemmung:raumzeitabstand}
 \end{equation}
 gleich $0$ ist.
@@ -142,7 +142,8 @@ werden.
 Der Formalismus einer Metrik passt ganz hervorragend auf die hier
 vorliegende Situation.
 Verwenden wir als Koordinaten
-\begin{align*}
+\[
+\begin{aligned}
 x^0 &= ct,
 &
 x^1&=x,
@@ -150,7 +151,8 @@ x^1&=x,
 x^2&=y,
 &
 x^3&=z,
-\end{align*}
+\end{aligned}
+\]
 dann kann $s^2$ mit der Metrik
 \begin{equation}
 g_{\mu\nu}
@@ -300,26 +302,51 @@ c\sinh\beta&\cosh\beta
 \end{equation}
 Um die physikalische Bedeutung des Parameters $\beta$ zu verstehen, 
 betrachten wir die Punkte $x=0$ für beliebige $t$.
-Sie werten abgebildet auf
+Sie werden abgebildet auf
 \[
-x' = c\sinh\beta t
+\begin{aligned}
+x' &= c\sinh\beta \cdot t
+&
+t' &=  \cosh\beta \cdot t.
+\end{aligned}
 \]
-Im $(t',x')$-Koordinatensystem bewegt sich also der Nullpunkt des 
-$(t,x)$-Koordinatensystems mit der Geschwindigkeit
+Der Quotient dieser beiden Ausdrücke ist die Geschwindigkeit
 \[
-v=c\sinh\beta.
+v = c\frac{\sinh\beta}{\cosh\beta}
+\qquad\Rightarrow\qquad
+\frac{v}{c}
+=
+\tanh\beta,
 \]
-Der zugehörige Wert von $\cosh \beta$ ist
+mit der sich der Nullpunkt des $t$-$x$-Systems im $t'$-$x'$-System
+bewegt.
+
+Nach den Formeln im Abschnitt~\ref{skript:sinh:section:abh} kann 
+man jetzt auch $\sinh\beta$ und $\cosh\beta$ durch $v/c$ ausdrücken.
+Setzen wir ein, erhalten wir
 \[
-\cosh^2\beta - \sinh^2\beta = 1
-\qquad \Rightarrow \qquad
-\cosh^2\beta = 1+\sinh^2\beta
-\qquad \Rightarrow \qquad
-\cosh\beta = \sqrt{1+\biggl(\frac{v}{c}\biggr)^2}.
+\begin{aligned}
+\sinh\beta
+&=
+\frac{\tanh\beta}{\sqrt{1-\tanh^2\beta}}
+=
+\frac{1}{\gamma}\cdot\frac{v}{c}
+&
+&\text{mit}&
+\gamma = \sqrt{1-\biggl(\frac{v}{c}\biggr)^2}
+\qquad\text{und}
+\\
+\cosh\beta
+&=
+\frac1{\sqrt{1-\tanh^2\beta}}
+=
+\frac1{\gamma}.
+\end{aligned}
 \]
-Der Parameter $\sinh\beta$ hat also die Bedeutung einer in Einheiten
+
+Der Parameter $\tanh\beta$ hat also die Bedeutung einer in Einheiten
 der Lichtgeschwindigkeit gemessenen Geschwindigkeit.
-Da also $v/c=\sinh\beta$ ist, kann man die Transformation auch
+Da also $v/c=\tanh\beta$ ist, kann man die Transformation auch
 als
 \begin{equation}
 \begin{pmatrix}
@@ -327,11 +354,13 @@ a_{11}&a_{12}\\
 a_{21}&a_{22}
 \end{pmatrix}
 =
+\frac{1}{\gamma}
 \begin{pmatrix}
-\displaystyle\sqrt{1+\biggl(\frac{v}{c}\biggr)^2}
-	&\displaystyle\frac{v}{c^2} \\
-v
-	&\displaystyle\sqrt{1+\biggl(\frac{v}{c}\biggr)^2}
+\displaystyle 1
+	& \displaystyle\frac{v}{c^2}
+\\
+\displaystyle v
+	&\displaystyle 1
 \end{pmatrix}
 \label{skript:kruemmung:lorentz}
 \end{equation}
@@ -344,12 +373,12 @@ heisst {\em Lorentz-Transformation}.
 Befindet sich ein Beobachter im ursprünglichen $t$-$x$-System in Ruhe
 im Nullpunkt, dann ist seine Zeitkoordinate im $t'$-$x'$-System
 \begin{equation}
-t'=t\sqrt{1+\biggl(\frac{v}{c}\biggr)^2},
+t'=t\cdot\frac{1}{\gamma} = \frac{t}{\displaystyle\sqrt{1-\biggl(\frac{v}{c}\biggr)^2}},
 \label{skript:speziell:zeitdilatation}
 \end{equation}
 der Lauf der Zeit ist in den beiden Koordinatensystemen verschieden.
-Im $t'$-$x'$-Koordinatensystem läuft die Zeit um den Faktor
-\eqref{skript:speziell:zeitdilatation} gedehnt.
+Im $t'$-$x'$-Koordinatensystem läuft die Zeit um den Faktor $1/\gamma$
+gedehnt.
 
 Die Darstellung \eqref{skript:kruemmung:lorentz} der Lorenztransformation
 ist nicht sehr symmetrisch.
@@ -374,10 +403,10 @@ x^{3\prime}
 \end{pmatrix}
 =
 \begin{pmatrix}
-\sqrt{1+\biggl(\displaystyle\frac{v}{c}\biggr)^2} & \displaystyle\frac{v}{c} & 0 & 0 \\
-\displaystyle\frac{v}{c} & \sqrt{1+\biggl(\displaystyle\frac{v}{c}\biggr)^2} & 0 & 0 \\
-      0     &                                      & 1 & 0 \\
-      0     &                                      & 0 & 1 
+\displaystyle \frac{1}{\gamma}&\displaystyle\frac{v}{c\gamma}& 0 & 0 \\
+\displaystyle\frac{v}{c\gamma}&\displaystyle \frac{1}{\gamma}& 0 & 0 \\
+      0                       &                              & 1 & 0 \\
+      0                       &                              & 0 & 1 
 \end{pmatrix}
 \begin{pmatrix}
 x^0\\x^1\\x^2\\x^3
