@@ -1,0 +1,26 @@
+/*
+ * naeherung.maxima -- Berechnung der Christoffelsymbole und es Riemann-Tensors
+ *                     fuer die fast flache Näherung
+ */
+
+/*
+ * Metrik, Inverse der Metrik (zum Hochziehen von Indizes) und Koordinaten
+ */
+g: matrix( [-1 + h00(x0,x1,x2,x3), 0, 0, 0 ],
+           [ 0, 1 + h11(x0,x1,x2,x3), 0, 0 ],
+           [ 0, 0, 1 + h22(x0,x1,x2,x3), 0 ],
+           [ 0, 0, 0, 1 + h33(x0,x1,x2,x3) ]);
+x: [x0, x1, x2, x3];
+
+batchload("curvature.maxima");
+
+/*
+ * Christoffelsymbole zweiter Art
+ *
+ * Gamma_{mu,nu}^\sigma
+ */
+
+Christoffel2(2,1,1);
+Christoffel2(3,1,1);
+Christoffel2(4,1,1);
+

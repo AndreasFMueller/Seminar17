@@ -36,7 +36,12 @@ SKRIPTFILES = vorwort.tex uebersicht.tex \
 	$(CHAPTERS) \
 	references.bib
 
-THEMA_FILES = thema/main.tex
+THEMA_FILES = thema/main.tex						\
+	adaptiv/main.tex						\
+	gps/main.tex							\
+	kugel/main.tex							\
+	minimal/main.tex						\
+	zeitreisen/main.tex
 
 TEXFILES = $(SKRIPTFILES) \
 	$(THEMA_FILES)
