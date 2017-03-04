@@ -8,6 +8,7 @@ all:	images
 images:
 	cd 3d; make images
 	cd tikz; make images
+	cd mp; make images
 
 kugel.out:	kugel.maxima curvature.maxima
 	maxima -b kugel.maxima | expand > kugel.out

@@ -270,24 +270,25 @@ Da die Differenz der Quadrate jeweils $1$ ist, können die Basen
 als Werte des hyperbolischen Kosinus und Sinus dargestellt werden:
 \[
 \begin{aligned}
-a_{11}&=\cosh\beta, &&&\frac{a_{21}}{c}&=\sinh\beta,
+a_{11}&=\cosh\beta_1, &&&\frac{a_{21}}{c}&=\sinh\beta_1,
 \\
-a_{22}&=\cosh\gamma,&&&ca_{12}&=\sinh\gamma.
+a_{22}&=\cosh\beta_2,&&&ca_{12}&=\sinh\beta_2.
 \end{aligned}
 \]
 Die dritte Gleichung lautet dann
 \begin{align*}
-a_{21}a_{22}=c\sinh\beta\cosh\gamma
+a_{21}a_{22}=c\sinh\beta_1\cosh\beta_2
 &=
-c^2a_{11}a_{12}=c^2\cosh\beta\frac1c\sinh\gamma
+c^2a_{11}a_{12}=c^2\cosh\beta_1\frac1c\sinh\beta_2
 \\
-c\sinh\beta\cosh\gamma
+c\sinh\beta_1\cosh\beta_2
 &=
-c\cosh\beta\sinh\gamma
+c\cosh\beta_1\sinh\beta_2
 \\
-\tanh\beta&=\tanh\gamma,
+\tanh\beta_1&=\tanh\beta_2,
 \end{align*}
-es folgt $\beta=\gamma$.
+es folgt $\beta_1=\beta_2$, wir schreiben dafür im Folgenden einfach
+nur $\beta$.
 Damit haben wir die gesuchte Transformation gefunden, es ist
 \begin{equation}
 \begin{pmatrix}
@@ -305,8 +306,9 @@ betrachten wir die Punkte $x=0$ für beliebige $t$.
 Sie werden abgebildet auf
 \[
 \begin{aligned}
-x' &= c\sinh\beta \cdot t
+x' &= c\sinh\beta \cdot t,
 &
+&&
 t' &=  \cosh\beta \cdot t.
 \end{aligned}
 \]
@@ -330,17 +332,17 @@ Setzen wir ein, erhalten wir
 &=
 \frac{\tanh\beta}{\sqrt{1-\tanh^2\beta}}
 =
-\frac{1}{\gamma}\cdot\frac{v}{c}
+\gamma\cdot\frac{v}{c}
 &
 &\text{mit}&
-\gamma = \sqrt{1-\biggl(\frac{v}{c}\biggr)^2}
+\gamma = \frac{1}{\displaystyle\sqrt{1-\biggl(\frac{v}{c}\biggr)^2}}
 \qquad\text{und}
 \\
 \cosh\beta
 &=
 \frac1{\sqrt{1-\tanh^2\beta}}
 =
-\frac1{\gamma}.
+\gamma.
 \end{aligned}
 \]
 
@@ -373,12 +375,14 @@ heisst {\em Lorentz-Transformation}.
 Befindet sich ein Beobachter im ursprünglichen $t$-$x$-System in Ruhe
 im Nullpunkt, dann ist seine Zeitkoordinate im $t'$-$x'$-System
 \begin{equation}
-t'=t\cdot\frac{1}{\gamma} = \frac{t}{\displaystyle\sqrt{1-\biggl(\frac{v}{c}\biggr)^2}},
+t'=t\cdot\gamma = \frac{t}{\displaystyle\sqrt{1-\biggl(\frac{v}{c}\biggr)^2}},
 \label{skript:speziell:zeitdilatation}
 \end{equation}
 der Lauf der Zeit ist in den beiden Koordinatensystemen verschieden.
-Im $t'$-$x'$-Koordinatensystem läuft die Zeit um den Faktor $1/\gamma$
+Im $t'$-$x'$-Koordinatensystem läuft die Zeit um den Faktor $\gamma$
 gedehnt.
+Umgekehrt gilt natürlich auch $t=t'/\gamma$.
+
 
 Die Darstellung \eqref{skript:kruemmung:lorentz} der Lorenztransformation
 ist nicht sehr symmetrisch.
@@ -396,15 +400,15 @@ x^3&=z&
 dann wird die Lorentztransformation
 \begin{equation}
 \begin{pmatrix}
-x^{0\prime}\\
-x^{1\prime}\\
-x^{2\prime}\\
-x^{3\prime}
+x^{\prime0}\\
+x^{\prime1}\\
+x^{\prime2}\\
+x^{\prime3}
 \end{pmatrix}
 =
 \begin{pmatrix}
-\displaystyle \frac{1}{\gamma}&\displaystyle\frac{v}{c\gamma}& 0 & 0 \\
-\displaystyle\frac{v}{c\gamma}&\displaystyle \frac{1}{\gamma}& 0 & 0 \\
+\displaystyle          \gamma &\displaystyle\frac{v}{c}\gamma& 0 & 0 \\
+\displaystyle\frac{v}{c}\gamma&\displaystyle           \gamma& 0 & 0 \\
       0                       &                              & 1 & 0 \\
       0                       &                              & 0 & 1 
 \end{pmatrix}
@@ -418,21 +422,22 @@ In dieser Form ist die Lorentztransformation klar symmetrischer.
 \section{Weltlinien und Eigenzeit}
 \rhead{Weltlinien und Eigenzeit}
 Die Bewegung eines Teilchens in der Raum-Zeit ist eine Kurve
-$(t(\tau), x(\tau), y(\tau), z(\tau)$
-mit dem Parameter $\tau$, die man auch {\em Weltlinie} nennt.
+$(t(s), x(s), y(s), z(s))$
+mit dem Parameter $s$, die man auch {\em Weltlinie} nennt.
 \index{Weltlinie}
 Da sich das Teilchen nicht mit Lichtgeschwindigkeit bewegen kann, muss
+für den Tangentialvektor 
 \[
--c^2t'(\tau)^2
-+ x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2
+-c^2\dot t(s)^2
++ \dot x(s)^2 + \dot y(s)^2 + \dot z(s)^2
 <
 0
 \]
-gelten, darin bezeichnet der Apostroph die Ableitung nach dem 
-Parameter $\tau$.
+gelten, darin bezeichnet der Punkt die Ableitung nach dem 
+Parameter $s$.
 Offenbar bewegt sich das Teilchen mit der Geschwindigkeit
 \[
-v^2 = \frac{x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}{t'(\tau)^2}
+v^2 = \frac{\dot x(s)^2 + \dot y(s)^2 + \dot z(s)^2}{\dot t(s)^2}
 \]
 durch die Raumzeit.
 Da sich das Teilchen bewegt, läuft die Zeit in einem Koordinatensystem,
@@ -441,46 +446,59 @@ das sich mit dem Teilchen mitbewegt, um den Faktor
 langsam.
 Setzt man die Definitionen ein, erhält man
 \begin{align*}
-\sqrt{1+\frac{v^2}{c^2}}
+\frac{1}{\gamma}
+=
+\sqrt{1-\frac{v^2}{c^2}}
 &=
-\sqrt{1+ \frac{x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}{c^2t'(\tau)^2}}
+\sqrt{1- \frac{\dot x(s)^2 + \dot y(s)^2 + \dot z(s)^2}{c^2\dot t(s)^2}}
 \\
 &=
--
-\sqrt{-c^2t'(\tau)^2+x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}\frac{1}{ct'(\tau)}
+\sqrt{-(-c^2\dot t(s)^2+\dot x(s)^2 + \dot y(s)^2 + \dot z(s)^2)}\frac{1}{c\dot t(s)}.
 \end{align*}
 Die im bewegten Koordinatensystem gemessene Zeit ist
 \begin{align*}
-\int
-\sqrt{1+\frac{v^2}{c^2}}\,dt
+\int\frac{1}{\gamma}\,dt
 &=
-\sqrt{-c^2t'(\tau)^2+x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}\frac{1}{ct'(\tau)}
+\int
+\sqrt{1-\frac{v^2}{c^2}}\,dt
+=
+\int
+\sqrt{-(-c^2\dot t(s)^2+\dot x(s)^2 + \dot y(s)^2 + \dot z(s)^2)}\frac{1}{c\dot t(s)}
 \,dt
 \\
 &=
 \int
-\sqrt{-c^2t'(\tau)^2+x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}\frac{1}{ct'(\tau)}
-t'(\tau)\,d\tau
+\sqrt{-(-c^2\dot t(s)^2+\dot x(s)^2 + \dot y(s)^2 + \dot z(s)^2}\frac{1}{c\dot t(s))}
+\dot t(s)\,ds
 \\
 &=
 \int
 \frac1c
-\sqrt{-c^2t'(\tau)^2+x'(\tau)^2 + y'(\tau)^2 + z'(\tau)^2}
-\,d\tau
+\sqrt{-(-c^2\dot t(s)^2+\dot x(s)^2 + \dot y(s)^2 + \dot z(s)^2)}
+\,ds.
 \end{align*}
 In $x^\mu$-Koordinaten bedeutet dies, dass
 \begin{equation}
+\tau
+=
+\int
+\frac{1}{\gamma}\,dt
+=
 \int
 \sqrt{1-\frac{v^2}{c^2}}\,dt
 =
-\int \frac1{c}\sqrt{-g_{\mu\nu}\dot x^\mu(\tau) \dot x^\nu(\tau)}\,d\tau
+\frac1{c}
+\int
+\sqrt{-g_{\mu\nu}\dot x^\mu(s) \dot x^\nu(s)}\,ds
 \label{skript:speziell:eigenzeit}
 \end{equation}
-die Zeit ist, die entlang der Kurve $x^\mu(\tau)$ für den
+die Zeit ist, die entlang der Kurve $x^\mu(s)$ für den
 mitbewegten Beobachter vergangen ist.
-Man nennt~\eqref{skript:speziell:eigenzeit} die {\em Eigenzeit} des
-Beobachters, der sich entlang der Weltlinie $x^\mu(\tau)$ bewegt.
+Man nennt $\tau$ die {\em Eigenzeit} des
+Beobachters, der sich entlang der Weltlinie $x^\mu(s)$ bewegt.
 \index{Eigenzeit}
+Da der Integrand in~\eqref{skript:speziell:eigenzeit} unabhängig ist
+vom Koordinatensystem, ist $\tau$ ebenfalls unabhängig vom Koordinatensystem.
 
 \section{Energie und Impuls}
 \rhead{Energie und Impuls}
@@ -493,13 +511,15 @@ nicht nur mit dem Impuls funktionieren kann.
 Wir brauchen eine erweiterte Erhaltungsgrösse, die wir zur Beschreibung
 der Bewegung eines Teilchens verwenden können.
 
-Die Kurve $x^\mu(\tau)$ und die Ableitung nach dem Kurvenparameter sind
+Die Kurve $x^\mu(s)$ und die Ableitung nach dem Kurvenparameter sind
 offenbar keine geeigneten Grössen, denn der Kurvenparameter ist
 keine vom Koordinatensystem unabhängige Grösse.
 Die Eigenzeit ist aber eine solche koordinatensystemunabhängige
 Grösse, wir schliessen daraus, dass die Ableitung der Position
 nach der Eigenzeit, die sogenannte Vierergeschwindigket, der einzig
 sinnvolle Ersatz für die Geschwindigkeit.
+Da die Eigenzeit auch im Wesentlichen die Bogenlänge ist, führt die
+Ableitung automatisch auf einen Einheitsvektor.
 
 Ein ruhendes Teilchen hat die Weltlinie
 \[
@@ -507,12 +527,13 @@ t\mapsto (t, x, y, z)=(t,0,0,0),
 \]
 der Parameter ist die Koordinatenzeit.
 Da das Teilchen keine Geschwindigkeit hat, ist $t$ auch die Eigenzeit,
-und die Vierergeschwdingkeit $u^\mu$ ist der Vektor.
+und die Vierergeschwindgkeit $u^\mu$ ist der Vektor mit den
+Komponenten
 \[
 \begin{aligned}
-u^0 &= c
-&
-u^1&=u^2=u^3 = 0
+u^0 &= c,
+&&&
+u^1&=u^2=u^3 = 0.
 \end{aligned}
 \]
 Seine Länge gemessen mit der Metrik ist
@@ -527,11 +548,12 @@ erhält man den Vektor
 \begin{aligned}
 u^0
 &=
-c\sqrt{1+\biggl(\frac{v}{c}\biggr)^2},
+c\gamma,
 &
 u^1
 &=
-\frac{v}{c}c
+\frac{v}{c}\gamma c
+=v\gamma
 &&\text{und}
 &
 u^2&=u^3=0.
@@ -541,13 +563,38 @@ Wir rechnen das Skalarprodukt mit Hilfe der Metrik nach:
 \[
 -(u^0)^2 + (u^1)^2 + (u^2)^2 + (u^3)^2
 =
--c^2\biggl(1+\biggl(\frac{v}{c}\biggr)^2\biggr) + \frac{v^2}{c^2} c^2
+-c^2\gamma^2 + v^2\gamma^2
 =
--c^2 - v^2  + v^2
-= 
+-c^2\gamma^2
+\underbrace{\biggl(1-\frac{v^2}{c^2}\biggr)}_{\displaystyle=\frac{1}{\gamma^2}}
+=
 -c^2.
 \]
 
+Multiplizieren wir die Vierergeschwindigkeit mit $m$, erhalten wir
+den sogenannten Viererimpuls $p^\mu = mu^\mu$.
+Der Betrag des Viererimpulses ist eine Konstante, es gilt
+\[
+g_{\mu\nu}p^\mu p^\nu
+=
+-
+m^2\gamma^2 c^2
++
+m^2 \gamma^2 v^2
+=
+-m^2c^2\biggl(\displaystyle 1-\frac{v^2}{c^2}\biggr)\gamma^2
+=
+-m^2c^2.
+\]
+Die Raumkomponenten $p^1$, $p^2$ und $p^3$ haben eine offensichtliche
+Interpretation in der Newtonschen Mechanik.
+Bis auf den Faktor $\gamma$ stimmten die Raumkomponenten des Viererimpulses
+mit dem Newtonschen Impuls überein.
+Schreiben wir $M=m\gamma$, dann wird sogar $p^k = M v^k$, d.~h.~die
+Raumkomponenten des Viererimpulses stimmen mit dem Newtonschen Impuls 
+für die Masse $M=m\gamma  \ge m$ "uberein.
+$M=m\gamma$ heisst die relativistische Masse.
+Eine bewegte Masse ist also grösser als eine ruhende.
 
 
 

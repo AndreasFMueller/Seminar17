@@ -5,7 +5,8 @@
 #
 all:	skript.pdf
 
-SUBDIRECTORIES = chapters uebungsaufgaben 
+#SUBDIRECTORIES = chapters uebungsaufgaben 
+SUBDIRECTORIES = chapters 
 
 images:
 	for d in $(SUBDIRECTORIES); \
