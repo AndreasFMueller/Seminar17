@@ -241,11 +241,11 @@ ausschliesslich eine Eigenschaft der Einbettung der Kurve in den
 Raum ist.
 Wir tun das, indem wir davon ausgehen, dass eine Kurve bereits mit
 der Kurvenlänge parametrisiert ist, dass wir also die Standardparametrisierung
-gewählt haben, in der die über die innere Geometrie der Kurve verfügbare
-Information vereits vollständig verwertet worden ist.
+gewählt haben, in der über die innere Geometrie der Kurve verfügbare
+Information bereits vollständig verwertet worden ist.
 
 Eine Gerade zeichnet sich dadurch aus, dass der Tangentialvektor in
-der Bogenlängenparametrisierung nicht ändert.
+der Bo\-gen\-län\-gen\-pa\-ra\-me\-tri\-sie\-rung nicht ändert.
 Eine Gerade ist nicht gekrümmt.
 Krümmung ist also die Änderung des Tangentialvektors oder
 \[
@@ -260,7 +260,7 @@ s\mapsto c(s)=\biggl( r\cos\frac{s}{r}, r\sin\frac{s}{r}\biggr).
 \]
 Die Ableitung ist
 \[
-\dot c(s)=\biggl(\cos\frac{s}{r},\sin\frac{s}{r}\biggr)
+\dot c(s)=\biggl(-\sin\frac{s}{r},\cos\frac{s}{r}\biggr)
 \qquad\Rightarrow\qquad
 |\dot c(s)|
 =
@@ -269,7 +269,7 @@ Die Ableitung ist
 dies ist also eine Parametrisierung mit Bogenlängenparameter.
 Die Krümmung ist der Betrag der zweiten Ableitung, also
 \[
-\ddot c(s)=\biggl(\frac1r\cos\frac{s}{r},\frac1r\sin\frac{s}{r}\biggr)
+\ddot c(s)=\biggl(-\frac1r\cos\frac{s}{r},-\frac1r\sin\frac{s}{r}\biggr)
 \qquad\Rightarrow\qquad
 \kappa(s)
 =
@@ -339,7 +339,7 @@ wird der Zähler etwas übersichtlicher zu
 \]
 Da $\vec e(t)$ ein Einheitsvektor ist, ist
 $\vec e(t) \;(\vec e(t)\cdot\ddot c(t))$ die Projektion des Vektors
-$\ddot c(t)$ auf den Vektor $\vec c(t)$.
+$\ddot c(t)$ auf den Vektor $\vec e(t)$.
 Der Nenner ist also die Komponenten von $\ddot c(t)$ senkrecht auf dem
 Tangentialvektor.
 Wir brauchen davon aber nur den Betrag, also die Höhe des Parallelograms
@@ -350,11 +350,11 @@ $\vec e(t)$ teilen, die aber ein Einheitsvektor ist.
 Den Parallelogramminhalt können wir mit der Determinante berechnen:
 \[
 \biggl|\ddot c(t) - \frac{\dot c(t)}{|\dot c(t)|}
-\biggl(\frac{\dot c(t)}{|\dot c(t)|} \cdot \ddot c(t))\biggr)\biggr|
+\biggl(\frac{\dot c(t)}{|\dot c(t)|} \cdot \ddot c(t)\biggr)\biggr|
 =
-\det \biggl(\frac{\dot c(t)}{|\dot c(t)|}, \ddot c(t))\biggr)
+\det \biggl(\frac{\dot c(t)}{|\dot c(t)|}, \ddot c(t)\biggr)
 =
-\frac1{|\dot c(t)|}\det \dot c(t),\ddot c(t)).
+\frac1{|\dot c(t)|}\det (\dot c(t),\ddot c(t)).
 \]
 Daraus können wir jetzt auch eine Formel für die Krümmung zusammensetzen.
 Zunächst müssen wir den Faktor $|\dot c(t)|$ im Nenner wieder
@@ -393,7 +393,7 @@ die ersten beiden Ableitungen, diese sind
 &=
 (-a\cos t, -b\sin t)
 \end{align*}
-Die Determinante von $\dot c(t)$ und $\ddot c(t))$ ist
+Die Determinante von $\dot c(t)$ und $\ddot c(t)$ ist
 \[
 \det(\dot c(t), \ddot c(t))
 =
@@ -456,7 +456,7 @@ eingebettet vorstellt.
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{chapters/3d/kurve.jpg}
-\caption{Kurven $t\mapsto(t,t^2,0)$ (rot) und $t\mapsto(t,t^2,0)$ (geld).
+\caption{Kurven $t\mapsto(t,t^2,0)$ (rot) und $t\mapsto(t,t^2,t^3)$ (geld).
 \label{skript:kruemmung:fig:kurvekr}}
 \end{figure}
 Wir betrachten die beiden Kurven
@@ -515,7 +515,7 @@ Für den Parameterwert $t=0$ stimmen die beiden Krümmungen überein.
 \section{Rekonstruktion einer ebenen Kurve aus der Krümmung}
 \rhead{Rekonstruktion aus der Krümmung}
 Die Krümmung bestimmt eine Kurve eindeutig.
-Umd dies einzusehen, parametrisieren wir eine ebene Kurve mit
+Um dies einzusehen, parametrisieren wir eine ebene Kurve mit
 $x$, schreiben also $c(x)=(x,y(x))$.
 Wir müssen jetzt nachrechnen, dass die Vorgabe der Krümmung $\kappa(x)$
 und der Steigung in einem Punkt die Kurve eindeutig festlegt.
@@ -573,7 +573,7 @@ Für eine ebene Kurve verschwindget die Torsion.
 Die Kurventheorie lässt sich sogar auf eine beliebig grosse Zahl
 von Dimensionen verallgemeinern.
 Es stellt sich heraus, dass mit jeder zusätzlichen Dimension eine
-zusätzliche Funktion Funktion notwendig wird.
+zusätzliche Funktion notwendig wird.
 Für eine Kurve in $n$ Dimensionen braucht es also $n-1$ Funktionen,
 die beschreiben, wie sich ein entlang der Kurve mitbewegtes Koordinatensystem,
 das sogenannte Frenet-$n$-Bein ändert.
