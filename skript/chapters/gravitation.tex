@@ -17,8 +17,76 @@ als die Wirkung eines gekrümmten Raumes vorstellen kann, wie schwarze Löcher
 beschrieben werden können, und wie alle diese Dinge tatsächlich gemessen
 werden können.
 
-%\input{chapters/k-speziell.tex}
+\section{Äquivalenzprinzip}
 
+\section{Newtonsches Gravitationsgesetz}
+Als ersten Schritt in Richtung auf eine allgemeine Gravitationstheorie
+zeigen wir, wie auch die Bahnen in einem Newtonschen Gravitationsfeld 
+als Geodäten eines Zusammenhangs schreiben lassen.
+Wer verwenden dazu aber nicht die Metrik und den daraus abgeleiteten 
+Zusammenhang, dies hat erst die Einsteinsche Theorie geschafft.
+
+Das Newtonsche Gravitationsgesetz beschreibt die Beschleunigung, die
+auf ein Teilchen in einem Gravitationsfeld wirkt, welches von einer
+Masse $m$ erzeugt wird.
+Der Betrag der Kraft ist umgekehrt proportional zum Quadrat der
+Entfernung.
+Der Kraftvektor kann deshalb als
+\[
+\vec F = -\frac{GM}{r^2}\cdot\frac{\vec r}{r}
+\]
+geschrieben werden.
+Die Bewegungsgleichung ist daher 
+\begin{equation}
+\ddot x^k = -\frac{GM}{r}\cdot\frac{x^k}{r},
+\qquad\text{mit}\qquad r = \sqrt{(x^1)^2+(x^2)^2+(x^3)^2},
+\label{skript:gravitation:bewegungsgleichung}
+\end{equation}
+es kommt nur die Beschleunigung und die Position vor.
+
+In den Geodätengleichungen 
+\[
+\ddot x^\mu = -\Gamma^\mu_{\alpha\nu}\dot x^\alpha\dot x^\nu
+\]
+kommt dagegen auf der rechten Seite auch die Geschwindigkeit vor.
+Es ist daher nicht unmittelbar klar, wie die Bewegungsgleichung als
+Geodätengleichung geschrieben werden klar.
+
+Wir beschreiben die Bewegung wieder in einem Vierdimensionalen Raum,
+also als Kurve
+\[
+t\mapsto (t,x^1(t),x^2(t),x^3(t)),
+\]
+also mit $x^0(t)=t$.
+Für eine solche Parametrisierung gilt $\dot x^0(t)=1$.
+In der Geodätengleichung können wir daher die Terme mit mit Index $0$
+separat behandelt werden:
+\[
+\ddot x^\mu
+=
+-\Gamma^\mu_{00}
+-\Gamma^\mu_{k0}\dot x^k -\Gamma^\mu_{0l}\dot x^l
+- \Gamma^\mu_{kl}\dot x^k\dot x^l
+\]
+Da in der Bewegungsgleichung~\eqref{skript:gravitation:bewegungsgleichung}
+auf der rechten Seite keine Geschwindigkeiten vorkommen, darf nur der
+erste Term stehen bleiben, also
+\begin{equation}
+\Gamma^k_{00} = \frac{GM}{r^2}\cdot \frac{x^k}{r},\qquad k=1,\dots,3.
+\label{skript:gravitation:newtonzusammenhang}
+\end{equation}
+Da die erste Komponente der Geodäte $x^0(t)=t$ ist und seine zweite
+Ableitung $\ddot x^0(t)=0$, muss auch $\Gamma^0_{\alpha\nu}=0$ sein.
+Die einzigen nicht verschwindenden Zusammenhangskoeffizienten sind
+\eqref{skript:gravitation:newtonzusammenhang}.
+
+Man kann für den Zusammenhang~\eqref{skript:gravitation:newtonzusammenhang}
+auch die Definition des Riemann-Krümmungstensors anwenden.
+Die Rechnung zeigt aber, dass zwar einzelne Komponenten des Riemann-Tensors
+nicht verschwinden, der Ricci-Tensor und damit auch der Einstein-Tensor
+verschwinden dagegen identisch.
+Diese Beschreibung der Gravitation führt also nicht auf das Modell
+eines gekrümmten Raumes.
 
 \section{Physikalische Bedeutung der Krümmung}
 
@@ -26,81 +94,3 @@ werden können.
 
 \section{Feldgleichungen}
 
-%\input{chapters/k-schwarzschild.tex}
-
-%\section{Robertson-Walker-Metrik}
-%Die Robertson-Walker-Metrik wurde entwickelt, um ein homogenes,
-%isotropes und expandierendes Universum zu modellieren.
-%Wir beginnen mit einem flachen Universum mit der
-%Metrik
-%\[
-%ds^2
-%=
-%-c^2\,dt^2 + dr^2 + r^2\,d\vartheta^2 + r^2\sin^2\vartheta \,d\varphi^2
-%=
-%-c^2\,dt^2 + dr^2 + d\Omega^2.
-%\]
-%Wenn dieses Universum expandiert, ändert sich die Längenmessung für die
-%Raum-Koordinaten, nicht aber für die Zeitkoordinate.
-%Wir können dies mit einem zeitabhängigen Skalierungsfaktor $a(t)$ 
-%modellieren:
-%\[
-%ds^2
-%=
-%-c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\vartheta^2 + a(t)r^2 \sin^2\vartheta\,d\varphi^2
-%=
-%-c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\Omega^2.
-%\]
-%Natürlich bleibt dies ein flaches Universum.
-%
-%Wir müssen aber auch zulassen, dass das Universum gekrümmt ist.
-%Dies bedeutet, dass der Umfang eines Kreises um den Nullpunkt
-%nicht proportional mit $r$ wächst.
-%Alternativ kann man auch sagen, dass die $r$-Koorindate eines Punktes 
-%eines Kreises vom Umfang $2\pi R$ nicht unbedingt $R$ sein muss, also
-%$r \ne R$.
-%Wir müssen also den Term $dr^2$ ersetzen durch etwas, was mit zunehmendem
-%$r$ grösser oder kleiner als $1$ sein wird.
-%\[
-%ds^2
-%=
-%-c^2\,dt^2
-%+ a(t)^2 \biggl(
-%\frac{R^2}{R^2-kr^2} dr^2
-%+
-%r^2\, d\Omega^2
-%\biggr)
-%\]
-%
-%Der Faktor $a(t)$ heisst der Skalierungsfaktor, er beschreibt, wie stark
-%das Universum sich zur Zeit $t$ bereits gestreckt hat.
-%
-%Der Einstein-Tensor dieser Metrik kann in einer sehr langwierigen oder
-%noch besser mechanischen Rechnung ermittelt werden.
-%Er ist diagonal und hat die folgenden Diagonal-Elemente:
-%\begin{align*}
-%G_{00}
-%&=
-%\frac{3}{4}\biggl(\frac{\dot a(t)}{a(t)}\biggr)^2
-%\\
-%G_{11}
-%&=
-%-\ddot a(t) +\frac{\dot a(t)^2}{4a(t)}
-%\\
-%G_{22}
-%&=
-%G_{11} r^2
-%\\
-%G_{33}
-%&=
-%G_{11} r^2\sin^2\vartheta
-%\end{align*}
-%In den Ausdrücken für $G_{22}$ und $G_{33}$ fällt auf, dass sie gegenüber
-%$G_{11}$ nur die zusätzlichen Faktoren enthalten, die auch in der Definition
-%der Robertson-Walker-Metrik evident sind.
-%Um die Feldgleichungen aufzustellen reicht es daher, mit $G_{00}$ und
-%$G_{11}$ zu arbeiten.
-%Dies wird später auf die Friedmann-Gleichungen führen.
-%
-%
-%
