@@ -18,6 +18,32 @@ beschrieben werden können, und wie alle diese Dinge tatsächlich gemessen
 werden können.
 
 \section{Äquivalenzprinzip}
+Schon Galileo Galilei hat bemerkt, dass im Gravitationsfeld der Erde
+jeder Körper unabhängig von seiner Masse die gleiche Beschleunigung $g$
+erfährt.
+Auch das Newtonsche Gravitationsgesetz beschreibt den Betrag der Kraft
+zwischen zwei Massen $M$ und $m$ als
+\[
+F=\frac{GMm}{r^2}.
+\]
+Ein Teilchen der Masse $m$ wird daher nach dem zweiten Newtonschen Gesetz
+$F=ma$ immer mit den Betrag
+\[
+\frac{GM}{r^2}
+\]
+haben.
+Die Beschleunigung eines Teilchens ist daher unabhängig von der Masse.
+Diese {\em Äquivalenzprinzpi} genannte Beobachtung wurde von
+Lor\'and Eötvös 1909 mit sehr grosser Genauigkeit nachgemessen und bestätigt.
+In neuerer Zeit wurde die Genauigkeit nochmals um den Faktor $10^4$
+verbessert.
+
+Eine Folge des Äquivalenzprinzips ist auch, dass sich ein konstant
+beschleunigtes Labor und ein Labor in einem homogenen Gravitationsfeld
+nicht unterscheiden lassen.
+%
+% TODO Beschleunigung und Gravitation im Lift-Experiment
+%
 
 \section{Newtonsches Gravitationsgesetz}
 Als ersten Schritt in Richtung auf eine allgemeine Gravitationstheorie
@@ -87,6 +113,46 @@ nicht verschwinden, der Ricci-Tensor und damit auch der Einstein-Tensor
 verschwinden dagegen identisch.
 Diese Beschreibung der Gravitation führt also nicht auf das Modell
 eines gekrümmten Raumes.
+
+\section{Näherung für schwache Felder}
+Wir möchten jetzt eine Metrik finden, die einerseits möglichst nahe
+an der Minkovski-Metrik ist, deren zugehörige Geodäten andererseits die
+Bewegung in einem schwachen Gravitationsfeld korrekt wiedergibt.
+Als Metrik verwenden wir daher
+\[
+g_{\mu\nu}=\eta_{\mu\nu} + h_{\mu\nu},
+\]
+wobei wir annehmen, dass $h_{\mu\nu}$ sehr klein ist.
+Die zugehörigen Christoffelsymbole sind nach einiger, vorzugsweise
+maschineller Rechnung
+\[
+\Gamma^{k}_{00}
+=
+-\frac{1}{2(h_{kk} + 1)}\frac{\partial h_{00}}{\partial x^k}.
+\]
+Da $h_{kk}$ im Vergleich zu $1$ sehr klein soll, bleibt
+\[
+\Gamma^{k}_{00}
+=
+-\frac{1}{2}\frac{\partial h_{00}}{\partial x^k}.
+\]
+Damit die Bahnen der newtonschen Gravitationstheorie entstehen, müssen
+die $-\Gamma^k_{00}$ die Beschleunigungskomponenten des Gravitationsfelds
+entstehen.
+Diese bilden den Gradienten des Potentials des Gravitationsfeldes
+\[
+-\Gamma^k_{00} = -\frac{\partial\varphi}{\partial x^k}.
+\]
+Es folgt daher, dass $h_{00}=-2\varphi$ ist.
+In erster Näherung beschreibt daher die Metrik
+\begin{equation}
+\begin{aligned}
+g_{00} &= -1 -2\varphi,
+&&&
+g_{kk} &= 1,\quad k=1,2,3.
+\end{aligned}
+\label{skript:gravitation:naeherung}
+\end{equation}
 
 \section{Physikalische Bedeutung der Krümmung}
 
