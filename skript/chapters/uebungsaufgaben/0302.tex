@@ -1,0 +1,108 @@
+Finden Sie eine Kurve zwischen den Punkten $(-1,0)$ und $(1,0)$
+derart, dass 
+\[
+\int_{-1}^1 L(x,y,\dot x, \dot y)\,dt
+\]
+minimal wird mit
+\[
+L(x,y,\dot x, \dot y)
+=
+y+\frac12(\dot x^2+\dot y^2).
+\]
+
+\begin{loesung}
+Für die Euler-Lagrange-Gleichungen brauchen wir die Ableitungen der
+Funktion $L$ nach den Koordinaten und deren Ableitungen:
+\begin{equation}
+\begin{aligned}
+\frac{\partial L}{\partial x}
+&=
+0,
+&
+\frac{\partial L}{\partial \dot x}
+&=
+1,
+\\
+\frac{\partial L}{\partial y}
+&=
+\dot x,
+&
+\frac{\partial L}{\partial \dot x}
+&=
+\dot y.
+\end{aligned}
+\end{equation}
+Daraus ergeben sich die Euler-Lagrange-Gleichungen:
+\[
+\begin{aligned}
+0=
+\frac{d}{dt}
+\frac{\partial L}{\partial\dot x}
+-
+\frac{\partial L}{\partial x}
+&=
+\ddot x
+\\
+0=
+\frac{d}{dt}
+\frac{\partial L}{\partial\dot y}
+-
+\frac{\partial L}{\partial y}
+&=
+\ddot y-1
+&&\Rightarrow&
+\ddot y &= 1.
+\end{aligned}
+\]
+Die Gleichungen sind entkoppelt, und können daher unabhängig voneinander
+gelöst werden.
+Die allgemeinen Lösungen sind
+\[
+\begin{aligned}
+x(t)&=x_0 + t v_{0x}
+\\
+\text{und}\qquad
+y(t)&=y_0 + t v_{0y} + \frac12t^2.
+\end{aligned}
+\]
+Die vier Konstanten $x_0$, $y_0$, $v_{0x}$ und $v_{0y}$ müssen so bestimmt
+werden, dass die Kurve zu den richtigen Zeitpunkten durch die 
+beiden Endpunkte gehen, daraus ergeben sich die folgenden Gleichungen
+für die Konstanten
+\[
+\begin{aligned}
+x(-1)&=x_0-v_{0x}=-1,
+\\
+x(1)&=x_0+v_{0x}=1
+\end{aligned}
+\qquad
+\text{und}
+\qquad
+\begin{aligned}
+y(-1)&=y_0-v_{0y}+{\textstyle \frac12}=0,
+\\
+y(-1)&=y_0+v_{0y}+{\textstyle \frac12}=0.
+\end{aligned}
+\]
+Aus den linken Gleichungen folgt $x_0=0$ und $v_{0x}=1$, und
+damit $x(t)=t$.
+Aus den rechten Gleichungen folgt durch Bildung der Summe und der
+Differenz der beiden Gleichungen
+\[
+\begin{aligned}
+2y_0+1&=0&&\Rightarrow& y_0&=-\frac12\\
+2v_{0y}&=0&&\Rightarrow& v_{0y}&=0
+\end{aligned}
+\]
+Damit ist die Lösung für $y$:
+\[
+y(t) = -\frac12+\frac12t^2=\frac12(t^2-1).
+\]
+Da $x(t)=t$ ist, kann man die Kurve in der $x$-$y$-Ebene auch als 
+\[
+y=\frac12(x^2-1)
+\]
+schreiben, eine Parabel mit Scheitel bei $(0,-\frac12)$, die die
+$x$-Achse in den Punkten $(-1,0)$ und $(1,0)$ schneidet.
+\end{loesung}
+
