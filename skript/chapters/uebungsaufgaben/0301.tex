@@ -1,0 +1,127 @@
+Betrachten Sie die Metrik
+\[
+g_{\mu\nu}
+=
+\begin{pmatrix}
+1+x&0\\
+0  &1
+\end{pmatrix}
+\]
+in $x$-$y$-Koordinaten in einer Umgebung des Nullpunktes.
+\begin{teilaufgaben}
+\item
+Berechnen Sie die Geodätengleichungen?
+\item
+Finden Sie eine Geodäte mit
+\begin{equation}
+\begin{aligned}
+x(0)&=0&\dot x(0)&=1\\
+y(0)&=0&\dot y(0)&=1
+\end{aligned}
+\label{uebung:0301:anfangswerte}
+\end{equation}
+\end{teilaufgaben}
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Die maschinelle Berechnung der Christoffel-Symbole mit Hilfe von
+Maxima zeigt, dass alle Christoffel-Symbole zweiter Art verschwinden
+ausser
+\[
+\Gamma^{1}_{11}=\frac1{2(x+1)}.
+\]
+Die Geodätengleichungen sind daher
+\begin{align*}
+\ddot x&=-\frac1{2(x+1)}\dot x^2
+\\
+\ddot y&=0
+\end{align*}
+Die beiden Differentialgleichungen sind enkoppelt, und können daher
+unabhängig voneinander gelöst werden.
+Eine erste Konsequenz davon ist, dass die Koordinatenlinien
+Geodäten sind.
+
+Die zweite Differentialgleichung lässt sich sofort lösen, es gilt
+\[
+y(t) = y(0) + \dot y(0)\cdot t.
+\]
+Die erste Differentialgleichung ist etwas komplizierter.
+Man kann aber eine Lösung mit einem Exponentialansatz finden.
+Dazu vereinfacht man die Gleichung erst, indem man $X(t)=x(t)+1$ schreibt.
+Die Differentialgleichung wird dann zu
+\begin{equation}
+-2\ddot X(t) X(t) = \dot X(t)^2.
+\label{uebung:0301:Dgl}
+\end{equation}
+Eine offensichtliche Lösung ist $X(t)=\operatorname{const}$, sie gehört
+zur Anfangsbedingung $\dot X(0)=0$ und führt auf eine Koordinatenlinie,
+wir haben bereits darauf hingewiesen, dass die Koordinatenlinien
+Lösungen der Geodätengleichungen sind.
+
+Wir suchen eine weitere Lösung und versuchen einen Potenzansatz
+in der Form $X(t)=Ct^\alpha$.
+Wir berechnen die Ableitungen
+\begin{align*}
+\dot  X(t) &= C\alpha t^{\alpha - 1}
+\\
+\ddot X(t) &= C\alpha(\alpha - 1) t^{\alpha - 2}.
+\end{align*}
+Setzt man dies in die Differentialgleichung~\eqref{uebung:0301:Dgl}
+ein, erhält man
+\[
+-2C^2\alpha(\alpha - 1) t^{2\alpha-2} = C^2\alpha^2 t^{2\alpha - 2}.
+\]
+Division durch $C^2\alpha t^{2\alpha-2}$ ergibt die Gleichung
+\[
+-2(\alpha-1)=\alpha
+\qquad\Rightarrow\qquad
+2=3\alpha
+\qquad\Rightarrow\qquad
+\alpha=\frac23.
+\]
+Somit bekommt man die Lösung $X(t)=Ct^{\frac23}$.
+Die Lösung $x(t)$ ist $x(t)=Ct^{\frac23}-1$.
+\item
+Gesucht wird eine Lösung mit Anfangspunkt $x=x_0$ und $\dot x=v_0$.
+Nach der eben gefundenen Lösung $x(t)=Ct^{\frac23}$ muss zur Zeit $t_0$ die
+Gleichungen
+\begin{equation}
+\begin{aligned}
+x_0&=Ct_0^{\frac23}-1&&\text{und}& v_0 &= C\frac23 t_0^{-\frac13},
+\end{aligned}
+\end{equation}
+Bildet man den Quotienten findet man
+\[
+\frac{x_0+1}{v_0}
+=
+\frac32t_0
+\qquad\Rightarrow\qquad
+t_0=\frac{2(x_0+1)}{3v_0}.
+\]
+Durch Einsetzen von $t_0$ in die erste Gleichung liefert $C$
+\[
+C
+=
+(x_0+1)t_0^{-\frac23}
+=
+(x_0+1)\biggl(\frac{2(x_0+1)}{3v_0}\biggr)^{-\frac23}
+\]
+Die allgemeine Lösung ist daher
+\[
+x(t)
+=
+(x_0+1)\biggl(\frac{2(x_0+1)}{3v_0}\biggr)^{-\frac23}
+\biggl( t + \frac{2(x_0+1)}{3v_0} \biggr)^{\frac23} - 1.
+\]
+Setzen wir die Anfangswerte~\eqref{uebung:0301:anfangswerte} ein, erhalten
+wir
+\begin{align*}
+y(t)&=t\\
+x(t)&=\biggl(\frac{2}{3}\biggr)^{-\frac23}\biggl(t + \frac23\biggr)^{\frac23} - 1.
+\end{align*}
+Das Resultat kann durch Einsetzen in die Geodätengleichung überprüft werden.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+

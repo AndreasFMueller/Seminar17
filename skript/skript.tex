@@ -251,9 +251,9 @@ Hochschule f"ur Technik, Rapperswil, 2017
 }{\end{enumerate}}
 % Aufgabe
 \newcounter{problemcounter}[chapter]
-\def\aufgabepath{uebungsaufgaben/}
-\def\ainput#1{\input\aufgabepath/#1}
-\def\verbatimainput#1{\expandafter\verbatiminput{\aufgabepath/#1}}
+\def\aufgabenpath{chapters/uebungsaufgaben/}
+\def\ainput#1{\input\aufgabenpath/#1}
+\def\verbatimainput#1{\expandafter\verbatiminput{\aufgabenpath/#1}}
 \def\aufgabetoplevel#1{%
 \expandafter\def\expandafter\inputpath{#1}%
 \let\aufgabepath=\inputpath
@@ -264,8 +264,8 @@ Hochschule f"ur Technik, Rapperswil, 2017
 \refstepcounter{problemcounter}%
 \label{#1}%
 \bigskip{\parindent0pt\strut}\hbox{\bf\arabic{problemcounter}. }%
-\expandafter\def\csname aufgabepath\endcsname{\inputpath/}%
-\expandafter\input{uebungsaufgaben/#1.tex}
+\expandafter\def\csname aufgabenpath\endcsname{\inputpath/}%
+\expandafter\input{chapters/uebungsaufgaben/#1.tex}
 }
 \renewcommand\theproblemcounter{\thechapter.\arabic{problemcounter}}
 
