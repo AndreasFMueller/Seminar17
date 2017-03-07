@@ -1,0 +1,53 @@
+Die Lagrange-Funktion eines Federpendels ist
+\[
+L(x,\dot x) = \frac12m\dot x^2 - \frac1kx^2.
+\]
+Die Bewegung des Federpendels minimiert
+\[
+\int_{t_0}^{t_1} L(x,\dot x)\,dt.
+\]
+Finden Sie die Bewegungsgleichungen
+
+\begin{loesung}
+Die Bewegungsgleichungen sind die Euler-Lagrange-Gleichungen, die zur
+Funktion $L(x,\dot x)$ gehören.
+Dazu brauchen wir die Ableitungen
+\[
+\begin{aligned}
+\frac{\partial L}{\partial x}
+&=
+-kx,
+&
+\frac{\partial L}{\partial \dot x}
+&=
+m\dot x
+&&\text{und}&
+\frac{d}{dt}\frac{\partial L}{\partial\dot x}
+&=
+m\ddot x.
+\end{aligned}
+\]
+Daraus erhalten wir die Euler-Lagrange-Gleichung
+\[
+0
+=
+\frac{d}{dt}\frac{\partial L}{\partial\dot x}
+-\frac{\partial L}{\partial x}
+=
+m\ddot x+kx
+\qquad\Rightarrow\qquad
+m\ddot x=-kx.
+\]
+Die Differentialgleichung
+\[
+\ddot x = -\frac{k}{m}x
+\]
+hat die allgmeine Lösung
+\[
+x(t)=A\cos\omega t + B\sin\omega t
+\qquad\text{mit}\qquad
+\omega=\sqrt{\frac{k}{m}}.
+\qedhere
+\]
+\end{loesung}
+
