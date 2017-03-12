@@ -1,0 +1,43 @@
+Finden Sie eine Differentialgleichung für eine Funktion $y(x)$ derart,
+dass das Integral
+\[
+\int_a^b
+y(x)^2 + y'(x)^2 -2y(x)\sin x
+\,dx
+\]
+minimiert wird.
+
+\begin{loesung}
+Wir stellen die Euler-Lagrange-Gleigungen für den Integranden
+\[
+L(y,y',x)= y(x)^2 + y'(x)^2 -2y(x)\sin x
+\]
+auf.
+Die Ableitungen von $L$ sind
+\begin{align*}
+\frac{\partial L}{\partial y}
+&=
+2y(x)-2\sin x
+\\
+\frac{\partial L}{\partial y'}
+&=
+2y'(x)
+\\
+\frac{d}{dx}
+\frac{\partial L}{\partial y'}
+&=
+2y''(x)
+\end{align*}
+Damit kann man die Euler-Lagrange-Gleichung aufstellen:
+\[
+0
+=
+\frac{d}{dx}\frac{\partial L}{\partial y'} - \frac{\partial L}{\partial y}
+=
+2y''(x)
+-
+2y(x)-2\sin x
+\]
+Dies ist eine lineare inhomogene Differentialgleichung zweiter Ordnung.
+\end{loesung}
+
