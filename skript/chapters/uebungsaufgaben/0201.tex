@@ -1,0 +1,37 @@
+Berechnen Sie die Länge einer Sinus-Kurve
+$x\mapsto (x,\sin x)$
+für Argumente $x$ zwischen $0$ und $\pi$.
+
+\begin{loesung}
+Wir schreiben $f(x)=\sin x$.
+Die gesuchte Länge ist
+\begin{align*}
+l
+&=
+\int_0^\pi\sqrt{1 + f'(x)^2}\,dx
+=
+\int_0^\pi\sqrt{1 + \cos^2x}\,dx.
+=
+2
+\int_0^{\frac\pi2}\sqrt{1 + \cos^2x}\,dx.
+\end{align*}
+Leider kann man das Integral in dieser Form nicht direkt 
+auswerten.
+Wir substituieren daher $z=\cos x$, dazu brauchen wir die
+Ableitung
+\[
+dz=-\sin x\,dx
+\]
+oder nach $z$ aufgelöst
+\[
+-\frac{dz}{\sqrt{1-z^2}}=dx.
+\]
+Eingesetzt in das Integral bekommen wir
+\[
+l=
+\int_0^1 \sqrt{1+z^2}\frac1{\sqrt{1-z^2}}\,dz
+=
+\int_0^1 \sqrt{\frac{1+z^2}{1-z^2}}\,dz
+\]
+\end{loesung}
+
