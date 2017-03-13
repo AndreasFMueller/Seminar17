@@ -1,0 +1,43 @@
+Bestimmen Sie unter Verwendung der Metrik in Polarkoordinaten die
+Länge eines Kreisbogens vom Punkt $r=a$, $\varphi=0$ bis
+zum Punkt $r=a$, $\varphi=\alpha$.
+
+\begin{loesung}
+Die Metrik in Polarkoordinaten hat die Koeffizienten
+\[
+g_{\mu\nu}
+=
+\begin{pmatrix}
+1&0\\0&r^2
+\end{pmatrix}.
+\]
+Die Kurvenlänge einer Kurve $r(t), \varphi(t)$ bestimmt man daher mit
+der Formel
+\begin{align*}
+l
+&=
+\int_{t_0}^{t_1}
+\sqrt{g_{\mu\nu} \dot x^\mu \dot x^\nu}\,dt
+=
+\int_{t_0}^{t_1}
+\sqrt{\dot r(t)^2 + r(t)^2\dot\varphi(t)^2}\,dt
+\end{align*}
+Als Parameter können wir den Winkel $\varphi$ verwenden.
+Ausserdem ist $r(t)=r(\varphi)=a$ und damit $\dot r(\varphi)=0$.
+Damit bekommen wir für die Länge
+\begin{align*}
+l
+&=
+\int_0^{\alpha} \sqrt{r(\varphi)^2\dot \varphi^2}\,d\varphi
+=
+\int_0^{\alpha}
+a
+\,d\varphi
+=
+\bigl[a\varphi\bigr]_0^{\alpha}
+=
+a\alpha.
+\end{align*}
+Dabei haben wir verwendet, dass $\dot\varphi=1$ ist.
+\end{loesung}
+
