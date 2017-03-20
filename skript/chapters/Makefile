@@ -3,9 +3,9 @@
 #
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
-all:	images
+all:	makeimages
 
-images:
+makeimages:
 	cd 3d; make images
 	cd tikz; make images
 	cd mp; make images
