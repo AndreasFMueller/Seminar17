@@ -7,12 +7,18 @@
 #
 # (c) 2016 Prof Dr Andreas Mueller, Hochschule Rapperswil
 #
-case `uname` in
-Darwin)
-	exec povray +L/Applications/PovrayCommandLineMac/include "$@"
-	;;
-*)
-	exec povray "$@"
-	;;
-esac
+if type povray > /dev/null
+then
+	case `uname` in
+	Darwin)
+		exec povray +L/Applications/PovrayCommandLineMac/include "$@"
+		;;
+	*)
+		exec povray "$@"
+		;;
+	esac
+else
+	echo "warning: povray not installed"
+	exit 1
+fi
 

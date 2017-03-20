@@ -21,7 +21,7 @@ povrayoptions = +A0.1
 flach:	flach.jpg
 flach.png:	flach.pov
 	sh ../../../povray $(povrayoptions) $(dimensions) -Oflach.png 	\
-		flach.pov
+		flach.pov || touch flach.png
 flach.jpg:	flach.png
 	convert -extract 2376x2160+775+0 flach.png \
 		-scale $(scale)% -density 300 -units PixelsPerInch \
@@ -30,7 +30,7 @@ flach.jpg:	flach.png
 sphere:	sphere.jpg
 sphere.png:	sphere.pov
 	sh ../../../povray $(povrayoptions) $(dimensions) -Osphere.png 	\
-		sphere.pov
+		sphere.pov || touch sphere.png
 sphere.jpg:	sphere.png
 	convert -extract 2420x2160+735+0 sphere.png \
 		-scale $(scale)% -density 300 -units PixelsPerInch \
@@ -39,7 +39,7 @@ sphere.jpg:	sphere.png
 blackhole:	blackhole.jpg
 blackhole.png:	blackhole.pov
 	sh ../../../povray $(povrayoptions) $(dimensions) -Oblackhole.png \
-		blackhole.pov
+		blackhole.pov || touch blackhole.png
 blackhole.jpg:	blackhole.png
 	convert -extract 2572x2160+860+0 blackhole.png \
 		-scale $(scale)% -density 300 -units PixelsPerInch \
@@ -52,7 +52,7 @@ lichtkegel.jpg: lichtkegel.png
 		-scale 50% lichtkegel.jpg
 lichtkegel.png: lichtkegel.pov
 	sh ../../../povray $(povrayoptions) +W3840 +H2160 -Olichtkegel.png \
-		lichtkegel.pov
+		lichtkegel.pov || touch lichtkegel.png
 
 geodaete:	geodaete.jpg
 geodaete.jpg:   geodaete.png
@@ -61,7 +61,7 @@ geodaete.jpg:   geodaete.png
 		-scale 50% geodaete.jpg
 geodaete.png:   geodaete.pov
 	sh ../../../povray $(povrayoptions) +W3840 +H2160 -Ogeodaete.png \
-		geodaete.pov
+		geodaete.pov || touch geodaete.png
 
 kurve:	kurve.jpg
 kurve.jpg:   kurve.png
@@ -70,7 +70,7 @@ kurve.jpg:   kurve.png
 		-scale 50% kurve.jpg
 kurve.png:   kurve.pov
 	sh ../../../povray $(povrayoptions) +W3840 +H2160 -Okurve.png \
-		kurve.pov
+		kurve.pov || touch kurve.png
 
 transport:	transport.jpg
 transport.jpg:   transport.png
@@ -79,5 +79,5 @@ transport.jpg:   transport.png
 		-scale 50% transport.jpg
 transport.png:   transport.pov
 	sh ../../../povray $(povrayoptions) +W3840 +H2160 -Otransport.png \
-		transport.pov
+		transport.pov || touch transport.png
 

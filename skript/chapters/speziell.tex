@@ -850,7 +850,7 @@ konstant ist, also durch einen Standardbasisvektor, oder durch einen
 Koordinatenindex.
 Zu jeder Koordinate $\mu$ gibt es also den Vektor des Viererimpulses
 \[
-T_\mu^\nu
+T^{\mu\nu}
 \]
 der durch die zu $\mu$ gehörende Seitenfläche fliesst.
 
@@ -859,12 +859,12 @@ auf zwei Dimensionen, also auf die Koordinaten $x^0=ct$ und $x^1=x$.
 Eine Box ist ein Rechteck, die Kanten des Rechtecks sind definiert
 dadurch, dass $x^0$ bzw.~$x^1$ konstant sind.
 Betrachten wir zuerst den Fall $\mu=0$.
-Dann ist $T^\nu_0$ der Viererimpuls, der durch ein räumliches
+Dann ist $T^{\nu0}$ der Viererimpuls, der durch ein räumliches
 Einheitsinterval fliesst.
-Insbesondere ist $T^0_0$ der Fluss der Energiedichte durch das Interval,
-$T^1_0$ ist der Impulsfluss durch das Interval.
-Für $\mu=1$ ist $T^0_1$ die Energie, die in einem Einheitszeitinterval
-durch die Koordinaten $x^1$ fliesst, und $T^1_1$ ist der Impuls, der in der
+Insbesondere ist $T^{00}$ der Fluss der Energiedichte durch das Interval,
+$T^{10}$ ist der Impulsfluss durch das Interval.
+Für $\mu=1$ ist $T^{01}$ die Energie, die in einem Einheitszeitinterval
+durch die Koordinaten $x^1$ fliesst, und $T^{11}$ ist der Impuls, der in der
 gleichen Zeit durch den Punkt $x^1$ fliesst.
 Man beachte, dass die Masseinheiten
 \[
@@ -892,10 +892,10 @@ Ausserdem ist
 \frac{\text{kg}\cdot\text{m}}{\text{s}^2},
 \]
 dies ist die Masseinheit des Druckes oder einer Spannung.
-Wir können daher die Matrix $T^\nu_\mu$
+Wir können daher die Matrix $T^{\nu\mu}$
 durch
 \[
-T_\mu^\nu
+T^{\mu\nu}
 =
 \begin{pmatrix}
 \text{Energiedichte}
@@ -906,7 +906,7 @@ T_\mu^\nu
 \end{pmatrix}
 \]
 charakterisieren.
-$T_\mu^\nu$ heisst der {\em Energie-Impuls-Tensor}.
+$T^{\mu\nu}$ heisst der {\em Energie-Impuls-Tensor}.
 Er codiert die Information über den im Universum vorhandenen
 Viererimpuls.
 
@@ -921,11 +921,13 @@ Da sich das Gas nicht bewegt, fliesst kein Impuls durch eine Fläche
 in Zeitrichtung.
 Daher gilt
 \[
-T^0_0
+T^{00}
 =
 \varrho
 \qquad
-T^k_0
+\text{und}
+\qquad
+T^{k0}
 =
 0.
 \]
