@@ -3,7 +3,7 @@
 #
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
-all:	lagrange.pdf lichtkegel.pdf absturz.pdf
+all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf
 
 images:	all
 
@@ -15,3 +15,6 @@ lichtkegel.pdf:	lichtkegel.tex
 
 lagrange.pdf:	lagrange.tex
 	pdflatex lagrange.tex
+
+interferometer.pdf:	interferometer.tex
+	pdflatex interferometer.tex
