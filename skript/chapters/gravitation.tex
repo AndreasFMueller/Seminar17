@@ -18,18 +18,19 @@ beschrieben werden können, und wie alle diese Dinge tatsächlich gemessen
 werden können.
 
 \section{Äquivalenzprinzip}
+\rhead{Äquivalenzprinzip}
 Schon Galileo Galilei hat bemerkt, dass im Gravitationsfeld der Erde
 jeder Körper unabhängig von seiner Masse die gleiche Beschleunigung $g$
 erfährt.
 Auch das Newtonsche Gravitationsgesetz beschreibt den Betrag der Kraft
 zwischen zwei Massen $M$ und $m$ als
 \[
-F=\frac{GMm}{r^2}.
+F=\frac{KMm}{r^2}.
 \]
 Ein Teilchen der Masse $m$ wird daher nach dem zweiten Newtonschen Gesetz
 $F=ma$ immer mit den Betrag
 \[
-\frac{GM}{r^2}
+\frac{KM}{r^2}
 \]
 haben.
 Die Beschleunigung eines Teilchens ist daher unabhängig von der Masse.
@@ -45,26 +46,29 @@ nicht unterscheiden lassen.
 % TODO Beschleunigung und Gravitation im Lift-Experiment
 %
 
-\section{Newtonsches Gravitationsgesetz}
+\section{Newtonsche Gravitationstheorie}
+\rhead{Newtonsche Gravitationstheorie}
 Als ersten Schritt in Richtung auf eine allgemeine Gravitationstheorie
 zeigen wir, wie auch die Bahnen in einem Newtonschen Gravitationsfeld 
 als Geodäten eines Zusammenhangs schreiben lassen.
 Wer verwenden dazu aber nicht die Metrik und den daraus abgeleiteten 
 Zusammenhang, dies hat erst die Einsteinsche Theorie geschafft.
 
+\subsection{Schwerkraft}
 Das Newtonsche Gravitationsgesetz beschreibt die Beschleunigung, die
 auf ein Teilchen in einem Gravitationsfeld wirkt, welches von einer
 Masse $m$ erzeugt wird.
 Der Betrag der Kraft ist umgekehrt proportional zum Quadrat der
 Entfernung.
 Der Kraftvektor kann deshalb als
-\[
-\vec F = -\frac{GM}{r^2}\cdot\frac{\vec r}{r}
-\]
+\begin{equation}
+\vec F = -\frac{KM}{r^2}\cdot\frac{\vec r}{r}
+\label{skript:gravitation:gkraft}
+\end{equation}
 geschrieben werden.
 Die Bewegungsgleichung ist daher 
 \begin{equation}
-\ddot x^k = -\frac{GM}{r}\cdot\frac{x^k}{r},
+\ddot x^k = -\frac{KM}{r}\cdot\frac{x^k}{r},
 \qquad\text{mit}\qquad r = \sqrt{(x^1)^2+(x^2)^2+(x^3)^2},
 \label{skript:gravitation:bewegungsgleichung}
 \end{equation}
@@ -98,7 +102,7 @@ Da in der Bewegungsgleichung~\eqref{skript:gravitation:bewegungsgleichung}
 auf der rechten Seite keine Geschwindigkeiten vorkommen, darf nur der
 erste Term stehen bleiben, also
 \begin{equation}
-\Gamma^k_{00} = \frac{GM}{r^2}\cdot \frac{x^k}{r},\qquad k=1,\dots,3.
+\Gamma^k_{00} = \frac{KM}{r^2}\cdot \frac{x^k}{r},\qquad k=1,\dots,3.
 \label{skript:gravitation:newtonzusammenhang}
 \end{equation}
 Da die erste Komponente der Geodäte $x^0(t)=t$ ist und seine zweite
@@ -113,6 +117,220 @@ nicht verschwinden, der Ricci-Tensor und damit auch der Einstein-Tensor
 verschwinden dagegen identisch.
 Diese Beschreibung der Gravitation führt also nicht auf das Modell
 eines gekrümmten Raumes.
+
+\subsection{Gravitationspotential}
+Die potentielle Energie, die zur
+Gravitationskraft~\eqref{skript:gravitation:gkraft} gehört, kann
+mit Hilfe eines Wegintegrals berechnet werden.
+Dazu verwenden wir einen Weg vom Punkt $P_1$ mit Radius $r_1$
+zum Punkt $P_2$ mit Radius $r_2$ führt.
+Da die Kraft immer radial wirkt, ist entlang des Weges nur die radiale
+Komponente des Tangentialvektors massgebend.
+Der Unterschied in der poteniellen Energie ist
+\[
+\Delta E
+=
+\int_{P_1}^{P_2} \vec F\cdot d\vec s
+=
+\int_{r_1}^{r_2} -\frac{KM}{r^2}\,dr
+=
+\biggl[
+\frac{KM}{r}
+\biggr]_{r_1}^{r_2}
+=
+GM\biggl(\frac{1}{r_2}-\frac{1}{r_1}\biggr).
+\]
+Legt man den Nullpunkt der potentiellen Energie ins unendliche, dann ist
+das Potential einer Punktmasse mit Masse $M$ ist also
+\begin{equation}
+\varphi = \frac{KM}{r}.
+\label{skript:gravitation:potential}
+\end{equation}
+
+Aus dem Potential kann man die Kraft mit Hilfe des Gradienten
+berechnen.
+Zur Berechnung brauchen wir die Ableitung von $r$ nach den Koordinaten.
+Die Ableitung nach $x$ ist
+\[
+r=\sqrt{x^2+y^2+z^2}
+\qquad\Rightarrow\qquad
+\frac{\partial r}{\partial x}
+=
+\frac{1}{2r} \frac{\partial (x^2+y^2+z^2)}{\partial x}
+=
+\frac{1}{2r} 2x=\frac{x}{r}.
+\]
+Damit können wir jetzt die Ableitung des Potentials berechnen:
+\begin{align*}
+\frac{\partial}{\partial x}\frac1{r}
+&=
+-\frac{1}{r^2} \frac{\partial r}{\partial x}
+=
+-\frac{1}{r^2} \frac{x}{r}.
+\end{align*}
+Der Gradient
+\[
+\operatorname{grad}\varphi
+=
+-\frac{KM}{r^2}\cdot\frac1r\begin{pmatrix}x\\y\\z\end{pmatrix}
+=
+-\frac{KM}{r^2}\cdot\frac{\vec r}{r} = \vec F
+\]
+stimmt mit der Gravitationskraft überein.
+
+Für eine ausgedehnte Masseverteilung mit Dichte $\varrho$ kann man das
+Potential als Überlagerung von einzelnen Potentialen der
+Form~\eqref{skript:gravitation:potential} berechnen.
+%Das Integral
+%\[
+%\varphi(\vec r)
+%=
+%G\int_{\mathbb R^3} \frac{\varrho(\vec r')}{|\vec r-\vec r'|}\,d^3r',
+%\]
+%wobei das Integral als Volumen-Integral über alle Vektoren $\vec r'$
+%zu erstrecken ist.
+Eine solche Beschreibung
+ist allerdings für unsere Zwecke nicht sehr nützlich.
+
+Eine besser geeignete Beschreibung können wir aus dem Gausschen
+Divergenzsatz erhalten.
+Eine zweidimensionale Version dieses Satzes können wir
+aus dem Satz von Green~\eqref{skript:kruemmung:satz:green}
+erhalten.
+Dazu verwenden wir die Funktionen 
+\[
+f(x)=-\frac{\partial \varphi}{\partial x}
+\qquad\text{und}\qquad
+g(x)=\frac{\partial \varphi}{\partial y}.
+\]
+Die linke Seite des Satzes von Green ist das Integral
+\begin{equation}
+\oint_{C}
+\frac{\partial \varphi}{\partial x} \dot (-x(s))
+\frac{\partial \varphi}{\partial y} \dot y(s)
+\,ds
+\label{skript:gravitation:fluss1}
+\end{equation}
+Der Vektor
+\[
+\vec o(s) = \begin{pmatrix}-\dot x(s)\\\dot y(s)\end{pmatrix}
+\]
+steht senkrecht auf dem Rand des Gebietes.
+Im Integral~\eqref{skript:gravitation:fluss1} wird das Skalarprodukt
+diese Vektors mit dem der Gravitationskraft $\vec F$ verwendet,
+man nennt
+\[
+\oint_{C} \vec F\cdot \vec o(s)\,ds
+\]
+den Fluss des Vektorfeldes durch die Kurve $C$.
+Auf der rechten Seite findet man dann 
+\[
+\int \frac{\partial g}{\partial x}-\frac{\partial f}{\partial x}\,dx\,dy
+=
+\int
+\frac{\partial^2\varphi}{\partial x^2}
++
+\frac{\partial^2\varphi}{\partial y^2}
+\,dx\,dy
+=
+\int\Delta\varphi \,dx\,dy.
+\]
+Der Satz von Gauss besagt daher
+\[
+\oint_{C} \vec F\cdot d\vec o
+=
+\int_{D} \Delta\varphi\,dx\,dy.
+\]
+In dieser zweidimensionalen Darstellung nützt uns der Satz allerdings
+wenig, denn das Gravitationsfeld ist natürlich dreidimensional.
+Die dreidimensionale Version kann jedoch mit ganz ähnlichen Ideen
+bewiesen werden wie der Satz von Green:
+
+\begin{satz}[Gauss] Ist $\vec v$ ein Vektorfeld in
+einem dreidimensionalen Gebiet $D\subset R^3$ mit Randfläche $S=\partial D$,
+dann gilt
+\begin{equation}
+\oint_S \vec v\cdot d\vec o
+=
+\int_D 
+\frac{\partial v_x}{\partial x}
++
+\frac{\partial v_y}{\partial y}
++
+\frac{\partial v_z}{\partial z}
+\,dx\,dy\,dz
+=
+\int_D \operatorname{div}\vec v\,dx\,dy\,dz.
+\label{skript:gravitation:gausssatz}
+\end{equation}
+Darin ist $\vec o$ ein Vektor ein nach aussenzeigender Vektor, der
+senkrecht auf der Oberfläche des Gebietes steht.
+\end{satz}
+
+Der Nutzen dieses Satzes ist, dass man den Fluss des Schwerkraftfeldes
+$\vec F$ einer Punktladung durch eine mit der Masse konzentrischen
+Kugel auch direkt berechnen kann.
+Dann hat nämlich $\vec F$ auf der Kugeloberfläche $S^2$ überall den gleichen
+Betrag, und die Richtung ist immer senkrecht auf der Kugeloberfläche.
+Das Skalarprodukt in~\eqref{skript:gravitation:gausssatz} ist daher
+einfach ein Produkt der Beträge und das Integral bekommt man durch
+Multiplikation mit der Kugeloberfläche:
+\[
+\oint_{S^2_r} \vec F\cdot d\vec o
+=
+4\pi r^2
+\frac{KM}{r^2}
+=
+4\pi KM.
+\]
+Der Fluss des Gravitationsfeldes mit Potential $\varphi$ durch einen
+sehr kleinen Ball $B_r$ mit Radius $r$ hat daher den Wert
+\[
+\int_{S^2_r}\vec F\cdot d\vec o
+=
+4\pi K\int_{B_r} \varrho\,dx\,dy\,dz.
+\]
+Andererseits kann man nach dem Satz von Gauss auch die rechte 
+Seite berechnen:
+\begin{align*}
+\int_{B_r} 4\pi G\varrho\,dx\,dy\,dz
+&=
+\int_{B_r}
+\frac{\partial F_x}{\partial x}+
+\frac{\partial F_y}{\partial y}+
+\frac{\partial F_z}{\partial z}
+\,dx\,dy\,dz
+=
+\int_{B_r}
+\frac{\partial^2\varphi}{\partial x^2}+
+\frac{\partial^2\varphi}{\partial y^2}+
+\frac{\partial^2\varphi}{\partial z^2}
+\,dx\,dy\,dz
+\\
+&=
+\int_{B_r} \Delta\varphi\,dx\,dy\,dz.
+\label{skript:gravitation:poisson-integral}
+\end{align*}
+mit der Abkürzung
+\begin{equation*}
+\Delta \varphi
+=
+\frac{\partial^2\varphi}{\partial x^2}+
+\frac{\partial^2\varphi}{\partial y^2}+
+\frac{\partial^2\varphi}{\partial z^2},
+\end{equation*}
+dem Laplace-Operator.
+Da dies für Kugeln an beliebigen Punkten mit beliebigen Radien 
+gilt, müssen die Integranden in~\eqref{skript:gravitation:poisson-integral}
+übereinstimmen.
+Es folgt, dass das Gravitationspotential $\varphi$ die Gleichung
+\begin{equation}
+\Delta \varphi = 4\pi G\varrho
+\label{skript:gravitation:potentialgleichung}
+\end{equation}
+erfüllen.
+Diese Gleichung werden wir später dazu verwenden, die Verbindung zwischen
+der newtonschen und der einsteinschen Gravitationstheorie herzustellen.
 
 \section{Näherung für schwache Felder}
 Wir möchten jetzt eine Metrik finden, die einerseits möglichst nahe
@@ -154,9 +372,87 @@ g_{kk} &= 1,\quad k=1,2,3.
 \label{skript:gravitation:naeherung}
 \end{equation}
 
-\section{Physikalische Bedeutung der Krümmung}
+\section{Einstein-Gleichungen für das Gravitationsfeld}
+Die Näherung für schwache Felder dient uns nun als Leitfaden, um die
+Einsteinschen Feldgleichungen herzleiten.
+Einerseits beinhaltet die $g_{00}$-Komponente das Potential $\varphi$ des
+Gravitationsfeldes, andererseits beschreibt die
+Gleichung~\eqref{skript:gravitation:potentialgleichung}
+den Zusammenhang zwischen dem Gravitationspotential und der
+Masseverteilung.
+Die Massedichte finden wir in der allgemeinen Theorie als $00$-Komponente
+des Energie-Impuls-Tensors wieder.
+Auf der linken Seite der Gleichung erwarten wir ein Objekt, welches
+sich aus den zweiten Ableitungen der $g_{\mu\nu}$ berechnen lässt.
+Die Christoffel-Symbole enthalten die ersten Ableitungen von $g_{\mu\nu}$,
+aber der Riemannsche Krümmungstensor enthält alle zweiten Ableitungen.
+Wir müssen daher einen Tensor $G_{\mu\nu}$ konstruieren, der die Rolle
+von $\Delta\varphi$ übernehmen kann.
+In Analogie zur
+Gleichung~\eqref{skript:gravitation:potentialgleichung}
+erwarten wir dann eine Gleichung der Form
+\[
+G^{\mu\nu} = 4\pi KT^{\mu\nu}
+\]
+als allgemeine Feldgleichung für die Gravitation.
 
-\section{Einstein-Tensor}
+Der Riemann-Tensor $R^\mu\mathstrut_{\nu\varrho\sigma}$ hat zu viele
+Indizes, es muss daraus erst ein Tensor zweiter Stufe hergestellt werden.
+Dies ist zum Beispiel durch Verjüngung möglich.
+Wegen der Symmetrieeigenschaften des Riemann-Tensors gibt es nicht allzuviele
+Möglichkeiten, wie dies geschehen könnte.
+Die Verjüngung 
+\[
+R_{\mu\nu} = R^{\alpha}\mathstrut_{\mu\alpha\nu}
+\]
+heisst der Ricci-Tensor.
+Wegen
+\[
+R_{\mu\nu}
+=
+R^{\alpha}\mathstrut_{\mu\alpha\nu}
+=
+R^{\alpha}\mathstrut_{\nu\alpha\mu}
+=
+R_{\nu\mu}
+\]
+ist er symmetrisch.
 
-\section{Feldgleichungen}
+Diesen kann man weiter verjüngen und daraus den Krümmungs-Skalar
+\[
+R=R^\alpha\mathstrut_\alpha
+\]
+bilden.
+Den gesuchten Tensor $G_{\mu\nu}$ können wir als Linearkombination
+\[
+G_{\mu\nu}=a R_{\mu\nu} + bg_{\mu\nu} R
+\]
+ansetzen.
+
+Der Energie-Impuls-Tensor der speziellen Relativitätstheorie
+% XXX Referenz
+erfüllt den Erhaltungssatz
+\[
+\frac{\partial T^\mu_\nu}{\partial x^\mu}
+=0.
+\]
+Wir können allerdings nicht annehmen, dass diese Formel weiterhin
+gelten wird.
+Das Gravitationsfeld kann ja zum Beispiel ein Gas beschleunigen und 
+verdichten, so dass sich Energie- und Impuls-Inhalt verändern können.
+Dies können durch die kovariante Ableitung
+\[
+0
+=
+\nabla_\mu T^\mu_\nu
+=
+\frac{\partial T^\mu_\nu}{\partial x^\mu}
+-
+\Gamma^{\mu}_{\alpha\mu}T^\alpha_\nu
+\]
+ausdrücken.
+Die Terme mit den Christoffel-Symbolen zeigen, wie die Gravitationskraft
+Energie und Impuls verändert.
+
+
 
