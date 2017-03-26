@@ -34,17 +34,160 @@ $F=ma$ immer mit den Betrag
 \]
 haben.
 Die Beschleunigung eines Teilchens ist daher unabhängig von der Masse.
-Diese {\em Äquivalenzprinzpi} genannte Beobachtung wurde von
+Diese {\em Äquivalenz\-prinzip} genannte Beobachtung wurde von
 Lor\'and Eötvös 1909 mit sehr grosser Genauigkeit nachgemessen und bestätigt.
 In neuerer Zeit wurde die Genauigkeit nochmals um den Faktor $10^4$
 verbessert.
 
 Eine Folge des Äquivalenzprinzips ist auch, dass sich ein konstant
 beschleunigtes Labor und ein Labor in einem homogenen Gravitationsfeld
-nicht unterscheiden lassen.
-%
-% TODO Beschleunigung und Gravitation im Lift-Experiment
-%
+nicht unterscheiden lassen (Abbildung~\ref{skript:gravitation:labor}).
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/labor.pdf}
+\caption{Illustration des Äquivalenzprinzips.
+Ein einem gleichmässig mit $g$ beschleunigten Labor (rechts)
+misst man die gleiche Beschleunigung wie in einem homogenen
+Gravitationsfeld (links).
+\label{skript:gravitation:labor}}
+\end{figure}
+Ein beschleunigtes Koordinatensystem kann man zwar durch die
+Koordinatentransformation
+\begin{equation}
+\left.
+\begin{aligned}
+t'&=t\\
+x'&=x+\frac12gt^2
+\end{aligned}
+\right\}
+\qquad
+\Leftrightarrow
+\qquad
+\left\{
+\begin{aligned}
+t&=t'\\
+x&=x'-\frac12gt'^2
+\end{aligned}
+\right.
+\label{skript:gravitation:beschleunigt}
+\end{equation}
+erhalten, doch ist sie keine Lorentz-Transformation und erhält daher
+die Minkowski-Metrik nicht.
+Wenn es möglich sein soll, die Gravitationstheorie so zu verallgemeinern,
+dass sie mit der speziellen Relativitätstheorie verträglich sein soll, dann
+müssen wir auch andere Koordinatentransformationen als nur die
+Lorenztransformation zulassen.
+Das bedeutet aber, dass wir nicht mehr darauf beharren dürfen, dass
+sich die Metrik in der Form
+\begin{equation}
+-c^2\,dt^2 + dx^2 + dy^2  + dz^2
+\label{skript:gravitation:standardform}
+\end{equation}
+schreiben lässt.
+Wir lassen daher in Zukunft beliebige Koordinatentransformationen zulassen
+und daher auch Metriken $g_{\mu\nu}$, die von der
+Standardform~\eqref{skript:gravitation:standardform} abweichen.
+
+Wir wollen die Metrik berechnen, die im festen Koordinatensystem
+anzuwenden ist. 
+Dazu müssen wir die Transformation zuerst mit $x^0$ und $x'^0$ 
+darzustellen:
+\begin{equation}
+\left.
+\begin{aligned}
+x'^0 &= x^0 \\
+x'^1 &= x^1+\frac{1}{2c^2}(x^0)^2
+\end{aligned}
+\right\}
+\qquad
+\Leftrightarrow
+\qquad
+\left\{
+\begin{aligned}
+x^0 &= x'^0 \\
+x^1 &= x'^1 - \frac{1}{2c^2}(x'^0)^2
+\end{aligned}
+\right.
+\end{equation}
+Für die Transformation der Metrik werden die partiellen Ableitungen
+benötigt:
+\begin{equation}
+\begin{aligned}
+\frac{\partial x^0}{\partial x'^0}&=1,
+&
+\frac{\partial x^0}{\partial x'^1}&=0,
+&
+\frac{\partial x^1}{\partial x'^0}&=-\frac{1}{c^2}x'^0,
+&
+\frac{\partial x^1}{\partial x'^1}&=1,
+\\
+\frac{\partial x'^0}{\partial x^0}&=1,
+&
+\frac{\partial x'^0}{\partial x^1}&=0,
+&
+\frac{\partial x'^1}{\partial x^0}&=\frac{1}{c^2}x^0,
+&
+\frac{\partial x'^1}{\partial x^1}&=1.
+\end{aligned}
+\end{equation}
+Die zugehörige Transformationsmatrix ist also
+\begin{equation}
+\frac{\partial (x^0, x^1)}{\partial (x'^0, x'^1)}
+=
+\begin{pmatrix}
+1&0\\
+-\frac1{c^2}x'^0&1
+\end{pmatrix},
+\qquad
+\frac{\partial (x'^0, x'^1)}{\partial (x^0, x^1)}
+=
+\begin{pmatrix}
+1&0\\
+\frac1{c^2}x^0&1
+\end{pmatrix}.
+\end{equation}
+Im $(x^0,x^1)$-Koordinatensystem wird die Metrik durch die Matrix
+\[
+g_{\mu\nu}
+=
+\begin{pmatrix}-1&0\\0&1\end{pmatrix}
+\]
+ausgedrückt.
+In $(x'^0,x'^1)$-Koordinaten muss die Matrix daher sein
+\begin{align*}
+g'_{\mu\nu}
+&=
+\begin{pmatrix}
+1&0\\
+\frac1{c^2}x'^0&1
+\end{pmatrix}
+\begin{pmatrix}
+-1&0\\0&1
+\end{pmatrix}
+\begin{pmatrix}
+1&\frac1{c^2}x'^0\\
+0&1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1&0\\
+\frac1{c^2}x'^0&1
+\end{pmatrix}
+\begin{pmatrix}
+-1&-\frac1{c^2}x'^0\\
+ 0& 1
+\end{pmatrix}
+\\
+&=
+\begin{pmatrix}
+-1&-\frac1{c^2}x'^0\\
+-\frac1{c^2}x'^0&1+\frac1{c^4}(x'^0)^2
+\end{pmatrix}.
+\end{align*}
+Die Metrik $g'_{\mu\nu}$ ist offenbar wieder symmetrisch.
+Wir könnten die Christoffelsymbole ausrechnen und die Geodäten
+bestimmen, wir würden die Transformation von Geraden aus dem
+$(x,t)$-Koordinatensystem finden.
 
 \section{Newtonsche Gravitationstheorie}
 \rhead{Newtonsche Gravitationstheorie}
@@ -263,7 +406,7 @@ dann gilt
 \int_D \operatorname{div}\vec v\,dx\,dy\,dz.
 \label{skript:gravitation:gausssatz}
 \end{equation}
-Darin ist $\vec o$ ein Vektor ein nach aussenzeigender Vektor, der
+Darin ist $\vec o$ ein Vektor ein nach aussen zeigender Vektor, der
 senkrecht auf der Oberfläche des Gebietes steht.
 \end{satz}
 
@@ -361,11 +504,11 @@ Diese bilden den Gradienten des Potentials des Gravitationsfeldes
 \[
 -\Gamma^k_{00} = -\frac{\partial\varphi}{\partial x^k}.
 \]
-Es folgt daher, dass $h_{00}=-2\varphi$ ist.
+Es folgt daher, dass $h_{00}=-2\varphi/c^2$ ist.
 In erster Näherung beschreibt daher die Metrik
 \begin{equation}
 \begin{aligned}
-g_{00} &= -1 -2\varphi,
+g_{00} &= -1 -\frac{2\varphi}{c^2},
 &&&
 g_{kk} &= 1,\quad k=1,2,3.
 \end{aligned}

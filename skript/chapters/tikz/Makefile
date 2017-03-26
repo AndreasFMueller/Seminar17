@@ -4,7 +4,7 @@
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
 all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
-	galilei.pdf
+	galilei.pdf labor.pdf
 
 images:	all
 
@@ -22,3 +22,6 @@ interferometer.pdf:	interferometer.tex
 
 galilei.pdf:	galilei.tex
 	pdflatex galilei.tex
+
+labor.pdf:	labor.tex
+	pdflatex labor.tex
