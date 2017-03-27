@@ -189,7 +189,8 @@ Wir könnten die Christoffelsymbole ausrechnen und die Geodäten
 bestimmen, wir würden die Transformation von Geraden aus dem
 $(x,t)$-Koordinatensystem finden.
 
-\section{Newtonsche Gravitationstheorie}
+\section{Newtonsche Gravitationstheorie%
+\label{skript:section:newtonschegravitationstheorie}}
 \rhead{Newtonsche Gravitationstheorie}
 Als ersten Schritt in Richtung auf eine allgemeine Gravitationstheorie
 zeigen wir, wie auch die Bahnen in einem Newtonschen Gravitationsfeld 
@@ -475,22 +476,40 @@ erfüllen.
 Diese Gleichung werden wir später dazu verwenden, die Verbindung zwischen
 der newtonschen und der einsteinschen Gravitationstheorie herzustellen.
 
-\section{Näherung für schwache Felder}
+\section{Schwache Felder und die Metrik}
+Für schache Gravitationsfelder hat die Newtonsche Theorie gute Dienste
+geleistet. 
+Wir gehen daher davon aus, dass eine neue, allgemeinere Theorie die
+newtonsche Theorie als Grenzfall erhalten muss.
+Es muss also möglich sein, die Gravitationskräfte, die wir im 
+Abschnitt~\ref{skript:section:newtonschegravitationstheorie} bereits
+mit Hilfe des Zusammenhangs, also den Koeffizienten $\Gamma^\alpha_{\mu\nu}$
+beschrieben haben, auch aus einer Metrik zu gewinnen.
+Die Zusammenhangskoeffizienten in
+Abschnitt~\ref{skript:section:newtonschegravitationstheorie} waren nicht
+die Christoffelsymbole einer Metrik.
+
 Wir möchten jetzt eine Metrik finden, die einerseits möglichst nahe
 an der Minkovski-Metrik ist, deren zugehörige Geodäten andererseits die
 Bewegung in einem schwachen Gravitationsfeld korrekt wiedergibt.
 Als Metrik verwenden wir daher
 \[
-g_{\mu\nu}=\eta_{\mu\nu} + h_{\mu\nu},
+g_{\mu\nu}=\eta_{\mu\nu} + h_{\mu\nu}.
 \]
+Der erste Summan ist $\eta_{\mu\nu}$, der die Minkovski-Metrik 
+wiedergibt, der zweite beschreibt die Abweichung,
 wobei wir annehmen, dass $h_{\mu\nu}$ sehr klein ist.
-Die zugehörigen Christoffelsymbole sind nach einiger, vorzugsweise
-maschineller Rechnung
+Die zugehörigen Christoffelsymbole sind mit einiger, vorzugsweise
+maschineller Rechnung zu finden.
+Aus der Beschreibung des newtonschen Gravitationsgesetzes können wir
+ablesen, dass wir die klassisch beobachteten Kräfte in Gestalt
+des Christoffelsymbols
 \[
 \Gamma^{k}_{00}
 =
--\frac{1}{2(h_{kk} + 1)}\frac{\partial h_{00}}{\partial x^k}.
+-\frac{1}{2(h_{kk} + 1)}\frac{\partial h_{00}}{\partial x^k}
 \]
+wiederfinden müssen.
 Da $h_{kk}$ im Vergleich zu $1$ sehr klein soll, bleibt
 \[
 \Gamma^{k}_{00}
@@ -514,6 +533,9 @@ g_{kk} &= 1,\quad k=1,2,3.
 \end{aligned}
 \label{skript:gravitation:naeherung}
 \end{equation}
+Die gesuchte Theorie muss also in erster Näherung das newtonsche
+Gravitationspotential in der $00$-Komponente des metrischen Tensors
+verwenden.
 
 \section{Einstein-Gleichungen für das Gravitationsfeld}
 Die Näherung für schwache Felder dient uns nun als Leitfaden, um die
@@ -523,8 +545,60 @@ Gravitationsfeldes, andererseits beschreibt die
 Gleichung~\eqref{skript:gravitation:potentialgleichung}
 den Zusammenhang zwischen dem Gravitationspotential und der
 Masseverteilung.
-Die Massedichte finden wir in der allgemeinen Theorie als $00$-Komponente
+Wir suchen jetzt eine Theorie, welche auch die übrigen Komponenten
+des metrischen Tensors zu bestimmen erlaubt.
+Wir gehen dazu mit Hilfe von Analogien vor, eine strenge Herleitung
+der Gleichungen ist ebenfalls möglich, jedoch für dieses Skript etwas
+zu aufwendig.
+
+Für die folgenden mathematischen Objekte suchen wir einen Ersatz:
+\begin{enumerate}
+\item
+Die Massedichte in 
+Gleichung~\eqref{skript:gravitation:potentialgleichung}
+muss durch eine Grösse ersetzt werden, die dem vorhandenen Vierer-Impuls
+ebenfalls Rechnung trägt.
+Ausserdem soll sie auch um andere Formen von Energie ergänzt werden 
+können, um zum Beispiel die Gravitationswirkung der Energie eines
+elektromagnetischen Feldes modellieren zu können.
+\item
+In Gleichung~\eqref{skript:gravitation:potentialgleichung}
+kommen die zweiten Ableitungen nach den Koordinaten vor. 
+Der Laplace-Operator lässt sich aber nur in der Minkowski-Metrik so 
+formulieren, ausserdem trägt er der Zeitkoordinate nicht Rechnung.
+Wir brauchen daher eine Grösse, die alle Koordinaten gleichwertig
+behandelt, aber im Grenzfall schwacher Felder wieder auf den 
+Laplace-Operator führt.
+\item
+Der Energieerhaltungssatz in Form der
+Gleichung~\eqref{skript:speziell:energieerhaltung}
+kann nicht aufrechterhalten werden, weil
+Gravitationsfelder die Energie darin sich bewegender Massen verändern
+können.
+Es muss also eine Formulierung des Energie- und Impulserhaltungssatzes
+gefunden werden, welche mit der erweiterten Theorie verträglich ist.
+\end{enumerate}
+Dieses Programm soll in den folgenden Abschnitten durchgeführt werden.
+Am Ende soll in Analogie zur 
+Potentialgleichung~\eqref{skript:gravitation:potentialgleichung}
+eine Gleichung der Form
+\[
+\text{``Tensor zur Feldbeschreibung''}
+=
+4\pi K\cdot \text{``Tensor mit Energie und Impuls''}
+\]
+das Gravitationsfeld beschreiben.
+
+\subsection{Massedichte und Energie-Impuls-Tensor}
+Die Massedichte $\varrho$, die wir auf der rechten Seite der
+Potentialgleichung~\eqref{skript:gravitation:potentialgleichung}
+für das newtonsche Gravitationsfeld finden,
+finden wir in der allgemeinen Theorie als $00$-Komponente
 des Energie-Impuls-Tensors wieder.
+Es ist daher naheliegend, dass auf der rechten Seite der gesuchten
+Gleichung der Energie-Impuls-Tensor $T_{\mu\nu}$ stehen soll.
+
+\subsection{Ricci- und Einstein-Tensor}
 Auf der linken Seite der Gleichung erwarten wir ein Objekt, welches
 sich aus den zweiten Ableitungen der $g_{\mu\nu}$ berechnen lässt.
 Die Christoffel-Symbole enthalten die ersten Ableitungen von $g_{\mu\nu}$,
@@ -571,7 +645,12 @@ Den gesuchten Tensor $G_{\mu\nu}$ können wir als Linearkombination
 G_{\mu\nu}=a R_{\mu\nu} + bg_{\mu\nu} R
 \]
 ansetzen.
+Der Krümmungsskalar $R$ ist eine Invariante, wir brauchen den Faktor
+$g_{\mu\nu}$, um daraus einen Tensor zu machen, der mit dem Ricci-Tensor
+$R_{\mu\nu}$ linear kombiniert werden kann.
+Die Koeffizienten $a$ und $b$ sind noch zu bestimmen.
 
+\subsection{Energieerhaltung und Feldgleichungen}
 Der Energie-Impuls-Tensor der speziellen Relativitätstheorie
 % XXX Referenz
 erfüllt den Erhaltungssatz
