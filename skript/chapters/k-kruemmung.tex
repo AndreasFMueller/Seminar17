@@ -1085,7 +1085,95 @@ mit zweiten Ableitungen von $g_{\mu\nu}$ kann man jetzt die erste
 Bianchi-Identität beweisen.
 
 \begin{proof}[Beweis der ersten Bianchi-Identität]
-TODO
+Setzen wir \eqref{skript:kruemmung:riemann2abl} in die erste
+Bianchi-Identität~\eqref{skript:kruemmung:bianchi1} ein, dann werden
+sich die zweiten Ableitungen und die Terme mit den Christoffel-Symbolen
+separat wegheben.
+Zunächst schreiben wir den Riemann-Tensor mit den gleichen Indizes wie
+der erste Term in der ersten Bianchi-Identität:
+\begin{equation}
+R_{\alpha\mu\nu\varrho}
+=
+\frac12\biggl(
+\frac{\partial^2 g_{\alpha\varrho}}{\partial x^\mu\partial x^\nu}
++
+\frac{\partial^2 g_{\mu\nu}}{\partial x^\alpha\partial x^\varrho}
+-
+\frac{\partial^2 g_{\alpha\nu}}{\partial x^\mu\partial x^\varrho}
+-
+\frac{\partial^2 g_{\mu\varrho}}{\partial x^\alpha\partial x^\nu}
+\biggr)
++g_{\beta\gamma}(
+\Gamma^\beta_{\mu\nu}\Gamma^\gamma_{\alpha\varrho}
+-
+\Gamma^\beta_{\mu\varrho}\Gamma^\gamma_{\alpha\nu}
+)
+\end{equation}
+In diesem Ausdruck permutieren wir jetzt die Indizes $\mu\nu\varrho$
+zyklisch:
+\begin{align*}
+R_{\alpha\mu\nu\varrho}
+&=
+\frac12\biggl(
+{\color{red}
+\frac{\partial^2 g_{\alpha\varrho}}{\partial x^\mu\partial x^\nu}
++
+\frac{\partial^2 g_{\mu\nu}}{\partial x^\alpha\partial x^\varrho}}
+{\color{blue}\mathstrut
+-
+\frac{\partial^2 g_{\alpha\nu}}{\partial x^\mu\partial x^\varrho}
+-
+\frac{\partial^2 g_{\mu\varrho}}{\partial x^\alpha\partial x^\nu}}
+\biggr)
++g_{\beta\gamma}(
+{\color{red}
+\Gamma^\beta_{\mu\nu}\Gamma^\gamma_{\alpha\varrho}}
+{\color{blue}\mathstrut
+-
+\Gamma^\beta_{\mu\varrho}\Gamma^\gamma_{\alpha\nu}}
+)
+\\
+R_{\alpha\nu\varrho\mu}
+&=
+\frac12\biggl(
+\frac{\partial^2 g_{\alpha\mu}}{\partial x^\nu\partial x^\varrho}
++
+\frac{\partial^2 g_{\nu\varrho}}{\partial x^\alpha\partial x^\mu}
+{\color{red}\mathstrut
+-
+\frac{\partial^2 g_{\alpha\varrho}}{\partial x^\nu\partial x^\mu}
+-
+\frac{\partial^2 g_{\nu\mu}}{\partial x^\alpha\partial x^\varrho}}
+\biggr)
++g_{\beta\gamma}(
+\Gamma^\beta_{\nu\varrho}\Gamma^\gamma_{\alpha\mu}
+{\color{red}\mathstrut
+-
+\Gamma^\beta_{\nu\mu}\Gamma^\gamma_{\alpha\varrho}}
+)
+\\
+R_{\alpha\varrho\mu\nu}
+&=
+\frac12\biggl(
+{\color{blue}\mathstrut
+\frac{\partial^2 g_{\alpha\nu}}{\partial x^\varrho\partial x^\mu}
++
+\frac{\partial^2 g_{\varrho\mu}}{\partial x^\alpha\partial x^\nu}}
+-
+\frac{\partial^2 g_{\alpha\mu}}{\partial x^\varrho\partial x^\nu}
+-
+\frac{\partial^2 g_{\varrho\nu}}{\partial x^\alpha\partial x^\mu}
+\biggr)
++g_{\beta\gamma}(
+{\color{blue}
+\Gamma^\beta_{\varrho\mu}\Gamma^\gamma_{\alpha\nu}}
+-
+\Gamma^\beta_{\varrho\nu}\Gamma^\gamma_{\alpha\mu}
+)
+\end{align*}
+Bildet man die Summe, heben sich die Terme gleicher Farbe jeweils weg.
+Die Summe der Terme auf der linken Seite ist daher $0$, das ist aber
+gerade die erste Bianchi-Identität.
 \end{proof}
 
 \subsection{Lokalgeodätische Koordinatensysteme}
@@ -1190,6 +1278,8 @@ oftmals darin, dass sich darin der Riemann-Tensor sehr viel
 einfacher ausdrücken lässt.
 Es bleiben zum Beispiel in~\label{skript:kruemmung:riemann2abl}
 nur die Terme der zweiten Ableitungen stehen.
+Als Anwendung dieses Prinzip wird im nächsten Abschnitt die zweite
+Bianchi-Identität bewiesen.
 
 \subsection{Zweite Bianchi-Identität}
 Der Riemann-Tensor verfügt noch über weitere Symmetrien, die am
@@ -1251,4 +1341,5 @@ Wir erhalten so die {\em zweite Bianchi-Identität}
 \label{skript:kruemmung:bianchi2}
 \end{equation}
 \index{Bianchi-Identität!zweite}
+
 

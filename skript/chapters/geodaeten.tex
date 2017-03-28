@@ -113,6 +113,7 @@ Ausdruck
 \frac{\partial A^\mu}{\partial x^\nu}
 +
 \Gamma^\mu_{\alpha\nu}A^\alpha,
+\label{skript:geodaeten:kovarianteableitung}
 \end{equation}
 die Koeffizienten $\Gamma^\mu_{\alpha\nu}$ heissen Christoffelsymbole
 zweiter Art oder Zusammenhangskoeffizienten.
@@ -200,7 +201,7 @@ beliebige Richtung der Kurve $\dot x^\alpha$ erfüllt sein, wenn der
 Klammerausdruck verschwindet für alle Werte der freien, also nicht durch
 die Summationskonvention als Laufindizes ausgezeichneten, Indizes.
 Wir erhalten also
-\[
+\begin{equation}
 \frac{\partial g_{\mu\nu}}{\partial x^\alpha}
 -
 g_{\mu\beta}\Gamma_{\nu\alpha}^\beta
@@ -208,7 +209,8 @@ g_{\mu\beta}\Gamma_{\nu\alpha}^\beta
 g_{\beta\nu}\Gamma_{\mu\alpha}^\beta
 =
 0,
-\]
+\label{skript:geodaeten:gammaidentitaet}
+\end{equation}
 ein System von Gleichungen für die $n^3$ Grössen $\Gamma_{\mu\nu}^\alpha$.
 Wir können die $\Gamma$ auch allein auf der linken Seite haben:
 \[
@@ -318,7 +320,7 @@ Dann heissen die
 \]
 die {\em Christoffelsymbole 1.~Art}
 und
-\[
+\begin{equation}
 \Gamma_{\mu\nu}^\sigma
 =
 g^{\sigma\alpha} \Gamma_{\alpha,\mu\nu}
@@ -332,12 +334,268 @@ g^{\sigma\alpha}
 -
 \frac{\partial g_{\mu\nu}}{\partial x^\alpha}
 \biggr)
-\]
+\label{skript:definition:christoffel2}
+\end{equation}
 heissen {\em Christoffelsymbole 2.~Art} oder {\em Zusammenhangskoeffizienten}.
 Die auf diese Weise aus der Metrik gewonnenen Zusammenhangskoeffizienten
 sind auch als der
 {\em Levi-Cività-Zusammenhang} bekannt.
 \index{Levi-Cività-Zusammenhang}
+\end{definition}
+
+\section{Rechenregeln für die kovariante Ableitung}
+\rhead{Kovariante Ableitung}
+Die kovariante Ableitung eines Vektorfeldes wurde in 
+\eqref{skript:geodaeten:kovarianteableitung}
+für ein Vektorfeld $A^\mu$ definiert.
+Später wurden die Koeffizienten $\Gamma^\alpha_{\mu\nu}$ so bestimmt,
+dass der Paralleltransport, der als geometrische Vorstellung der
+Formel~\eqref{skript:geodaeten:kovarianteableitung} zu Grunde lag,
+Skalarprodukte erhält.
+Für zwei Vektorfelder, die beide verschwindende
+kovariante Ableitung in beine bestimmte Richtung haben,
+verschwindet dann auch die Ableitung in diese Richtung.
+Doch wie verhält sich die Ableitung eines Skalarprodukts, wenn
+die einzelnen Faktoren nicht verschwindende kovariante Ableitung haben?
+Ziel dieses Abschnittes ist, Rechenregeln für die kovariante Ableitung
+zusammenzustellen.
+
+Wir betrachten zwei Vektorfelder $A^\mu$ und $B^\mu$ und möchten wissen,
+wie sich der Wert des Skalarproduktes $g_{\mu\nu}A^\mu B^\nu$ entlang
+einer Kurve mit Tangentenrichtung $C^\mu$ ändert.
+Seien $A^\mu$  und $B^\nu$ beliebige Vektorfelder,
+dann gilt entlang einer Kurve mit
+Richtungsvektor $C^\mu$ im Punkt mit Parameterwert $s=0$
+\begin{align*}
+\frac{d}{ds}(g_{\mu\nu}A^\mu B^\nu)\bigg|_{s=0}
+&=
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}A^\mu B^\nu
++
+g_{\mu\nu}\frac{\partial A^\mu}{\partial x^\alpha}C^\alpha B^\nu
++
+g_{\mu\nu}A^\mu \frac{\partial B^\nu}{\partial x^\alpha}C^\alpha
+\\
+&=
+\biggl(
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}C^\alpha A^\mu B^\nu
++
+g_{\mu\nu}
+\biggl(\nabla_\alpha A^\mu - \Gamma^\mu_{\beta\alpha}A^\beta \biggr)
+B^\nu
++
+g_{\mu\nu}A^\mu \biggl(\nabla_\alpha B^\nu-\Gamma^\nu_{\beta\alpha}B^\beta\biggr)
+\biggr)C^\alpha
+\\
+&=
+C^\alpha
+\biggl(
+g_{\mu\nu}\nabla_\alpha A^\mu B^\nu
++
+g_{\mu\nu}A^\mu\nabla_\alpha B^\nu
++
+\biggl(
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+-g_{\beta\nu}\Gamma^\beta_{\mu\alpha}
+-g_{\mu\beta}\Gamma^\beta_{\nu\alpha}
+\biggr)A^\mu B^\nu
+\biggr)
+\end{align*}
+Der innere Klammerausdruck in der letzten Gleichung ist aber identisch
+mit \eqref{skript:geodaeten:gammaidentitaet}, er verschwindet also.
+Damit können wir die Komponenten Ableitung in Richtung $C^\mu$ auch
+so schreiben:
+\[
+\frac{\partial}{\partial x^\alpha}
+(g_{\mu\nu}A^\mu B^\nu)
+=
+g_{\mu\nu}\nabla_\alpha A^\mu B^\nu
++
+g_{\mu\nu}A^\mu\nabla_\alpha B^\nu,
+\]
+dies ist die Produktregel für die kovariante Ableitung.
+
+\begin{satz}
+Für zwei beliebige Vektorfelder sind die Komponenten der Ableitung
+des Skalarproduktes 
+\begin{equation}
+\frac{\partial}{\partial x^\alpha}
+(g_{\mu\nu}A^\mu B^\nu)
+=
+g_{\mu\nu}\nabla_\alpha A^\mu B^\nu
++
+g_{\mu\nu}A^\mu\nabla_\alpha B^\nu.
+\label{skript:geodaeten:produktregel}
+\end{equation}
+\end{satz}
+
+Bis jetzt können wir nur die kovariante Ableitung von Vektorkomponenten
+$A^\mu$ berechnen, eine kovariante Ableitung von Komponenten $B_\nu$
+ist noch gar nicht definiert.
+Wir können aber jeden Vektor $B_\nu$ also das Resultat einer Operation
+$B_\nu=B^\alpha g_{\alpha\nu}$ betrachten.
+Das Skalarprodukt $A^\mu B_\mu=A^\mu B^\nu g_{\mu\nu}$ erfüllt dann
+wieder die Produktregel~\eqref{skript:geodaeten:produktregel},
+als
+\[
+\frac{\partial}{\partial x^\alpha}A^\mu B_\mu
+=
+\frac{\partial}{\partial x^\alpha}g_{\mu\nu} A^\mu B^\nu
+=
+g_{\mu\nu} \nabla_\alpha A^\mu B^\nu
++
+g_{\mu\nu} A^\mu \nabla_\alpha B^\nu
+=
+\nabla_\alpha A^\mu B_\mu
++
+A^\mu g_{\mu\nu} \nabla_\alpha B^\nu.
+\]
+Wenn die kovariante Ableitung für $B_\nu$ überhaupt definiert werden 
+kann, dann muss gelten
+\begin{align}
+\nabla_\alpha B_\nu
+&=
+g_{\mu\nu}\nabla_\alpha B^\mu
+\notag
+\\
+&=
+g_{\mu\nu}\frac{\partial B^\mu}{\partial x^\alpha}
++
+g_{\mu\nu}\Gamma^\mu_{\alpha\beta}B^\beta
+\notag
+\\
+&=
+g_{\mu\nu}\frac{\partial g^{\mu\beta}B_\beta}{\partial x^\alpha}
++
+g_{\mu\nu}\Gamma^\mu_{\alpha\beta}g^{\beta\sigma}B_\sigma
+\notag
+\\
+&=
+g_{\mu\nu}\frac{\partial g^{\mu\beta}}{\partial x^\alpha} B_\beta
++
+\underbrace{g_{\mu\nu}g^{\mu\beta}}_{=\delta_\nu^\beta}\frac{\partial B_\beta}{\partial x^\alpha}
++
+g_{\mu\nu}\Gamma^\mu_{\alpha\beta}g^{\beta\sigma}B_\sigma
+\notag
+\\
+&=
+\frac{\partial B_\nu}{\partial x^\alpha}
++
+g_{\mu\nu}\biggl(
+\frac{\partial g^{\mu\sigma}}{\partial x^\alpha}
++\Gamma^\mu_{\alpha\beta}g^{\beta\sigma}
+\biggr)B_\sigma
+\label{skript:geodaeten:kovkov1}
+\end{align}
+Die Ableitungen der inversen Matrix $g^{\mu\sigma}$ berechnen wir
+durch Ableiten der Bedingung $\delta_\nu^\sigma=g_{\nu\mu}g^{\mu\sigma}$:
+\begin{equation}
+0
+=
+\frac{\partial}{\partial x^\alpha}\delta_\nu^\sigma
+=
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha} g^{\mu\sigma}
++
+g_{\mu\nu}
+\frac{\partial g^{\mu\sigma}}{\partial x^\alpha}
+\qquad\Rightarrow\qquad
+g_{\mu\nu}
+\frac{\partial g^{\mu\sigma}}{\partial x^\alpha}
+=
+-
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha} g^{\mu\sigma}.
+\label{skript:geodaeten:ginvabl}
+\end{equation}
+Setzen wir jetzt~\eqref{skript:geodaeten:ginvabl}
+in~\eqref{skript:geodaeten:kovkov1} ein, erhalten wir
+\begin{align*}
+\nabla_\alpha B_\nu
+&=
+\frac{\partial B_\nu}{\partial x^\alpha}
++
+\biggl(
+-\frac{\partial g_{\mu\nu}}{\partial x^\alpha} g^{\mu\sigma}
++
+g_{\mu\nu}
+\Gamma^\mu_{\alpha\beta}g^{\beta\sigma}
+\biggr)B_\sigma
+\end{align*}
+In der Klammer ersetzen wir $\Gamma^\mu_{\alpha\beta}$ durch
+\eqref{skript:definition:christoffel2} und erhalten
+\begin{align*}
+-\frac{\partial g_{\mu\nu}}{\partial x^\alpha} g^{\mu\sigma}
++
+g_{\mu\nu}
+\Gamma^\mu_{\alpha\beta}
+g^{\beta\sigma}
+&=
+-\frac{\partial g_{\mu\nu}}{\partial x^\alpha} g^{\mu\sigma}
++
+g_{\mu\nu}
+\frac12
+g^{\mu\gamma}
+\biggl(
+\frac{\partial g_{\alpha\gamma}}{\partial x^\beta}
++
+\frac{\partial g_{\beta\gamma}}{\partial x^\alpha}
+-
+\frac{\partial g_{\alpha\beta}}{\partial x^\gamma}
+\biggr)
+g^{\beta\sigma}
+\\
+&=
+\biggl(
+-\frac{\partial g_{\beta\nu}}{\partial x^\alpha} g^{\beta\sigma}
++
+\delta_\nu^\gamma
+\frac12
+\biggl(
+\frac{\partial g_{\alpha\gamma}}{\partial x^\beta}
++
+\frac{\partial g_{\beta\gamma}}{\partial x^\alpha}
+-
+\frac{\partial g_{\alpha\beta}}{\partial x^\gamma}
+\biggr)
+\biggr)
+g^{\beta\sigma}
+\\
+&=
+\frac12
+\biggl(
+-2\frac{\partial g_{\beta\nu}}{\partial x^\alpha} g^{\beta\sigma}
++
+\frac{\partial g_{\alpha\nu}}{\partial x^\beta}
++
+\frac{\partial g_{\beta\nu}}{\partial x^\alpha}
+-
+\frac{\partial g_{\alpha\beta}}{\partial x^\nu}
+\biggr)
+g^{\beta\sigma}
+\\
+&=
+-\frac12
+\biggl(
+\frac{\partial g_{\beta\nu}}{\partial x^\alpha}
++
+\frac{\partial g_{\alpha\beta}}{\partial x^\nu}
+-
+\frac{\partial g_{\alpha\nu}}{\partial x^\beta}
+\biggr)
+g^{\beta\sigma}
+\\
+&=-\Gamma^\sigma_{\alpha\nu}
+\end{align*}
+\begin{definition}
+Die Komponenten der kovariante Ableitung $\nabla_\alpha B_\nu$ eines
+kovarianten Vektorfeldes $B_\nu$ in Richtung der Koordinaten $x^\alpha$
+ist
+\begin{equation}
+\nabla_\alpha B_\nu
+=
+\frac{\partial B_\nu}{\partial\alpha}
+-\Gamma^{\sigma}_{\alpha\nu}B_\sigma,
+\label{skript:geodaeten:kovabl2}
+\end{equation}
+Diese wird auch $\nabla_\alpha B_\nu=B_{\nu;\alpha}$ geschrieben.
 \end{definition}
 
 \section{Beispiele}
@@ -502,6 +760,7 @@ und die Christoffelsymbole 2.~Art
 \end{aligned}
 \label{skript:kruemmung:christoffelkugel}
 \end{equation}
+
 
 \section{Geodätengleichung}
 \rhead{Geodätengleichung}

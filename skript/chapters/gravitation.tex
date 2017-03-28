@@ -226,7 +226,7 @@ kommt dagegen auf der rechten Seite auch die Geschwindigkeit vor.
 Es ist daher nicht unmittelbar klar, wie die Bewegungsgleichung als
 Geodätengleichung geschrieben werden klar.
 
-Wir beschreiben die Bewegung wieder in einem Vierdimensionalen Raum,
+Wir beschreiben die Bewegung wieder in einem vierdimensionalen Raum,
 also als Kurve
 \[
 t\mapsto (t,x^1(t),x^2(t),x^3(t)),
@@ -609,7 +609,7 @@ In Analogie zur
 Gleichung~\eqref{skript:gravitation:potentialgleichung}
 erwarten wir dann eine Gleichung der Form
 \[
-G^{\mu\nu} = 4\pi KT^{\mu\nu}
+G_{\mu\nu} = 4\pi KT_{\mu\nu}
 \]
 als allgemeine Feldgleichung für die Gravitation.
 
@@ -622,7 +622,7 @@ Die Verjüngung
 \[
 R_{\mu\nu} = R^{\alpha}\mathstrut_{\mu\alpha\nu}
 \]
-heisst der Ricci-Tensor.
+heisst der {\em Ricci-Tensor}.
 Wegen
 \[
 R_{\mu\nu}
@@ -634,6 +634,8 @@ R^{\alpha}\mathstrut_{\nu\alpha\mu}
 R_{\nu\mu}
 \]
 ist er symmetrisch.
+
+% TODO: physikalische Interpretation
 
 Diesen kann man weiter verjüngen und daraus den Krümmungs-Skalar
 \[
@@ -676,5 +678,24 @@ ausdrücken.
 Die Terme mit den Christoffel-Symbolen zeigen, wie die Gravitationskraft
 Energie und Impuls verändert.
 
+Die zweite Bianchi-Identität
+\begin{equation}
+\nabla_\beta R^\alpha\mathstrut_{\mu\nu\sigma}
++
+\nabla_\nu R^\alpha\mathstrut_{\mu\sigma\beta}
++
+\nabla_\sigma R^\alpha\mathstrut_{\mu\beta\nu}
+=0
+\end{equation}
+für den Riemannschen Krümmungstensor können wir nach den
+Indizes $\alpha$ und $\nu$
+\begin{equation}
+\nabla_\beta R^\alpha\mathstrut_{\mu\alpha\sigma}
++
+\nabla_\alpha R^\alpha\mathstrut_{\mu\sigma\beta}
++
+\nabla_\sigma R^\alpha\mathstrut_{\mu\beta\alpha}
+=0.
+\end{equation}
 
 
