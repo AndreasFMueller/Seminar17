@@ -582,8 +582,12 @@ g^{\beta\sigma}
 \biggr)
 g^{\beta\sigma}
 \\
-&=-\Gamma^\sigma_{\alpha\nu}
+&=-\Gamma^\sigma_{\alpha\nu}.
 \end{align*}
+Die rechte Seite der kovarianten Ableitung für einen kovarianten Vektor
+kann daher mit den bereits bekannten Christophel-Symbolen zweiter Art
+ausgedrückt werden.
+
 \begin{definition}
 Die Komponenten der kovariante Ableitung $\nabla_\alpha B_\nu$ eines
 kovarianten Vektorfeldes $B_\nu$ in Richtung der Koordinaten $x^\alpha$
@@ -596,6 +600,46 @@ ist
 \label{skript:geodaeten:kovabl2}
 \end{equation}
 Diese wird auch $\nabla_\alpha B_\nu=B_{\nu;\alpha}$ geschrieben.
+\end{definition}
+
+% TODO: kovariante Ableitung und Verjüngung
+
+Wir möchten die kovariante Ableitung jetzt auf beliebige Tensoren
+verallgemeinern.
+Sie soll natürlich linear bleiben und die Produktregel muss ebenfalls
+erhalten bleiben.
+Ein Tensor der Form $t_{\mu\nu}$ kann immer geschrieben werden
+als eine Summe von Tensoren der Form $a_\mu b_\nu$.
+Auf einem solchen Tensor muss die kovariante Ableitung die Form
+\begin{align*}
+\nabla_\alpha (a_\mu b_\nu)
+&=
+(\nabla_\alpha a_\mu) b_\nu
++
+a_\mu(\nabla_\alpha b_\nu)
+\\
+&=
+\biggl(
+\frac{\partial a_\mu}{\partial x_\alpha}
+-
+\Gamma^\sigma_{\alpha\mu}a_\sigma
+\biggr)b_\nu
++
+a_\mu
+\biggl(
+\frac{\partial b_\nu}{\partial x_\alpha}
+-
+\Gamma^\sigma_{\alpha\nu}b_\sigma
+\biggr)
+\\
+&=
+\frac{\partial a_\mu b_\nu}{\partial x^\alpha}
+-\Gamma^\sigma_{\alpha\mu}a_\sigma b_\nu
+-\Gamma^\sigma_{\alpha\nu}
+\end{align*}
+
+
+\begin{definition}
 \end{definition}
 
 \section{Beispiele}
