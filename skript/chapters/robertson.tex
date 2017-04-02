@@ -55,6 +55,21 @@ Doch erst mit die Messungen von Hubble und Humason haben bewiesen,
 dass Einsteins Theorie die Entwicklung des Universums korrekt
 vorhersagen kann.
 
+\subsection{Der Skalenfaktor}
+Hubbles Beobachtungen haben gezeigt, dass sich das Universum ausdehnt.
+Zwei nahe Punkte befinden sich zur Zeit $t_0$ in einem Abstand $d_0$,
+und sollen in einem geeigneten Koordinatensystem in Ruhe sein.
+Zu einer späteren Zeit wird die Distanz sich vergrössert haben.
+Da das Universum isotrop und homogen ist, muss die Distanz in jeder
+beliebigen Richtung um den gleichen Faktor gewachsen sein.
+Die Ausdehnung des Universums ist also eine Ähnlichkeitstransformation.
+Sie kann durch eine einzige, von der Zeit abhängige Zahl,
+den {\em Skalenfaktor} $a(t)$ beschrieben werden.
+Wir geben der Funktion $a(t)$ willkürlich den Wert $1$ für die heutige
+Zeit.
+
+\subsection{Die Hubble-Konstante und das Alter des Universums}
+
 \section{Masseverteilung im Universum}
 \rhead{Masseverteilung im Universum}
 Lange Zeit galt die Erde als das Zentrum des Universums.
@@ -81,7 +96,7 @@ der Erde zum Erdmittelpunkt,
 Aber auch in einer Kugel von etwa einer Milliarde Kilometer um
 den Beobachter gibt es eine bevorzugte Richtung, nämlich die
 Richtung zum hellsten und massivsten Stern, der Sonne.
-Selbst in einer Kugel von etwa 3 Mpc\footnote{Mpc = 1 Million parsec,
+Selbst in einer Kugel von etwa 3~Mpc\footnote{Mpc = 1 Million parsec,
 ein parsec entspricht $30.857\cdot 10^{16}\text{m} = 3.26\text{Lichtjahre}$.}
 kann man eine bevorzugte Richtung finden, nämlich die Richtung zur grössten
 und hellsten Galaxie des lokalen Haufens, der Andromeda-Galaxie M31.
@@ -89,83 +104,339 @@ Erst in einer Kugel mit einem Radius von etwa 100Mpc gibt es keine
 bevorzugte Richtung mehr. 
 
 \subsection{Homogenität}
+Homogenität bedeutet, dass es keinen bevorzugten Standort im Universum gibt.
+Auf kurze Distanzen gilt dies ganz offensichtlich nicht.
+In einer Kugel von einigen tausend Kilometern um den Beobachter ist
+die Erde als massivstes Objekt ein bevorzugter Standort.
+In einer Kugel von einer Milliarde Kilometer um den Beobachter ist
+die Sonne als massivstes hellstes Objekt bevorzugt.
+In einer Kugel von 100000 Lichtjahren um den Beobachter ist das Zentrum
+der Milchstrasse mit dem dortigen supermassiven schwarzen Loch ein
+bevorzugter Ort.
+In einer Kugel von etwa 3~Mpc ist der Schwerpunkt des Lokalen Galaxienhaufens
+ein bevorzugter Ort.
+Bei grösseren Radien findet man zwar noch Cluster von Galaxien und
+Supercluster, also Cluster von Galaxienclustern, aber jenseits von
+etwa 100 Mpc scheint es keine noch grösseren Strukturen mehr zu geben.
+In diesen Grössenordnungen kann man daher das Universum als homogen
+bezeichnen.
+
 
 \subsection{Energie-Impuls-Tensor}
 
 \section{Robertson-Walker-Metrik}
 \rhead{Robertson-Walker-Metrik}
-Die Robertson-Walker-Metrik wurde entwickelt, um ein homogenes,
-isotropes und expandierendes Universum zu modellieren.
-Wir beginnen mit einem flachen Universum mit der
-Metrik
-\[
-ds^2
-=
--c^2\,dt^2 + dr^2 + r^2\,d\vartheta^2 + r^2\sin^2\vartheta \,d\varphi^2
-=
--c^2\,dt^2 + dr^2 + d\Omega^2.
-\]
-Wenn dieses Universum expandiert, ändert sich die Längenmessung für die
-Raum-Koordinaten, nicht aber für die Zeitkoordinate.
-Wir können dies mit einem zeitabhängigen Skalierungsfaktor $a(t)$ 
-modellieren:
-\[
-ds^2
-=
--c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\vartheta^2 + a(t)r^2 \sin^2\vartheta\,d\varphi^2
-=
--c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\Omega^2.
-\]
-Natürlich bleibt dies ein flaches Universum.
-
-Wir müssen aber auch zulassen, dass das Universum gekrümmt ist.
-Dies bedeutet, dass der Umfang eines Kreises um den Nullpunkt
-nicht proportional mit $r$ wächst.
-Alternativ kann man auch sagen, dass die $r$-Koordinate eines Punktes 
-eines Kreises vom Umfang $2\pi R$ nicht unbedingt $R$ sein muss, also
-$r \ne R$.
-Wir müssen also den Term $dr^2$ ersetzen durch etwas, was mit zunehmendem
-$r$ grösser oder kleiner als $1$ sein wird.
+Das Universum ist auf grosse Distanzen homogen und isotrop.
+Die Einstein-Gleichungen müssen daher auch eine Metrik als
+Lösung zulassen, die homogen und isotrop ist.
+Wenn kein Standort im Universum bevorzugt ist, dann muss es
+eine universelle Zeitkoordinaten $t$ geben, die Metrik muss
+sich schreiben lassen in der Form
 \[
 ds^2
 =
 -c^2\,dt^2
-+ a(t)^2 \biggl(
-\frac{R^2}{R^2-kr^2} dr^2
 +
-r^2\, d\Omega^2
-\biggr)
+g_{ij}\,dx^i\,dx^j
 \]
+wobei wie früher lateinische Indizes andeuten sollen, dass die
+Sumation nur über die Raumkoordinaten zu erstrecken ist.
+Wäre dies nicht möglich, dann müsste der Koeffizient von $dt^2$
+in einem Raumpunkt von $-c^2$ abweichen.
+Dieser Punkt hätte dann aber andere Eigenschaften als alle anderen
+Punkte im Universum, was das kosmologische Prinzip verletzt.
 
-Der Faktor $a(t)$ heisst der Skalierungsfaktor, er beschreibt, wie stark
-das Universum sich zur Zeit $t$ bereits gestreckt hat.
+\subsection{Isotrop und homogen gekrümmte Räume}
+Wir suchen jetzt eine Metrik des dreidimensionalen Raumes, welche
+isotrop und homogen ist.
+Der euklidische Raum mit der Metrik
+\[
+g_{ij}dx^i\,dx^j
+=
+dx^2 + dy^2 + dz^2
+\]
+ist sicher homogen und isotrop. 
+Er ist aber auch flach, und daher zu wenig allgemein als mögliches
+Modell für das Universum.
+Die euklidische Metrik kann auch in Kugelkoordinaten als
+\begin{equation}
+ds^2
+=
+dr^2
++ 
+r^2\,d\vartheta^2
++
+r^2\sin^2\vartheta\,d\varphi^2
+\label{skript:rwmetrik:kugelkoordinaten}
+\end{equation}
+geschrieben werden.
+Die letzten zwei Terme~\eqref{skript:rwmetrik:kugelkoordinaten}
+zeigen scheinbar eine bevorzugte Richtung, nämlich die Richtung
+des Nord- und Südpols.
+Dies ist jedoch nur ein Artefakt des Koordinatensystems, die 
+Längenmessung ist davon nicht betroffen.
+Wir können dies dadurch ausdrücken, dass wir die zwei Terme
+zusammenfasssen als
+\begin{equation}
+d\Omega^2 = d\vartheta^2 + \sin^2\vartheta\,d\varphi^2.
+\end{equation}
+Damit kann die Metrik abgekürzt als
+\begin{equation}
+ds^2 = dr^2 + r^2\,d\Omega^2
+\end{equation}
+geschrieben werden.
+Der Terme $r^2\,d\Omega^2$ beschreibt die Längenmessung auf der
+``Kugel'' bei der Koordinaten $r$ um den Nullpunkt des
+Koordinatensystems.
 
-Der Einstein-Tensor dieser Metrik kann in einer sehr langwierigen oder
-noch besser mechanischen Rechnung ermittelt werden.
-Er ist diagonal und hat die folgenden Diagonal-Elemente:
-\begin{align*}
-G_{00}
-&=
-\frac{3}{4}\biggl(\frac{\dot a(t)}{a(t)}\biggr)^2
+Da das Universum isotrop ist, darf keine Richtung ausgezeichnet sein.
+Insbesondere muss eine von der euklidischen Metrik abweichende
+Metrik immer noch unverändert den Teil $d\Omega^2$ enthalten.
+Es ist aber zulässig, dass die Längenmessung auf der Kugel sich
+gegenüber der Längenmessung in radialer Richtung verändert hat.
+Man beobachtet dies zum Beispiel auch in der Umgebung eines Punktes
+auf einer Kugeloberfläche: je weiter man sich von diesem Punkt entfernt,
+desto kleiner wird der Umfang eines Kreises um den Punkt im Vergleich
+zum Radius. 
+Ist der Radius des Kreises $\frac{\pi}2R$, wobei $R_c$ der Kugelradius ist,
+dann ist der Umfang $U$ des Kreises
+\[
+U=2\pi R_c \ne 2\pi \cdot r = 2\pi\frac{\pi}2R_c=\pi^2 R_c.
+\]
+Wir suchen daher eine Metrik in der Form
+\[
+ds^2 
+=
+dr^2 + S(r)^2 \,d\Omega^2,
+\]
+wobei $S(r)$ für einen euklischen Raum $S(r)=r$ ist.
+Ein Kreis mit Radius $r$ hat in dieser Metrik den Umfang
+\[
+U=\int_{\textrm{Kreis}} S(r)\,d\Omega = 2\pi S(r).
+\]
+Auch wenn für einen gekrümmten Raum $S(r)$ nicht mehr gleich $r$ ist,
+muss weiterhin $S(0)=0$ gelten, wenn der Radius verschwindet, dann
+hat der zugehörige Kreis auch verschwindenden Umfang.
+Für kleine Radien $r$ muss ausserdem die Geometrie kaum von der
+euklidischen unterscheidbar sein, es muss also $S(r)\simeq r$ gelten,
+oder $S'(r)=1$,
+Die Funktion $S(r)$ muss daher die Anfangsbedingungen
+\begin{equation}
+\begin{aligned}
+S(0)&=0&&\qquad&S'(0)&=1
+\end{aligned}
+\label{skript:rwmetrik:Safangsbedingungen}
+\end{equation}
+erfüllen.
+
+
+Die Funktion $S(r)$ ist nun also so zu bestimmen, dass der Raum auch
+homogen ist.
+Um sie zu bestimmen verwenden wir wieder die Analogie zur Oberfläche
+einer zweidimensionalen Kugel mit Radius $R_c$.
+Zu einem Kreis mit Radius $r$ im den Nordpol gehört der Winkel
+$\vartheta$ mit $\vartheta = r/R$.
+Der Umfang dieses Kreises ist dann
+\[
+2\pi R_c\sin\vartheta
+=
+2\pi S(r)
+\]
+der
+\[
+S(r) = R_c\sin\vartheta=R\sin\frac{r}{R_c}.
+\]
+In der zu dieser Funktion $S(r)$ gehörigen Metrik hat ein Kreis mit 
+Radius $r=\pi R$ Umfang $0$, dies entspricht dem Antipodenpunkt des
+Nullpunktes.
+
+Bis jetzt haben wir uns von der Anschauung leiten lassen, ohne den
+Begriff der Krümmung zu verwenden.
+Um die allgemeine Lösung für $S(r)$ zu finden, können wir
+aber auch verlangen, dass die Metrik
+\[
+dr^2 + S(r)^2\,d\Omega^2
+\]
+überall die gleiche Krümmung hat.
+Wir berechnen daher für diese Metrik den Ricci-Krümmungsskalar.
+Diese Rechnung ist ziemlich aufwendig, kann aber mit Maxima ohne
+Schwierigkeit ausgeführt werden.
+Man erhält 
+\[
+R=
+-\frac{2S''(r)}{S(r)}
+\]
+und damit die Bedingung
+\begin{equation}
+S''(r)=-2k S(r)
+\label{skript:rwmetrik:Sdgl}
+\end{equation}
+für $S(r)$ und eine geeignete Konstante $k$.
+
+Die Differentialgleichung~\eqref{skript:rwmetrik:Sdgl}
+muss mit den Anfangsbedingungen~\eqref{skript:rwmetrik:Safangsbedingungen}
+gelöst werden.
+Falls $k$ positiv ist, folgt
+\begin{equation}
+S(r)=\frac1{\sqrt{2k}}\sin(\sqrt{2k}\,r) = R_c\sin\frac{r}{R_c}
+\qquad\text{mit}\qquad
+R_c=\frac1{\sqrt{2k}}.
+\label{skript:rwmetrik:sinloesung}
+\end{equation}
+Dies ist der Fall, den wir bereits durch die geometrische Analogie mit
+der zweidimensionalen Sphäre gefunden haben.
+
+Die Gleichung~\eqref{skript:rwmetrik:Sdgl} hat aber noch eine weitere 
+Lösungen.
+Für negatives $k$ folgt wieder unter Verwendung der
+Anfangsbedingung~\eqref{skript:rwmetrik:Safangsbedingungen}
+\begin{equation}
+S(r)=\frac{1}{\sqrt{-2k}}\sinh(\sqrt{-2k}\, r)
+=
+R_c\sinh\frac{r}{R_c}
+\qquad\text{mit}\qquad
+R_c=\frac1{\sqrt{-2k}}.
+\label{skript:rwmetrik:sinhloesung}
+\end{equation}
+Diese Lösung gehört zu einem Raum mit negativer Krümmung.
+Sogar den euklidische Fall können wir für $k=0$ wiedergewinnen, es folgt
+dann $S(r)=r$.
+
+Offenbar spielt für die Lösung  nur das Vorzeichen von $k$ und die
+Grösse $R_c$ ein Rolle.
+Wir können $S(r)$ daher auch etwas einheitlicher als
+\begin{equation}
+S_\kappa(r) = \begin{cases}
+R_c\sin  \displaystyle\frac{\mathstrut r}{R_c} &\qquad \kappa=1\\
+r                                              &\qquad \kappa=0\\
+R_c\sinh \displaystyle\frac{\mathstrut r}{R_c} &\qquad \kappa=-1
+\end{cases}
+\label{skript:rwmetrik:Skappa}
+\end{equation}
+schreiben.
+Eine homogene und isotrope Metrik eines dreidimensionalen Raumes
+hat daher die Form
+\begin{equation}
+ds^2=dr^2 + S_{\kappa}(r)d\Omega^2.
+\label{skript:rwmetrik:metrikS}
+\end{equation}
+Diese Metrik beschreibt einen Raum mit konstanter Krümmung.
+Der Parameter $\kappa$ kann nur die Werte $\pm 1$ und $0$ annehmen.
+Für $\kappa=1$ ist die Krümmung des Raumes positiv, für $\kappa=-1$ ist
+sie negativ, für $\kappa=0$ liegt ein euklidischer Raum vor.
+Der Krümmungsradius ist in den Fällen $\kappa=\pm1$ jeweils $R_c$.
+
+Schreibt man $K_c = 1/R_c$ für die Krümmung, dann kann man $S_0(r)$
+auch als Grenzfall von $S_{\pm 1}(r)$ für $K_c\to 0$ erhalten.
+Es gilt  nämlich
+\begin{equation}
+\lim_{R_c\to\infty} S_\kappa(r)
+=
+\lim_{K_c\to 0} S_\kappa(r)
+=\begin{cases}
+\lim_{K_c\to 0}\frac{\displaystyle \sin(K_cr)}{\displaystyle K_c}
+=
+\lim_{K_c\to 0}\frac{\displaystyle r\cos(K_cr)}{\displaystyle 1} = r = S_0(r)
+&\qquad\kappa=1
 \\
-G_{11}
-&=
--\ddot a(t) +\frac{\dot a(t)^2}{4a(t)}
-\\
-G_{22}
-&=
-G_{11} r^2
-\\
-G_{33}
-&=
-G_{11} r^2\sin^2\vartheta
-\end{align*}
-In den Ausdrücken für $G_{22}$ und $G_{33}$ fällt auf, dass sie gegenüber
-$G_{11}$ nur die zusätzlichen Faktoren enthalten, die auch in der Definition
-der Robertson-Walker-Metrik evident sind.
-Um die Feldgleichungen aufzustellen reicht es daher, mit $G_{00}$ und
-$G_{11}$ zu arbeiten.
-Dies wird später auf die Friedmann-Gleichungen führen.
+\lim_{K_c\to 0}\frac{\displaystyle \sinh(K_cr)}{\displaystyle K_c}
+=
+\lim_{K_c\to 0}\frac{\displaystyle r\cosh(K_cr)}{\displaystyle 1} = r = S_0(r)
+&\qquad\kappa=-1
+\end{cases}
+\end{equation}
+nach der Regel von de l'Hospital.
+
+\subsection{Die Ausdehnung des Universums}
+Aus Metrik eines homogenen und isotropen Raumes gemäss
+\eqref{skript:rwmetrik:metrikS}
+können wir jetzt die allgemeine Metrik einer homogenen und
+isotropen Raumzeit konstruieren.
+Die Metrik
+\begin{equation}
+ds^2
+=
+-c^2\,dt^2 
++
+a(t)^2\bigl( dr^2 + S_\kappa(r) \,d\Omega^2\bigr)
+\label{skript:rwmetrik:rwmetrik}
+\end{equation}
+heisst die Robertson-Walker-Metrik.
+Wir können sie verwenden, um die Entwicklung des Universums zu
+modellieren.
+
+%Die Robertson-Walker-Metrik wurde entwickelt, um ein homogenes,
+%isotropes und expandierendes Universum zu modellieren.
+%Wir beginnen mit einem flachen Universum mit der
+%Metrik
+%\[
+%ds^2
+%=
+%-c^2\,dt^2 + dr^2 + r^2\,d\vartheta^2 + r^2\sin^2\vartheta \,d\varphi^2
+%=
+%-c^2\,dt^2 + dr^2 + d\Omega^2.
+%\]
+%Wenn dieses Universum expandiert, ändert sich die Längenmessung für die
+%Raum-Koordinaten, nicht aber für die Zeitkoordinate.
+%Wir können dies mit einem zeitabhängigen Skalierungsfaktor $a(t)$ 
+%modellieren:
+%\[
+%ds^2
+%=
+%-c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\vartheta^2 + a(t)r^2 \sin^2\vartheta\,d\varphi^2
+%=
+%-c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\Omega^2.
+%\]
+%Natürlich bleibt dies ein flaches Universum.
+%
+%Wir müssen aber auch zulassen, dass das Universum gekrümmt ist.
+%Dies bedeutet, dass der Umfang eines Kreises um den Nullpunkt
+%nicht proportional mit $r$ wächst.
+%Alternativ kann man auch sagen, dass die $r$-Koordinate eines Punktes 
+%eines Kreises vom Umfang $2\pi R$ nicht unbedingt $R$ sein muss, also
+%$r \ne R$.
+%Wir müssen also den Term $dr^2$ ersetzen durch etwas, was mit zunehmendem
+%$r$ grösser oder kleiner als $1$ sein wird.
+%\[
+%ds^2
+%=
+%-c^2\,dt^2
+%+ a(t)^2 \biggl(
+%\frac{R^2}{R^2-kr^2} dr^2
+%+
+%r^2\, d\Omega^2
+%\biggr)
+%\]
+%
+%Der Faktor $a(t)$ heisst der Skalierungsfaktor, er beschreibt, wie stark
+%das Universum sich zur Zeit $t$ bereits gestreckt hat.
+%
+%Der Einstein-Tensor dieser Metrik kann in einer sehr langwierigen oder
+%noch besser mechanischen Rechnung ermittelt werden.
+%Er ist diagonal und hat die folgenden Diagonal-Elemente:
+%\begin{align*}
+%G_{00}
+%&=
+%\frac{3}{4}\biggl(\frac{\dot a(t)}{a(t)}\biggr)^2
+%\\
+%G_{11}
+%&=
+%-\ddot a(t) +\frac{\dot a(t)^2}{4a(t)}
+%\\
+%G_{22}
+%&=
+%G_{11} r^2
+%\\
+%G_{33}
+%&=
+%G_{11} r^2\sin^2\vartheta
+%\end{align*}
+%In den Ausdrücken für $G_{22}$ und $G_{33}$ fällt auf, dass sie gegenüber
+%$G_{11}$ nur die zusätzlichen Faktoren enthalten, die auch in der Definition
+%der Robertson-Walker-Metrik evident sind.
+%Um die Feldgleichungen aufzustellen reicht es daher, mit $G_{00}$ und
+%$G_{11}$ zu arbeiten.
+%Dies wird später auf die Friedmann-Gleichungen führen.
 
 \section{Steady State Universum}
 \rhead{Steady State Universum}
