@@ -1,0 +1,41 @@
+Ein inkompressible Strömung hat die Strömungsgeschwindigkeit
+\[
+\vec v = \begin{pmatrix}
+x^2+y^2+z^2
+\\
+xy+yz+z
+\\
+v_z
+\end{pmatrix}
+\]
+Finden Sie die $z$-Komponente $v_z$.
+
+\begin{loesung}
+Inkompressibel heisst $\frac{\partial\varrho}{\partial t}=0$.
+Die Kontinuit"atsgleichung verlangt, dass
+\begin{align*}
+0
+&=
+\underbrace{\frac{\partial\varrho}{\partial t}}_{=0}-\operatorname{div}\vec v
+\\
+&=
+-\frac{\partial}{\partial x}(x^2+y^2+z^2)
+-\frac{\partial}{\partial y}(xy+yz+z)
+-\frac{\partial}{\partial z}v_z
+\\
+&=
+-2x-x-z-\frac{\partial v_z}{\partial z}
+\\
+\frac{\partial v_z}{\partial z}
+&=
+-3x-z
+\end{align*}
+Die Funktion $v_z$ kann man durch Integrieren nach $z$ erhalten:
+\begin{align*}
+v_z
+&=
+-3xz-\frac12z^2+C
+\end{align*}
+mit irgend Konstanten $C$.
+\end{loesung}
+
