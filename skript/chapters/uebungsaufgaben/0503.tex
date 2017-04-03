@@ -5,12 +5,16 @@ auf $v=0.999999991c$ beschleunigt.
 \item Wieviel Zeit vergeht für das Proton, wenn es 2 Stunden im LHC
 zirkuliert?
 \item Im LHC zirkulieren Protonen in zwei Strahlen bestehend aus je
-2808 Paketen von jeweils $N=100\text{ Milliarden}$, genannt Bunches.
-Wieviel Energie enthält ein Bunch, und vieviel der ganze Strahl?
+2808 Paketen von jeweils $N=100\text{ Milliarden}$ Protonen, genannt Bunches.
+Wieviel Energie enthält ein Bunch, und vieviel die beiden Strahlen?
 \item Mit welcher Geschwindigkeit müsste ein Tesla Model S mit 2t Gewicht
 fahren, um die gleiche kinetische Energie zu haben wie ein einzelner Bunch
 Protonen im LHC?
 \end{teilaufgaben}
+
+\begin{hinweis}
+$c=2.9979\cdot 10^8\text{m/s}$
+\end{hinweis}
 
 \begin{loesung}
 Zur Geschwindigkeit  $v$ gehört der Faktor
@@ -42,9 +46,9 @@ also ist die Zeit
 \item 
 Die Energie eines bewegten Protons ist $Mc^2$, gegenüber der
 Ruheenergie müssen zur Beschleunigung eines Protons daher
-\[
+\begin{align*}
 E_p
-=
+&=
 (M-m_p)c^2 
 =
 \biggl(\frac{1}{\gamma}-1\biggr)m_pc^2
@@ -53,9 +57,10 @@ E_p
 1.6726219\cdot 10^{-27}\text{kg}
 \cdot
 (2.9979\cdot 10^{8}\text{m/s})^2
-=
+\\
+&=
 1.1204\cdot 10^{-6}\text{J}
-\]
+\end{align*}
 aufgewendet werden.
 Da ein Bunch 
 \[
@@ -84,13 +89,17 @@ E_{\text{total}}
 \\
 v_{\text{Tesla}}
 &=\sqrt{
-\frac{2E_{\text{total}}}{m_{\text{Tesla}}}
+\frac{2E_{\text{bunch}}}{m_{\text{Tesla}}}
 }
 =
 \sqrt{\frac{2\cdot 112.04\cdot 10^3}{2000}}\frac{\text{m}}{\text{s}}
 =
 10.1\frac{\text{m}}{\text{s}}=36.36\text{km/h}.
 \end{align*}
+Wenn der LHC in Betrieb ist, enhalten die im Beschleuniger
+gespeicherten Protonen also gleichviel Energie, wie man aufwenden müsste,
+um 5616 Tesla Model S auf 36.36km/h zu beschleunigen.
+\qedhere
 \end{teilaufgaben}
 \end{loesung}
 
