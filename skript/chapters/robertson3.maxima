@@ -1,0 +1,15 @@
+/*
+ * Berechnung des Ricci-Kruemmeungsskalars fuer die Robertson-Walker-Metrik
+ */
+g: matrix(
+    [ 1,  0     ],
+    [ 0, S(r)^2 ]
+);
+x: [r, phi];
+
+batchload("curvature.maxima");
+
+/*
+ * Kruemmungsskalar
+ */
+RicciScalar();

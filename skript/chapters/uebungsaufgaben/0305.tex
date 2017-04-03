@@ -1,0 +1,74 @@
+Ein Fadenpendel der Masse $m$ und Länge $l$ wird beschrieben durch
+die Auslenkung $\varphi(t)$ in Abhängigkeit von der Zeit. 
+Die kinetische Energie ist 
+\[
+E_{\text{kin}}
+=
+\frac12ml^2\dot\varphi(t)^2,
+\]
+die potentielle Energie ist
+\[
+E_{\text{pot}}
+=
+-mgl\cos\varphi(t).
+\]
+Die Bewegung eines Fadenpendels minimiert das Wirkungsintegral
+\[
+\int_{t_0}^{t_1}
+E_{\text{kin}}-E_{\text{pot}}
+\,dt
+=
+\int_{t_0}^{t_1}
+\frac12ml^2\dot\varphi(t)^2
++
+mgl\cos\varphi(t)
+\,dt.
+\]
+Finden Sie die Bewegungsgleichung.
+
+\begin{loesung}
+Wir müssen die Euler-Lagrange-Gleichungen aufstellen für die
+Funktion
+\[
+L(\varphi, \dot\varphi)
+=
+\frac12ml^2\dot\varphi^2
++
+mgl\cos\varphi.
+\]
+Die Ableitungen sind
+\begin{align*}
+\frac{\partial L}{\partial\varphi}
+&=
+-mgl\sin\varphi
+\\
+\frac{\partial L}{\partial\dot\varphi}
+&=
+ml^2\dot\varphi
+\\
+\frac{d}{dt}
+\frac{\partial L}{\partial\dot\varphi}
+&=
+ml^2\ddot\varphi
+\end{align*}
+Damit kann man jetzt die Euler-Lagrange-Gleichungen aufstellen:
+\begin{align*}
+0=
+\frac{d}{dt}
+\frac{\partial L}{\partial\dot\varphi}
+-
+\frac{\partial L}{\partial\varphi}
+&=
+ml^2\ddot\varphi
++
+mgl\sin\varphi
+\\
+\Rightarrow\qquad
+\ddot\varphi
+&=
+-\frac{g}{l}\sin\varphi.
+\qedhere
+\end{align*}
+\end{loesung}
+
+

@@ -1,0 +1,109 @@
+Im LHC werden Protonen mit der Masse $m_p=1.6726219\cdot 10^{-27}\text{kg}$
+auf $v=0.999999991c$ beschleunigt.
+\begin{teilaufgaben}
+\item Welche scheinbare Masse erhält das Proton?
+\item Wieviel Zeit vergeht für das Proton, wenn es 2 Stunden im LHC
+zirkuliert?
+\item Im LHC zirkulieren Protonen in zwei Strahlen bestehend aus je
+2808 Paketen von jeweils $N=100\text{ Milliarden}$ Protonen, genannt Bunches.
+Wieviel Energie enthält ein Bunch, und vieviel die beiden Strahlen?
+\item Mit welcher Geschwindigkeit müsste ein Tesla Model S mit 2t Gewicht
+fahren, um die gleiche kinetische Energie zu haben wie ein einzelner Bunch
+Protonen im LHC?
+\end{teilaufgaben}
+
+\begin{hinweis}
+$c=2.9979\cdot 10^8\text{m/s}$
+\end{hinweis}
+
+\begin{loesung}
+Zur Geschwindigkeit  $v$ gehört der Faktor
+\[
+\gamma
+=
+\frac1{\displaystyle\sqrt{1-\frac{v^2}{c^2}}}
+=
+7453.56.
+\]
+\begin{teilaufgaben}
+\item Die scheinbare Masse wird um den Faktor $1/\gamma$ grösser, also
+\[
+M
+=
+\frac{m_p}{\gamma}
+=
+7453.56
+\cdot
+1.6726219\cdot 10^{-27}\text{kg}
+=
+1.2467\cdot 10^{-22}\text{kg}.
+\]
+\item Die Zeit wird für ein Proton um den Faktor $1/\gamma$ gedehnt,
+also ist die Zeit 
+\[
+\tau = \frac{7200\text{s}}{7453.56}=0.96591\text{s}
+\]
+\item 
+Die Energie eines bewegten Protons ist $Mc^2$, gegenüber der
+Ruheenergie müssen zur Beschleunigung eines Protons daher
+\begin{align*}
+E_p
+&=
+(M-m_p)c^2 
+=
+\biggl(\frac{1}{\gamma}-1\biggr)m_pc^2
+=
+(7453.56-1)\cdot
+1.6726219\cdot 10^{-27}\text{kg}
+\cdot
+(2.9979\cdot 10^{8}\text{m/s})^2
+\\
+&=
+1.1204\cdot 10^{-6}\text{J}
+\end{align*}
+aufgewendet werden.
+Da ein Bunch 
+\[
+E_{\text{bunch}}
+=
+nE_p
+=
+10^{11}\cdot1.1204\cdot 10^{-6}
+=
+112.04\text{kJ}
+\]
+Energie enthält, ist die Gesamtenergie der beiden Strahlen
+\[
+E_{\text{total}}
+=
+2\cdot 2808\cdot E_{\text{bunch}}
+=
+629\text{MJ}.
+\]
+\item
+Mit einer Masse von $m_{\text{Tesla}}=2000\text{kg}$ folgt
+\begin{align*}
+E_{\text{total}}
+&=
+\frac12m_{\text{Tesla}}v_{\text{Tesla}}^2
+\\
+v_{\text{Tesla}}
+&=\sqrt{
+\frac{2E_{\text{bunch}}}{m_{\text{Tesla}}}
+}
+=
+\sqrt{\frac{2\cdot 112.04\cdot 10^3}{2000}}\frac{\text{m}}{\text{s}}
+=
+10.1\frac{\text{m}}{\text{s}}=36.36\text{km/h}.
+\end{align*}
+Wenn der LHC in Betrieb ist, enhalten die im Beschleuniger
+gespeicherten Protonen also gleichviel Energie, wie man aufwenden müsste,
+um 5616 Tesla Model S auf 36.36km/h zu beschleunigen.
+\qedhere
+\end{teilaufgaben}
+\end{loesung}
+
+
+
+
+

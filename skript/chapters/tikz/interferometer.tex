@@ -1,0 +1,36 @@
+%
+% interferometer.tex -- schematische Darstellung des Interferometers
+%
+% (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz]{standalone}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{fp}
+\usepackage{ifthen}
+\usepackage[utf8]{inputenc}
+\usetikzlibrary{arrows,intersections}
+\usetikzlibrary{fixedpointarithmetic}
+\begin{document}
+\begin{tikzpicture}[>=latex, thick, scale=1.5]
+\draw[red] (-1,0)--(5,0);
+\draw[red] (0,-1)--(0,5);
+\draw (-0.5,-0.5)--(0.5,0.5);
+\node [label={right:halbdurchlässiger Spiegel}] at (0.5, 0.5) {};
+
+\fill[gray!20] (5,-0.5)--(5.2,-0.5)--(5.2,0.5)--(5,0.5)--cycle;
+\draw (5,-0.5)--(5,0.5);
+\node[label={right:Spiegel}] at (5.2,0) {};
+
+\fill[gray!20] (-0.5,5)--(-0.5,5.2)--(0.5,5.2)--(0.5,5)--cycle;
+\draw (-0.5,5)--(0.5,5);
+\node[label={above:Spiegel}] at (0,5.2) {};
+
+\node[label={left:Quelle}] at (-1,0) {};
+\draw (-1,-0.2)--(-1,0.2)--(-1.9,0.2)--(-1.9,-0.2)--cycle;
+
+\node[label={[rotate=90] Detektor}] at (0.14,-1.6) {};
+\draw (-0.2,-1)--(-0.2,-2)--(0.2,-2)--(0.2,-1)--cycle;
+
+\end{tikzpicture}
+\end{document}

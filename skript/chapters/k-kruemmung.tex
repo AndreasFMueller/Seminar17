@@ -134,6 +134,7 @@ Der Satz von Green stellt einen Zusammenhang zwischen einem Wegintegral
 und einem Flächenintegral her.
 
 \begin{satz}[Green]
+\label{skript:kruemmung:satz:green}
 Sind $f$ und $g$ stetig differenzierbare Funktionen im Gebiet $D$, welches
 von der Kurve $c$ berandet ist, dann gilt
 \[
@@ -457,7 +458,7 @@ Dann gilt
 \biggr) \,df^{\nu\mu}.
 \]
 Man beachte, dass wegen der Einsteinschen Summenkonvention über all
-Indexpaare $\mu\nu$ summiert werden muss.
+Indexpaare $\nu\mu$ summiert werden muss.
 \end{satz}
 
 Natürlich ist der ursprüngliche Satz von Green als Spezialfall in dieser
@@ -465,7 +466,7 @@ Formel enthalten.
 Setzt man nämlich $x^1=u$ und $x^2=v$, dann wird der Satz von Stokes zu
 der Aussage
 \begin{align*}
-\oint c A_1\,du + A_2\,dv
+\oint_c A_1\,du + A_2\,dv
 &=
 \int
 \biggl(
@@ -910,6 +911,8 @@ Er heisst der {\em Riemannsche Krümmungstensor}.
 \index{Krümmungstensor, Riemannscher}
 \index{Riemannscher Krümmungstensor}
 
+\subsubsection{Beispiele}
+
 \begin{beispiel}
 Krümmungstensor der Kugeloberfläche.
 Die Christoffel-Symbole zweiter Art sind bereits
@@ -1019,6 +1022,7 @@ definiert sein und der Vektor {\tt x} muss die Namen der Koordinaten
 enthalten.
 
 \lstinputlisting[style=Maxima]{chapters/curvature.maxima}
+\label{skript:maxima:curvature}
 
 Die weiter oben dargestellten Resultate kann man aus dem folgenden Output
 des Maxima-Programmes herauslesen:
@@ -1026,6 +1030,317 @@ des Maxima-Programmes herauslesen:
 \verbatiminput{chapters/kugel.out}
 }
 
-\subsection{Ricci-Krümmung}
+\subsubsection{Symmetrieeigenschaften}
+Wie bereits nachgerechnet, erfüllen die Komponenten des Riemann-Tensors
+die Symmetrieeigenschaften, die wir als Folge seiner geometrischen
+Interpretation als einer Beschreibung der Drehung erwarten.
+Doch er erfüllt noch weitere unerwartete Symmetrieeigenschaften, zum
+Beispiel
+\begin{equation}
+R_{\alpha\mu\nu\varrho}
++
+R_{\alpha\nu\varrho\mu}
++
+R_{\alpha\varrho\mu\nu}
+=0,
+\label{skript:kruemmung:bianchi1}
+\end{equation}
+welche auch die {\em erste Bianchi-Identität} genannt wird.
+\index{Bianchi-Identität!erste}
+
+Um diese Identität zu beweisen, ist eine alternative Darstellung des
+Riemann-Tensors nützlich. 
+Im Ausdruck~\eqref{skript:kruemmung:riemannmixed} werden die Komponenten
+des Riemannschen Krümmungstensors durch die Ableitungen der Christoffelsymbole
+nach den Koordinaten ausgedrückt.
+Wir wissen auch, dass sich die Christoffelsymbole durch die ersten Ableitungen
+der $g_{\mu\nu}$ ausdrücken lassen.
+Wir erwarten daher, dass es auch möglich ist, den Riemannschen Tensor direkt
+durch die zweiten Ableitungen der $g_{\mu\nu}$ zu beschreiben.
+Tatsächlich gilt
+\begin{equation}
+R_{\mu\nu\varrho\sigma}
+=
+\frac12\biggl(
+\frac{\partial^2 g_{\mu\sigma}}{\partial x^\nu\partial x^\varrho}
++
+\frac{\partial^2 g_{\nu\varrho}}{\partial x^\mu\partial x^\sigma}
+-
+\frac{\partial^2 g_{\mu\varrho}}{\partial x\nu\partial x^\sigma}
+-
+\frac{\partial^2 g_{\nu\sigma}}{\partial x^\mu\partial x^\varrho}
+\biggr)
++g_{\alpha\beta}(
+\Gamma^\alpha_{\nu\varrho}\Gamma^\beta_{\mu\sigma}
+- \Gamma^\alpha_{\nu\sigma}\Gamma^\beta_{\mu\varrho}
+)
+\label{skript:kruemmung:riemann2abl}
+\end{equation}
+
+\begin{proof}
+TODO
+\end{proof}
+
+Aus der Darstellung~\eqref{skript:kruemmung:riemann2abl} des Riemann-Tensors
+mit zweiten Ableitungen von $g_{\mu\nu}$ kann man jetzt die erste
+Bianchi-Identität beweisen.
+
+\begin{proof}[Beweis der ersten Bianchi-Identität]
+Setzen wir \eqref{skript:kruemmung:riemann2abl} in die erste
+Bianchi-Identität~\eqref{skript:kruemmung:bianchi1} ein, dann werden
+sich die zweiten Ableitungen und die Terme mit den Christoffel-Symbolen
+separat wegheben.
+Zunächst schreiben wir den Riemann-Tensor mit den gleichen Indizes wie
+der erste Term in der ersten Bianchi-Identität:
+\begin{equation}
+R_{\alpha\mu\nu\varrho}
+=
+\frac12\biggl(
+\frac{\partial^2 g_{\alpha\varrho}}{\partial x^\mu\partial x^\nu}
++
+\frac{\partial^2 g_{\mu\nu}}{\partial x^\alpha\partial x^\varrho}
+-
+\frac{\partial^2 g_{\alpha\nu}}{\partial x^\mu\partial x^\varrho}
+-
+\frac{\partial^2 g_{\mu\varrho}}{\partial x^\alpha\partial x^\nu}
+\biggr)
++g_{\beta\gamma}(
+\Gamma^\beta_{\mu\nu}\Gamma^\gamma_{\alpha\varrho}
+-
+\Gamma^\beta_{\mu\varrho}\Gamma^\gamma_{\alpha\nu}
+)
+\end{equation}
+In diesem Ausdruck permutieren wir jetzt die Indizes $\mu\nu\varrho$
+zyklisch:
+\begin{align*}
+R_{\alpha\mu\nu\varrho}
+&=
+\frac12\biggl(
+{\color{red}
+\frac{\partial^2 g_{\alpha\varrho}}{\partial x^\mu\partial x^\nu}
++
+\frac{\partial^2 g_{\mu\nu}}{\partial x^\alpha\partial x^\varrho}}
+{\color{blue}\mathstrut
+-
+\frac{\partial^2 g_{\alpha\nu}}{\partial x^\mu\partial x^\varrho}
+-
+\frac{\partial^2 g_{\mu\varrho}}{\partial x^\alpha\partial x^\nu}}
+\biggr)
++g_{\beta\gamma}(
+{\color{red}
+\Gamma^\beta_{\mu\nu}\Gamma^\gamma_{\alpha\varrho}}
+{\color{blue}\mathstrut
+-
+\Gamma^\beta_{\mu\varrho}\Gamma^\gamma_{\alpha\nu}}
+)
+\\
+R_{\alpha\nu\varrho\mu}
+&=
+\frac12\biggl(
+\frac{\partial^2 g_{\alpha\mu}}{\partial x^\nu\partial x^\varrho}
++
+\frac{\partial^2 g_{\nu\varrho}}{\partial x^\alpha\partial x^\mu}
+{\color{red}\mathstrut
+-
+\frac{\partial^2 g_{\alpha\varrho}}{\partial x^\nu\partial x^\mu}
+-
+\frac{\partial^2 g_{\nu\mu}}{\partial x^\alpha\partial x^\varrho}}
+\biggr)
++g_{\beta\gamma}(
+\Gamma^\beta_{\nu\varrho}\Gamma^\gamma_{\alpha\mu}
+{\color{red}\mathstrut
+-
+\Gamma^\beta_{\nu\mu}\Gamma^\gamma_{\alpha\varrho}}
+)
+\\
+R_{\alpha\varrho\mu\nu}
+&=
+\frac12\biggl(
+{\color{blue}\mathstrut
+\frac{\partial^2 g_{\alpha\nu}}{\partial x^\varrho\partial x^\mu}
++
+\frac{\partial^2 g_{\varrho\mu}}{\partial x^\alpha\partial x^\nu}}
+-
+\frac{\partial^2 g_{\alpha\mu}}{\partial x^\varrho\partial x^\nu}
+-
+\frac{\partial^2 g_{\varrho\nu}}{\partial x^\alpha\partial x^\mu}
+\biggr)
++g_{\beta\gamma}(
+{\color{blue}
+\Gamma^\beta_{\varrho\mu}\Gamma^\gamma_{\alpha\nu}}
+-
+\Gamma^\beta_{\varrho\nu}\Gamma^\gamma_{\alpha\mu}
+)
+\end{align*}
+Bildet man die Summe, heben sich die Terme gleicher Farbe jeweils weg.
+Die Summe der Terme auf der linken Seite ist daher $0$, das ist aber
+gerade die erste Bianchi-Identität.
+\end{proof}
+
+\subsection{Lokalgeodätische Koordinatensysteme}
+Bei einem Wechsel des Koordinatensystems transformieren sich die 
+Christoffelsymbole zweiter Art wie folgt:
+\begin{equation}
+\Gamma^\alpha_{\mu\nu}
+=
+\Gamma'^\beta_{\varrho\sigma}
+\frac{\partial x^\alpha}{\partial x'^\beta}
+\frac{\partial x'^\varrho}{\partial x^\mu}
+\frac{\partial x'^\sigma}{\partial x^\nu}
++
+\frac{\partial^2 x'^\beta}{\partial x^\mu\partial x^\nu}
+\frac{\partial x^\alpha}{\partial x'^\beta}
+\label{skript:kruemmung:christoffeltransformation}
+\end{equation}
+
+\begin{proof}
+TODO
+\end{proof}
+
+Die Christoffelsymbole zweiter Art transformierem sich daher nicht
+wie ein Tensor, wie der zweite Term
+im Ausruck~\label{skript:kruemmung:christoffeltransformation}
+mit den zweiten Ableitungen zeigt.
+Bei einer linearen Transformation verschwinden die zweiten Ableitungen
+und damit dieser Term.
+Lineare Transformationen erhalten Geraden, führen also Inertialsysteme
+in Inertialsysteme über.
+
+Die Formel~\label{skript:kruemmung:christoffeltransformation}
+bedeutet aber auch, dass man durch eine geeignete Transformation
+erreichen kann, dass wenigstens in einem Punkt alle Christoffelsymbole
+den Wert $0$ haben.
+Dies bedeutet physikalisch, dass man ein Koordinatensyteme gewählt welches
+in diesem Punkt nicht von einem Inertialsystem zu unterscheiden ist.
+Auf ein Teilchen scheint in diesem Punkt keine Kraft zu wirken.
+Ein solches Koordinatensystem heisst {\em lokalgeodätisch}.
+\index{lokalgeodätisch}
+
+\begin{proof}
+% Landau-Lifshitz, p 288
+Wir dürfen ohne Beschränkung der Allgmeinheit annehmen, dass der betrachtete
+Punkt der Nullpunkt ist.
+Sei $\Gamma^\alpha_{\mu\nu})_0$ der Wert des Christoffelsymbols im
+Nullpunkt.
+Wir betrachten jetzt die Transformation
+\[
+x'^\alpha = x^\alpha + \frac12(\Gamma^\alpha_{\mu\nu})_0x^\mu x^\nu,
+\]
+Für die ersten und zweiten Ableitungen im Nullpunkt gilt
+\begin{align*}
+\frac{\partial x'^\alpha}{\partial x^\beta}
+&=
+\delta^\alpha_\beta
+\\
+\frac{\partial x'^\alpha}{\partial x^\beta\partial x^\gamma}
+&=
+\frac12\bigl(
+(\Gamma^\alpha_{\beta\gamma})_0 + (\Gamma^\alpha_{\beta\gamma})_0
+\bigr)
+\\
+&=
+(\Gamma^\alpha_{\beta\gamma})_0,
+\end{align*}
+wobei im letzten Schritt die Symmetrie der Christoffelsymbole verwendet wurde.
+Setzt man dies in die
+Transformationsformel~\label{skript:kruemmung:christoffeltransformation} ein,
+erhält man am Koordinatenursprung
+\begin{align*}
+\Gamma^\alpha_{\mu\nu}
+&=
+\Gamma'^\beta_{\varrho\sigma}
+\delta^\alpha_\beta
+\delta^\varrho_\mu
+\delta^\sigma_\nu
++
+\frac12\bigl(
+(\Gamma^\beta_{\mu\nu}
+\bigr)
+\delta^\alpha_\beta.
+\\
+&=
+\Gamma'^\alpha_{\mu\nu}
++
+(\Gamma^\alpha_{\mu\nu})_0
+\\
+\Rightarrow\qquad
+\Gamma'^\alpha_{\mu\nu}
+&=
+\Gamma^\alpha_{\mu\nu}
+-
+(\Gamma^\alpha_{\mu\nu})_0
+=0,
+\end{align*}
+das $x'^\alpha$-Koordinatensystem ist also lokalgeodätisch.
+\end{proof}
+
+Der Vorteil eines lokalgeodätischen Koordinatensystems besteht
+oftmals darin, dass sich darin der Riemann-Tensor sehr viel
+einfacher ausdrücken lässt.
+Es bleiben zum Beispiel in~\label{skript:kruemmung:riemann2abl}
+nur die Terme der zweiten Ableitungen stehen.
+Als Anwendung dieses Prinzip wird im nächsten Abschnitt die zweite
+Bianchi-Identität bewiesen.
+
+\subsection{Zweite Bianchi-Identität}
+Der Riemann-Tensor verfügt noch über weitere Symmetrien, die am
+einfachsten in einem lokalgeodätischen Koordinatensystem herzuleiten sind. 
+Da die Christoffelsymbole zweiter Art im Nullpunkt eines solchen
+Koordinatensystems verschwinden, fällt dort die kovariante Ableitung
+nach $x^\beta$ mit der gewöhnlichen partiellen Ableitung nach $x^\beta$
+zusammen.
+Die kovariante Ableitung des Riemann-Tensors ist
+\begin{align*}
+\nabla_\beta
+R^\alpha\mathstrut_{\mu\nu\sigma}
+&=
+\frac{\partial}{\partial x^\beta}
+R^\alpha\mathstrut_{\mu\nu\sigma}
+=
+\frac{\partial^2\Gamma^\alpha_{\mu\sigma}}{\partial x^\beta\,\partial x^\nu}
+-
+\frac{\partial^2\Gamma^\alpha_{\mu\nu}}{\partial x^\beta\,\partial x^\sigma}
+\end{align*}
+Dabei wurde benutzt, dass in den Produkttermen mit zwei $\Gamma$-Faktoren
+auch nach der Ableitung jeweils ein $\Gamma$-Faktor stehen bleibt und 
+daher im Nullpunkt verschwindet.
+Bildet man jetzt die zyklische Vertauschung über die Indizes $\nu$,
+$\sigma$ und $\beta$, erhält man
+\begin{align*}
+\nabla_\beta R^\alpha\mathstrut_{\mu\nu\sigma}
++
+\nabla_\nu R^\alpha\mathstrut_{\mu\sigma\beta}
++
+\nabla_\sigma R^\alpha\mathstrut_{\mu\beta\nu}
+&=
+\frac{\partial^2\Gamma^\alpha_{\mu\sigma}}{\partial x^\beta\,\partial x^\nu}
+-
+\frac{\partial^2\Gamma^\alpha_{\mu\nu}}{\partial x^\beta\,\partial x^\sigma}
+%
++
+%
+\frac{\partial^2\Gamma^\alpha_{\mu\beta}}{\partial x^\nu\,\partial x^\sigma}
+-
+\frac{\partial^2\Gamma^\alpha_{\mu\sigma}}{\partial x^\nu\,\partial x^\beta}
+%
++
+%
+\frac{\partial^2\Gamma^\alpha_{\mu\nu}}{\partial x^\sigma\,\partial x^\beta}
+-
+\frac{\partial^2\Gamma^\alpha_{\mu\beta}}{\partial x^\sigma\,\partial x^\nu}
+\end{align*}
+Da es auf die Reihenfolge der zweiten Ableitungen nicht ankommt, heben
+sich die Terme paarweise weg, der ganze Ausdruck verschwindet also.
+Wir erhalten so die {\em zweite Bianchi-Identität}
+\begin{equation}
+\nabla_\beta R^\alpha\mathstrut_{\mu\nu\sigma}
++
+\nabla_\nu R^\alpha\mathstrut_{\mu\sigma\beta}
++
+\nabla_\sigma R^\alpha\mathstrut_{\mu\beta\nu}
+=0.
+\label{skript:kruemmung:bianchi2}
+\end{equation}
+\index{Bianchi-Identität!zweite}
 
 

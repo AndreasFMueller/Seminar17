@@ -1,0 +1,26 @@
+Ein frei hängendes Seil nimmt die Form einer Kettenlinie an, die durch
+die Funktion $y(x)=\cosh x$ beschrieben werden kann.
+Bestimmen Sie die Länge der Kurve zwischen den Punkten $x=\pm 1$.
+
+\begin{loesung}
+Die Kurvenlänge ergibt sich aus dem Integral
+\begin{align*}
+l
+&=
+\int_{-1}^{1} \sqrt{1+y'(x)^2}\,dx
+=
+\int_{-1}^{1} \sqrt{1+\sinh^2 x}\,dx
+\\
+&=
+\int_{-1}^{1} \sqrt{\cosh^2 x}\,dx
+=
+\int_{-1}^{1} \cosh x\,dx
+\\
+&=
+\bigl[\sinh x\bigr]_{-1}^1
+=
+\sinh 1 - \sinh(-1)=2\sinh 1 = e-e^{-1}.
+\qedhere
+\end{align*}
+\end{loesung}
+
