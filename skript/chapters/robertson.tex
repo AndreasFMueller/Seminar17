@@ -230,6 +230,7 @@ S(0)&=0&&\qquad&S'(0)&=1
 erfüllen.
 
 
+
 Die Funktion $S(r)$ ist nun also so zu bestimmen, dass der Raum auch
 homogen ist.
 Um sie zu bestimmen verwenden wir wieder die Analogie zur Oberfläche
@@ -259,9 +260,15 @@ dr^2 + S(r)^2\,d\Omega^2
 \]
 überall die gleiche Krümmung hat.
 Wir berechnen daher für diese Metrik den Ricci-Krümmungsskalar.
-Diese Rechnung ist ziemlich aufwendig, kann aber mit Maxima ohne
+Diese Rechnung ist ziemlich aufwendig, kann aber mit Maxima
+mit Hilfe des Programms von Seite~\pageref{skript:maxima:curvature}
+
+ohne
 Schwierigkeit ausgeführt werden.
+\lstinputlisting[style=Maxima]{chapters/robertson3.maxima}
 Man erhält 
+\verbatiminput{chapters/robertson3.txt}
+oder in konventioneller Notation
 \[
 R=
 -\frac{2S''(r)}{S(r)}
