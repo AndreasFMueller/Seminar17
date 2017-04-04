@@ -1,0 +1,22 @@
+%
+% expansion1.tex -- Illustration der Expansion des Universums
+%
+\documentclass[tikz]{standalone}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{fp}
+\usepackage{ifthen}
+\usetikzlibrary{arrows,intersections}
+\usetikzlibrary{fixedpointarithmetic}
+\begin{document}
+\begin{tikzpicture}[>=latex, thick, scale = 3, fixed point arithmetic]
+
+\coordinate (O) at (0,0);
+
+\input{expansion-common.tex}
+
+\bild
+
+\end{tikzpicture}
+\end{document}
+
