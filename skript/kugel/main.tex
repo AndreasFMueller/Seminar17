@@ -185,24 +185,239 @@ für grosse, aber endliche Radien $r$ gilt.
 %[SKIZZE GROSSER RADIUS/KLEINES DREIECK, KLEINER RADIUS/KLEINES DREIECK KRÜMMUNG!!!!]
 %
 
+\section{Dreiecksfläche}
+
+\begin{align*}
+\text{Zweieck A}
+&=
+\overline{ABC} + \overline{A'BC} = 2\cdot \alpha r^{ 2 } = A_{ \alpha }\\
+\text{Zweieck B}
+&=
+\overline{ABC} + \overline{AB'C} = 2\cdot \beta r^{ 2 } = A_{ \beta }\\
+\text{Zweieck C}
+&=
+\overline{ABC} + \overline{ABC'} = 2\cdot \gamma r^{ 2 } = A_{ \gamma }
+\end{align*}
+
+\begin{align*}
+A_{ \alpha } + A_{ \beta } + A_{ \gamma } &= \frac{ 4\pi r^{ 2 } }{ 2 } + 2A_{ \overline{ ABC }} \\
+2\alpha r^{ 2 } + 2\beta r^{ 2 } + 2\gamma r^{ 2 } &= \frac{ 4\pi r^{ 2 } }{ 2 } + 2A_{ \overline{ ABC }} \parallel:2\\
+\alpha r^{ 2 } + \beta \cdot r^{ 2 } + \gamma \cdot r^{ 2 } &= \pi \cdot r^{ 2 } + A_{ \overline{ ABC }} \parallel-\pi r^{ 2 }\\
+r^{ 2 }\left(\alpha + \beta + \gamma - \pi\right) &= A_{ \overline{ ABC }}
+\end{align*}
+
+
+\section{Sphärisch Analoge Winkelfunktionen}
+
+\subsection{Sinussatz}
+
+\subsection{Seitenkosinussatz}
+
+\subsection{Winkelkosinussatz}
+
+%[SKIZZE WINKELKOSINUS]
+
+\[
+\begin{aligned}
+&\overline{C'A'} &= d\cdot {tan(b)}
+&
+&
+&
+&
+&
+&\overline{C'B'} &= d\cdot {tan(a)}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+&\overline{MA'} &= \frac{ d }{cos(b)}
+&
+&
+&
+&
+&
+&\overline{MB'} &= \frac{ d }{cos(a)}
+\end{aligned}
+\]
+
+Der allgemeine Kosinussatz beschreibt sich wie folgt:
+
+\begin{align*}
+c^{ 2 } &= a^{ 2 } + b^{ 2 } - 2ab \cdot cos(\gamma)
+\end{align*}
+
+\begin{align*}
+\triangle \overline{A'B'C' }
+\overline{ A'B' }^{ 2 } &= \overline{ C'B' }^{ 2 } + \overline{ C'A' }^{ 2 } - 2 \cdot \overline{ C'B' } \cdot \overline{ C'A' } \cdot cos(\gamma)
+\end{align*}
+
+
+
+\begin{align*}
+\overline{A'B'}^{ 2 } &= (d\cdot tan(a))^{ 2 } + (d\cdot tan(b))^{ 2 } - 2 \cdot (d\cdot tan(a) \cdot (d\cdot tan(b) \cdot cos(\gamma)\\
+\overline{A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(tan^{ 2 }(a) + tan^{ 2 }(b)\right) - 2\cdot tan(a) \cdot tan(b) \cdot cos(\gamma)\right)
+\end{align*}
+
+\begin{align*}
+\triangle \overline{ MA'B' }
+\overline{ A'B' }^{ 2 } &= \overline{ MB' }^{ 2 } + \overline{ MA' }^{ 2 } - 2\cdot \overline{ MB'} \cdot \overline{ MA' } \cdot cos(c)
+\end{align*}
+
+
+\begin{align*}
+\overline{ A'B'}^{ 2 } &= \left(\frac{ d }{ cos(a) }  \right)^{ 2 } + \left(\frac{ d }{ cos(b)}  \right)^{ 2 } - 2 \cdot \frac{ d }{ cos(a)} \cdot \frac{ d }{ cos(b)} \cdot cos(c) \\
+\overline{ A'B' }^{ 2 } &= d^{ 2 } \cdot \left(\left(\frac{ 1 }{ cos(a) }  \right)^{ 2 } + \left(\frac{ 1 }{ cos(b) }  \right)^{ 2 } - 2 \cdot \frac{ 1 }{ cos(a)} \cdot \frac{ 1 }{ cos(b)} \cdot cos(c)\right)\\
+\overline{ A'B' }^{ 2 } &= d^{ 2 } \cdot \left(\left(tan^{ 2 }(a) + 1\right) + \left(tan^{ 2 }(b) + 1\right) - \left(2 \cdot \frac{cos(c)}{cos(a) \cdot cos(b)}\right)\right)
+\end{align*}
+
+
+
+\begin{align*}
+\overline{ A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(tan^{ 2 }(a) + tan^{ 2 }(b)\right) - 2 \cdot tan(a) \cdot tan(b) \cdot cos(\gamma)\right) \\
+\overline{ A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(tan^{ 2 }(a) + 1\right) + \left(tan^{ 2 }(b) + 1\right) - \left(2 \cdot \frac{cos(c)}{cos(a) \cdot cos(b)}\right)\right)
+\end{align*}
+
+
 \section{Sphärischer Exzess}
 
 \begin{align*}
 \epsilon &= \alpha + \beta + \gamma - \pi
 \end{align*}
 
-In der Ebenen Trigonometrie ist der Exzess = 0
+Der Sphärische Exzess gibt an, wie stark die Winkelsumme von $\pi$ abweicht.
+Würde der sphärische Exzess in der ebenen Trigonometrie angewendet, wäre dieser = 0. 
 
-Herleitung des spährischen Exzesses
+%[HERLEITUNG SPHàRISCHER EXZESS]
 
-Um den spährischen Exzess herzuleiten sind 
-folgende Überlegungen notwendig.
-Es wird davon ausgegangen, dass in einer Kugel
-3 spährische Zweiecke abgebildet sind. Diese schneiden
-sich drei mal und bilden 3 Eulersche’Dreiecke.
+Bezieht man das auf die Erde und somit einer Kugel, kann man mit Hilfe eines beliebigen sphärischen Dreieckes und dessen Flächeninhalt auf den Radius der Kugel schliessen.
+
+\section{Navigation auf See}
+Das besondere an Seekarten ist die Inhaltliche Ausrichtung. Anders wie Landkarten muss sie Informationen enthalten welche für den Kapitän und seine Besatzung von grosser Bedeutung sind. Vor allem in Küstennähe ist das navigieren eines Schiffes besonders gefährlich. So enthalten Seekarten etwas über Wassertiefen, Bodenbeschaffenheiten, Gezeiten, Küstenlinien, Landzungen und Windrichtungen.
+Der Hauptunterschied dabei ist, das auf der Landkarte feste Positionen definiert und aufgezeigt werden, das einzige was sich verändert ist der Reisende selbst. Bei der Seekarte ist das anders, es werden veränderliche Einwirkungen der Natur festgehalten.
+
+Dieser kleine Unterschied zeigt die Notwendigkeit auf, die Position und den Kurs seines Schiffes auf See immer ermitteln zu können.
 
 
-[Grafik]
+\section{Geographische Koordinaten}
+
+Nachdem klar war, das die Erde eine Kugel ist, wurde diese in ein Gradnetz aufgeteilt. Dabei wurden die Angaben für eine exakte Ortsbestimmung klar definiert und die bis heute gültigen Koordinaten bestimmt.
+Dabei muss man sich nochmals in Erinnerung rufen, dass sich die Erde in 24h einmal um ihre eigene Achse dreht. Nach $360 ^{\circ}$ 
+und somit einer vollen Umdrehung, steht sie wieder in ihrer Ursprungsposition und ein neuer Tag beginnt.
+
+Die Koordinaten setzen sich aus folgenden Komponenten zusammen:
+
+\[
+\begin{aligned}
+&\text{Grad } (^{\circ})
+&
+&\text{\bigg \vert}
+&
+&\text{Bogenminuten } (`)
+&
+&\text{\bigg \vert}
+&
+&\text{Bogensekunden } (``)
+\end{aligned}
+\]
+
+
+Die Erdoberfläche wurde in je 360 Breiten- und Längengrade eingeteilt. Die Breitengrade haben zueinander einen Abstand von 111.31 km, dies entspricht auch dem Abstand der Längengrade am Äquator mit Zunehmender Nähe zu den Polen, nimmt dieser Abstand ab.
+
+\[
+\begin{aligned}
+&1^{\circ}
+&
+&\text{\bigg \vert}
+&
+&4 \text{ Minuten}
+&
+&\text{\bigg \vert}
+&
+&111.31\text{ km}
+\end{aligned}
+\]
+
+Berechnet man nun die Erdumdrehung von 360°, erhält man genau den Erdumfang am Äquator: \begin{align*} 40’074 \text{ km.}\end{align*}
+
+Dabei geben die Bogenminuten und -sekunden dem Standort die gewünschte Exaktheit. Mit den vollständigen Koordinaten lässt sich der Standort auf einer Landkarte exakt bestimmen und einzeichnen.
+
+\section{Der Breitengrad}
+Die Breitengrade bilden die bereits genannten Kleinkreise auf der Kugeloberfläche. Sie verlaufen in einem Abstand von genau 111 km parallel zum Äquator. Dabei stellt  dieser genau die Mitte zwischen Nord- und Südpol dar und teilt die Erdkugel in zwei gleiche Hälften. Somit wird von nördlicher und südlicher Breite gesprochen, je nach dem auf welcher Halbkugel man sich befindet.
+
+%[SKIZZE DER GEOGRAFISCHEN BREITE ERDKUGEL]
+
+\subsection{Geografische Breite $\phi$}
+\begin{definition}
+Die geografische Breite eines Standortes ist nichts anderes, als der Winkel am Erdmittelpunkt zwischen der Ebene des Äquators und der Geraden zum Standpunkt auf der Erdoberfläche.
+\end{definition}
+
+%[SKIZZE DER GEOGRAFISCHEN BREITE MIT WINKEL]
+
+\subsection{Navigation mit den Breitengraden}
+Da der Breitengrad bereits sehr früh ziemlich präzise bestimmt werden könnte, nutzten bereits die Seefahrer um Christoph Kulumbus den Breitengrad zur Navigation ihrer Flotten.
+Den dieser lässt sich ziemlich einfach aus dem höchsten Sonnenstand oder einem Fixstern bestimmen. Dabei wird mit einem Jakobsstab\footnote{%
+Der Jakobsstab ist ein früheres astronomisches Instrument zur Winkelmessung und wurde vor allem in der Seefahrt verwendet. Er ist in der Nautik der Vorläufer des Sextanten.} (später Sextant\footnote{%
+Der Sextant ist ein nautisches Messinstrument zur Winkelmessung von Horizont und Fixstern (Gestirn)}) der Winkel zwischen dem Horizont und dem Fixstern gemessen. Der Winkel welchen man erhält, zieht man von 90° ab und erhält somit die geografische Breite. \\
+
+%[SKIZZE ERMITTLUNG DES BREITENGRADES]
+
+Wenn man sich auf der Nordhalbkugel befindet, ist der Polarstern ein sehr guter Fixstern. Befindet sich ein Schiff nun sehr nahe am Nordpol, steht dieser nahezu senkrecht am Himmelszelt bei $90^{\circ}$. Würde es aber nahe dem Äquator stehen, erscheint dieser am Horizont bei $0^{\circ}$.
+
+
+\section{Der Längengrad}
+Die Längengrade bilden die bereits genannten Grosskreise auf der Kugeloberfläche.
+Sie schneiden den Äquator im rechten Winkel, haben dort einen Abstand von 111 km zueinander und verbinden die Pole. Anders wie bei der geografischen Breite, ist in der Natur kein Längengrad gegeben welcher den Nullpunkt darstellt.
+
+%[SKIZZE DER GEOGRAFISCHEN LÄNGE ERDKUGEL]
+
+\subsection{Geografische Länge $\lambda$}
+\begin{definition}
+Die geografische Länge ist der Winkel an der Erdachse zum Nullmeridian.
+\end{definition}
+
+
+\subsection{Navigation mit den Längengraden}
+
+
+\section{The Board of Longitude - Das Längenproblem}
+
+
+\subsection{John Harrison}
+
+
+\subsection{Korrekturbeiwert}
+
+
+\section{Nautische Dreieck}
+
+
+
+
+
+
+
+\section{Die Vermessung der Welt}
+Wir schreiben das Jahr 1818 und kehren in die Zeit des Mathematikers Carl Friedrich Gauss zurück. Neben dem liebevoll genannten „kleinen Gauss“ und anderen herausragenden Mathematischen Leistungen, beschäftigte er in den Folgejahren mit der Vermessung des Königreichs Hannovers und verfasste auf 61 Blättern das Kartenwerk \textit{Gauss’sche Landesaufnahme der 1815 durch Hannover erworbenen Gebiete}.
+
+
+
+
+
+\subsection{Zeitzonen der Erde}
+
+
+
+
+
+
+
+
+
+
+\section{XY}
+
+
 
 \begin{align*}
 \text{Zweieck A}
@@ -233,39 +448,6 @@ r^{ 2 } \left(\alpha + \beta + \gamma - \pi\right)
 &=
 A_{ \overline{ ABC }}
 \end{align*}
-ist die Fläche des Dreieckes auf der Kugeloberfläche.
-
-
-
-\section{The Board of Longitude - Das Längenproblem}
-
-
-\section{XY}
-
-
-
-
-
-\begin{align*}
-\text{Zweieck A}
-&=
-\overline{ABC} + \overline{A'BC} = 2\cdot \alpha r^{ 2 } = A_{ \alpha }\\
-\text{Zweieck B}
-&=
-\overline{ABC} + \overline{AB'C} = 2\cdot \beta r^{ 2 } = A_{ \beta }\\
-\text{Zweieck C}
-&=
-\overline{ABC} + \overline{ABC'} = 2\cdot \gamma r^{ 2 } = A_{ \gamma }
-\end{align*}
-
-\begin{align*}
-A_{ \alpha } + A_{ \beta } + A_{ \gamma } &= \frac{ 4\pi r^{ 2 } }{ 2 } + 2A_{ \overline{ ABC }} \\
-2\alpha r^{ 2 } + 2\beta r^{ 2 } + 2\gamma r^{ 2 } &= \frac{ 4\pi r^{ 2 } }{ 2 } + 2A_{ \overline{ ABC }} \parallel:2\\
-\alpha r^{ 2 } + \beta \cdot r^{ 2 } + \gamma \cdot r^{ 2 } &= \pi \cdot r^{ 2 } + A_{ \overline{ ABC }} \parallel-\pi r^{ 2 }\\
-r^{ 2 }\left(\alpha + \beta + \gamma - \pi\right) &= A_{ \overline{ ABC }}
-\end{align*}
-
-
 
 
 
