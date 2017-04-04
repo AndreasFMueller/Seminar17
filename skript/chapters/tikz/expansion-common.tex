@@ -1,0 +1,50 @@
+%
+% expansion-common.tex -- Illustration der Expansion des Universums
+%
+
+\def\scalefactor{1.04}
+\def\gridspacing{0.5}
+\def\xorigin{0}
+\def\yorigin{0}
+
+\newcommand\punkt[2]{
+\def\x{#1}
+\def\y{#2}
+\draw ({(\x + \xorigin) * \gridspacing},{(\y + \yorigin) * \gridspacing}) circle[radius=1mm]{};
+\draw[fill=black] ({(\x + \xorigin) * \scalefactor * \gridspacing}, {(\y + \yorigin) * \scalefactor * \gridspacing}) circle[radius=1mm]{};
+}
+
+\newcommand\zeile[1]{
+\def\z{#1}
+\punkt{-8}{\z}
+\punkt{-7}{\z}
+\punkt{-6}{\z}
+\punkt{-5}{\z}
+\punkt{-4}{\z}
+\punkt{-3}{\z}
+\punkt{-2}{\z}
+\punkt{-1}{\z}
+\punkt{ 0}{\z}
+\punkt{ 1}{\z}
+\punkt{ 2}{\z}
+\punkt{ 3}{\z}
+\punkt{ 4}{\z}
+\punkt{ 5}{\z}
+\punkt{ 6}{\z}
+\punkt{ 7}{\z}
+\punkt{ 8}{\z}
+}
+
+\newcommand\bild{
+\zeile{-5}
+\zeile{-4}
+\zeile{-3}
+\zeile{-2}
+\zeile{-1}
+\zeile{ 0}
+\zeile{ 1}
+\zeile{ 2}
+\zeile{ 3}
+\zeile{ 4}
+\zeile{ 5}
+}
