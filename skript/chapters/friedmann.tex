@@ -23,14 +23,254 @@ Geschichte des Universums konkrete Aussagen zu machen gestattet.
 Mit diesen sogenannten Friedmann-Gleichungen kann man sodann zum
 Beispiel das Alter des Universums bestimmen.
 
-\section{Das isotrope homogene Universum}
-\rhead{Das isotrope homogene Universum}
-
 \section{Friedmann-Gleichungen}
 \rhead{Friedmann-Gleichungen}
+Im Kapitel~\ref{skript:chapters:kosmologie} haben wir gelernt, dass
+das homogene und isotrope Universum die Robertson-Walker-Metrik 
+\[
+ds^2
+=
+-c^2\,dt^2
++
+a(t)^2\bigl(
+dr^2 + S_\kappa(r)^2d\Omega^2
+\bigr)
+\]
+hat.
+Ausserdem muss die Metrik eine Lösung der Einstein-Gleichungen sein.
+Auf deren rechten Seite steht der Energie-Impuls-Tensor des Universums.
+Da das Universum homogen und isotrop ist, muss auch der Energie-Impuls-Tensor
+isotrop und homogen sein.
+Für einen mit Gas der Dichte $\varrho$ und Druck $p$ gefülltes Universum
+ist der Energie-Impuls-Tensor durch
+\[
+T^{\mu\nu}
+=
+\begin{pmatrix}
+\varrho c^2 & 0 & 0 & 0 \\
+     0      & p & 0 & 0 \\
+     0      & 0 & p & 0 \\
+     0      & 0 & 0 & p \\
+\end{pmatrix}
+\]
+beschrieben.
+
+Die noch unbekannte Funktion $a(t)$ sollte sich also aus der
+Einstein-Gleichung bestimmen lassen, sofern wir den Energie-Impuls-Tensor
+des Universums berechnen können.
+Dabei ist zu beachten, dass mit der Ausdehnung des Universums sich sowohl
+die Dichte $\varrho$ als auch der Druck $p$ ändern werden.
+Wir erwraten daher, ein System von Differentialgleichungen zu erhalten.
+Die Einstein-Gleichungen werden einen Zusammenhang zwischen den 
+Ableitungen von $a(t)$ und der Dichte herstellen,
+andererseits müssen wir aus unserer Kenntnis des Verhaltens von
+Materie und Strahlung herleiten, wie sich die Dichte mit dem
+Streckungsfaktor  $a(t)$ des Universums ändert.
+Dieses Differentialgleichungssystem wird die Entwicklung des homogenen
+und isotropen Universums vollständig beschreiben.
+
+Als erstes müssen wir jetzt die Differentialgleichung für $a(t)$
+in Abhängigkeit von $\varrho$ ermitteln.
+Dazu betrachten wir ausschliesslich die $00$-Komponente der
+Einsteingleichungen, also
+\begin{equation}
+G_{00} = \frac{8\pi K}{c^2} T_{00}=\frac{8\pi K\varrho}{c^2}.
+\label{skript:friedmann:einstein}
+\end{equation}
+Wir berechnen den Einstein-Tensor der Robertson-Walker-Metrik
+wieder mit Maxima, und bekommen.
+%(%i5)                       ratsimp(Einstein(1, 1))
+%                                         2
+%         2     d         2      2       d              2  d         2    2
+%      3 S (r) (-- (a(t)))  - 2 c  S(r) (--- (S(r))) - c  (-- (S(r)))  + c
+%               dt                         2               dr
+%                                        dr
+%(%o5) --------------------------------------------------------------------
+%                                   2     2
+%                                  S (r) a (t)
+%(%i6)                    tex(ratsimp(Einstein(1, 1)))
+\[
+{{3\,S^2\left(r\right)\,\left({{d}\over{d\,t}}\,a\left(t\right)
+ \right)^2-2\,c^2\,S\left(r\right)\,\left({{d^2}\over{d\,r^2}}\,S
+ \left(r\right)\right)-c^2\,\left({{d}\over{d\,r}}\,S\left(r\right)
+ \right)^2+c^2}\over{S^2\left(r\right)\,a^2\left(t\right)}}
+\]
+\begin{equation}
+G_{00}
+=
+3\frac{\dot a(t)^2}{a(t)^2}
+-\frac{2c^2}{a(t)^2}\frac{S''_\kappa(r)}{S_\kappa(r)}
+-\frac{c^2}{a(t)^2}
+\frac{S'_\kappa(r)^2-1}{S_\kappa(r)^2}
+\end{equation}
+Die rechte Seite können wir mit Hilfe der im
+Kapitel~\ref{skript:chapter:kosmologie} bereitgestellten Formeln
+\eqref{skript:robertson:ersteableitung} und
+\eqref{skript:robertson:zweiteableitung} für die Ableitungen der Funktion
+$S_\kappa(r)$ vereinfachen.
+Wir erhalten 
+\begin{align*}
+G_{00}
+&=
+3\frac{\dot a(t)^2}{a(t)^2}
+-\frac{2c^2}{a(t)^2}\frac{-\kappa\displaystyle \frac{S_\kappa(r)}{R_c^2}}{S_\kappa(r)}
+-\frac{c^2}{a(t)^2}
+\frac{1-\kappa \frac{\displaystyle S_\kappa(r)^2}{R_c^2}-1}{S_\kappa(r)^2}
+\\
+&=
+3\frac{\dot a(t)^2}{a(t)^2}
++\frac{3c^2\kappa}{a(t)^2R_c^2}
+\end{align*}
+Die $00$-Komponente der Einstein-Gleichung liefert uns jetzt die Gleichung
+\begin{equation}
+\frac{\dot a(t)^2}{a(t)^2}
++
+\frac{c^2\kappa}{a(t)^2R_c^2}
+=
+\frac{8\pi K}{3c^2}\varrho.
+\end{equation}
+Üblicherweise wird die Gleichung als Gleichung für $H=\dot a(t)/a(t)$
+geschrieben, also
+\begin{equation}
+H^2
+=
+\biggl(
+\frac{\dot a(t)}{a(t)}
+\biggr)^2
+=
+\frac{8\pi K}{3c^2}\varrho
+-
+\frac{c^2\kappa }{a(t)^2R_c^2}
+\label{skript:friedmann:friedmann}
+\end{equation}
+
+\section{Die Beschleunigungsgleichung}
+\rhead{Die Beschleunigungsgleichung}
+Durch Verjüngung der Einsteingleichung kann man auch den anderen
+Komponenten des Einstein-Tensors und insbesonder der Druck-Komponenten 
+des Energie-Impuls-Tensors Rechnung tragen.
+Die rechte Seite der Einstein-Gleichung wird einfach nur die
+Spur, also
+\[
+\frac{8\pi K}{c^2}
+T^\mu_\mu = \frac{8\pi K}{c^4}(-\varrho c^2 + 3p).
+\]
+Für die linke Seite muss die Verjüngung des Einstein-Tensors ausgerechnet
+werden.
+%(%i16) s : ratsimp(sum(sum(ginverse     Einstein(i, j), i, 1, length(g)), j, 
+%                                   i, j
+%                                                                 1, length(g)))
+%                         2
+%             2          d                2     d         2
+%(%o16) - (6 S (r) a(t) (--- (a(t))) + 6 S (r) (-- (a(t)))
+%                          2                    dt
+%                        dt
+%                        2
+%               2       d                2  d         2      2    2  2     2
+%          - 4 c  S(r) (--- (S(r))) - 2 c  (-- (S(r)))  + 2 c )/(c  S (r) a (t))
+%                         2                 dr
+%                       dr
+%(%i17)                              tex(s)
+%\[
+%-{{6\,S^2\left(r\right)\,a\left(t\right)\,\left({{d^2}\over{d\,t^2
+% }}\,a\left(t\right)\right)+6\,S^2\left(r\right)\,\left({{d}\over{d\,
+% t}}\,a\left(t\right)\right)^2-4\,c^2\,S\left(r\right)\,\left({{d^2
+% }\over{d\,r^2}}\,S\left(r\right)\right)-2\,c^2\,\left({{d}\over{d\,r
+% }}\,S\left(r\right)\right)^2+2\,c^2}\over{c^2\,S^2\left(r\right)\,a^2
+% \left(t\right)}}
+%\]
+Der verjüngte Einstein-Tensor ist
+\begin{align*}
+G^\mu_\mu
+&=
+- \frac{6}{c^2} \frac{\ddot a(t)}{a(t)}
+-\frac{6}{c^2} \frac{\dot a(t)^2}{a(t)^2}
++\frac{4}{a(t)^2} \frac{S''_\kappa(r)}{S_\kappa(r)}
++\frac{2S'_\kappa(r)^2-2}{a(t)^2 S_\kappa(r)^2}
+\\
+&=
+-\frac{6}{c^2}\biggl(\frac{\ddot a(t)}{a(t)} + \frac{\dot a(t)^2}{a(t)^2}\biggr)
+-\frac{6}{a(t)^2}\frac{\kappa }{R_c^2}.
+\end{align*}
+Die verjüngte Einsteingleichung wird dann
+\begin{align*}
+G^\mu_\mu
+&=
+\frac{8\pi K}{c^2}(-\varrho  c^2+ 3p)
+\\
+-\frac{6}{c^2}\biggl(\frac{\ddot a(t)}{a(t)} + \frac{\dot a(t)^2}{a(t)^2}\biggr)
+-\frac{6}{a(t)^2}\frac{\kappa }{R_c^2}
+&=
+\frac{8\pi K}{c^2}(-\varrho c^2 + 3p)
+\\
+\frac{\ddot a(t)}{a(t)} + \frac{\dot a(t)^2}{a(t)^2}
+&=
+-\frac{4\pi K}{3c^2}(-\varrho c^2 + 3p)
+-\frac{c^2}{a(t)^2}\frac{\kappa }{R_c^2}.
+\end{align*}
+Den zweiten Term auf der rechten Seite können wir mit Hilfe der Gleichung
+\eqref{skript:friedmann:friedmann}
+eliminieren und bekommen
+\begin{align}
+\frac{\ddot a(t)}{a(t)}
+&=
+-\frac{4\pi K}{3c^2}(-\varrho c^2 + 3p)
+-\frac{c^2}{a(t)^2}\frac{\kappa }{R_c^2}
+-\frac{8\pi K}{3c^2}\varrho c^2
++
+\frac{c^2\kappa }{a^2R_c^2}
+\notag
+\\
+\frac{\ddot a(t)}{a(t)}
+&=
+-\frac{4\pi K}{3c^2}(\varrho c^2 + 3p).
+\label{skript:friedmann:beschleunigung}
+\end{align}
+Dies ist die {\em Beschleunigungsgleichung}, sie ist eine
+Differentialgleichung zweiter Ordnung für den Skalenfaktor.
+\index{Beschleunigungsgleichung}
+
+Man kann die linke Seite auch durch $H$ und seine erste Ableitung
+ausdrücken:
+\begin{align*}
+\dot H
+&=
+\frac{d}{dt}\frac{\dot a(t)}{a(t)}
+=
+\frac{\ddot a(t) a(t)-\dot a(t)^2}{a(t)^2}
+=
+\frac{\ddot a(t)}{a(t)} - \frac{\dot a(t)^2}{a(t)^2}
+=
+\frac{\ddot a(t)}{a(t)} - H^2
+\\
+\Rightarrow
+\dot H+H^2
+&=
+\frac{\ddot a(t)}{a(t)}.
+\end{align*}
+Damit können wir die Beschleunigungsgleichung auch als Gleichung
+für $H$ schreiben:
+\begin{equation}
+\dot H+H^2
+=
+-\frac{4\pi K}{3c^2}(\varrho c^2 + 3p).
+\end{equation}
+Natürlich muss $\varrho$ und $p$ in Abhängigkeit von $H$ ausgedrückt
+werden, bevor diese Form der Beschleunigungsgleichung zur Berechnung
+der Geschichte des Universums genutzt werden kann.
 
 \section{Zustandsgleichungen}
 \rhead{Zustandsgleichungen}
+\subsection{Ideales Gas}
+
+\subsection{Strahlung}
+
+\subsection{Staub}
+
+\subsection{Dunkle Energie}
+
+\section{Dunkle Energie}
+\rhead{Dunkle Energie}
 
 \section{Geschichte des Universums}
 \rhead{Geschichte des Universums}

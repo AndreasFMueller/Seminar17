@@ -152,6 +152,10 @@ bezeichnen.
 Das Universum ist auf grosse Distanzen homogen und isotrop.
 Die Einstein-Gleichungen müssen daher auch eine Metrik als
 Lösung zulassen, die homogen und isotrop ist.
+In diesem Abschnitt wollen wir untersuchen, wie die Metrik eines
+solchen Raums beschaffen sein muss.
+
+\subsection{Zeit}
 Wenn kein Standort im Universum bevorzugt ist, dann muss es
 eine universelle Zeitkoordinaten $t$ geben, die Metrik muss
 sich schreiben lassen in der Form
@@ -252,8 +256,7 @@ S(0)&=0&&\qquad&S'(0)&=1
 \end{equation}
 erfüllen.
 
-
-
+\subsubsection{Krümmung}
 Die Funktion $S(r)$ ist nun also so zu bestimmen, dass der Raum auch
 homogen ist.
 Um sie zu bestimmen verwenden wir wieder die Analogie zur Oberfläche
@@ -285,7 +288,6 @@ dr^2 + S(r)^2\,d\Omega^2
 Wir berechnen daher für diese Metrik den Ricci-Krümmungsskalar.
 Diese Rechnung ist ziemlich aufwendig, kann aber mit Maxima
 mit Hilfe des Programms von Seite~\pageref{skript:maxima:curvature}
-
 ohne
 Schwierigkeit ausgeführt werden.
 \lstinputlisting[style=Maxima]{chapters/robertson3.maxima}
@@ -303,6 +305,7 @@ S''(r)=-2k S(r)
 \end{equation}
 für $S(r)$ und eine geeignete Konstante $k$.
 
+\subsubsection{Lösung der Differentialgleichung für $S_\kappa(r)$}
 Die Differentialgleichung~\eqref{skript:rwmetrik:Sdgl}
 muss mit den Anfangsbedingungen~\eqref{skript:rwmetrik:Safangsbedingungen}
 gelöst werden.
@@ -332,18 +335,89 @@ Diese Lösung gehört zu einem Raum mit negativer Krümmung.
 Sogar den euklidische Fall können wir für $k=0$ wiedergewinnen, es folgt
 dann $S(r)=r$.
 
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/robertson.pdf}
+\caption{Darstellung der Funktionen $S_\kappa(r)$ für $R_c=1$ und
+verschiedene Werte von $\kappa$
+\label{skript:Skappa:graph}}
+\end{figure}
+
 Offenbar spielt für die Lösung  nur das Vorzeichen von $k$ und die
 Grösse $R_c$ ein Rolle.
 Wir können $S(r)$ daher auch etwas einheitlicher als
 \begin{equation}
 S_\kappa(r) = \begin{cases}
-R_c\sin  \displaystyle\frac{\mathstrut r}{R_c} &\qquad \kappa=1\\
-r                                              &\qquad \kappa=0\\
+R_c\sin  \displaystyle\frac{\mathstrut r}{R_c} &\qquad \kappa= 1\\
+r                                              &\qquad \kappa= 0\\
 R_c\sinh \displaystyle\frac{\mathstrut r}{R_c} &\qquad \kappa=-1
 \end{cases}
 \label{skript:rwmetrik:Skappa}
 \end{equation}
 schreiben.
+In Abbildung~\ref{skript:Skappa:graph} sind die Funktionen $S_\kappa(r)$
+für $R_c=1$ und für alle drei Werte von $\kappa$ dargestellt.
+Ebenfalls erkennbar ist, dass für kleine Werte von $r$ gilt
+$S_\kappa(r)\simeq r$.
+
+\subsubsection{Ableitungen von $S_\kappa(r)$}
+Für spätere Verwendung berechnen wir die erste und zweite Ableitung 
+von $S_\kappa(r)$.
+Die erste Ableitung ist
+\begin{align*}
+S'_\kappa(r)
+&=
+\begin{cases}
+\cos \displaystyle\frac{\mathstrut r}{R_c}&\qquad \kappa= 1\\
+1                                         &\qquad \kappa= 0\\
+\cosh\displaystyle\frac{\mathstrut r}{R_c}&\qquad \kappa=-1
+\end{cases}
+\end{align*}
+In Hinblick auf spätere Verwendung in der Friedmann-Gleichung drücken wir
+die rechte Seite durch $S_\kappa(r)$ aus. 
+\begin{equation}
+S'_\kappa(r)^2
+=
+\left\{
+\begin{aligned}
+&\cos^2\displaystyle\frac{\mathstrut r}{R_c}
+=
+1-\sin^2\displaystyle\frac{\mathstrut r}{R_c}
+=
+1-\kappa \frac{S_\kappa(r)^2}{R_c^2}&&\qquad\kappa=1\\
+&1&&\qquad\kappa=0\\
+&\cosh^2\displaystyle\frac{\mathstrut r}{R_c}
+=
+1+\sinh^2\displaystyle\frac{\mathstrut r}{R_c}
+=
+1-\kappa \frac{S_\kappa(r)^2}{R_c^2}&&\qquad\kappa=-1
+\end{aligned}
+\right.
+\end{equation}
+Unabhängig vom Wert von $\kappa$ und $R_c$ gilt also immer
+\begin{equation}
+S'_\kappa(r)^2 = 1-\kappa \frac{S_\kappa(r)^2}{R_c^2}.
+\label{skript:robertson:ersteableitung}
+\end{equation}
+Für die zweite Ableitung finden wir
+\begin{align*}
+S''_\kappa(r)
+&=
+\begin{cases}
+\displaystyle-\frac{1}{R_c}\sin \frac{\mathstrut r}{R_c}&\qquad \kappa= 1\\
+0                                                       &\qquad \kappa= 0\\
+\displaystyle \frac{1}{R_c}\sinh\frac{\mathstrut r}{R_c}&\qquad \kappa=-1
+\end{cases}
+\end{align*}
+Auch dieses Resultat können wir einheitlich als
+\begin{equation}
+S''_\kappa(R)
+=
+-\kappa\displaystyle \frac{S_\kappa(r)}{R_c^2}
+\label{skript:robertson:zweiteableitung}
+\end{equation}
+schreiben.
+
 Eine homogene und isotrope Metrik eines dreidimensionalen Raumes
 hat daher die Form
 \begin{equation}
@@ -356,6 +430,7 @@ Für $\kappa=1$ ist die Krümmung des Raumes positiv, für $\kappa=-1$ ist
 sie negativ, für $\kappa=0$ liegt ein euklidischer Raum vor.
 Der Krümmungsradius ist in den Fällen $\kappa=\pm1$ jeweils $R_c$.
 
+\subsubsection{Der Grenzfall $R_c\to\infty$}
 Schreibt man $K_c = 1/R_c$ für die Krümmung, dann kann man $S_0(r)$
 auch als Grenzfall von $S_{\pm 1}(r)$ für $K_c\to 0$ erhalten.
 Es gilt  nämlich
@@ -364,11 +439,14 @@ Es gilt  nämlich
 =
 \lim_{K_c\to 0} S_\kappa(r)
 =\begin{cases}
+\displaystyle
 \lim_{K_c\to 0}\frac{\displaystyle \sin(K_cr)}{\displaystyle K_c}
 =
 \lim_{K_c\to 0}\frac{\displaystyle r\cos(K_cr)}{\displaystyle 1} = r = S_0(r)
 &\qquad\kappa=1
 \\
+\\
+\displaystyle
 \lim_{K_c\to 0}\frac{\displaystyle \sinh(K_cr)}{\displaystyle K_c}
 =
 \lim_{K_c\to 0}\frac{\displaystyle r\cosh(K_cr)}{\displaystyle 1} = r = S_0(r)
@@ -376,6 +454,108 @@ Es gilt  nämlich
 \end{cases}
 \end{equation}
 nach der Regel von de l'Hospital.
+Die Funktion $S_0(r)$ ist daher der Grenzfall der Funktionen
+$S_\kappa(r)$ für unendlich grossen Krümmungsradius $R_c$.
+
+\subsection{Robertson-Walker-Metrik}
+Da wir jetzt die Zeitabhängigkeit wie auch die Ortsabhängigkeit der
+Metrik eines isotropen und homogen gekrümmten Raumes kennen, können
+wir die allgemeinste Form der vierdimensionalen Metrik eines solchen
+Raumes gefunden.
+
+\begin{satz}
+Ein homogenes, isotropes Universum hat eine Metrik der Form
+\[
+ds^2
+=
+-c^2 dt^2 + a(t)^2\bigl(
+dr^2 + S_\kappa(r)^2(d\vartheta^2 + \sin^2\vartheta\, d\varphi^2)
+\bigr)
+\]
+mit $\kappa\in\{0,\pm1\}$ und 
+$S_\kappa(r)$ ist eine der Funktionen
+\[
+S_\kappa(r)
+=
+\begin{cases}
+R_c\sin \displaystyle\frac{\mathstrut r}{R_c}&\qquad \kappa= 1\\
+r&\qquad \kappa=0\\
+R_c\sinh\displaystyle\frac{\mathstrut r}{R_c}&\qquad \kappa=-1
+\end{cases}
+\]
+\end{satz}
+
+Wir bestimmen die Geodätengleichungen in der Robertson-Walker Metrik.
+Die allgemeine Geodätengleichung hat die Form
+\[
+\frac{d^2x^\mu}{ds^2} = -\Gamma^\mu_{\alpha\beta} \dot x^\alpha \dot x^\beta.
+\]
+Man muss also als erstes die Christoffelsymbole bestimmen.  
+Diese sind auch deshalb interessant, weil $\Gamma^0_{kk}$ in erster
+Näherung die Gravitationskräfte beschreibt.
+
+Für jeden Index $\mu$ bilden die $\Gamma^\mu_{\alpha\beta}$
+eine symmetrische Matrix.
+Für $\mu=0$ zum Beispiel finden wir
+\begin{align*}
+\Gamma^0_{\alpha\beta}
+&=
+\begin{pmatrix}
+%(%i5) 		        ratsimp(Christoffel2(1, 1, 1))
+%(%o5) 				       0
+%(%i6) 		        ratsimp(Christoffel2(1, 1, 2))
+%(%o6) 				       0
+%(%i7) 		        ratsimp(Christoffel2(1, 1, 3))
+%(%o7) 				       0
+%(%i8) 		        ratsimp(Christoffel2(1, 1, 4))
+%(%o8) 				       0
+0&0&0&0\\
+%(%i9) 		        ratsimp(Christoffel2(1, 2, 2))
+%				     d
+%			       a(t) (-- (a(t)))
+%				     dt
+%(%o9) 			       ----------------
+%				       2
+%				      c
+%(%i10) 		        ratsimp(Christoffel2(1, 2, 3))
+%(%o10) 				       0
+%(%i11) 		        ratsimp(Christoffel2(1, 2, 4))
+%(%o11) 				       0
+0&\frac1{c^2} a(t)\dot a(t)& 0 & 0 \\
+%(%i12) 		        ratsimp(Christoffel2(1, 3, 3))
+%			     2	        d
+%			    S (r) a(t) (-- (a(t)))
+%					dt
+%(%o12) 			    ----------------------
+%				       2
+%				      c
+%(%i13) 		        ratsimp(Christoffel2(1, 3, 4))
+%(%o13) 				       0
+0 & 0 & \frac1{c^2}a(t)\dot a(t)S_\kappa(r)^2 & 0 \\
+%(%i14) 		        ratsimp(Christoffel2(1, 4, 4))
+%		       2	  d	        2
+%		      S (r) a(t) (-- (a(t))) sin (theta)
+%				  dt
+%(%o14) 		      ----------------------------------
+%				       2
+%				      c
+0 & 0 & 0 & \frac1{c^2} a(t)\dot a(t)S_\kappa(r)^2 \sin^2\vartheta
+\end{pmatrix}
+\\
+&=
+\frac1{c^2}
+\frac{\dot a(t)}{a(t)}
+\begin{pmatrix}
+0&     0&                  0&                                 0\\
+0&a(t)^2&                  0&                                 0\\
+0&     0&a(t)^2S_\kappa(r)^2&                                 0\\
+0&     0&                  0&a(t)^2S_\kappa(r)^2\sin^2\vartheta
+\end{pmatrix}
+\end{align*}
+Die Matrix in der letzten Zeile stimmt bis auf die $00$-Komponente
+mit der Metrik überein.
+Der Faktor $\dot a(t)/a(t)$ beschreibt die Ausdehungsgeschwindigkeit
+des Universums.
 
 \subsection{Die Ausdehnung des Universums}
 Aus Metrik eines homogenen und isotropen Raumes gemäss
@@ -394,79 +574,6 @@ a(t)^2\bigl( dr^2 + S_\kappa(r) \,d\Omega^2\bigr)
 heisst die Robertson-Walker-Metrik.
 Wir können sie verwenden, um die Entwicklung des Universums zu
 modellieren.
-
-%Die Robertson-Walker-Metrik wurde entwickelt, um ein homogenes,
-%isotropes und expandierendes Universum zu modellieren.
-%Wir beginnen mit einem flachen Universum mit der
-%Metrik
-%\[
-%ds^2
-%=
-%-c^2\,dt^2 + dr^2 + r^2\,d\vartheta^2 + r^2\sin^2\vartheta \,d\varphi^2
-%=
-%-c^2\,dt^2 + dr^2 + d\Omega^2.
-%\]
-%Wenn dieses Universum expandiert, ändert sich die Längenmessung für die
-%Raum-Koordinaten, nicht aber für die Zeitkoordinate.
-%Wir können dies mit einem zeitabhängigen Skalierungsfaktor $a(t)$ 
-%modellieren:
-%\[
-%ds^2
-%=
-%-c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\vartheta^2 + a(t)r^2 \sin^2\vartheta\,d\varphi^2
-%=
-%-c^2\,dt^2 + a(t)\,dr^2 + a(t)r^2\,d\Omega^2.
-%\]
-%Natürlich bleibt dies ein flaches Universum.
-%
-%Wir müssen aber auch zulassen, dass das Universum gekrümmt ist.
-%Dies bedeutet, dass der Umfang eines Kreises um den Nullpunkt
-%nicht proportional mit $r$ wächst.
-%Alternativ kann man auch sagen, dass die $r$-Koordinate eines Punktes 
-%eines Kreises vom Umfang $2\pi R$ nicht unbedingt $R$ sein muss, also
-%$r \ne R$.
-%Wir müssen also den Term $dr^2$ ersetzen durch etwas, was mit zunehmendem
-%$r$ grösser oder kleiner als $1$ sein wird.
-%\[
-%ds^2
-%=
-%-c^2\,dt^2
-%+ a(t)^2 \biggl(
-%\frac{R^2}{R^2-kr^2} dr^2
-%+
-%r^2\, d\Omega^2
-%\biggr)
-%\]
-%
-%Der Faktor $a(t)$ heisst der Skalierungsfaktor, er beschreibt, wie stark
-%das Universum sich zur Zeit $t$ bereits gestreckt hat.
-%
-%Der Einstein-Tensor dieser Metrik kann in einer sehr langwierigen oder
-%noch besser mechanischen Rechnung ermittelt werden.
-%Er ist diagonal und hat die folgenden Diagonal-Elemente:
-%\begin{align*}
-%G_{00}
-%&=
-%\frac{3}{4}\biggl(\frac{\dot a(t)}{a(t)}\biggr)^2
-%\\
-%G_{11}
-%&=
-%-\ddot a(t) +\frac{\dot a(t)^2}{4a(t)}
-%\\
-%G_{22}
-%&=
-%G_{11} r^2
-%\\
-%G_{33}
-%&=
-%G_{11} r^2\sin^2\vartheta
-%\end{align*}
-%In den Ausdrücken für $G_{22}$ und $G_{33}$ fällt auf, dass sie gegenüber
-%$G_{11}$ nur die zusätzlichen Faktoren enthalten, die auch in der Definition
-%der Robertson-Walker-Metrik evident sind.
-%Um die Feldgleichungen aufzustellen reicht es daher, mit $G_{00}$ und
-%$G_{11}$ zu arbeiten.
-%Dies wird später auf die Friedmann-Gleichungen führen.
 
 \section{Steady State Universum}
 \rhead{Steady State Universum}
