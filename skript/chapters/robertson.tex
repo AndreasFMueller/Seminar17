@@ -81,6 +81,7 @@ beliebigen Richtung um den gleichen Faktor gewachsen sein.
 Die Ausdehnung des Universums ist also eine Ähnlichkeitstransformation.
 Sie kann durch eine einzige, von der Zeit abhängige Zahl,
 den {\em Skalenfaktor} $a(t)$ beschrieben werden.
+\index{Skalenfaktor}
 Wir geben der Funktion $a(t)$ willkürlich den Wert $1$ für die heutige
 Zeit.
 
@@ -92,6 +93,58 @@ Galaxien grösser und zwar um den gleichen Faktor
 \ref{skript:figure:expansion2}).
 
 \subsection{Die Hubble-Konstante und das Alter des Universums}
+Nehmen wir an, dass das Universum sich mit konstanter Geschwindigkeit
+ausdehnt, dass also 
+\[
+H(t)=H_0=\frac{\dot a(t)}{a(t)}
+\]
+gilt.
+Dies ist eine Differentialgleichung für $a(t)$, die wir sofort
+lösen können:
+\[
+a(t) = H_0a(t)
+\qquad \Rightarrow\qquad
+a(t)=H_0 e^{t-t_0}
+\]
+Wir erhalten daher einen exponentiell anwachsenden Skalenfaktor,
+wofür es keinen experimentellen Hinweis gibt, und der auch physikalisch
+unsinnig scheint.
+$H(t)$ kann also keine Konstante sein.
+
+Nehmen wir aber an, dass $\dot a(t)$ konstant ist, dann ist $a(t)$
+eine lineare Funktion der Zeit mit Steigung  $H_0$ zur Zeit $t=t_0$,
+also
+\[
+a(t)=H_0(t-t_0) + 1.
+\]
+Daraus können wir den Zeitpunkt berechnen, zu dem der Skalenfaktor
+$a(t)=0$ war, es muss
+\[
+t-t_0 = -\frac1{H_0}
+\]
+gelten.
+Man nennt $1/H_0$ die {\em Hubble-Zeit}.
+\index{Hubble-Zeit}
+Der beste bekannte Wert für $H_0$ wurde mit der Planck-Mission als
+\index{Planck-Mission}
+\begin{equation}
+H_0
+=
+(67.74 \pm 0.46)\frac{\text{km}}{\text{s}\cdot\text{Mpc}}
+=
+(2.1951\pm 0.0149)
+10^{-18}\frac{1}{\text{s}}
+\label{skript:robertson:hubble0}
+\end{equation}
+bestimmt.
+Die zugehörige Hubble-Zeit ist
+\begin{equation}
+\frac{1}{H_0} = 14.4\text{Gyr}.
+\label{skript:robertson:hubblezeit}
+\end{equation}
+Wenn wir annehmen, dass die im Universum enthaltene Masse die Ausdehnung
+verlangsamt, muss die Hubble-Zeit eine obere Schranke für das Alter
+des Universums sein.
 
 \section{Masseverteilung im Universum}
 \rhead{Masseverteilung im Universum}

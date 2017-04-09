@@ -4,7 +4,9 @@
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
 all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
-	galilei.pdf labor.pdf expansion1.pdf expansion2.pdf robertson.pdf
+	galilei.pdf labor.pdf expansion1.pdf expansion2.pdf robertson.pdf \
+	friedmann-materie.pdf friedmann-strahlung.pdf friedmann-leer.pdf \
+	darkenergy.pdf
 
 images:	all
 
@@ -34,3 +36,19 @@ expansion2.pdf:	expansion2.tex expansion-common.tex
 
 robertson.pdf:	robertson.tex
 	pdflatex robertson.tex
+
+friedmann-materie.pdf:	friedmann-materie.tex
+	pdflatex friedmann-materie.tex
+
+friedmann-strahlung.pdf:	friedmann-strahlung.tex
+	pdflatex friedmann-strahlung.tex
+
+friedmann-leer.pdf:	friedmann-leer.tex
+	pdflatex friedmann-leer.tex
+
+darkenergy.pdf:	darkenergy.tex darkenergy.csv
+	pdflatex darkenergy.tex
+
+
+
+
