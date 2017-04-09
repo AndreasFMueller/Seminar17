@@ -244,6 +244,7 @@ ausdrücken:
 \frac{\ddot a(t)}{a(t)} - H^2
 \\
 \Rightarrow
+\qquad
 \dot H+H^2
 &=
 \frac{\ddot a(t)}{a(t)}.
@@ -287,7 +288,7 @@ den die rechte Seite eine Nullstelle hat:
 In einem sich ausdehnenden Universum nicht die Dichte $\varrho(t)$ mit
 der dritten Potenz von $a(t)$ ab, es gilt
 \[
-\varrho(t) = \frac{\varrho_0}{a(t)^3},
+\varrho(t) = \frac{\varrho_0}{a(t)^3}
 \]
 und damit
 \[
@@ -362,14 +363,30 @@ Gas, der Staub und die Strahlung mit aus.
 Ist der Energieinhalt des Universums als Funktion von $a(t)$ bekannt,
 kann die Friedmann-Gleichung gelöst werden.
 
-Unabhängig von der genauen Form von $\varrho$ 
+Neuere Messungen zeigen, dass unser Universum flach ist.
+Die Rechnungen für $\kappa=1$ in den nachfolgenden Unterabschnitten
+sind daher für unser Universum nicht anwendbar.
+In späteren Abschnitten, insbesondere im Abschnitt über verschiedene
+Komponenten des Universums, wird daher nur noch der Fall $\kappa=0$
+durchgerechnet.
+
+\subsubsection{Geschlossenes Universum}
+TODO: Offenes und geschlossenes Universum
+
+\subsubsection{Kritische Dichte}
+TODO: Kritische Dichte
+
 
 \section{Komponenten}
 \rhead{Komponenten}
 Das reale Universum ist nicht leer.
 Die Funktionen $\varrho(t)$ und $p(t)$ sind jedoch für verschiedene
 Arten von Materie oder Energie verschieden.
-Wir sprechen von Komponenten 
+Wir sprechen von verschiedenen Komponenten des Universums.
+Jede Komponente hat ihre eigene Zustandsgleichung und führt
+daher zu einer anderen Lösung der Friedmann-Gleichung.
+In den folgenden Unterabschnitten wird jeweils die Lösung für
+ein flaches Universum mit nur einer Komponente durchgerechnet.
 
 \subsection{Materie}
 Die offensichtlichste Komponente ist die sogenannte baryonische Materie.
@@ -394,6 +411,9 @@ a(t)^3l^3\varrho(t)
 \]
 Die Friedmann-Gleichung wird daher
 \begin{equation}
+\frac{\dot a(t)^2}{a(t)^2}
+=
+\frac{8\pi K\varrho_0}{3c^2a(t)^3}-\frac{c^2\kappa}{a(t)^2R_c^2}.
 \end{equation}
 
 Da die mittlere Materiedichte im Universum sehr klein ist, kann man davon
@@ -401,13 +421,13 @@ ausgehen, dass Atome praktisch nie kollidieren, dass diese Komponenten
 also keinen Druck aufweist.
 Staubteilchen werden trotz grösserer Masse noch seltener kollidieren.
 
-Die baryonische Materie wird also durch die Zustandsgleichungen
-\begin{equation}
-\varrho(t)=\frac{\varrho_0}{a(t)^3}
-\qquad\text{und}\qquad
-p(t)=0
-\end{equation}
-vollständig charakterisiert.
+%Die baryonische Materie wird also durch die Zustandsgleichungen
+%\begin{equation}
+%\varrho(t)=\frac{\varrho_0}{a(t)^3}
+%\qquad\text{und}\qquad
+%p(t)=0
+%\end{equation}
+%vollständig charakterisiert.
 
 \subsubsection{Das flache, gasgefüllte Universum}
 In einem gasgefüllten flachen Universum ist $\kappa=0$,
@@ -725,6 +745,14 @@ Aus Messungen ist bekannt, dass er zum heutigen Zeitpunkt etwa 75\%
 des Energieinhalts ausmacht.
 Die dunkle Energie ist daher heute der dominante Faktor für die
 Ausdehnung des Universums.
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/darkenergy.pdf}
+\caption{Zeitabhängigkeit des Skalenfaktors $a(t)$ ({\color{red}rot})
+in einem Universum ohne Strahlung aber mit Materie und dunkler Energie
+für verschiedene Werte von $\Lambda$.
+\label{skript:friedman:graph:darkenergy}}
+\end{figure}
 
 Um zu verstehen, wie sich die dunkle Energie auf das Alter des Universums
 auswirkt, berechnen wir die Entwicklung eines materiedominierten, flachen 
@@ -774,24 +802,25 @@ auch in der Form
 \end{equation}
 schreiben.
 In expliziter Form wird daraus die Differentialgleichung
-\[
+\begin{equation}
 \dot a(t)
 =
 \sqrt{
 \biggl(1-\frac{\Lambda}3\biggr)\frac1{a(t)} + \frac{\Lambda}3 a(t)^2
 }
-\]
+\label{skript:friedmann:de:dgl}
+\end{equation}
 mit der Anfangsbedingung $a(t_0)=1$.
 
-\begin{figure}
-\centering
-\includegraphics{chapters/tikz/darkenergy.pdf}
-\caption{Zeitabhängigkeit des Skalenfaktors $a(t)$ ({\color{red}rot})
-in einem Universum ohne Strahlung aber mit Materie und dunkler Energie
-für verschiedene Werte von $\Lambda$
-\label{skript:friedman:graph:darkenergy}}
-\end{figure}
-
-
+In Abbildung~\ref{skript:friedman:graph:darkenergy} sind die Lösungen
+der Differentialgleichung~\eqref{skript:friedmann:de:dgl} für verschiedene
+Werte von $\Lambda$.
+Man kann erkennen dass grössere Werte von $\Lambda$ zu einer stärkeren
+Beschleunigung der Expansion des Universums führt.
+Ausserdem ist wächst das Alter des Universums von $2/3H_3$ für ein
+Universum ohne dunkle Energie auch über die Hubble Zeit an.
+Der aktuell genaueste Wert für das Alter des Universums von 13.72Gyr
+ist daher nur möglich, wenn ein beträchtlicher Teil der Energie im
+Universum dunkle Energie ist.
 
 
