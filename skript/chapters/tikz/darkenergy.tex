@@ -20,7 +20,7 @@
 	after line=\xdef\told{\t}\xdef\old{\a}]%
 	{darkenergy.csv}{}{%
 	{\ifthenelse{\lengthtest{\a pt > 0.001pt}}{%
-		\draw[red,line width=1.5] (2 * \told,\old)--(2 * \t,\a) node {};
+		\draw[pink,line width=1.5] (2 * \told,\old)--(2 * \t,\a) node {};
 	}{}};
 }
 
@@ -90,6 +90,9 @@
 
 \draw (-2,-0.03)--(-2,0.03);
 \draw (-1.3333,-0.03)--(-1.3333,0.03);
+
+\node at (3.05,2.1) [below left] {$\Lambda=0$};
+\node at (2.10,2.85) [above left] {$\Lambda=1$};
 
 \end{tikzpicture}
 \end{document}
