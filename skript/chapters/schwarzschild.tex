@@ -49,7 +49,7 @@ Raumes ist, ist diese Geometrie flach.
 Sie kann also sich nicht ein Modell eines Sternes sein.
 
 Man kann eine Lösung der Feldgleichungen finden, indem man den
-einzelnen Termen der euklischen Metrik~\eqref{skript:kruemmung:euklid}
+einzelnen Termen der euklidischen Metrik~\eqref{skript:kruemmung:euklid}
 zunächst unbestimmte Faktoren hinzufügt, die nur von $r$ abhängt,
 und dann mit Hilfe der Feldgleichungen dafür Differentialgleichungen
 herleitet.
@@ -563,7 +563,8 @@ $\Gamma^\mu_{\alpha\beta}$
 %				  2 r rg - 2 r
 \Gamma^0_{01}
 &=
-\frac{1}{1-\frac{r}{r_g}}
+\frac{1}{1-\displaystyle\frac{r_g}{r}}
+\frac{r_g}{r}
 \frac{1}{2r}
 \\
 %(%i15)                  ratsimp(Christoffel2(2, 1, 1))
@@ -574,9 +575,9 @@ $\Gamma^\mu_{\alpha\beta}$
 %                                      2 r
 \Gamma^1_{00}
 &=
--\frac{
-r_g^2(1-\frac{r}{r_g})
-}{2r^3}
+\biggl(1-\displaystyle\frac{r_g}{r}\biggr)
+\frac{r_g}{r}
+\frac{1}{2r}
 &
 %(%i19)                  ratsimp(Christoffel2(2, 2, 2))
 %                                      rg
@@ -585,7 +586,9 @@ r_g^2(1-\frac{r}{r_g})
 %                                 2 r rg - 2 r
 \Gamma^1_{11}
 &=
-\frac1{1-\frac{r}{r_g}}\frac{1}{2r}
+-\frac1{1-\displaystyle\frac{r_g}{r}}
+\frac{r_g}{r}
+\frac{1}{2r}
 &
 %(%i22) 		        ratsimp(Christoffel2(2, 3, 3))
 %(%o22) 				    rg - r
@@ -630,25 +633,67 @@ r_g-r
 &=
 \cot\vartheta
 \end{align*}
+Wir betrachten jetzt eine Geodäte, die mit dem Parameter $s$ parametrisiert ist.
+In allgemeiner Form schreiben wir dafür $x^\mu(s)$, im speziellen
+Koordinatensystem der Schwarzschild-Metrik ist
+\[
+\begin{aligned}
+x^0(s)&=t(s),
+&
+x^1(s)&=r(s),
+&
+x^2(s)&=\vartheta(s),
+&
+x^3(s)&=\varphi(s).
+\end{aligned}
+\]
+Die zugehörigen Geodätengleichungen sind
+\begin{align*}
+\ddot t(s)
+&=
+\frac{1}{1-\displaystyle\frac{r_g}{r}}\frac{r_g}{r}\frac{1}{r}\dot t(s)\,\dot r(s)
+\\
+\ddot r(s)
+&=
+\biggl(1-\frac{r_g}{r}\biggr)\frac{r_g}{r}\frac1{2r}\dot t(s)^2
+-\frac{1}{1-\displaystyle\frac{r_g}{r}} \frac{r_g}{r}\frac1{2r}\dot r(s)^2
++(r_g-r)\dot \vartheta(s)^2 + (r_g-r)\sin^2 \vartheta \cdot \dot \varphi(s)^2
+\\
+\ddot \vartheta(s)
+&=
+\frac{2}{r} \dot r(s)\, \dot \vartheta(s)
+-\cos\vartheta\sin\vartheta \cdot \dot\varphi(s)^2
+\\
+\ddot \varphi(s)
+&=
+\frac{2}{r} \dot r(s)\,\dot \varphi(s)
++2\cot\vartheta \cdot \dot r(s)\,\dot\varphi(s)
+\end{align*}
+Darin ist natürlich $r$ in den Koeffizienten jeweils als $r(s)$ zu lesen.
+
 Wir wollen eine Bahn in der Ebene $\vartheta=\frac{\pi}2$ berechnen.
 Setzen wir diesen Wert ein, verschwinden auch noch die Terme, die
 $\cos\vartheta$ enthalten.
 Es bleiben nur noch
-\begin{align*}
+\begin{equation}
+\begin{aligned}
 \Gamma^0_{01}
 &=
-\frac{1}{1-\frac{r}{r_g}}
+\frac{1}{1-\displaystyle\frac{r_g}{r}}
+\frac{r_g}{r}
 \frac{1}{2r}
 \\
 \Gamma^1_{00}
 &=
--\frac{
-r_g^2(1-\frac{r}{r_g})
-}{2r^3}
+\biggl(1-\displaystyle\frac{r_g}{r}\biggr)
+\frac{r_g}{r}
+\frac{1}{2r}
 &
 \Gamma^1_{11}
 &=
-\frac1{1-\frac{r}{r_g}}\frac{1}{2r}
+-\frac1{1-\displaystyle\frac{r_g}{r}}
+\frac{r_g}{r}
+\frac{1}{2r}
 &
 \Gamma^1_{22}
 &=
@@ -673,7 +718,51 @@ r_g-r
 \Gamma^3_{13}
 &=
 \frac1r
+\end{aligned}
+\label{skript:schwarzschild:christoffelaequator}
+\end{equation}
+Hat eine Geodäte eine Anfangsgeschwindigkeit in der Äquatorebene, dann
+ist $\dot x^3(0) = \dot\vartheta(0)=0$.
+Die Geodätengleichung für $\ddot \vartheta$ ist dann
+\[
+\ddot \vartheta(s)
+=
+\ddot x^2(s)
+=
+\Gamma^2_{12}\dot r(s)\dot \vartheta(s),
+\]
+insbesondere bleibt $\dot\vartheta(s)=0$ entlang der ganzen Geodäten.
+Die Geodäte wird daher die Äquatorebenen nicht verlassen.
+Da man das Koordinatensystem immer so wählen kann, dass $\dot\vartheta(0)=0$
+ist, kann man ganz allgemein sagen, dass Geodäten in einer Schwarzschild-Metrik
+in einer Ebene liegen.
+Man hätte also auch von Anfang an in Polarkoordinaten rechnen können.
+
+Die vereinfachten Christoffelsymbole für die Äquatorebene
+\eqref{skript:schwarzschild:christoffelaequator}
+führen auch auf vereinfachte Geodätengleichungen, wenn wir $\dot\vartheta(s)=0$
+berücksichtigen.
+Wir erhalten
+\begin{align*}
+\ddot t(s)
+&=
+\frac{1}{1-\displaystyle\frac{r_g}{r}}\frac{r_g}{r}\frac{1}{r}\dot t(s)\,\dot r(s)
+\\
+\ddot r(s)
+&=
+\biggl(1-\frac{r_g}{r}\biggr)\frac{r_g}{r}\frac1{2r}\dot t(s)^2
+-\frac{1}{1-\displaystyle\frac{r_g}{r}} \frac{r_g}{r}\frac1{2r}\dot r(s)^2
++ (r_g-r) \dot\varphi(s)^2
+\\
+\ddot \vartheta(s)
+&=
+0
+\\
+\ddot \varphi(s)
+&=
+\frac2r \dot r(s)\,\dot\varphi(s)
 \end{align*}
+
 
 \subsection{Numerische Lösung}
 
