@@ -6,7 +6,7 @@
 all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
 	galilei.pdf labor.pdf expansion1.pdf expansion2.pdf robertson.pdf \
 	friedmann-materie.pdf friedmann-strahlung.pdf friedmann-leer.pdf \
-	darkenergy.pdf orbit.pdf orbit2.pdf
+	darkenergy.pdf orbit.pdf orbit2.pdf lichtablenkung.pdf
 
 images:	all
 
@@ -55,6 +55,8 @@ orbit.pdf:	orbit.tex orbit.csv
 orbit2.pdf:	orbit2.tex orbit2.csv
 	pdflatex orbit2.tex
 
+lichtablenkung.pdf:	lichtablenkung.tex lichtablenkung.csv
+	pdflatex lichtablenkung.tex
 
 
 

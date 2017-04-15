@@ -24,10 +24,13 @@ CHAPTERS = 								\
 	chapters/k-laenge.tex						\
 	chapters/k-schwarzschild.tex					\
 	chapters/k-speziell.tex						\
+	chapters/schwarzschild.tex					\
+	chapters/s-perihel.tex						\
+	chapters/s-lichtablenkung.tex					\
+	chapters/multipol.tex						\
 	chapters/m-1dim.tex						\
 	chapters/m-kugelfunktionen.tex					\
 	chapters/m-multipole.tex					\
-	chapters/multipol.tex						\
 	chapters/friedmann.tex						\
 	chapters/f-beispiele.tex					\
 	chapters/f-friedmann.tex
