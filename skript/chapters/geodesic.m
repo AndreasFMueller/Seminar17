@@ -76,7 +76,20 @@ endfunction
 #
 # compute the geodesic
 #
-function s = geodesic(x0, s)
-	s = cat(2, s', lsode("dgeodesic", x0, s));
+function solution = geodesic(x0, s)
+	[solution, istate, msg] = lsode("dgeodesic", x0, s);
+	if istate != 2
+		printf("integration failed. %s\n", msg);
+	endif
+	solution = cat(2, s', solution);
 endfunction
 
+#
+# advane along a geodesic for a parameter difference s
+#
+function x = geodesic_advance(x0, step)
+	s = step * (0:1);
+	solution = geodesic(x0, s);
+	n = size(x0)(1);
+	x = solution(2,2:(n+1))';
+endfunction
