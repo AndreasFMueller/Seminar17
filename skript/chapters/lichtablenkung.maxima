@@ -1,0 +1,64 @@
+/*
+ * lichtablenkung.maxima -- Differentialgleichung für Lichttrahlen in Schwarzschild
+ *                          Geometrie
+ *
+ * (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+ */
+
+/* Schwarzschild-Metrik in Polarkoordinaten */
+g: matrix(
+    [-1+rg/r,          0,   0 ],
+    [      0, 1/(1-rg/r),   0 ],
+    [      0,          0, r^2 ]
+);
+x: [t, r, phi];
+xdiff: [tdot, rdot, phidot];
+
+batchload("curvature.maxima");
+
+/* Christoffelsymbole und Geodätengleichung */
+rddot: -sum(
+		sum(
+			Christoffel2(2, mu, nu) * xdiff[mu] * xdiff[nu],
+			nu, 1, 3),
+		mu, 1, 3);
+
+phiddot: -sum(
+		sum(
+			Christoffel2(3, mu, nu) * xdiff[mu] * xdiff[nu],
+			nu, 1, 3),
+		mu, 1, 3);
+
+substcurve(expression) :=
+	subst(r(s), r,
+		subst(phi(s), phi, expression)
+	)								$
+
+substdiff(expression) :=
+	subst(diff(r(s), s), rdot,
+		subst(diff(phi(s), s), phidot, expression)
+	)								$
+
+rddot: substcurve(rddot);
+rddot: substdiff(rddot);
+tex(rddot);
+
+phiddot: substcurve(phiddot);
+phiddot: substdiff(phiddot);
+tex(phiddot);
+
+g: substcurve(g);
+
+tdot2: -expand((g[2,2] * diff(r(s),s)^2 + g[3,3] * diff(phi(s),s)^2) / g[1,1]);
+
+rddot;
+rddot: subst(tdot2, tdot^2, rddot);
+
+d2udphi2: (ratsimp(rddot * diff(phi(s), s) - diff(r(s), s) * phiddot)) / (diff(phi(s), s)^3);
+
+tex(d2udphi2);
+
+/* dasselbe für dphi/dr */
+d2phidr2: (ratsimp(phiddot * diff(r(s), s) - diff(phi(s), s) * rddot)) / (diff(r(s), s)^3);
+
+tex(d2phidr2);
