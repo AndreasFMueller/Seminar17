@@ -3,6 +3,101 @@
 \begin{refsection}
 \chapterauthor{Pascal Stump}
 
+\section{Einleitung}
+Der Gravitationslinseneffekt ist ein faszinierender blaber.  Im Bild
+\ref{fig:lrg3-757} ist dieser Effekt bei perfekt zu sehen.  Solche
+nennt man Einsteinringe.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{cluster/images/LRG_3-757}
+  \caption{Einsteinring (LRG 3-757; ESA/Hubble \& NASA)}
+  \label{fig:lrg3-757}
+\end{figure}
+
+\section{``Normale'' Linse}
+Bevor Gravitationslinsen behandelt werden, soll hier zuerst einmal ein
+Rückblick gegeben werden, wie eine ``normale'' Linse funktioniert.
+
+Eine ``normale'' Linse funktioniert durch Brechung am Übergang
+zwischen Umgebung und Linsenmaterial.  Durch die Brechung kommt es zu
+einer Winkeländerung.  Welche mit der folgende Formel aus der
+geometrischen Optik berechnet werden kann.
+
+\begin{equation}
+  \frac{\sin \varepsilon_1}{\sin \varepsilon_2} = \frac{n_2}{n_1}
+\end{equation}
+
+Darin kommen die Winkel zur Oberflächennormalen auf der einen Seite
+und die beiden Brechungsindizes auf der anderen vor.  Der
+Brechungsindex eines Mediums \(n\), ergibt sich aus der
+Lichtgeschwindigkeit im Vakuum \(c\) geteilt durch die
+Lichtgeschwindigkeit im Medium \(u\).
+
+\begin{equation}
+  n = \frac{c}{u}
+\end{equation}
+
+Sehr anschaulich wird dies im Prinzip von Hyugens gezeigt.  Nimmt man
+eine parallele Wellenfront (siehe Bild \ref{fig:huygens1}) breitet
+sich diese in der Zeit \(\Delta t\) immer im gleichen Abstand von
+einer Wellenfront zur nächsten aus.  Von jedem Raumpunkt auf einer
+``Zeitlinie'' aus, bewegt sich die Lichtwelle eine gewisse Distanz (im
+Bild als Halbkreise angedeutet).  Wird nun eine Umhüllende um die
+Halbkreise gelegt, erhält man die Position der Lichtwelle zum neuen
+Zeitpunkt.
+
+\begin{figure}
+  \centering
+  \input{cluster/tikz/huygens1.tikz}
+  \caption{Lichtwellen Ausbreitung nach dem Prinzip von Huygens.}
+  \label{fig:huygens1}
+\end{figure}
+
+Trifft nun eine solche Wellenfront auf ein Medium mit veränderter
+Lichtgeschwindigkeit, so wir die Wellenfront abgelenkt.  Im Bild
+\ref{fig:huygens2} ist diese Brechung bei zwei homogenen Medien
+aufgezeigt.  Der erste Teil der Wellenfront trifft im Punkt \(A\) auf
+den Grenzbereich beider Medien.  Die andere Seite der Wellenfront ist
+im Punkt \(B\) und somit noch nicht am Grenzbereich.  Während der
+Zeit, die die Wellenfront von \(B\) zum Grenzbereich im Punkt \(D\)
+benötigt, legt sie im anderen Medium nur den Weg von \(A\) zu \(C\)
+zurück.  Die Wellenfront wurde durch die verringerte
+Wellengeschwindigkeit im neuen Medium abgelenkt.
+
+\begin{figure}
+  \centering
+  \input{cluster/tikz/huygens2.tikz}
+  \caption{Brechung nach dem Prinzip von Huygens.}
+  \label{fig:huygens2}
+\end{figure}
+
+Nun ist es natürlich so, dass es im Weltall keine starr begrenzte
+Bereiche gibt, wie in einer gewöhnlichen Linse.  Den Effekt der
+Brechung findet jedoch auch in einem inhomogenen Material statt.  Das
+Bild \ref{fig:huygens3} soll dies aufzeigen.  Dabei ist die blaue
+Fläche die Region mit tieferer Wellengeschwindigkeit.  Dies
+veranschaulicht auch, warum sich Lichtstrahlen in Richtung eines
+massenhaften Körpers biegen.
+
+\begin{figure}
+  \centering
+  \input{cluster/tikz/huygens3.tikz}
+  \caption{Brechung nach dem Prinzip von Huygens in einem inhomogen
+    Material.}
+  \label{fig:huygens3}
+\end{figure}
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{cluster/images/model_grav_lens}
+  \caption{Model einer Gravitationslinse (Boden eines Weinglases)
+    \cite{standford:ModelGravLens}}
+  \label{fig:ModelGravLinse}
+\end{figure}
+
 \printbibliography[heading=subbibliography]
 \end{refsection}
 
