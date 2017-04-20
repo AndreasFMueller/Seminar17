@@ -4,9 +4,14 @@
 \chapterauthor{Pascal Stump}
 
 \section{Einleitung}
-Der Gravitationslinseneffekt ist ein faszinierender blaber.  Im Bild
-\ref{fig:lrg3-757} ist dieser Effekt bei perfekt zu sehen.  Solche
-nennt man Einsteinringe.
+Beim Gravitationslinseneffekt befindet sich zwischen dem Betrachter
+und einer Lichtquelle ein sehr massenreiches Objekt.  Sehr ausgeprägt
+ist der Effekt, bei zwei Galaxien/Galaxiencluster.  Im Bild
+\ref{fig:lrg3-757} ist dieser Effekt bei einer fast perfekten
+Positionierung zu sehen.  Wenn sich die Hintergrundgalaxie zu einem
+Ring verbiegt, nennt man sie Einsteinringe.
+
+Todo: Verwendung, Microlensing
 
 \begin{figure}
   \centering
@@ -21,7 +26,7 @@ Rückblick gegeben werden, wie eine ``normale'' Linse funktioniert.
 
 Eine ``normale'' Linse funktioniert durch Brechung am Übergang
 zwischen Umgebung und Linsenmaterial.  Durch die Brechung kommt es zu
-einer Winkeländerung.  Welche mit der folgende Formel aus der
+einer Winkeländerung, welche mit der folgende Formel aus der
 geometrischen Optik berechnet werden kann.
 
 \begin{equation}
@@ -74,8 +79,8 @@ Wellengeschwindigkeit im neuen Medium abgelenkt.
 
 Nun ist es natürlich so, dass es im Weltall keine starr begrenzte
 Bereiche gibt, wie in einer gewöhnlichen Linse.  Den Effekt der
-Brechung findet jedoch auch in einem inhomogenen Material statt.  Das
-Bild \ref{fig:huygens3} soll dies aufzeigen.  Dabei ist die blaue
+Brechung findet jedoch auch in einem inhomogenen Material statt.  Die
+Abbildung \ref{fig:huygens3} soll dies aufzeigen.  Dabei ist die blaue
 Fläche die Region mit tieferer Wellengeschwindigkeit.  Dies
 veranschaulicht auch, warum sich Lichtstrahlen in Richtung eines
 massenhaften Körpers biegen.
@@ -89,6 +94,91 @@ massenhaften Körpers biegen.
 \end{figure}
 
 
+\section{Gravitationslinse}
+
+\subsection{Lichtkegel}
+Als Start in den Gravitatinslinseneffekt wird die Formel
+\ref{skript:kruemmung:raumzeitabstand} aus dem Abschnitt über den
+Lichtkegel genommen.
+
+\begin{equation*}
+  s^2 = -c^2 (t_1-t_2)^2 + (x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2
+\end{equation*}
+
+Da die Gravitationslinse Lichtwellen beugen soll, ist \(s^2=0\).  Da
+sich die Wirkung in Lichtgeschwindigkeit ausbreitet.  Weiter wird
+\(c=1\) gesetzt.  Somit vereinfacht sich die Formel zu:
+\begin{equation*}
+  0 = -(t_1-t_2)^2 + (x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2
+\end{equation*}
+oder anders geschrieben
+\begin{equation*}
+  0 = -dt^2 + dx^2 + dy^2 + dz^2
+\end{equation*}
+
+Die Lichtwellen bewegen sich in minimalen Wegen, was den Geodäten
+entspricht.  Im Fall von Gravitationslinsen handelt es sich um
+schwache Gravitationsfelder.  Zu diesen wurden die \(g_{\mu\nu}\)
+bereits berechnet (Formel \ref{skript:gravitation:naeherung}).
+\begin{align*}
+  g_{00} &= -1 -\frac{2\varphi}{c^2} &g_{kk} &= 1,\quad k=1,2,3
+\end{align*}
+Wobei \(\varphi\) das Gravitationspotential ist.  Dieses wurde für
+Punktmassen in der Formel \ref{skript:gravitation:potential}
+angegeben, als:
+\begin{equation*}
+  \varphi = -\frac{KM}{r}
+\end{equation*}
+\(M\) ist die Punktmasse, \(K\) die Gravitationskonstante
+(oft als \(G\) bezeichnet) und \(r\) der Abstand zur Punktmasse.
+Setzt man dies nun zusammen, erhält man folgende \(g_{\mu\nu}\):
+\begin{align*}
+  g_{00} &= -1 +\frac{2KM}{rc^2} &g_{kk} &= 1,\quad k=1,2,3
+\end{align*}
+Man sieht, dass für grosse \(r\), \(g_{00}=-1\) wird und man die
+normale Minkowski-Metrik als Geodäten erhält.
+
+\begin{beispiel}
+  In folgendem soll die Zeitveränderung für Werte unserer Sonne
+  berechnet werden.  Die Werte sind:
+  \begin{align*}
+    K &= \SI{6.67e-11}{\meter\cubed\per\kilogram\per\second\squared}
+    &M &= \SI{1.99e30}{\kilogram}
+    &c &= \SI{2.99e8}{\meter\per\second}
+  \end{align*}
+  Die Zeitveränderung wird nur vom zweiten Teil von \(g_{00}\)
+  bestimmt, wobei man erhält:
+  \begin{align*}
+    \tilde{t} &= \frac{2KM}{rc^2}
+    &\left[\tilde{t}\right] &=
+                              \si{\meter\cubed\per\kilogram\per\second\squared}
+                              \cdot \si{\kilogram}
+                              \cdot \si{\per\meter}
+                              \cdot \si{\per\meter\squared\second\squared}
+                              = 1
+  \end{align*}
+  Einen Graphen mit den Werten von \(1\) bis \(0.05\) für \(\tilde{t}\)
+  mit dem Abstand \(r\) kann in der Abbildung \ref{fig:bsp1} gefunden
+  werden.  Ein \(\tilde{t}\) von \(0.25\) entspricht einer
+  Verlangsamung von Wasser.  Je näher bei \(\tilde{t}=1\) desto
+  langsamer bewegt sich das Licht, da \(g_{00} \rightarrow 0\).
+  \begin{figure}
+    \centering
+    \input{cluster/tikz/bsp1.tikz}
+    \caption{\(\tilde{t}\) von \(1\) bis \(0.05\)}
+    \label{fig:bsp1}
+  \end{figure}
+\end{beispiel}
+
+Obwohl diese Beispiel sehr vereinfacht ist, sieht man sehr schön, dass
+der Einfluss schnell mit dem Abstand abnimmt.  Will man sich eine
+``nomrale'' Linse mit dieser Eigenschaft vorstellen, findet man in der
+Literatur den Boden eines Weinglases als Beispiel.  In der Abbildung
+\ref{fig:ModelGravLinse} sind drei Beispiel Bilder, wie eine
+``Hintergrundgalaxie'' (Kerze) von solch einer Gravitationslinse
+verzerrt werden kann.  Vergleicht man das Teilbild unten links, so
+kann man Ähnlichkeiten mit dem Einsteinring aus \ref{fig:lrg3-757}
+finden.
 
 \begin{figure}
   \centering

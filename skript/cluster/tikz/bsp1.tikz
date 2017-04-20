@@ -1,0 +1,20 @@
+
+
+\begin{tikzpicture}[scale = 1.7]
+    \datavisualization[scientific axes = clean,
+                     y axis = {grid,
+                               label=\(\tilde{t}\) von \(1\) bis \(0.05\),
+                               min value = 0,
+                               max value = 1},
+                     x axis = {grid,
+                               label=\(r\) in \si{\meter},
+                               min value = 0,
+                               max value = 60000},
+                     visualize as smooth line/.list={ch1},
+                     style sheet=vary hue,
+                     %style sheet=vary dashing,
+                     %ch1={label in legend={text=Mittenkavität}},
+                     ]
+                    
+  data [set=ch1,headline={x, y}, read from file=cluster/source/bsp1.csv];
+\end{tikzpicture}
