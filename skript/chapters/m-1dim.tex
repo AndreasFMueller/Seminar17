@@ -40,6 +40,15 @@ auf der rechten Seite für grosse $x$ unbedeutend wird, so dass $f(x)$
 immer noch wie $1/x$ abfällt, unabhängig davon, wo die Ladung platziert
 wird.
 
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/dipol1.pdf}
+\caption{Potential
+\eqref{skript:multipol:1dipol}
+des eindimensionalen Dipols
+\label{skript:multipol:figure:1dim}}
+\end{figure}
+
 Zwei entgegengesetzte Punktladungen an den Stellen $x=\pm a$ haben also
 das Potential
 \begin{equation}
@@ -52,6 +61,7 @@ f_2(x)
 \frac{q}{4\pi\varepsilon_0}\biggl( \frac1{|x+a|} - \frac1{|x-a|} \biggr).
 \label{skript:multipol:1dipol}
 \end{equation}
+(Abbildung~\ref{skript:multipol:figure:1dim}).
 Wir sind nur an den Funktionswerten interessiert für $x$-Werte, die
 wesentlich grösser sind als $a$, als in grosser Entfernung von
 den Ladungen.
@@ -179,15 +189,17 @@ Bei der Analyse sowohl einer um $a$ verschobenen Einzelladung sowie auch
 des Dipols aus zwei Ladungen bei $\pm a$ haben wir am Schluss Terme der
 Form
 \[
-\frac1{1-\frac{a}{x}}
+\frac1{1-\displaystyle\frac{a}{x}}
 \qquad\text{bzw.}\qquad
-\frac1{1-\frac{a^2}{x^2}}
+\frac1{1-\displaystyle\frac{a^2}{x^2}}
 \]
 vernachlässigt.
 Wir suchen nach einer Möglichkeit, diese Terme exakt zu berücksichtigen,
 und trotzdem nur eine einfache Potenzreihe zu bekommen.
 
-In der Analysis lernt man, die Summe der geometrische Reihe 
+In der Analysis lernt man, die Summe der {\em geometrische Reihe}
+\index{geometrische Reihe}
+\index{Reihe, geometrische}
 \[
 s=a+aq+aq^2+\dots + aq^n
 \]
@@ -195,6 +207,7 @@ zu berechnen.
 Dazu bildet man $qs - s$ und findet
 \begin{align*}
 qs-s
+=
 s(q-1)
 &=
 q(a+aq+aq^2+\dots + aq^n)-(a+aq+aq^2+\dots + aq^n)
@@ -217,19 +230,19 @@ und bekommt im Grenzwert $n\to\infty$
 Wir können diese Formel verwenden, um die bisher vernachlässigten Terme
 exakt wiederzugeben:
 \begin{align*}
-\frac{1}{1-\frac{a}{x}}
+\frac{1}{1-\displaystyle\frac{a}{x}}
 &=
 1+\frac{a}{x}+\frac{a^2}{x^2}+\dots
 =
 \sum_{k=0}^\infty \frac{a^k}{x^k}
 \\
-\frac{1}{1-\frac{a^2}{x^2}}
+\frac{1}{1-\displaystyle\frac{a^2}{x^2}}
 &=
 1+\frac{a^2}{x^2}+\frac{a^4}{x^4}+\dots
 =
 \sum_{k=0}^\infty \frac{a^{2k}}{x^{2k}}
 \\
-\frac{1}{1+\frac{a^2}{x^2}}
+\frac{1}{1+\displaystyle\frac{a^2}{x^2}}
 &=
 1-\frac{a^2}{x^2}+\frac{a^4}{x^4}-\dots
 =
@@ -244,7 +257,7 @@ Das Potential einer Einheitsladung an der Stelle $y$ ist
 \[
 f_y(x)
 =
-\frac1{4\pi\varepsilon_0}\cdot \frac{1}{x}\cdot\frac{1}{1-\frac{x}{y}}
+\frac1{4\pi\varepsilon_0}\cdot \frac{1}{x}\cdot\frac{1}{1-\displaystyle\frac{x}{y}}
 =
 \frac1{4\pi\varepsilon_0}\cdot \frac{1}{x}
 \sum_{k=0}^\infty \frac{y^k}{x^k}

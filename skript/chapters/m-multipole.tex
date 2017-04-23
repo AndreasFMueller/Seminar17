@@ -16,8 +16,16 @@ genauer zu untersuchen.
 
 
 \subsection{Dipol}
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/dipol2.pdf}
+\caption{Berechnung des Dipolpotentials 
+\eqref{skript:multipol:dipol} in der $x$-$z$-Ebene
+\label{skript:multipol:figure:dipol}}
+\end{figure}
 Wir betrachten das Feld eines Paares von entgegengesetzen Ladungen
-in den Punkten $(0,0,a)$ und $(0,0,-a)$.
+in den Punkten $(0,0,a)$ und $(0,0,-a)$
+(Abbildung~\ref{skript:multipol:figure:dipol}).
 Der Einfachheit halber führen wir die Rechnung zunächst nur
 in der $x$-$z$-Ebene durchführen und erst später mit Hilfe einer
 vektoriellen Schreibweise auf drei Dimensionen erweitern.
@@ -30,7 +38,7 @@ haben als entgegengesetzt gleiches Potential bezüglich beiden Ladungen
 und damit totales Potential 0.
 
 Wir betrachten jetzt das Potential im Punkt $(x,z)$, es ist
-\[
+\begin{equation}
 f(x,z)
 =
 \frac{q}{4\pi\varepsilon_0}
@@ -39,7 +47,8 @@ f(x,z)
 -
 \frac{1}{\sqrt{x^2 + (z+a)^2}}
 \biggr)
-\]
+\label{skript:multipol:dipol}
+\end{equation}
 Offenbar müssen wir die Nenner besser verstehen, um diese Summe 
 umformen zu können.
 Speziell müssen wir die Abhängigkeit von der Entfernung
@@ -47,24 +56,38 @@ $r=\sqrt{x^2+z^2}$ vom Nullpunkt
 und die Richtungsabhängigkeit voneinander trennen.
 Dazu betrachten wir nur einen einzelnen Term
 \[
-\frac{1}{\sqrt{x^2+(z+a)^2}}
+\frac{1}{\sqrt{x^2+(z\pm a)^2}}
 =
-\frac{1}{\sqrt{x^2+z^2+2az+a^2}}
+\frac{1}{\sqrt{x^2+z^2\pm 2az+a^2}}
 =
-\frac{1}{\sqrt{x^2+z^2}} \cdot \frac{1}{\sqrt{1+\frac{2az+a^2}{x^2+z^2}}}
+\frac{1}{\sqrt{x^2+z^2}} \cdot \frac{1}{\sqrt{1+\frac{\pm 2az+a^2}{x^2+z^2}}}
 =
-\frac{1}{r} \cdot \frac{1}{\sqrt{1+\frac{2az+a^2}{r^2}}}
+\frac{1}{r} \cdot \frac{1}{\sqrt{1+\frac{\pm 2az+a^2}{r^2}}}
 \]
-Offenbar ist es notwendig, einen Term der Form
-\[
+Für grosse Werte von $r$ verschwindet der zweite Term in der Wurzel,
+in erster Näherung verhält sich die Funktion daher wie $1/r$.
+In den zwei Termen von \eqref{skript:multipol:dipol} hebt sich dieses
+Verhalten jedoch weg, um die Funktion $f(x,z)$ zu verstehen, ist es
+daher nötig, die Abweichungen von $1/r$ genauer zu verstehen.
+
+Offenbar müssen wir Terme der Form
+\begin{equation}
 \frac{1}{\sqrt{1+t}}
 =
 (1+t)^{-\frac12}
-\]
-besser zu verstehen.
-Die Taylor-Reihe kann für eine allgemeinere Art von Reihe bestimmt werden,
-nämlich $g(t)=(1+t)^\alpha$.
-Dazu müssen die Ableitungen bestimmt werden
+\label{skript:multipol:wurzel}
+\end{equation}
+ausrechnen können, wobei wir später $t=(\pm2az+a^2)/r^2$ setzen wollen.
+
+\subsubsection{Binomialreihe}
+Die Taylor-Reihe der Funktion \eqref{skript:multipol:wurzel}
+kann für eine allgemeinere für die Funktionen
+\begin{equation}
+g(t)=(1+t)^\alpha
+\end{equation}
+mit beliebigem Exponenten bestimmt werden.
+
+Dazu müssen die Ableitungen der Funktion $g(t)$ bestimmt werden
 \begin{align*}
 g'(t)
 &=
@@ -86,12 +109,14 @@ g^{(n)}(t)
 &
 g^{(n)}(0)&=\alpha(\alpha-1)(\alpha-2)\dots(\alpha -n +1)
 \end{align*}
-Der Term zur Potenz $n$ ist
+Der Term zur Potenz $n$ in der Taylor-Reihe von $g(t)$ ist
 \[
 \frac{\alpha(\alpha-1)(\alpha-2)\dots(\alpha-n+1)}{n!} t^n
 \]
-Der Bruch sieht genau so aus wie der Binomialkoeffizient, daher schreibt
-man auch für nicht ganzzahlige $\alpha$
+Wäre $\alpha$ eine ganze Zahl, dann sähe der Bruch
+genau so aus wie der Binomialkoeffizient $\binom{\alpha}{k}$.
+In Erweiterung der üblichen Definition des Binomialkoeffizienten
+schreibt man auch für nicht ganzzahlige $\alpha$
 \[
 \binom{\alpha}{n}
 =
@@ -102,12 +127,14 @@ Mit dieser Schreibweise bekommen wir die Taylorreihe
 (1+t)^\alpha=\sum_{k=1}^\infty \binom{\alpha}{k} t^k
 \]
 für die Funktion $(1+t)^\alpha$.
-Diese Reihe ist konvergent für $|t|<1$.
+Sie heisst die {\em Binomialreihe} und ist konvergent für $|t|<1$.
+\index{Binomialreihe}
 
-Wir interessieren uns speziell f"ur den Fälle $\alpha=\pm\frac12$.
+\subsubsection{Der Fall $\alpha=\pm\frac12$}
+Wir interessieren uns speziell für den Fälle $\alpha=\pm\frac12$.
 Wir betrachten erst den Fall $\alpha=-\frac12$.
 Der Term zur Potenz $n$ ist
-\[
+\begin{equation}
 \frac{
 \bigl(-\frac12\bigr)
 \bigl(-\frac32\bigr)
@@ -118,23 +145,83 @@ Der Term zur Potenz $n$ ist
 (-1)^n \frac{1\cdot 3\cdot 5 \cdots (2n + 1)}{2^n\cdot 1\cdot 2\cdot 3\cdots n}
 =
 (-1)^n \frac{1\cdot 3\cdot 5 \cdots (2n+1)}{2\cdot 4\cdot 6\cdots (2n)}
-\]
+\label{skript:multipol:koeffizienten}
+\end{equation}
 Die zugehörige Potenzreihe ist daher
 \[
 \frac1{\sqrt{1+t}}
 =
 1-\frac12t+\frac3{8}t^2-\frac{15}{48}t^3+\frac{105}{354}t^4-\dots
 \]
-F"ur 
+%deren Koeffizienten man auch faktorisieren und damit etwas
+%Für 
+%\[
+%\frac1{\sqrt{1+t}}
+%=
+%1-\frac12 t
+%+ \frac12\frac32\frac12 t^2
+%- \frac 12\frac32\frac 52\frac1{3!} t^3
+%+ \frac 12\frac32\frac 52\frac72\frac1{4!} t^4
+%- \frac 12\frac32\frac 52\frac72\frac92\frac1{5!} t^4
+%+\dots
+%\]
+
+Wir verwenden die binomische Reihe jetzt, um das Dipolpotential
+zu berechnen.
+Setzen wir 
 \[
-\frac1{\sqrt{1+t}}
-=
-1-\frac12 t
-+ \frac12\frac32\frac12 t^2
-- \frac 12\frac32\frac 52\frac1{3!} t^3
-+ \frac 12\frac32\frac 52\frac72\frac1{4!} t^4
-- \frac 12\frac32\frac 52\frac72\frac92\frac1{5!} t^4
-+\dots
+t=\frac{\pm 2az+a^2}{r^2}
 \]
+in der binomischen Reihe, erhalten wir
+\[
+\frac{1}{\sqrt{1+\frac{\pm 2az+a^2}{r^2}}}
+=
+1-\frac12\frac{\pm 2az+a^2}{r^2}
++
+\frac38 \biggl(\frac{\pm 2az+a^2}{r^2}\biggr)^2+\dots
+\]
+und für das Dipolpotential $f(x,z)$ gemäss \eqref{skript:multipol:wurzel}
+\begin{align*}
+f(x,z)
+&=
+\frac{q}{4\pi\varepsilon_0 r}
+\biggl(
+1-\frac12\frac{-2az+a^2}{r^2} + \frac38 \biggl(\frac{-2az+a^2}{r^2}\biggr)^2+\dots
+\biggr)
+\\
+&\qquad
+-
+\frac{q}{4\pi\varepsilon_0 r}
+\biggl(
+1-\frac12\frac{2az+a^2}{r^2} + \frac38 \biggl(\frac{2az+a^2}{r^2}\biggr)^2+\dots
+\biggr)
+\\
+&=
+-\frac{aq}{2\pi\varepsilon_0r^3}z + \dots
+\end{align*}
+Wenn die beiden Ladungen näher zusammen rücken, wenn also $a\to 0$,
+dann verschwindet das Potential.
+Wenn wir das Potential weiterhin sehen wollen, müssen wir den Betrag
+der Ladungen entsprechend vergrössern.
+Wenn wir $a$ gegen $0$ gehen lassen, lassen wir gleichzeit die Ladung
+$q$ grösser werden, so dass das Produkt $d=qa$ gleich bleibt.
+Mit dieser Konvention wird das Dipolpotential
+\[
+f(x,z) = -\frac{d}{2\pi\varepsilon_0 r^2}\frac{z}{r}+\dots
+\]
+Darin haben wir statt $z$ den Bruch $z/r$ abgespalten, da dieser
+eintlang eines vom Nullpunkt ausgehenden Strahls vom Zentrum jeweils
+konstant ist.
+Wir haben daher das Potential in Faktoren aufgeteilt, die verschiedene
+geometrische Bedeutung haben.
+Der Faktor $1/r^2$ beschreibt, wie das Potential mit der Entfernung abnimmt.
+Der Faktor $z/r$ beschreibt, wie das Potential von der Richtung im
+Bezug auf die $z$-Achse abhängt.
+Die übrigen Faktoren beschreiben, wie das Potential aus dem Dipolmoment
+$d$ erzeugt wird.
+
+\subsection{Quadrupol}
+
+
 
 

@@ -7,3 +7,411 @@
 \label{skript:chapter:kugelfunktionen}}
 \lhead{Kugelfunktionen}
 \rhead{}
+Im vorangegangenen Kapitel~\ref{skript:chapter:multipol} haben wir
+die Multipol-Entwicklung kennengelernt. 
+Die wesentliche Erkenntnis dabei war, dass wir eine Funktion immer zerlegen
+können in eine Summe von Termen der Form
+\[
+\frac{p(x,y,z)}{r^k},
+\]
+wobei $p(x,y,z)$ ein homogenes Polynom in den Koordinaten $x$, $y$ und
+$z$ war.
+Nehmen wir an,d ass das Polynom homogen vom Grad $l$ ist, dann kann man
+auch schreiben
+\[
+\frac{p(x,y,z)}{r^k}
+=
+p\biggl(\frac{x}{r},\frac{y}{r},\frac{z}{r}\biggr)\frac1{r^{k-l}}.
+\]
+Die Brüche $x/r$, $y/r$ und $z/r$ sind konstant entlang eines vom
+Nullpunkt ausgehenden Strahls, das Polynom 
+\[
+p\biggl(\frac{x}{r},\frac{y}{r},\frac{z}{r}\biggr)
+\]
+ist also eine Funktion, die nur von der Richtung des Strahls
+abhängt.
+Das Potential lässt sich also schreiben als eine Summe von Termen,
+die Produkte sind einer Funktion, die nur von der Richtung abhängig
+ist, und einer Funktion, die die Entfernungsabhängigkeit vom Nullpunkt
+ausdrückt.
+
+In diesem Abschnitt wollen wir zunächst zeigen, dass man die klassische
+Fourier-Theorie genau auf die gleiche Art betrachten kann.
+Eine Funktion in der Ebene lässt sich immer beschreiben als eine Summe
+von Produkten einer Funktion, die die Richtungsabhängigkeit ausdrückt, und
+und einer Funktion, die die Entfernungsabhängigkeit codiert.
+
+Die Wahl einer Basis solcher Funktionen ist jedoch nicht eindeutig.
+Wenn wir zusätzlich verlangen, dass die Funktionen im Sinne eines noch
+zu definierenden Skalarproduktes orthonormiert sind, dann ist die
+Berechnung der entsprechenden Koeffizienten besonders einfach und
+führt auf die klassische Fourier-Theorie.
+
+Im letzten Abschnitt wollen wir dann zeigen, dass dasselbe Programm
+auch im $\mathbb R^3$ durchführbar ist, und dann auf die Kugelfunktionen
+führt.
+
+\section{Fourier-Theorie}
+Betrachten wir eine Funktion $f(x,y)$ in der Ebenen $(x,y)\in\mathbb R^2$.
+Aus Kapitel~\ref{skript:chapter:multipol} wissen wir, dass sich die Funktion
+$f(x,y)$ schreiben lässt als Summe von Termen der Form $p(x,y)r^k$, wobei
+$p(x,y)$ ein homogenes Polynom ist.
+Im Moment interessiert uns nur die Richtungsabhängigkeit, so dass wir
+die Funktion $f(x,y)$ auf einen Kreis mit Radius $r$ einschränken können.
+Ein homogenes Polynom $p(x,y)$ vom Grad $l$ erfüllt
+\[
+p(x,y) = p\biggl(\frac{x}{r},\frac{y}{r}\biggr) r^l.
+\]
+In Polarkoordinaten ist
+\[
+\begin{aligned}
+\frac{x}{r}&=\cos\varphi
+&&\text{und}&
+\frac{y}{r}&=\sin\varphi,
+\end{aligned}
+\]
+so dass wir die Funktion $p(x,y)$ in Polarkoordinaten schreiben
+können als
+\[
+p(x,y)=r^l p(\cos\varphi,\sin\varphi).
+\]
+Für eine Funktion $f(x,y)$ auf einem Kreis um dem Nullpunkt erwarten wir
+daher, dass wir sie in Polarkoordinaten schreiben können also eine
+Linearkombination Funktionen der Form
+\begin{equation}
+\cos^k\varphi \sin^{l-k}\varphi,\qquad 0\le k\le l.
+\label{skript:kugelfunktionen:produkte}
+\end{equation}
+Die Potenzen machen die Ausdrücke etwas kompliziert, doch gibt
+es eine Reihe von Identitäten für trigonometrische Funktionen,
+die erlauben, solche Produkte auf Summen von Funktionen von 
+Vielfachen des Winkels zu reduzieren.
+Dazu gehören einerseits die Formeln für die Potenzen:
+\begin{align*}
+\cos^n\vartheta
+&=
+\begin{cases}
+\displaystyle
+\frac{2}{2^n}\sum_{k=0}^{\frac{n-1}2} \binom{n}{k}\cos((n-2k)\vartheta)
+&\qquad\text{$n$ ungerade}
+\\[10pt]
+\displaystyle
+\frac{1}{2^n}\binom{n}{\frac{n}2}
++
+\frac{2}{2^n}\sum_{k=0}^{\frac{n}2-1}\cos((n-2k)\vartheta)
+&\qquad\text{$n$ gerade}
+\end{cases}
+\\
+\sin^n\vartheta
+&=
+\begin{cases}
+\displaystyle
+\frac{2}{2^n}\sum_{k=0}^{\frac{n-1}2} (-1)^{\frac{n-1}2-k}\binom{n}{k}\sin((n-2k)\vartheta)
+&\qquad\text{$n$ ungerade}
+\\[10pt]
+\displaystyle
+\frac{1}{2^n}\binom{n}{\frac{n}2}
++
+\frac{2}{2^n}\sum_{k=0}^{\frac{n}2-1}(-1)^{\frac{n}2-k}\binom{n}{k}\cos((n-2k)\vartheta)
+&\qquad\text{$n$ gerade}
+\end{cases}
+\end{align*}
+Ersetzt man die Potenzen in~\eqref{skript:kugelfunktionen:produkte}
+durch diese Ausdrücke, entstehen immer noch Produkte von jeweils
+zwei trigonometrischen Funktionen.
+Solche Produkte können aber immer ersetzt werden durch eine
+Linearkombination von Funktionen dank der Summen- und Differenzenformeln:
+\begin{align*}
+\cos\vartheta\cos\varphi
+&=
+\frac12\bigl(\cos(\vartheta-\varphi)+\cos(\vartheta+\varphi)\bigr)
+\\
+\sin\vartheta\sin\varphi
+&=
+\frac12\bigl(\cos(\vartheta-\varphi)-\cos(\vartheta+\varphi)\bigr)
+\\
+\sin\vartheta\cos\varphi
+&=
+\frac12\bigl(\sin(\vartheta-\varphi)+\sin(\vartheta+\varphi)\bigr)
+\\
+\cos\vartheta\sin\varphi
+&=
+\frac12\bigl(\sin(\vartheta-\varphi)-\sin(\vartheta+\varphi)\bigr)
+\end{align*}
+Damit ist gezeigt, dass die Funktion $p(\cos\varphi,\sin\varphi)$
+geschrieben werden kann als Linearkombination von trigonometrischen
+Funktionen von Vielfachen des Winkels:
+\[
+p(x,y)=p(\cos\varphi,\sin\varphi)
+=
+\frac{a_0}2
++
+\sum_{k=1}^l \bigl(
+a_k\cos k\varphi+b_k\sin k\varphi
+\bigr).
+\]
+Wir vermuten daher, dass sich auch die Funktion $f(x,y)$ als Summe
+\begin{equation}
+f(x,y)
+=
+\frac{a_0}2
++
+\sum_{k=1}^\infty \bigl(
+a_k\cos k\varphi+b_k\sin k\varphi
+\bigr)
+\label{skript:kugelfunktionen:fourierreihe}
+\end{equation}
+schreiben lässt.
+
+\subsection{Orthogonalität}
+Die Funktionen $\cos k\varphi$ und $\sin k\varphi$ sind offenbar 
+wesentlich besser geeignet, eine Funktion von $\varphi$ auszudrücken,
+als die Potenzen $\sin^k\varphi$ und $\cos^k\varphi$ und ihre Produkte.
+Dies wird noch unterstütz durch die folgende Beobachtung.
+Zunächst schreiben wir
+\begin{align*}
+c_0(\varphi)&=\frac{1}{\sqrt{2}}
+\\
+c_k(\varphi)&=\cos k\varphi
+\\
+s_k(\varphi)&=\sin k\varphi
+\end{align*}
+für die Funktionen, die in der
+Reihe~\eqref{skript:kugelfunktionen:fourierreihe}
+benötigt werden.
+Ausserdem verwenden wir als Skalarprodukt von Funktionen
+den Ausdruck
+\begin{equation}
+\langle f,g\rangle
+=
+\frac1{\pi}
+\int_{-\pi}^{\pi}
+f(\varphi)g(\varphi)
+\,d\varphi.
+\end{equation}
+Dann kann man ausrechnen, dass die Funktionen $c_k$ und $s_k$ im
+folgenden Sinne orthonormiert sind.
+Verschiedene Funktionen haben Skalarprodukt $0$:
+\begin{align*}
+\langle c_0,c_k\rangle
+&=
+\frac{1}{\pi}\int_{-\pi}^\pi \frac{1}{\sqrt{2}}\cos k\varphi\,d\varphi=0
+\\
+\langle c_0,s_k\rangle
+&=
+\frac{1}{\pi}\int_{-\pi}^\pi \frac{1}{\sqrt{2}}\sin k\varphi\,d\varphi=0
+\\
+\langle c_k,c_l\rangle
+&=
+\frac1{\pi}
+\int_{-\pi}^{\pi}
+\cos k\varphi\cos l\varphi
+\,d\varphi
+=
+\frac1{\pi}
+\int_{-\pi}^{\pi}
+\cos(k-l)\varphi + \cos(k+l)\varphi
+\,d\varphi
+=0
+\\
+\langle s_k,s_l\rangle
+&=
+\frac1{\pi}
+\int_{-\pi}^{\pi}
+\sin k\varphi\sin l\varphi
+\,d\varphi
+=
+\frac1{\pi}
+\int_{-\pi}^{\pi}
+\cos(k-l)\varphi - \cos(k+l)\varphi
+\,d\varphi
+=0
+\\
+\langle s_k,c_l\rangle
+&=
+\frac1{\pi}
+\int_{-\pi}^{\pi}
+\cos k\varphi\sin l\varphi
+\,d\varphi
+=
+\frac1{\pi}
+\int_{-\pi}^{\pi}
+\sin(k-l)\varphi - \sin(k+l)\varphi
+\,d\varphi
+=0
+\end{align*}
+Identische Funktionen haben Skalarprodukt $1$ mit sich selbst:
+\begin{align*}
+\langle c_0,c_0\rangle
+&=
+\frac1{\pi}\int_{-\pi}^{\pi}
+\frac1{\sqrt{2}}
+\cdot
+\frac1{\sqrt{2}}
+\,d\varphi = \frac{2\pi}{\pi}\frac12=1
+\\
+\langle c_k,c_k\rangle
+&=
+\frac1{\pi}
+\int_{-\pi}^{\pi}
+\cos^2 k\varphi
+\,d\varphi
+=
+\frac1{\pi}\cdot\pi = 1
+\\
+\langle s_k,s_k\rangle
+&=
+\frac1{\pi}
+\int_{-\pi}^\pi
+\sin^2 k\varphi
+\,d\varphi
+=\frac1{\pi}\cdot\pi = 1.
+\end{align*}
+Die Funktionen $c_k$ und $s_k$ verhalten sich also in jeder Beziehung
+wie orthonormierte Basisvektoren in einem endlichdimensionalen Vektorraum.
+In abgekürzter Form können wir diese Eigenschaften auch als
+\begin{equation}
+\begin{aligned}
+\langle c_k,c_l\rangle
+&=
+\delta_{kl}
+\\
+\langle c_k,s_l\rangle
+&=0
+\\
+\langle s_k,s_l\rangle
+&=
+\delta_{kl}
+\end{aligned}
+\label{skript:kugelfunktionen:ortho}
+\end{equation}
+schreiben, wobei wie früher
+\[
+\delta_{kl}=\begin{cases}
+1&\qquad k=l\\
+0&\qquad\text{sonst}
+\end{cases}
+\]
+ist.
+Die Beziehungen~\eqref{skript:kugelfunktionen:ortho} heissen die
+Orthogonalitätsrelationen für die Funktioenn $c_k$ und $s_k$.
+\index{Orthogonalitätsrelationen}
+
+\subsection{Bestimmung der Koeffizienten $a_k$ und $b_k$}
+Die Orthogonalitätsrelationen~\eqref{skript:kugelfunktionen:ortho} erlauben
+uns, die Koeffizienten $a_k$ und $b_k$ in der
+Reihenentwicklung~\eqref{skript:kugelfunktionen:fourierreihe}
+zu finden.
+Dazu nehmen wir an, dass sich die Funktion $f(\varphi)$ als Reihe
+in den Funktionen $c_k$ und $s_k$ ausdrücken lässt.
+Wir setzen also $f(\varphi)$ in der Form
+\begin{align*}
+f(\varphi)
+&=
+a_0 c_0(\varphi)
++
+\sum_{k=1}^\infty \bigl(a_kc_k(\varphi) + b_ks_k(\varphi)\bigr)
+\end{align*}
+an und bestimmen die Skalarprodukte
+$\langle c_k,f\rangle$ und
+$\langle s_k,f\rangle$ wie folgt
+\begin{align*}
+\langle c_k,f\rangle
+&=
+\biggl\langle
+c_k,
+a_0 c_0+\sum_{l=1}^\infty\bigl(a_l c_l + b_l s_l\bigr)
+\biggr\rangle
+=
+a_0\langle c_k,c_0\rangle
++
+\sum_{l=1}^\infty a_l\langle c_k,c_l\rangle
+=
+a_k
+\\
+\langle s_k,f\rangle
+&=
+\biggl\langle
+s_k,
+a_0c_0+\sum_{l=1}^\infty (a_lc_l+b_ls_l)
+\biggr\rangle
+=
+\sum_{l=1}^\infty b_l\langle s_k,s_l\rangle
+=
+b_k
+\end{align*}
+Unter Verwendung der Definition des Skalarprodukts $\langle\;,\;\rangle$
+finden wir jetzt die Formeln:
+\begin{align*}
+a_0
+&=
+\frac1{\pi}\int_{-\pi}^{\pi} f(\varphi)\frac1{\sqrt{2}}\,d\varphi
+\\
+a_k
+&=
+\frac1{\pi}\int_{-\pi}^{\pi} f(\varphi)\cos k\varphi\,d\varphi
+\\
+b_k
+&=
+\frac1{\pi}\int_{-\pi}^{\pi} f(\varphi)\sin k\varphi\,d\varphi
+\end{align*}
+Der erste Term der Reihe wird dann
+\begin{align*}
+a_0c_0(\varphi)
+&=
+\frac1{\pi}\int_{-\pi}^{\pi} f(\varphi)\frac1{\sqrt{2}}\,d\varphi
+\cdot
+\frac1{\sqrt{2}}
+=
+\frac12
+\cdot
+\frac1{\pi}\int_{-\pi}^{\pi} f(\varphi) \,d\varphi.
+\end{align*}
+Es ist daher üblich, den Koeffizienten $a_0$ mit der gleichen
+Formel wie die $a_k$ für $k>0$ zu berechnen.
+Wir vermuten daher den folgenden Satz
+\begin{satz}
+Eine $2\pi$-periodische stetige Funktion $f(\varphi)$ kann geschrieben
+werden als
+\begin{equation}
+\frac{a_0}2
++
+\sum_{k=1}^\infty\bigl(
+a_k\cos k\varphi + b_k\sin k\varphi
+\bigr),
+\label{skript:kugelfuntionen:satz:reihe}
+\end{equation}
+wobei die Koeffizienten $a_k$ und $b_k$ mit den Formeln
+\begin{equation}
+\begin{aligned}
+a_k
+&=
+\frac1{\pi}
+\int_{-\pi}^\pi f(\varphi)\cos k\varphi\,d\varphi
+&
+&\text{für $k\ge 0$}
+\\
+b_k
+&=
+\frac1{\pi}
+\int_{-\pi}^\pi f(\varphi)\sin k\varphi\,d\varphi
+&
+&\text{für $k>0$}
+\end{aligned}
+\label{skript:kugelfuntionen:satz:koeffizienten}
+\end{equation}
+berechnet werden können.
+\end{satz}
+
+Bisher haben wir nur gezeigt, dass eine solche Formel plausibel ist.
+Wenn die Funktion $f(\varphi)$ als endliche Reihe der
+Form~\eqref{skript:kugelfunktionen:fourierreihe}, dann trifft der
+Satz zu, wie obige Rechnung gezeigt hat.
+Für beliebige stetige oder noch allgemeinere Funktionen muss
+die Konvergenz der Reihe~\eqref{skript:kugelfuntionen:satz:reihe}
+gebildet mit den
+Koeffizienten~\eqref{skript:kugelfuntionen:satz:koeffizienten}
+bewiesen werden muss.
+
+\section{Kugelfunktionen}
+
