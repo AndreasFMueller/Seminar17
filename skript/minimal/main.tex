@@ -20,10 +20,12 @@ Je nach intrinsischer (innerer) und extrinsischer (äusser) Krümmung kann ein R
 \section{Problemstellung}
 %\rhead{Problemstellung}
 
-\textbf  {Minimalflächen haben eine mittlere Krümmung von Null. }
+Minimalflächen haben eine mittlere Krümmung von Null. 
 
 In diesem Kapitel werden zuerst verschiedene Krümmungsarten von Flächen vorgestellt, um anschliessend den Spezialfall der Minimalflächen genauer betrachten zu können. 
-Als Illustration werden einige Beispiele von Minimalflächen gerechnet.
+Zur Illustration werden einige Beispiele von Minimalflächen gerechnet. 
+Als Vorstellungshilfe dienen oft nicht geschlossene Seifenfilme da diese von Natur aus  Minimalflächen erzeugen.
+
 
 \subsection{Krümmung einer Fläche}
 \index{Krümmung einer Fläche}
@@ -130,4 +132,64 @@ Def: Eine Fläche $M \subset \mathbf{R}^{3}$ ist genau dann minimal wenn jeder P
 \section{Beispiele}
 \index{Beispiele}
 \subsection{Katenoid}
+Wen man zwei drahtringe parallel zueinander in Seifenwasser taucht entsteht die Form eines Katanoids. 
+Das Katanoid ist eines der einfacheren Beispiele einer Minimalfläche. 
+In diesem Abschnitt wird die mathematische Berechnung des Katanoids mithilfe der Eulerschen Differenzialgleichung der Variationsrechnung beschrieben.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{minimal/soap_film_catanoid.PNG}
+  \caption{Skizze: Katanoid} 
+\end{figure}
+In obiger Skizze ist ein Katanoid abgebildet bei welchem in Bezug auf sie $z$ Achse, der untere Drahtring bei $-L$ und der obere bei $+L$ ist. 
+Die beiden Kreise sollen die gleichen Radien haben also gilt $r(-L)=r(+L)=R$. Die flächenpunkte des Katanoids werden mit der Funktion $r(z)$ beschrieben. 
+Die Distanz vom Ursprung zu einem Flächenpunkt kann nach Pythagoras mit $s^2=z^2+r^2$ berechnet werden, also gilt auch $ds^2=dz^2+dr^2$.
+Formt man diese Gleichung um erhält man die Gleichung \eqref{ds}.
+
+\begin{equation} \label{ds}
+  ds=\sqrt{dz^2(1+\frac{dr^2}{dz^2})}= \sqrt{dz^2(1+\dot r^2)}=\sqrt{(1+\dot r^2)}dz
+ 
+\end{equation}
+\subsubsection{Minimalfläche}
+Der Seifenfilm versucht automatisch sich im minimalenergetischen Zustand zu befinden. In diesem Zustand ist dann auch die Fläche $S$ des Seifenfilms minimal.
+Demzufolge muss das integral \eqref{S1} minimiert werden. 
+\begin{equation} \label{S1}
+  
+  S= \int 2 pi r ds !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  
+\end{equation}
+Durch einsetzen von Gleichung \eqref{ds} erhält man die Gleichung \eqref{S2}, welche man als Funktion $F(r,\dot r, z)$ noch verallgemeinert schreiben kann.
+\begin{equation} \label{S2}
+  
+  S=2 pi \int_(-L)^(+L) r\sqrt{(1+\dot r^2)}dz =2 pi \int_(-L)^(+L) F(r,\dot r, z) dz !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  
+\end{equation}
+
+
+Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differenzialgleichung der Variationsrechnung bedienen. 
+\subsubsection{Variationsrechnung}
+Die Eulerschen Differenzialgleichung der Variationsrechnung wird hier nicht bewiesen nur die anwendungsweise erläutert.
+Hat man ein kompliziertes Integral welches man nicht einfach fundamental lösen kann um die Extremwerte zu bestimmen kann man die Eulersche DGL anwenden. Diese besagt, dass anstelle des Ausrechnens eines einer Integralfunktion der Art \eqref{E_DGL1} kann auch die DGL \eqref{E_DGL2} gelöst werden um die Extremwerte solcher Funktionen zu finden.
+
+\begin{equation} \label{E_DGL1}
+  
+  I(y)= \int_a^b F(x,y(x),\dot y(x))dx      
+
+\end{equation}
+\begin{equation} \label{E_DGL2}
+  
+   
+  \frac{\partial F}}{\partial y}-\frac{d}}{dx}(\frac{\partial F}}{\partial \dot y})=0
+  
+\end{equation}
+
+Für die Glrichung des Katanoids \eqref{S2} erhält man somit die DGL \eqref{K_DGL1}.
+\begin{equation} \label{K_DGL1}
+  
+   
+  \frac{\partial F}}{\partial r}-\frac{d}}{dz}(\frac{\partial F}}{\partial \dot r})=0
+  
+\end{equation}
+
+
+
 \subsection{Young–Laplace - Oberflächenspannung}
