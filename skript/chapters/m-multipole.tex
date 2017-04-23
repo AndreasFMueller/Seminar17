@@ -130,9 +130,8 @@ für die Funktion $(1+t)^\alpha$.
 Sie heisst die {\em Binomialreihe} und ist konvergent für $|t|<1$.
 \index{Binomialreihe}
 
-\subsubsection{Der Fall $\alpha=\pm\frac12$}
-Wir interessieren uns speziell für den Fälle $\alpha=\pm\frac12$.
-Wir betrachten erst den Fall $\alpha=-\frac12$.
+\subsubsection{Der Fall $\alpha=-\frac12$}
+Wir betrachten die Binomialreihe für den Fall $\alpha=-\frac12$.
 Der Term zur Potenz $n$ ist
 \begin{equation}
 \frac{
@@ -206,9 +205,10 @@ der Ladungen entsprechend vergrössern.
 Wenn wir $a$ gegen $0$ gehen lassen, lassen wir gleichzeit die Ladung
 $q$ grösser werden, so dass das Produkt $d=qa$ gleich bleibt.
 Mit dieser Konvention wird das Dipolpotential
-\[
+\begin{equation}
 f(x,z) = -\frac{d}{2\pi\varepsilon_0 r^2}\frac{z}{r}+\dots
-\]
+\label{skript:multipol:dipolpotential}
+\end{equation}
 Darin haben wir statt $z$ den Bruch $z/r$ abgespalten, da dieser
 eintlang eines vom Nullpunkt ausgehenden Strahls vom Zentrum jeweils
 konstant ist.
@@ -220,7 +220,50 @@ Bezug auf die $z$-Achse abhängt.
 Die übrigen Faktoren beschreiben, wie das Potential aus dem Dipolmoment
 $d$ erzeugt wird.
 
+\subsubsection{Vektorschreibweise}
+Das Dipolpotential kann besonders elegant geschrieben werden, wenn
+wir das skalare Dipolmoment $d$ durch einen Vektor $\vec{d}$ ersetzen.
+In der Formel~\eqref{skript:multipol:dipolpotential}
+für das Dipolpotential brauchen wir die $z$-Koordinate
+des Punktes.
+Diese können wir als das Skalarprodukt mit dem Standardbasisvektor
+in $z$-Richtung bekomen.
+Wenn wir also
+\[
+\vec{d}=\begin{pmatrix}0\\0\\d\end{pmatrix}
+\]
+setzen, dann können wir das Dipolpotential vektoriell als
+\begin{equation*}
+f(\vec{r})
+=
+-
+\frac{1}{2\pi\varepsilon_0r^2} \frac{\vec{d}\cdot\vec{r}}{r}
+\end{equation*}
+geschrieben werden.
+In dieser Form ist das Dipolpotential für jede beliebige Orientierung
+des Dipolmomentes verwendbar.
+
 \subsection{Quadrupol}
+Wie in der eindimensionalen Situation vermuten wir, dass sich
+das Potential komplizierterer Ladungsverteilungen ebenfalls durch
+eine Reihe darstellen lässt, deren nächster Term von der Form
+\[
+\frac1{2\pi\varepsilon_0}\cdot\frac{1}{r^3} p(\vec{r},\vec{r})
+\]
+sein muss.
+Darin ist $p$ ein Ausdruck, der in beiden Argumenten linear ist.
+Man kann $p$ auch mit einer Matrix $Q$ als
+\begin{equation}
+\vec{r}^t Q\vec{r}
+\label{skript:multipol:qmatrix}
+\end{equation}
+darstellen.
+Die Matrix $Q$ muss so geformt sein, dass der
+Ausdruck~\eqref{skript:multipol:qmatrix}
+keinen Beitrag zum Dipolmoment leistet.
+Dies wird erreicht, wenn die Matrix $Q$ verschwindende Spur hat.
+
+
 
 
 
