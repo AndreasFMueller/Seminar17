@@ -196,17 +196,17 @@ f(x,z)
 \biggr)
 \\
 &=
--\frac{aq}{2\pi\varepsilon_0r^3}z + \dots
+-\frac{2aq}{4\pi\varepsilon_0r^3}z + \dots
 \end{align*}
 Wenn die beiden Ladungen näher zusammen rücken, wenn also $a\to 0$,
 dann verschwindet das Potential.
 Wenn wir das Potential weiterhin sehen wollen, müssen wir den Betrag
 der Ladungen entsprechend vergrössern.
 Wenn wir $a$ gegen $0$ gehen lassen, lassen wir gleichzeit die Ladung
-$q$ grösser werden, so dass das Produkt $d=qa$ gleich bleibt.
+$q$ grösser werden, so dass das Produkt $d=2qa$ gleich bleibt.
 Mit dieser Konvention wird das Dipolpotential
 \begin{equation}
-f(x,z) = -\frac{d}{2\pi\varepsilon_0 r^2}\frac{z}{r}+\dots
+f(x,z) = -\frac{d}{4\pi\varepsilon_0 r^2}\frac{z}{r}+\dots
 \label{skript:multipol:dipolpotential}
 \end{equation}
 Darin haben wir statt $z$ den Bruch $z/r$ abgespalten, da dieser
@@ -237,34 +237,112 @@ setzen, dann können wir das Dipolpotential vektoriell als
 f(\vec{r})
 =
 -
-\frac{1}{2\pi\varepsilon_0r^2} \frac{\vec{d}\cdot\vec{r}}{r}
+\frac{1}{4\pi\varepsilon_0r^2} \frac{\vec{d}\cdot\vec{r}}{r}
 \end{equation*}
 geschrieben werden.
 In dieser Form ist das Dipolpotential für jede beliebige Orientierung
 des Dipolmomentes verwendbar.
 
+Der Dipolterm geht für $r\to\infty$ wie $r^{-2}$ gegen $0$, also
+deutlich schneller als das Potential einer Punktladung.
+
 \subsection{Quadrupol}
 Wie in der eindimensionalen Situation vermuten wir, dass sich
 das Potential komplizierterer Ladungsverteilungen ebenfalls durch
 eine Reihe darstellen lässt, deren nächster Term von der Form
-\[
-\frac1{2\pi\varepsilon_0}\cdot\frac{1}{r^3} p(\vec{r},\vec{r})
-\]
+\begin{equation}
+\frac1{4\pi\varepsilon_0}\cdot\frac{1}{r^5} p(\vec{r},\vec{r})
+\label{skript:multipol:quadropolterm}
+\end{equation}
 sein muss.
 Darin ist $p$ ein Ausdruck, der in beiden Argumenten linear ist.
-Man kann $p$ auch mit einer Matrix $Q$ als
+
+Schreiben wir die Koordinaten als $(x_1,x_2,x_3)$, dann wird 
+sich $p$ in der Form
+\[
+\sum_{k,l=1}^3 Q_{kl}x_kx_l
+\]
+schreiben lassen.
+Allerdings kann nicht jede beliebige Matrix zugelassen werden, 
+da ja nur die Abweichungen vom Dipolmoment erfasst werden sollen.
+Nimmt man für $Q$ die Einheitsmatrix, dann erhält man einfach nur
+\[
+\sum_{k,l=1}^3 Q_{kl}x_kx_l=\sum_{i=1}^3 x_i^2 = \vec{r}\cdot\vec{r}=r^2,
+\]
+der Quadrupol-Term wird also 
+\[
+\frac1{4\pi\varepsilon_0}\cdot\frac{1}{r^3},
+\]
+was keine Richtungsabhängigkeit mehr enthält und wir daher erwarten
+würden, dass diese Art von Abhängigkeit bereits im ersten Term 
+enthalten war.
+Man kann dies zum Beispiel dadurch erreichen, dass die Matrix $Q$ 
+verschwindende Spur haben soll, also $\operatorname{Spur}Q=0$.
+
+Die defaillierte Berechnung des Quadrupolanteils ist etwas mühsam,
+wir geben hier nur das Resultat an.
+Man findet
+\[
+Q_{kl}
+=
+\int_{\mathbb R^3}
+\varrho(\vec{r}) \cdot (3x_kx_l-r^2\delta_{kl})
+\,dx_1\,dx_2\,dx_3.
+\]
+Das Wachstum des Quadrupolterms~\eqref{skript:multipol:quadropolterm}
+ist also von der Ordnung $r^{-3}$.
+Auch dieser Term geht wieder einer Potenz schneller gegen $0$ als der
+Dipolterm.
+
+\subsection{Höhere Multipole}
+Die Entwicklung Entwicklung in Dipol und Quadrupol lässt sich noch
+weiter führen.
+Dabei werden sukzessive Terme entstehen, die immer schneller gegen $0$
+gehen, für grosse Entfernung vom Nullpunkt also immer weniger von
+Bedeutung sein werden.
+Die Darstellung dieser höheren Multipole wird allerdings zunehmen
+schwierig. 
+Der nächste Term nach dem Quadrupolterm müsste die Form
 \begin{equation}
-\vec{r}^t Q\vec{r}
-\label{skript:multipol:qmatrix}
+\frac1{4\pi\varepsilon_0}\frac{p(\vec r)}{r^7}
+\label{skript:multipol:7ord}
 \end{equation}
-darstellen.
-Die Matrix $Q$ muss so geformt sein, dass der
-Ausdruck~\eqref{skript:multipol:qmatrix}
-keinen Beitrag zum Dipolmoment leistet.
-Dies wird erreicht, wenn die Matrix $Q$ verschwindende Spur hat.
+haben, wobei der Zähler $p(\vec r)$ eine Grösse dritter Ordnung in
+den Koordinaten sein müsste.
+Er wird also durch ein homogenes Polynom dritten Grades in den Koordinaten
+$x$, $y$ und $z$ beschrieben.
+Der Term~\eqref{skript:multipol:7ord} geht wie $r^{-4}$ gegen Null,
+also erneut eine Potenz schneller als der Quadrupolterm.
 
+\section{Zusammenfassung}
+Allen Termen der Multipolentwicklung
+\[
+f(\vec r)
+=
+\frac{1}{4\pi\varepsilon 0}
+\biggl(
+q
+\frac{1}{r}
++
+\frac{1}{r^2} \frac{\vec{d}\cdot\vec{r}}{r}
++
+\frac{1}{r^3} \sum_{k,l}Q_{kl}\frac{x_k}{r}\frac{x_l}{r}
++
+\frac{1}{r^4} \sum_{k,l,j}Q_{klj}\frac{x_k}{r}\frac{x_l}{r}\frac{x_j}{r}
++
+\dots
+\biggr)
+\]
+ist gemeinsam, dass sie die Abhängigkeit des Potentials in einen
+aus physikalischen Gründen plausiblen radialen Teil der Form $r^{-k}$
+und einen richtungsabhängigen Teil aufteilen.
+Die reine Richtungsabhängigkeit kann dadurch ausgedrückt werden, dass
+er nur von den Quotienten $x/r$, $y/r$ und $z/r$ abhängt.
 
-
-
+TODO:
+\begin{itemize}
+\item Potentiallinien-Plots für Dipol- und Quadrupolfeld
+\item 3D-Plot von Dipolmoment und evtl Quadropolfeld
+\end{itemize}
 
 
