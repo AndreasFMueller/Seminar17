@@ -105,9 +105,7 @@ Der Flächeninhalt wird dabei einzig durch den Winkel $\alpha$ zwischen den beid
 
 Dabei deckt der Flächeninhalt des Zweiecks einen Teil der Kugeloberfläche ab, sprich
 
-
-
-
+XXXX
 
 Der Flächeninhalt des Zweiecks beschreibt sich unteranderen mit dem Flächeninhalt der Kugel
 \begin{align*}
@@ -169,9 +167,7 @@ A_{ \triangle{ ABC }} &= (\alpha + \beta + \gamma - \pi) \cdot r^2
 \end{align*}
 
 Das diese Formel wirklich zum gewünschten Flächeninhalt führt, lässt sich folgendermassen beweisen:\\
-
 Als erstes berechnen wir die einzelnen Flächeninhalte der Zweiecke A, B und C
-
 \begin{align*}
 \text{Zweieck A}
 &=
@@ -192,13 +188,11 @@ Die drei Zweiecke und zweimal das kleine graue Eulersche’ Dreieck bedecken zus
 \end{center}
 
 Nun setzen wir die Flächeninhalte der Zweiecke mit dieser der halben Kugel gleich
-
 \begin{align*}
 A_{ \alpha } + A_{ \beta } + A_{ \gamma } &= \frac{ 4\pi r^{ 2 } }{ 2 } + 2A_{ \triangle{ ABC }}
 \end{align*}
 
 Durch die Division mit Zwei und das Subtrahieren von $\pi r^2$ schreiben wir die Formel des Flächeninhaltes und haben somit folgenden Satz bewiesen
-
 \begin{satz} \textit{Der Flächeninhalt eines Eulerschen Dreiecks verhaltet sich wie die Summe dessen Winkel subtrahiert mit $\pi$ und dessen Differenz multipliziert mit dem Radius im Quadrat.}
 \label{skript:kugel:satz:Flaecheninhalt}
 \index{Flaecheninhalt}
@@ -254,7 +248,7 @@ Berechnen wir den maximalen sphärischen Exzess bei allgemeinen Kugeldreiecken w
 
 
 \subsection{Grenzfall - Satz von Legendre}
-Würden wir den sphärischen Exzess in der ebenen Trigonometrie anwenden, wäre dieser $=0$. Betrachten wir nun sehr kleine Kugeldreiecke, im Vergleich zur gesamten Kugeloberfläche, würde die Innenwinkelsumme $\pi$ nur wenig übersteigen. Dies besagt, das wir sphärische Dreiecke mit geringer Grösse durch Verebnung annähernd als solche der ebenen Trigonometrie betrachten können. Diese Erkentnis beschreibt der Satz von Legendre
+Würden wir den sphärischen Exzess in der ebenen Trigonometrie anwenden, wäre dieser $=0$. Betrachten wir nun sehr kleine Kugeldreiecke oder solche mit grossen aber endlichen Radien, im Vergleich zur gesamten Kugeloberfläche, würde die Innenwinkelsumme $\pi$ nur wenig übersteigen. Dies besagt, das wir sphärische Dreiecke mit geringer Grösse durch Verebnung annähernd als solche der ebenen Trigonometrie betrachten können. Diese Erkentnis beschreibt der Satz von Legendre
 
 \begin{center}
         \includegraphics[width=0.3\textwidth]{kugel/Beispielbild.jpg}
@@ -275,27 +269,33 @@ Durch diesen Satz lässt sich der Zusammenhang zwischen der Ebenen Trigonometrie
 
 \section{Sphärisch Analoge Winkelfunktionen}
 Euklid von Alexandria\footnote{%
-Euklid war ein griechischer Mathematiker. Er lebte wahrscheinlich 3 Jahrhunderte vor Christus. In seinem berühmtesten Werk \textit{Euklids Elemente} fasst er die Arithmetik und Geometrie seiner Zeit zusammen. \textit{Euklids Elemente} war 2000 Jahre lang als Lehrbuch in gebrauch und war bis Mitte des 19. Jahrhunderts nach der Bibel das weit verbreitetste Buch der Weltliteratur.}  beschrieb die Grundbegriffe der ebenen Geometrie mittels Punkt, Geraden, Ebene, Winkel und Dreieck. Ebendiese Dreiecke lassen sich mithilfe der ebenen Trigonometrie beschreiben. Dabei gelten die uns bekannten trigonometrischen Winkelfunktionen:
+Euklid war ein griechischer Mathematiker. Er lebte wahrscheinlich 3 Jahrhunderte vor Christus. In seinem berühmtesten Werk \textit{Euklids Elemente} fasst er die Arithmetik und Geometrie seiner Zeit zusammen. \textit{Euklids Elemente} war 2000 Jahre lang als Lehrbuch in gebrauch und war bis Mitte des 19. Jahrhunderts nach der Bibel das weit verbreitetste Buch der Weltliteratur.}  beschrieb die Grundbegriffe der ebenen Geometrie mittels Punkt, Geraden, Ebene, Winkel und Dreieck. Ebendiese Dreiecke lassen sich mithilfe der ebenen Trigonometrie beschreiben. Dabei gelten die uns bekannten trigonometrischen Winkelfunktionen:\\
+
+Der Sinussatz,
 \begin{align*}
-\intertext{Sinussatz:}
 \frac{ a }{ sin(\alpha) } &= \frac{ b }{sin(\beta)} = \frac{ c }{ sin(\gamma) } = \frac{abc}{2A} = 2r\\
-\intertext{Cosinussatz:}
+\end{align*}
+welcher nichts anderes ist, als der Strahlensatz des ebenen Dreiecks. Das Verhältnis der Längen zweier Seiten ist gleich dem Verhältnis der Sinuswerte der gegenüberliegenden Winkel.\\
+
+Und der Cosinussatz,
+\begin{align*}
 c^{ 2 } &= a^{ 2 } + b^{ 2 } - 2ab\cdot cos(\gamma)\\
 b^{ 2 } &= a^{ 2 } + c^{ 2 } - 2ab\cdot cos(\beta)\\
 a^{ 2 } &= b^{ 2 } + c^{ 2 } - 2ab\cdot cos(\alpha)
 \end{align*}
+welcher Beziehungen zwischen den Seiten und den Kosinusweten der Winkeln im Dreieck der Ebene aufstellt.\\
 
 Um diese Winkelfunktionen auf der Kugeloberfläche anwenden zu können, benötigen wir die sphärische Trigonometrie. Die oben beschriebenen Sätze lassen sich auf der Kugel nicht anwenden, sie werden aber als Grundlage und Gedankenstütze zur Herleitung der Sätze für das Kugeldreieck benötigt.
 
+
+
 \subsection{Sphärischer Sinussatz}
+Wir betrachten das folgende sphärische Dreieck auf einem Teilstück der Kugeloberfläche mit dem Radius $R= \overline{MA} = \overline{MB} = \overline{MC}$. Wir fügen ein ebenes Dreieck $\triangle=\overline{ADE}$ in das Kugelstück ein, welches den Eckpunkt $A$ beinhaltet und eine Abbildung des sphärischen Dreieckes bildet.
 
 \begin{center}
         \includegraphics[width=0.3\textwidth]{kugel/Beispielbild.jpg}
     \captionof{figure}{Bild Sinussatz}
 \end{center}
-
-
-Wir betrachten das folgende sphärische Dreieck auf einem Teilstück der Kugeloberfläche mit dem Radius $R= \overline{MA} = \overline{MB} = \overline{MC}$. Danach fügen wir ein ebenes Dreieck $\triangle=\overline{ADE}$ in das Kugelstück ein, welches den Eckpunkt $A$ des sphärischen Dreiecks beinhaltet und eine Abbildung des sphärischen Dreieckes bildet.
 
 Es gilt
 
@@ -303,19 +303,19 @@ Es gilt
 \overline{AD} &= R \cdot sin (c)
 \end{align*}
 
-Diese Strecke lässt sich auch abbilden als
+Diese Strecke ist kongruent zur Strecke
 \begin{align}
-hA = \overline{AF} &= \overline{AD} \cdot sin(\beta) = R \cdot sin(c) \cdot sin(\beta)  
+h_{A} = \overline{AF} &= \overline{AD} \cdot sin(\beta) = R \cdot sin(c) \cdot sin(\beta)  
 \label {V1}
 \end{align}
 
-Aus einer anderen Sichtweise kann man auch schreiben
+Aus einer anderen Sichtweise lässt sich die Strecke wie folgt schreiben
 \begin{align}
 h_{A} = R \cdot sin(b) \cdot sin(\gamma)  
 \label {V2}
 \end{align}
 
-Durch gleichsetzen der Ausdrücke \eqref{V1} und \eqref{V2}, fällt der Faktor $R$ weg und es ergibt sich 
+Durch gleichsetzen der Ausdrücke \eqref{V1} und \eqref{V2} eliminieren wir den Faktor $R$ und es entsteht der Ausdruck
 \begin{align*}
 sin(c) \cdot sin(\beta) &= sin(b) \cdot sin(\gamma) \\
 \Rightarrow \quad \quad
@@ -330,17 +330,25 @@ sin(c) \cdot sin(\alpha) &= sin(a) \cdot sin(\gamma) \\
 \end{align*}
 
 Aus diesen Erkenntnissen lässt sich der Sinussatz zusammenfassen
-\begin{satz}\textit{Der sphärische Sinussatz verhaltet sich wie der Sinus der Seiten wie der Sinus der Gegenwinkel, dies lässt sich beschreiben}
+\begin{satz}\textit{Der Sinussatz der sphärischen Trigonometrie ist das Verhältnis der Sinuswerte der Seiten gleich dem Verhältnis der Sinuswerte der gegenüberliegenden Winkel.}
 \label{skript:kugel:satz:Sinussatz}
 \index{Sinussatz}
 \end{satz}
 
 \begin{align*}
-\sin(a) : \sin(b) : \sin(c) &= \sin(\alpha) : \sin(\beta) : \sin(\gamma) \\
+\sin a : \sin b : \sin c &= \sin \alpha : \sin \beta : \sin \gamma \\
  \\
-\frac{sin(\alpha)}{sin(a)} &= \frac{sin(\beta)}{sin(b)} = \frac{sin(\gamma)}{sin(c)}
+\frac{\sin \alpha}{\sin a} &= \frac{\sin \beta}{\sin b} = \frac{\sin \gamma}{\sin c}
 \end{align*} 
 
+Es fällt auf, das der Satz sehr ähnlich ist zur Ebenen Trigonometrie. Der Grund weshalb man auch bei den Seiten den Sinuswert nehmen muss ist folgender:
+
+Das Verhältnis zwischen den Seiten und Winkeln wird nicht unendlich lange grösser je weiter man sich vom gesuchten Winkel entfernt. Auf der Kugel steigt der Wert nur bis in die Mitte des Dreieckes an, dort angelangt sinkt das Verhältnis wider solange, bis es beim Eckpunkt angekommen ist.
+
+\begin{center}
+        \includegraphics[width=0.3\textwidth]{kugel/Beispielbild.jpg}
+    \captionof{figure}{Bild Sinussatz}
+\end{center}
 
 \subsection{Seitenkosinussatz}
 Es sei das Stück einer Kugel mit dem sphärischen Dreieck $ABC$ und den Winkeln $\alpha, \beta, \gamma$ und den Seiten $a, b, c$. Die Senkrechten durch den Mittelpunkt, schneiden dabei die Eckpunkte des sphärischen Dreieckes. Wir erstellen in der Ebene ein Ähnliches Dreieck $A’B’C’$.
@@ -352,93 +360,75 @@ Es sei das Stück einer Kugel mit dem sphärischen Dreieck $ABC$ und den Winkeln
 
 Dabei lassen sich die Strecken nach den uns bekannten Regeln der Trigonometrie beschreiben:
 \begin{align*}
-\overline{C'A'} &= d\cdot {tan(b)} \\
-\overline{C'B'} &= d\cdot {tan(a)} \\
-\overline{MA'} &= \frac{ d }{cos(b)} \\
-\overline{MB'} &= \frac{ d }{cos(a)}
+\overline{C'A'} = d\cdot {tan(b)} \quad \quad \quad \quad \quad \quad 
+\overline{MA'} = \frac{ d }{cos(b)} \\
+\overline{C'B'} = d\cdot {tan(a)} \quad \quad \quad \quad \quad \quad 
+\overline{MB'} = \frac{ d }{cos(a)}
 \end{align*} 
 
 
-Dabei schreibt sich der Kosinussatz der Ebene wie folgt
-
-\begin{align*}
-c^{ 2 } &= a^{ 2 } + b^{ 2 } - 2ab \cdot cos(\gamma)
-\end{align*}
-
-Daher gilt für das Dreieck $A’B’C’$
-
-\begin{align*}
-\triangle \overline{A'B'}^{ 2 } &= \overline{ C'B' }^{ 2 } + \overline{ C'A' }^{ 2 } - 2 \cdot \overline{C'B'} \cdot \overline{ C'A' } \cdot cos(\gamma) \\
+Durch anwenden des Kosinussatzes der Ebene auf das Dreieck $A’B’C’$ erhalten wir
+\begin{align}
+\overline{A'B'}^{ 2 } &= \overline{ C'B' }^{ 2 } + \overline{ C'A' }^{ 2 } - 2 \cdot \overline{C'B'} \cdot \overline{ C'A' } \cdot cos(\gamma) \nonumber \\ 
 \Rightarrow \quad \quad
-\triangle \overline{A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(tan^{ 2 }(a) + tan^{ 2 }(b)\right) - 2\cdot tan(a) \cdot tan(b) \cdot cos(\gamma)\right)
-\end{align*}
+\triangle \overline{A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(tan^{ 2 }(a) + tan^{ 2 }(b)\right) - 2\cdot tan(a) \cdot tan(b) \cdot cos(\gamma)\right) 
+\label {V3} 
+\end{align}
 
-
-das gilt ebenso für das Dreieck $MA’B’$
-
+dies gilt ebenso für das Dreieck $MA’B’$
 \begin{align*}
-\triangle \overline{ MA'B' }^{ 2 } &= \overline{ MB' }^{ 2 } + \overline{ MA' }^{ 2 } - 2\cdot \overline{ MB'} \cdot \overline{ MA' } \cdot cos(c) \\
+\overline{A'B'}^{2} &= \overline{MB'}^{2} + \overline{MA'}^{2} - 2\cdot \overline{MB'} \cdot \overline{MA'} \cdot cos(c) \\
 \Rightarrow \quad \quad
-\overline{ MA'B'}^{ 2 } &= \left(\frac{ d }{ cos(a) }  \right)^{ 2 } + \left(\frac{ d }{ cos(b)}  \right)^{ 2 } - 2 \cdot \frac{ d }{ cos(a)} \cdot \frac{ d }{ cos(b)} \cdot cos(c)
+\overline{A'B'}^{ 2 } &= \left(\frac{ d }{ cos(a) }  \right)^{ 2 } + \left(\frac{ d }{ cos(b)}  \right)^{ 2 } - 2 \cdot \frac{ d }{ cos(a)} \cdot \frac{ d }{ cos(b)} \cdot cos(c) 
 \end{align*}
 
-
-Im Einheitskreis betrachtet ergibt dies
-
-\begin{align*}
-\overline{ MA'B' }^{ 2 } &= d^{ 2 } \cdot \left(\left(\frac{ 1 }{ cos(a) }  \right)^{ 2 } + \left(\frac{ 1 }{ cos(b) }  \right)^{ 2 } - 2 \cdot \frac{ 1 }{ cos(a)} \cdot \frac{ 1 }{ cos(b)} \cdot cos(c)\right)
-\end{align*}
-
-
-Durch berücksichtigen von $\frac{1}{\cos^{2}(x)}=\tan^{2}(x)+1$ folgt
-
-\begin{align*}
-\overline{ A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(tan^{ 2 }(a) + tan^{ 2 }(b)\right) - 2 \cdot \frac{ 1 }{ cos(a)} \cdot \frac{ 1 }{ cos(b)} \cdot cos(c)\right) \\
+Durch berücksichtigen von $\frac{1}{\cos^{2}(x)}=\tan^{2}(x)+1$ und ausklammern von $d^2$ folgt
+\begin{align}
+\overline{ A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(tan^{ 2 }(a) + tan^{ 2 }(b)\right) - 2 \cdot \frac{ 1 }{ cos(a)} \cdot \frac{ 1 }{ cos(b)} \cdot cos(c)\right) 
+\nonumber \\
 \Rightarrow \quad \quad
 \overline{ A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(tan^{ 2 }(a) + 1\right) + \left(tan^{ 2 }(b) + 1\right) - \left(2 \cdot \frac{cos(c)}{cos(a) \cdot cos(b)}\right)\right)
-\end{align*}
+\label {V4}
+\end{align}
 
-
-Durch gleichsetzen dieser beiden Ausdrücke folgt
+Durch gleichsetzen der beiden Gleichungen \eqref{V3} und \eqref{V4} können wir die Ausdrücke $d^2$ und $\tan^2(a) + \tan^2(b)$ streichen und erhalten
 
 \begin{align*}
 2 \cdot tan(a) \cdot tan(b) \cdot cos(\gamma) &= -2+2 \cdot \frac{cos(c)}{cos(a) \cdot cos(b)}
 \end{align*}
 
-Durch umformen durch $\tan(a)=\frac{\sin(a)}{\cos(a)}$ und der Multiplikation mit  $\frac{1}{2}$ ergibt sich
-
+Durch Umformung unter Einhaltung der Regel $\tan(a)=\frac{\sin(a)}{\cos(a)}$ und der Multiplikation mit  $\frac{1}{2}$ ergibt sich
 \begin{align*}
 \frac{\sin(a)}{\cos(a)} \cdot \frac{\sin(b)}{\cos(b)} \cdot \cos(\gamma) &= -1 + \frac{\cos(c)}{\cos(a) \cdot \cos(b)}
 \end{align*}
 
-Durch vereinfachen der Formel erhalten wir den Seitenkosinussatz der Seite $c$
-
+Durch Vereinfachung erhalten wir den Seitenkosinussatz der Seite $c$
 \begin{align*}
 \cos(a) \cdot \cos(b) + \sin(a) \cdot sin(b) \cdot \cos(\gamma) = \cos(c)
 \end{align*}
 
-Durch zyklische Vertauschung der Variablen erhält man den 
+Um die Sätze für die Seiten $a$ und $b$ zu erhalten vertauschen wir die Variablen zyklisch und erhalten den Seitenkosinussatz.
 
 \begin{satz}[\textit{Im sphärischen Dreieck ist der Kosinus einer Seite gleich der Summe der Kosinusprodukte der beiden anderen Seiten und dem mit dem Kosinus des eingeschlossenen Winkels multiplizierten Sinusprodukt dieser Seiten}]
 \label{skript:kugel:satz:Seitenkosinussatz}
 \index{Seitenkosinussatz}
 \end{satz}
 
-
 \begin{align*}
-{\cos a} &= {cos(b)} \cdot {cos(c)} + {sin(b)} \cdot {sin(c)} \cdot {cos(\alpha)}\\
-{cos(b)} &= {cos(c)} \cdot {cos(a)} + {sin (c)} \cdot {sin(a)} \cdot {cos(\beta)}\\
-{cos(c)} &= {cos(a)} \cdot {cos(b)} + {sin(a)} \cdot {sin(b)} \cdot {cos(\gamma)}\\
+{\cos a} &= {\cos b} \cdot {\cos c} + {\sin b} \cdot {\sin c} \cdot {\cos \alpha}\\
+{\cos b} &= {\cos c} \cdot {\cos a} + {\sin c} \cdot {\sin a} \cdot {\cos \beta}\\
+{\cos c} &= {\cos a} \cdot {\cos b} + {\sin a} \cdot {\sin b} \cdot {\cos \gamma}\\
 \end{align*}
 
+Mithilfe des Seitenkosinussatzes lässt sich eine Dreieckesseite durch den gegenüberliegenden Winkel und die beiden anderen Seiten berechnen.
 
-ABSCHLUSSATZ
+
 
 \subsection{Winkelkosinussatz}
 
 Wenden wir den sphärischen Seitenkosinussatz auf dem Polardreieck an, erhalten wir
 \begin{align*}
-{\cos (a)} = {\cos (b)} \cdot {\cos (c)} + {\sin(b)} \cdot {\sin(c)} \cdot {\cos (\alpha)}
+{\cos a} &= {\cos b} \cdot {\cos c} + {\sin b} \cdot {\sin c} \cdot {\cos \alpha}
 \end{align*}
 
 \begin{center}
@@ -446,7 +436,7 @@ Wenden wir den sphärischen Seitenkosinussatz auf dem Polardreieck an, erhalten 
     \captionof{figure}{Bild Winkelkosinus/Polardreieck}
 \end{center}
 
-Durch die Beziehung zwischen dem Polardreieck und einem sphärischen Dreieck, können wir den Seitenkosinussatz folgendermassen umformen
+Durch die Beziehung zwischen dem Polardreieck und dem sphärischen Dreieck, lässt sich der Seitenkosinussatz folgendermassen umformen
 \begin{align*}
 {\cos (\pi-\alpha)} &= {\cos (\pi-\beta)} \cdot {\cos (\pi-\gamma)} + {\sin(\pi-\beta)} \cdot {\sin(\pi-\gamma)} \cdot {\cos (\pi-a)}
 \end{align*}
@@ -454,36 +444,38 @@ Durch die Beziehung zwischen dem Polardreieck und einem sphärischen Dreieck, k�
 Durch die Quadrantenbeziehung der trigonometrischen Funktionen im Einheitskreis folgt
 
 \begin{align*}
-\sin (\pi-\alpha) &= sin(\alpha)\\
-\cos (\pi-\alpha) &= - cos (\alpha)\\
+\sin (\pi-\alpha) &= \sin \alpha\\
+\cos (\pi-\alpha) &= - \cos \alpha\\
 \end{align*}
 
-Daher ergibt sich
+Es ergibt sich
 
 \begin{align*}
-{-\cos (\alpha)} &= {-\cos (\beta)} \cdot {-\cos (\gamma)} + {\sin(\beta)} \cdot {\sin(\gamma)} \cdot {-\cos (a)}
+{-\cos \alpha} &= {-\cos \beta} \cdot {-\cos \gamma} + {\sin \beta} \cdot {\sin \gamma} \cdot {-\cos a}
 \end{align*}
 
 Durch vertauschen der Vorzeichen erhalten wir den Winkelkosinussatz
 
-\begin{satz}[\textit{Im sphärischen Dreieck ist der Kosinus eines Winkels gleich der Summe aus dem negativen Produkt der Kosinus der beiden anderen Winkel und dem mit dem Kosinus der gegenüberliegenden Seite multiplizierten Sinusprodukt der beiden anderen Winkel.}]
+\begin{satz}\textit{Im sphärischen Dreieck ist der Kosinus eines Winkels gleich der Summe aus dem negativen Produkt der Kosinus der beiden anderen Winkel und dem mit dem Kosinus der gegenüberliegenden Seite multiplizierten Sinusprodukt der beiden anderen Winkel.}
 \label{skript:kugel:satz:Winkelkosinussatz}
 \index{Winkelkosinussatz}
 \end{satz}
 
 \begin{align*}
-{\cos (\alpha)} &= {-\cos(\beta)} \cdot {\cos(\gamma)} + {\sin (\beta)} \cdot {\sin(\gamma)} \cdot {\cos(a)}\\
-{\cos (\beta)} &= {-\cos(\gamma)} \cdot {\cos(\alpha)} + {\sin (\gamma)} \cdot {\sin(\alpha)} \cdot {\cos(b)}\\
-{\cos (\gamma)} &= {-\cos(\alpha)} \cdot {\cos(\beta)} + {\sin (\alpha)} \cdot {\sin(\beta)} \cdot {\cos(c)}\\
+{\cos \alpha} &= {-\cos \beta} \cdot {\cos \gamma} + {\sin \beta} \cdot {\sin \gamma} \cdot {\cos a}\\
+{\cos \beta} &= {-\cos \gamma} \cdot {\cos \alpha} + {\sin \gamma} \cdot {\sin \alpha} \cdot {\cos b}\\
+{\cos \gamma} &= {-\cos \alpha} \cdot {\cos \beta} + {\sin \alpha} \cdot {\sin \beta} \cdot {\cos c}\\
 \end{align*}
 
-ABSCHLUSSATZ
+Auf der Kugel können wir demnach zwei Kosinussätze anwenden und nicht nur einen wie in der Ebene. Den Seitenkosinussatz verwenden wir wenn mindestens 2 Seiten und 1 Winkel bekannt sind. Der Winkelkosinussatz lässt sich anwenden wenn mindestens 2 Winkel und 1 Seite bekannt ist. Mit beiden Sätzen können wir alle Unbekannten auf der Kugel herausfinden.
+
+
 
 \section{Dualität auf der Kugel}
 
-Durch die Herleitung des Winkelkosinussatzes haben wir zugleich die Dualität auf der Kugel bewiesen.
+Durch die Herleitung des Winkelkosinussatzes haben wir zugleich die Dualität der Kugel bewiesen.
 
-\begin{satz}[\textit{Die sphärische Geometrie ist eine projektive Geometrie. In der projektiven Geometrie lassen sich alle Sätze dualisieren, das heisst, die Begriffe Punkt und Geraden werden vertauscht; demzufolge auch Längen und Winkeln}]
+\begin{satz}\textit{Die sphärische Geometrie ist eine projektive Geometrie. In der projektiven Geometrie lassen sich alle Sätze dualisieren, das heisst, die Begriffe Punkt und Geraden werden vertauscht; demzufolge auch Längen und Winkeln}
 \label{skript:kugel:satz:Dualitaet}
 \index{Dualitaet}
 \end{satz}
@@ -493,26 +485,26 @@ Durch die Herleitung des Winkelkosinussatzes haben wir zugleich die Dualität au
     \captionof{figure}{Bild Dualität}
 \end{center}
 
-Dualisiert man nun als Beispiel einen Punkt und eine Gerade, bleibt die Beziehung zwischen dem Punkt und der Geraden erhalten.
 Nimmt man nun den Punkt $A$ welcher auf der Geraden $b$ liegt, so verläuft die Duale Gerade $a$ durch den zur Geraden $b$ dualen Punkt $B$. 
-Aber nicht nur die Beziehungen zwischen Punkten und Längen bleiben erhalten. Auch die Winkel und Längen gehen ineinander über wie wir es im Beweis des Winkelkosinussatzes gesehen haben.
-Der Winkel $\gamma$ zwischen den beiden Seiten a und b entspricht auf der Einheitskugel dem Abstand zwischen den zu der Geraden dualen Punkten A und B.
+Aber nicht nur die Beziehungen zwischen Punkten und Längen bleiben erhalten. Auch die Winkel und Längen gehen ineinander über, wie im Beweis des Winkelkosinussatzes.
+Der Winkel $\gamma$ zwischen den beiden Seiten $a$ und $b$ entspricht auf der Einheitskugel dem Abstand zwischen den zu der Geraden dualen Punkten $A$ und $B$.
+
+
 
 \section{Navigation auf See}
-Das besondere an Seekarten ist die Inhaltliche Ausrichtung. Anders wie Landkarten muss sie Informationen enthalten welche für den Kapitän und seine Besatzung von grosser Bedeutung sind. Vor allem in Küstennähe ist das navigieren eines Schiffes besonders gefährlich. So enthalten Seekarten etwas über Wassertiefen, Bodenbeschaffenheiten, Gezeiten, Küstenlinien, Landzungen und Windrichtungen.
-Der Hauptunterschied dabei ist, das auf der Landkarte feste Positionen definiert und aufgezeigt werden, das einzige was sich verändert ist der Reisende selbst. Bei der Seekarte ist das anders, es werden veränderliche Einwirkungen der Natur festgehalten.
+Das besondere an Seekarten ist die Inhaltliche Ausrichtung. Anders wie Landkarten muss sie Informationen enthalten welche für den Kapitän und seine Besatzung von grosser Bedeutung sind. Vor allem in Küstennähe ist das navigieren eines Schiffes besonders gefährlich. So enthalten Seekarten etwas über die Wassertiefen, Bodenbeschaffenheiten, Gezeiten, Küstenlinien, Landzungen und Windrichtungen.
+Der Hauptunterschied dabei ist, das auf der Landkarte feste Positionen definiert und aufgezeigt werden, das einzige was sich bewegt ist der Reisende selbst. Bei der Seekarte ist das anders, es werden veränderliche Einwirkungen der Natur festgehalten und die Schiffe auf See bewegen sich.
 
 Dieser kleine Unterschied zeigt die Notwendigkeit auf, die Position und den Kurs seines Schiffes auf See immer ermitteln zu können.
 
 
-\section{Geographische Koordinaten}
+\subsection{Geographische Koordinaten}
+Bereits der griechische Astronom Claudius Ptolemäus verwendete in seiner Geographike Hyphegesis ein Gradnetz aus Längen- und Breitengraden. Dabei war sein Null-Meredian der bis ins 19. Jahrhundert verwendete Ferro-Meredian. Erst nach der Wiederentdeckung anfangs 15. Jahrhundert und der Übersetzung in die Lateinische Sprache setzte sich die Geographike Hyphegesis und damit das Ptolemäische Gradsystem durch. //
+Mit dem Vertrag von Tordesillas von 1494 gewann das Gradnetz an politischer Bedeutung und bürgerlichte sich ein.
+Im Jahr 1884 wurde der Nullmeredian Ferro-Meredian durch den noch heute gültigen Greenwich Meredian welcher in Grossbritannien seit 1738 in gebrauch war ersetzt.
 
-Nachdem klar war, das die Erde eine Kugel ist, wurde diese in ein Gradnetz aufgeteilt. Dabei wurden die Angaben für eine exakte Ortsbestimmung klar definiert und die bis heute gültigen Koordinaten bestimmt.
-Dabei muss man sich nochmals in Erinnerung rufen, dass sich die Erde in 24h einmal um ihre eigene Achse dreht. Nach $360 ^{\circ}$ 
-und somit einer vollen Umdrehung, steht sie wieder in ihrer Ursprungsposition und ein neuer Tag beginnt.
-
-Die Koordinaten setzen sich aus folgenden Komponenten zusammen:
-
+Zur geografischen Ortsbestimmung und damit der Festlegung seines eigenen Standortes auf einer Karte sind Längen- und Breitengrad nötig. \\
+Die Koordinaten werden traditionell im Sexagesimalsystem angegeben und setzen sich aus folgenden Komponenten zusammen:
 \[
 \begin{aligned}
 &\text{Grad } (^{\circ})
@@ -527,8 +519,7 @@ Die Koordinaten setzen sich aus folgenden Komponenten zusammen:
 \end{aligned}
 \]
 
-Die Erdoberfläche wurde in je 360 Breiten- und Längengrade eingeteilt. Die Breitengrade haben zueinander einen Abstand von 111.31 km, dies entspricht auch dem Abstand der Längengrade am Äquator mit Zunehmender Nähe zu den Polen, nimmt dieser Abstand ab.
-
+Die Erdoberfläche wurde in je 360 Breiten- und Längengrade eingeteilt. Die Breitengrade haben zueinander einen Abstand von 111.31 km, dies entspricht auch dem Abstand der Längengrade am Äquator, welcher mit Zunehmender Nähe zu den Polen ab nimmt.
 \[
 \begin{aligned}
 &1^{\circ}
@@ -543,39 +534,45 @@ Die Erdoberfläche wurde in je 360 Breiten- und Längengrade eingeteilt. Die Bre
 \end{aligned}
 \]
 
-Berechnet man nun die Erdumdrehung von 360°, erhält man genau den Erdumfang am Äquator: \begin{align*} 40’074 \text{ km.}\end{align*}
+Eine ganze Erdumdrehung sind $360 ^{\circ}$ was 1440 Minuten entspricht, dabei erhält man genau den Erdumfang am Äquator:
+\begin{align*} 40’074 \text{ km.}\end{align*}
 
-Dabei geben die Bogenminuten und -sekunden dem Standort die gewünschte Exaktheit. Mit den vollständigen Koordinaten lässt sich der Standort auf einer Landkarte exakt bestimmen und einzeichnen.
+Nach einer vollen Umdrehung der Erde stellt sie sich wider in ihrer Ursprungsposition ein und ein neuer Tag beginnt. Dies Zeit das die Koordinaten in direkten Zusammenhang mit der Zeit stehen, diese Erkenntnis wird später für die Navigation auf See von grosser Bedeutung.
+
 
 \subsection{Erdachsenneigung}
-
-Die Erdachse oder auch Rotationsachse der Erde ist um ca. $23.5^{\circ}$ geneigt.
-Dadurch lassen sich Phänomene wie die vier Jahreszeiten sowie die unterschiedliche Längen der einzelnen Tage herleiten.
-Für die nautische Navigation hat dies eine grosse Bedeutung, da je nach Neigung andere Sterne zu sehen sind, auch die Sonne ist an einem anderen Ort am Himmel zu finden.
+Die Erdachse oder auch Rotationsachse genannt ist um ca. $23.5^{\circ}$ geneigt.
+Dadurch lassen sich Phänomene wie die vier Jahreszeiten oder die verschiedenen längen der Tage beobachten.
+Für die nautische Navigation hat die Erdneigung eine grosse Bedeutung, da je nach Neigung andere Sterne zu beobachten sind, auch ist die Sonne an einem anderen Ort am Himmel zu finden.
 
 \begin{center}
         \includegraphics[width=0.5\textwidth]{kugel/1Ekliptik.jpg}
     \captionof{figure}{Bild Erdneigung}
 \end{center}
 
+
+XXXX
+
 Der Himmelsäquator ist die Linie, die orthogonal zur Sonne verläuft.
-Die Ekliptil-Linie ist die Linie, die orthogonal zur Erdachse verläuft.
+Die Ekliptik-Linie ist die Linie, die orthogonal zur Erdachse verläuft.
 Der Schnittpunkt dieser Kreise wird als Frühlings- / Herbstpunkt bezeichnet und ist jeweils am 21. März / 21. Oktober des Jahres.
 Der Frühlingspunkt $\Upsilon$ wird oft als Gestirnspunkt im nautischen Dreieck verwendet, genaueres wird im Kapitel zum nautischen Dreieck erklärt.
 
 
+XXXX
+
 \subsection{Zeitzonen der Erde} \label{Zeitzonen} 
-Wenn man nun die verschiedenen Zeitzonen der Erde betrachtet, macht die Verschiebung von jeweils einer Stunde durchaus Sinn, es lässt sich auf die Längengrade schliessen.
+Wenn man nun die verschiedenen Zeitzonen der Erde betrachtet, macht die Verschiebung von jeweils genau einer Stunde durchaus Sinn, es lässt sich auf die Längengrade schliessen.
 Zwischen den verschiedenen Zeitzonen liegen 15 Längengrade:
 \begin{align*}
 \text{15 Längengrade à 4 Minuten = 60 Minuten Zeitverschiebung = ca. 1665 km}
 \end{align*}
 
-Dabei ist die Zeitzone in welcher Mitte sich der Greenwich Meredian befindet die \textit{Greenwich Mean Time (GMT)} welche bis 1928 als Weltzeit galt. Im Jahr 1972 wurde diese umbenannt in die \textit{Coordinated Universal Time (UTC)} und wir von da an als Weltzeit $\pm$ 0.00 verwendet.
+Dabei ist die Zeitzone in welcher Mitte sich der Greenwich Meredian befindet die \textit{Greenwich Mean Time (GMT)} welche bis 1928 als Weltzeit galt. Im Jahr 1972 wurde diese umbenannt in die \textit{Coordinated Universal Time (UTC)} und wir von da an als Weltzeit $\pm$ 0.00 verwendet, der Meredian blieb der selbe.
 
 
 \section{Der Breitengrad}
-Die Breitengrade bilden die bereits genannten Kleinkreise auf der Kugeloberfläche. Sie verlaufen in einem Abstand von genau 111 km parallel zum Äquator. Dabei stellt  dieser genau die Mitte zwischen Nord- und Südpol dar und teilt die Erdkugel in zwei gleiche Hälften. Somit wird von nördlicher und südlicher Breite gesprochen, je nach dem auf welcher Halbkugel man sich befindet.
+Die Breitengrade bilden die bereits genannten Kleinkreise auf der Kugeloberfläche. Sie verlaufen in einem Abstand von etwa 111 km parallel zum Äquator. Dabei stellt dieser genau die Mitte zwischen Nord- und Südpol dar und teilt die Erdkugel in zwei gleich grosse Hälften. Dabei bildet der Äquator den natürlichen Nullpunkt der Breitengrade. Um zu wissen auf welcher Halbkugel man sich befindet, spricht man von nördlicher und südlicher breite oder gibt die Werte für Nord Positiv und für Süd Negativ an.e.
 
 \begin{center}
         \includegraphics[width=0.3\textwidth]{kugel/Beispielbild.jpg}
@@ -595,24 +592,25 @@ Die geografische Breite eines Standortes ist nichts anderes, als der Winkel am E
 
 
 \subsection{Navigation mit den Breitengraden}
-Da der Breitengrad bereits sehr früh ziemlich präzise bestimmt werden könnte, nutzten bereits die Seefahrer um Christoph Kolumbus den Breitengrad zur Navigation ihrer Flotten.
+Da der Breitengrad bereits sehr früh ziemlich präzise bestimmt werden konnte, nutzten bereits die Seefahrer um Christoph Kolumbus den Breitengrad zur Navigation ihrer Flotten.
 Den dieser lässt sich ziemlich einfach aus dem höchsten Sonnenstand oder einem Fixstern bestimmen. Dabei wird mit einem Jakobsstab\footnote{%
 Der Jakobsstab ist ein früheres astronomisches Instrument zur Winkelmessung und wurde vor allem in der Seefahrt verwendet. Er ist in der Nautik der Vorläufer des Sextanten.} (später Sextant\footnote{%
-Der Sextant ist ein nautisches Messinstrument zur Winkelmessung von Horizont und Fixstern (Gestirn)}) der Winkel zwischen dem Horizont und dem Fixstern gemessen. Der Winkel welchen man erhält, zieht man von 90° ab und erhält somit die geografische Breite. \\
+Der Sextant ist ein nautisches Messinstrument zur Winkelmessung von Horizont und Fixstern (Gestirn)}) der Winkel zwischen dem Horizont und dem höchsten Sonnenstand oder einem Fixstern gemessen. Der Winkel welchen man erhält, zieht man von 90° ab und erhält somit die geografische Breite. \\
 
 \begin{center}
         \includegraphics[width=1\textwidth]{kugel/1Breitengrad.jpg}
     \captionof{figure}{Bild}
 \end{center}
 
-Wenn man sich auf der Nordhalbkugel befindet, ist der Polarstern ein sehr guter Fixstern. Befindet sich ein Schiff nun sehr nahe am Nordpol, steht dieser nahezu senkrecht am Himmelszelt bei $90^{\circ}$. Würde es aber nahe dem Äquator stehen, erscheint dieser am Horizont bei $0^{\circ}$.
+Wenn man sich auf der Nordhalbkugel befindet, ist der Polarstern ein sehr guter Fixstern. Befindet sich ein Schiff nun sehr nahe am Nordpol, steht dieser nahezu senkrecht am Himmelszelt bei $90^{\circ}$. Würde es aber nahe dem Äquator stehen, erscheint dieser am Horizont bei $0^{\circ}$ und wäre je nach dem nicht mehr zu sehen.
+
 
 \subsection{Korrekturbeiwert}
-Die Breitengrade auf der Erde haben nicht alle den selben Radius. Daher segelt man am Äquator viel länger dem Breitengrad entlang um zum nächsten Längengrad zu kommen wie in der nähe des Nord- oder Südpols.
+Da Breitengrade Kleinkreise sind, haben auch diese nicht immer den selben Radius. Daher segelt man am Äquator viel länger dem Breitengrad entlang um zum nächsten Längengrad zu kommen als in der nähe des Nord- oder Südpols.
 
 \[
 \begin{aligned}
-&\text{1} (^{\circ})
+&\text{1}^{\circ}
 &
 &\text{\bigg \vert}
 &
@@ -621,12 +619,9 @@ Die Breitengrade auf der Erde haben nicht alle den selben Radius. Daher segelt m
 &\text{\bigg \vert}
 &
 &\text{111.13 km}
-\end{aligned}
-\]
-
-\[
-\begin{aligned}
-&\text{0.25} (^{\circ})
+\\
+\\
+&\text{0.25}^{\circ}
 &
 &\text{\bigg \vert}
 &
@@ -635,12 +630,9 @@ Die Breitengrade auf der Erde haben nicht alle den selben Radius. Daher segelt m
 &\text{\bigg \vert}
 &
 &\text{27.78 km}
-\end{aligned}
-\]
-
-\[
-\begin{aligned}
-&\text{0.004166} (^{\circ})
+\\
+\\
+&\text{0.004166}^{\circ}
 &
 &\text{\bigg \vert}
 &
@@ -652,7 +644,7 @@ Die Breitengrade auf der Erde haben nicht alle den selben Radius. Daher segelt m
 \end{aligned}
 \]
 
-Um die Minderung der Strecke zu erhalten, müssen wir den Cosinus des gemessenen Breitengrades berechnen und diesen mit der Abweichung auf dem Äquator von 1 Sekunde multiplizieren.
+Um die verminderte Strecke zu erhalten, müssen wir den Cosinus des gemessenen Breitengrades berechnen und diesen mit der Abweichung auf dem Äquator von 1 Sekunde multiplizieren.
 
 \begin{center}
         \includegraphics[width=0.3\textwidth]{kugel/Beispielbild.jpg}
@@ -661,23 +653,25 @@ Um die Minderung der Strecke zu erhalten, müssen wir den Cosinus des gemessenen
 
 \[
 \begin{aligned}
-&\cos 90^\circ \cdot 463m = 463m
+&\cos 90^\circ \cdot 463\text{m} = 463\text{m}
 &
 &\text{\bigg \vert}
 &
-&\cos 50^\circ \cdot 463m = 297.61m
+&\cos 50^\circ \cdot 463\text{m} = 297.61\text{m}
 &
 &\text{\bigg \vert}
 &
-&\cos 0^\circ \cdot 463m = 0m
+&\cos 0^\circ \cdot 463\text{m} = 0\text{m}
 \end{aligned}
 \]
 
-Dies zeigt auf je näher man den Polen ist, desto weniger weit muss man Segeln um den nächsten Längengrad zu erreichen.
+Dies zeigt, je näher man den Polen ist, desto weniger weit muss man Segeln um den nächsten Längengrad zu erreichen.
+
+
 
 \section{Der Längengrad}
 Die Längengrade bilden die bereits genannten Grosskreise auf der Kugeloberfläche.
-Sie schneiden den Äquator im rechten Winkel, haben dort einen Abstand von 111 km zueinander und verbinden die Pole. Anders wie bei der geografischen Breite, ist in der Natur kein Längengrad gegeben welcher den Nullpunkt darstellt.
+Sie schneiden den Äquator im rechten Winkel, haben dort einen Abstand von etwa 111 km zueinander. Sie verbinden die beiden Pole Nord und Süd miteinander. Anders als bei der geografischen Breite, ist in der Natur kein Längengrad gegeben welcher den Nullpunkt darstellt.
 
 \begin{center}
         \includegraphics[width=0.5\textwidth]{kugel/1Langengrad.jpg}
@@ -690,48 +684,71 @@ Sie schneiden den Äquator im rechten Winkel, haben dort einen Abstand von 111 k
 Die geografische Länge ist der Winkel an der Erdachse zum Nullmeridian.
 \end{definition}
 
-\subsection{Navigation mit den Längengraden}
-Die geografische Länge lässt sich nicht so einfach bestimmen wie deren Breite. Für die Berechnung auf See benötigt man eine Referenzzeit eines Ortes mit bekannter Länge.
-In der Zeit der Entdecker gab es noch keine mechanischen Uhren. Die Sonnenuhr war zudem ungeeignet, da diese nur die Uhrzeit am Standort mass und nicht die am Referenzort selbst. Die erste Pendeluhr wurde erst Mitte des 17. Jahrhunderts erfunden, was in der Schifffahrt aber auch nicht die Lösung brachte.\\
-Pendeluhren auf einem Schiff sind ungeeignet, da das Pendel mit dem Wellengang aus dem Takt gebracht wird und somit die Uhr falsch geht.
-Zu ungenau und gegen äussere Erschütterungen zu empfindlich waren später auch die federgetriebenen Uhren und die Unruh. Dazukamen die verschiedenen Klimazonen welche ein Schiff zu durchqueren hatten. Das Metall zog sich viel zu fest zusammen oder dehnte sich aus, was dazu führte das die Uhr unregelmässig lief.
+\begin{center}
+        \includegraphics[width=0.3\textwidth]{kugel/Beispielbild.jpg}
+    \captionof{figure}{Bild}
+\end{center}
 
-Das sogenannte „Längenproblem“ stellte nicht nur bei der Navigation auf See ein Problem dar, es ergaben sich auch wirtschaftliche Konsequenzen. Die Schiffe mussten bis zur gewünschten geografischen Breite navigieren und segelten dann den Breitengrad entlang. Dabei waren die Schiffe oft Wochenlang unterwegs und segelten die „Breiten ab“ um an die gewünschte Position zu kommen. Dies führte zu erheblichen Zeitverlusten und viel längeren Reisezeiten.
+\subsection{Navigation mit den Längengraden}
+Die geografische Länge lässt sich nicht so einfach bestimmen wie deren Breite.
+Für die Berechnung auf See benötigt man eine Referenzzeit eines Ortes mit bekannter Länge.
+In der Zeit der Entdecker gab es noch keine mechanischen Uhren. Die Sonnenuhr war zudem ungeeignet, da diese nur die Uhrzeit am Standort mass und nicht die am Referenzort selbst. Die erste Pendeluhr wurde Mitte des 17. Jahrhunderts erfunden, was in der Schifffahrt aber auch nicht die Lösung brachte.\\
+Pendeluhren auf einem Schiff sind ungeeignet, da das Pendel mit dem Wellengang aus dem Takt gebracht wird und somit die Uhr falsch geht.
+Zu ungenau und gegen äussere Erschütterungen sehr empfindlich waren später die federgetriebene Uhren und die Unruh. Dazukamen die verschiedenen Klimazonen welche ein Schiff zu durchqueren hatten. Das Metall zog sich viel zu fest zusammen oder dehnte sich aus, was dazu führte das die Uhr unregelmässig lief.
+
+Das sogenannte „Längenproblem“ stellte nicht nur in der Navigation auf See ein Problem dar, auch die Wirtschaft hatte darunter zu leiden. Die Schiffe mussten bis zur gewünschten geografischen Breite navigieren und segelten dann den Breitengrad entlang um auch wirklich auf der gewünschten Position anzukommen. Dabei waren die Schiffe oft Wochenlang unterwegs und segelten die „Breiten ab“ um an die gewünschte Positionen zu kommen. Dies führte zu erheblichen Zeitverlusten und viel längeren Reisezeiten.
+
 
 
 \section{The Board of Longitude - Das Längenproblem}
-Das Längenproblem beschäftigte alle grossen Seefahrernationen Europas. Die fehlenden Längengrade bei der Navigation führten zu vielen Schiffsunglücken. Dies zeigt auch die Dringlichkeit der Lösung dieses Problems auf: Nicht selten kam es vor, das sich auf den verloren gegangenen Schiffen Schätze in der Höhe von halben britischen Staatshaushalten befanden. Der Verlust solcher Schiffe war enorm.\\
+Das Längenproblem beschäftigte alle grossen Seefahrernationen Europas. Die fehlenden Längengrade bei der Navigation führten zu vielen Schiffsunglücken. Nicht selten kam es vor, das sich auf den untergegangenen Schiffen Schätze in der Höhe von halben britischen Staatshaushalten befanden. Der Verlust solcher Schiffe war enorm.\\
 Bereits um 1600 hatte der König von Spanien ein Preisgeld ausgeschrieben für denjenigen welcher eine Lösung für das Problem präsentieren konnte. Leider ohne Erfolg. \\
-Nach einem tragischen Unglück im Jahr 1707 beidem der siegreiche Admiral Sir Cloudesley und seine 1’450 Mann sein Leben liessen, indem sie auf die Scilly-Inseln kurz vor Land’s End aufliefen und dabei die 21 Schiffe sanken, rückte das Problem wieder in den Vordergrund.
-Sieben Jahre später, nach einer Petition von William Whiston und Humphry Ditton welche von Sir Isaac Newton und Edmond Halley untermauert wurde, reagierte das britische Parlament.
-Es schrieb folgende Preisgelder für eine praktisch, brauchbare Lösung aus:\\
-
-\begin{itemize}
-\item £ 20’000 - Abweichung von max. $\frac{1}{2}^{\circ}$
-\item £ 15’000 - Abweichung von $\frac{2}{3}^{\circ}$
-\item £ 10’000 - Abweichung von max. $1 ^{\circ}$
-\end{itemize}
-
-Im Kapitel der Korrekturbeiwertberechnung des Breitengrades haben wir erfahren, das eine Abweichung von $1 ^{\circ}$ am Äquator ca. 111km entsprechen - dies sind 60 Seemeilen.
-Auf der Höhe des Ärmelkanals und damit London, beträgt die Abweichung nur noch 74km und somit 40 Seemeilen.//
+Nach einem tragischen Unglück im Jahr 1707, beidem der siegreiche Admiral Sir Cloudesley und seine 1’450 Mann sein Leben liessen, indem sie auf die Scilly-Inseln kurz vor Land’s End aufliefen und dabei die 21 Schiffe sanken, rückte das Problem wieder in den Vordergrund.
+Sieben Jahre später, und mithilfe einer Petition von William Whiston und Humphry Ditton welche von Sir Isaac Newton und Edmond Halley untermauert wurde, reagierte das britische Parlament.
+Es schrieb folgende Preisgelder für eine praktisch, brauchbare Lösung aus:
+\[
+\begin{aligned}
+&\text{20’000£}
+&
+&\text{\big \vert}
+&
+&\text{Für eine Abweichung von max.} \frac{1}{2}^{\circ} \text{(etwa 55.5 km am Äquator)}
+\\
+\\
+&\text{15’000£}
+&
+&\text{\big \vert}
+&
+&\text{Für eine Abweichung von max.} \frac{2}{3}^{\circ} \text{(etwa 74 km am Äquator)}
+\\
+\\
+&\text{10’000£}
+&
+&\text{\big \vert}
+&
+&\text{Für eine Abweichung von max.} 1 ^{\circ} \text{(etwa 111 km am Äquator)}
+\end{aligned}
+\]
+Eine Abweichung von 111km am Äquator entspricht 60 Seemeilen.
+Auf der Höhe des Ärmelkanals und damit nahe Londons, beträgt die Abweichung nur $1 ^{\circ}$ noch 74km und somit 40 Seemeilen.//
 Das Preisgeld entsprach einer enorm hohen Summe für diese Zeit. Der Kaufpreis für ein mittleres Schiff welches zur See fahren konnte lag bei etwa 1’500-2’500£, ein einzelner Arbeiter lebte mit 10£ im Jahr.
-Würde man dieses Problem heute mit einer Abweichung von einem halben Grad lösen, erhielte man 2’840’000£ was etwa einem Wert von 3’600’000 Schweizer Franken entspräche. 
+Würde man dieses Problem heute mit einer Abweichung von maximal einem halben Grad lösen, erhielte man 2’840’000£ was etwa einem Wert von 3’600’000 Schweizer Franken entspräche. 
 
-Damit die Lösungsvorschläge kontrolliert und verwaltet werden konnten, wurde die Board of Longitude (Längenkommission) gegründet. Ihr gehörten die bedeutendsten Astronomen und Mathematiker dieser Zeit an, aber auch der Präsident der Royal Society und damit niemand anderen als Sir Issac Newton.
+Damit die Lösungsvorschläge kontrolliert und verwaltet werden konnten, wurde die Board of Longitude (Längenkommission) gegründet. Ihr gehörten die bedeutendsten Astronomen und Mathematiker dieser Zeit an, aber auch berühmte Persönlichkeiten aus Grossbritannien wie der Präsident der Royal Society und damit niemand anderen als Sir Issac Newton.
+
 
 \subsection{John Harrison}
+Harrison brachte sich das Handwerk des Uhrmachers selbst bei. Im Alter von 20 Jahren im Jahr 1713 konstruierte er seine erste Pendeluhr. In den weiteren Jahren folgten noch weitere Pendeluhren und Standuhren. Durch die Einführung der Grasshopper-Hemmung und des Rostpendels, erreichten die Uhren eine enorme Genauigkeit für die damalige Zeit. Die Abweichung pro Monat betrug dabei nur etwa eine Sekunde. \\
+Erst 13 Jahre nach der Ausschreibung für die Lösung des Längenproblems tüftelte er an einer Konstruktion für eine Schiffsuhr und setzte sich mit dem Längenproblem auseinander.
+Namhafte Astronomen in ganz Europa suchten nach astronomischen Lösungen für das Problem, Harrison jedoch setzte auf genaue Uhren und war somit unabhängig davon ob man den Mond sah oder nicht.\\
+1728 folgte sein erstes Konzept für eine schiffstaugliche Uhr, 1735 präsentierte er sein erstes Modell die H1.
+Die Testfahrt mit der H1 an Board von London nach Lissabon und zurück, hielt die vorgeschriebene Genauigkeit ein und übertraf diese sogar. Jedoch hatte die Reisedauer nicht den vorgeschriebenen Bedingungen entsprochen.\\
+Das Hauptproblem war jedoch, das Harrison als nichtstudierter Laie einem gelehrten Gremium dem Board of Longitude gegenüber stand. Dies verzögerte seine Annahme um Jahrzehnte. Der Krieg zwischen Spanien und Grossbritannien spielte ihm ebenfalls nicht in die Karten. Seine weiteren Uhren die H2 und H3 wurden nie getestet, da man nicht wollte das der Feind eine dieser Uhren in die Hände bekam.
 
 \begin{center}
         \includegraphics[width=0.3\textwidth]{kugel/JohnHarrison.jpg}
     \captionof{figure}{Bild John Harrison}
 \end{center}
-
-Harrison brachte sich das Handwerk des Uhrmachers selbst bei. Im Alter von 20 Jahren im Jahr 1713 konstruierte er seine erste Pendeluhr. In den weiteren Jahren folgten noch weitere Pendeluhren und Standuhren. Durch die Einführung der Grasshopper-Hemmung und des Rostpendels, erreichten die Uhren eine enorme Genauigkeit für die damalige Zeit. Die Abweichung pro Monat betrug dabei nur etwa eine Sekunde. \\
-Erst 13 Jahre nach der Veröffentlichung des Preisgeldes rund um das Lösen des Längenproblems tüftelte er an einer Konstruktion für eine Schiffsuhr und setzte sich mit dem Längenproblem auseinander.
-Namhafte Astronomen in ganz Europa suchten nach astronomischen Lösungen für das Problem, Harrison jedoch setzte auf genaue Uhren und war somit unabhängig davon ob man den Mond sah oder nicht.\\
-1728 folgte sein erstes Konzept für eine schiffstaugliche Uhr, 1735 präsentierte er sein erstes Modell die H1.
-Die Testfahrt mit der H1 an Board von London nach Lissabon und zurück, hielt die vorgeschriebene Genauigkeit ein und übertraf diese sogar. Jedoch hatte die Reisedauer nicht den vorgeschriebenen Bedingungen entsprochen.\\
-Das Hauptproblem war jedoch, das Harrison als nichtstudierter Laie einem gelehrten Gremium dem Board of Longitude gegenüber stand. Dies verzögerte seine Annahme um Jahrzehnte. Der Krieg zwischen Spanien und Grossbritannien spielte ihm ebenfalls nicht in die Karten. Seine weiteren Uhren die H2 und H3 wurden nie getestet, da man nicht wollte das der Feind eine dieser Uhren erhielt.
 
 \begin{center}
         \includegraphics[width=0.2\textwidth]{kugel/HarrisonH4.jpg}
@@ -739,24 +756,27 @@ Das Hauptproblem war jedoch, das Harrison als nichtstudierter Laie einem gelehrt
 \end{center}
 
 Mit einem Durchmesser von 13cm und 1.45kg folgte im Jahr 1753 endlich der Durchbruch.
-Die Taschenuhr H4 stellte alle anderen vorherigen Uhren in den Schatten, auf einer 81-tägigen Fahr nach Jamaika zeigte sie eine Abweichung von nur 5 Sekunden.
-Das Gremium entschied aber wieder gegen Harrison und beauftragte ihn seine Uhr vor ihren Augen zu zerlegen, zu erklären und Konstruktionszeichnungen zu übergeben.
-Nachdem Harrison vom britischen Parlament ein Preisgeld in der Höhe von 10’000£ erhalten hatte um mit diesem Geld eine Kopie anzufertigen um zu beweisen das seine Uhr nicht nur zufällig so genau lief.\\
-Der bekannte  Londoner Uhrmacher Larcum Kendall fertigte danach eine Kopie der H4 an und zeigte somit das die Uhr den Anforderungen entsprach.\\
-Das Geld für Harrison aber weiterhin aus. Erst nachdem der britische König Georg III dem Parlament angedroht hatte persönlich zu erscheinen und Harrison das Geld zuzusprechen, schrieben diese ihm 3 Jahre vor seinem Tod weitere 8750£ zu.\\
-8 Monate vor seinem Tod mit der Rückkehr der K1 (Kopie der H4) ging die Vision Harrisons in Erfüllung. James Cook der berühmte britische Seefahrer und Entdecker nannte die Uhr liebevoll seinen \textit{nie versagenden Führer}.
+Die Taschenuhr H4 stellte alle anderen Uhren in den Schatten. Auf einer 81-tägigen Fahr nach Jamaika zeigte sie eine Abweichung von nur 5 Sekunden.
+Das Gremium entschied erneut gegen Harrison und beauftragte ihn seine Uhr vor ihren Augen zu zerlegen, zu erklären und Konstruktionszeichnungen anzufertigen.
+Nachdem Harrison vom britischen Parlament ein Preisgeld in der Höhe von 10’000£ erhalten hatte um mit diesem Geld eine Kopie anzufertigen, um den Beweis zu liefern das seine Uhr nicht nur zufällig so genau lief.\\
+Der bekannte Londoner Uhrmacher Larcum Kendall fertigte danach eine Kopie der H4 an und zeigte somit das die Uhr den Anforderungen entsprach.\\
+Das Geld blieb für Harrison aber weiterhin aus. Erst nachdem der britische König Georg III dem Parlament angedroht hatte persönlich zu erscheinen und Harrison das Geld zuzusprechen, schrieben dieses ihm 3 Jahre vor seinem Ableben weitere 8750£ zu.\\
+8 Monate vor seinem Tod und der Rückkehr der K1 (Kopie der H4) ging die Vision Harrisons in Erfüllung, es war nun definitiv bewiesen das seine Uhr auf dem offenen Meer zur Bestimmung des Längengrades taugte. James Cook der berühmte britische Seefahrer und Entdecker welcher die Uhr K1 auf See mitnehmen und testen durfte, nannte die Uhr liebevoll seinen \textit{nie versagenden Führer}.
+Auf der Grundlage Harrisons H4 wurden die Schiffschronometer noch lange Zeit gebaut.
+
 
 
 \subsection{Tobias Mayer}
+Etwa zur gleichen Zeit wie John Harrison entwickelte Tobias Mayer\footnote{%
+Tobias Mayer (1723-1762) studierte nie an einer Universität und war trotzdem ein annerkannter Wissenschaftler seiner Zeit in den Bereichen Astronomie, Geo- und Kartograf, Mathematiker und Physiker.}  ebenso eine Lösung für das Längenproblem. Obschon er nie an 
+
 
 \begin{center}
         \includegraphics[width=0.3\textwidth]{kugel/TobiasMayer.jpg}
     \captionof{figure}{Bild}
 \end{center}
 
-Tobias Mayers\footnote{%
-Tobias Mayer (1723-1762) studierte nie an einer Universität und war trotzdem ein annerkannter Wissenschaftler seiner Zeit in den Bereichen Astronomie, Geo- und Kartograf, Mathematiker und Physiker.} 
- Mondkarten galten ein halbes Jahrhundertlang als unübertroffen. Der Ruhm galt aber hauptsächlich seinen Mondkarten welche er im Jahr 1755 in einer erweiterten Version dem britischen Parlament vorlegte.\\
+Seine Mondkarten galten ein halbes Jahrhundertlang als unübertroffen. Der Ruhm galt aber hauptsächlich seinen Mondkarten welche er im Jahr 1755 in einer erweiterten Version dem britischen Parlament vorlegte.\\
 Mit ihnen konnte man die Geografische Länge bis auf 5 Bogensekunden genau bestimmen. Dies entsprach am Äquator $0.5 ^{\circ}$, was wiederum eine Genauigkeit von 55.565km entsprach.\\
 Eine Lösung für das Längenproblem war gefunden. Die Publikation seiner Mondtafeln fand 1767 unter dem Titel \textit{Theoria lunae juxta systema Newtonianum} in London statt, 5 Jahre nach Mayers Tod. 
 Seine Witwe schickte die publizierten Mondkarten über die Universität Göttingen nach Grossbritannien. Sie erhielt von der britischen Regierung eine Prämie in der Höhe von £ 3’000.-.
@@ -767,6 +787,11 @@ Im Jahr 1935 wurde ein Krater auf der westlichen Mondvorderseite nach dem deutsc
         \includegraphics[width=0.3\textwidth]{kugel/Mondkarte.jpg}
     \captionof{figure}{Mondkarte}
 \end{center}
+
+
+
+
+XXXXXXX
 
 
 \section{Nautisches oder Astronomisches Dreieck}
@@ -832,26 +857,6 @@ Durchlaufen des höchsten und tiefsten Punktes der täglichen Bahn eines Gestirn
 \subsection{Anwendung}
 
 
-
-
-
-\begin{center}
-        \includegraphics[width=0.3\textwidth]{kugel/Beispielbild.jpg}
-    \captionof{figure}{Bild}
-\end{center}
-
-
-
-
-
-\section{Die Vermessung der Welt}
-Wir schreiben das Jahr 1818 und kehren in die Zeit des Mathematikers Carl Friedrich Gauss zurück. Neben dem liebevoll genannten „kleinen Gauss“ und anderen herausragenden Mathematischen Leistungen, beschäftigte er in den Folgejahren mit der Vermessung des Königreichs Hannovers und verfasste auf 61 Blättern das Kartenwerk \textit{Gauss’sche Landesaufnahme der 1815 durch Hannover erworbenen Gebiete}.
-\cite{skript:tabea}
-
-
-$\Rightarrow$
-Hubble Teleskop 
-24. April 1990
 
 
 \input{kugel/main.bib}
