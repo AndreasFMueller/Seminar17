@@ -84,7 +84,7 @@ transport.png:   transport.pov
 
 negativ:	negativ.jpg
 negativ.jpg:	negativ.png
-	convert negativ.png \
+	convert -extract 858x1080+534+0 negativ.png \
 		-units PixelsPerInch -density 300 negativ.jpg
 negativ.png:	negativ.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
 	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Onegativ.png \
@@ -92,7 +92,7 @@ negativ.png:	negativ.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
 
 eben:	eben.jpg
 eben.jpg:	eben.png
-	convert eben.png \
+	convert -extract 706x1080+464+0 eben.png \
 		-units PixelsPerInch -density 300 eben.jpg
 eben.png:	eben.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
 	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Oeben.png \
@@ -100,7 +100,7 @@ eben.png:	eben.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
 
 positiv:	positiv.jpg
 positiv.jpg:	positiv.png
-	convert positiv.png \
+	convert -extract 806x1080+406+0 positiv.png \
 		-units PixelsPerInch -density 300 positiv.jpg
 positiv.png:	positiv.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
 	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Opositiv.png \
