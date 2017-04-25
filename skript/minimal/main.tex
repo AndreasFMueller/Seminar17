@@ -87,6 +87,8 @@ Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fl�
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
+% \printbibliography[heading=subbibliography]
+% \end{refsection}
 
 
 \section{Defintion der Minimalfläche}
@@ -115,6 +117,7 @@ In diesem Fall ist die Krümmung eines Seifenfilms proportional zum Druckuntersc
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.6]{SoapFilm.jpg}
+  \includegraphics[scale=0.6]{minimal/SoapFilm.jpg}
   \caption{Seifenfilm bildet Minimalfläche} 
 \end{figure}
 
@@ -125,6 +128,7 @@ Def: Eine Fläche $M \subset \mathbf{R}^{3}$ ist genau dann minimal wenn jeder P
 \begin{figure}[H]
   \centering
   \includegraphics[scale=1]{cis-Polyisopren.PNG}
+  \includegraphics[scale=1]{minimal/cis-Polyisopren.PNG}
   \caption{Kohlenstoffkette von Naturkautschuk} 
 \end{figure}
 
@@ -156,12 +160,15 @@ Demzufolge muss das integral \eqref{S1} minimiert werden.
   
   S= \int 2 pi r ds !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   
+\begin{equation} \label{S1}  
+  S= \int 2 \pi r ds 
 \end{equation}
 Durch einsetzen von Gleichung \eqref{ds} erhält man die Gleichung \eqref{S2}, welche man als Funktion $F(r,\dot r, z)$ noch verallgemeinert schreiben kann.
 \begin{equation} \label{S2}
   
   S=2 pi \int_(-L)^(+L) r\sqrt{(1+\dot r^2)}dz =2 pi \int_(-L)^(+L) F(r,\dot r, z) dz !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   
+  S=2 pi \int_{-L}^{+L} r\sqrt{(1+\dot r^2)}dz =2 \pi \int_(-L)^(+L) F(r,\dot r, z) dz 
 \end{equation}
 
 
@@ -174,15 +181,29 @@ Hat man ein kompliziertes Integral welches man nicht einfach fundamental lösen 
   
   I(y)= \int_a^b F(x,y(x),\dot y(x))dx      
 
+\begin{equation} \label{E_DGL1}  
+  I(y)= \int_a^b F(x,y(x),\dot y(x))dx       
 \end{equation}
+
 \begin{equation} \label{E_DGL2}
   
    
+\left(\frac{\partial F}{\partial y}\right)- \frac{d}{dx} \left(\frac{\partial F}{\partial \dot{y}}\right)=0         
+\end{equation}
 
   \frac{\left(\partial F}{\partial y\right)}- (\frac{d}{dx}) (\frac{\partial F}{\partial \dot{y}})=0
+Für die Gleichung des Katanoids \eqref{S2} erhält man somit die DGL \eqref{K_DGL1}.
+\begin{equation} \label{K_DGL1}
+\left(\frac{\partial F}{\partial r}\right)- \frac{d}{dz} \left(\frac{\partial F}{\partial \dot{r}}\right)=0    
 \end{equation}
 \begin{equation}
 \dot{\left(\frac{\partial L}{\partial \dot{\varphi}}\right)}-\frac{\partial L}{\partial \varphi}=0
+
+Die Gleichung \eqref{K_DGL_H} wird nun schrittweise umgeformt bis eine  Differentialgleichung zweiter Ordnung \eqref{K_DGL_R} entsteht.
+\begin{equation} \label{K_DGL_H}
+\sqrt{1+{\dot {r}}^2}-\frac{ d }{ dx } \left( r \frac{ 1 }{2  }\left( {1+{\dot {r}}^2}  \right)^{-1/2} 2 \dot {r}\right)=0
+\\
+\left(1+{\dot {r}}^2  \right)^{-1/2}-(r \frac{ -1 }{2  } \left({1+{\dot {r}}^2}  \right)^{-3/2} 2 \dot{r} \ddot{r}  \dot{r}+ r \left({1+{\dot {r}}^2}  \right)^{-1/2} \ddot{r} +\dot{r} \left({1+{\dot {r}}^2}  \right)^{-1/2} \dot{r}=0
 \end{equation}
 
 Für die Glrichung des Katanoids \eqref{S2} erhält man somit die DGL \eqref{K_DGL1}.
@@ -191,7 +212,29 @@ Für die Glrichung des Katanoids \eqref{S2} erhält man somit die DGL \eqref{K_D
    
   \frac{\partial F}}{\partial r}-\frac{d}}{dz}(\frac{\partial F}}{\partial \dot r})=0
   
+\begin{equation} \label{K_DGL_R}
+1+{\dot {r}}^2=r  \ddot{r}
 \end{equation}
+\subsubsection{Berechnen}
+Die Differenzialgleichung zweiter Ordnung \eqref{K_r} kann mit Hilfe eini-ger mathematischer Umformungen, Aufleiten und hyperbolische Trigonometrie berechnet werden.
+
+\begin{equation} \label{K_r}
+r=K cosh(\frac{z-\xi}{K})
+\end{equation}
+
+Bei $z=+_L$ ergibt sich \eqref{K_rL}.
+\begin{equation} \label{K_rL}
+K cosh(\frac{L-\xi}{K})=K cosh(\frac{-L-\xi}{K})
+\end{equation}
+
+Da der $cosh$ eine gerade Funktion ist, kommt man entweder auf $L-\xi=-L-\xi$ oder auf $L-\xi=-(L-\xi)$.
+Beim ersten Fall wäre $L=-L$ was keinen Sinn ergibt da dann die Fläche gleich Null währe. Beim zweiten Fall muss $\xi=0$ sei also ist die Lösung für das Katanoid die Funktionsgleichung \eqref{K_rz}.
+
+\begin{equation} \label{K_rz}
+r(z)=K cosh(\frac{z}{K})
+\end{equation}
+
+
 
 
 
