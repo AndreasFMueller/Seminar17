@@ -3,7 +3,6 @@
 \begin{refsection}
 \chapterauthor{Nadja Rutz und Ambroise Suter}
 
-
 \section{Einleitung}
 %\rhead{Einleitung}
 
@@ -85,8 +84,8 @@ Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fl�
   \caption{Vergleich Grauss und Mittlerkrümmung} 
 \end{figure}
 
-\printbibliography[heading=subbibliography]
-\end{refsection}
+% \printbibliography[heading=subbibliography]
+% \end{refsection}
 
 
 \section{Defintion der Minimalfläche}
@@ -114,7 +113,7 @@ In diesem Fall ist die Krümmung eines Seifenfilms proportional zum Druckuntersc
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.6]{SoapFilm.jpg}
+  \includegraphics[scale=0.6]{minimal/SoapFilm.jpg}
   \caption{Seifenfilm bildet Minimalfläche} 
 \end{figure}
 
@@ -124,7 +123,7 @@ Def: Eine Fläche $M \subset \mathbf{R}^{3}$ ist genau dann minimal wenn jeder P
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=1]{cis-Polyisopren.PNG}
+  \includegraphics[scale=1]{minimal/cis-Polyisopren.PNG}
   \caption{Kohlenstoffkette von Naturkautschuk} 
 \end{figure}
 
@@ -147,21 +146,16 @@ Formt man diese Gleichung um erhält man die Gleichung \eqref{ds}.
 
 \begin{equation} \label{ds}
   ds=\sqrt{dz^2(1+\frac{dr^2}{dz^2})}= \sqrt{dz^2(1+\dot r^2)}=\sqrt{(1+\dot r^2)}dz
- 
 \end{equation}
 \subsubsection{Minimalfläche}
 Der Seifenfilm versucht automatisch sich im minimalenergetischen Zustand zu befinden. In diesem Zustand ist dann auch die Fläche $S$ des Seifenfilms minimal.
 Demzufolge muss das integral \eqref{S1} minimiert werden. 
-\begin{equation} \label{S1}
-  
-  S= \int 2 pi r ds !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  
+\begin{equation} \label{S1}  
+  S= \int 2 \pi r ds 
 \end{equation}
 Durch einsetzen von Gleichung \eqref{ds} erhält man die Gleichung \eqref{S2}, welche man als Funktion $F(r,\dot r, z)$ noch verallgemeinert schreiben kann.
 \begin{equation} \label{S2}
-  
-  S=2 pi \int_(-L)^(+L) r\sqrt{(1+\dot r^2)}dz =2 pi \int_(-L)^(+L) F(r,\dot r, z) dz !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  
+  S=2 pi \int_{-L}^{+L} r\sqrt{(1+\dot r^2)}dz =2 \pi \int_(-L)^(+L) F(r,\dot r, z) dz 
 \end{equation}
 
 
@@ -170,25 +164,49 @@ Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differe
 Die Eulerschen Differenzialgleichung der Variationsrechnung wird hier nicht bewiesen nur die anwendungsweise erläutert.
 Hat man ein kompliziertes Integral welches man nicht einfach fundamental lösen kann um die Extremwerte zu bestimmen kann man die Eulersche DGL anwenden. Diese besagt, dass anstelle des Ausrechnens eines einer Integralfunktion der Art \eqref{E_DGL1} kann auch die DGL \eqref{E_DGL2} gelöst werden um die Extremwerte solcher Funktionen zu finden.
 
-\begin{equation} \label{E_DGL1}
-  
-  I(y)= \int_a^b F(x,y(x),\dot y(x))dx      
-
+\begin{equation} \label{E_DGL1}  
+  I(y)= \int_a^b F(x,y(x),\dot y(x))dx       
 \end{equation}
+
 \begin{equation} \label{E_DGL2}
-  
-   
-  \frac{\partial F}}{\partial y}-\frac{d}}{dx}(\frac{\partial F}}{\partial \dot y})=0
-  
+\left(\frac{\partial F}{\partial y}\right)- \frac{d}{dx} \left(\frac{\partial F}{\partial \dot{y}}\right)=0         
 \end{equation}
 
-Für die Glrichung des Katanoids \eqref{S2} erhält man somit die DGL \eqref{K_DGL1}.
+Für die Gleichung des Katanoids \eqref{S2} erhält man somit die DGL \eqref{K_DGL1}.
 \begin{equation} \label{K_DGL1}
-  
-   
-  \frac{\partial F}}{\partial r}-\frac{d}}{dz}(\frac{\partial F}}{\partial \dot r})=0
-  
+\left(\frac{\partial F}{\partial r}\right)- \frac{d}{dz} \left(\frac{\partial F}{\partial \dot{r}}\right)=0    
 \end{equation}
+
+Die Gleichung \eqref{K_DGL_H} wird nun schrittweise umgeformt bis eine  Differentialgleichung zweiter Ordnung \eqref{K_DGL_R} entsteht.
+\begin{equation} \label{K_DGL_H}
+\sqrt{1+{\dot {r}}^2}-\frac{ d }{ dx } \left( r \frac{ 1 }{2  }\left( {1+{\dot {r}}^2}  \right)^{-1/2} 2 \dot {r}\right)=0
+\\
+\left(1+{\dot {r}}^2  \right)^{-1/2}-(r \frac{ -1 }{2  } \left({1+{\dot {r}}^2}  \right)^{-3/2} 2 \dot{r} \ddot{r}  \dot{r}+ r \left({1+{\dot {r}}^2}  \right)^{-1/2} \ddot{r} +\dot{r} \left({1+{\dot {r}}^2}  \right)^{-1/2} \dot{r}=0
+\end{equation}
+
+\begin{equation} \label{K_DGL_R}
+1+{\dot {r}}^2=r  \ddot{r}
+\end{equation}
+\subsubsection{Berechnen}
+Die Differenzialgleichung zweiter Ordnung \eqref{K_r} kann mit Hilfe eini-ger mathematischer Umformungen, Aufleiten und hyperbolische Trigonometrie berechnet werden.
+
+\begin{equation} \label{K_r}
+r=K cosh(\frac{z-\xi}{K})
+\end{equation}
+
+Bei $z=+_L$ ergibt sich \eqref{K_rL}.
+\begin{equation} \label{K_rL}
+K cosh(\frac{L-\xi}{K})=K cosh(\frac{-L-\xi}{K})
+\end{equation}
+
+Da der $cosh$ eine gerade Funktion ist, kommt man entweder auf $L-\xi=-L-\xi$ oder auf $L-\xi=-(L-\xi)$.
+Beim ersten Fall wäre $L=-L$ was keinen Sinn ergibt da dann die Fläche gleich Null währe. Beim zweiten Fall muss $\xi=0$ sei also ist die Lösung für das Katanoid die Funktionsgleichung \eqref{K_rz}.
+
+\begin{equation} \label{K_rz}
+r(z)=K cosh(\frac{z}{K})
+\end{equation}
+
+
 
 
 
