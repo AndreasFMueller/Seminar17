@@ -3,7 +3,8 @@
 #
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
-all:	transport kurve lichtkegel geodaete blackhole flach sphere
+all:	transport kurve lichtkegel geodaete blackhole flach sphere \
+	negativ eben positiv
 
 images:	all
 
@@ -80,4 +81,28 @@ transport.jpg:   transport.png
 transport.png:   transport.pov
 	sh ../../../povray $(povrayoptions) +W3840 +H2160 -Otransport.png \
 		transport.pov || touch transport.png
+
+negativ:	negativ.jpg
+negativ.jpg:	negativ.png
+	convert negativ.png \
+		-units PixelsPerInch -density 300 negativ.jpg
+negativ.png:	negativ.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Onegativ.png \
+		negativ.pov || touch negativ.png
+
+eben:	eben.jpg
+eben.jpg:	eben.png
+	convert eben.png \
+		-units PixelsPerInch -density 300 eben.jpg
+eben.png:	eben.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Oeben.png \
+		eben.pov || touch eben.png
+
+positiv:	positiv.jpg
+positiv.jpg:	positiv.png
+	convert positiv.png \
+		-units PixelsPerInch -density 300 positiv.jpg
+positiv.png:	positiv.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Opositiv.png \
+		positiv.pov || touch positiv.png
 
