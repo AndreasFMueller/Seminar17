@@ -4,7 +4,7 @@
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
 all:	transport kurve lichtkegel geodaete blackhole flach sphere \
-	negativ eben positiv
+	negativ eben positiv pringles-positiv pringles-negativ
 
 images:	all
 
@@ -106,3 +106,32 @@ positiv.png:	positiv.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
 	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Opositiv.png \
 		positiv.pov || touch positiv.png
 
+pringles:	pringles.jpg
+pringles.jpg:	pringles.png
+	convert pringles.png \
+		-units PixelsPerInch -density 300 pringles.jpg
+pringles.png:	pringles.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Opringles.png \
+		pringles.pov || touch pringles.png
+
+pringles-negativ:	pringles-negativ.jpg
+pringles-negativ.jpg:	pringles-negativ.png
+	convert pringles-negativ.png \
+		-units PixelsPerInch -density 300 pringles-negativ.jpg
+pringles-negativ.png:	pringles-negativ.pov pringles.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 \
+		-Opringles-negativ.png \
+		pringles-negativ.pov || touch pringles-negativ.png
+
+pringles-positiv:	pringles-positiv.jpg
+pringles-positiv.jpg:	pringles-positiv.png
+	convert pringles-positiv.png \
+		-units PixelsPerInch -density 300 pringles-positiv.jpg
+pringles-positiv.png:	pringles-positiv.pov pringles.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 \
+		-Opringles-positiv.png \
+		pringles-positiv.pov || touch pringles-positiv.png
+
+pringles-animation:
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 \
+		-Opringles/p pringles.ini
