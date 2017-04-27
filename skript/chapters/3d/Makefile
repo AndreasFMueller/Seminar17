@@ -3,7 +3,8 @@
 #
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
-all:	transport kurve lichtkegel geodaete blackhole flach sphere
+all:	transport kurve lichtkegel geodaete blackhole flach sphere \
+	negativ eben positiv pringles-positiv pringles-negativ
 
 images:	all
 
@@ -81,3 +82,56 @@ transport.png:   transport.pov
 	sh ../../../povray $(povrayoptions) +W3840 +H2160 -Otransport.png \
 		transport.pov || touch transport.png
 
+negativ:	negativ.jpg
+negativ.jpg:	negativ.png
+	convert -extract 858x1080+534+0 negativ.png \
+		-units PixelsPerInch -density 300 negativ.jpg
+negativ.png:	negativ.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Onegativ.png \
+		negativ.pov || touch negativ.png
+
+eben:	eben.jpg
+eben.jpg:	eben.png
+	convert -extract 706x1080+464+0 eben.png \
+		-units PixelsPerInch -density 300 eben.jpg
+eben.png:	eben.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Oeben.png \
+		eben.pov || touch eben.png
+
+positiv:	positiv.jpg
+positiv.jpg:	positiv.png
+	convert -extract 806x1080+406+0 positiv.png \
+		-units PixelsPerInch -density 300 positiv.jpg
+positiv.png:	positiv.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Opositiv.png \
+		positiv.pov || touch positiv.png
+
+pringles:	pringles.jpg
+pringles.jpg:	pringles.png
+	convert pringles.png \
+		-units PixelsPerInch -density 300 pringles.jpg
+pringles.png:	pringles.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Opringles.png \
+		pringles.pov || touch pringles.png
+
+pringles-negativ:	pringles-negativ.jpg
+pringles-negativ.jpg:	pringles-negativ.png
+	convert pringles-negativ.png \
+		-units PixelsPerInch -density 300 pringles-negativ.jpg
+pringles-negativ.png:	pringles-negativ.pov pringles.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 \
+		-Opringles-negativ.png \
+		pringles-negativ.pov || touch pringles-negativ.png
+
+pringles-positiv:	pringles-positiv.jpg
+pringles-positiv.jpg:	pringles-positiv.png
+	convert pringles-positiv.png \
+		-units PixelsPerInch -density 300 pringles-positiv.jpg
+pringles-positiv.png:	pringles-positiv.pov pringles.inc
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 \
+		-Opringles-positiv.png \
+		pringles-positiv.pov || touch pringles-positiv.png
+
+pringles-animation:
+	sh ../../../povray $(povrayoptions) -W1920 -H1080 \
+		-Opringles/p pringles.ini
