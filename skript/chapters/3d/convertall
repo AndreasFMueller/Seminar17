@@ -1,0 +1,11 @@
+#! /bin/sh
+#
+# convertall -- convert all png files into jpg
+#
+# (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+#
+for pngname in *.png
+do
+	jpgname=`basename ${pngname} .png`.jpg
+	convert ${pngname} -density 300 -units PixelsPerInch ${jpgname}
+done

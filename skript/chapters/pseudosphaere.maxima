@@ -1,0 +1,43 @@
+/*
+ * pseudosphaere.maxima -- Geodäten auf der Pseudosphäre
+ *
+ * (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+ */
+
+/*
+ * Parametrisierung der Pseudosphäre
+ *
+ * u = radius
+ * v = phi 
+ */
+pseudosphaere: [sech(u) * cos(v), sech(u) * sin(v), u - tanh(u)];
+
+pu: diff(pseudosphaere, u);
+pv: diff(pseudosphaere, v);
+
+g: matrix(
+    [ trigsimp(pu.pu), trigsimp(pu.pv) ],
+    [ trigsimp(pv.pu), trigsimp(pv.pv) ]
+);
+
+x: [ u, v ];
+
+batchload("curvature.maxima");
+
+/*
+ * Christoffel-Symbole
+ */
+trigsimp(Christoffel2(1,1,1));
+trigsimp(Christoffel2(1,1,2));
+trigsimp(Christoffel2(1,2,1));
+trigsimp(Christoffel2(1,2,2));
+
+trigsimp(Christoffel2(2,1,1));
+trigsimp(Christoffel2(2,1,2));
+trigsimp(Christoffel2(2,2,1));
+trigsimp(Christoffel2(2,2,2));
+
+/*
+ * Ricci Curvature scalar
+ */
+trigsimp(RicciScalar());
