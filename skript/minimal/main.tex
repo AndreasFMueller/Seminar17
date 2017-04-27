@@ -4,7 +4,7 @@
 \chapterauthor{Nadja Rutz und Ambroise Suter}
 
 \section{Einleitung}
-%\rhead{Einleitung}
+\rhead{Einleitung}
 
 Flach aber trotzdem krumm!
 
@@ -17,7 +17,7 @@ Je nach intrinsischer (innerer) und extrinsischer (äusser) Krümmung kann ein R
 
 
 \section{Problemstellung}
-%\rhead{Problemstellung}
+\rhead{Problemstellung}
 
 Minimalflächen haben eine mittlere Krümmung von Null. 
 
@@ -53,7 +53,7 @@ Zum einen die Gauss Krümmung was eine intrinsische Krümmung ist und zum andern
 
 Die Gauss Krümmung einer Fläche im Punkt P ist definiert als das Produkt der zwei Hauptkrümmungen k1 und k2.
 
-\begin{equation} \label{Gauss_Krümmung_D}
+\begin{equation} \label{Gauss_Kruemmung_D}
   K=k1*k2=1/R1*1/R2
 \end{equation}
 
@@ -67,8 +67,8 @@ Wenn die Ameise auf einer Kugel ist kann sie feststellen, dass nur schon in ihre
 
 Die Mittlere Krümmung einer Fläche im Punkt P ist definiert durch den Mittelwert der zwei Hauptkrümmungen k1 und k2.
 
-\begin{equation} \label{Mittlere Krümmung_D}
-  H=1/2*(k1+k2)= (1/2)*(1/R1+1/R2)
+\begin{equation} \label{Mittlere Kruemmung_D}
+  H=1/2*(k1+k2)= (1/2)(1/R1+1/R2)
 \end{equation}
 
 Die Mittlere Krümmung ist eine extrinsische Krümmung. 
@@ -84,8 +84,7 @@ Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fl�
   \caption{Vergleich Grauss und Mittlerkrümmung} 
 \end{figure}
 
-% \printbibliography[heading=subbibliography]
-% \end{refsection}
+
 
 
 \section{Defintion der Minimalfläche}
@@ -96,7 +95,7 @@ Um den Begriff der Minimalfläche greifbarer zu gestalten werden hier verschiede
 \subsection{Variationsproblem}
 
 Def: Eine Fläche $ \textit{M} \subset \mathbf{R}^{3} $ ist genau dann minimal wenn in allen Punkten $p \in M$ die Mittlere Krümmung $=0$ ist.\\
-Nach der Definition der Mittleren Krümmung \eqref{Mittlere Krümmung_D} bedeutet dies, dass in jedem Punkt $p$ sich die Krümmungen $k1$ und $k2$ aufheben.
+Nach der Definition der Mittleren Krümmung \eqref{Mittlere Kruemmung_D} bedeutet dies, dass in jedem Punkt $p$ sich die Krümmungen $k1$ und $k2$ aufheben.
 Folglich entspricht eine Minimalfläche der Geodäte im zwei Dimensionen. Zwei Punkte $P1$ und $P2$ können auf der Fläche über eine kürzeste Strecke verbunden werden.  Dies ist sogleich die erste und in diesem Buch wichtigste Definition der Minimalfläche.
 
 \subsection{Lokale Minimalfläche}
@@ -224,6 +223,109 @@ r(z)=K cosh(\frac{z}{K})
 \end{equation}
 
 
+
+\subsection{H.F. Scherk - Sattelfläche}
+Quelle: H.F. Scherk, Bemerkungen über die kleinste Fläche innerhalb gegebener Grenzen, Journal für die reine und angewandte Mathematik, Volume 13 (1835) pp. 185–208
+\subparagraph{Beschreibung}
+Die Sattelfläche beschreibt zwei Paar parallele Flächen, die zueinander senkrecht sind.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{minimal/HFSherk.png}
+  \caption{Sattelfläche von Scherk} 
+\end{figure}
+Die Paare fließen auf der Höhe Null ($z=0$) ineinander. Die dabei gebildete Sattelfläche wird mittels Variationsproblem minimiert, hat gemäß Definition eine Mittlere Krümmung $M=0$. Geometrisch bedingt wiederholt sich die Sattelfläche in $x$ und $y$-Richtung.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{minimal/HFSherk2.png}
+  \caption{Neun Perioden der Sattelfläche} 
+\end{figure}
+Gemäß Definition nach Variationsproblem ist dabei die Mittlere Krümmung $M=0$. Dies wird im Abschnitt \ref{Scherk Herleitung}  nachgerechnet.\\ Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlösung nachgebildet werden. Dies folgt direkt aus der äquivalenten Definition \ref{Seifenfilm}. (Photo)
+Die Sattelfläche wurde erstmals 1834 von Prof. H. F. Scherk beschrieben und hergeleitet. Sie war nach der in 1776 von Meusnier beschriebene Katanoide die erste neue Minimalfläche. 
+\subparagraph{Herleitung}\label{Scherk Herleitung}
+Unter Verwendung der Minimalflächengleichung (Referenz)
+\begin{equation}\label{Minimalflaechengleichung}
+(1+ Z_v^{2})Z_{uu} - 2 Z_u Z_v Z_{uv} + (1+ Z_u^{2}) Z_{vv}=0
+\end{equation}
+wird nach Lösungen des einfachen Problems $z=Z(u,v)=f(u)+g(v)$ unter den Nebenbedingungen $Z(0,0)=0,\ \nabla Z(0,0)=0$ gesucht. 
+Da $ Z_u = f'(u),\ Z_v = g'(v),\ Z_{uu}=f''(u),\ Z_{vv} = g''(v) \ \text{und} \ Z_{uv}=0$ ist, vereinfacht sich die MFG zu 
+\begin{equation}\label{MFG Scherk}
+(1+g'(v)^2)f''(u)+(1+f'(u)^2)g''(v)=0
+\end{equation}
+Durch Separieren von $f$ und $g$ stellt sich die Gleichung folglich auf
+\begin{equation}\label{MFG Scherk2}
+-\dfrac{f''(u)}{1+(f'(u))^2}=\dfrac{g''(v)}{1+(g'(v))^2}=c
+\end{equation}
+mit $c \in \mathbf{R}$.
+Beide Differentialgleichungen werden mittels Separation aufgelöst:
+\begin{equation}\label{ScherkDGL1}
+\begin{split}
+\int -\dfrac{v'(u)}{1+v(u)^2} du &= \int c \ du , \quad v(u)=f'(u) \\
+-arctan(v(u)) &= cu+k_1 \\
+v(u) &= -tan(cu+k_1)
+\end{split}
+\end{equation}
+Nach der Rücksubstitution wird auf beiden Seiten Integriert:
+\begin{equation}\label{SchreckDGL2}
+\int f'(u)\ du = \int -tan(cu+k_1)\ du\\
+f(u) = \dfrac{log(cos(cu+k_1))}{c}+k_2\\
+\end{equation}
+mit $f(0)=0$ und $f'(0)=0$ ergibt sich
+\begin{equation}
+f(u) = \dfrac{log(cos(cu))}{c}\\
+\end{equation}
+Äquivalent dazu ergibt sich für die 2. DGL:
+\begin{equation}
+g(v) = - \dfrac{log(cos(cv))}{c}
+\end{equation}
+Somit lautet die Funktion der Fläche
+\begin{equation}
+Z(u,v)=\dfrac{log(cos(cu))}{c}-\dfrac{log(cos(cv))}{c}
+\end{equation}
+
+\subsection{Young–Laplace - Oberflächenspannung}\label{Young-Laplace}
+\subparagraph{Beschreibung}\label{YL-Beschreibung}
+Quelle: Landau, L.D. and Lifshitz, E.M.: Fluid Mechanics, Pergamon Press, Oxford
+(1987) 
+Derivation of the Laplace equation
+Svein M. Skjæveland
+October 19, 2012
+\subparagraph{Herleitung}\label{YL-Herleitung}
+Angenommen zwei Medien (z.B. Luft/Wasser) werden durch eine Oberfläche getrennt. Da in den Medien verschiedene Drücke $p_1$ und $p_2$ herrschen, verändert sich die Wölbung der Fläche. Die Veränderung sei $\delta \zeta$. Das Volumen eines einzelnen infinitesimalem Volumensegments sei $\delta \zeta dA$. Dann ist die benötigte Kraft um das Volumensegment um $\delta\zeta$ zu verschieben:
+\begin{equation}
+\int(-p_1+p_2)\delta \zeta dA
+\end{equation}
+Die Gesamte Arbeit ergibt sich wenn zur Arbeit der Volumenänderung die Arbeit der Veränderung der Oberfläche $\delta W=\gamma \delta A $ dazu addiert wird, wobei $\gamma$ die Oberflächenspannung und $\delta A$ die veränderte Oberfläche ist. Wir erhalten:
+\begin{equation}\label{YL-Arbeit_1}
+\delta W=\int(-p_1+p_2)\delta\zeta dA + \gamma\delta A
+\end{equation}
+Sind $R_1$ und $R_2$ die Radien der Krümmungen der Oberfläche werden die infinitesimale Längenstücke $dl_1$ und $dl_2$ mit $(\delta\zeta /R_1)dl_1$ bzw. $(\delta\zeta /R_2)dl_1$ verlängert. Das Flächenstück $dA=dl_1 dl_2$ verändert sich wie folgt:
+\begin{equation}
+\begin{split}
+dA &= (1+\delta\zeta/R_1)dl_1 (1+\delta\zeta/R_2)dl_2 \\
+&\approx dl_1 dl_2 (1+\delta\zeta/R_1 + \delta\zeta/R_2 \\
+&\approx dl_1 dl_2 \delta\zeta (\frac{1}{R_1}+\frac{1}{R_2})
+\end{split}
+\end{equation} 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{minimal/Young.pdf}
+  \caption{Oberflächenspannung} 
+\end{figure}
+Die veränderte Oberfläche kann damit berechnet und in die Gleichung \ref{YL-Arbeit_1} eingesetzt werden. Befindet sich die Oberfläche im Gleichgewicht muss auch die Veränderung der Arbeit gleich Null sein.
+\begin{equation}
+\begin{split}
+\delta A &= \int \delta\zeta \bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg) \\
+\delta W &= \int \delta\zeta \bigg[ (-p_1+p_2)-\gamma \bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg) \bigg] =0
+\end{split}
+\end{equation}
+Dies gilt auch für jede Veränderung von $\delta\zeta$. Daraus folgt die finale Formel:
+\begin{equation}
+-p_1+p_2 = \gamma\bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg)
+\end{equation}
+oder
+\begin{equation}\label{Young-Laplace}
+\Delta p = \gamma\bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg)
+\end{equation}
 
 
 
