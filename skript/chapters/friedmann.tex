@@ -371,11 +371,70 @@ Komponenten des Universums, wird daher nur noch der Fall $\kappa=0$
 durchgerechnet.
 
 \subsubsection{Geschlossenes Universum}
-TODO: Offenes und geschlossenes Universum
+Wir untersuchen jetzt, was für langfristige Lösungen die
+Friedmann-Gleichung~\eqref{skript:friedmann:friedmann}
+überhaupt erlaubt.
+Insbesondere interessiert die Frage, ob ein expandierendes Universum
+in eine kollabierendes Universum übergehen kann.
+
+Zunächst beachten wir, dass die 
+Friedmann-Gleichung~\eqref{skript:friedmann:friedmann}
+sich nicht ändert, wenn man die Zeit umkehrt.
+Dann ändert zwar $\dot a(t)$ das Vorzeichen, aber $\dot a(t)$ kommt
+nur im Quadrat vor, so dass mit $a(t)$ auch $a(-t)$ die Friedmann-Gleichung
+erfüllt.
+Die Friedmann-Gleichung sind zeitumkehrinvariant.
+Daraus folgt auch, dass ein Universum, das zum Zeitpunkt $t_0$
+von Expansion zu Kontraktion übergeht, für $t>t_0$ durch
+$a(t)=a(t_0-t)$ beschrieben werden kann, die Lösungsfunktion ist
+also symmetrisch bezüglich $t=t_0$.
+Ausserdem muss
+am Punkt $t_0$ die Ableitung von $a(t)$ verschwinden, also ist
+$\dot a(t_0)=0$.
+
+Der Term $8\pi K\varrho/3c^2$ ist für ein nicht leeres Universum
+immer positiv.
+Der Krümmungsterm $-\kappa c^2\kappa/a(t)^2R_c^2$ hat das gleiche Vorzeichen
+wie $\kappa$.
+Für ein negativ gekrümmtes Universum ist er immer positiv, so dass
+nach der Friedmann-Gleichung ein solches Universum niemals $\dot a(t)=0$
+erreichen kann, die Expansion in einem solche Universum wird also
+niemals aufhören.
+
+Die Dichte $\varrho$ der Materie ist proportional zu $a(t)^{-3}$, geht
+also schneller gegen $0$ als der Krümmungsterm.
+Für ein positiv gekrümmtes Universum werden also früher oder später immer
+die beiden Terme auf der rechten Seite der
+Friedmann-Gleichung~\eqref{skript:friedmann:friedmann}
+betragsmässig gleich gross werden.
+In diesem Moment folgt $\dot a(t) = 0$.
+Ein expandierendes Universum mit positiver Krümmung wird also immer in eine 
+Kontraktion übergehen.
+
+Der Grenzfall ist ein Unversum mit verschwindender Krümmung oder $\kappa=0$.
+In einem solchen Universum gilt
+\begin{equation}
+\varrho = \frac{3c^2H^2}{8\pi K}.
+\label{skript:friedmann::dichte}
+\end{equation}
 
 \subsubsection{Kritische Dichte}
-TODO: Kritische Dichte
-
+Der Wert der Dichte~\eqref{skript:friedmann::dichte}
+für die heutige Zeit $t=t_0$ ist
+\[
+\varrho_c = \frac{3c^2H^2(t_0)}{8\pi K}=\frac{3c^2H_0^2}{8\pi K}
+\]
+und heisst die {\em kritische Dichte}.
+\index{Dichte, kritische}
+\index{kritische Dichte}
+Die kritische Dichte ist so etwas eine universelle kosmologische
+Masseinheit für die Dichte.
+Die Energiedichte
+\[
+\Omega=\frac{\varrho}{\varrho_c}
+\]
+ausgedrück in Einheiten der kritische Dichte heisst
+der {\em Dichteparameter}.
 
 \section{Komponenten}
 \rhead{Komponenten}
@@ -822,5 +881,49 @@ Universum ohne dunkle Energie auch über die Hubble Zeit an.
 Der aktuell genaueste Wert für das Alter des Universums von 13.72Gyr
 ist daher nur möglich, wenn ein beträchtlicher Teil der Energie im
 Universum dunkle Energie ist.
+
+\section{Vergleich von kosmologischen Modellen}
+Die Terme auf der rechten Seite der
+Friedmann-Gleichung~\eqref{skript:friedmann:friedmann}
+können jetzt in Einheiten der kritischen Dichte geschrieben werden.
+Die verschiedenen Terme auf der rechten Seite der Friedmann-Gleichung
+unterscheiden sich durch deren Veränderung in Abhängigkeit vom
+Skalenfaktor $a(t)$.
+Schreiben wir die Energiedichte der einzelnen Komponenten mit dem
+Dichteparameter, und wählen wir die Bezeichungen
+\begin{align*}
+\Omega_{0,m}&=\text{Materie}
+\Omega_{0,s}&=\text{Strahlung}
+\Omega_{0,k}&=\text{Krümmung}
+\Omega_{0,\Lambda}&=\text{dunkle Energie},
+\end{align*}
+dann können wir die Friedmann-Gleichungen schreiben als
+\begin{equation}
+H(t)^2
+=
+\biggl(\frac{\dot a(t)}{a(t)}\biggr)^2
+=
+\Omega_{0,m}\frac1{a(t)^3}
++
+\Omega_{0,s}\frac1{a(t)^4}
++
+\Omega_{0,k}\frac1{a(t)^2}
++
+\Omega_{0,\Lambda}.
+\end{equation}
+Die Entwicklung eines Universums ist also vollständig durch die
+vier Dichteparameter 
+$\Omega_{0,m}$,
+$\Omega_{0,s}$,
+$\Omega_{0,k}$ und
+$\Omega_{0,\Lambda}$
+bestimmt.
+Um verschiedene kosmologische Modelle zu vergleichen reicht es also,
+die Werte der Dichteparameter zu vergleichen.
+
+
+
+
+
 
 

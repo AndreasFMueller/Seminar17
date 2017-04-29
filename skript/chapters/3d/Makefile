@@ -4,7 +4,8 @@
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
 all:	transport kurve lichtkegel geodaete blackhole flach sphere \
-	negativ eben positiv pringles-positiv pringles-negativ
+	negativ eben positiv \
+	pringles-positiv pringles-negativ pringles-flach
 
 images:	all
 
@@ -12,16 +13,17 @@ w = 3840
 h = 2160
 scale=50
 
-#w = 1920
-#h = 1080
+ww = 1920
+hh = 1080
 #scale=100
 
-dimensions = -W$(w) -H$(h)
+highdimensions = -W$(w) -H$(h)
+lowdimensions = -W$(ww) -H$(hh)
 povrayoptions = +A0.1
 
 flach:	flach.jpg
 flach.png:	flach.pov
-	sh ../../../povray $(povrayoptions) $(dimensions) -Oflach.png 	\
+	sh ../../../povray $(povrayoptions) $(highdimensions) -Oflach.png 	\
 		flach.pov || touch flach.png
 flach.jpg:	flach.png
 	convert -extract 2376x2160+775+0 flach.png \
@@ -30,7 +32,7 @@ flach.jpg:	flach.png
 
 sphere:	sphere.jpg
 sphere.png:	sphere.pov
-	sh ../../../povray $(povrayoptions) $(dimensions) -Osphere.png 	\
+	sh ../../../povray $(povrayoptions) $(highdimensions) -Osphere.png 	\
 		sphere.pov || touch sphere.png
 sphere.jpg:	sphere.png
 	convert -extract 2420x2160+735+0 sphere.png \
@@ -39,7 +41,7 @@ sphere.jpg:	sphere.png
 
 blackhole:	blackhole.jpg
 blackhole.png:	blackhole.pov
-	sh ../../../povray $(povrayoptions) $(dimensions) -Oblackhole.png \
+	sh ../../../povray $(povrayoptions) $(highdimensions) -Oblackhole.png \
 		blackhole.pov || touch blackhole.png
 blackhole.jpg:	blackhole.png
 	convert -extract 2572x2160+860+0 blackhole.png \
@@ -116,21 +118,30 @@ pringles.png:	pringles.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
 
 pringles-negativ:	pringles-negativ.jpg
 pringles-negativ.jpg:	pringles-negativ.png
-	convert pringles-negativ.png \
+	convert -extract 3036x2016+404+28 pringles-negativ.png \
 		-units PixelsPerInch -density 300 pringles-negativ.jpg
 pringles-negativ.png:	pringles-negativ.pov pringles.inc
-	sh ../../../povray $(povrayoptions) -W1920 -H1080 \
+	sh ../../../povray $(povrayoptions) $(highdimensions) \
 		-Opringles-negativ.png \
 		pringles-negativ.pov || touch pringles-negativ.png
 
 pringles-positiv:	pringles-positiv.jpg
 pringles-positiv.jpg:	pringles-positiv.png
-	convert pringles-positiv.png \
+	convert -extract 1872x1360+1180+716 pringles-positiv.png \
 		-units PixelsPerInch -density 300 pringles-positiv.jpg
 pringles-positiv.png:	pringles-positiv.pov pringles.inc
-	sh ../../../povray $(povrayoptions) -W1920 -H1080 \
+	sh ../../../povray $(povrayoptions) $(highdimensions) \
 		-Opringles-positiv.png \
 		pringles-positiv.pov || touch pringles-positiv.png
+
+pringles-flach:	pringles-flach.jpg
+pringles-flach.jpg:	pringles-flach.png
+	convert -extract 3012x1280+416+232 pringles-flach.png \
+		-units PixelsPerInch -density 300 pringles-flach.jpg
+pringles-flach.png:	pringles-flach.pov pringles.inc
+	sh ../../../povray $(povrayoptions) $(highdimensions) \
+		-Opringles-flach.png \
+		pringles-flach.pov || touch pringles-flach.png
 
 pringles-animation:
 	sh ../../../povray $(povrayoptions) -W1920 -H1080 \
