@@ -427,7 +427,13 @@ für die heutige Zeit $t=t_0$ ist
 und heisst die {\em kritische Dichte}.
 \index{Dichte, kritische}
 \index{kritische Dichte}
-Die kritische Dichte ist so etwas eine universelle kosmologische
+Ein üblicher Zahlenwert für die kritische Dichte unseres Universums ist
+\[
+\varrho_c = \frac{3H_0^2}{8\pi K}\simeq 10^{-26}\frac{\text{kg}}{\text{m}^3}
+\]
+Da ein Proton eine Masse von $1.672\cdot 10^{-27}\text{kg}$ hat, entspricht
+$\varrho_c$ einer Dichte von etwa $6$ Protonen pro Kubikmeter.
+Die kritische Dichte ist so etwas wie eine universelle kosmologische
 Masseinheit für die Dichte.
 Die Energiedichte
 \[
@@ -889,19 +895,19 @@ können jetzt in Einheiten der kritischen Dichte geschrieben werden.
 Die verschiedenen Terme auf der rechten Seite der Friedmann-Gleichung
 unterscheiden sich durch deren Veränderung in Abhängigkeit vom
 Skalenfaktor $a(t)$.
-Schreiben wir die Energiedichte der einzelnen Komponenten mit dem
-Dichteparameter, und wählen wir die Bezeichungen
+Wir können die Energiedichte der einzelnen Komponenten jetzt in
+Einheiten der kritischen Energie, also als ein Dichteparameter
+für jede einzelne Komponenten schreiben.
+Wir wählen die Bezeichungen
 \begin{align*}
-\Omega_{0,m}&=\text{Materie}
-\Omega_{0,s}&=\text{Strahlung}
-\Omega_{0,k}&=\text{Krümmung}
-\Omega_{0,\Lambda}&=\text{dunkle Energie},
+\Omega_{0,m}&=\text{Materie},\\
+\Omega_{0,s}&=\text{Strahlung},\\
+\Omega_{0,k}&=\text{Krümmung},\\
+\Omega_{0,\Lambda}&=\text{dunkle Energie}.
 \end{align*}
-dann können wir die Friedmann-Gleichungen schreiben als
+Damit können wir die Friedmann-Gleichungen schreiben als
 \begin{equation}
-H(t)^2
-=
-\biggl(\frac{\dot a(t)}{a(t)}\biggr)^2
+\frac{H(t)^2}{H_0^2}
 =
 \Omega_{0,m}\frac1{a(t)^3}
 +
@@ -921,8 +927,64 @@ bestimmt.
 Um verschiedene kosmologische Modelle zu vergleichen reicht es also,
 die Werte der Dichteparameter zu vergleichen.
 
+Die Summe
+\[
+\Omega_{\text{tot}}
+=
+\Omega_{0,m}
++
+\Omega_{0,s}
++
+\Omega_{0,k}
++
+\Omega_{0,\Lambda}
+\]
+der Dichteparameterwerte bestimmt die Geometrie des Universums
+(Tabelle~\ref{skript:friedmann:tabelle}).
+\begin{table}
+\centering
+\begin{tabular}{|c|c|l|}
+\hline
+Gesamtdichte $\Omega_{\text{tot}}$&Krümmung&Universum\\
+\hline
+$\Omega_{\text{tot}}>1$&$\kappa = 1$&geschlossen\\
+$\Omega_{\text{tot}}=1$&$\kappa = 0$&offen\\
+$\Omega_{\text{tot}}<1$&$\kappa =-1$&offen\\
+\hline
+\end{tabular}
+\caption{Zusammenhang der Materie- und Energiedichte mit der Krümmung
+und der zukünftigen Entwicklung des Universums
+\label{skript:friedmann:tabelle}}
+\end{table}
+Im Rahmen der gegenwärtig möglichen Messgenauigkeit ist
+$\Omega_{\text{tot}}=1$ wir leben also höchstwahrscheinlich in
+einem flachen Universum, also einem Universum mit $\Omega_{0,k}=0$.
 
+Da unser Universum schon ziemlich alt ist, spielt die Strahlung
+eine untergeordnete Rolle, $\Omega_{0,s}$ wird also vernachlässigbar
+klein sein. 
+Die zukünftige Entwicklung des Universums wird also bestimmt durch
+das Verhältniss von $\Omega_{0,m}$ und $\Omega_{0,\Lambda}$, die
+zusammen $1$ ergeben müssen.
+Die Beobachtung der beschleunigten Expansion des Universums 
+legt $\Omega_{0,\Lambda}\simeq 0.7$ fest.
+Wegen $1=\Omega_{0,m}+\Omega_{0,\Lambda}$ folgt, dass das
+Universum aktuelle Universum nur zu etwa einem Drittel aus 
+Materie bestehen kann, der grössere Teil des Universums ist
+dunkle Energie.
 
+Den Materie-Anteil $\Omega_{0,m}$ beobachten wir allerdings auch
+nicht.
+Nur etwas 5\% der Energiedichte des Universums ist auf beobachtbare
+Materie zurückzuführen.
+Beobachtungen an der Bewegung von Galaxien in einem Galaxiencluster
+oder der Rotationsgeschwindigkeit von Galaxien zeigen, dass zur Erzeugung
+der notwendigen Gravitationskraft noch wesentlich mehr Energie vorhanden
+sein muss, die wir nicht direkt beobachten können.
+Was diese dunkle Materie sein könnte, die immerhin etwa einen Viertel der
+Energiedichte des aktuellen Universums ausmacht, gibt es verschiedene
+Hypothesen, bisher konnte keine durch experimentelle Untersuchungen
+bestätigt werden.
 
 
 
