@@ -794,67 +794,61 @@ Im Jahr 1935 wurde ein Krater auf der westlichen Mondvorderseite nach dem deutsc
 XXXXXXX
 
 
-\section{Nautisches oder Astronomisches Dreieck}
-Ein sphärisches Dreieck an der Himmelskugel welches folgende Eckpunkte hat
-- Zenit
-- Himmelsnordpol
-- Gestirn
-nennt man nautisches Dreieck.\\
+\section{Nautisches Dreieck (Astronomisches Dreieck)}
+Um seine Koordinaten bestimmen zu können, genauer gesagt um den Längengrad zu ermitteln ohne moderne GPS-Geräte, ziehen wir ein altbewährtes Hilfsmittel aus der Seefahrt zur Hilfe - Das Nautische Dreieck. \\
+Es dient zur Positionsbestimmung auf dem offenen Meer oder anderen Gebieten in denen keine Orientierungspunkte wie Landzungen oder Gebirgsketten zu Hilfe genommen werden können.
 
-Es ist ein Hilfsmittel wenn es darum geht, den Standort seines Beobachtungspunktes auf dem offenen Meer herauszufinden oder den Standort eines Sterns zum bestimmten Zeitpunkt zu ermitteln.
+Das Nautische Dreieck an der Himmelskugel hat folgende Eckpunkte:
+\begin{itemize}
+\item Himmelsnordpol, besser bekannt als Polarstern ($N$)
+\item Gestirn, ein uns bekannter Stern, wir verwenden im Beispiel die Sonne ($S$)
+\item Zenit, der Himmelspunkt senkrecht über uns ($Z$)
+\end{itemize}
 
-\subsection{Das Horizontsystem (lokale Beobachtung)}
+Dieses Kugeldreieck wird das nautisches Dreieck genannt.
 
+%SKIZZE NAUTISCHES DREIECK
 
-\subsubsection{Gestirnshöhe $h$}
-Ist die sphärische Entfernung des Gestirns vom Horizont, gezählt nordwärts $+0^{\circ}$ bis $+90^{\circ}$ und südwärts $-0^{\circ}$ bis $-90^{\circ}$.
-
-\subsubsection{Azimut $a$}
-Bogen zwischen dem Ortsmeridian und denm Höhenkreis des Gestirns, gezählt auf dem Höhenkreis vom Südpunkt aus über Westen $+0^{\circ}$ bis $360^{\circ}$.
-
-
-
-\subsection{Das Äquatorsystem (astronomische Jahrbücher)}
-
-
-Um die Anwendung des nautischen Dreiecks aufzeigen zu können, benötigt es ein Grundwissen der astronomischen Begriffe in der Navigation.
-
-
-\subsubsection{Stundenwinkel $\tau$}
-Der Winkel zwischen dem Deklinationswinkel und Ortsmeridianm gezählt auf dem Himmelsäquator vom in Ortsmeridian in Richtung SWNO vom höchsten Stand des Gestirns, gemessen $+0^{\circ}$ bis $+360^{\circ}$.
-
-
-\subsubsection{Deklination $\delta$}
-Der sphärische Abstand des Gestirns vom Äquator, gezählt am Deklinationskreis nordwärts von $+0^{\circ}$ bis $+90^{\circ}$ und südwärts $-0^{\circ}$ bis $-90^{\circ}$.
+\subsection{Berechnung der Dreiecksseiten}
 
 
 
 
 
+\begin{align*}
+\overline{ZS} &= XX \quad \quad \quad \quad \quad \quad 
+\overline{NZ} &= XX \\
+\overline{NS} &= XX \quad \quad \quad \quad \quad \quad 
+\tau &= XX 
+\end{align*} 
 
 
+\subsection{Bestimmung des Längengrades} \label{BestimmungL} 
+Zur Bestimmung des Längengrades verwenden wir den Seitenkosinussatz:
+\begin{align*}
+\cos(c) = \cos(a)\cos(b) + \sin(a)\sin(b)\cos(\gamma)
+\end{align*}
 
+Auf unsere Seiten angewendet können wir einsetzen
 
+\begin{align*}
+\cos(\overline{ZS}) &= \cos(\overline{NZ}) \cos(\overline{NS}) + \sin(\overline{NZ}) \sin(\overline{NS}) \cos(\tau) \\
+\Rightarrow \quad \quad
+\cos(90^{\circ} - h) &= \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta) + \sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta)\cos(\tau)
+\end{align*}
 
-bsection{Ekliptik}
-Ist die scheinbare jährliche Sonnenbahn. Sie besitzt gegen den Äquator eine Neigung von $\epsilon$ = $23^{\circ}$ 27'. Der Schnittpunkt mit der Ekliptik werden Frühlingspunkt $\Upsilon$ und Herbstpunkt genannt. 
+Nach dem uns unbekannten Winkel $\tau$ aufgelöst ergibt die Gleichung
+\begin{align*}
+\tau = \arcos 
+\frac{ \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta) - \cos(90^{\circ} - h)} {\sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta)}
+\end{align*}
 
-%GRAFIK ÄQUATOR UND HORIZONTALWENDEKREIS
-
-\subsubsection{Rektaszension $\alpha$}
-Bogen auf Äquator, gezählt vom Frühlingspunkt $\Upsilon$ aus entgegengesetzte dem Sinne der täglichen Sonnenbewegung von $+0^{\circ}$ bis $+360^{\circ}$.
-
-\subsubsection{Ekliptikale Länge $\lambda$}
-Bogen und Ekliptik zwischen Frühlingspunkt $\Upsilon$ und Breitenkreis, gezählt vom Frühlingspunkt aus entgegengesetzt dem Sinne der täglichen Sonnenbewegung von $+0^{\circ}$ bis $+360^{\circ}$.
-
-\subsubsection{Ekliptikale Breite $\beta$}
-Sphärischer Abstand des Gestirns von der Ekliptik, gezählt von der Ekliptik aus nordwärts von $+0^{\circ}$ bis $+90^{\circ}$ und südwärts von $-0^{\circ}$ bis $-90^{\circ}$.
-
-\subsubsection{Kulmination}
-Durchlaufen des höchsten und tiefsten Punktes der täglichen Bahn eines Gestirnes.
-
-
-\subsection{Anwendung}
+Der Winkel $\tau$ enthält folgende Komponente
+\begin{itemize}
+\item Zeit
+\item Rektazension
+\item Längengrad $\lambda$
+\end{itemize}
 
 
 \printbibliography[heading=subbibliography]
