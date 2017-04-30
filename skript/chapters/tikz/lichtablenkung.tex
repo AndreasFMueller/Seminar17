@@ -1,0 +1,40 @@
+%
+% lichtablenkung.tex -- 
+%
+% (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz]{standalone}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections}
+\begin{document}
+\begin{tikzpicture}[thick,scale=5]
+\coordinate (O) at (0,0);
+\begin{scope}
+\clip (0,0) rectangle (1.6,2);
+\csvreader[head to column names,%
+	late after head=\xdef\phiold{\phi}\xdef\rold{\r},%
+	after line=\xdef\phiold{\phi}\xdef\rold{\r}]%
+	{lichtablenkung.csv}{}{%
+		\draw[red,line width=1.5] (\phiold,0.1 * \rold)--(\phi,0.1 * \r) node {};
+};
+\draw[line width=0.5] (3.14159/2,0)--(3.14159/2,100);
+
+\end{scope}
+
+\draw (-0.02,0.1)--(0.02,0.1);
+\node[label={left:$1$}] at (0.0,0.1) {};
+
+\draw[->] (-0.1, 0  )--(1.7,  0   ) coordinate[label = {above:$\varphi$}];
+\draw[->] ( 0  ,-0.1)--(0  , 2   ) coordinate[label = {left:$r$}];
+
+\draw (3.14159/2, -0.02)--(3.14159/2, 0.02);
+
+\node[label={below:$\pi$}] at (3.14159/2,0) {};
+
+\end{tikzpicture}
+\end{document}
+
+

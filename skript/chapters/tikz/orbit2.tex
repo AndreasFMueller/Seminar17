@@ -1,0 +1,51 @@
+%
+% orbit.tex -- Orbit in einem Schwarzschildpotential
+%
+% (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz]{standalone}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections}
+\begin{document}
+\begin{tikzpicture}[thick,scale=0.8]
+\coordinate (O) at (0,0);
+
+\csvreader[head to column names,%
+	late after head=\xdef\xold{\x}\xdef\yold{\y},%
+	after line=\xdef\xold{\x}\xdef\yold{\y}]%
+	{orbit2.csv}{}{%
+		\draw[red,line width=1.5] (\xold,\yold)--(\x,\y) node {};
+	};
+
+\draw[->] (0,0)--(11,0) coordinate[label = {above:$r$}];
+\draw (0,0)--({3 * cos(6.4579 * 180 / 3.1415)}, {3 * sin(6.4579 * 180 / 3.1415)}) {};
+\draw (0,0)--({11 * cos(2 * 6.4579 * 180 / 3.1415)}, {11 * sin(2 * 6.4579 * 180 / 3.1415)}) {};
+\draw (0,0)--({3 * cos(3 * 6.4579 * 180 / 3.1415)}, {3 * sin(3 * 6.4579 * 180 / 3.1415)}) {};
+
+%\draw[fill=white] (0,0) circle[radius=1] {};
+\draw[blue] (0,0) circle[radius=1] {};
+
+\node[label={above:$r_g$}] at (0,1) {};
+
+%\draw[blue,line width=1.5] (-2,0)--(3,2.5);
+%
+%\draw[->] (-2.55, 0   )--(3.05,  0   ) coordinate[label = {below:$t$}];
+%\draw[->] ( 0,   -0.05)--(0   ,  3.05) coordinate[label = {right:$a(t)$}];
+%
+%\node at ( 0,0) [below right] {$t_0$};
+%\node at (-2,0) [below] {$\displaystyle -\frac1{H_0}$};
+%\node at (-1.333,0) [below] {$\displaystyle -\frac2{3H_0}$};
+%
+%\draw (-2,-0.03)--(-2,0.03);
+%\draw (-1.3333,-0.03)--(-1.3333,0.03);
+%
+%\node at (3.05,2.1) [below left] {$\Lambda=0$};
+%\node at (2.10,2.85) [above left] {$\Lambda=1$};
+
+\end{tikzpicture}
+\end{document}
+
+

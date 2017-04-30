@@ -1,0 +1,28 @@
+%
+% friedmann-materie.tex -- Funktion S_\kappa(r) 
+%
+% (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz]{standalone}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows,intersections}
+\begin{document}
+\begin{tikzpicture}[thick,scale=3]
+\coordinate (O) at (0,0);
+
+\draw[->] (-1.05, 0   )--(3.3,  0  ) coordinate[label = {below:$t$}];
+\draw[->] ( 1,   -0.05)--(1  ,  2.1) coordinate[label = {right:$a(t)$}];
+
+\draw[blue,line width=1.4] (-1,0)--(3,2);
+\draw[red,domain=0:sqrt(3),samples=200,line width=1.4] plot ({\x*\x},\x);
+
+\node at ( 1,0) [below right] {$t_0$};
+\node at (-1,0) [below] {$\displaystyle-\frac1{H_0}$};
+\node at ( 0,0) [below] {$\displaystyle-\frac1{2H_0}$};
+
+\end{tikzpicture}
+\end{document}
+
+

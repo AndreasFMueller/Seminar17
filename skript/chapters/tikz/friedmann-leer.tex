@@ -1,0 +1,26 @@
+%
+% friedmann-leer.tex -- Entwicklung des Skalenfaktors in einem leeren Universum
+%
+% (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz]{standalone}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows,intersections}
+\begin{document}
+\begin{tikzpicture}[thick,scale=3]
+\coordinate (O) at (0,0);
+
+\draw[->] (-1.05, 0   )--(3.3,  0  ) coordinate[label = {below:$t$}];
+\draw[->] ( 1,   -0.05)--(1  ,  2.1) coordinate[label = {right:$a(t)$}];
+
+\draw[red,line width=1.4] (-1,0)--(3,2);
+
+\node at ( 1,0) [below right] {$t_0$};
+\node at (-1,0) [below] {$\displaystyle (t-t_0) = -\frac1{H_0}$};
+
+\end{tikzpicture}
+\end{document}
+
+

@@ -16,8 +16,16 @@ genauer zu untersuchen.
 
 
 \subsection{Dipol}
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/dipol2.pdf}
+\caption{Berechnung des Dipolpotentials 
+\eqref{skript:multipol:dipol} in der $x$-$z$-Ebene
+\label{skript:multipol:figure:dipol}}
+\end{figure}
 Wir betrachten das Feld eines Paares von entgegengesetzen Ladungen
-in den Punkten $(0,0,a)$ und $(0,0,-a)$.
+in den Punkten $(0,0,a)$ und $(0,0,-a)$
+(Abbildung~\ref{skript:multipol:figure:dipol}).
 Der Einfachheit halber führen wir die Rechnung zunächst nur
 in der $x$-$z$-Ebene durchführen und erst später mit Hilfe einer
 vektoriellen Schreibweise auf drei Dimensionen erweitern.
@@ -30,7 +38,7 @@ haben als entgegengesetzt gleiches Potential bezüglich beiden Ladungen
 und damit totales Potential 0.
 
 Wir betrachten jetzt das Potential im Punkt $(x,z)$, es ist
-\[
+\begin{equation}
 f(x,z)
 =
 \frac{q}{4\pi\varepsilon_0}
@@ -39,7 +47,8 @@ f(x,z)
 -
 \frac{1}{\sqrt{x^2 + (z+a)^2}}
 \biggr)
-\]
+\label{skript:multipol:dipol}
+\end{equation}
 Offenbar müssen wir die Nenner besser verstehen, um diese Summe 
 umformen zu können.
 Speziell müssen wir die Abhängigkeit von der Entfernung
@@ -47,24 +56,38 @@ $r=\sqrt{x^2+z^2}$ vom Nullpunkt
 und die Richtungsabhängigkeit voneinander trennen.
 Dazu betrachten wir nur einen einzelnen Term
 \[
-\frac{1}{\sqrt{x^2+(z+a)^2}}
+\frac{1}{\sqrt{x^2+(z\pm a)^2}}
 =
-\frac{1}{\sqrt{x^2+z^2+2az+a^2}}
+\frac{1}{\sqrt{x^2+z^2\pm 2az+a^2}}
 =
-\frac{1}{\sqrt{x^2+z^2}} \cdot \frac{1}{\sqrt{1+\frac{2az+a^2}{x^2+z^2}}}
+\frac{1}{\sqrt{x^2+z^2}} \cdot \frac{1}{\sqrt{1+\frac{\pm 2az+a^2}{x^2+z^2}}}
 =
-\frac{1}{r} \cdot \frac{1}{\sqrt{1+\frac{2az+a^2}{r^2}}}
+\frac{1}{r} \cdot \frac{1}{\sqrt{1+\frac{\pm 2az+a^2}{r^2}}}
 \]
-Offenbar ist es notwendig, einen Term der Form
-\[
+Für grosse Werte von $r$ verschwindet der zweite Term in der Wurzel,
+in erster Näherung verhält sich die Funktion daher wie $1/r$.
+In den zwei Termen von \eqref{skript:multipol:dipol} hebt sich dieses
+Verhalten jedoch weg, um die Funktion $f(x,z)$ zu verstehen, ist es
+daher nötig, die Abweichungen von $1/r$ genauer zu verstehen.
+
+Offenbar müssen wir Terme der Form
+\begin{equation}
 \frac{1}{\sqrt{1+t}}
 =
 (1+t)^{-\frac12}
-\]
-besser zu verstehen.
-Die Taylor-Reihe kann für eine allgemeinere Art von Reihe bestimmt werden,
-nämlich $g(t)=(1+t)^\alpha$.
-Dazu müssen die Ableitungen bestimmt werden
+\label{skript:multipol:wurzel}
+\end{equation}
+ausrechnen können, wobei wir später $t=(\pm2az+a^2)/r^2$ setzen wollen.
+
+\subsubsection{Binomialreihe}
+Die Taylor-Reihe der Funktion \eqref{skript:multipol:wurzel}
+kann für eine allgemeinere für die Funktionen
+\begin{equation}
+g(t)=(1+t)^\alpha
+\end{equation}
+mit beliebigem Exponenten bestimmt werden.
+
+Dazu müssen die Ableitungen der Funktion $g(t)$ bestimmt werden
 \begin{align*}
 g'(t)
 &=
@@ -86,12 +109,14 @@ g^{(n)}(t)
 &
 g^{(n)}(0)&=\alpha(\alpha-1)(\alpha-2)\dots(\alpha -n +1)
 \end{align*}
-Der Term zur Potenz $n$ ist
+Der Term zur Potenz $n$ in der Taylor-Reihe von $g(t)$ ist
 \[
 \frac{\alpha(\alpha-1)(\alpha-2)\dots(\alpha-n+1)}{n!} t^n
 \]
-Der Bruch sieht genau so aus wie der Binomialkoeffizient, daher schreibt
-man auch für nicht ganzzahlige $\alpha$
+Wäre $\alpha$ eine ganze Zahl, dann sähe der Bruch
+genau so aus wie der Binomialkoeffizient $\binom{\alpha}{k}$.
+In Erweiterung der üblichen Definition des Binomialkoeffizienten
+schreibt man auch für nicht ganzzahlige $\alpha$
 \[
 \binom{\alpha}{n}
 =
@@ -102,12 +127,13 @@ Mit dieser Schreibweise bekommen wir die Taylorreihe
 (1+t)^\alpha=\sum_{k=1}^\infty \binom{\alpha}{k} t^k
 \]
 für die Funktion $(1+t)^\alpha$.
-Diese Reihe ist konvergent für $|t|<1$.
+Sie heisst die {\em Binomialreihe} und ist konvergent für $|t|<1$.
+\index{Binomialreihe}
 
-Wir interessieren uns speziell f"ur den Fälle $\alpha=\pm\frac12$.
-Wir betrachten erst den Fall $\alpha=-\frac12$.
+\subsubsection{Der Fall $\alpha=-\frac12$}
+Wir betrachten die Binomialreihe für den Fall $\alpha=-\frac12$.
 Der Term zur Potenz $n$ ist
-\[
+\begin{equation}
 \frac{
 \bigl(-\frac12\bigr)
 \bigl(-\frac32\bigr)
@@ -118,23 +144,205 @@ Der Term zur Potenz $n$ ist
 (-1)^n \frac{1\cdot 3\cdot 5 \cdots (2n + 1)}{2^n\cdot 1\cdot 2\cdot 3\cdots n}
 =
 (-1)^n \frac{1\cdot 3\cdot 5 \cdots (2n+1)}{2\cdot 4\cdot 6\cdots (2n)}
-\]
+\label{skript:multipol:koeffizienten}
+\end{equation}
 Die zugehörige Potenzreihe ist daher
 \[
 \frac1{\sqrt{1+t}}
 =
 1-\frac12t+\frac3{8}t^2-\frac{15}{48}t^3+\frac{105}{354}t^4-\dots
 \]
-F"ur 
+%deren Koeffizienten man auch faktorisieren und damit etwas
+%Für 
+%\[
+%\frac1{\sqrt{1+t}}
+%=
+%1-\frac12 t
+%+ \frac12\frac32\frac12 t^2
+%- \frac 12\frac32\frac 52\frac1{3!} t^3
+%+ \frac 12\frac32\frac 52\frac72\frac1{4!} t^4
+%- \frac 12\frac32\frac 52\frac72\frac92\frac1{5!} t^4
+%+\dots
+%\]
+
+Wir verwenden die binomische Reihe jetzt, um das Dipolpotential
+zu berechnen.
+Setzen wir 
 \[
-\frac1{\sqrt{1+t}}
-=
-1-\frac12 t
-+ \frac12\frac32\frac12 t^2
-- \frac 12\frac32\frac 52\frac1{3!} t^3
-+ \frac 12\frac32\frac 52\frac72\frac1{4!} t^4
-- \frac 12\frac32\frac 52\frac72\frac92\frac1{5!} t^4
-+\dots
+t=\frac{\pm 2az+a^2}{r^2}
 \]
+in der binomischen Reihe, erhalten wir
+\[
+\frac{1}{\sqrt{1+\frac{\pm 2az+a^2}{r^2}}}
+=
+1-\frac12\frac{\pm 2az+a^2}{r^2}
++
+\frac38 \biggl(\frac{\pm 2az+a^2}{r^2}\biggr)^2+\dots
+\]
+und für das Dipolpotential $f(x,z)$ gemäss \eqref{skript:multipol:wurzel}
+\begin{align*}
+f(x,z)
+&=
+\frac{q}{4\pi\varepsilon_0 r}
+\biggl(
+1-\frac12\frac{-2az+a^2}{r^2} + \frac38 \biggl(\frac{-2az+a^2}{r^2}\biggr)^2+\dots
+\biggr)
+\\
+&\qquad
+-
+\frac{q}{4\pi\varepsilon_0 r}
+\biggl(
+1-\frac12\frac{2az+a^2}{r^2} + \frac38 \biggl(\frac{2az+a^2}{r^2}\biggr)^2+\dots
+\biggr)
+\\
+&=
+-\frac{2aq}{4\pi\varepsilon_0r^3}z + \dots
+\end{align*}
+Wenn die beiden Ladungen näher zusammen rücken, wenn also $a\to 0$,
+dann verschwindet das Potential.
+Wenn wir das Potential weiterhin sehen wollen, müssen wir den Betrag
+der Ladungen entsprechend vergrössern.
+Wenn wir $a$ gegen $0$ gehen lassen, lassen wir gleichzeit die Ladung
+$q$ grösser werden, so dass das Produkt $d=2qa$ gleich bleibt.
+Mit dieser Konvention wird das Dipolpotential
+\begin{equation}
+f(x,z) = -\frac{d}{4\pi\varepsilon_0 r^2}\frac{z}{r}+\dots
+\label{skript:multipol:dipolpotential}
+\end{equation}
+Darin haben wir statt $z$ den Bruch $z/r$ abgespalten, da dieser
+eintlang eines vom Nullpunkt ausgehenden Strahls vom Zentrum jeweils
+konstant ist.
+Wir haben daher das Potential in Faktoren aufgeteilt, die verschiedene
+geometrische Bedeutung haben.
+Der Faktor $1/r^2$ beschreibt, wie das Potential mit der Entfernung abnimmt.
+Der Faktor $z/r$ beschreibt, wie das Potential von der Richtung im
+Bezug auf die $z$-Achse abhängt.
+Die übrigen Faktoren beschreiben, wie das Potential aus dem Dipolmoment
+$d$ erzeugt wird.
+
+\subsubsection{Vektorschreibweise}
+Das Dipolpotential kann besonders elegant geschrieben werden, wenn
+wir das skalare Dipolmoment $d$ durch einen Vektor $\vec{d}$ ersetzen.
+In der Formel~\eqref{skript:multipol:dipolpotential}
+für das Dipolpotential brauchen wir die $z$-Koordinate
+des Punktes.
+Diese können wir als das Skalarprodukt mit dem Standardbasisvektor
+in $z$-Richtung bekomen.
+Wenn wir also
+\[
+\vec{d}=\begin{pmatrix}0\\0\\d\end{pmatrix}
+\]
+setzen, dann können wir das Dipolpotential vektoriell als
+\begin{equation*}
+f(\vec{r})
+=
+-
+\frac{1}{4\pi\varepsilon_0r^2} \frac{\vec{d}\cdot\vec{r}}{r}
+\end{equation*}
+geschrieben werden.
+In dieser Form ist das Dipolpotential für jede beliebige Orientierung
+des Dipolmomentes verwendbar.
+
+Der Dipolterm geht für $r\to\infty$ wie $r^{-2}$ gegen $0$, also
+deutlich schneller als das Potential einer Punktladung.
+
+\subsection{Quadrupol}
+Wie in der eindimensionalen Situation vermuten wir, dass sich
+das Potential komplizierterer Ladungsverteilungen ebenfalls durch
+eine Reihe darstellen lässt, deren nächster Term von der Form
+\begin{equation}
+\frac1{4\pi\varepsilon_0}\cdot\frac{1}{r^5} p(\vec{r},\vec{r})
+\label{skript:multipol:quadropolterm}
+\end{equation}
+sein muss.
+Darin ist $p$ ein Ausdruck, der in beiden Argumenten linear ist.
+
+Schreiben wir die Koordinaten als $(x_1,x_2,x_3)$, dann wird 
+sich $p$ in der Form
+\[
+\sum_{k,l=1}^3 Q_{kl}x_kx_l
+\]
+schreiben lassen.
+Allerdings kann nicht jede beliebige Matrix zugelassen werden, 
+da ja nur die Abweichungen vom Dipolmoment erfasst werden sollen.
+Nimmt man für $Q$ die Einheitsmatrix, dann erhält man einfach nur
+\[
+\sum_{k,l=1}^3 Q_{kl}x_kx_l=\sum_{i=1}^3 x_i^2 = \vec{r}\cdot\vec{r}=r^2,
+\]
+der Quadrupol-Term wird also 
+\[
+\frac1{4\pi\varepsilon_0}\cdot\frac{1}{r^3},
+\]
+was keine Richtungsabhängigkeit mehr enthält und wir daher erwarten
+würden, dass diese Art von Abhängigkeit bereits im ersten Term 
+enthalten war.
+Man kann dies zum Beispiel dadurch erreichen, dass die Matrix $Q$ 
+verschwindende Spur haben soll, also $\operatorname{Spur}Q=0$.
+
+Die defaillierte Berechnung des Quadrupolanteils ist etwas mühsam,
+wir geben hier nur das Resultat an.
+Man findet
+\[
+Q_{kl}
+=
+\int_{\mathbb R^3}
+\varrho(\vec{r}) \cdot (3x_kx_l-r^2\delta_{kl})
+\,dx_1\,dx_2\,dx_3.
+\]
+Das Wachstum des Quadrupolterms~\eqref{skript:multipol:quadropolterm}
+ist also von der Ordnung $r^{-3}$.
+Auch dieser Term geht wieder einer Potenz schneller gegen $0$ als der
+Dipolterm.
+
+\subsection{Höhere Multipole}
+Die Entwicklung Entwicklung in Dipol und Quadrupol lässt sich noch
+weiter führen.
+Dabei werden sukzessive Terme entstehen, die immer schneller gegen $0$
+gehen, für grosse Entfernung vom Nullpunkt also immer weniger von
+Bedeutung sein werden.
+Die Darstellung dieser höheren Multipole wird allerdings zunehmen
+schwierig. 
+Der nächste Term nach dem Quadrupolterm müsste die Form
+\begin{equation}
+\frac1{4\pi\varepsilon_0}\frac{p(\vec r)}{r^7}
+\label{skript:multipol:7ord}
+\end{equation}
+haben, wobei der Zähler $p(\vec r)$ eine Grösse dritter Ordnung in
+den Koordinaten sein müsste.
+Er wird also durch ein homogenes Polynom dritten Grades in den Koordinaten
+$x$, $y$ und $z$ beschrieben.
+Der Term~\eqref{skript:multipol:7ord} geht wie $r^{-4}$ gegen Null,
+also erneut eine Potenz schneller als der Quadrupolterm.
+
+\section{Zusammenfassung}
+Allen Termen der Multipolentwicklung
+\[
+f(\vec r)
+=
+\frac{1}{4\pi\varepsilon 0}
+\biggl(
+q
+\frac{1}{r}
++
+\frac{1}{r^2} \frac{\vec{d}\cdot\vec{r}}{r}
++
+\frac{1}{r^3} \sum_{k,l}Q_{kl}\frac{x_k}{r}\frac{x_l}{r}
++
+\frac{1}{r^4} \sum_{k,l,j}Q_{klj}\frac{x_k}{r}\frac{x_l}{r}\frac{x_j}{r}
++
+\dots
+\biggr)
+\]
+ist gemeinsam, dass sie die Abhängigkeit des Potentials in einen
+aus physikalischen Gründen plausiblen radialen Teil der Form $r^{-k}$
+und einen richtungsabhängigen Teil aufteilen.
+Die reine Richtungsabhängigkeit kann dadurch ausgedrückt werden, dass
+er nur von den Quotienten $x/r$, $y/r$ und $z/r$ abhängt.
+
+TODO:
+\begin{itemize}
+\item Potentiallinien-Plots für Dipol- und Quadrupolfeld
+\item 3D-Plot von Dipolmoment und evtl Quadropolfeld
+\end{itemize}
 
 
