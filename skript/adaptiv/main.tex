@@ -145,13 +145,18 @@ Es handelt sich dabei um eine partielle nicht lineare Differential Gleichung der
 \dfrac{\partial f}{\partial y} = ne_{2}
 \end{equation}
 Die Gleichungen \eqref{eikdfx} und \eqref{eikdfy} werden nun in die Gleichung \eqref{eikonal} eingesetzt.
-\begin{equation}\label{eikonal}
+\begin{equation}\label{lösung_eik}
 \left( \dfrac{\partial f}{\partial x}\right)^{2} + \left( \dfrac{\partial f}{\partial y}\right) ^{2} = \left( ne_{1}\right) ^{2}+\left( ne_{2}\right)^{2}=n^{2}(e_{1}^{2}+e_{2}^{2})=n^{2}
 \end{equation}
 Was bedeutet das nun diese Lösung, für den einfachen Fall, dass $n(r)$ konstant ist. Die Erklärung dazu ist ziemlich einfach, es ist die selbe Situation wie beim kürzesten Weg, wenn beide Brechungsindizes gleich sind. Es kommt zu keiner Störung der Wellenfront, sie bleibt somit eine ebene Wellenfront und das Licht bewegt sich auf Strahlen die Senkrecht zu der Wellenfront sind.
-Eine Weitere Möglichkeit auf eine Lösung zu kommen, ist wenn ein Separationsansatz gemacht wird. Die Idee dabei ist, dass die Funktion $f$ aus zwei einzelnen Funktionen aufgebaut ist, jeweils nur von einer Variabel abhängen. 
-\begin{equation}
+
+Eine Weitere Möglichkeit auf eine Lösung zu kommen, ist wenn ein Separationsansatz gemacht wird. Die Idee dabei ist, dass die Funktion $f$ aus zwei einzelnen Funktionen aufgebaut ist, die nur von einer Variabel abhängig sind. $f$ hat bei diesem Ansatz die Form der Gleichung \eqref{ansatzsep}, dieser Ansatz wird in die Gleichung \eqref{eikonal} eingesetzt.  
+\begin{equation}\label{ansatzsep}
 f(x,y)=X(x) + Y(y)
+\end{equation}
+Nach dem einsetzen und Ableiten, stellt man fest, dass auch für $n(r)$ eine Wahl getroffen werden muss, damit eine Lösung mit diesem Ansatz gefunden werden kann. In einem ersten Versuch wird $n(r)=\vert y\vert$ gesetzt. Dadurch erhalten wir die Gleichung \eqref{eikmitsansatz}
+\begin{equation}\label{eikmitsansatz}
+\left(\dfrac{dX}{dx}\right) ^{2}+\left(\dfrac{dY}{dy}\right) ^{2}=y^{2}
 \end{equation}
 
 \printbibliography[heading=subbibliography]
