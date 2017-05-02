@@ -54,7 +54,7 @@ Zum einen die Gauss Krümmung was eine intrinsische Krümmung ist und zum andern
 Die Gauss Krümmung einer Fläche im Punkt P ist definiert als das Produkt der zwei Hauptkrümmungen k1 und k2.
 
 \begin{equation} \label{Gauss_Kruemmung_D}
-  K=k1*k2=1/R1*1/R2
+  H=k1\, k2= \frac{1}{R1}\frac{1}{R2}
 \end{equation}
 
 
@@ -68,7 +68,7 @@ Wenn die Ameise auf einer Kugel ist kann sie feststellen, dass nur schon in ihre
 Die Mittlere Krümmung einer Fläche im Punkt P ist definiert durch den Mittelwert der zwei Hauptkrümmungen k1 und k2.
 
 \begin{equation} \label{Mittlere Kruemmung_D}
-  H=1/2*(k1+k2)= (1/2)(1/R1+1/R2)
+  H=\frac{1}{2}(k1+k2)= \frac{1}{2}\bigg(\frac{1}{R1}+\frac{1}{R2}\bigg)
 \end{equation}
 
 Die Mittlere Krümmung ist eine extrinsische Krümmung. 
@@ -80,7 +80,7 @@ Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fl�
 
 \begin{figure} [H]
   \centering
-  \includegraphics[scale=0.7]{minimal/Gauss_und_Mittlerekruemmung.png}
+  \includegraphics[scale=0.4]{minimal/Tabelle_Kruemmung.png}
   \caption{Vergleich Grauss und Mittlerkrümmung} 
 \end{figure}
 
@@ -112,7 +112,7 @@ In diesem Fall ist die Krümmung eines Seifenfilms proportional zum Druckuntersc
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.6]{minimal/SoapFilm.jpg}
+  \includegraphics[scale=0.3]{minimal/SattelflacheSoapFilm.png}
   \caption{Seifenfilm bildet Minimalfläche} 
 \end{figure}
 
@@ -130,22 +130,27 @@ Def: Eine Fläche $M \subset \mathbf{R}^{3}$ ist genau dann minimal wenn jeder P
 \section{Beispiele}
 \index{Beispiele}
 \subsection{Katenoid}
-Wen man zwei drahtringe parallel zueinander in Seifenwasser taucht entsteht die Form eines Katanoids. 
-Das Katanoid ist eines der einfacheren Beispiele einer Minimalfläche. 
-Es wurde von Herr Jean Baptiste Meusnier schon 1776 entdeckt.
-In diesem Abschnitt wird die mathematische Berechnung des Katanoids mithilfe der Eulerschen Differenzialgleichung der Variationsrechnung beschrieben.
+Wen man zwei drahtringe parallel zueinander in Seifenwasser taucht entsteht die Form eines Katenoids. 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=1]{minimal/soap_film_catanoid.PNG}
-  \caption{Skizze: Katanoid} 
+  \includegraphics[scale=0.5]{minimal/Cartenoid_Foto.png}
+  \caption{Skizze: Seifenfilm-Katenoid} 
 \end{figure}
-In obiger Skizze ist ein Katanoid abgebildet bei welchem in Bezug auf sie $z$ Achse, der untere Drahtring bei $-L$ und der obere bei $+L$ ist. 
-Die beiden Kreise sollen die gleichen Radien haben also gilt $r(-L)=r(+L)=R$. Die flächenpunkte des Katanoids werden mit der Funktion $r(z)$ beschrieben. 
-Die Distanz vom Ursprung zu einem Flächenpunkt kann nach Pythagoras mit $s^2=z^2+r^2$ berechnet werden, also gilt auch $ds^2=dz^2+dr^2$.
+Das Katenoid ist die als erstes entdeckte Minimalfläche.
+Sie würde schon 1776 von Herr Jean Baptiste Meusnier erstmals beschrieben.
+In diesem Abschnitt wird die mathematische Berechnung des Katenoids mithilfe der Eulerschen Differenzialgleichung der Variationsrechnung beschrieben.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.3]{minimal/Catenoid3-4Mark}
+  \caption{Skizze: Katenoid} 
+\end{figure}
+In obiger Skizze ist ein Katenoid abgebildet bei welchem in Bezug auf sie $z$ Achse, der untere Drahtring bei $-L$ und der obere bei $+L$ ist. 
+Die beiden Kreise sollen die gleichen Radien haben also gilt $r(-L)=r(+L)=R$. Die flächenpunkte des Katenoids werden mit der Funktion $r(z)$ beschrieben. 
+Um die Fläche des Katenoids zu berechnen, braucht man eine Gleichung welche eine länge auf der Katenoidoberfläche beschreibt. Mit Hilfe von Pythagoras kann man schreiben $ds^2=dz^2+dr^2$.
 Formt man diese Gleichung um erhält man die Gleichung \eqref{ds}.
 
 \begin{equation} \label{ds}
-  ds=\sqrt{dz^2(1+\frac{dr^2}{dz^2})}= \sqrt{dz^2(1+\dot r^2)}=\sqrt{(1+\dot r^2)}dz
+  ds=\sqrt{dz^2\bigg(1+\frac{dr^2}{dz^2}\bigg)}= \sqrt{dz^2(1+\dot r^2)}=\sqrt{(1+\dot r^2)}\,dz
 \end{equation}
 \subsubsection{Minimalfläche}
 Der Seifenfilm versucht automatisch sich im minimalenergetischen Zustand zu befinden. In diesem Zustand ist dann auch die Fläche $S$ des Seifenfilms minimal.
@@ -155,35 +160,35 @@ Demzufolge muss das integral \eqref{S1} minimiert werden.
 \end{equation}
 Durch einsetzen von Gleichung \eqref{ds} erhält man die Gleichung \eqref{S2}, welche man als Funktion $F(r,\dot r, z)$ noch verallgemeinert schreiben kann.
 \begin{equation} \label{S2}
-  S=2 pi \int_{-L}^{+L} r\sqrt{(1+\dot r^2)}dz =2 \pi \int_{-L}^{+L}  F(r,\dot r, z) dz 
+  S=2 \pi \int_{-L}^{+L} r\sqrt{(1+\dot r^2)}\,dz =2 \pi \int_{-L}^{+L}  F(r,\dot r, z) \,dz 
 \end{equation}
 
 
 Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differenzialgleichung der Variationsrechnung bedienen. 
 \subsubsection{Variationsrechnung}
 Die Eulerschen Differenzialgleichung der Variationsrechnung wird im Kapitel der Geodäten genauer erklährt.
-Das Anwendungsprinzip kuz zusammengefast ist, hat man ein kompliziertes Integral welches man nicht einfach fundamental lösen kann um die Extremwerte zu bestimmen kann man die Eulersche DGL anwenden. Diese besagt, dass anstelle des Ausrechnens eines einer Integralfunktion der Art \eqref{E_DGL1} kann auch die DGL \eqref{E_DGL2} gelöst werden um die Extremwerte solcher Funktionen zu finden.
+Das Anwendungsprinzip kurz zusammengefast ist, hat man ein kompliziertes Integral welches man nicht einfach fundamental lösen kann um die Extremwerte zu bestimmen kann man die Eulersche DGL anwenden. Diese besagt, dass anstelle des Ausrechnens eines einer Integralfunktion der Art \eqref{E_DGL1} kann auch die DGL \eqref{E_DGL2} gelöst werden um die Extremwerte solcher Funktionen zu finden.
 
 \begin{equation} \label{E_DGL1}  
-  I(y)= \int_a^b F(x,y(x),\dot y(x))dx       
+  I(y)= \int_a^b F(x,y(x),\dot y(x))\,dx       
 \end{equation}
 
 \begin{equation} \label{E_DGL2}
-\left(\frac{\partial F}{\partial y}\right)- \frac{d}{dx} \left(\frac{\partial F}{\partial \dot{y}}\right)=0         
+\bigg(\frac{\partial F}{\partial y}\bigg)- \frac{d}{dx} \bigg(\frac{\partial F}{\partial \dot{y}}\bigg)=0         
 \end{equation}
 
-Für die Gleichung des Katanoids \eqref{S2} erhält man somit die DGL \eqref{K_DGL1}.
+Für die Gleichung des Katenoids \eqref{S2} erhält man somit die DGL \eqref{K_DGL1}.
 \begin{equation} \label{K_DGL1}
-\left(\frac{\partial F}{\partial r}\right)- \frac{d}{dz} \left(\frac{\partial F}{\partial \dot{r}}\right)=0    
+\bigg(\frac{\partial F}{\partial r}\bigg)- \frac{d}{dz} \bigg(\frac{\partial F}{\partial \dot{r}}\bigg)=0    
 \end{equation}
 
 Die Gleichung \eqref{K_DGL_H} wird nun schrittweise umgeformt bis eine  Differentialgleichung zweiter Ordnung \eqref{K_DGL_R} entsteht.
 \begin{equation} \label{K_DGL_H}
-\sqrt{1+{\dot {r}}^2}-\frac{ d }{ dx } \left( r \frac{ 1 }{2  }\left( {1+{\dot {r}}^2}  \right)^{-1/2} 2 \dot {r}\right)=0
+\sqrt{1+{\dot {r}}^2}-\frac{ d }{ dx } \bigg( r \frac{ 1 }{2  }\left( {1+{\dot {r}}^2}  \right)^{-1/2} 2 \dot {r}\bigg)=0
 \\
 \end{equation}
 \begin{equation} \label{K_DGL_H2}
-\left(1+{\dot {r}}^2  \right)^{-1/2}-(r \frac{ -1 }{2  } \left({1+{\dot {r}}^2}  \right)^{-3/2} 2 \dot{r} \ddot{r}  \dot{r}+ r \left({1+{\dot {r}}^2}  \right)^{-1/2} \ddot{r} +\dot{r} \left({1+{\dot {r}}^2}  \right)^{-1/2} \dot{r}=0
+\left(1+{\dot {r}}^2  \right)^{-1/2}-\bigg(r \frac{ -1 }{2  } \left({1+{\dot {r}}^2}  \right)^{-3/2} 2 \dot{r} \ddot{r}  \dot{r}+ r \left({1+{\dot {r}}^2}  \right)^{-1/2} \ddot{r} +\dot{r} \left({1+{\dot {r}}^2}  \right)^{-1/2} \dot{r}\bigg)=0
 \end{equation}
 \begin{equation} \label{K_DGL_R}
 1+{\dot {r}}^2=r  \ddot{r}
@@ -192,35 +197,36 @@ Die Gleichung \eqref{K_DGL_H} wird nun schrittweise umgeformt bis eine  Differen
 Die Differenzialgleichung zweiter Ordnung \eqref{K_r} kann mit Hilfe einiger mathematischer Umformungen, Aufleiten und hyperbolische Trigonometrie berechnet werden. 
 Dies ist eine langwierige Berechnung und wird daher hier nicht durchgeführt.
 Anstelle des konkreten Ausrechnens kann man die Lösung der DGL \eqref{K_DGL_R} auch erraten. 
-Aus der Hyperbolischen Trigonometrie kennt man $cosh^2-sinh^2=1$ oder anders geschrieben $1+sinh^2=cosh^2$ \eqref{K_hTrigo}. Beim Ableiten von $cosh$ erhält man $sinh$ und $sinh$ abgeleitet ergibt wieder $cosh$. Mit dieser Erkenntnis kann durch das vergleichen der Gleichungen versuchen die Form der Lösung der DGL \eqref{K_DGL_R2} zu erraten. 
+Aus der Hyperbolischen Trigonometrie kennt man $\cosh^2-\sinh^2=1$ oder anders geschrieben $1+\sinh^2=\cosh^2$ \eqref{K_hTrigo}. Beim Ableiten von $\cosh$ erhält man $\sinh$ und $\sinh$ abgeleitet ergibt wieder $\cosh$. Mit dieser Erkenntnis kann durch das vergleichen der Gleichungen versuchen die Form der Lösung der DGL \eqref{K_DGL_R2} zu erraten. 
 \begin{equation} \label{K_hTrigo}
-1+sinh^2=cosh^2
+1+\sinh^2=\cosh^2
 \end{equation}
 \begin{equation} \label{K_DGL_R2}
 1+{\dot {r}}^2=r  \ddot{r}
 \end{equation}
-Der $sinh^2$  (zweite Term links) soll der quadrierten Ableitung einer Funktion entsprechen ${\dot {r}}^2$ also kann man schreiben $(cosh)'^2$. Auf der rechten Seite sollte $cosh^2=cosh cosh$ dem Produkt von einer Funktion und ihrer doppelten Ableitung gleich kommen. Da gilt $(cosh)''=(sinh)'=cosh$ kann die rechte Seite so $(cosh) (cosh)''$ auch durch $cosh$ ausgedrückt werden. Zusammengefast kann man die Gleichung \eqref{K_hTrigo} in die Gleichung \eqref{K_hTrigoU} umformen und sieht daraus das $r(z)$ eine $cosh$ Funktion sein muss.
+Der $\sinh^2$  (zweite Term links) soll der quadrierten Ableitung einer Funktion entsprechen ${\dot {r}}^2$ also kann man schreiben $(\cosh)'^2$. Auf der rechten Seite sollte $\cosh^2=\cosh \cosh$ dem Produkt von einer Funktion und ihrer doppelten Ableitung gleich kommen. Da gilt $(\cosh)''=(\sinh)'=\cosh$ kann die rechte Seite so $(\cosh) (\cosh)''$ auch durch $\cosh$ ausgedrückt werden. Zusammengefast kann man die Gleichung \eqref{K_hTrigo} in die Gleichung \eqref{K_hTrigoU} umformen und sieht daraus das $r(z)$ eine $\cosh$ Funktion sein muss.
 \begin{equation} \label{K_hTrigoU}
-1+(cosh)'^2=(cosh) (cosh)''
+1+(\cosh)'^2=(\cosh) (\cosh)''
 \end{equation}
 
 Die exakte Lösung der DGL \eqref{K_DGL_R} beinhaltet noch die zwei konstanten $K$ und $\xi$ welche durch die doppelte Integration dazukommen.
 
 \begin{equation} \label{K_r}
-r(z)=K cosh(\frac{z-\xi}{K})
+r(z)=K \cosh\bigg(\frac{z-\xi}{K}\bigg)
 \end{equation}
 
 Bei $z=+_L$ ergibt sich \eqref{K_rL}.
 \begin{equation} \label{K_rL}
-K cosh(\frac{L-\xi}{K})=K cosh(\frac{-L-\xi}{K})
+K \cosh\bigg(\frac{L-\xi}{K}\bigg)=K \cosh\bigg(\frac{-L-\xi}{K}\bigg)
 \end{equation}
 
-Da der $cosh$ eine gerade Funktion ist, kommt man entweder auf $L-\xi=-L-\xi$ oder auf $L-\xi=-(L-\xi)$.
-Beim ersten Fall wäre $L=-L$ was keinen Sinn ergibt da dann die Fläche gleich Null währe. Beim zweiten Fall muss $\xi=0$ sei also ist die Lösung für das Katanoid die Funktionsgleichung \eqref{K_rz}.
+Da der $cosh$ eine gerade Funktion ist, kommt man entweder auf $L-\xi=-L-\xi$ oder auf $L-\xi=-(-L-\xi)$.
+Beim ersten Fall wäre $L=-L$ was keinen Sinn ergibt da dann die Fläche gleich Null währe. Beim zweiten Fall muss $\xi=0$ sei also ist die Lösung für das Katenoid die Funktionsgleichung \eqref{K_rz}.
 
 \begin{equation} \label{K_rz}
-r(z)=K cosh(\frac{z}{K})
+r(z)=K \cosh\left(\frac{z}{K}\right)
 \end{equation}
+
 
 
 
@@ -240,7 +246,7 @@ Die Paare fließen auf der Höhe Null ($z=0$) ineinander. Die dabei gebildete Sa
   \caption{Neun Perioden der Sattelfläche} 
 \end{figure}
 Gemäß Definition nach Variationsproblem ist dabei die Mittlere Krümmung $M=0$. Dies wird im Abschnitt \ref{Scherk Herleitung}  nachgerechnet.\\ Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlösung nachgebildet werden. Dies folgt direkt aus der äquivalenten Definition \ref{Seifenfilm}. (Photo)
-Die Sattelfläche wurde erstmals 1834 von Prof. H. F. Scherk beschrieben und hergeleitet. Sie war nach der in 1776 von Meusnier beschriebene Katanoide die erste neue Minimalfläche. 
+Die Sattelfläche wurde erstmals 1834 von Prof. H. F. Scherk beschrieben und hergeleitet. Sie war nach der in 1776 von Meusnier beschriebene Katenoide die erste neue Minimalfläche. 
 \subparagraph{Herleitung}\label{Scherk Herleitung}
 Unter Verwendung der Minimalflächengleichung (Referenz)
 \begin{equation}\label{Minimalflaechengleichung}
