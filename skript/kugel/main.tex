@@ -183,7 +183,7 @@ Als erstes berechnen wir die einzelnen Flächeninhalte der Zweiecke A, B und C
 Die drei Zweiecke und zweimal das kleine graue Eulersche’ Dreieck bedecken zusammen  die halbe Kugel was in der Abbildung 13.6 ersichtlich ist.
 
 \begin{center}
-        \includegraphics[width=0.5\textwidth]{kugel/1HalbeKugel.jpg}
+        \includegraphics[width=0.4\textwidth]{kugel/1HalbeKugel.jpg}
     \captionof{figure}{Bild FLäche dreieck}
 \end{center}
 
@@ -481,7 +481,7 @@ Durch die Herleitung des Winkelkosinussatzes haben wir zugleich die Dualität de
 \end{satz}
 
 \begin{center}
-        \includegraphics[width=0.5\textwidth]{kugel/1Dualitat.jpg}
+        \includegraphics[width=0.4\textwidth]{kugel/_Dualitat.jpg}
     \captionof{figure}{Bild Dualität}
 \end{center}
 
@@ -591,7 +591,7 @@ Die geografische Breite eines Standortes ist nichts anderes, als der Winkel am E
 \end{center}
 
 
-\subsection{Navigation mit den Breitengraden}
+\subsection{Navigation mit den Breitengraden}  \label{BreitengradM}
 Da der Breitengrad bereits sehr früh ziemlich präzise bestimmt werden konnte, nutzten bereits die Seefahrer um Christoph Kolumbus den Breitengrad zur Navigation ihrer Flotten.
 Den dieser lässt sich ziemlich einfach aus dem höchsten Sonnenstand oder einem Fixstern bestimmen. Dabei wird mit einem Jakobsstab\footnote{%
 Der Jakobsstab ist ein früheres astronomisches Instrument zur Winkelmessung und wurde vor allem in der Seefahrt verwendet. Er ist in der Nautik der Vorläufer des Sextanten.} (später Sextant\footnote{%
@@ -789,6 +789,11 @@ Im Jahr 1935 wurde ein Krater auf der westlichen Mondvorderseite nach dem deutsc
 \end{center}
 
 
+\begin{figure} 
+    \subfigure[Bezeichnung der linken Grafik]{\includegraphics[width=0.3\textwidth]{kugel/Mondkarte.jpg}}
+    \subfigure[Bezeichnung der rechten Grafik]{\includegraphics[width=0.3\textwidth]{kugel/Mondkarte.jpg}} 
+\caption{Titel unterm gesamten Bild} 
+\end{figure} 
 
 
 XXXXXXX
@@ -800,9 +805,9 @@ Es dient zur Positionsbestimmung auf dem offenen Meer oder anderen Gebieten in d
 
 Das Nautische Dreieck an der Himmelskugel hat folgende Eckpunkte:
 \begin{itemize}
-\item Himmelsnordpol, besser bekannt als Polarstern ($N$)
-\item Gestirn, ein uns bekannter Stern, wir verwenden im Beispiel die Sonne ($S$)
-\item Zenit, der Himmelspunkt senkrecht über uns ($Z$)
+\item Himmelsnordpol ($N$) - auch bekannt als Polarstern
+\item Gestirn ($S$) - ein uns bekannter Stern, wir verwenden im Beispiel die Sonne
+\item Zenit ($Z$) - der Himmelspunkt welcher sich senkrecht über uns befindet
 \end{itemize}
 
 Dieses Kugeldreieck wird das nautisches Dreieck genannt.
@@ -811,17 +816,13 @@ Dieses Kugeldreieck wird das nautisches Dreieck genannt.
 
 \subsection{Berechnung der Dreiecksseiten}
 
-
-
-
-
 \begin{align*}
-\overline{ZS} &= XX \quad \quad \quad \quad \quad \quad 
-\overline{NZ} &= XX \\
-\overline{NS} &= XX \quad \quad \quad \quad \quad \quad 
-\tau &= XX 
-\end{align*} 
-
+\overline{ZS} = 90^{\circ} - h \quad \quad \quad \quad \quad \quad 
+\overline{NZ} = 90^{\circ} - \phi \\
+\overline{NS} = 90^{\circ} - \delta \quad \quad \quad \quad \quad \quad 
+\tau = t - e_\delta - \lambda 
+\end{align*}
+ 
 
 \subsection{Bestimmung des Längengrades} \label{BestimmungL} 
 Zur Bestimmung des Längengrades verwenden wir den Seitenkosinussatz:
@@ -834,21 +835,54 @@ Auf unsere Seiten angewendet können wir einsetzen
 \begin{align*}
 \cos(\overline{ZS}) &= \cos(\overline{NZ}) \cos(\overline{NS}) + \sin(\overline{NZ}) \sin(\overline{NS}) \cos(\tau) \\
 \Rightarrow \quad \quad
-\cos(90^{\circ} - h) &= \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta) + \sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta)\cos(\tau)
+\cos(90^{\circ} - h) &= \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta) + \sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta) \cos(\tau)
 \end{align*}
 
 Nach dem uns unbekannten Winkel $\tau$ aufgelöst ergibt die Gleichung
 \begin{align*}
-\tau = \arcos 
+\tau = \arccos 
 \frac{ \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta) - \cos(90^{\circ} - h)} {\sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta)}
 \end{align*}
 
-Der Winkel $\tau$ enthält folgende Komponente
+Der Winkel $\tau$ setzt sich aus folgenden Komponenten zusammen
+\begin{align*}
+\cos (\tau) = \cos (t - e_\delta - \lambda) 
+\end{align*}
+
+Dabei haben wir diese uns bekannten Grössen:
 \begin{itemize}
-\item Zeit
-\item Rektazension
-\item Längengrad $\lambda$
+\item Zeit ($t$) $\Rightarrow$ Uhr
+\item Rektazension ($e_\delta$) $\Rightarrow$ Sternatlas, Almanach, App 
 \end{itemize}
+\\
+
+Dabei ist die einzige Unbekannte der gesuchte Längengrad ($\lambda$), dieser lässt sich 
+\begin{itemize}
+\item Längengrad ($\lambda$) $\Rightarrow$ Der Längengrad unseres Standorts ist die einzige Unbekannte
+\end{itemize}
+
+\subsection{Sternzeit}
+
+
+\subsection{Breitengrad bekannt? - Breite nicht bekannt!}
+In den vorherigen Berechnungen sind wir immer davon ausgegangen, das uns die Breite bekannt ist. Dies ist in Wirklichkeit aber nicht so, denn auf dem offenen Meer hat man keinerlei Anhaltspunkte wo man sein könnte. \\
+Im Kapitel~\ref{BreitengradM} \nameref{BreitengradM} haben wir aber gesehen, das sich dieser relativ einfach und ohne grossen Aufwand bestimmen lässt. Damit wir auf See eine verlässliche Messung erhalten, benötigen wir mindestens zwei Sterne. Mit diesen beiden Messungen kann man den Messfehler minimieren und den Standort relativ genau bestimmen.
+
+Da wir zwei Sterne haben, benötigen wir auch zwei Gleichungen mit zwei Unbekannten
+\begin{align*}
+\cos(\overline{ZS_1}) &= \cos(\overline{NZ}) \cos(\overline{NS_1}) + \sin(\overline{NZ}) \sin(\overline{NS_1}) \cos(\tau_1) \\
+\cos(\overline{ZS_2}) &= \cos(\overline{NZ}) \cos(\overline{NS_2}) + \sin(\overline{NZ}) \sin(\overline{NS_2}) \cos(\tau_2) \\
+\\
+\Rightarrow \quad \quad
+\cos(90^{\circ} - h_1) &= \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta_1) + \sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta_1) \cos(\tau_1) \\
+\Rightarrow \quad \quad
+\cos(90^{\circ} - h_2) &= \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta_2) + \sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta_2) \cos(\tau_2)
+\end{align*}
+
+Diese Gleichungen lassen sich nur mit Hilfe eines Computers oder viel Geduld und Zeit lösen. Die Hilfe des Computers ist heutzutage kein Problem, jedoch gab es diesen zur Zeit der Entdecker und Seefahrer nicht. Da kommt die Geduld und Zeit ins Spiel, diese war auf einem Schiff auf offener See reichlich vorhanden.
+
+
+
 
 
 \printbibliography[heading=subbibliography]
