@@ -33,7 +33,8 @@ CHAPTERS = 								\
 	chapters/m-multipole.tex					\
 	chapters/friedmann.tex						\
 	chapters/f-beispiele.tex					\
-	chapters/f-friedmann.tex
+	chapters/f-friedmann.tex					\
+	chapters/cmb.tex
 
 SKRIPTFILES = vorwort.tex uebersicht.tex \
 	$(CHAPTERS) \
