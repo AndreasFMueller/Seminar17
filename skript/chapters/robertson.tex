@@ -167,7 +167,417 @@ ideales Gas modelliert mit dem einzigen Unterschied, dass
 die Energiedichte bei der Expansion schneller abnimmt, weil
 zusätzlich auch die Wellenlänge der Strahlung gestreckt wird.
 
+\section{Homogene und isotrope Metrik%
+\label{skript:robertson:himetrik}}
+Wir suchen jetzt eine Metrik des dreidimensionalen Raumes, welche
+isotrop und homogen ist.
+Der euklidische Raum mit der Metrik
+\[
+g_{ij}dx^i\,dx^j
+=
+dx^2 + dy^2 + dz^2
+\]
+ist sicher homogen und isotrop. 
+Er ist aber auch flach, und daher zu wenig allgemein als mögliches
+Modell für das Universum.
+Die euklidische Metrik kann auch in Kugelkoordinaten als
+\begin{equation}
+ds^2
+=
+dr^2
++ 
+r^2\,d\vartheta^2
++
+r^2\sin^2\vartheta\,d\varphi^2
+\label{skript:rwmetrik:kugelkoordinaten}
+\end{equation}
+geschrieben werden.
+Die letzten zwei Terme~\eqref{skript:rwmetrik:kugelkoordinaten}
+zeigen scheinbar eine bevorzugte Richtung, nämlich die Richtung
+des Nord- und Südpols.
+Dies ist jedoch nur ein Artefakt des Koordinatensystems, die 
+Längenmessung ist davon nicht betroffen.
+Wir können dies dadurch ausdrücken, dass wir die zwei Terme
+zusammenfasssen als
+\begin{equation}
+d\Omega^2 = d\vartheta^2 + \sin^2\vartheta\,d\varphi^2.
+\end{equation}
+Damit kann die Metrik abgekürzt als
+\begin{equation}
+ds^2 = dr^2 + r^2\,d\Omega^2
+\end{equation}
+geschrieben werden.
+Der Terme $r^2\,d\Omega^2$ beschreibt die Längenmessung auf der
+``Kugel'' bei der Koordinaten $r$ um den Nullpunkt des
+Koordinatensystems.
+
+Da das Universum isotrop ist, darf keine Richtung ausgezeichnet sein.
+Insbesondere muss eine von der euklidischen Metrik abweichende
+Metrik immer noch unverändert den Teil $d\Omega^2$ enthalten.
+Es ist aber zulässig, dass die Längenmessung auf der Kugel sich
+gegenüber der Längenmessung in radialer Richtung verändert hat.
+Man beobachtet dies zum Beispiel auch in der Umgebung eines Punktes
+auf einer Kugeloberfläche: je weiter man sich von diesem Punkt entfernt,
+desto kleiner wird der Umfang eines Kreises um den Punkt im Vergleich
+zum Radius. 
+Ist der Radius des Kreises $\frac{\pi}2R$, wobei $R_c$ der Kugelradius ist,
+dann ist der Umfang $U$ des Kreises
+\[
+U=2\pi R_c \ne 2\pi \cdot r = 2\pi\frac{\pi}2R_c=\pi^2 R_c.
+\]
+Wir suchen daher eine Metrik in der Form
+\[
+ds^2 
+=
+dr^2 + S(r)^2 \,d\Omega^2,
+\]
+wobei $S(r)$ für einen euklischen Raum $S(r)=r$ ist.
+Ein Kreis mit Radius $r$ hat in dieser Metrik den Umfang
+\[
+U=\int_{\textrm{Kreis}} S(r)\,d\Omega = 2\pi S(r).
+\]
+Auch wenn für einen gekrümmten Raum $S(r)$ nicht mehr gleich $r$ ist,
+muss weiterhin $S(0)=0$ gelten, wenn der Radius verschwindet, dann
+hat der zugehörige Kreis auch verschwindenden Umfang.
+Für kleine Radien $r$ muss ausserdem die Geometrie kaum von der
+euklidischen unterscheidbar sein, es muss also $S(r)\simeq r$ gelten,
+oder $S'(r)=1$,
+Die Funktion $S(r)$ muss daher die Anfangsbedingungen
+\begin{equation}
+\begin{aligned}
+S(0)&=0&&\qquad&S'(0)&=1
+\end{aligned}
+\label{skript:rwmetrik:Safangsbedingungen}
+\end{equation}
+erfüllen.
+
+\subsection{Krümmung}
+Die Funktion $S(r)$ ist nun also so zu bestimmen, dass der Raum auch
+homogen ist.
+Um sie zu bestimmen verwenden wir wieder die Analogie zur Oberfläche
+einer zweidimensionalen Kugel mit Radius $R_c$.
+Zu einem Kreis mit Radius $r$ im den Nordpol gehört der Winkel
+$\vartheta$ mit $\vartheta = r/R$.
+Der Umfang dieses Kreises ist dann
+\[
+2\pi R_c\sin\vartheta
+=
+2\pi S(r)
+\]
+der
+\[
+S(r) = R_c\sin\vartheta=R\sin\frac{r}{R_c}.
+\]
+In der zu dieser Funktion $S(r)$ gehörigen Metrik hat ein Kreis mit 
+Radius $r=\pi R$ Umfang $0$, dies entspricht dem Antipodenpunkt des
+Nullpunktes.
+
+Bis jetzt haben wir uns von der Anschauung leiten lassen, ohne den
+Begriff der Krümmung zu verwenden.
+Um die allgemeine Lösung für $S(r)$ zu finden, können wir
+aber auch verlangen, dass die Metrik
+\[
+dr^2 + S(r)^2\,d\Omega^2
+\]
+überall die gleiche Krümmung hat.
+Wir berechnen daher für diese Metrik den Ricci-Krümmungsskalar.
+Diese Rechnung ist ziemlich aufwendig, kann aber mit Maxima
+mit Hilfe des Programms von Seite~\pageref{skript:maxima:curvature}
+ohne
+Schwierigkeit ausgeführt werden.
+\lstinputlisting[style=Maxima]{chapters/robertson3.maxima}
+Man erhält 
+\verbatiminput{chapters/robertson3.txt}
+oder in konventioneller Notation
+\[
+R=
+-\frac{2S''(r)}{S(r)}
+\]
+und damit die Bedingung
+\begin{equation}
+S''(r)=-2k S(r)
+\label{skript:rwmetrik:Sdgl}
+\end{equation}
+für $S(r)$ und eine geeignete Konstante $k$.
+Gleichung \eqref{skript:rwmetrik:Sdgl} ist eine gewöhnliche
+Differentialgleichung zweiter Ordnung.
+
+\subsection{Lösung der Differentialgleichung für $S_\kappa(r)$}
+Die Differentialgleichung~\eqref{skript:rwmetrik:Sdgl}
+muss mit den Anfangsbedingungen~\eqref{skript:rwmetrik:Safangsbedingungen}
+gelöst werden.
+Falls $k$ positiv ist, folgt
+\begin{equation}
+S(r)=\frac1{\sqrt{2k}}\sin(\sqrt{2k}\,r) = R_c\sin\frac{r}{R_c}
+\qquad\text{mit}\qquad
+R_c=\frac1{\sqrt{2k}}.
+\label{skript:rwmetrik:sinloesung}
+\end{equation}
+Dies ist der Fall, den wir bereits durch die geometrische Analogie mit
+der zweidimensionalen Sphäre gefunden haben.
+
+Die Gleichung~\eqref{skript:rwmetrik:Sdgl} hat aber noch eine weitere 
+Lösungen.
+Für negatives $k$ folgt wieder unter Verwendung der
+Anfangsbedingung~\eqref{skript:rwmetrik:Safangsbedingungen}
+\begin{equation}
+S(r)=\frac{1}{\sqrt{-2k}}\sinh(\sqrt{-2k}\, r)
+=
+R_c\sinh\frac{r}{R_c}
+\qquad\text{mit}\qquad
+R_c=\frac1{\sqrt{-2k}}.
+\label{skript:rwmetrik:sinhloesung}
+\end{equation}
+Diese Lösung gehört zu einem Raum mit negativer Krümmung.
+Sogar den euklidische Fall können wir für $k=0$ wiedergewinnen, es folgt
+dann $S(r)=r$.
+
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/robertson.pdf}
+\caption{Darstellung der Funktionen $S_\kappa(r)$ für $R_c=1$ und
+verschiedene Werte von $\kappa$
+\label{skript:Skappa:graph}}
+\end{figure}
+
+Offenbar spielt für die Lösung  nur das Vorzeichen von $k$ und die
+Grösse $R_c$ ein Rolle.
+Wir können $S(r)$ daher auch etwas einheitlicher als
+\begin{equation}
+S_\kappa(r) = \begin{cases}
+R_c\sin  \displaystyle\frac{\mathstrut r}{R_c} &\qquad \kappa= 1\\
+r                                              &\qquad \kappa= 0\\
+R_c\sinh \displaystyle\frac{\mathstrut r}{R_c} &\qquad \kappa=-1
+\end{cases}
+\label{skript:rwmetrik:Skappa}
+\end{equation}
+schreiben.
+In Abbildung~\ref{skript:Skappa:graph} sind die Funktionen $S_\kappa(r)$
+für $R_c=1$ und für alle drei Werte von $\kappa$ dargestellt.
+Ebenfalls erkennbar ist, dass für kleine Werte von $r$ gilt
+$S_\kappa(r)\simeq r$.
+
+\subsection{Ableitungen von $S_\kappa(r)$}
+Für spätere Verwendung berechnen wir die erste und zweite Ableitung 
+von $S_\kappa(r)$.
+Die erste Ableitung ist
+\begin{align*}
+S'_\kappa(r)
+&=
+\begin{cases}
+\cos \displaystyle\frac{\mathstrut r}{R_c}&\qquad \kappa= 1\\
+1                                         &\qquad \kappa= 0\\
+\cosh\displaystyle\frac{\mathstrut r}{R_c}&\qquad \kappa=-1
+\end{cases}
+\end{align*}
+In Hinblick auf spätere Verwendung in der Friedmann-Gleichung drücken wir
+die rechte Seite durch $S_\kappa(r)$ aus. 
+\begin{equation}
+S'_\kappa(r)^2
+=
+\left\{
+\begin{aligned}
+&\cos^2\displaystyle\frac{\mathstrut r}{R_c}
+=
+1-\sin^2\displaystyle\frac{\mathstrut r}{R_c}
+=
+1-\kappa \frac{S_\kappa(r)^2}{R_c^2}&&\qquad\kappa=1\\
+&1&&\qquad\kappa=0\\
+&\cosh^2\displaystyle\frac{\mathstrut r}{R_c}
+=
+1+\sinh^2\displaystyle\frac{\mathstrut r}{R_c}
+=
+1-\kappa \frac{S_\kappa(r)^2}{R_c^2}&&\qquad\kappa=-1
+\end{aligned}
+\right.
+\end{equation}
+Unabhängig vom Wert von $\kappa$ und $R_c$ gilt also immer
+\begin{equation}
+S'_\kappa(r)^2 = 1-\kappa \frac{S_\kappa(r)^2}{R_c^2}.
+\label{skript:robertson:ersteableitung}
+\end{equation}
+Für die zweite Ableitung finden wir
+\begin{align*}
+S''_\kappa(r)
+&=
+\begin{cases}
+\displaystyle-\frac{1}{R_c}\sin \frac{\mathstrut r}{R_c}&\qquad \kappa= 1\\
+0                                                       &\qquad \kappa= 0\\
+\displaystyle \frac{1}{R_c}\sinh\frac{\mathstrut r}{R_c}&\qquad \kappa=-1
+\end{cases}
+\end{align*}
+Auch dieses Resultat können wir einheitlich als
+\begin{equation}
+S''_\kappa(R)
+=
+-\kappa\displaystyle \frac{S_\kappa(r)}{R_c^2}
+\label{skript:robertson:zweiteableitung}
+\end{equation}
+schreiben.
+
+Eine homogene und isotrope Metrik eines dreidimensionalen Raumes
+hat daher die Form
+\begin{equation}
+ds^2=dr^2 + S_{\kappa}(r)d\Omega^2.
+\label{skript:rwmetrik:metrikS}
+\end{equation}
+Diese Metrik beschreibt einen Raum mit konstanter Krümmung.
+Der Parameter $\kappa$ kann nur die Werte $\pm 1$ und $0$ annehmen.
+Für $\kappa=1$ ist die Krümmung des Raumes positiv, für $\kappa=-1$ ist
+sie negativ, für $\kappa=0$ liegt ein euklidischer Raum vor.
+Der Krümmungsradius ist in den Fällen $\kappa=\pm1$ jeweils $R_c$.
+
+\subsection{Der Grenzfall $R_c\to\infty$}
+Schreibt man $K_c = 1/R_c$ für die Krümmung, dann kann man $S_0(r)$
+auch als Grenzfall von $S_{\pm 1}(r)$ für $K_c\to 0$ erhalten.
+Es gilt  nämlich
+\begin{equation}
+\lim_{R_c\to\infty} S_\kappa(r)
+=
+\lim_{K_c\to 0} S_\kappa(r)
+=\begin{cases}
+\displaystyle
+\lim_{K_c\to 0}\frac{\displaystyle \sin(K_cr)}{\displaystyle K_c}
+=
+\lim_{K_c\to 0}\frac{\displaystyle r\cos(K_cr)}{\displaystyle 1} = r = S_0(r)
+&\qquad\kappa=1
+\\
+\\
+\displaystyle
+\lim_{K_c\to 0}\frac{\displaystyle \sinh(K_cr)}{\displaystyle K_c}
+=
+\lim_{K_c\to 0}\frac{\displaystyle r\cosh(K_cr)}{\displaystyle 1} = r = S_0(r)
+&\qquad\kappa=-1
+\end{cases}
+\end{equation}
+nach der Regel von de l'Hospital.
+Die Funktion $S_0(r)$ ist daher der Grenzfall der Funktionen
+$S_\kappa(r)$ für unendlich grossen Krümmungsradius $R_c$.
+
 \section{Statisches Universum}
+Zu Einsteins Zeit gab es keine Hinweise darauf, dass das Universum
+sich mit der Zeit verändert.
+Es lag daher nahe, nach einer homogenen und isotropen Lösung zu suchen,
+die zudem zeitlich unveränderlich ist.
+Die Metrik eines solchen Universums muss nach
+Abschnitt~\ref{skript:robertson:himetrik}
+die Form
+\[
+ds^2
+=
+-c^2\,dt^2 + dr^2 + S_\kappa(r)^2\,d\Omega^2
+\]
+haben.
+Als einzige Parameter sind $\kappa$ und der Krümmungsradius $R_c$ 
+noch wählbar. 
+Diese müssen so bestimmt werden, dass ein Universum homogener Dichte
+den Einstein-Gleichungen genügt.
+
+Wir bestimmen die $00$-Komponente des Einstein-Tensors mit Hilfe
+von Maxima und finden
+\begin{align*}
+G_{00}
+%&=
+%-{{2\,c^2\,S\left(r\right)\,\left({{d^2}\over{d\,r^2}}\,S\left(r
+% \right)\right)+c^2\,\left({{d}\over{d\,r}}\,S\left(r\right)\right)^2
+% -c^2}\over{S^2\left(r\right)}}
+%\\
+&=
+-c^2\frac{ 2S_\kappa(r)S''_\kappa(r) + S'_\kappa(r)^2-1 }{S_\kappa(r)^2}
+\end{align*}
+Darin können wir die zweite Ableitung durch
+\eqref{skript:robertson:zweiteableitung}
+ersetzen und das Quadrat der ersten Ableitung durch
+\eqref{skript:robertson:ersteableitung}.
+Dann wird $G_{00}$ zu
+\begin{align*}
+G_{00}
+&=
+-c^2\frac{2\kappa S_\kappa(r)^2/R_c^2 + 1-\kappa S_\kappa(r)^2/R_c^2-1 }{S_\kappa(r)^2}
+\\
+&=
+-\frac{c^2\kappa}{R_c^2}
+\end{align*}
+Setzt man dies in die Einstein-Gleichungen ein, erhalten wir
+\begin{equation}
+-\frac{c^2\kappa}{R_c^2}=\frac{8\pi K\varrho}{c^2}
+\end{equation}
+Da die Dichte $\varrho$ positiv ist, liest man daraus ab, dass ein solches
+Universum negative Krümmung haben muss.
+
+Man kann jedoch noch einen Schritt weiter gehen und die Spur der
+Einstein-Gleichungen berechnen.
+Die Verjüngung $G_\mu^\nu$ kann wieder mit Maxima berechnet werden,
+sie ist
+\begin{align*}
+G=G_\mu^\mu
+%&=
+%{{4\,S\left(r\right)\,\left({{d^2}\over{d\,r^2}}\,S\left(r\right)
+% \right)+2\,\left({{d}\over{d\,r}}\,S\left(r\right)\right)^2-2}\over{
+% S^2\left(r\right)}}
+%\\
+&=
+2\frac{2S_\kappa(r)S''_\kappa(r) + S'_\kappa(r)^2-1}{S_\kappa(r)^2}
+\end{align*}
+Die bereits bekannten Ersetzungen
+\eqref{skript:robertson:zweiteableitung}
+und
+\eqref{skript:robertson:ersteableitung}.
+machen daraus
+\begin{align*}
+G
+&=
+2\frac{-2\kappa S_\kappa(r)^2/R_c^2 + 1-\kappa S_\kappa(r)^2/R_c^2-1}{S_\kappa(r)^2}
+\\
+&=
+-\frac{6\kappa}{R_c^2}.
+\end{align*}
+Der Energie-Impuls-Tensor eines idealen Gases hat die Spur
+\[
+T_\mu^\mu
+=
+\frac1{c^2}(-\varrho c^2+3p),
+\]
+damit werden die verjüngten Einstein-Gleichungen zu
+\[
+G_\mu^\mu
+=
+-\frac{6\kappa}{R_c^2}
+=
+\frac{8\pi K}{c^4}(-\varrho c^2 + 3p)
+\]
+Dividieren wir durch 6 und multiplizieren wir mit $c^2$ erhalten
+wir eine weitere Gleichung für $\kappa/R_c^2$.
+Insgesamt entsteht so das Gleichungssystem
+\begin{align*}
+\frac{\kappa c^2}{R_c^2}
+&=
+\frac{8\pi K\varrho}{c^2}
+\\
+\frac{\kappa c^2}{R_c^2}
+&=
+\frac{4\pi K}{3c^2}(-\varrho c^2 + 3p)
+\end{align*}
+Durch Gleichsetzen bekommen wir eine Bezeihung zwischen Druck und
+Dichte.
+Diese zweite Gleichung würde also eine Temperatur des Universums 
+bereits eindeutig festlegen.
+%\begin{align*}
+%\frac{8\pi K\varrho}{c^2}
+%&=
+%\frac{4\pi K}{3c^2}(-\varrho c^2 + 3p)
+%\\
+%6\varrho
+%&=
+%-2\varrho+3p
+%\end{align*}
+Ein mit einem idealen Gas gefülltes statisches Unversum kann also
+nur positiv gekrümmt sein, und es kann
+nur bei einer ganz bestimmten Temperatur existieren.
+Da die Sterne in einem geschlossenen Universum Strahlung produzieren
+und damit das Universum aufheizen, kann dies keine physikalische
+Lösung sein.
+Ein statisches Universum kann nicht existieren.
 
 \section{Expansion des Universums}
 \rhead{Expansion}
@@ -324,292 +734,6 @@ Wäre dies nicht möglich, dann müsste der Koeffizient von $dt^2$
 in einem Raumpunkt von $-c^2$ abweichen.
 Dieser Punkt hätte dann aber andere Eigenschaften als alle anderen
 Punkte im Universum, was das kosmologische Prinzip verletzt.
-
-\subsection{Isotrop und homogen gekrümmte Räume}
-Wir suchen jetzt eine Metrik des dreidimensionalen Raumes, welche
-isotrop und homogen ist.
-Der euklidische Raum mit der Metrik
-\[
-g_{ij}dx^i\,dx^j
-=
-dx^2 + dy^2 + dz^2
-\]
-ist sicher homogen und isotrop. 
-Er ist aber auch flach, und daher zu wenig allgemein als mögliches
-Modell für das Universum.
-Die euklidische Metrik kann auch in Kugelkoordinaten als
-\begin{equation}
-ds^2
-=
-dr^2
-+ 
-r^2\,d\vartheta^2
-+
-r^2\sin^2\vartheta\,d\varphi^2
-\label{skript:rwmetrik:kugelkoordinaten}
-\end{equation}
-geschrieben werden.
-Die letzten zwei Terme~\eqref{skript:rwmetrik:kugelkoordinaten}
-zeigen scheinbar eine bevorzugte Richtung, nämlich die Richtung
-des Nord- und Südpols.
-Dies ist jedoch nur ein Artefakt des Koordinatensystems, die 
-Längenmessung ist davon nicht betroffen.
-Wir können dies dadurch ausdrücken, dass wir die zwei Terme
-zusammenfasssen als
-\begin{equation}
-d\Omega^2 = d\vartheta^2 + \sin^2\vartheta\,d\varphi^2.
-\end{equation}
-Damit kann die Metrik abgekürzt als
-\begin{equation}
-ds^2 = dr^2 + r^2\,d\Omega^2
-\end{equation}
-geschrieben werden.
-Der Terme $r^2\,d\Omega^2$ beschreibt die Längenmessung auf der
-``Kugel'' bei der Koordinaten $r$ um den Nullpunkt des
-Koordinatensystems.
-
-Da das Universum isotrop ist, darf keine Richtung ausgezeichnet sein.
-Insbesondere muss eine von der euklidischen Metrik abweichende
-Metrik immer noch unverändert den Teil $d\Omega^2$ enthalten.
-Es ist aber zulässig, dass die Längenmessung auf der Kugel sich
-gegenüber der Längenmessung in radialer Richtung verändert hat.
-Man beobachtet dies zum Beispiel auch in der Umgebung eines Punktes
-auf einer Kugeloberfläche: je weiter man sich von diesem Punkt entfernt,
-desto kleiner wird der Umfang eines Kreises um den Punkt im Vergleich
-zum Radius. 
-Ist der Radius des Kreises $\frac{\pi}2R$, wobei $R_c$ der Kugelradius ist,
-dann ist der Umfang $U$ des Kreises
-\[
-U=2\pi R_c \ne 2\pi \cdot r = 2\pi\frac{\pi}2R_c=\pi^2 R_c.
-\]
-Wir suchen daher eine Metrik in der Form
-\[
-ds^2 
-=
-dr^2 + S(r)^2 \,d\Omega^2,
-\]
-wobei $S(r)$ für einen euklischen Raum $S(r)=r$ ist.
-Ein Kreis mit Radius $r$ hat in dieser Metrik den Umfang
-\[
-U=\int_{\textrm{Kreis}} S(r)\,d\Omega = 2\pi S(r).
-\]
-Auch wenn für einen gekrümmten Raum $S(r)$ nicht mehr gleich $r$ ist,
-muss weiterhin $S(0)=0$ gelten, wenn der Radius verschwindet, dann
-hat der zugehörige Kreis auch verschwindenden Umfang.
-Für kleine Radien $r$ muss ausserdem die Geometrie kaum von der
-euklidischen unterscheidbar sein, es muss also $S(r)\simeq r$ gelten,
-oder $S'(r)=1$,
-Die Funktion $S(r)$ muss daher die Anfangsbedingungen
-\begin{equation}
-\begin{aligned}
-S(0)&=0&&\qquad&S'(0)&=1
-\end{aligned}
-\label{skript:rwmetrik:Safangsbedingungen}
-\end{equation}
-erfüllen.
-
-\subsubsection{Krümmung}
-Die Funktion $S(r)$ ist nun also so zu bestimmen, dass der Raum auch
-homogen ist.
-Um sie zu bestimmen verwenden wir wieder die Analogie zur Oberfläche
-einer zweidimensionalen Kugel mit Radius $R_c$.
-Zu einem Kreis mit Radius $r$ im den Nordpol gehört der Winkel
-$\vartheta$ mit $\vartheta = r/R$.
-Der Umfang dieses Kreises ist dann
-\[
-2\pi R_c\sin\vartheta
-=
-2\pi S(r)
-\]
-der
-\[
-S(r) = R_c\sin\vartheta=R\sin\frac{r}{R_c}.
-\]
-In der zu dieser Funktion $S(r)$ gehörigen Metrik hat ein Kreis mit 
-Radius $r=\pi R$ Umfang $0$, dies entspricht dem Antipodenpunkt des
-Nullpunktes.
-
-Bis jetzt haben wir uns von der Anschauung leiten lassen, ohne den
-Begriff der Krümmung zu verwenden.
-Um die allgemeine Lösung für $S(r)$ zu finden, können wir
-aber auch verlangen, dass die Metrik
-\[
-dr^2 + S(r)^2\,d\Omega^2
-\]
-überall die gleiche Krümmung hat.
-Wir berechnen daher für diese Metrik den Ricci-Krümmungsskalar.
-Diese Rechnung ist ziemlich aufwendig, kann aber mit Maxima
-mit Hilfe des Programms von Seite~\pageref{skript:maxima:curvature}
-ohne
-Schwierigkeit ausgeführt werden.
-\lstinputlisting[style=Maxima]{chapters/robertson3.maxima}
-Man erhält 
-\verbatiminput{chapters/robertson3.txt}
-oder in konventioneller Notation
-\[
-R=
--\frac{2S''(r)}{S(r)}
-\]
-und damit die Bedingung
-\begin{equation}
-S''(r)=-2k S(r)
-\label{skript:rwmetrik:Sdgl}
-\end{equation}
-für $S(r)$ und eine geeignete Konstante $k$.
-Gleichung \eqref{skript:rwmetrik:Sdgl} ist eine gewöhnliche
-Differentialgleichung zweiter Ordnung.
-
-\subsubsection{Lösung der Differentialgleichung für $S_\kappa(r)$}
-Die Differentialgleichung~\eqref{skript:rwmetrik:Sdgl}
-muss mit den Anfangsbedingungen~\eqref{skript:rwmetrik:Safangsbedingungen}
-gelöst werden.
-Falls $k$ positiv ist, folgt
-\begin{equation}
-S(r)=\frac1{\sqrt{2k}}\sin(\sqrt{2k}\,r) = R_c\sin\frac{r}{R_c}
-\qquad\text{mit}\qquad
-R_c=\frac1{\sqrt{2k}}.
-\label{skript:rwmetrik:sinloesung}
-\end{equation}
-Dies ist der Fall, den wir bereits durch die geometrische Analogie mit
-der zweidimensionalen Sphäre gefunden haben.
-
-Die Gleichung~\eqref{skript:rwmetrik:Sdgl} hat aber noch eine weitere 
-Lösungen.
-Für negatives $k$ folgt wieder unter Verwendung der
-Anfangsbedingung~\eqref{skript:rwmetrik:Safangsbedingungen}
-\begin{equation}
-S(r)=\frac{1}{\sqrt{-2k}}\sinh(\sqrt{-2k}\, r)
-=
-R_c\sinh\frac{r}{R_c}
-\qquad\text{mit}\qquad
-R_c=\frac1{\sqrt{-2k}}.
-\label{skript:rwmetrik:sinhloesung}
-\end{equation}
-Diese Lösung gehört zu einem Raum mit negativer Krümmung.
-Sogar den euklidische Fall können wir für $k=0$ wiedergewinnen, es folgt
-dann $S(r)=r$.
-
-\begin{figure}
-\centering
-\includegraphics{chapters/tikz/robertson.pdf}
-\caption{Darstellung der Funktionen $S_\kappa(r)$ für $R_c=1$ und
-verschiedene Werte von $\kappa$
-\label{skript:Skappa:graph}}
-\end{figure}
-
-Offenbar spielt für die Lösung  nur das Vorzeichen von $k$ und die
-Grösse $R_c$ ein Rolle.
-Wir können $S(r)$ daher auch etwas einheitlicher als
-\begin{equation}
-S_\kappa(r) = \begin{cases}
-R_c\sin  \displaystyle\frac{\mathstrut r}{R_c} &\qquad \kappa= 1\\
-r                                              &\qquad \kappa= 0\\
-R_c\sinh \displaystyle\frac{\mathstrut r}{R_c} &\qquad \kappa=-1
-\end{cases}
-\label{skript:rwmetrik:Skappa}
-\end{equation}
-schreiben.
-In Abbildung~\ref{skript:Skappa:graph} sind die Funktionen $S_\kappa(r)$
-für $R_c=1$ und für alle drei Werte von $\kappa$ dargestellt.
-Ebenfalls erkennbar ist, dass für kleine Werte von $r$ gilt
-$S_\kappa(r)\simeq r$.
-
-\subsubsection{Ableitungen von $S_\kappa(r)$}
-Für spätere Verwendung berechnen wir die erste und zweite Ableitung 
-von $S_\kappa(r)$.
-Die erste Ableitung ist
-\begin{align*}
-S'_\kappa(r)
-&=
-\begin{cases}
-\cos \displaystyle\frac{\mathstrut r}{R_c}&\qquad \kappa= 1\\
-1                                         &\qquad \kappa= 0\\
-\cosh\displaystyle\frac{\mathstrut r}{R_c}&\qquad \kappa=-1
-\end{cases}
-\end{align*}
-In Hinblick auf spätere Verwendung in der Friedmann-Gleichung drücken wir
-die rechte Seite durch $S_\kappa(r)$ aus. 
-\begin{equation}
-S'_\kappa(r)^2
-=
-\left\{
-\begin{aligned}
-&\cos^2\displaystyle\frac{\mathstrut r}{R_c}
-=
-1-\sin^2\displaystyle\frac{\mathstrut r}{R_c}
-=
-1-\kappa \frac{S_\kappa(r)^2}{R_c^2}&&\qquad\kappa=1\\
-&1&&\qquad\kappa=0\\
-&\cosh^2\displaystyle\frac{\mathstrut r}{R_c}
-=
-1+\sinh^2\displaystyle\frac{\mathstrut r}{R_c}
-=
-1-\kappa \frac{S_\kappa(r)^2}{R_c^2}&&\qquad\kappa=-1
-\end{aligned}
-\right.
-\end{equation}
-Unabhängig vom Wert von $\kappa$ und $R_c$ gilt also immer
-\begin{equation}
-S'_\kappa(r)^2 = 1-\kappa \frac{S_\kappa(r)^2}{R_c^2}.
-\label{skript:robertson:ersteableitung}
-\end{equation}
-Für die zweite Ableitung finden wir
-\begin{align*}
-S''_\kappa(r)
-&=
-\begin{cases}
-\displaystyle-\frac{1}{R_c}\sin \frac{\mathstrut r}{R_c}&\qquad \kappa= 1\\
-0                                                       &\qquad \kappa= 0\\
-\displaystyle \frac{1}{R_c}\sinh\frac{\mathstrut r}{R_c}&\qquad \kappa=-1
-\end{cases}
-\end{align*}
-Auch dieses Resultat können wir einheitlich als
-\begin{equation}
-S''_\kappa(R)
-=
--\kappa\displaystyle \frac{S_\kappa(r)}{R_c^2}
-\label{skript:robertson:zweiteableitung}
-\end{equation}
-schreiben.
-
-Eine homogene und isotrope Metrik eines dreidimensionalen Raumes
-hat daher die Form
-\begin{equation}
-ds^2=dr^2 + S_{\kappa}(r)d\Omega^2.
-\label{skript:rwmetrik:metrikS}
-\end{equation}
-Diese Metrik beschreibt einen Raum mit konstanter Krümmung.
-Der Parameter $\kappa$ kann nur die Werte $\pm 1$ und $0$ annehmen.
-Für $\kappa=1$ ist die Krümmung des Raumes positiv, für $\kappa=-1$ ist
-sie negativ, für $\kappa=0$ liegt ein euklidischer Raum vor.
-Der Krümmungsradius ist in den Fällen $\kappa=\pm1$ jeweils $R_c$.
-
-\subsubsection{Der Grenzfall $R_c\to\infty$}
-Schreibt man $K_c = 1/R_c$ für die Krümmung, dann kann man $S_0(r)$
-auch als Grenzfall von $S_{\pm 1}(r)$ für $K_c\to 0$ erhalten.
-Es gilt  nämlich
-\begin{equation}
-\lim_{R_c\to\infty} S_\kappa(r)
-=
-\lim_{K_c\to 0} S_\kappa(r)
-=\begin{cases}
-\displaystyle
-\lim_{K_c\to 0}\frac{\displaystyle \sin(K_cr)}{\displaystyle K_c}
-=
-\lim_{K_c\to 0}\frac{\displaystyle r\cos(K_cr)}{\displaystyle 1} = r = S_0(r)
-&\qquad\kappa=1
-\\
-\\
-\displaystyle
-\lim_{K_c\to 0}\frac{\displaystyle \sinh(K_cr)}{\displaystyle K_c}
-=
-\lim_{K_c\to 0}\frac{\displaystyle r\cosh(K_cr)}{\displaystyle 1} = r = S_0(r)
-&\qquad\kappa=-1
-\end{cases}
-\end{equation}
-nach der Regel von de l'Hospital.
-Die Funktion $S_0(r)$ ist daher der Grenzfall der Funktionen
-$S_\kappa(r)$ für unendlich grossen Krümmungsradius $R_c$.
 
 \subsection{Robertson-Walker-Metrik}
 Da wir jetzt die Zeitabhängigkeit wie auch die Ortsabhängigkeit der
@@ -813,9 +937,19 @@ Diese Steady-State genannte Hypothese widerspricht jedoch zwei
 im Folgenden diskutierten Beobachtungen.
 
 \subsection{Olbers Paradoxon}
-Wenn das Universum unendlich alt und gross ist, dann wird man in jeder
-beliebigen Richtung nicht beliebig weit sehen können, sondern wird
-irgendwann auf einen Stern treffen.
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{chapters/images/wald50.jpg}
+\caption{In einem grossen Wald sieht man in jeder Richtung irgendwann
+nur einen Baumstamm, man kann also nicht aus dem Wald heraussehen.
+Dies illustriert das Olbers-Paradoxon
+\label{skript:robertson:olberswald}}
+\end{figure}
+In einem grossen Wald (Abbildung~\ref{skript:robertson:olberswald})
+trift der Blick in jeder Richtung irgendwann auf einen Bausmstamm.
+Wenn das Universum unendlich alt und gross ist, dann wird man
+man in jeder beliebigen Richtung nicht beliebig weit sehen können,
+sondern der wie beim Wald wird der Blick irgendwann auf einen Stern treffen.
 Der ganze Himmel müsste daher die Helligkeit von Sternen haben.
 
 Nimmt man dagegen an, dass das Universum relativ jung ist, dann kann
