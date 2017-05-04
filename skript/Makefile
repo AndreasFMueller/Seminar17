@@ -33,7 +33,8 @@ CHAPTERS = 								\
 	chapters/m-multipole.tex					\
 	chapters/friedmann.tex						\
 	chapters/f-beispiele.tex					\
-	chapters/f-friedmann.tex
+	chapters/f-friedmann.tex					\
+	chapters/cmb.tex
 
 SKRIPTFILES = vorwort.tex uebersicht.tex \
 	$(CHAPTERS) \
@@ -52,7 +53,7 @@ TEXFILES = $(SKRIPTFILES) \
 BLXFILES = \
 	skript1-blx.bbl \
  	skript2-blx.bbl skript3-blx.bbl skript4-blx.bbl skript5-blx.bbl \
-	skript6-blx.bbl skript7-blx.bbl skript8-blx.bbl
+	skript6-blx.bbl skript7-blx.bbl skript8-blx.bbl skript9-blx.bbl
 
 skript.pdf:	skript.tex $(TEXFILES) skript.ind $(BLXFILES)
 	pdflatex skript.tex
@@ -93,6 +94,9 @@ skript7-blx.bbl:	skript7-blx.aux
 
 skript8-blx.bbl:	skript8-blx.aux
 	bibtex skript8-blx
+
+skript9-blx.bbl:	skript9-blx.aux
+	bibtex skript9-blx
 
 clean:	cleansubdir
 	rm -f *.bbl *.aux *.log *.out *.run.xml *.pdf *.blg *.idx *.ind \
