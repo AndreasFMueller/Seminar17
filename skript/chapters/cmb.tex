@@ -3,16 +3,526 @@
 %
 % (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 %
-\chapter{Der Kosmische Mikrowellenhintergrund%
+\chapter{Der kosmische Mikrowellenhintergrund%
 \label{chapter:cmb}}
 \lhead{Der kosmische Mikrowellenhintergrund}
 \rhead{}
 
+\section{Schwarzkörperstrahlung}
+\rhead{Schwarzkörperstrahlung}
+Ein ungelöstes Problem der Physik im ausgehenden neunzehnten Jahrhundert
+war das Strahnungsspektrum eines schwarzen Körpers zu berechnen.
+Ein schwarzer Körper ist eine idealsierte thermische Strahlungsquelle,
+die auftreffende elektromagnetische Strahlung jeder Wellenlänge absorbiert
+und deren Strahlungsspektrum nicht von der Oberflächebeschaffenheit
+abhängt, sondern nur von dessen Temperatur.
+Eine mögliche Realisierung ist ein mit Strahlung gefüllter Hohlraum, dessen
+Wände auf konstanter Temperatur gehalten werden.
 
-\section{Strahlung im frühen Universum}
-\rhead{Strahlung im frühen Universum}
+Die klassische Thermodynamik, die im
+Abschnitt~\ref{skript:cmb:section:klassisch} zusammengestellt wird,
+stellt die Werkzeuge bereit, mit der wir
+dem Strahungsgesetz auf den Grund gehen können.
+In Abschnitt~\ref{skript:cmb:section:planck} leiten wir daraus
+das Plancksche Strahlungsgesetz her.
+Insbesondere interessiert uns dabei, dass eine Vergrösserung aller
+Wellenlängen um den gleichen Streckungsfaktor die Form des
+Strahlungsgesetzes nicht ändert, so dass die Expansion des Universums
+die Eigenschaften des Schwarzkörperspektrums erhält.
+Daraus werden wir auch ableiten, wie sich die zugehörige Temperatur
+mit der Expansion verändert.
+Die kosmische Mikrowellenhintergrundstrahlung wurde in dem Moment
+ausgestrahlt, als das ionisierte Gas frühen Universums neutral wurde,
+man nennt dies die Rekombination.
+Die Dynamik dieses Ereignisses wird in
+Abschnitt~\ref{skript:cmb:section:rekombination} untersucht.
 
-\section{Rekombination}
+\subsection{Klassische Theorie%
+\label{skript:cmb:section:klassisch}}
+Ein thermodynamisches System besteht aus einer grossen Zahl von 
+Teilchen, die ständig interagieren und dabei Energie austauschen.
+Der mikroskopische Zustand des Systems ändert sich ständig.
+\index{mikroskopischer Zustand}
+\index{Zustand, mikroskopisch}
+Es ist daher gar nicht möglich, den aktuellen mikroskopischen
+Zustand zu beschreiben.
+Jede makroskopische Messung liefert daher immer nur einen mittleren
+Wert für die gemessene Grösse.
+
+Die fundamentale Zustandsgrösse der klassischen Thermodynamik ist
+die Entropie, eine Funktion $S(U,V)$ von inneren Energie $U$ und 
+Volumen $V$ des Systems. 
+\index{Entropie}
+Alle mikroskopischen Zustände zur gleichen Energie und im gleichen
+Volumen sind gleichermassen zulässig.
+Offenbar gibt es auch keinen Grund, warum einer dieser Zustände
+bevorzugt werden soll.
+Die statistische Wärmelehre
+{\em postuliert} daher, dass alle mikroskopischen Zustände gleich
+wahrscheinlich sind.
+Dies bedeutet auch, dass das System immer alle mikroskopischen
+Zustände ausnützt, die mit der vorgegebenen inneren Energie $U$ und
+dem Volumen $V$ vereinbar sind.
+Die Zahl $\Omega(U,V)$ der mikroskopischen Zustände, zwischen denen das
+System rasche Übergänge vollführt, nimmt zum Beispiel zu, wenn ein
+Ventil geöffnet wird, und dem System damit ein grösseres Volumen
+zur Verfügung steht.
+
+Andererseits ist aus der klassichen Thermodynamik bekannt, dass ein
+System immer denjenigen Zustand annimmt, in dem die Entropie $S(U,V)$
+als Funktion von $U$ und $V$ ihr Maximum annimmt.
+Man darf daher schliessen, dass die Entropie als Funktion der Anzahl
+$\Omega(U,V)$ der mikroskopischen Zustände ausgedrückt werden kann.
+Allerdings ist die Entropie additiv, fügt man zwei Systeme zusammen,
+so ist die Entropie des Gesamtsystems die Summe der Entropien der
+Teilsysteme:
+\[
+S(U,V) = S_1(U_1,V_1) + S_2(U_2,V_2).
+\]
+Die Anzahl der Zustände hingegen ist multiplikativ: da es für jeden
+der $\Omega_1(U_1,V_1)$ Zustände des ersten Systems $\Omega_2(U_2,V_2)$
+Zustände des zweiten Systems gibt, ist die Gesamtzahl der Zustände
+deren Produkt
+\[
+\Omega(U,V)=\Omega_1(U_1,V_1)\cdot \Omega_2(U_2,V_2).
+\]
+Die Logarithmus-Funtion erfüllt diese Bedingung, und bis auf einen
+Faktor ist sie auch die einzige Funktion mit dieser Eigenschaft.
+Man kann also immer
+\begin{equation}
+S(U,V)=k_B\log \Omega(U,V)
+\label{skript:cmb:boltzmann}
+\end{equation}
+setzen, wobei der Faktor $k_B$ im wesentlichen die Masseinheit von
+$S$ festlegt.
+Durch die Wahl
+\[
+k_B = 1.3807\cdot 10^{-23} \text{J}/\text{K}
+\]
+wird Übereinstimmung mit der Kelvin-Temperaturskala erreicht.
+
+\subsubsection{Kanonischer Formalismus}
+Dieser Formalismus ist jedoch für die Beschreibung eines Systems 
+nicht geeignet, welches sich in Kontakt mit einem Wärmereservoir
+befindet, mit welchem es zur Erhaltung der Temperatur Energie
+austauschen kann.
+Dabei ändert sich die innere Energie des Systems.
+Zu dessen Beschreibung ist daher eine Zustandsfunktion nötig, die von
+der Temperatur und dem Volumen abhängt, während die Entropie
+von innerer Energie und Volumen abhängt.
+Man kann dieses Problem lösen, indem man das Wärmereservoir als
+Teil eines grösseren Systems modelliert, mit dem das untersuchte
+System Energie austauschen kann.
+Die Gesamtenergie $E_\text{tot}$ des kombinierten Systems ist dann zwar eine
+Zustandsvariable, aber das ursprüngliche Teilsystem kann verschiedene
+Zustände annehmen.
+Bezeichnen wir die verschiedenen Zustände mit einem Index $j$
+und ihre Energie mit $E_j$, dann können wir die Wahrscheinlichkeit
+berechnen, dass sich das ursprüngliche System im Zustand $j$ befindet.
+Dazu berechnen wir die Anzahl der Zustände, in denen sich das 
+Reservoir in einem Zustand mit Energie $E_\text{tot} - E_j$ befindet
+und dividieren durch die Gesamtzahl der Zustände mit Energie $E_\text{tot}$.
+Wir finden
+\[
+w_j
+=
+\frac{\Omega_\text{res}(E_\text{tot}-E_j)}{\Omega_\text{tot}(E_\text{tot})}
+\]
+für die Wahrscheinlichkeit.
+Indem man \eqref{skript:cmb:boltzmann} nach $\Omega$ auflöst, kann $w_j$
+durch die Entropie ausgedrückt werden:
+\begin{equation}
+w_j
+=
+\frac{\exp\bigl(S_\text{res}(E_\text{tot}-E_j)/k_B\bigr)}{\exp\bigl(S_\text{tot}(E_\text{tot})/k_B\bigr)}
+\label{skript:cmb:fj}
+\end{equation}
+Ist $U$ die mittlere Energie des ursprünglichen Systems im Gleichgewicht,
+dann gilt die Additivität der Entropie für das kombinierte System in der Form
+\[
+S_\text{tot}(E_\text{tot})
+=
+S(U) + S_\text{res}(E_\text{tot}-U).
+\]
+Da das Reservoir sehr gross ist, sind die Energien $E_j$ der Zustände des
+ursprünglichen Systems im Vergleich zur Gesamtenergie sehr klein,
+es ist daher zulässig, die Entropie des Reservoirs linear zu approximieren
+\begin{align*}
+S_\text{res}(E_\text{tot}-E_j)
+&=
+S_\text{res}(E_\text{tot}-U+U-E_j)
+\\
+&=
+S_\text{res}(E_\text{tot}-U) + \frac{\partial S_\text{res}}{\partial U}(U-E_j)
+\\
+&=
+S_\text{res}(E_\text{tot}-U) + \frac{U-E_j}{T}
+\end{align*}
+Setzt man dies in den Ausdruck~\eqref{skript:cmb:fj} für $w_j$ ein, 
+erhält man
+\[
+w_j = e^{(U-TS(U))/k_BT} e^{-E_j/k_BT}.
+\]
+Man sieht, dass in den Formeln vor allem der Ausdruck $1/k_BT$ vorkommt,
+denn man daher mit $\beta=1/k_BT$ abkürzt.
+Die Wahrscheinlichkeiten $w_j$ können damit etwas prägnanter als
+\begin{equation}
+w_j = e^{\beta(U-TS(U))}e^{-\beta E_j}
+\label{skript:cmb:fj2}
+\end{equation}
+geschrieben werden.
+
+\subsubsection{Freie Energie}
+Der Ausdruck $F=U-TS(U)$ im Exponenten von~\eqref{skript:cmb:fj2}
+heisst die {\em helmholtzsche freie Energie}.
+\index{freie Energie}
+\index{Energie, freie}
+\index{helmholzshe freie Energie}
+Die helmholtzsche freie Energie $F$ eines thermodynamischen Systems
+gibt an, wieviel Energie bei einem reversiblen, isothermen Prozess zur
+Arbeitsleistung zur Verfügung steht. 
+Je höher die Temperatur oder die Entropie eines Systems ist, desto geringer
+ist die für Arbeitsleistung zur Verfügung stehende freie Energie.
+Die freie Energie ist eine Zustandsfunktion der Variablen $T$ und $V$.
+Da die Temperatur $T$ als Variable auftritt, eignet sich die freie
+Energie als Zustandsfunktion zur Beschreibung eines Systems, welches
+sich in Kontakt mit einem Wärmereservoir befindet.
+
+Die Wahrscheinlichkeiten $w_j$ müssen sich zu $1$ summieren, es muss also
+gelten
+\begin{equation}
+1=\sum_{j} w_j = e^{\beta F}\sum_j e^{-\beta E_j}
+\qquad
+\Rightarrow
+\qquad
+e^{-\beta F}=\sum_je^{-\beta E_j}=Z.
+\label{skript:cmb:Z}
+\end{equation}
+Die Zahl $Z$ heisst die {\em kanonische Zustandssumme}.
+Aus ihr kann man die freie Energie berechnen, indem man
+\eqref{skript:cmb:Z} nach $F$ auflöst:
+\begin{equation}
+-\beta F=\log\sum_j e^{-\beta E_j} = \log Z.
+\end{equation}
+Die Wahrscheinlichkeiten $w_j$ kann man jetzt auch ganz unabhängig vom
+Reservoir als
+\begin{equation}
+w_j
+=
+\frac{e^{-\beta E_j}}{\sum_j e^{-\beta E_j}}
+\end{equation}
+ausdrücken.
+
+\subsubsection{Mittlere Energie}
+Schliesslich lässt sich auch die mittlere Energie des ursprünglichen
+Systems durch $Z$ ausdrücken.
+Dazu verwendet man zunächst die Definition 
+\[
+U
+=
+\sum_j E_jw_j
+=
+\frac{1}{\sum_i e^{-\beta E_j}}
+\sum_j E_je^{-\beta E_j}
+=
+\frac1Z \sum_j E_je^{-\beta E_j}
+\]
+des Erwartungswertes der Energie.
+Die Ableitung von $\log Z$ nach $\beta$ liefert aber fast dasselbe:
+\begin{align*}
+\frac{d}{d\beta} \log Z
+&=
+\frac1{Z}\frac{dZ}{d\beta}
+=
+\frac1{Z}\sum_j\frac{de^{-\beta E_j}}{d\beta}
+=
+-\frac1Z\sum_j E_je^{-\beta E_j}
+=
+-U,
+\end{align*}
+die mittlere Energie ist also bis auf ein Vorzeichen auch die Ableitung
+von $\log Z$ nach $\beta$.
+Damit lässt sich auch die innere Energie
+\[
+U=-\frac{d}{d\beta}\log Z
+\]
+des ursprünglichen Teilsystems im Gleichgewicht mit dem Reservoir der
+Temperatur $T$ aus der Zustandssumme berechnen.
+
+\subsection{Plancksches Strahlungsgesetz%
+\label{skript:cmb:section:planck}}
+Die im vorangegangenen Abschnitt zusammengestellten Grundlagen der
+statischen Mechanik erlauben uns, das Plancksche Strahlungsgesetz
+zu verstehen.
+
+\subsubsection{Frequenzdichte}
+Elektromagnetische Strahlung in einem verspiegelten Hohlraum bildet
+stehende Wellen,
+deren Wellenlänge ein ganzzahliger Bruchteil der Abmessungen des
+Hohlraumes sein muss.
+Eine solche stehende Welle kann durch einen Vektor
+\[
+\vec{k} = \begin{pmatrix}k_x\\k_y\\k_z\end{pmatrix}
+\]
+von ganze Zahlen $k_x,k_y,k_z\in\mathbb Z$ beschrieben werden, der
+die Anzahl der Wellenlängen angibt, die in jeder Richtung in die
+Abmessungen des Hohlraums hineinpassen.
+Sei $L$ die Seitenlänge des Hohlraumes, das Volumen ist dann $V=L^3$.
+Eine Welle kann dann mit Hilfe der Funktionen
+\[
+\sin \vec{x}\cdot\vec{k}\frac{2\pi}{L}
+\qquad\text{und}\qquad
+\cos \vec{x}\cdot\vec{k}\frac{2\pi}{L}
+\]
+beschreiben.
+Der Faktor $2\pi/L$ stellt sicher, dass eine Zunahme einer Koordinate
+um $L$ das Argument der Winkelfunktion genau um $2\pi$ vergrössert,
+so dass die resultierende Funktion in jeder Koordinate $L$-periodisch ist.
+
+Die Ausbreitungsrichtung einer solchen Welle ist $\vec{k}$.
+Die Wellenlänge kann man an einem Vektor $\vec{x}$ ablesen, der
+$\vec{x}\cdot\vec{k}=L$ erfüllt, er muss daher die Länge
+\[
+\lambda
+=
+|\vec{x}|
+=
+\frac{L}{|\vec{k}|}
+\]
+haben.
+Die zugehörige Frequenz wird daher
+\[
+\nu(\vec{k})
+=
+\frac{c}{\lambda}=|\vec{k}|\frac{c}{L}.
+\]
+
+Später wird uns die Anzahl der möglichen Vektoren $\vec{k}$ interessieren,
+die auf Frequenzen in einem vorgegeben Intervall $[\nu, \nu+d\nu]$
+führen.
+Dies ist auch die Anzahl der Vektoren mit ganzzahligen Koordinaten derart,
+dass
+\[
+\frac{L}{c}\nu
+\le
+|\vec{k}|
+\le
+\frac{L}{c}(\nu+d\nu)
+\]
+gilt.
+Dies ist aber auch ungefähr das Volumen einer Kugelschale zwischen den
+Radien 
+\[
+r=\frac{L}{c}\nu
+\qquad\text{und}\qquad
+r+dr=\frac{L}{c}(\nu+d\nu)
+\]
+Die Volumenformel
+\[
+V(r)
+=
+\frac{4}{3}\pi r^3
+\]
+für eine Kugel vom Radius $r$ liefert für das Volumen
+zwischen den beiden Radien
+\[
+V(r+dr)-V(r)
+\simeq
+\frac{d}{dr} \frac{4}{3}\pi  r^3 \, dr
+=
+4\pi r^2\,dr.
+\]
+Daraus liest man ab, dass im Interval $[\nu,\nu+d\nu]$ 
+\[
+4\pi \frac{L^3}{c^3}\nu^2\,d\nu
+=
+4\pi \frac{V}{c^3}\nu^2\,d\nu
+\]
+Frequenzen möglich sind.
+Bezogen auf das Volumen $V$ bleibt die Zustandsdichte
+\begin{equation}
+g(\nu)\,d\nu = \frac{4\pi}{c^3}\nu^2\,d\nu.
+\label{skript:cmb:zustandsdichte}
+\end{equation}
+Allerdings ist zu beachten, dass ein elektromagnetisches Strahlungsfeld
+zu jedem Wellenzahlvektor $\vec{k}$ zwei voneinander unabhängige 
+Felder mit orthogonalen Polarisierungen ermöglicht, was die Zahl
+der Zustände nochmals verdoppelt.
+
+\subsubsection{UV-Katastrophe}
+Ein klassischer harmonischer Oszillator kann jede beliebige Energie haben,
+da diese nur von der Amplitude abhängt.
+Die klassische Thermodynamik leitet aus dem kanonischen Formalismus den
+Gleichverteilungssatz ab, der besagt,
+dass jeder Freiheitsgrad die gleiche mittlere Energie beiträgt.
+Da zu jedem Wellenzahlvektor ein eigener Oszillator und damit ein 
+eigener Freiheitsgrad zur Verfügung steht, trägt jeder Wellenzahlvektor
+die gleiche Energiemenge bei.
+Da es unendlich viele Wellenzahlvektoren gibt, wird die Gesamtenergie
+unendlich gross.
+Man nennt dies die UV-Katastrophe.
+Sie zeigt, dass die klassischen Vorstellungen und insbesondere der
+Gleichverteilungssatz nicht anwendbar sind.
+Das Problem kann nur gelöst werden indem man dafür sorgt, indem man
+annimmt, dass die Oszillatoren mit hoher Frequenz nur mit geringerer
+Wahrscheinlichkeit angeregt werden.
+
+\subsubsection{Quantenhypothese}
+Planck nahm in seiner Verzweiflung an, dass in einem Oszillator mit
+Freqeuenz $\nu$ nur die diskreten Vielfachen des Energiequantums $h\nu$ 
+erlaubt sind, wobei $h$, das {\em Plancksche Wirkungsquantum}, derart
+klein ist, dass es bei hohen Energien gar nicht erst in Erscheinung
+tritt.
+Der Oszillator mit Frequenz $\nu$ hat daher die Energiezustände
+\[
+E_j = jh\nu,
+\]
+und damit die Zustandssumme
+\[
+Z_\nu
+=
+\sum_{j=0}^\infty e^{-j\beta h\nu}
+=
+\sum_{j=0}^\infty \bigl(e^{-\beta h\nu}\bigr)^j.
+\]
+Dies ist eine geometrische Reihe mit dem Quotienten
+$q=e^{-\beta h\nu}$ mit der Summe
+\[
+Z_\nu
+=
+\frac1{1-q}=\frac1{1-e^{-\beta h\nu}}.
+\]
+Die mittlere Energie, die sich im Gleichgewicht in diesem Oszillator 
+befindet, ist
+\[
+E(\nu,T)
+=
+-\frac{d}{d\beta}\log Z_\nu
+=
+\frac{h\nu e^{-\beta h \nu}}{1-e^{-\beta h\nu}}
+=
+\frac{h\nu}{e^{\beta h\nu}-1}
+=
+\frac{h\nu}{e^{h\nu/k_BT}-1}.
+\]
+
+Nun ist aber auch noch zu berücksichtigen, dass nicht jede beliebige
+Frequenz möglich ist.
+Die Zustandsdichte für die Frequenzen wurde
+in~\eqref{skript:cmb:zustandsdichte} bereits bestimmt.
+Somit erhalten wir das Plancksche Strahlungsgesetz.
+Die im Frequenzinterval $d\nu$ abgestrahlte Energie eines
+schwarzen Körpers ist
+\begin{equation}
+U(\nu,T)\,d\nu
+=
+2g(\nu)\,d\nu
+\frac{h\nu}{e^{h\nu/k_BT}-1}
+=
+\frac{8\pi}{c^3}\nu^2\,d\nu\frac{h\nu}{e^{h\nu/k_BT-1}}
+=
+\frac{8\pi h\nu^3}{c^3}\frac{d\nu}{e^{h\nu/k_BT}-1}
+\label{skript:cmb:plancknu}
+\end{equation}
+Der Faktor $2$ rührt von den zwei Polarisierungen her, die die Strahlung
+bei gleichem Wellenzahlvektor $\vec{k}$ und damit gleicher Frequenz haben
+kann.
+
+\subsubsection{Wellenlänge}
+In~\eqref{skript:cmb:plancknu} haben wir das Plancksche Strahlungsgesetz
+durch die Frequenz ausgedrückt.
+Wir hätten stattdessen auch die Wellenlänge $\lambda=c/\nu$ verwenden 
+können.
+Einem Interval $[\lambda,\lambda+d\lambda]$ von Wellenlängen entspricht
+das Frequenzinterval
+\[
+\biggl[
+\frac{c}{\lambda}-\frac{c}{\lambda^2}d\lambda
+,
+\frac{c}{\lambda}
+\biggr]
+\]
+und damit das Strahlungsgesetz
+\begin{equation}
+U(\lambda,T)\,d\lambda
+=
+\frac{8\pi h}{\lambda^3}\frac{1}{e^{hc/\lambda k_BT}-1}\frac{c}{\lambda^2}\,d\lambda
+\frac{8\pi hc}{\lambda^5}\frac{1}{e^{hc/\lambda k_BT}-1}\,d\lambda
+\label{skript:cmb:planck:lambda}
+\end{equation}
+in Abhängigkeit von der Wellenlänge $\lambda$ und der Temperatur $T$.
+
+\subsubsection{Verschiebungsgesetz}
+Ändert man die Temperatur des Hohlraumes um den Faktor $a$ zur $T_1=aT$,
+dann wird sich das Strahlungsspektrum $U_1$ zu anderen Wellenlängen
+$\lambda_1$ verschieben.
+Wir wollen zeigen, dass mit $\lambda_1=\lambda/a$ wieder ein Plancksches
+Strahlungsgesetz entsteht, allerdings mit einer geringeren abgestrahlten
+Energie.
+Setzen wir dies in das Strahlungsgesetz ein, erhalten wir
+\begin{align*}
+U_1(\lambda_1,T_1)\,d\lambda_1
+&=
+B\cdot
+U(a\lambda_1,T_1/a)a\,d\lambda_1
+\\
+&=
+\frac{B}{a^4}
+\cdot
+\frac{8\pi hc}{\lambda_1^5}\frac{1}{e^{hc/\lambda_1k_BT_1}-1}\,d\lambda_1
+\\
+&=
+\frac{B}{a^4}\cdot U(\lambda_1,T_1)\,d\lambda_1.
+\end{align*}
+Das Strahlungsspektrum bei der Temperatur $T_1=aT$ ist also identisch mit dem
+Spektrum bei der Temperatur $T$ mit Wellenlängen, die um den Faktor $a^{-1}$
+verkürzt wurden.
+Der Faktor $B$ muss $B=a^4$ sein, damit dies zutrifft.
+Wir schliessen daraus, dass die Gesamtstrahlung eines schwarzen Körpers
+proportional zu $T^4$ sein muss (Wiensches Verschiebungsgesetz).
+
+\subsubsection{Expansion}
+In der Form~\eqref{skript:cmb:planck:lambda}
+des Strahlungsgesetztes können wir untersuchen was
+passiert, wenn sich das ganze Universum, betrachtet als ein gigantischer
+Hohlraum, sich um den Faktor $a$ ausdehnt.
+
+Wir bezeichnen die Wellenlänge nach der Expansion mit $\lambda_1=a\lambda$
+und bestimmen die Energiedichte $U_1(\lambda_1,T_1)$ in Abhängigkeit von
+$\lambda_1$.
+Im besten Fall ist $U_1(\lambda_1,T_1)$ wieder das Plancksche
+Strahlungsgesetz, möglicherweise mit einer anderen Temperatur $T_1$, die
+es ebenfalls zu bestimmen gilt.
+
+Aus dem Strahlungsgesetz~\label{skript:cmb:planck:lambda} in Abhängigkeit
+von der Wellenlänge wird dann
+\begin{align*}
+U_1(\lambda_1,T_1)\,d\lambda_1
+&=
+U(\lambda_1/a,T)\,d(\lambda_1/a)
+\\
+&=
+\frac{8\pi hc}{(\lambda_1/a)^5}
+\frac{1}{e^{hc/(\lambda_1/a) k_BT}-1}\,d(\lambda_1/a)
+\\
+&=
+a^4
+\frac{8\pi hc}{\lambda_1^5}
+\frac{1}{e^{hc/\lambda_1 k_B(T/a)}-1}\,d\lambda_1
+\end{align*}
+Bis auf den Faktor $a^4$ ist dies wieder ein Plancksches Spektrum
+für die Temperatur $T_1=T/a$.
+Der Faktor $a^4$ passt aber zu der Tatsache, dass die Gesamtstrahlung
+bei einer Temperaturänderung um den Faktor $1/a$ ebenfalls um Faktor
+$a^{-4}$ abnehmen muss.
+Der Faktor $a^4$ kompensiert also genau diese Abnahme.
+Wir kommen daher zum Schluss, dass die Expansion des Universums um den
+Faktor $a$ die Temperatur der darin enthaltenen Strahlung um den Faktor
+$1/a$ gesenkt wird.
+Die Energiedichte der Strahlung nimmt dagegen um den Faktor $a^{-4}$ ab.
+
+\section{Rekombination%
+\label{skript:cmb:section:rekombination}}
 \rhead{Rekombination}
 
 \section{Anisotropie des CMB}
