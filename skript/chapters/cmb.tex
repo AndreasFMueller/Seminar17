@@ -521,9 +521,275 @@ Faktor $a$ die Temperatur der darin enthaltenen Strahlung um den Faktor
 $1/a$ gesenkt wird.
 Die Energiedichte der Strahlung nimmt dagegen um den Faktor $a^{-4}$ ab.
 
+\subsubsection{Photonenzahl}
+Die Herleitung des Planckschen Strahlungsgesetzes erlaubt auch, die
+erwartete Anzahl der angeregten Zustände, also der Photonen im
+Hohlraum zu ermitteln.
+Wir notieren hier nur das Resultat.
+Die Dichte der Photonen in einem Hohlraum der Temperatur $T$ ist
+\begin{equation}
+n_\gamma
+=
+16\pi\zeta(3)
+\biggl(\frac{k_BT}{hc}\biggr)^3.
+\label{skript:cmb:photonenzahl}
+\end{equation}
+Darin ist $\zeta(3)$ der Wert der Riemannschen Zetafuntion an der
+Stelle $3$.
+Ein numerischer Wert ist $\zeta(3)=1.20205690\dots$.
+
 \section{Rekombination%
 \label{skript:cmb:section:rekombination}}
 \rhead{Rekombination}
+Im frühen Universum war die Energiedichte der Strahlung viel höher
+als die Energiedichte der Materie.
+Die Friedmann-Gleichung zeigt auch, wie man den Zeitpunkt berechnen
+kann, zu dem die Energiedichte von Strahlung und Materie gleich
+waren.
+Im frühen Universum gab es daher einerseits sehr viel mehr Strahlung
+als Materie, andererseits war die Dichte höher, so dass es sehr
+häufig zu Reaktionen zwischen Atomen und Photonen kam, wodurch die
+Atome ionisiert wurden.
+Erst als das Universum genügend abgekühlt war konnten sich Atomkerne
+und Elektronen für längere Zeit zusammenfinden.
+Man nennt diese Phase die Rekombination, obwohl die Atomkerne und
+Elektronen davor noch nie kombiniert gewesen waren.
+
+In diesem Abschnitt wollen wir daher berechnen, wie der Prozess der
+Rekombination abläuft und bei welchem Alter des Universum dies
+etwas stattgefunden haben muss.
+
+\subsection{Zusammensetzung des Universums}
+Wir nehmen in diesem Abschnitt an, dass das Universum nur aus 
+Protonen, Elektronen und Strahlung besteht.
+Insbesonderen vernachlässigen wir den beträchtlichen Teil
+Helium, der im Rahmen des Big Bang erzeugt worden ist.
+Da die Ionisationsenergie von Helium etwa dopopelt so hoch ist wie
+diejenige von Wasserstoff, muss Helium im wesentlichen bereits
+rekombiniert haben in dem Moment, wo die Rekombination des Wasserstoff
+stattfindet.
+
+Die Materie im Universum wird daher beschrieben durch die Anzahldichte
+der freien Elektronen $n_e$, die Anzahldichte der freien Protonen $n_p$
+und die Anzahldichte $n_\text{H}$ der Wasserstoffatome.
+Da das Universum neutral ist, muss $n_e=n_p$ gelten.
+Da jedes Wasserstoffatom auch ein Proton als Atomkern enthält, ist die
+Gesamtzahl der Baryonen im Universum $n_\text{Baryonen} = n_p+n_\text{H}$.
+Der Ionisationsgrad des Unviersums ist daher
+\begin{equation}
+X=\frac{n_p}{n_\text{Baryonen}}=\frac{n_p}{n_p+n_\text{H}}.
+\label{skript:cmb:Xb}
+\end{equation}
+Ziel dieses Abschnitts ist die Berechnung von $X$ in Abhängigkeit 
+von der Zeit.
+Löst man die Definition~\eqref{skript:cmb:Xb} nach $n_\text{H}$ auf,
+findet man
+\begin{align*}
+\frac1X
+&=
+\frac{n_p+n_\text{H}}{n_p}
+=
+1+
+\frac{n_\text{H}}{n_p}
+\\
+\Rightarrow
+\qquad
+\frac{n_\text{H}}{n_p}
+&=
+\frac{1}{X}-1
+=
+\frac{1-X}{X}
+\\
+n_\text{H}
+&=
+\frac{1-X}{X}n_p.
+\label{skript:cmb:XnH}
+\end{align*}
+
+Ausserdem dürfen wir annehmen, dass die Anzahldichte $n_\gamma$
+der Photonen währen der Rekombination wesentlich grösser war als
+die Zahl der Baryonen.
+Wir bezeichnen mit $\eta$ das Verhältnis
+\[
+\eta = \frac{n_\text{Baryonen}}{n_\gamma}
+\]
+von Baryonenzahl zu Photonenzahl.
+Mit Hilfe der Definition von $X$ in Gleichung~\eqref{skript:cmb:Xb}
+finden wir den Zusammenhang
+\begin{equation}
+\eta = \frac{n_p}{Xn_\gamma}
+\label{skript:cmb:etaX}
+\end{equation}
+zwischen $\eta$ und $X$.
+
+\subsection{Reaktionsgleichgewicht und Saha-Gleichung}
+Die Voraussetzungen über die Zusammensetzung des Universums bedeuten,
+dass wir uns nur für die Ionisationsreaktion
+\begin{equation}
+\text{H} + \gamma 
+\rightleftharpoons
+p + e^-
+\label{skript:cmb:reaktionsgleichung}
+\end{equation}
+interessieren.
+Wir nehmen sogar an, dass die Ionisation eines Wasserstoffatoms 
+die konstante Energie $Q=13.6\,\text{eV}$ benötigt.
+Damit ignorieren wir angeregt Zustände des Wasserstoffs, die auch
+mit geringerem Energieaufwand erreicht werden können.
+Bei der Rekombination ist auch ein Übergang in einen angeregten
+Zustand möglich, der später durch Emission eines Photons in den Grundzustand
+übergehen kann.
+
+Wir möchten berechnen, wie der Ionisationsgrad sich mit der Zeit ändert.
+Wenn die Dichte der Photonen sinkt wird sich das Reaktionsgleichgewicht
+auf die linke Seite von~\eqref{skript:cmb:reaktionsgleichung} verschieben.
+Im statistischen Gleichgewicht kann die Maxwell-Boltzmann-Gleichung
+verwendet werden, um die Teilchendichte in Abhängigkeit von der Temperatur
+auszudrücken, es gilt für die Komponente $x$
+\[
+n_x
+=
+g_x \biggl(\frac{m_xk_BT}{2\pi h^2}\biggr)^{\frac32}
+\exp\biggl(-\frac{m_xc^2}{k_BT}\biggr).
+\]
+Die Zahl $g_x$ ist die Anzahl der Zustände mit gleichem Impuls.
+Für Elektronen und Protonen ist $g_e=g_p=2$, da beide genau zwei
+Spin-Zustände haben.
+Das Wasserstoff-Atom hat dagegen $g_\text{H}=4$ Spinzustände.
+
+Das Verhältnis der Anzahldichten der Reaktionsteilnehmer ist
+\begin{equation}
+\frac{n_\text{H}}{n_pn_e}
+=
+\underbrace{\frac{g_\text{H}}{g_pg_e}}_{\displaystyle=1}
+\biggl(\frac{m_\text{H}}{m_pm_e}\biggr)^{\frac32}
+\biggl(\frac{k_BT}{2\pi h^2}\biggr)^{-\frac32}
+\exp\biggl( \frac{(m_p+m_e-m_\text{H})c^2}{k_BT} \biggr)
+\label{skript:cmb:saha1}
+\end{equation}
+Mit unseren vereinfachenden Annahmen ist der Zähler im letzten Term
+die Ionisationsenergie
+\[
+Q=(m_p+m_e-m_\text{H})c^2
+\]
+des Wasserstoffatoms.
+Da der Unterschied zwischen $m_p$ und $m_\text{H}$ sehr gering ist,
+setzen wir den Quotienten $=1$.
+Mit diesen Vereinfachungen wird die Gleichung~\eqref{skript:cmb:saha1}
+zu
+\begin{equation}
+\frac{n_\text{H}}{n_pn_e}
+=
+\biggl(\frac{m_ek_BT}{2\pi h^2}\biggr)^{-\frac32}
+\exp\biggl( \frac{Q}{k_BT} \biggr),
+\label{skript:cmb:saha}
+\end{equation}
+sie heisst die {\em Saha-Gleichung}.
+\index{Saha-Gleichung}
+
+\subsection{Rekombination}
+Die Gleichung~\eqref{skript:cmb:XnH} erlaubt uns, in der
+Saha-Gleichung~\eqref{skript:cmb:saha} das Verhältnis $m_\text{H}/n_p$
+durch $X$ ausdrücken, wir erhalten
+\begin{equation}
+\frac{1-X}{X}
+=
+n_p
+\biggl(\frac{m_ek_BT}{2\pi h^2}\biggr)^{-\frac32}
+\exp\biggl( \frac{Q}{k_BT} \biggr).
+\end{equation}
+Die Protonendichte $n_p$ lässt sich dank~\eqref{skript:cmb:etaX}
+durch $\eta$ und die Photonendichte $n_\gamma$ ausdrücken als
+\[
+\frac{1-X}{X^2}=\eta n_\gamma
+\biggl(\frac{m_ek_BT}{2\pi h^2}\biggr)^{-\frac32}
+\exp\biggl( \frac{Q}{k_BT} \biggr).
+\]
+Für die Hohlraumstrahlung ist die Photonendichte $n_\gamma$ in Abhängigkeit
+von der Temperatur aus \eqref{skript:cmb:photonenzahl} bekannt.
+\begin{align}
+\frac{1-X}{X^2}
+&=\eta
+16\pi\zeta(3)
+\biggl(\frac{k_BT}{hc}\biggr)^3
+\biggl(\frac{m_ek_BT}{2\pi h^2}\biggr)^{-\frac32}
+\exp\biggl( \frac{Q}{k_BT} \biggr)
+\notag
+\\
+&=
+16\pi\zeta(3)(2\pi)^{\frac32}
+\,
+\eta
+\,
+\biggl(\frac{k_BT}{m_ec^2}\biggr)^{\frac32}
+\exp\biggl( \frac{Q}{k_BT} \biggr)
+\label{skript:cmb:xqauadr}
+\end{align}
+Schreibt man $S(T,\eta)$ für die rechte Seite von \eqref{skript:cmb:xqauadr},
+dann wird daraus eine quadratische Gleichung
+\[
+1-X-X^2 S(T,\eta)=0
+\]
+für den Ionisationsgrad, die die Lösungen
+\[
+X = \frac{-1\pm\sqrt{1+4S}}{2S}
+\]
+hat.
+Nur das positive Zeichen liefert eine positive Lösung, so dass wir
+\[
+X=\frac{-1+\sqrt{1+4S}}{2S}
+\]
+erhalten.
+
+Für $T\to 0$, also für die Zukunft, wird $S\to \infty$ gehen
+und damit
+\[
+\lim_{S\to\infty}\frac{-1+\sqrt{1+4S}}{2S}
+=
+\lim_{S\to\infty}\frac{1}{\sqrt{S}}
+=
+0.
+\]
+Der Ionisationsgrad fällt also in Zukunft gegen 0.
+
+Für $T\to\infty$, also im ganz frühen Universum, geht $S\to\infty$
+und damit auch $X\to 0$
+Hilfe der Regel von de l'H\^opital wird
+\begin{align*}
+\lim_{S\to 0}\frac{-1+\sqrt{1+4S}}{2S}
+&=
+\lim_{S\to 0}
+\frac{\frac12(1+4S)^{-\frac12} 4S}{2}
+\\
+\lim_{S\to 0}
+\frac{\frac12(1+4S)^{-\frac12}\cdot 4}{2}
+=
+1.
+\end{align*}
+Im frühen Universum war also das Gas fast vollständig ionisiert.
+
+Definieren wir willkürlich den Zeitpunkt der Rekombination als
+denjenigen Zeitpunkt, zu dem $X=\frac12$ ist, dann gilt auf Grund
+von \eqref{skript:cmb:xqauadr}
+\[
+\frac{1-\frac12}{\bigl(\frac12\bigr)^2}
+=
+2
+=
+16\pi\zeta(3)(2\pi)^{\frac32}
+\,
+\eta
+\,
+\biggl(\frac{k_BT_\text{rec}}{m_ec^2}\biggr)^{\frac32}
+\exp\biggl( \frac{Q}{k_BT_\text{rec}} \biggr).
+\]
+Durch Lösung dieser Gleichung können wir die Temperatur bestimmen,
+bei der die Rekombination stattgefunden hat.
+Nimmt man $\eta=5.5\cdot 10^{-10}$, kann man für die Rekombinationstemperatur
+\[
+T_\text{rec} = 3740\text{K}
+\]
+finden.
 
 \section{Anisotropie des CMB}
 \rhead{Anistrotopie des CMB}
