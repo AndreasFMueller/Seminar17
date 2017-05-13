@@ -3,7 +3,7 @@ load("12kdata_1000.m");
 A = CMB_12K_1000;
 
 order = 19;
-xmin = 1;
+xmin = 3;
 xmax = size(A)(2);
 %ymin = 10;
 %ymax = 45;
@@ -20,8 +20,10 @@ p = polyfit(xmin:xmax, A(xmin:xmax), order);
 x = linspace(xmin, xmax, xmax - xmin + 1);
 y = polyval(p, x);
 
+set(gca,'xscale','log');
+
 hold on;
-grid on;
+%grid on;
 axis([xmin xmax])
 set (0, "defaultlinelinewidth", 2);
 plot(xmin:xmax, A(xmin:xmax));
