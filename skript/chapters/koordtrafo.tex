@@ -532,16 +532,16 @@ linken Seite mit $\bar g^{\beta\alpha}$ multiplizieren.
 Da $g^{\mu\nu}$ ein kontravarianter Tensor ist, gilt
 \begin{equation}
 \bar g^{\alpha\beta}
-\frac{\partial y^\mu}{\partial x^\alpha}
-\frac{\partial y^\nu}{\partial x^\beta}
+\frac{\partial x^\mu}{\partial y^\alpha}
+\frac{\partial x^\nu}{\partial y^\beta}
 =
 g^{\mu\nu}
 \qquad\Leftrightarrow\qquad
 \bar g^{\alpha\beta}
 =
 g^{\mu\nu}
-\frac{\partial x^\alpha}{\partial y^\mu}
-\frac{\partial x^\beta}{\partial y^\nu}.
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial y^\beta}{\partial x^\nu}.
 \label{skript:trafo:ginv}
 \end{equation}
 Wir multiplizieren das Transformationsgesetz~\label{skript:trafo:chr1}
@@ -550,8 +550,8 @@ mit~\eqref{skript:trafo:ginv} und erhalten
 \bar g^{\alpha\beta}
 \bar\Gamma_{\alpha,\mu\nu}
 &=
-\frac{\partial x^\alpha}{\partial y^\eta}
-\frac{\partial x^\beta}{\partial y^\zeta}
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
 g^{\eta\zeta}
 \Gamma_{\tau,\varrho\sigma}
 \frac{\partial x^\tau}{\partial y^\alpha}
@@ -559,8 +559,8 @@ g^{\eta\zeta}
 \frac{\partial x^\sigma}{\partial y^\nu}
 +
 \frac12
-\frac{\partial x^\alpha}{\partial y^\eta}
-\frac{\partial x^\beta}{\partial y^\zeta}
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
 g^{\eta\zeta}
 g_{\sigma\tau}
 \frac{\partial x^\varrho}{\partial y^\mu}
@@ -568,14 +568,88 @@ g_{\sigma\tau}
 \frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
 +
 \frac12
-\frac{\partial x^\alpha}{\partial y^\eta}
-\frac{\partial x^\beta}{\partial y^\zeta}
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
 g^{\eta\zeta}
 g_{\tau\varrho}
 \frac{\partial x^\sigma}{\partial y^\nu}
 \frac{\partial x^\varrho}{\partial x^\mu}
 \frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
-\label{skript:trafo:chr1}
+\\
+&=
+\delta^\tau_\eta
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+\Gamma_{\tau,\varrho\sigma}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial x^\varrho}{\partial x^\mu}
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
+\\
+&=
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\tau\zeta}
+\Gamma_{\tau,\varrho\sigma}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial x^\varrho}{\partial x^\mu}
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
+\\
+&=
+\Gamma^\zeta_{\varrho\sigma}
+\frac{\partial y^\beta}{\partial x^\zeta}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial x^\varrho}{\partial x^\mu}
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
 \end{align*}
 
 
