@@ -340,10 +340,243 @@ Es ist bereits bekannt, dass $g_{\mu\nu}$ ein kovarianter Tensor ist.
 Wir müssen die Ableitung von $\bar g_{\mu\nu}$ nach $y^\alpha$ durch
 die metrischen Koeffizienten $g_{\sigma\tau}$ und ihre Ableitungen
 nach $x^\sigma$ ausdrücken.
+Insbesondere gilt das Transformationsgesetz
+\begin{equation*}
+\bar g_{\mu\nu}
+=
+g_{\varrho\sigma}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\end{equation*}
+für die metrischen Koeffizienten. 
+Damit kann man jetzt auch die Ableitung 
+\begin{align}
+\frac{\partial}{\partial y^\alpha}\bar g_{\mu\nu}
+&=
+\frac{\partial}{\partial y^\alpha} 
+\biggl(
+g_{\varrho\sigma}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\biggr)
+=
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial}{\partial x^\tau}
+\biggl(
+g_{\varrho\sigma}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\biggr)
+\notag
+\\
+&=
+\frac{\partial g_{\varrho\sigma}}{\partial x^\tau}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+g_{\varrho\sigma}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial}{\partial x^\tau}
+\biggl(
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\biggr)
+\notag
+\\
+&=
+\frac{\partial g_{\varrho\sigma}}{\partial x^\tau}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+g_{\varrho\sigma}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\biggl(
+\frac{\partial^2 x^\varrho}{\partial y^\tau\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial^2 x^\sigma}{\partial y^\tau\partial y^\nu}
+\biggr)
+\label{skript:trafo:gabl}
+\end{align}
+Die zusätzlichen Terme mit zweiten Ableitungen der Koordinatentransformation
+auf der rechten Seite zeigen, dass die Ableitungen der metrischen Koeffizienten
+keine Tensoren sein können.
 
 \subsubsection{Transformationsformel für die Christoffelsymbole erster Art}
+Die Christoffelsymbole erster Art sind definiert durch
+\[
+\Gamma_{\alpha,\mu\nu}
+=
+\frac12\biggl(
+\frac{\partial g_{\nu\alpha}}{\partial x^\mu}
++
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+-
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+\biggr).
+\]
+Die Transformationformeln~\eqref{skript:trafo:gabl}
+für die Ableitungen des metrischen Tensors können jetzt dazu verwendet
+werden, die Transformationsformeln für die Christoffelsymbole erster Art
+zu ermitteln.
+Wir wenden die Definition auf $\bar g$ an:
+\begin{align}
+\bar\Gamma_{\alpha,\mu\nu}
+&=
+\frac12\biggl(
+\frac{\partial \bar g_{\nu\alpha}}{\partial y^\mu}
++
+\frac{\partial \bar g_{\alpha\mu}}{\partial y^\nu}
+-
+\frac{\partial \bar g_{\mu\nu}}{\partial y^\alpha}
+\biggr)
+\notag
+\\
+&=
+\frac12\biggl(
+\frac{\partial g_{\sigma\tau}}{\partial x^\varrho}
++
+\frac{\partial g_{\tau\varrho}}{\partial x^\sigma}
+-
+\frac{\partial g_{\varrho\sigma}}{\partial x^\tau}
+\biggr)
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\notag
+\\
+&\quad
++\frac12g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\biggl(
+{\color{blue}
+\frac{\partial^2 x^\sigma}{\partial y^\varrho\partial y^\nu}
+\frac{\partial x^\tau}{\partial y^\alpha}}
++
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
+\biggr)
+%&&
+%\begin{pmatrix}
+%\mu    &\nu    &\alpha &\sigma &\tau   &\varrho
+%\end{pmatrix}
+\notag
+\\
+&\quad
++\frac12g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\biggl(
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
++
+{\color{red}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial^2 x^\varrho}{\partial y^\sigma\partial y^\mu}}
+\biggr)
+%&&
+%\begin{pmatrix}
+%\nu    &\alpha &\mu    &\tau   &\varrho&\sigma
+%\end{pmatrix}
+\notag
+\\
+&\quad
+-\frac12g_{\varrho\sigma}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\biggl(
+{\color{red}
+\frac{\partial^2 x^\varrho}{\partial y^\tau\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}}
++
+{\color{blue}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial^2 x^\sigma}{\partial y^\tau\partial y^\nu}}
+\biggr)
+\notag
+%&&
+%\begin{pmatrix}
+%\alpha &\mu    &\nu    &\varrho&\sigma &\tau
+%\end{pmatrix}
+\intertext{Die farbig hervorgehobenen Terme heben sich nach geeigneter
+Umbenennung von Summationsindizes weg.
+Es bleibt dann
+}
+\bar\Gamma_{\alpha,\mu\nu}
+&=
+\Gamma_{\tau,\varrho\sigma}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac12
+g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
++
+\frac12
+g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial x^\varrho}{\partial x^\mu}
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
+\label{skript:trafo:chr1}
+\end{align}
+
+
 
 \subsubsection{Transformationsformel für die Christoffelsymbole zweiter Art}
+Für die Christoffesymbole zweiter Art müssen wir nur noch auf der
+linken Seite mit $\bar g^{\beta\alpha}$ multiplizieren.
+Da $g^{\mu\nu}$ ein kontravarianter Tensor ist, gilt
+\begin{equation}
+\bar g^{\alpha\beta}
+\frac{\partial y^\mu}{\partial x^\alpha}
+\frac{\partial y^\nu}{\partial x^\beta}
+=
+g^{\mu\nu}
+\qquad\Leftrightarrow\qquad
+\bar g^{\alpha\beta}
+=
+g^{\mu\nu}
+\frac{\partial x^\alpha}{\partial y^\mu}
+\frac{\partial x^\beta}{\partial y^\nu}.
+\label{skript:trafo:ginv}
+\end{equation}
+Wir multiplizieren das Transformationsgesetz~\label{skript:trafo:chr1}
+mit~\eqref{skript:trafo:ginv} und erhalten
+\begin{align*}
+\bar g^{\alpha\beta}
+\bar\Gamma_{\alpha,\mu\nu}
+&=
+\frac{\partial x^\alpha}{\partial y^\eta}
+\frac{\partial x^\beta}{\partial y^\zeta}
+g^{\eta\zeta}
+\Gamma_{\tau,\varrho\sigma}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac12
+\frac{\partial x^\alpha}{\partial y^\eta}
+\frac{\partial x^\beta}{\partial y^\zeta}
+g^{\eta\zeta}
+g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
++
+\frac12
+\frac{\partial x^\alpha}{\partial y^\eta}
+\frac{\partial x^\beta}{\partial y^\zeta}
+g^{\eta\zeta}
+g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial x^\varrho}{\partial x^\mu}
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
+\label{skript:trafo:chr1}
+\end{align*}
 
 
 
