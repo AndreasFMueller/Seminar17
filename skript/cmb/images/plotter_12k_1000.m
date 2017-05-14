@@ -23,7 +23,7 @@ y = polyval(p, x);
 set(gca,'xscale','log');
 
 hold on;
-%grid on;
+grid on;
 axis([xmin xmax])
 set (0, "defaultlinelinewidth", 2);
 plot(xmin:xmax, A(xmin:xmax));
