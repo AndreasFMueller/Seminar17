@@ -1,0 +1,656 @@
+%
+% koordtrafo.tex -- Koordinatentransformationen
+%
+% (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\section{Koordinatentransformation}
+Der bisher entwickelte Formalismus zielt darauf ab, dass die Formeln der
+Theorie in jedem beliebigen Koordinatensystem aufgestellt werden können.
+Sie müssen also derart formuliert sein, dass sie bei Koordinatenwechsel
+der Form nach unverändert bleiben.
+Das heisst natürlich nicht, dass zum Beispiel die metrischen Koeffizienten
+$g_{\mu\nu}$ in jedem Koordinatensystem gleich aussehen müssen, sondern
+nur, dass zum Objekt $g_{\mu\nu}$ in einem Koordinatensystem sofort
+das Transformationsgesetz für die Transformation in ein anderes
+Koordinatensystem angegeben werden kann.
+Man nennt dies Eigenschaft die {\em allgemeine Kovarianz}.
+\index{Kovarianz, allgemeine}
+\index{allgemeine Kovarianz}
+Nur allgemein kovariante Gleichungen kommen als von der speziellen
+Wahl des Koordinatensystems unabhängige Naturgesetze in Frage.
+
+Bis jetzt haben wir uns nicht darum gekümmert, wie sich eine Grösse
+bei Wechsel des Koordinatensystems verändert.
+In diesem Abschnitt soll dies nachgeholt werden.
+Wir werden in diesem Abschnitt daher untersuchen, wie sich verschiedene
+Grössen beim Wechsel vom Koordinatensystem $x^1,\dots,x^n$ auf ein
+anderes Koordinatensystem $y^1,\dots,y^n$ transformieren.
+Wir nehmen dabei im Allgemeinen an, dass sich die Koordinaten $y^\alpha$
+als Funktionen
+\[
+y^\alpha = y^\alpha(x^1,\dots,x^n)
+\]
+der Koordinaten $x^1,\dots,x^n$ ausdrücken lassen.
+Grössen im $y$-Koordinatensystem werden im Folgenden jeweils mit
+einem Querstrich bezeichnet.
+
+\subsection{Vektoren}
+
+\subsubsection{Tangentialvektoren}
+Als einfachstes Beispiel eines Vektors betrachten wir den Tangentialvektor
+einer Kurve $x^\mu(s)$.
+Die Komponenten des Tangentialvektors sind in diesem Koordinatensystem
+gegeben durch die Ableitungen
+\[
+v^\mu
+=
+\frac{x^\mu(s)}{ds}.
+\]
+Wenn der Vektor eine vom Koordinatensystem unabhängige Bedeutung haben soll,
+dann muss er sich im $y$-Kooordinatensystem ebenfalls durch Ableitung nach
+$s$ finden lassen.
+Wir berechnen daher 
+\begin{align}
+\bar v^\alpha
+=
+\frac{d}{ds}y^\alpha(x^1(s),\dots,x^n(s))
+&=
+\frac{\partial y^\alpha(x^1,\dots,x^n)}{\partial x^\mu}\frac{x^\mu(s)}{ds}
+=
+\frac{\partial y^\alpha}{\partial x^\mu} v^\mu
+\label{skript:trafo:kontra}
+\end{align}
+mit der Kettenregel für Funktionen mehrer Veränderlicher.
+Wir lesen daraus ab, dass sich die Komponenten $v^\mu$ mit Hilfe der
+partiellen Ableitungen $\partial y^\alpha/\partial x^\mu$ transformieren.
+
+Man kann auch sagen, dass die Kettenregel für Funktionen mehrere Variablen
+in der Formel~\eqref{skript:trafo:kontra}
+die Rechtfertigung für die Einsteinsche Summationskonvention ist.
+
+\subsubsection{Linearformen}
+Bei der Berechnung der Arbeit entlang eines Weges wird in der klassischen
+Physik das Skalarprodukt des Tangentialvektors $v^\mu$ mit dem Kraftvektor
+gebildet und integriert.
+Etwas allgemeiner geht es also um Koeffizienten $A_\mu$ einer Linearform,
+für welche der Skalar $B=A_\mu\dot x^\mu$ eine koordinatensystemunabhängige
+Bedeutung haben soll.
+Es soll also gelten
+$B=\bar A_\alpha \dot y^\alpha$.
+Setzen wir die Transformationsformel für $\dot y^\alpha$ ein, erhalten
+wir
+\begin{equation}
+B=\bar A_\alpha\dot y^\alpha
+=
+\bar A_\alpha \frac{\partial y^\alpha}{\partial x^\mu}\dot x^\mu
+=
+A_\mu\dot x^\mu.
+\end{equation}
+Dies ist nur möglich, wenn für $\bar A_\alpha$ gilt
+\begin{equation}
+\bar A_\alpha \frac{\partial y^\alpha}{\partial x^\mu}
+= 
+A_\mu.
+\label{skript:trafo:kov}
+\end{equation}
+
+\subsubsection{Kovariante und kontravariante Vektoren}
+Man erkennt, dass sich die Transformationsformel~\eqref{skript:trafo:kov}
+für $A_\mu$ von der Transformationsformel~\eqref{skript:trafo:kontra}
+für $\dot x^\mu$ durch die Position der partiellen Ableitungen unterscheiden.
+Man nennt den Vektor $\dot x^\mu$ einen {\em kontravarianten Vektor},
+\index{Vektor, kontravarianter}
+die Koeffizienten $A_\mu$ der Linearform dagegen einen {\em kovarianten Vektor}.
+\index{Vektor, kovarianter}
+Der Formalismus trägt dem Unterschied zwischen kovarianten und kontravarianten
+Vektoren dadurch Rechnung, dass für die Komponenten kovarianter Vektoren
+immer tiefgestellte Indizes verwendet werden, während für die Komponenten
+kontravarianter Vektoren hochgestellte Indizes zu verwenden sind.
+
+Sei $\bar f(y^1,\dots,y^n)$ eine beliebige Funktion der Koordinaten.
+Man kann die Funktion natürlich auch in den Koordinaten $x^1,\dots,x^n$
+ausdrücken, indem man 
+\[
+f(x^1,\dots,x^n) = \bar f(y^1(x^1,\dots,x^n),\dots, y^n(x^1,\dots,x^n))
+\]
+setzt.
+Die partiellen Ableitungen von $f$ nach den Koordinaten können wir
+als kovarianten Vektor betrachten, denn es gilt
+\[
+\frac{\partial f}{\partial x^\mu}
+=
+\frac{\partial f}{\partial y^\alpha}\frac{\partial y^\alpha}{\partial x^\mu}
+=
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial f}{\partial y^\alpha}
+\]
+nach der Kettenregel.
+Schreiben wir dies in Operatorform, wir wegen
+\[
+\frac{\partial}{\partial x^\mu}
+=
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial}{\partial y^\alpha}
+\]
+klar, dass wir die partiellen Ableitungsoperatoren als kovariante Vektoren
+betrachten können.
+
+In der Beschreibung der Metrik haben wir die symbolischen Grössen $dx^\mu$
+verwendet, die zunächst nur in einem Integral eine Bedeutung haben.
+Wendet man auf diese Grössen die Variablentransformation an, dann
+folgt
+\[
+dy^\alpha
+=
+\frac{\partial y^\alpha}{\partial x^\mu}\,dx^\mu,
+\]
+die Grössen $dx^\mu$ können daher wie ein kontravarianter Vektor behandelt
+werden.
+
+\subsection{Metrik}
+Die Koeffizienten $g_{\mu\nu}$ des metrischen Tensors dienen dazu,
+das Längenelement entlang einer Kurve zu berechnen.
+Wird eine mit $s$ parametrisierte Kurve wird durch die Funktionen
+$x^\mu(s)$ beschrieben, dann ist die Länge der Kurve durch das
+Integral
+\begin{equation}
+l = \int_a^b
+\sqrt{g_{\mu\nu}(x^\alpha(s))\,\frac{dx^\mu}{ds}\,\frac{dx^\nu}{ds}}
+\,ds
+\label{skript:koord:metrik}
+\end{equation}
+gegeben.
+Die Länge der Kurve ist eine grösse, die vom Koordinatensystem 
+unabhängig definiert werden kann.
+Die Formel~\eqref{skript:koord:metrik} darf also ihre Form nicht verändern,
+wenn man die Kurvenlänge in einem anderen Koordinatensystem berechnen will.
+
+Die allgemeine Kovarianz fordert, dass es $\bar g_{\alpha\beta}(y^1,\dots,y^n)$
+gibt derart, dass die Kurvenlänge mit der Formel
+\begin{equation}
+l = \int_a^b
+\sqrt{\bar g_{\alpha\beta}(y^\sigma(s))\,\frac{dy^\alpha}{ds}\,\frac{dy^\beta}{ds}}
+\,ds
+\label{skript:koord:metrikbar}
+\end{equation}
+berechnet werden kann.
+
+Damit die Längenmessung mit der Formel
+\eqref{skript:koord:metrikbar} auf das gleiche Resultat wie 
+\eqref{skript:koord:metrik} führt, müssen die Integranden übereinstimmen.
+Setzt man \eqref{skript:trafo:kontra} in \eqref{skript:koord:metrikbar}
+ein, erhält man
+\begin{equation*}
+\bar g_{\alpha\beta}
+\frac{dy^\alpha}{ds}\frac{dy^\beta}{ds}
+=
+\bar g_{\alpha\beta}
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial y^\beta}{\partial x^\nu}
+\frac{dx^\mu}{ds}\frac{dx^\nu}{ds}
+=
+g_{\mu\nu}
+\frac{dx^\mu}{ds}\frac{dx^\nu}{ds}.
+\end{equation*}
+Dies ist nur möglich, wenn gilt
+\begin{equation}
+\bar g_{\alpha\beta}
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial y^\beta}{\partial x^\nu}
+=
+g_{\mu\nu}.
+\end{equation}
+Die metrischen Koeffizienten $g_{\mu\nu}$ sind daher in beiden
+Indizes kovariant.
+
+\subsection{Tensoren}
+In Erweiterung der eben diskutierten Beispiele nennen wir die Grössen
+$
+A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}
+$
+einen zweifach kontravarianten und dreifach kovarianten Tensor, wenn
+\[
+\bar 
+A^{\mu\nu}\mathstrut_{\varrho\sigma\tau}
+\frac{\partial y^\delta}{\partial x^\mu}
+\frac{\partial y^\epsilon}{\partial x^\nu}
+=
+A^{\delta\epsilon}\mathstrut_{\alpha\beta\gamma}
+\frac{\partial y^\alpha}{\partial x^\varrho}
+\frac{\partial y^\beta}{\partial x^\sigma}
+\frac{\partial y^\gamma}{\partial x^\tau}
+\]
+gilt.
+Geometrische Aussagen oder Naturgesetze sind nur dann von der Wahl
+eines Koordinatensystems unabhängig, wenn sie mit Hilfe von Tensoren
+beschrieben werden.
+
+Die Transformationsgesetze sind so gestaltet, dass sich weitere Tensoren
+daraus bilden.
+Setzt man einen kovarianten und einen kovarianten gleich und summiert,
+erhält man
+\[
+A^{\delta\nu}\mathstrut_{\delta\beta\gamma}
+=
+B^\nu\mathstrut_{\beta\gamma},
+\]
+genannt die Verjüngung von $A$.
+Dazu beachten wir zunächst, dass
+\begin{equation}
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial x^\mu}{\partial y^\beta}
+=
+\frac{\partial y^\alpha}{\partial y^\beta}
+=
+\delta^\alpha_\beta
+\label{skript:trafo:delta}
+\end{equation}
+ist.
+Wir müssen nachprüfen, ob für die Verjüngung die Transformationsregeln
+\begin{align}
+\bar B^\nu\mathstrut_{\beta\gamma}
+\frac{\partial y^\zeta}{\partial x^\nu}
+&=
+B^\zeta\mathstrut_{\sigma\tau}
+\frac{\partial y^\sigma}{\partial x^\beta}
+\frac{\partial y^\tau}{\partial x^\gamma}
+\label{skript:trafo:verjuengung}
+\\
+\intertext{gelten. Dazu wenden wir zunächst die Definition der
+Verjüngung an und erhalten}
+\bar A^{\mu\nu}\mathstrut_{\mu\beta\gamma}
+\frac{\partial y^\zeta}{\partial x^\nu}
+&=
+A^{\varrho\zeta}\mathstrut_{\varrho\sigma\tau}
+\frac{\partial y^\sigma}{\partial x^\beta}
+\frac{\partial y^\tau}{\partial x^\gamma}
+\notag
+\\
+\intertext{Die Verjüngung können wir auch mit Hilfe von $\delta^\alpha_\beta$
+schreiben, welches wir dann unter Verwendung von
+\eqref{skript:trafo:delta}
+durch partielle Ableitungen der Transformationsmatrizen
+ausdrücken.}
+\bar A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}
+\frac{\partial y^\zeta}{\partial x^\nu}
+\delta_\mu^\alpha
+&=
+A^{\eta\zeta}\mathstrut_{\varrho\sigma\tau}
+\frac{\partial y^\sigma}{\partial x^\beta}
+\frac{\partial y^\tau}{\partial x^\gamma}
+\delta^\varrho_\eta
+\notag
+\\
+\bar A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}
+\frac{\partial y^\delta}{\partial x^\mu}
+\frac{\partial y^\zeta}{\partial x^\nu}
+\frac{\partial x^\alpha}{\partial y^\delta}
+&=
+A^{\eta\zeta}\mathstrut_{\varrho\sigma\tau}
+\frac{\partial y^\sigma}{\partial x^\beta}
+\frac{\partial y^\tau}{\partial x^\gamma}
+\frac{\partial y^\varrho}{\partial x^\alpha}
+\frac{\partial x^\alpha}{\partial y^\eta}
+\notag
+\\
+\intertext{Auf der linken Seite können wir die Transformationsformeln
+für $\bar A$ anwenden und erhalten}
+%\bar A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}
+%\frac{\partial y^\zeta}{\partial x^\nu}
+%\frac{\partial y^\delta}{\partial x^\mu}
+A^{\delta\zeta}\mathstrut_{\varrho\sigma\tau}
+\frac{\partial y^\varrho}{\partial x^\alpha}
+\frac{\partial y^\sigma}{\partial x^\beta}
+\frac{\partial y^\tau}{\partial x^\gamma}
+\frac{\partial x^\alpha}{\partial y^\delta}
+&=
+A^{\eta\zeta}\mathstrut_{\varrho\sigma\tau}
+\frac{\partial y^\varrho}{\partial x^\alpha}
+\frac{\partial y^\sigma}{\partial x^\beta}
+\frac{\partial y^\tau}{\partial x^\gamma}
+\frac{\partial x^\alpha}{\partial y^\eta}
+\notag
+\end{align}
+Bis auf den Namen der Summationsvariablen $\delta$ auf der linken
+Seite und $\eta$ auf der rechten Seite stimmen die beiden Seiten 
+überrein, so dass die Verjüngung $B$ tatsächlich wie in
+\eqref{skript:trafo:verjuengung} transformiert werden muss.
+
+\subsection{Christoffel-Symbole}
+Die Zusammenhangskoeffizienten sind keine Tensoren, vielmehr gilt für sie das
+Transformationsgesetz
+\[
+\bar\Gamma^\varrho_{\beta\gamma}
+\frac{\partial y^\alpha}{\partial x^\varrho}
+=
+\Gamma^\alpha_{\mu\nu}
+\frac{\partial y^\mu}{\partial x^\beta}
+\frac{\partial y^\nu}{\partial x^\gamma}
++
+\frac{\partial^2}{\partial x\partial x}
+\frac{\partial y}{\partial x},
+\]
+wie wir im Folgenden nachweisen wollen.
+Dazu führen wir die Rechnung zunächst für die Christoffelsymbole
+erster Art durch, die Christoffelsymbole zweiter Art unterschieden sich
+ja nur durch das Hochziehen eines Index.
+
+\subsubsection{Transformationsformel für die Ableitungen von $g_{\mu\nu}$}
+Es ist bereits bekannt, dass $g_{\mu\nu}$ ein kovarianter Tensor ist.
+Wir müssen die Ableitung von $\bar g_{\mu\nu}$ nach $y^\alpha$ durch
+die metrischen Koeffizienten $g_{\sigma\tau}$ und ihre Ableitungen
+nach $x^\sigma$ ausdrücken.
+Insbesondere gilt das Transformationsgesetz
+\begin{equation*}
+\bar g_{\mu\nu}
+=
+g_{\varrho\sigma}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\end{equation*}
+für die metrischen Koeffizienten. 
+Damit kann man jetzt auch die Ableitung 
+\begin{align}
+\frac{\partial}{\partial y^\alpha}\bar g_{\mu\nu}
+&=
+\frac{\partial}{\partial y^\alpha} 
+\biggl(
+g_{\varrho\sigma}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\biggr)
+=
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial}{\partial x^\tau}
+\biggl(
+g_{\varrho\sigma}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\biggr)
+\notag
+\\
+&=
+\frac{\partial g_{\varrho\sigma}}{\partial x^\tau}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+g_{\varrho\sigma}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial}{\partial x^\tau}
+\biggl(
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\biggr)
+\notag
+\\
+&=
+\frac{\partial g_{\varrho\sigma}}{\partial x^\tau}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+g_{\varrho\sigma}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\biggl(
+\frac{\partial^2 x^\varrho}{\partial y^\tau\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial^2 x^\sigma}{\partial y^\tau\partial y^\nu}
+\biggr)
+\label{skript:trafo:gabl}
+\end{align}
+Die zusätzlichen Terme mit zweiten Ableitungen der Koordinatentransformation
+auf der rechten Seite zeigen, dass die Ableitungen der metrischen Koeffizienten
+keine Tensoren sein können.
+
+\subsubsection{Transformationsformel für die Christoffelsymbole erster Art}
+Die Christoffelsymbole erster Art sind definiert durch
+\[
+\Gamma_{\alpha,\mu\nu}
+=
+\frac12\biggl(
+\frac{\partial g_{\nu\alpha}}{\partial x^\mu}
++
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+-
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+\biggr).
+\]
+Die Transformationformeln~\eqref{skript:trafo:gabl}
+für die Ableitungen des metrischen Tensors können jetzt dazu verwendet
+werden, die Transformationsformeln für die Christoffelsymbole erster Art
+zu ermitteln.
+Wir wenden die Definition auf $\bar g$ an:
+\begin{align}
+\bar\Gamma_{\alpha,\mu\nu}
+&=
+\frac12\biggl(
+\frac{\partial \bar g_{\nu\alpha}}{\partial y^\mu}
++
+\frac{\partial \bar g_{\alpha\mu}}{\partial y^\nu}
+-
+\frac{\partial \bar g_{\mu\nu}}{\partial y^\alpha}
+\biggr)
+\notag
+\\
+&=
+\frac12\biggl(
+\frac{\partial g_{\sigma\tau}}{\partial x^\varrho}
++
+\frac{\partial g_{\tau\varrho}}{\partial x^\sigma}
+-
+\frac{\partial g_{\varrho\sigma}}{\partial x^\tau}
+\biggr)
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\notag
+\\
+&\quad
++\frac12g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\biggl(
+{\color{blue}
+\frac{\partial^2 x^\sigma}{\partial y^\varrho\partial y^\nu}
+\frac{\partial x^\tau}{\partial y^\alpha}}
++
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
+\biggr)
+%&&
+%\begin{pmatrix}
+%\mu    &\nu    &\alpha &\sigma &\tau   &\varrho
+%\end{pmatrix}
+\notag
+\\
+&\quad
++\frac12g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\biggl(
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
++
+{\color{red}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial^2 x^\varrho}{\partial y^\sigma\partial y^\mu}}
+\biggr)
+%&&
+%\begin{pmatrix}
+%\nu    &\alpha &\mu    &\tau   &\varrho&\sigma
+%\end{pmatrix}
+\notag
+\\
+&\quad
+-\frac12g_{\varrho\sigma}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\biggl(
+{\color{red}
+\frac{\partial^2 x^\varrho}{\partial y^\tau\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}}
++
+{\color{blue}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial^2 x^\sigma}{\partial y^\tau\partial y^\nu}}
+\biggr)
+\notag
+%&&
+%\begin{pmatrix}
+%\alpha &\mu    &\nu    &\varrho&\sigma &\tau
+%\end{pmatrix}
+\intertext{Die farbig hervorgehobenen Terme heben sich nach geeigneter
+Umbenennung von Summationsindizes weg.
+Es bleibt dann
+}
+\bar\Gamma_{\alpha,\mu\nu}
+&=
+\Gamma_{\tau,\varrho\sigma}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac12
+g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
++
+\frac12
+g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial x^\varrho}{\partial x^\mu}
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
+\label{skript:trafo:chr1}
+\end{align}
+
+
+
+\subsubsection{Transformationsformel für die Christoffelsymbole zweiter Art}
+Für die Christoffesymbole zweiter Art müssen wir nur noch auf der
+linken Seite mit $\bar g^{\beta\alpha}$ multiplizieren.
+Da $g^{\mu\nu}$ ein kontravarianter Tensor ist, gilt
+\begin{equation}
+\bar g^{\alpha\beta}
+\frac{\partial x^\mu}{\partial y^\alpha}
+\frac{\partial x^\nu}{\partial y^\beta}
+=
+g^{\mu\nu}
+\qquad\Leftrightarrow\qquad
+\bar g^{\alpha\beta}
+=
+g^{\mu\nu}
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial y^\beta}{\partial x^\nu}.
+\label{skript:trafo:ginv}
+\end{equation}
+Wir multiplizieren das Transformationsgesetz~\label{skript:trafo:chr1}
+mit~\eqref{skript:trafo:ginv} und erhalten
+\begin{align*}
+\bar g^{\alpha\beta}
+\bar\Gamma_{\alpha,\mu\nu}
+&=
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+\Gamma_{\tau,\varrho\sigma}
+\frac{\partial x^\tau}{\partial y^\alpha}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial x^\varrho}{\partial x^\mu}
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
+\\
+&=
+\delta^\tau_\eta
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+\Gamma_{\tau,\varrho\sigma}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial x^\varrho}{\partial x^\mu}
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
+\\
+&=
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\tau\zeta}
+\Gamma_{\tau,\varrho\sigma}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial x^\varrho}{\partial x^\mu}
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
+\\
+&=
+\Gamma^\zeta_{\varrho\sigma}
+\frac{\partial y^\beta}{\partial x^\zeta}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\sigma\tau}
+\frac{\partial x^\varrho}{\partial y^\mu}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial^2 x^\tau}{\partial y^\varrho\partial y^\alpha}
++
+\frac12
+\frac{\partial y^\alpha}{\partial x^\eta}
+\frac{\partial y^\beta}{\partial x^\zeta}
+g^{\eta\zeta}
+g_{\tau\varrho}
+\frac{\partial x^\sigma}{\partial y^\nu}
+\frac{\partial x^\varrho}{\partial x^\mu}
+\frac{\partial^2 x^\tau}{\partial y^\sigma\partial y^\alpha}
+\end{align*}
+
+
+
