@@ -47,13 +47,13 @@ s = 1 * (0:0.5:N);
 % default initial conditions
 x0 = zeros(8,1);
 x0(1,1) = 0;      %time
-x0(2,1) = 20;       %rg
+x0(2,1) = 20;       %start distance
 x0(3,1) = pi/2;     %theta
-x0(4,1) = 0;        %phi
-x0(5,1) = 0.5;
-x0(6,1) = 0;
-x0(7,1) = 0;
-x0(8,1) = 0.0004;   %velocity
+x0(4,1) = 0;        %start phi
+x0(5,1) = 0.5;      %derived time
+x0(6,1) = 0;        %radial velocity
+x0(7,1) = 0;        %derived theta
+x0(8,1) = 0.0004;   %angualr velocity
 
 x0 = mnormalize(x0);
 x0
