@@ -40,25 +40,28 @@ wir Vektoren auf einheitliche Art umrechnen können.
 Ausserdem müssen die Naturgesetze so formuliert sein, dass
 sie in jedem beliebigen Koordinatensystem gleich aussehen.
 
+\section{Koordinatensystem}
+\rhead{Koordinatensysteme}
 In diesem Kapitel beginnen wir damit, den Begriff der Längenmessung
 auf beliebige Koordinatensysteme auszudehnen.
 Ein Punkt wird beschrieben durch seine Koordinaten, die wir mit
 $x^\mu$ bezeichnen, wobei $\mu$ von $1$ bis $n$ läuft, $n$
-ist die Dimension. 
+ist die Dimension des Raumes. 
 Die etwas ungewohnte Schreibweise für die Indizes wie Exponenten
-hat einen tieferen Grund in der Tensorrechnung, und wird später
+hat einen tieferen Grund in der Tensorrechnung und wird später
 verständlich werden.
 
-\section{Vektoren und Koordinatentransformation}
-\rhead{Vektoren und Koordinatentransformation}
-Eine Koordinatentransformation zwischen zwei Koordinatensystemen ist
-eine Abbildung, die die Koordinaten $x^\mu$ des einen Koordinatensystems
-in die Koordinaten $y^\nu$ des anderen Koordinatensystems umrechnet.
-Man kann also schreiben
-\begin{equation}
-y^{\nu}=y^{\nu}(x^1,\dots,x^n).
-\label{skript:kruemmung:umrechnung}
-\end{equation}
+%\section{Vektoren und Koordinatentransformation}
+%\rhead{Vektoren und Koordinatentransformation}
+%Eine Koordinatentransformation zwischen zwei Koordinatensystemen ist
+%eine Abbildung, die die Koordinaten $x^\mu$ des einen Koordinatensystems
+%in die Koordinaten $y^\nu$ des anderen Koordinatensystems umrechnet.
+%Man kann also schreiben
+%\begin{equation}
+%y^{\nu}=y^{\nu}(x^1,\dots,x^n).
+%\label{skript:kruemmung:umrechnung}
+%\end{equation}
+
 Uns interessiert vor allem die Beschreibung von Bahnkurven, wir möchten
 ja zum Beispiel den Absturz in ein schwarzes Loch berechnen können.
 Eine Bahnkurve erhält man, indem man die Koordinaten mit der Zeit
@@ -72,56 +75,115 @@ der Zeit.
 Dies lässt sich direkt auch auf die Koordinaten übertragen,
 wir erhalten für den Geschwindigkeitsvektor
 \[
-v^{\mu} = \frac{dx^\mu(t)}{dt}.
+v^{\mu}(t) = \frac{dx^\mu(t)}{dt} = \dot x^\mu(t).
 \]
-
-Wie sieht der Geschwindigkeitsvektor in $y^{\nu}$ Koordinaten aus?
-Dazu setzen wir die Bahnkurve in die Umrechnungsformeln
-\eqref{skript:kruemmung:umrechnung} ein.
-Die Kettenregel liefert
-\begin{align*}
-y^{\nu}(t)&=y^{\nu}(x^1(t),\dots,x^n(t))
-\\
-u^{\nu}
+Die Beschleunigung ist die zweite Ableitung
+\[
+a^\mu(t)
 =
-\frac{dy^{\nu}(t)}{dt}
-&=
-\frac{\partial y^{\nu}}{\partial x^1}\frac{dx^1(t)}{dt}
+\frac{dv^\mu(t)}{dt}
+=
+\ddot x^\mu(t)
+\]
+nach dem Parameter $t$.
+
+Im Moment arbeiten wir nur mit einem einzigen Koordinatensystem.
+Die Komponenten $\dot x^\mu$ der Geschwindigkeit hängen offenbar
+von der Wahl des Koordinatensystems ab.
+Ein anderes Koordinatensystem ist gegeben durch
+Koordinatenumrechnungsfunktionen
+\[
+y^1(x^1,\dots,x^n),\;\dots,\;y^n(x^1,\dots,x^n).
+\]
+In den $y$-Koordinaten wird die Kurve $x^\mu(t)$ durch die Funktionen
+\[
+t\mapsto y^\alpha(t)=y^\alpha(x^1(t),\dots,x^n(t))
+\]
+beschrieben werden.
+Der Tangentenvektor ist die Ableitung 
+\begin{equation}
+\frac{dy^\alpha(t)}{dt}
+=
+\frac{\partial y^\alpha}{\partial x^1}\frac{dx^1(t)}{dt}
 +\dots+
-\frac{\partial y^{\nu}}{\partial x^n}\frac{dx^n(t)}{dt}
+\frac{\partial y^\alpha}{\partial x^n}\frac{dx^n(t)}{dt}
 =
 \sum_{\mu=1}^n
-\frac{\partial y^{\nu}}{\partial x^{\mu}}\frac{dx^{\mu}(t)}{dt}
-\end{align*}
-Auf der rechten Seite steht eine Summe von Termen, in denen
-der Summationsindex sowohl oben als auch unten auftritt.
-Diese Art von Summe kommt in der zu entwickelnden Theorie sehr
-häufig vor, daher schreiben wir in Zukunft die Summe nicht mehr.
-Diese {\em Einsteinsche Summenkonvention} bedeutet also, dass in
-einem Term, in dem der gleiche Index oben und unten vorkommt,
-über die möglichen Werte dieses Index summiert werden muss.
+\frac{\partial y^\alpha}{\partial x^\mu}\frac{dx^\mu(t)}{dt}
+\label{skript::summenformel}
+\end{equation}
+nach $t$, nach der Kettenregel für Funktionen mehrere Variablen.
+Wir können zwei Erkenntnisse aus der Formel~\eqref{skript::summenformel}
+gewinnen.
+
+Es ist zwar nicht möglich, vom Koordinatensystem unabhängige
+Geschwindigkeitskomponenten zu definieren, doch immerhin kann man
+angeben, wie die Geschwindigkeitskomponenten zwischen verschiedenen
+Koordinatensystemen umzurechnen sind.
+Wir leiten daraus ab, dass wir in Zukunft von jedem Objekt, welches
+eine koordinatenunabhängige Bedeutung haben soll zwar, zwar nicht
+annehmen können, dass dessen Komponenten koordinatenunabhängig sind,
+aber wir können fordern, dass wir immer eine Koordinatenumrechnungsformel
+analog zu \eqref{skript::summenformel} aufstellen können, die nur die
+ersten partiellen Ableitungen verwendet.
+Solche Grössen werden wir in Kapitel~\ref{skript:chapter:geodaeten}
+genauer definieren.
+
+Die zweite Lehre ist, dass es sehr häufig vorkommen wird, dass wir
+wie in 
+\eqref{skript::summenformel}
+über gleiche Indizes summieren müssen, die in einem Ausdruck sowohl
+oben als auch unten vorkommen.
+In der Tat kommt es praktisch nicht vor, dass ein oberer und unterer
+Index übereinstimmt {\em ohne} dass darüber summiert werden muss.
+Wir werden daher in Zukunft in dieser Situation das Summenzeichen weglassen.
+Dies ist die {\em Einsteinsche Summenkonvention} Summenkonvention.
 \index{Summenkonvention!Einsteinsche}
 
-Die Koeffizienten 
-\[
-\alpha_\mu^\nu=\frac{\partial y^{\nu}}{\partial x^{\mu}}
-\]
-dienen also der Umrechnung der Komponenten eines Vektors vom
-$x^{\mu}$-Koordinatensystem ins $y^{\nu}$-Koordinatensystem.
-Man kann die Rechnung auch in Matrixform schreiben:
-\[
-\begin{pmatrix}y^1\\\vdots\\y^n\end{pmatrix}
-=
-\begin{pmatrix}
-\frac{\partial y^1}{\partial x^1}&\dots&\frac{\partial y^1}{\partial x^n}\\
-\vdots&\ddots&\vdots\\
-\frac{\partial y^n}{\partial x^1}&\dots&\frac{\partial y^n}{\partial x^n}
-\end{pmatrix}
-\begin{pmatrix}x^1\\\vdots\\x^n\end{pmatrix}.
-\]
-Die Summationskonvention lässt sich zum Beispiel dadurch rechtfertigen,
-dass bei der Matrizenmultiplikation die Summation ja auch nicht
-explizit hingeschrieben wird.
+%Wie sieht der Geschwindigkeitsvektor in $y^{\nu}$ Koordinaten aus?
+%Dazu setzen wir die Bahnkurve in die Umrechnungsformeln
+%\eqref{skript:kruemmung:umrechnung} ein.
+%Die Kettenregel liefert
+%\begin{align*}
+%y^{\nu}(t)&=y^{\nu}(x^1(t),\dots,x^n(t))
+%\\
+%u^{\nu}
+%=
+%\frac{dy^{\nu}(t)}{dt}
+%&=
+%\frac{\partial y^{\nu}}{\partial x^1}\frac{dx^1(t)}{dt}
+%+\dots+
+%\frac{\partial y^{\nu}}{\partial x^n}\frac{dx^n(t)}{dt}
+%=
+%\sum_{\mu=1}^n
+%\frac{\partial y^{\nu}}{\partial x^{\mu}}\frac{dx^{\mu}(t)}{dt}
+%\end{align*}
+%Auf der rechten Seite steht eine Summe von Termen, in denen
+%der Summationsindex sowohl oben als auch unten auftritt.
+%Diese Art von Summe kommt in der zu entwickelnden Theorie sehr
+%häufig vor, daher schreiben wir in Zukunft die Summe nicht mehr.
+
+%
+%Die Koeffizienten 
+%\[
+%\alpha_\mu^\nu=\frac{\partial y^{\nu}}{\partial x^{\mu}}
+%\]
+%dienen also der Umrechnung der Komponenten eines Vektors vom
+%$x^{\mu}$-Koordinatensystem ins $y^{\nu}$-Koordinatensystem.
+%Man kann die Rechnung auch in Matrixform schreiben:
+%\[
+%\begin{pmatrix}y^1\\\vdots\\y^n\end{pmatrix}
+%=
+%\begin{pmatrix}
+%\frac{\partial y^1}{\partial x^1}&\dots&\frac{\partial y^1}{\partial x^n}\\
+%\vdots&\ddots&\vdots\\
+%\frac{\partial y^n}{\partial x^1}&\dots&\frac{\partial y^n}{\partial x^n}
+%\end{pmatrix}
+%\begin{pmatrix}x^1\\\vdots\\x^n\end{pmatrix}.
+%\]
+%Die Summationskonvention lässt sich zum Beispiel dadurch rechtfertigen,
+%dass bei der Matrizenmultiplikation die Summation ja auch nicht
+%explizit hingeschrieben wird.
 
 \section{Metrik}
 \rhead{Metrik}
@@ -180,7 +242,7 @@ Diese Notation ist konsistent, denn die Längenberechnung ist
 =
 \int \sqrt{g_{\mu\nu}\,dx^\mu\,dx^\nu}
 =
-\int \sqrt{g_{\mu\nu}\,\dot x^\mu\,\dot x^\nu}\,dt,
+\int \sqrt{\mathstrut g_{\mu\nu}\,\dot x^\mu\,\dot x^\nu}\,dt,
 \label{skript:kruemmung:laengenelement}
 \end{equation}
 wozu man einzig die Konvention braucht, dass man in Integralen

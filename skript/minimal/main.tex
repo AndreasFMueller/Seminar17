@@ -89,40 +89,35 @@ Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fl�
 
 \section{Defintion der Minimalfläche}
 \index{Definition der Minimalfläche}
-
 Um den Begriff der Minimalfläche greifbarer zu gestalten werden hier verschiedene Definitionen, die zueinander gleichwertig sind, erörtert.
 
-\subsection{Variationsproblem}
-
-Def: Eine Fläche $ \textit{M} \subset \mathbf{R}^{3} $ ist genau dann minimal wenn in allen Punkten $p \in M$ die Mittlere Krümmung $=0$ ist.\\
+\subsection{Variationsproblem}\label{Variationsproblem}
+Def: Eine Fläche $ \textit{M} \subset \mathbb{R}^{3} $ ist genau dann minimal wenn in allen Punkten $p \in M$ die Mittlere Krümmung $=0$ ist.\\
 Nach der Definition der Mittleren Krümmung \eqref{Mittlere Kruemmung_D} bedeutet dies, dass in jedem Punkt $p$ sich die Krümmungen $k1$ und $k2$ aufheben.
 Folglich entspricht eine Minimalfläche der Geodäte im zwei Dimensionen. Zwei Punkte $P1$ und $P2$ können auf der Fläche über eine kürzeste Strecke verbunden werden.  Dies ist sogleich die erste und in diesem Buch wichtigste Definition der Minimalfläche.
 
-\subsection{Lokale Minimalfläche}
+\subsection{Lokale Minimalfläche}\label{Lokale Minimalflaeche}
 
-Def: Eine Fläche $ \textit{M} \subset \mathbf{R}^{3} $ ist genau dann minimal wenn alle Punkte $ p \in M $ in der Umgebung  im Verhältnis zum Rand am wenigsten Fläche hat.
-
+Def: Eine Fläche $M\subset\mathbb{R}^{3}$ ist genau dann minimal wenn alle Punkte $ p \in M $ in der Umgebung  im Verhältnis zum Rand am wenigsten Fläche hat.
 In anderen Worten ist eine Fläche minimal wenn deren Teilflächen beliebiger grösse ebenfalls minimal sind.  
 
-\subsection{Seifenfilm}
-
-Def: Eine Fläche $ \textit{M} \subset \mathbf{R}^{3} $ ist genau dann minimal wenn jeder Punkt $p \in M$ eine Umgebung mit Rand $D_p$ gleich dem idealem Rand eines Seifenfilms $\partial D_p$ hat.
-
+\subsection{Seifenfilm}\label{Seifenfilm}
+Def: Eine Fläche $M\subset\mathbb{R}^{3}$ ist genau dann minimal wenn jeder Punkt $p \in M$ eine Umgebung mit Rand $D_p$ gleich dem idealem Rand eines Seifenfilms $\partial D_p$ hat.\\
 In diesem Fall ist die Krümmung eines Seifenfilms proportional zum Druckunterschied auf beiden Seiten der Fläche. Die unterschiedlichen Drücke verformen dabei den Film bis auf beiden Seiten der gleiche Druck vorherrscht. Dies kann beispielsweise mit Seife auf einem Drahtgeflecht visualisiert werden. Seifen\textit{blasen} sind nach dieser Definition keine MF, da sie zum Erhalt ihrer Form einen höheren Innendruck haben.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.3]{minimal/SattelflacheSoapFilm.png}
+  \includegraphics[scale=0.6]{minimal/SattelflacheSoapFilm.png}
   \caption{Seifenfilm bildet Minimalfläche} 
 \end{figure}
 
-\subsection{Energie}
-Def: Eine Fläche $M \subset \mathbf{R}^{3}$ ist genau dann minimal wenn jeder Punkt $p \in M$ eine Umgebung mit minimaler Energie hat.\\
+\subsection{Energie}\label{Energie}
+Def: Eine Fläche $M\subset\mathbb{R}^{3}$ ist genau dann minimal wenn jeder Punkt $p \in M$ eine Umgebung mit minimaler Energie hat.\\
 Äquivalent wie die Kettenlinie, welche die Kräfte zwischen den Kettengliedern minimiert, minimiert eine Minimalfläche die "Spannungen" zwischen den Punkten. Stellt man sich die Fläche als dünne Kautschuk-Haut vor, sieht man schnell, dass die einzelnen Kohlenstoff-Ketten die Kräfte innerhalb des Materials ausgleichen und gleichmässig aufteilen. Dies geschieht insbesondere durch die Van der Waals Kräfte zwischen den Kohlenstoff-Ketten.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.7]{minimal/cis-Polyisopren.PNG}
+  \includegraphics[scale=1]{minimal/cis-Polyisopren.PNG}
   \caption{Kohlenstoffkette von Naturkautschuk} 
 \end{figure}
 
@@ -130,23 +125,24 @@ Def: Eine Fläche $M \subset \mathbf{R}^{3}$ ist genau dann minimal wenn jeder P
 \section{Beispiele}
 \index{Beispiele}
 \subsection{Katenoid}
-Wen man zwei drahtringe parallel zueinander in Seifenwasser taucht entsteht die Form eines Katenoids. 
+Wen man zwei Drahtringe parallel zueinander in Seifenwasser taucht entsteht die Form eines Katenoids. 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.5]{minimal/Cartenoid_Foto.png}
   \caption{Skizze: Seifenfilm-Katenoid} 
 \end{figure}
-Das Katenoid ist die als erstes entdeckte Minimalfläche.
-Sie würde schon 1776 von Herr Jean Baptiste Meusnier erstmals beschrieben.
-In diesem Abschnitt wird die mathematische Berechnung des Katenoids mithilfe der Eulerschen Differenzialgleichung der Variationsrechnung beschrieben.
+Das Katenoid ist die erste entdeckte Minimalfläche.
+Sie wurde schon 1776 von Jean Baptiste Meusnier erstmals beschrieben.
+In diesem Abschnitt wird die mathematische Herleitung des Katenoids mithilfe der Eulerschen Differenzialgleichung der Variationsrechnung beschrieben.
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.3]{minimal/Catenoid3-4Mark.pdf}
+  \includegraphics[scale=0.3]{minimal/Catenoid34Black.pdf}
   \caption{Skizze: Katenoid} 
+  \label{Skizze: Katenoid}
 \end{figure}
-In obiger Skizze ist ein Katenoid abgebildet bei welchem in Bezug auf sie $z$ Achse, der untere Drahtring bei $-L$ und der obere bei $+L$ ist. 
-Die beiden Kreise sollen die gleichen Radien haben also gilt $r(-L)=r(+L)=R$. Die flächenpunkte des Katenoids werden mit der Funktion $r(z)$ beschrieben. 
-Um die Fläche des Katenoids zu berechnen, braucht man eine Gleichung welche eine länge auf der Katenoidoberfläche beschreibt. Mit Hilfe von Pythagoras kann man schreiben $ds^2=dz^2+dr^2$.
+In der Skizze ~\ref{Skizze: Katenoid} ist ein Katenoid abgebildet bei welchem in Bezug auf sie $z$ Achse, der untere Drahtring bei $-L$ und der obere bei $+L$ ist. 
+Die beiden Kreise sollen die gleichen Radien haben also gilt $r(-L)=r(+L)=R$. Die Flächenpunkte des Katenoids werden mit der Funktion $r(z)$ beschrieben. 
+Um die Fläche des Katenoids zu berechnen, braucht man eine Gleichung welche eine Länge auf der Katenoidoberfläche beschreibt. Mit Hilfe von Pythagoras kann man schreiben $ds^2=dz^2+dr^2$.
 Formt man diese Gleichung um erhält man die Gleichung \eqref{ds}.
 
 \begin{equation} \label{ds}
@@ -154,20 +150,20 @@ Formt man diese Gleichung um erhält man die Gleichung \eqref{ds}.
 \end{equation}
 \subsubsection{Minimalfläche}
 Der Seifenfilm versucht automatisch sich im minimalenergetischen Zustand zu befinden. In diesem Zustand ist dann auch die Fläche $S$ des Seifenfilms minimal.
-Demzufolge muss das integral \eqref{S1} minimiert werden. 
+Demzufolge muss das Integral \eqref{S1} minimiert werden. 
 \begin{equation} \label{S1}  
   S= \int 2 \pi r ds 
 \end{equation}
-Durch einsetzen von Gleichung \eqref{ds} erhält man die Gleichung \eqref{S2}, welche man als Funktion $F(r,\dot r, z)$ noch verallgemeinert schreiben kann.
+Durch Einsetzen von Gleichung \eqref{ds} erhält man die Gleichung \eqref{S2}, welche man als Funktion $F(r,\dot r, z)$ noch verallgemeinert schreiben kann.
 \begin{equation} \label{S2}
   S=2 \pi \int_{-L}^{+L} r\sqrt{(1+\dot r^2)}\,dz =2 \pi \int_{-L}^{+L}  F(r,\dot r, z) \,dz 
 \end{equation}
 
 
-Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differenzialgleichung der Variationsrechnung bedienen. 
+Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differenzialgleichung der Variationsrechnung bedienen !!!!!!!!!ref{Variationsprinzip}. !!!!!
 \subsubsection{Variationsrechnung}
-Die Eulerschen Differenzialgleichung der Variationsrechnung wird im Kapitel der Geodäten genauer erklährt.
-Das Anwendungsprinzip kurz zusammengefast ist, hat man ein kompliziertes Integral welches man nicht einfach fundamental lösen kann um die Extremwerte zu bestimmen kann man die Eulersche DGL anwenden. Diese besagt, dass anstelle des Ausrechnens eines einer Integralfunktion der Art \eqref{E_DGL1} kann auch die DGL \eqref{E_DGL2} gelöst werden um die Extremwerte solcher Funktionen zu finden.
+Die Eulerschen Differenzialgleichung der Variationsrechnung wird im Kapitel der Geodäten genauer erklärt.
+Das Anwendungsprinzip kurz zusammengefast ist, hat man ein kompliziertes Integral welches man nicht einfach fundamental lösen kann um die Extremwerte zu bestimmen kann man die Eulersche Differentialgleichung anwenden. Diese besagt, dass anstelle des Ausrechnens eines einer Integralfunktion der Art \eqref{E_DGL1} kann auch die Differentialgleichung \eqref{E_DGL2} gelöst werden um die Extremwerte solcher Funktionen zu finden.
 
 \begin{equation} \label{E_DGL1}  
   I(y)= \int_a^b F(x,y(x),\dot y(x))\,dx       
@@ -177,7 +173,7 @@ Das Anwendungsprinzip kurz zusammengefast ist, hat man ein kompliziertes Integra
 \bigg(\frac{\partial F}{\partial y}\bigg)- \frac{d}{dx} \bigg(\frac{\partial F}{\partial \dot{y}}\bigg)=0         
 \end{equation}
 
-Für die Gleichung des Katenoids \eqref{S2} erhält man somit die DGL \eqref{K_DGL1}.
+Für die Gleichung des Katenoids \eqref{S2} erhält man somit die Differentialgleichung \eqref{K_DGL1}.
 \begin{equation} \label{K_DGL1}
 \bigg(\frac{\partial F}{\partial r}\bigg)- \frac{d}{dz} \bigg(\frac{\partial F}{\partial \dot{r}}\bigg)=0    
 \end{equation}
@@ -193,23 +189,24 @@ Die Gleichung \eqref{K_DGL_H} wird nun schrittweise umgeformt bis eine  Differen
 \begin{equation} \label{K_DGL_R}
 1+{\dot {r}}^2=r  \ddot{r}
 \end{equation}
+Gesucht ist alo eine Funktion $r(z)$, die die Differentialgleichung \eqref{K_DGL_R} erfüllt.
 \subsubsection{Lösen}
 Die Differenzialgleichung zweiter Ordnung \eqref{K_r} kann mit Hilfe einiger mathematischer Umformungen, Aufleiten und hyperbolische Trigonometrie berechnet werden. 
 Dies ist eine langwierige Berechnung und wird daher hier nicht durchgeführt.
-Anstelle des konkreten Ausrechnens kann man die Lösung der DGL \eqref{K_DGL_R} auch erraten. 
-Aus der Hyperbolischen Trigonometrie kennt man $\cosh^2-\sinh^2=1$ oder anders geschrieben $1+\sinh^2=\cosh^2$ \eqref{K_hTrigo}. Beim Ableiten von $\cosh$ erhält man $\sinh$ und $\sinh$ abgeleitet ergibt wieder $\cosh$. Mit dieser Erkenntnis kann durch das vergleichen der Gleichungen versuchen die Form der Lösung der DGL \eqref{K_DGL_R2} zu erraten. 
+Anstelle des konkreten Ausrechnens kann man die Lösung der Differentialgleichung \eqref{K_DGL_R} auch erraten. 
+Aus der hyperbolischen Trigonometrie kennt man $\cosh^2-\sinh^2=1$ oder anders geschrieben $1+\sinh^2=\cosh^2$ \eqref{K_hTrigo}. Beim Ableiten von $\cosh$ erhält man $\sinh$ und $\sinh$ abgeleitet ergibt wieder $\cosh$. Mit dieser Erkenntnis kann durch das vergleichen der Gleichungen versuchen die Form der Lösung der DGL \eqref{K_DGL_R2} zu erraten. 
 \begin{equation} \label{K_hTrigo}
 1+\sinh^2=\cosh^2
 \end{equation}
 \begin{equation} \label{K_DGL_R2}
 1+{\dot {r}}^2=r  \ddot{r}
 \end{equation}
-Der $\sinh^2$  (zweite Term links) soll der quadrierten Ableitung einer Funktion entsprechen ${\dot {r}}^2$ also kann man schreiben $(\cosh)'^2$. Auf der rechten Seite sollte $\cosh^2=\cosh \cosh$ dem Produkt von einer Funktion und ihrer doppelten Ableitung gleich kommen. Da gilt $(\cosh)''=(\sinh)'=\cosh$ kann die rechte Seite so $(\cosh) (\cosh)''$ auch durch $\cosh$ ausgedrückt werden. Zusammengefast kann man die Gleichung \eqref{K_hTrigo} in die Gleichung \eqref{K_hTrigoU} umformen und sieht daraus das $r(z)$ eine $\cosh$ Funktion sein muss.
+Der $\sinh^2$  (zweite Term links) soll der quadrierten Ableitung einer Funktion entsprechen ${\dot {r}}^2$ also kann man schreiben $(\cosh)'^2$. Auf der rechten Seite sollte $\cosh^2=\cosh \cosh$ dem Produkt von einer Funktion und ihrer doppelten Ableitung gleich kommen. Da gilt $(\cosh)''=(\sinh)'=\cosh$ kann die rechte Seite so $(\cosh) (\cosh)''$ auch durch $\cosh$ ausgedrückt werden. Zusammengefasst kann man die Gleichung \eqref{K_hTrigo} in die Gleichung \eqref{K_hTrigoU} umformen und sieht daraus das $r(z)$ eine $\cosh$ Funktion sein muss.
 \begin{equation} \label{K_hTrigoU}
 1+(\cosh)'^2=(\cosh) (\cosh)''
 \end{equation}
 
-Die exakte Lösung der DGL \eqref{K_DGL_R} beinhaltet noch die zwei konstanten $K$ und $\xi$ welche durch die doppelte Integration dazukommen.
+Die exakte Lösung der Differentialgleichung \eqref{K_DGL_R} beinhaltet noch die zwei konstanten $K$ und $\xi$ welche durch die doppelte Integration dazukommen.
 
 \begin{equation} \label{K_r}
 r(z)=K \cosh\bigg(\frac{z-\xi}{K}\bigg)
@@ -220,8 +217,8 @@ Bei $z=+_L$ ergibt sich \eqref{K_rL}.
 K \cosh\bigg(\frac{L-\xi}{K}\bigg)=K \cosh\bigg(\frac{-L-\xi}{K}\bigg)
 \end{equation}
 
-Da der $cosh$ eine gerade Funktion ist, kommt man entweder auf $L-\xi=-L-\xi$ oder auf $L-\xi=-(-L-\xi)$.
-Beim ersten Fall wäre $L=-L$ was keinen Sinn ergibt da dann die Fläche gleich Null währe. Beim zweiten Fall muss $\xi=0$ sei also ist die Lösung für das Katenoid die Funktionsgleichung \eqref{K_rz}.
+Da der $\cosh$ eine gerade Funktion ist, kommt man entweder auf $L-\xi=-L-\xi$ oder auf $L-\xi=-(-L-\xi)$.
+Beim ersten Fall wäre $L=-L$ was keinen Sinn ergibt da dann $L=0$ währe. Beim zweiten Fall muss $\xi=0$ sei also ist die Lösung für das Katenoid die Funktionsgleichung \eqref{K_rz}.
 
 \begin{equation} \label{K_rz}
 r(z)=K \cosh\left(\frac{z}{K}\right)
@@ -246,7 +243,7 @@ Die Paare fließen auf der Höhe Null ($z=0$) ineinander. Die dabei gebildete Sa
   \caption{Neun Perioden der Sattelfläche} 
 \end{figure}
 Gemäß Definition nach Variationsproblem ist dabei die Mittlere Krümmung $M=0$. Dies wird im Abschnitt \ref{Scherk Herleitung}  nachgerechnet.\\ Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlösung nachgebildet werden. Dies folgt direkt aus der äquivalenten Definition \ref{Seifenfilm}. (Photo)
-Die Sattelfläche wurde erstmals 1834 von Prof. H. F. Scherk beschrieben und hergeleitet. Sie war nach der in 1776 von Meusnier beschriebene Katenoide die erste neue Minimalfläche. 
+Die Sattelfläche wurde erstmals 1834 von Prof. H. F. Scherk beschrieben und hergeleitet. Sie war nach der in 1776 von Meusnier beschriebene Katanoide die erste neue Minimalfläche. 
 \subparagraph{Herleitung}\label{Scherk Herleitung}
 Unter Verwendung der Minimalflächengleichung (Referenz)
 \begin{equation}\label{Minimalflaechengleichung}
@@ -261,7 +258,7 @@ Durch Separieren von $f$ und $g$ stellt sich die Gleichung folglich auf
 \begin{equation}\label{MFG Scherk2}
 -\dfrac{f''(u)}{1+(f'(u))^2}=\dfrac{g''(v)}{1+(g'(v))^2}=c
 \end{equation}
-mit $c \in \mathbf{R}$.
+mit $c \in \mathbb{R}$.
 Beide Differentialgleichungen werden mittels Separation aufgelöst:
 \begin{equation}\label{ScherkDGL1}
 \begin{split}
@@ -288,8 +285,10 @@ Somit lautet die Funktion der Fläche
 Z(u,v)=\dfrac{log(cos(cu))}{c}-\dfrac{log(cos(cv))}{c}
 \end{equation}
 
-\subsection{Young–Laplace - Oberflächenspannung}\label{Young-Laplace}
-\subparagraph{Beschreibung}\label{YL-Beschreibung}
+\subsection{Young–Laplace - Oberflächenspannung}
+\label{Young-Laplace}
+\subparagraph{Beschreibung}
+\label{YL-Beschreibung}
 Quelle: Landau, L.D. and Lifshitz, E.M.: Fluid Mechanics, Pergamon Press, Oxford
 (1987) 
 Derivation of the Laplace equation
@@ -334,8 +333,5 @@ oder
 \end{equation}
 
 
-
-
-\subsection{Young–Laplace - Oberflächenspannung}
 \printbibliography[heading=subbibliography]
 \end{refsection}

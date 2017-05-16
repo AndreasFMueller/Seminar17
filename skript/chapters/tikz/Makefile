@@ -7,7 +7,7 @@ all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
 	galilei.pdf labor.pdf expansion1.pdf expansion2.pdf robertson.pdf \
 	friedmann-materie.pdf friedmann-strahlung.pdf friedmann-leer.pdf \
 	darkenergy.pdf orbit.pdf orbit2.pdf lichtablenkung.pdf dipol1.pdf \
-	dipol2.pdf ionisation.pdf
+	dipol2.pdf ionisation.pdf kreisbogen.pdf tangente.pdf
 
 images:	all
 
@@ -68,5 +68,9 @@ dipol2.pdf:	dipol2.tex
 ionisation.pdf:	ionisation.tex 
 	pdflatex ionisation.tex
 
+kreisbogen.pdf:	kreisbogen.tex
+	pdflatex kreisbogen.tex
 
+tangente.pdf:	tangente.tex
+	pdflatex tangente.tex
 

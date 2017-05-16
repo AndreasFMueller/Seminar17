@@ -12,17 +12,17 @@ update;
 
 % Create sliders
 rg = uicontrol(f,'Style', 'slider',...
-    'Min',1,'Max',50,'Value',x0(2,1),...
+    'Min',1.001,'Max',50,'Value',x0(2,1),...
     'Position', [400 10 120 20]);
 addlistener(rg, 'Value', 'PostSet', @rgCallBack);
 
 vel = uicontrol(f,'Style', 'slider',...
-    'Min',0,'Max',0.03,'Value',0.004,...
+    'Min',0,'Max',0.3,'Value',0.004,...
     'Position', [400 48 120 20]);
 addlistener(vel, 'Value', 'PostSet', @velCallBack);
 
 steps = uicontrol(f,'Style', 'slider',...
-    'Min',10,'Max',10000,'Value',N,...
+    'Min',10,'Max',5000,'Value',N,...
     'Position', [20 340 120 20]);
 addlistener(steps, 'Value', 'PostSet', @stepsCallBack);
 
@@ -32,9 +32,9 @@ stepSize = uicontrol(f,'Style', 'slider',...
 addlistener(stepSize, 'Value', 'PostSet', @stepSizeCallBack);
 
 % Create push button
-btn = uicontrol('Style', 'pushbutton', 'String', 'Clear',...
-    'Position', [20 20 50 20],...
-    'Callback', 'cla'); %btnCallBack provisorium
+btn = uicontrol('Style', 'pushbutton', 'String', 'time dilation',...
+    'Position', [20 20 80 20],...
+    'Callback', @btnCallBack);
 
 
 % Add a text uicontrol to label the slider.
@@ -56,7 +56,7 @@ velVal = uicontrol('Style','text',...
 
 stepSizeTxt = uicontrol('Style','text',...
     'Position',[140 385 55 15],...
-    'String', 'Step Size');
+    'String', 'step size');
 
 stepSizeVal = uicontrol('Style','text',...
     'Position',[20 400 120 20],...
@@ -64,7 +64,7 @@ stepSizeVal = uicontrol('Style','text',...
 
 stepsTxt = uicontrol('Style','text',...
     'Position',[140 345 35 15],...
-    'String', 'Step');
+    'String', 'steps');
 
 stepsVal = uicontrol('Style','text',...
     'Position',[20 360 120 20],...
@@ -111,18 +111,31 @@ f.Visible = 'on';
         drawEventHorizon;
     end
 
-%Eventhorizon circle 
+%Eventhorizon circle
     function drawEventHorizon
         hold;
         th = linspace(0,2*pi,50);
         r = 1;
         polarplot(th,r+zeros(size(th)));
     end
-    
+
     function btnCallBack(hObj,event)
-       figure;
-       solution(size(solution,1),:)
-       plot(solution(:,1),solution(:,2))
+        solution;
+        quotient = solution(:,2)./solution(:,1)-1;
+        
+        figure;
+        ax1 = subplot(3,1,1); % top subplot
+        ax2 = subplot(3,1,2); % bottom subplot
+        ax3 = subplot(3,1,3);
+        
+        plot(ax1,solution(:,1), quotient);
+        title(ax1,'time deviation')
+        
+        plot(ax2,solution(:,1), solution(:,9),'Color', 'r');
+        title(ax2,'angular velocity')
+        
+        plot(ax3,solution(:,1), solution(:,6));
+        title(ax3,'radial velocity')
     end
 
 end

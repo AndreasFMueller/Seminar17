@@ -66,7 +66,7 @@ partiellen Ableitungen $\partial y^\alpha/\partial x^\mu$ transformieren.
 
 Man kann auch sagen, dass die Kettenregel für Funktionen mehrere Variablen
 in der Formel~\eqref{skript:trafo:kontra}
-die Rechtfertigung für die Einsteinsche Summationskonvention ist.
+die Einsteinsche Summationskonvention rechtfertigt.
 
 \subsubsection{Linearformen}
 Bei der Berechnung der Arbeit entlang eines Weges wird in der klassischen
@@ -147,10 +147,51 @@ dy^\alpha
 die Grössen $dx^\mu$ können daher wie ein kontravarianter Vektor behandelt
 werden.
 
+\subsubsection{Inverse Transformation}
+Die Koordinaten $x^\mu$ können auch durch $y^\alpha$ ausgedrückt werden.
+Insbesondere ist
+\begin{align}
+x^\mu
+&=
+x^\mu(y^1,\dots,y^n)
+\notag
+\\
+&=
+y^\mu(y^1(x^1,\dots,x^n),\dots,y^n(x^1,\dots,x^n))
+\notag
+\\
+\Rightarrow\qquad
+\delta^\mu_\nu
+=
+\frac{\partial x^\mu}{\partial x^\nu}
+&=
+\frac{\partial x^\mu}{\partial y^\alpha}(y^1,\dots,y^n)
+\frac{\partial y^\alpha}{\partial x^\nu}(x^1,\dots,x^n)
+=
+\frac{\partial x^\mu}{\partial y^\alpha}
+\frac{\partial y^\alpha}{\partial x^\nu}.
+\label{label:trafo:t}
+\end{align}
+Die Matrizen $\partial x^\mu/\partial y^\alpha$ und
+$\partial x^\alpha/\partial y^\nu$ sind also zueinander invers.
+Dasselbe gilt, wenn wir die Funktionen $x^\mu(y^1,\dots,y^n)$
+als Argumente in den Funktionen $y^\mu(x^1,\dots,x^n)$ einsetzen:
+\begin{align}
+\delta^\alpha_\beta
+=
+\frac{\partial y^\alpha}{\partial y^\beta}
+&=
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial x^\mu}{\partial y^\beta}.
+\label{label:trafo:tinv}
+\end{align}
+Auch hier ist darauf zu achten, dass die Ableitungen am selben
+Punkt zu nehmen sind.
+
 \subsection{Metrik}
 Die Koeffizienten $g_{\mu\nu}$ des metrischen Tensors dienen dazu,
 das Längenelement entlang einer Kurve zu berechnen.
-Wird eine mit $s$ parametrisierte Kurve wird durch die Funktionen
+.ird eine mit $s$ parametrisierte Kurve wird durch die Funktionen
 $x^\mu(s)$ beschrieben, dann ist die Länge der Kurve durch das
 Integral
 \begin{equation}
@@ -179,7 +220,7 @@ Damit die Längenmessung mit der Formel
 \eqref{skript:koord:metrikbar} auf das gleiche Resultat wie 
 \eqref{skript:koord:metrik} führt, müssen die Integranden übereinstimmen.
 Setzt man \eqref{skript:trafo:kontra} in \eqref{skript:koord:metrikbar}
-ein, erhält man
+ein, erhält man unter der Wurzel
 \begin{equation*}
 \bar g_{\alpha\beta}
 \frac{dy^\alpha}{ds}\frac{dy^\beta}{ds}
@@ -192,16 +233,55 @@ ein, erhält man
 g_{\mu\nu}
 \frac{dx^\mu}{ds}\frac{dx^\nu}{ds}.
 \end{equation*}
-Dies ist nur möglich, wenn gilt
+Gleichheit ist nur möglich, wenn
 \begin{equation}
 \bar g_{\alpha\beta}
 \frac{\partial y^\alpha}{\partial x^\mu}
 \frac{\partial y^\beta}{\partial x^\nu}
 =
-g_{\mu\nu}.
+g_{\mu\nu}
 \end{equation}
-Die metrischen Koeffizienten $g_{\mu\nu}$ sind daher in beiden
+gilt.
+Die metrischen Koeffizienten $g_{\mu\nu}$ sind folglich in beiden
 Indizes kovariant.
+
+\subsubsection{Der inverse metrische Tensor $^{\mu\nu}$}
+Die Grössen $g^{\mu\nu}$ sind so definiert, dass in jedem Koordinatensystem
+gilt
+\[
+\delta^\mu_\nu = g^{\mu\sigma}g_{\sigma\nu},
+\]
+wir müssen die Transformationsregeln für $g^{\mu\nu}$ herausfinden.
+Dazu rechnen wir
+\begin{align*}
+\delta^\mu_\nu
+&=
+\bar g^{\mu\sigma}\bar g_{\sigma\nu}
+=
+\bar g^{\mu\sigma}
+\biggl(
+g_{\alpha\beta}
+\frac{\partial x^\alpha}{\partial y^\mu}
+\frac{\partial x^\beta}{\partial y^\sigma}
+\biggr)
+=
+\biggl(
+\bar g^{\mu\sigma}
+\frac{\partial x^\alpha}{\partial y^\mu}
+\frac{\partial x^\beta}{\partial y^\sigma}
+\biggr)
+g_{\alpha\beta}
+\quad
+\Rightarrow
+\quad
+g^{\alpha\beta}
+=
+\bar g^{\mu\sigma}
+\frac{\partial x^\alpha}{\partial y^\mu}
+\frac{\partial x^\beta}{\partial y^\sigma}.
+\end{align*}
+Die Koeffizienten sind daher, wie die Notation suggeriert, tatsächlich
+kontravariant.
 
 \subsection{Tensoren}
 In Erweiterung der eben diskutierten Beispiele nennen wir die Grössen
@@ -224,97 +304,96 @@ gilt.
 Geometrische Aussagen oder Naturgesetze sind nur dann von der Wahl
 eines Koordinatensystems unabhängig, wenn sie mit Hilfe von Tensoren
 beschrieben werden.
+Der Formalismus unterstützt dies, indem die im folgenden genauer
+untersuchten Operationen zwischen Tensoren automatisch wieder neue
+Tensoren erzeugen.
 
-Die Transformationsgesetze sind so gestaltet, dass sich weitere Tensoren
-daraus bilden.
-Setzt man einen kovarianten und einen kovarianten gleich und summiert,
-erhält man
+\subsubsection{Index hochziehen}
+Zum {\index Hochziehen eines Index} wird ein Tensor mit einem kovarianten
+Index $\mu$ mit dem kontravarianten metrischen Tensor multipliziert.
+\index{Index!hochziehen}
+\index{Hochziehen eines Index}
+Die anderen Indizes des Tensors spielen dabei offenbar keine Rolle,
+ihr Transformationsgesetz wird durch die Operation nicht tangiert.
+Wir schreiben daher nur diesen einen Index, betrachten also den Tensor
+$A_\mu$.
+Die Operation des Hochziehens ist also
+\begin{align*}
+\bar A^\mu
+=
+\bar g^{\mu\nu}\bar A_\nu
+&=
+g^{\alpha\beta}
+\frac{\partial y^\mu}{\partial x^\alpha}
+\frac{\partial y^\nu}{\partial x^\beta}
+A_\gamma
+\frac{\partial x^\gamma}{\partial y^\nu}
+=
+g^{\alpha\beta}
+\frac{\partial y\mu}{\partial x^\alpha}
+A_\gamma
+\underbrace{
+\frac{\partial x^\gamma}{\partial y^\nu}
+\frac{\partial y^\nu}{\partial x^\beta}
+}_{\displaystyle \mathstrut= \delta^\gamma_\beta}
+=
+g^{\alpha\beta}
+A_\beta
+\frac{\partial y^\mu}{\partial x^\alpha}.
+\end{align*}
+Dies ist genau die Transformationsformel für einen kontravarianten Index.
+
+Auf die gleiche Weise kann mit dem metrischen Tensor $g_{\mu\nu}$ ein
+kontravarianter Index heruntergezogen werden zu einem kovarianten Index.
+\index{Herunterziehen eines Index}
+\index{Index!herunterziehen}
+
+\subsubsection{Verjüngung}
+Setzt man in einem Tensor wie $A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}$
+einen kovarianten und einen kovarianten gleich und summiert,
+erhält man die sogenannte {\em Verjüngung} über die beiden Indizes.
+\index{Verjüngung}
+Für die Indizes $\mu$ und $\alpha$ bedeutet dies
 \[
-A^{\delta\nu}\mathstrut_{\delta\beta\gamma}
+A^{\sigma\nu}\mathstrut_{\sigma\beta\gamma}
 =
 B^\nu\mathstrut_{\beta\gamma},
 \]
-genannt die Verjüngung von $A$.
-Dazu beachten wir zunächst, dass
+Man kann die Verjüngung auch etwas komplizierter als
 \begin{equation}
-\frac{\partial y^\alpha}{\partial x^\mu}
-\frac{\partial x^\mu}{\partial y^\beta}
+A^{\sigma\nu}\mathstrut_{\sigma\beta\gamma}
 =
-\frac{\partial y^\alpha}{\partial y^\beta}
-=
-\delta^\alpha_\beta
-\label{skript:trafo:delta}
+A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}\delta^\alpha_\mu
+\label{skript:trafo:verjung}
 \end{equation}
-ist.
-Wir müssen nachprüfen, ob für die Verjüngung die Transformationsregeln
-\begin{align}
-\bar B^\nu\mathstrut_{\beta\gamma}
-\frac{\partial y^\zeta}{\partial x^\nu}
+schreiben, darin wird sowohl über $\mu$ als auch über $\alpha$
+summiert.
+Wir behaupten, dass die Verjüngung wieder ein Tensor ist.
+
+Da die Transformationsformeln für die übrigen Indizes von dieser
+Operation offenbar nicht betroffen werden, schreiben wir der Einfachheit
+halber nur die beiden von der Verjüngung betroffenen Indizes.
+Wir müssen also nur nachprüfen, dass $A^\mu_\mu$ sich wie ein Skalar
+verhält, dass also gilt $A^\mu_\mu=\bar A^\alpha_\alpha$ gilt.
+
+Die Tensoreigenschaft der Verjüngung ergibt sich jetzt aus der Schreibweise
+\eqref{skript:trafo:verjung}
+und der Eigenschaft 
+\label{label:trafo:t}
+der Transformationsmatrix mittels der Rechnung
+\begin{align*}
+A^\mu_\mu
 &=
-B^\zeta\mathstrut_{\sigma\tau}
-\frac{\partial y^\sigma}{\partial x^\beta}
-\frac{\partial y^\tau}{\partial x^\gamma}
-\label{skript:trafo:verjuengung}
-\\
-\intertext{gelten. Dazu wenden wir zunächst die Definition der
-Verjüngung an und erhalten}
-\bar A^{\mu\nu}\mathstrut_{\mu\beta\gamma}
-\frac{\partial y^\zeta}{\partial x^\nu}
-&=
-A^{\varrho\zeta}\mathstrut_{\varrho\sigma\tau}
-\frac{\partial y^\sigma}{\partial x^\beta}
-\frac{\partial y^\tau}{\partial x^\gamma}
-\notag
-\\
-\intertext{Die Verjüngung können wir auch mit Hilfe von $\delta^\alpha_\beta$
-schreiben, welches wir dann unter Verwendung von
-\eqref{skript:trafo:delta}
-durch partielle Ableitungen der Transformationsmatrizen
-ausdrücken.}
-\bar A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}
-\frac{\partial y^\zeta}{\partial x^\nu}
-\delta_\mu^\alpha
-&=
-A^{\eta\zeta}\mathstrut_{\varrho\sigma\tau}
-\frac{\partial y^\sigma}{\partial x^\beta}
-\frac{\partial y^\tau}{\partial x^\gamma}
-\delta^\varrho_\eta
-\notag
-\\
-\bar A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}
-\frac{\partial y^\delta}{\partial x^\mu}
-\frac{\partial y^\zeta}{\partial x^\nu}
-\frac{\partial x^\alpha}{\partial y^\delta}
-&=
-A^{\eta\zeta}\mathstrut_{\varrho\sigma\tau}
-\frac{\partial y^\sigma}{\partial x^\beta}
-\frac{\partial y^\tau}{\partial x^\gamma}
-\frac{\partial y^\varrho}{\partial x^\alpha}
-\frac{\partial x^\alpha}{\partial y^\eta}
-\notag
-\\
-\intertext{Auf der linken Seite können wir die Transformationsformeln
-für $\bar A$ anwenden und erhalten}
-%\bar A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}
-%\frac{\partial y^\zeta}{\partial x^\nu}
-%\frac{\partial y^\delta}{\partial x^\mu}
-A^{\delta\zeta}\mathstrut_{\varrho\sigma\tau}
-\frac{\partial y^\varrho}{\partial x^\alpha}
-\frac{\partial y^\sigma}{\partial x^\beta}
-\frac{\partial y^\tau}{\partial x^\gamma}
-\frac{\partial x^\alpha}{\partial y^\delta}
-&=
-A^{\eta\zeta}\mathstrut_{\varrho\sigma\tau}
-\frac{\partial y^\varrho}{\partial x^\alpha}
-\frac{\partial y^\sigma}{\partial x^\beta}
-\frac{\partial y^\tau}{\partial x^\gamma}
-\frac{\partial x^\alpha}{\partial y^\eta}
-\notag
-\end{align}
-Bis auf den Namen der Summationsvariablen $\delta$ auf der linken
-Seite und $\eta$ auf der rechten Seite stimmen die beiden Seiten 
-überrein, so dass die Verjüngung $B$ tatsächlich wie in
-\eqref{skript:trafo:verjuengung} transformiert werden muss.
+A^\mu_\sigma
+\delta^\sigma_\mu
+=
+A^\mu_\sigma
+\frac{\partial x^\sigma}{\partial y^\alpha}
+\frac{\partial y^\alpha}{\partial x^\mu}
+=
+\bar A^\alpha\alpha.
+\end{align*}
+Die Verjüngung führt also tatsächlich wieder zu einem Tensor.
 
 \subsection{Christoffel-Symbole}
 Die Zusammenhangskoeffizienten sind keine Tensoren, vielmehr gilt für sie das
