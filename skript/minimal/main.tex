@@ -5,128 +5,18 @@
 
 \section{Einleitung}
 \rhead{Einleitung}
-
-Flach aber trotzdem krumm!
-
-Schon im Kindesalter lernen wir den Begriff der Krümmung kennen, doch gerade im mehrdimensionalen Raum gestaltet sich die Vorstellung und Berechnung von Krümmung als nicht ganz einfach. 
-
-Die Menschheit brauchte mehrere Jahrtausende um herauszufinden, dass die Erde nicht flach sondern gekrümmt ist. 
-Ähnliche Diskussionen kamen auch in der Kosmologie des Universums auf.
-Viele Experimente zeigen, dass das Universum Flach ist. 
-Je nach intrinsischer (innerer) und extrinsischer (äusser) Krümmung kann ein Raum aber auch flach sein wenn er extrinsisch gekrümmt ist.
-
-
-\section{Problemstellung}
-\rhead{Problemstellung}
-
-Minimalflächen haben eine mittlere Krümmung von Null. 
-
-In diesem Kapitel werden zuerst verschiedene Krümmungsarten von Flächen vorgestellt, um anschliessend den Spezialfall der Minimalflächen genauer betrachten zu können. 
-Zur Illustration werden einige Beispiele von Minimalflächen gerechnet. 
-Als Vorstellungshilfe dienen oft nicht geschlossene Seifenfilme da diese von Natur aus  Minimalflächen erzeugen.
-
-
-\subsection{Krümmung einer Fläche}
-\index{Krümmung einer Fläche}
-
-Intuitiv ist Krümmung einer Fläche für uns ein Mass der Abweichung eines Objekts im Bezug zu einer flachen Fläche. 
-
-Die Krümmung einer Fläche im Punkt P kann in der Mathematik indirekt durch die Hauptkrümmungsradien $R1$ und $R2$ ausgedrückt werden. 
-Die Hauptkrümmungsradien hängen von den Tangentenrichtungen im Punkt P ab. 
-Die Tangentenrichtungen stehen senkrecht aufeinander.
-Sie sind so definiert, dass $R1$ den Minimalwert und $R2$ den Maximalwert annimmt.
-
-Unter einem Krümmungsradius versteht man den Radius des Kreises welcher die Kurve im Punkt P am besten approximiert. 
-Da wir intuitiv bei einem Kreis oder einer Kugel eine grosse Krümmungszahl erwarten und bei einer fast geraden Fläche eine kleine, ist die Krümmung $k$  als der Kehrwert vom Krümmungsradius definiert. $k=1/R$ 
-
-\begin{figure} [H]
-  \centering
-  \includegraphics[scale=0.1]{minimal/Kruemmungsradius.png}
-  \caption{Krümmungsradius} 
-\end{figure}
-
-
-Zur numerischen Charakterisierung der Krümmung einer Fläche in der Mathematik werden hauptsächlich zwei Grössen benutzt.
-Zum einen die Gauss Krümmung was eine intrinsische Krümmung ist und zum andern die Mittlere Krümmung bei welcher es sich um eine extrinsische Krümmung handelt. Bei Minimalflächen ist vor allem die Mittlere Krümmung von Bedeutung, da diese dort null ist.
-
-\index{Gauss Krümmung}
-
-Die Gauss Krümmung einer Fläche im Punkt P ist definiert als das Produkt der zwei Hauptkrümmungen k1 und k2.
-
-\begin{equation} \label{Gauss_Kruemmung_D}
-  H=k1\, k2= \frac{1}{R1}\frac{1}{R2}
-\end{equation}
+Was sind Minimalflächen? Wie werden sie definiert? Warum passen sie in den Kontext dieses Buches?
+\\
+Diese Fragestellungen werden im Laufe dieses Kapitel an Hand von Beispielen illustriert und erörtert.
 
 
 
-Die Gauss Krümmung ist eine intrinsische Krümmung. Diese ist  ein Mass für die innere Krümmung einer Fläche. 
-Eine gute Vorstellungshilfe ist die Ameisenperspektive. 
-Wenn die Ameise auf einer Kugel ist kann sie feststellen, dass nur schon in ihrem kleinen Blickfeld die Winkelsummen eines Dreiecks auf der Oberfläche grösser als 180° ist, demzufolge besitzt die Kugel eine positive Gauss Krümmung. Anders sieht es aus bei einem Zylinder dort misst die Ameise auf der Zylinderoberfläche genau 180° Winkelsumme, das heisst die Gauss Krümmung eines Zylinders ist null.
-
-\index{Mittlere Krümmung}
-
-Die Mittlere Krümmung einer Fläche im Punkt P ist definiert durch den Mittelwert der zwei Hauptkrümmungen k1 und k2.
-
-\begin{equation} \label{Mittlere Kruemmung_D}
-  H=\frac{1}{2}(k1+k2)= \frac{1}{2}\bigg(\frac{1}{R1}+\frac{1}{R2}\bigg)
-\end{equation}
-
-Die Mittlere Krümmung ist eine extrinsische Krümmung. 
-Im Gegensatz zur intrinsischen Krümmung kommt es bei einer extrinsischen Krümmung auf die Umgebung an. 
-Man kann sich vorstellen, dass man zum Beispiel die Krümmung eines Zylinders (zweidimensionales Objekt) von aussen, also in einem dreidimensionalen Raum betrachtet. 
-Ein Zylinder ist aus der Ameisenperspektive flach, schaut man von aussen sieht er jedoch gekrümmt aus.
-Dies weil er eine positive mittlere Krümmung aufweist. 
-Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fläche) dort ist die Gausskrümmung ungleich null, hingegen kann die Mittlere Krümmung im Spezialfall, dass $R1=-R2$ gleich null sein. In diesem Fall ist diese Sattelfläche ein Beispiel für eine Minimalfläche.
-
-\begin{figure} [H]
-  \centering
-  \includegraphics[scale=0.4]{minimal/Tabelle_Kruemmung.png}
-  \caption{Vergleich Grauss und Mittlerkrümmung} 
-\end{figure}
-
-
-
-
-\section{Defintion der Minimalfläche}
-\index{Definition der Minimalfläche}
-Um den Begriff der Minimalfläche greifbarer zu gestalten werden hier verschiedene Definitionen, die zueinander gleichwertig sind, erörtert.
-
-\subsection{Variationsproblem}\label{Variationsproblem}
-Def: Eine Fläche $ \textit{M} \subset \mathbb{R}^{3} $ ist genau dann minimal wenn in allen Punkten $p \in M$ die Mittlere Krümmung $=0$ ist.\\
-Nach der Definition der Mittleren Krümmung \eqref{Mittlere Kruemmung_D} bedeutet dies, dass in jedem Punkt $p$ sich die Krümmungen $k1$ und $k2$ aufheben.
-Folglich entspricht eine Minimalfläche der Geodäte im zwei Dimensionen. Zwei Punkte $P1$ und $P2$ können auf der Fläche über eine kürzeste Strecke verbunden werden.  Dies ist sogleich die erste und in diesem Buch wichtigste Definition der Minimalfläche.
-
-\subsection{Lokale Minimalfläche}\label{Lokale Minimalflaeche}
-
-Def: Eine Fläche $M\subset\mathbb{R}^{3}$ ist genau dann minimal wenn alle Punkte $ p \in M $ in der Umgebung  im Verhältnis zum Rand am wenigsten Fläche hat.
-In anderen Worten ist eine Fläche minimal wenn deren Teilflächen beliebiger grösse ebenfalls minimal sind.  
-
-\subsection{Seifenfilm}\label{Seifenfilm}
-Def: Eine Fläche $M\subset\mathbb{R}^{3}$ ist genau dann minimal wenn jeder Punkt $p \in M$ eine Umgebung mit Rand $D_p$ gleich dem idealem Rand eines Seifenfilms $\partial D_p$ hat.\\
-In diesem Fall ist die Krümmung eines Seifenfilms proportional zum Druckunterschied auf beiden Seiten der Fläche. Die unterschiedlichen Drücke verformen dabei den Film bis auf beiden Seiten der gleiche Druck vorherrscht. Dies kann beispielsweise mit Seife auf einem Drahtgeflecht visualisiert werden. Seifen\textit{blasen} sind nach dieser Definition keine MF, da sie zum Erhalt ihrer Form einen höheren Innendruck haben.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.6]{minimal/SattelflacheSoapFilm.png}
-  \caption{Seifenfilm bildet Minimalfläche} 
-\end{figure}
-
-\subsection{Energie}\label{Energie}
-Def: Eine Fläche $M\subset\mathbb{R}^{3}$ ist genau dann minimal wenn jeder Punkt $p \in M$ eine Umgebung mit minimaler Energie hat.\\
-Äquivalent wie die Kettenlinie, welche die Kräfte zwischen den Kettengliedern minimiert, minimiert eine Minimalfläche die "Spannungen" zwischen den Punkten. Stellt man sich die Fläche als dünne Kautschuk-Haut vor, sieht man schnell, dass die einzelnen Kohlenstoff-Ketten die Kräfte innerhalb des Materials ausgleichen und gleichmässig aufteilen. Dies geschieht insbesondere durch die Van der Waals Kräfte zwischen den Kohlenstoff-Ketten.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=1]{minimal/cis-Polyisopren.PNG}
-  \caption{Kohlenstoffkette von Naturkautschuk} 
-\end{figure}
-
-
-\section{Beispiele}
-\index{Beispiele}
-\subsection{Katenoid}
+\section{Katenoid}
+Wie der Name erahnenläst beschreiben Minimalflächen Formen mit minimalem Flächeninhalt. 
+Ein gängiges Beispiel aus der Physik sind Seifenfilme. Ein Seifenfilm, welcher auf allen Seiten den selben Druck hat, ist eine Minimalfläche.
+\subsection{Beispiel Katenoid}
 Wen man zwei Drahtringe parallel zueinander in Seifenwasser taucht entsteht die Form eines Katenoids. 
-\begin{figure}[H]
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{minimal/Cartenoid_Foto.png}
   \caption{Skizze: Seifenfilm-Katenoid} 
@@ -134,7 +24,7 @@ Wen man zwei Drahtringe parallel zueinander in Seifenwasser taucht entsteht die 
 Das Katenoid ist die erste entdeckte Minimalfläche.
 Sie wurde schon 1776 von Jean Baptiste Meusnier erstmals beschrieben.
 In diesem Abschnitt wird die mathematische Herleitung des Katenoids mithilfe der Eulerschen Differenzialgleichung der Variationsrechnung beschrieben.
-\begin{figure}[H]
+\begin{figure}
   \centering
   \includegraphics[scale=0.3]{minimal/Catenoid34Black.pdf}
   \caption{Skizze: Katenoid} 
@@ -224,20 +114,89 @@ Beim ersten Fall wäre $L=-L$ was keinen Sinn ergibt da dann $L=0$ währe. Beim 
 r(z)=K \cosh\left(\frac{z}{K}\right)
 \end{equation}
 
+\section{Sattelfläche}
+
+Es gibt mehrere verschiedene Definitionen von Minimalflächen, das Beispiel des Katenoids illustriert das Konzept des minimalen Flächen Inhaltes. 
+Eine Mathematischere Definition basiert auf der mittleren Krümmung. 
+In diesem Buch wurde bis anhin hauptsächlich die Gauss Krümmung betrachtet. 
+Dies weil wir uns auf der Erde in (oder direkt auf) der zu Betrachtenden Fläche befinden. 
+Anders formuliert ist die Gausskrümmung ein Mass für die innere Krümmung einer Fläche, der Fachbegriff für diese Art Krümmung ist intrinsische Krüm-mung. 
+Die mittlere Krümmung im Gegenzug ist eine extrinsische Krümmung, was heisst das der Beobachter von aussen die Krümmung der Fläche beurteilt.
+Folgend wird zuerst das Konzept der Krümmung kurz zusammengefast und anschliessend der Unterschied der mittleren und Gausskrümmung im Bezug auf Minimalflächen illustriert, befor dies alles mit dem Beispiel der Sattelfläche visualisiert wird.
+
+
+\subsection{Krümmung einer Fläche}
+\index{Krümmung einer Fläche}
+
+Intuitiv ist Krümmung einer Fläche für uns ein Mass der Abweichung eines Objekts im Bezug zu einer flachen Fläche. 
+
+Die Krümmung einer Fläche im Punkt P kann in der Mathematik indirekt durch die Hauptkrümmungsradien $R1$ und $R2$ ausgedrückt werden. 
+Die Hauptkrümmungsradien hängen von den Tangentenrichtungen im Punkt P ab. 
+Die Tangentenrichtungen stehen senkrecht aufeinander.
+Sie sind so definiert, dass $R1$ den Minimalwert und $R2$ den Maximalwert annimmt.
+
+Unter einem Krümmungsradius versteht man den Radius des Kreises welcher die Kurve im Punkt P am besten approximiert. 
+Da wir intuitiv bei einem Kreis oder einer Kugel eine grosse Krümmungszahl erwarten und bei einer fast geraden Fläche eine kleine, ist die Krümmung $k$  als der Kehrwert vom Krümmungsradius definiert. $k=1/R$ 
+
+\begin{figure} 
+  \centering
+  \includegraphics[scale=0.1]{minimal/Kruemmungsradius.png}
+  \caption{Krümmungsradius} 
+\end{figure}
+
+
+Zur numerischen Charakterisierung der Krümmung einer Fläche in der Mathematik werden hauptsächlich zwei Grössen benutzt.
+Zum einen die Gauss Krümmung was eine intrinsische Krümmung ist und zum andern die Mittlere Krümmung bei welcher es sich um eine extrinsische Krümmung handelt. Bei Minimalflächen ist vor allem die Mittlere Krümmung von Bedeutung, da diese dort null ist.
+
+\index{Gauss Krümmung}
+
+Die Gauss Krümmung einer Fläche im Punkt P ist definiert als das Produkt der zwei Hauptkrümmungen k1 und k2.
+
+\begin{equation} \label{Gauss_Kruemmung_D}
+  H=k1\, k2= \frac{1}{R1}\frac{1}{R2}
+\end{equation}
 
 
 
-\subsection{H.F. Scherk - Sattelfläche}
+Die Gauss Krümmung ist eine intrinsische Krümmung. Diese ist  ein Mass für die innere Krümmung einer Fläche. 
+Eine gute Vorstellungshilfe ist die Ameisenperspektive. 
+Wenn die Ameise auf einer Kugel ist kann sie feststellen, dass nur schon in ihrem kleinen Blickfeld die Winkelsummen eines Dreiecks auf der Oberfläche grösser als 180° ist, demzufolge besitzt die Kugel eine positive Gauss Krümmung. Anders sieht es aus bei einem Zylinder dort misst die Ameise auf der Zylinderoberfläche genau 180° Winkelsumme, das heisst die Gauss Krümmung eines Zylinders ist null.
+
+\index{Mittlere Krümmung}
+
+Die Mittlere Krümmung einer Fläche im Punkt P ist definiert durch den Mittelwert der zwei Hauptkrümmungen k1 und k2.
+
+\begin{equation} \label{Mittlere Kruemmung_D}
+  H=\frac{1}{2}(k1+k2)= \frac{1}{2}\bigg(\frac{1}{R1}+\frac{1}{R2}\bigg)
+\end{equation}
+
+Die Mittlere Krümmung ist eine extrinsische Krümmung. 
+Im Gegensatz zur intrinsischen Krümmung kommt es bei einer extrinsischen Krümmung auf die Umgebung an. 
+Man kann sich vorstellen, dass man zum Beispiel die Krümmung eines Zylinders (zweidimensionales Objekt) von aussen, also in einem dreidimensionalen Raum betrachtet. 
+Ein Zylinder ist aus der Ameisenperspektive flach, schaut man von aussen sieht er jedoch gekrümmt aus.
+Dies weil er eine positive mittlere Krümmung aufweist. 
+Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fläche) dort ist die Gausskrümmung ungleich null, hingegen kann die Mittlere Krümmung im Spezialfall, dass $R1=-R2$ also die Krümmungsradien ein umgekehrtes Vorzeichen aufweisen aber vom Betrag her identisch sind, gleich null sein. In diesem Fall ist diese Sattelfläche ein Beispiel für eine Minimalfläche.
+
+\begin{figure} 
+  \centering
+  \includegraphics[scale=0.4]{minimal/Tabelle_Kruemmung.png}
+  \caption{Vergleich Grauss und Mittlerkrümmung} 
+\end{figure}
+
+
+
+
+\subsection{Beispiel Sattelfläche}
 Quelle: H.F. Scherk, Bemerkungen über die kleinste Fläche innerhalb gegebener Grenzen, Journal für die reine und angewandte Mathematik, Volume 13 (1835) pp. 185–208
 \subparagraph{Beschreibung}
 Die Sattelfläche beschreibt zwei Paar parallele Flächen, die zueinander senkrecht sind.
-\begin{figure}[H]
+\begin{figure}
   \centering
   \includegraphics[scale=0.2]{minimal/HFSherk.png}
   \caption{Sattelfläche von Scherk} 
 \end{figure}
 Die Paare fließen auf der Höhe Null ($z=0$) ineinander. Die dabei gebildete Sattelfläche wird mittels Variationsproblem minimiert, hat gemäß Definition eine Mittlere Krümmung $M=0$. Geometrisch bedingt wiederholt sich die Sattelfläche in $x$ und $y$-Richtung.
-\begin{figure}[H]
+\begin{figure}
   \centering
   \includegraphics[scale=0.2]{minimal/HFSherk2.png}
   \caption{Neun Perioden der Sattelfläche} 
@@ -285,7 +244,15 @@ Somit lautet die Funktion der Fläche
 Z(u,v)=\dfrac{log(cos(cu))}{c}-\dfrac{log(cos(cv))}{c}
 \end{equation}
 
-\subsection{Young–Laplace - Oberflächenspannung}
+\section{Young–Laplace - Oberflächenspannung}
+
+
+
+
+TODO: Enfürende worte zu Young–Laplace - Oberflächenspannung mit weiterer definition.............................
+
+
+\subsection{Beispiel Young–Laplace - Oberflächenspannung}
 \label{Young-Laplace}
 \subparagraph{Beschreibung}
 \label{YL-Beschreibung}
@@ -311,7 +278,7 @@ dA &= (1+\delta\zeta/R_1)dl_1 (1+\delta\zeta/R_2)dl_2 \\
 &\approx dl_1 dl_2 \delta\zeta (\frac{1}{R_1}+\frac{1}{R_2})
 \end{split}
 \end{equation} 
-\begin{figure}[H]
+\begin{figure}
   \centering
 %  \includegraphics[scale=0.2]{minimal/Young.pdf}
   \caption{Oberflächenspannung} 
@@ -331,6 +298,47 @@ oder
 \begin{equation}\label{Young-Laplace}
 \Delta p = \gamma\bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg)
 \end{equation}
+
+TODO: ???????????????????????Definitionen von oben bei Beispiel Katenoid, Sattelfläche,Young Laplace noch einbauen dann eigener abschnitt löschen???????????????????????
+
+\section{Defintion der Minimalfläche}
+\index{Definition der Minimalfläche}
+Um den Begriff der Minimalfläche greifbarer zu gestalten werden hier verschiedene Definitionen, die zueinander gleichwertig sind, erörtert.
+
+\subsection{Variationsproblem}\label{Variationsproblem}
+Def: Eine Fläche $ \textit{M} \subset \mathbb{R}^{3} $ ist genau dann minimal wenn in allen Punkten $p \in M$ die Mittlere Krümmung $=0$ ist.\\
+Nach der Definition der Mittleren Krümmung \eqref{Mittlere Kruemmung_D} bedeutet dies, dass in jedem Punkt $p$ sich die Krümmungen $k1$ und $k2$ aufheben.
+Folglich entspricht eine Minimalfläche der Geodäte im zwei Dimensionen. Zwei Punkte $P1$ und $P2$ können auf der Fläche über eine kürzeste Strecke verbunden werden.  Dies ist sogleich die erste und in diesem Buch wichtigste Definition der Minimalfläche.
+
+\subsection{Lokale Minimalfläche}\label{Lokale Minimalflaeche}
+
+Def: Eine Fläche $M\subset\mathbb{R}^{3}$ ist genau dann minimal wenn alle Punkte $ p \in M $ in der Umgebung  im Verhältnis zum Rand am wenigsten Fläche hat.
+In anderen Worten ist eine Fläche minimal wenn deren Teilflächen beliebiger grösse ebenfalls minimal sind.  
+
+\subsection{Seifenfilm}\label{Seifenfilm}
+Def: Eine Fläche $M\subset\mathbb{R}^{3}$ ist genau dann minimal wenn jeder Punkt $p \in M$ eine Umgebung mit Rand $D_p$ gleich dem idealem Rand eines Seifenfilms $\partial D_p$ hat.\\
+In diesem Fall ist die Krümmung eines Seifenfilms proportional zum Druckunterschied auf beiden Seiten der Fläche. Die unterschiedlichen Drücke verformen dabei den Film bis auf beiden Seiten der gleiche Druck vorherrscht. Dies kann beispielsweise mit Seife auf einem Drahtgeflecht visualisiert werden. Seifen\textit{blasen} sind nach dieser Definition keine MF, da sie zum Erhalt ihrer Form einen höheren Innendruck haben.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.3]{minimal/SattelflacheSoapFilm.png}
+  \caption{Seifenfilm bildet Minimalfläche} 
+\end{figure}
+
+\subsection{Energie}\label{Energie}
+Def: Eine Fläche $M\subset\mathbb{R}^{3}$ ist genau dann minimal wenn jeder Punkt $p \in M$ eine Umgebung mit minimaler Energie hat.\\
+Äquivalent wie die Kettenlinie, welche die Kräfte zwischen den Kettengliedern minimiert, minimiert eine Minimalfläche die "Spannungen" zwischen den Punkten. Stellt man sich die Fläche als dünne Kautschuk-Haut vor, sieht man schnell, dass die einzelnen Kohlenstoff-Ketten die Kräfte innerhalb des Materials ausgleichen und gleichmässig aufteilen. Dies geschieht insbesondere durch die Van der Waals Kräfte zwischen den Kohlenstoff-Ketten.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{minimal/cis-Polyisopren.PNG}
+  \caption{Kohlenstoffkette von Naturkautschuk} 
+\end{figure}
+
+
+
+
+
 
 
 \printbibliography[heading=subbibliography]
