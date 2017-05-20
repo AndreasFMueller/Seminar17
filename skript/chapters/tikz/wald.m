@@ -3,7 +3,7 @@
 #
 # (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 #
-global N = 400;
+global N = 600;
 global d = 0.01;
 
 baeume = rand(N,2) * 4 - 2;
@@ -12,26 +12,22 @@ function l = strahl(baeume, angle, fid)
 	global N;
 	global d;
 	l = 10;
-	p = [ 0; 0 ];
 	v = [ cos(angle),  sin(angle) ];
 	n = [ sin(angle), -cos(angle) ];
-	for i = (1:N)
-		b = baeume(i,:)';
-		if abs(n * b) < d
-			s = v * b;
-			if (s > 0)
-				if s < l
-					l = s;
-					p = l * v';
-				end
-			end
+	L = abs(baeume * n') < d;
+	B = baeume(L,:);
+	n = size(B)(1);
+	if n > 0
+		L = B * v';
+		B = B(L > 0,:);
+		L = L(L > 0,:);
+		n = size(B)(1);
+		if (n > 0)
+			l = min(L);
 		end
 	end
-	if (l < 10)
-		fprintf(fid, "\\draw[line width=0.1] (0,0)--(%.4f,%.4f);\n", p(1,1), p(2,1));
-	else
-		fprintf(fid, "\\draw[line width=0.1] (0,0)--(%.4f,%.4f);\n", l * v(1,1), l * v(1,2));
-	end
+	p = l * v;
+	fprintf(fid, "\\draw[line width=0.1] (0,0)--(%.4f,%.4f);\n", p(1,1), p(1,2));
 endfunction
 
 fid = fopen("waldbaeume.tex", "w");
