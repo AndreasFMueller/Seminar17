@@ -346,6 +346,13 @@ Sie kann verschiedene Kurven im Raum nicht voneinander unterscheiden.
 
 \section{Krümmung}
 \rhead{Krümmung}
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/kruemmung.pdf}
+\caption{Krümmung $\kappa(t)$ und Krümmungsradius $\varrho(t)$
+der Sinus-Kurve im Punkt $c(t)$
+\label{skript:kurven:fig:kruemmung}}
+\end{figure}
 Wir möchten in diesem Abschnitt zeigen, dass die Krümmung einer Kurve
 ausschliesslich eine Eigenschaft der Einbettung der Kurve in den
 Raum ist.
@@ -430,11 +437,11 @@ berechnen:
 \begin{align}
 \frac{d}{dt} \frac{\dot c(t)}{|\dot c(t)|}
 &=
-\frac{\ddot c(t) |\dot c(t)| - \dot c(t) \frac{d}{dt}|\dot c(t)|}{|\dot c(t)|^2}
+\frac{\displaystyle\ddot c(t) |\dot c(t)| - \dot c(t) \frac{d}{dt}|\dot c(t)|}{|\dot c(t)|^2}
 =
-\frac{\ddot c(t) |\dot c(t)| - \dot c(t) \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)}{|\dot c(t)|^2}
+\frac{\displaystyle\ddot c(t) |\dot c(t)| - \dot c(t) \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)}{|\dot c(t)|^2}
 =
-\frac{\ddot c(t) - \frac{\dot c(t)}{|\dot c(t)|} \left( \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)\right)}{|\dot c(t)|}
+\frac{\displaystyle\ddot c(t) - \frac{\dot c(t)}{|\dot c(t)|} \left( \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)\right)}{|\dot c(t)|}
 \label{skript:kruemmung:krallg1}
 \end{align}
 Schreiben wir den Einheitstangentialvektor
@@ -566,7 +573,7 @@ eingebettet vorstellt.
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{chapters/3d/kurve.jpg}
-\caption{Kurven $t\mapsto(t,t^2,0)$ (rot) und $t\mapsto(t,t^2,t^3)$ (geld).
+\caption{Kurven $t\mapsto(t,t^2,0)$ (rot) und $t\mapsto(t,t^2,t^3)$ (gelb).
 \label{skript:kruemmung:fig:kurvekr}}
 \end{figure}
 Wir betrachten die beiden Kurven

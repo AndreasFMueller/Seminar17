@@ -7,7 +7,8 @@ all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
 	galilei.pdf labor.pdf expansion1.pdf expansion2.pdf robertson.pdf \
 	friedmann-materie.pdf friedmann-strahlung.pdf friedmann-leer.pdf \
 	darkenergy.pdf orbit.pdf orbit2.pdf lichtablenkung.pdf dipol1.pdf \
-	dipol2.pdf ionisation.pdf kreisbogen.pdf tangente.pdf
+	dipol2.pdf ionisation.pdf kreisbogen.pdf tangente.pdf kruemmung.pdf \
+	wald.pdf
 
 images:	all
 
@@ -73,4 +74,11 @@ kreisbogen.pdf:	kreisbogen.tex
 
 tangente.pdf:	tangente.tex
 	pdflatex tangente.tex
+
+kruemmung.pdf:	kruemmung.tex
+	pdflatex kruemmung.tex
+
+wald.pdf:	wald.tex waldbaeume.tex
+	pdflatex wald.tex
+
 

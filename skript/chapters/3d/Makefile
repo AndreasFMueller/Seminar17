@@ -90,7 +90,7 @@ negativ.jpg:	negativ.png
 		-units PixelsPerInch -density 300 negativ.jpg
 negativ.png:	negativ.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
 	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Onegativ.png \
-		negativ.pov || touch negativ.png
+		negativ.pov || touch negativ.png
 
 eben:	eben.jpg
 eben.jpg:	eben.png
@@ -98,7 +98,7 @@ eben.jpg:	eben.png
 		-units PixelsPerInch -density 300 eben.jpg
 eben.png:	eben.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
 	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Oeben.png \
-		eben.pov || touch eben.png
+		eben.pov || touch eben.png
 
 positiv:	positiv.jpg
 positiv.jpg:	positiv.png
@@ -106,7 +106,7 @@ positiv.jpg:	positiv.png
 		-units PixelsPerInch -density 300 positiv.jpg
 positiv.png:	positiv.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
 	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Opositiv.png \
-		positiv.pov || touch positiv.png
+		positiv.pov || touch positiv.png
 
 pringles:	pringles.jpg
 pringles.jpg:	pringles.png
@@ -114,7 +114,7 @@ pringles.jpg:	pringles.png
 		-units PixelsPerInch -density 300 pringles.jpg
 pringles.png:	pringles.pov pseudosphaere.inc curve1.inc curve2.inc curve3.inc
 	sh ../../../povray $(povrayoptions) -W1920 -H1080 -Opringles.png \
-		pringles.pov || touch pringles.png
+		pringles.pov || touch pringles.png
 
 pringles-negativ:	pringles-negativ.jpg
 pringles-negativ.jpg:	pringles-negativ.png
@@ -123,7 +123,7 @@ pringles-negativ.jpg:	pringles-negativ.png
 pringles-negativ.png:	pringles-negativ.pov pringles.inc
 	sh ../../../povray $(povrayoptions) $(highdimensions) \
 		-Opringles-negativ.png \
-		pringles-negativ.pov || touch pringles-negativ.png
+		pringles-negativ.pov || touch pringles-negativ.png
 
 pringles-positiv:	pringles-positiv.jpg
 pringles-positiv.jpg:	pringles-positiv.png
@@ -132,7 +132,7 @@ pringles-positiv.jpg:	pringles-positiv.png
 pringles-positiv.png:	pringles-positiv.pov pringles.inc
 	sh ../../../povray $(povrayoptions) $(highdimensions) \
 		-Opringles-positiv.png \
-		pringles-positiv.pov || touch pringles-positiv.png
+		pringles-positiv.pov || touch pringles-positiv.png
 
 pringles-flach:	pringles-flach.jpg
 pringles-flach.jpg:	pringles-flach.png
@@ -141,7 +141,7 @@ pringles-flach.jpg:	pringles-flach.png
 pringles-flach.png:	pringles-flach.pov pringles.inc
 	sh ../../../povray $(povrayoptions) $(highdimensions) \
 		-Opringles-flach.png \
-		pringles-flach.pov || touch pringles-flach.png
+		pringles-flach.pov || touch pringles-flach.png
 
 pringles-animation:
 	sh ../../../povray $(povrayoptions) -W1920 -H1080 \
