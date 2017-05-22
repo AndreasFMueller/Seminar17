@@ -5,17 +5,22 @@
 
 \section{Einleitung}
 \rhead{Einleitung}
-Was sind Minimalflächen? Wie werden sie definiert? Warum passen sie in den Kontext dieses Buches?
+Was sind Minimalflächen? 
+\\
+Wie werden sie definiert? 
+\\
+Warum passen sie in den Kontext dieses Buches?
 \\
 Diese Fragestellungen werden im Laufe dieses Kapitel an Hand von Beispielen illustriert und erörtert.
 
 
 
 \section{Katenoid}
-Wie der Name erahnenläst beschreiben Minimalflächen Formen mit minimalem Flächeninhalt. 
+\rhead{Katenoid}
+Wie der Name erahnen lässt beschreiben Minimalflächen Formen mit minimalem Flächeninhalt. 
 Ein gängiges Beispiel aus der Physik sind Seifenfilme. Ein Seifenfilm, welcher auf allen Seiten den selben Druck hat, ist eine Minimalfläche.
 \subsection{Beispiel Katenoid}
-Wen man zwei Drahtringe parallel zueinander in Seifenwasser taucht entsteht die Form eines Katenoids. 
+Wenn man zwei Drahtringe parallel zueinander in Seifenwasser taucht, entsteht die Form eines Katenoids. 
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{minimal/Cartenoid_Foto.png}
@@ -23,37 +28,41 @@ Wen man zwei Drahtringe parallel zueinander in Seifenwasser taucht entsteht die 
 \end{figure}
 Das Katenoid ist die erste entdeckte Minimalfläche.
 Sie wurde schon 1776 von Jean Baptiste Meusnier erstmals beschrieben.
-In diesem Abschnitt wird die mathematische Herleitung des Katenoids mithilfe der Eulerschen Differenzialgleichung der Variationsrechnung beschrieben.
+In diesem Abschnitt wird die mathematische Herleitung des Katenoids mit Hilfe der Eulerschen Differenzialgleichung der Variationsrechnung beschrieben.
 \begin{figure}
   \centering
   \includegraphics[scale=0.3]{minimal/Catenoid34Black.pdf}
   \caption{Skizze: Katenoid} 
   \label{Skizze: Katenoid}
 \end{figure}
-In der Skizze ~\ref{Skizze: Katenoid} ist ein Katenoid abgebildet bei welchem in Bezug auf sie $z$ Achse, der untere Drahtring bei $-L$ und der obere bei $+L$ ist. 
-Die beiden Kreise sollen die gleichen Radien haben also gilt $r(-L)=r(+L)=R$. Die Flächenpunkte des Katenoids werden mit der Funktion $r(z)$ beschrieben. 
-Um die Fläche des Katenoids zu berechnen, braucht man eine Gleichung welche eine Länge auf der Katenoidoberfläche beschreibt. Mit Hilfe von Pythagoras kann man schreiben $ds^2=dz^2+dr^2$.
-Formt man diese Gleichung um erhält man die Gleichung \eqref{ds}.
+In der Skizze ~\ref{Skizze: Katenoid} ist ein Katenoid abgebildet, bei welchem in Bezug auf sie $z$ Achse, der untere Drahtring bei $-L$ und der obere bei $+L$ ist. 
+Die beiden Kreise sollen die gleichen Radien haben, also gilt $r(-L)=r(+L)=R$. 
+Die Flächenpunkte des Katenoids werden mit der Funktion $r(z)$ beschrieben. 
+Um die Fläche des Katenoids zu berechnen, braucht man eine Gleichung, welche eine Länge auf der Katenoidoberfläche beschreibt. 
+Mit Hilfe von Pythagoras kann man schreiben $ds^2=dz^2+dr^2$.
+Formt man diese Gleichung, um erhält man die Gleichung \eqref{ds}.
 
 \begin{equation} \label{ds}
   ds=\sqrt{dz^2\bigg(1+\frac{dr^2}{dz^2}\bigg)}= \sqrt{dz^2(1+\dot r^2)}=\sqrt{(1+\dot r^2)}\,dz
 \end{equation}
 \subsubsection{Minimalfläche}
 Der Seifenfilm versucht automatisch sich im minimalenergetischen Zustand zu befinden. In diesem Zustand ist dann auch die Fläche $S$ des Seifenfilms minimal.
-Demzufolge muss das Integral \eqref{S1} minimiert werden. 
+Demzufolge muss das Integral 
 \begin{equation} \label{S1}  
   S= \int 2 \pi r ds 
 \end{equation}
+minimiert werden. 
 Durch Einsetzen von Gleichung \eqref{ds} erhält man die Gleichung \eqref{S2}, welche man als Funktion $F(r,\dot r, z)$ noch verallgemeinert schreiben kann.
 \begin{equation} \label{S2}
   S=2 \pi \int_{-L}^{+L} r\sqrt{(1+\dot r^2)}\,dz =2 \pi \int_{-L}^{+L}  F(r,\dot r, z) \,dz 
 \end{equation}
 
 
-Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differenzialgleichung der Variationsrechnung bedienen !!!!!!!!!ref{Variationsprinzip}. !!!!!
+Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differenzialgleichung der Variationsrechnung bedienen 
+\\TODO: !!!!!!!!!ref{Variationsprinzip}. !!!!!
 \subsubsection{Variationsrechnung}
 Die Eulerschen Differenzialgleichung der Variationsrechnung wird im Kapitel der Geodäten genauer erklärt.
-Das Anwendungsprinzip kurz zusammengefast ist, hat man ein kompliziertes Integral welches man nicht einfach fundamental lösen kann um die Extremwerte zu bestimmen kann man die Eulersche Differentialgleichung anwenden. Diese besagt, dass anstelle des Ausrechnens eines einer Integralfunktion der Art \eqref{E_DGL1} kann auch die Differentialgleichung \eqref{E_DGL2} gelöst werden um die Extremwerte solcher Funktionen zu finden.
+Das Anwendungsprinzip kurz zusammengefasst. Hat man ein kompliziertes Integral, welches man nicht einfach fundamental lösen kann, um die Extremwerte zu bestimmen, kann man die Eulersche Differentialgleichung anwenden. Diese besagt, dass anstelle des Ausrechnens  einer Integralfunktion der Art \eqref{E_DGL1}, kann auch die Differentialgleichung \eqref{E_DGL2} gelöst werden, um die Extremwerte solcher Funktionen zu finden.
 
 \begin{equation} \label{E_DGL1}  
   I(y)= \int_a^b F(x,y(x),\dot y(x))\,dx       
@@ -79,12 +88,13 @@ Die Gleichung \eqref{K_DGL_H} wird nun schrittweise umgeformt bis eine  Differen
 \begin{equation} \label{K_DGL_R}
 1+{\dot {r}}^2=r  \ddot{r}
 \end{equation}
-Gesucht ist alo eine Funktion $r(z)$, die die Differentialgleichung \eqref{K_DGL_R} erfüllt.
+Gesucht ist also eine Funktion $r(z)$, die die Differentialgleichung \eqref{K_DGL_R} erfüllt.
+
 \subsubsection{Lösen}
 Die Differenzialgleichung zweiter Ordnung \eqref{K_r} kann mit Hilfe einiger mathematischer Umformungen, Aufleiten und hyperbolische Trigonometrie berechnet werden. 
 Dies ist eine langwierige Berechnung und wird daher hier nicht durchgeführt.
 Anstelle des konkreten Ausrechnens kann man die Lösung der Differentialgleichung \eqref{K_DGL_R} auch erraten. 
-Aus der hyperbolischen Trigonometrie kennt man $\cosh^2-\sinh^2=1$ oder anders geschrieben $1+\sinh^2=\cosh^2$ \eqref{K_hTrigo}. Beim Ableiten von $\cosh$ erhält man $\sinh$ und $\sinh$ abgeleitet ergibt wieder $\cosh$. Mit dieser Erkenntnis kann durch das vergleichen der Gleichungen versuchen die Form der Lösung der DGL \eqref{K_DGL_R2} zu erraten. 
+Aus der hyperbolischen Trigonometrie kennt man $\cosh^2-\sinh^2=1$ oder anders geschrieben $1+\sinh^2=\cosh^2$ \eqref{K_hTrigo}. Beim Ableiten von $\cosh$ erhält man $\sinh$ und $\sinh$ abgeleitet ergibt wieder $\cosh$. Mit dieser Erkenntnis kann durch das Vergleichen der Gleichungen versuchen die Form der Lösung der DGL \eqref{K_DGL_R2} zu erraten. 
 \begin{equation} \label{K_hTrigo}
 1+\sinh^2=\cosh^2
 \end{equation}
@@ -96,7 +106,7 @@ Der $\sinh^2$  (zweite Term links) soll der quadrierten Ableitung einer Funktion
 1+(\cosh)'^2=(\cosh) (\cosh)''
 \end{equation}
 
-Die exakte Lösung der Differentialgleichung \eqref{K_DGL_R} beinhaltet noch die zwei konstanten $K$ und $\xi$ welche durch die doppelte Integration dazukommen.
+Die exakte Lösung der Differentialgleichung \eqref{K_DGL_R} beinhaltet noch die zwei konstanten $K$ und $\xi$, welche durch die doppelte Integration dazukommen.
 
 \begin{equation} \label{K_r}
 r(z)=K \cosh\bigg(\frac{z-\xi}{K}\bigg)
@@ -108,35 +118,35 @@ K \cosh\bigg(\frac{L-\xi}{K}\bigg)=K \cosh\bigg(\frac{-L-\xi}{K}\bigg)
 \end{equation}
 
 Da der $\cosh$ eine gerade Funktion ist, kommt man entweder auf $L-\xi=-L-\xi$ oder auf $L-\xi=-(-L-\xi)$.
-Beim ersten Fall wäre $L=-L$ was keinen Sinn ergibt da dann $L=0$ währe. Beim zweiten Fall muss $\xi=0$ sei also ist die Lösung für das Katenoid die Funktionsgleichung \eqref{K_rz}.
+Beim ersten Fall wäre $L=-L$ was keinen Sinn ergibt da dann $L=0$ wäre. Beim zweiten Fall muss $\xi=0$ sein, also ist die Lösung für das Katenoid die Funktionsgleichung \eqref{K_rz}.
 
 \begin{equation} \label{K_rz}
 r(z)=K \cosh\left(\frac{z}{K}\right)
 \end{equation}
 
 \section{Sattelfläche}
-
+\rhead{Sattelfläche}
 Es gibt mehrere verschiedene Definitionen von Minimalflächen, das Beispiel des Katenoids illustriert das Konzept des minimalen Flächen Inhaltes. 
 Eine Mathematischere Definition basiert auf der mittleren Krümmung. 
 In diesem Buch wurde bis anhin hauptsächlich die Gauss Krümmung betrachtet. 
 Dies weil wir uns auf der Erde in (oder direkt auf) der zu Betrachtenden Fläche befinden. 
-Anders formuliert ist die Gausskrümmung ein Mass für die innere Krümmung einer Fläche, der Fachbegriff für diese Art Krümmung ist intrinsische Krüm-mung. 
+Anders formuliert ist die Gausskrümmung ein Mass für die innere Krümmung einer Fläche, der Fachbegriff für diese Art Krümmung ist intrinsische Krümmung. 
 Die mittlere Krümmung im Gegenzug ist eine extrinsische Krümmung, was heisst das der Beobachter von aussen die Krümmung der Fläche beurteilt.
-Folgend wird zuerst das Konzept der Krümmung kurz zusammengefast und anschliessend der Unterschied der mittleren und Gausskrümmung im Bezug auf Minimalflächen illustriert, befor dies alles mit dem Beispiel der Sattelfläche visualisiert wird.
+Folgend wird zuerst das Konzept der Krümmung kurz zusammengefasst und anschliessend der Unterschied der mittleren und Gausskrümmung im Bezug auf Minimalflächen illustriert, bevor dies alles mit dem Beispiel der Sattelfläche visualisiert wird.
 
 
 \subsection{Krümmung einer Fläche}
 \index{Krümmung einer Fläche}
 
-Intuitiv ist Krümmung einer Fläche für uns ein Mass der Abweichung eines Objekts im Bezug zu einer flachen Fläche. 
+Intuitiv ist Krümmung einer Fläche für uns ein Mass der Abweichung eines Objekts im Bezug zu einer Ebene. 
 
-Die Krümmung einer Fläche im Punkt P kann in der Mathematik indirekt durch die Hauptkrümmungsradien $R1$ und $R2$ ausgedrückt werden. 
+Die Krümmung einer Fläche im Punkt $P$ kann in der Mathematik indirekt durch die Hauptkrümmungsradien $R1$ und $R2$ ausgedrückt werden. 
 Die Hauptkrümmungsradien hängen von den Tangentenrichtungen im Punkt P ab. 
 Die Tangentenrichtungen stehen senkrecht aufeinander.
 Sie sind so definiert, dass $R1$ den Minimalwert und $R2$ den Maximalwert annimmt.
 
-Unter einem Krümmungsradius versteht man den Radius des Kreises welcher die Kurve im Punkt P am besten approximiert. 
-Da wir intuitiv bei einem Kreis oder einer Kugel eine grosse Krümmungszahl erwarten und bei einer fast geraden Fläche eine kleine, ist die Krümmung $k$  als der Kehrwert vom Krümmungsradius definiert. $k=1/R$ 
+Unter dem Krümmungsradius versteht man den Radius des Kreises, welcher die Kurve im Punkt $P$ am besten approximiert. 
+Da wir intuitiv bei einem Kreis oder einer Kugel eine grosse Krümmungszahl erwarten und bei einer fast geraden Fläche eine kleine, ist die Krümmung $k$  als der Kehrwert des Krümmungsradius definiert$k=1/R$ . 
 
 \begin{figure} 
   \centering
@@ -144,13 +154,14 @@ Da wir intuitiv bei einem Kreis oder einer Kugel eine grosse Krümmungszahl erwa
   \caption{Krümmungsradius} 
 \end{figure}
 
+Überträgt man das Konzept der Krümmung ins Dreidimensionale braucht es zwei Krümmungen, welche orthogonal zueinander stehen, um die Krümmung an einem Punkt zu bestimmen. Diese werden als Hauptkrümmungen $k1$ und $k2$ bezeichnet.
+Zur nummerischen Charakterisierung der Krümmung einer Fläche in der Mathematik werden hauptsächlich zwei Grössen benutzt.
+Zum einen die Gauss Krümmung, welche eine intrinsische Krümmung ist und zum andern die mittlere Krümmung bei welcher es sich um eine extrinsische Krümmung handelt. Bei Minimalflächen ist vor allem die mittlere Krümmung von Bedeutung, da diese für Minimalflächen null ist.
 
-Zur numerischen Charakterisierung der Krümmung einer Fläche in der Mathematik werden hauptsächlich zwei Grössen benutzt.
-Zum einen die Gauss Krümmung was eine intrinsische Krümmung ist und zum andern die Mittlere Krümmung bei welcher es sich um eine extrinsische Krümmung handelt. Bei Minimalflächen ist vor allem die Mittlere Krümmung von Bedeutung, da diese dort null ist.
 
 \index{Gauss Krümmung}
 
-Die Gauss Krümmung einer Fläche im Punkt P ist definiert als das Produkt der zwei Hauptkrümmungen k1 und k2.
+Die Gauss Krümmung einer Fläche im Punkt $P$ ist definiert als das Produkt der zwei Hauptkrümmungen $k1$ und $k2$.
 
 \begin{equation} \label{Gauss_Kruemmung_D}
   H=k1\, k2= \frac{1}{R1}\frac{1}{R2}
@@ -162,20 +173,21 @@ Die Gauss Krümmung ist eine intrinsische Krümmung. Diese ist  ein Mass für di
 Eine gute Vorstellungshilfe ist die Ameisenperspektive. 
 Wenn die Ameise auf einer Kugel ist kann sie feststellen, dass nur schon in ihrem kleinen Blickfeld die Winkelsummen eines Dreiecks auf der Oberfläche grösser als 180° ist, demzufolge besitzt die Kugel eine positive Gauss Krümmung. Anders sieht es aus bei einem Zylinder dort misst die Ameise auf der Zylinderoberfläche genau 180° Winkelsumme, das heisst die Gauss Krümmung eines Zylinders ist null.
 
-\index{Mittlere Krümmung}
+\index{mittlere Krümmung}
 
-Die Mittlere Krümmung einer Fläche im Punkt P ist definiert durch den Mittelwert der zwei Hauptkrümmungen k1 und k2.
+Die mittlere Krümmung einer Fläche im Punkt $P$ ist definiert durch den Mittelwert der zwei Hauptkrümmungen $k1$ und $k2$.
 
 \begin{equation} \label{Mittlere Kruemmung_D}
   H=\frac{1}{2}(k1+k2)= \frac{1}{2}\bigg(\frac{1}{R1}+\frac{1}{R2}\bigg)
 \end{equation}
 
-Die Mittlere Krümmung ist eine extrinsische Krümmung. 
+Die mittlere Krümmung ist eine extrinsische Krümmung. 
 Im Gegensatz zur intrinsischen Krümmung kommt es bei einer extrinsischen Krümmung auf die Umgebung an. 
 Man kann sich vorstellen, dass man zum Beispiel die Krümmung eines Zylinders (zweidimensionales Objekt) von aussen, also in einem dreidimensionalen Raum betrachtet. 
-Ein Zylinder ist aus der Ameisenperspektive flach, schaut man von aussen sieht er jedoch gekrümmt aus.
-Dies weil er eine positive mittlere Krümmung aufweist. 
-Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fläche) dort ist die Gausskrümmung ungleich null, hingegen kann die Mittlere Krümmung im Spezialfall, dass $R1=-R2$ also die Krümmungsradien ein umgekehrtes Vorzeichen aufweisen aber vom Betrag her identisch sind, gleich null sein. In diesem Fall ist diese Sattelfläche ein Beispiel für eine Minimalfläche.
+Ein Zylinder ist aus der Ameisenperspektive flach, schaut man von aussen, sieht er jedoch gekrümmt aus.
+Dies, weil er eine positive mittlere Krümmung aufweist. 
+Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fläche) aus, dort ist die Gausskrümmung negativ, hingegen kann die mittlere Krümmung im Spezialfall, dass $R1=-R2$, also die Krümmungsradien ein umgekehrtes Vorzeichen aufweisen, aber vom Betrag her identisch sind, gleich null sein. 
+In diesem Fall ist diese Sattelfläche ein Beispiel für eine Minimalfläche.
 
 \begin{figure} 
   \centering
@@ -184,26 +196,22 @@ Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fl�
 \end{figure}
 
 
-
-
 \subsection{Beispiel Sattelfläche}
-Quelle: H.F. Scherk, Bemerkungen über die kleinste Fläche innerhalb gegebener Grenzen, Journal für die reine und angewandte Mathematik, Volume 13 (1835) pp. 185–208
-\subparagraph{Beschreibung}
-Die Sattelfläche beschreibt zwei Paar parallele Flächen, die zueinander senkrecht sind.
-\begin{figure}
+\subsubsection{Beschreibung}
+Die Sattelfläche beschreibt zwei Paar parallele Flächen, die zueinander senkrecht sind \.(Abb: \ref{fig:SoapScherk}.
+\begin{figure}\label{fig:Scherk}
   \centering
   \includegraphics[scale=0.2]{minimal/HFSherk.png}
   \caption{Sattelfläche von Scherk} 
 \end{figure}
-Die Paare fließen auf der Höhe Null ($z=0$) ineinander. Die dabei gebildete Sattelfläche wird mittels Variationsproblem minimiert, hat gemäß Definition eine Mittlere Krümmung $M=0$. Geometrisch bedingt wiederholt sich die Sattelfläche in $x$ und $y$-Richtung.
-\begin{figure}
+Die Paare fließen auf der Höhe Null ($z=0$) ineinander. Die dabei gebildete Sattelfläche hat gemäß Definition eine Mittlere Krümmung $M=0$\.(Def: \ref{Variationsproblem}. Dies wird im Abschnitt \ref{Scherk Herleitung}  nachgerechnet.\\ Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlösung nachgebildet werden. Dies folgt direkt aus der äquivalenten Definition \ref{Seifenfilm}. Die einzelnen Seifenmoleküle versuchen ein stabiles Gleichgewicht der abstossenden und anziehenden Kräfte zu finden. Dieser Stabile Punkt braucht durch das Gleichgewicht ein Minimum an Energie.
+\begin{figure}\label{fig:SoapScherk}
   \centering
-  \includegraphics[scale=0.2]{minimal/HFSherk2.png}
-  \caption{Neun Perioden der Sattelfläche} 
+  \includegraphics[scale=0.3]{minimal/SattelflacheSoapFilm.png}
+  \caption{Seifenfilm bildet Minimalfläche} 
 \end{figure}
-Gemäß Definition nach Variationsproblem ist dabei die Mittlere Krümmung $M=0$. Dies wird im Abschnitt \ref{Scherk Herleitung}  nachgerechnet.\\ Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlösung nachgebildet werden. Dies folgt direkt aus der äquivalenten Definition \ref{Seifenfilm}. (Photo)
-Die Sattelfläche wurde erstmals 1834 von Prof. H. F. Scherk beschrieben und hergeleitet. Sie war nach der in 1776 von Meusnier beschriebene Katanoide die erste neue Minimalfläche. 
-\subparagraph{Herleitung}\label{Scherk Herleitung}
+Die Sattelfläche wurde erstmals 1834 von Prof. H. F. Scherk beschrieben und hergeleitet. Sie war nach der in 1776 von Meusnier beschriebene Katanoide die erste neue Minimalfläche. Im folgenden Abschnitt, wird die Gleichung mittels Variationsrechnung hergeleitet.
+\subsubsection{Herleitung}\label{Scherk Herleitung}
 Unter Verwendung der Minimalflächengleichung (Referenz)
 \begin{equation}\label{Minimalflaechengleichung}
 (1+ Z_v^{2})Z_{uu} - 2 Z_u Z_v Z_{uv} + (1+ Z_u^{2}) Z_{vv}=0
@@ -244,25 +252,26 @@ Somit lautet die Funktion der Fläche
 Z(u,v)=\dfrac{log(cos(cu))}{c}-\dfrac{log(cos(cv))}{c}
 \end{equation}
 
-\section{Young–Laplace - Oberflächenspannung}
-
-
-
-
-TODO: Enfürende worte zu Young–Laplace - Oberflächenspannung mit weiterer definition.............................
-
-
 \subsection{Beispiel Young–Laplace - Oberflächenspannung}
+\rhead{Young–Laplace}
 \label{Young-Laplace}
-\subparagraph{Beschreibung}
+\subsubsection{Beschreibung}
 \label{YL-Beschreibung}
-Quelle: Landau, L.D. and Lifshitz, E.M.: Fluid Mechanics, Pergamon Press, Oxford
-(1987) 
-Derivation of the Laplace equation
-Svein M. Skjæveland
-October 19, 2012
-\subparagraph{Herleitung}\label{YL-Herleitung}
-Angenommen zwei Medien (z.B. Luft/Wasser) werden durch eine Oberfläche getrennt. Da in den Medien verschiedene Drücke $p_1$ und $p_2$ herrschen, verändert sich die Wölbung der Fläche. Die Veränderung sei $\delta \zeta$. Das Volumen eines einzelnen infinitesimalem Volumensegments sei $\delta \zeta dA$. Dann ist die benötigte Kraft um das Volumensegment um $\delta\zeta$ zu verschieben:
+In den vorangegangenen Beispielen wurde jeweils eine Lösung gesucht, bei der die Mittlere Krümmung $M=0$ ist. Bei den meisten Oberflächen ist dies jedoch nicht der Fall. Beispielsweise haben Seifenblasen innen und aussen einen anderen Druck. Oder in einem Blutgefäss \,(Abb: \ref{fig:BlutAder}) herrscht innen der Blutdruck und außerhalb der Druck durch die Gewebe.
+
+Dennoch haben solche Oberflächen ähnliche Eigenschaften, da auch hier die Energie minimiert wird. Dies wird durch die Young-Laplace Gleichung beschrieben, welche im folgenden Abschnitt hergeleitet wird.
+\subsubsection{Herleitung}\label{YL-Herleitung}
+Angenommen zwei Medien (z.B. Luft/Wasser) werden durch eine Oberfläche \. (Abb: \ref{fig:YoungCone}) getrennt. Da in den Medien verschiedene Drücke $p_1$ und $p_2$ herrschen, verändert sich die Wölbung der Fläche. Die Veränderung sei $\delta \zeta$ \.(Abb: \ref{fig:Volumentransaltion}). Das Volumen eines einzelnen infinitesimalem Volumensegments sei $\delta \zeta dA$. Dann ist die benötigte Kraft um das Volumensegment um $\delta\zeta$ zu verschieben:
+\begin{figure}\label{fig:YoungCone}
+  \centering
+  \includegraphics[scale=0.3]{minimal/YoungCone.png}
+  \caption{Ausschnitt aus einer Oberfläche mit Krümmungsradien} 
+\end{figure}
+\begin{figure}\label{fig:Volumentransaltion}
+  \centering
+  \includegraphics[scale=0.3]{minimal/Volumetranslation.png}
+  \caption{Element der Volumentranslation} 
+\end{figure}
 \begin{equation}
 \int(-p_1+p_2)\delta \zeta dA
 \end{equation}
@@ -270,7 +279,12 @@ Die Gesamte Arbeit ergibt sich wenn zur Arbeit der Volumenänderung die Arbeit d
 \begin{equation}\label{YL-Arbeit_1}
 \delta W=\int(-p_1+p_2)\delta\zeta dA + \gamma\delta A
 \end{equation}
-Sind $R_1$ und $R_2$ die Radien der Krümmungen der Oberfläche werden die infinitesimale Längenstücke $dl_1$ und $dl_2$ mit $(\delta\zeta /R_1)dl_1$ bzw. $(\delta\zeta /R_2)dl_1$ verlängert. Das Flächenstück $dA=dl_1 dl_2$ verändert sich wie folgt:
+Sind $R_1$ und $R_2$ die Radien der Krümmungen der Oberfläche werden die infinitesimale Längenstücke $dl_1$ und $dl_2$ mit $(\delta\zeta /R_1)dl_1$ bzw. $(\delta\zeta /R_2)dl_1$ verlängert. Das Flächenstück $dA=dl_1 dl_2$ verändert sich mittels Strahlensatz \.(Abb: \ref{fig:Strahlensatz}) wie folgt:
+\begin{figure}\label{fig:Strahlensatz}
+  \centering
+  \includegraphics[scale=0.3]{minimal/Langenanderung.png}
+  \caption{Längenänderung} 
+\end{figure}
 \begin{equation}
 \begin{split}
 dA &= (1+\delta\zeta/R_1)dl_1 (1+\delta\zeta/R_2)dl_2 \\
@@ -280,7 +294,7 @@ dA &= (1+\delta\zeta/R_1)dl_1 (1+\delta\zeta/R_2)dl_2 \\
 \end{equation} 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.2]{minimal/Young.pdf}
+%  \includegraphics[scale=0.2]{minimal/Young.pdf}
   \caption{Oberflächenspannung} 
 \end{figure}
 Die veränderte Oberfläche kann damit berechnet und in die Gleichung \ref{YL-Arbeit_1} eingesetzt werden. Befindet sich die Oberfläche im Gleichgewicht muss auch die Veränderung der Arbeit gleich Null sein.
@@ -298,10 +312,22 @@ oder
 \begin{equation}\label{Young-Laplace}
 \Delta p = \gamma\bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg)
 \end{equation}
-
-TODO: ???????????????????????Definitionen von oben bei Beispiel Katenoid, Sattelfläche,Young Laplace noch einbauen dann eigener abschnitt löschen???????????????????????
+Tatsächlich hat eine Kugel mit $\gamma=1/2$ eine mittlere Krümmung von
+\begin{equation}
+\begin{split}
+H &= \frac{1}{2}(\frac{1}{r}+\frac{1}{r}) \\
+&= \frac{1}{2}(\frac{2}{r})\\
+&=\frac{1}{r}.
+\end{split}
+\end{equation}
+\begin{figure}\label{fig:BlutAder}
+  \centering
+  \includegraphics[scale=0.3]{minimal/BlutAder.jpg}
+  \caption{Blutgefäss} 
+\end{figure}
 
 \section{Defintion der Minimalfläche}
+\rhead{Defintion der Minimalfläche}
 \index{Definition der Minimalfläche}
 Um den Begriff der Minimalfläche greifbarer zu gestalten werden hier verschiedene Definitionen, die zueinander gleichwertig sind, erörtert.
 
@@ -318,22 +344,6 @@ In anderen Worten ist eine Fläche minimal wenn deren Teilflächen beliebiger gr
 \subsection{Seifenfilm}\label{Seifenfilm}
 Def: Eine Fläche $M\subset\mathbb{R}^{3}$ ist genau dann minimal wenn jeder Punkt $p \in M$ eine Umgebung mit Rand $D_p$ gleich dem idealem Rand eines Seifenfilms $\partial D_p$ hat.\\
 In diesem Fall ist die Krümmung eines Seifenfilms proportional zum Druckunterschied auf beiden Seiten der Fläche. Die unterschiedlichen Drücke verformen dabei den Film bis auf beiden Seiten der gleiche Druck vorherrscht. Dies kann beispielsweise mit Seife auf einem Drahtgeflecht visualisiert werden. Seifen\textit{blasen} sind nach dieser Definition keine MF, da sie zum Erhalt ihrer Form einen höheren Innendruck haben.
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.3]{minimal/SattelflacheSoapFilm.png}
-  \caption{Seifenfilm bildet Minimalfläche} 
-\end{figure}
-
-\subsection{Energie}\label{Energie}
-Def: Eine Fläche $M\subset\mathbb{R}^{3}$ ist genau dann minimal wenn jeder Punkt $p \in M$ eine Umgebung mit minimaler Energie hat.\\
-Äquivalent wie die Kettenlinie, welche die Kräfte zwischen den Kettengliedern minimiert, minimiert eine Minimalfläche die "Spannungen" zwischen den Punkten. Stellt man sich die Fläche als dünne Kautschuk-Haut vor, sieht man schnell, dass die einzelnen Kohlenstoff-Ketten die Kräfte innerhalb des Materials ausgleichen und gleichmässig aufteilen. Dies geschieht insbesondere durch die Van der Waals Kräfte zwischen den Kohlenstoff-Ketten.
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=1]{minimal/cis-Polyisopren.PNG}
-  \caption{Kohlenstoffkette von Naturkautschuk} 
-\end{figure}
 
 
 
