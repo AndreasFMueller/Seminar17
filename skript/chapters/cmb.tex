@@ -586,13 +586,14 @@ Ziel dieses Abschnitts ist die Berechnung von $X$ in Abhängigkeit
 von der Zeit.
 Löst man die Definition~\eqref{skript:cmb:Xb} nach $n_\text{H}$ auf,
 findet man
-\begin{align*}
+\begin{align}
 \frac1X
 &=
 \frac{n_p+n_\text{H}}{n_p}
 =
 1+
 \frac{n_\text{H}}{n_p}
+\notag
 \\
 \Rightarrow
 \qquad
@@ -601,12 +602,13 @@ findet man
 \frac{1}{X}-1
 =
 \frac{1-X}{X}
+\notag
 \\
 n_\text{H}
 &=
 \frac{1-X}{X}n_p.
 \label{skript:cmb:XnH}
-\end{align*}
+\end{align}
 
 Ausserdem dürfen wir annehmen, dass die Anzahldichte $n_\gamma$
 der Photonen währen der Rekombination wesentlich grösser war als
@@ -795,5 +797,195 @@ finden.
 
 \section{Anisotropie des CMB}
 \rhead{Anistrotopie des CMB}
+Wenige Jahre nach der Entdeckung des kosmischem Mikrowellenhintergrundes
+haben verschiedene Experimente versucht, die Hypothesen zu überprüfen,
+die dem Big-Bang-Modell zu Grunde liegen.
+
+
+\subsection{Hubble-Distanz}
+Zwei Punkte in Entfernung $l$ entfernen sich in einem Universum, welches
+mit der Hubble-Konstante $H$ expandiert, mit der Geschwindigkeit
+$v=Hl$.
+Da sich kein Signal schneller als mit Lichtgeschwindigkeit $c$ ausbreiten
+kann, ist zwischen Punkten kein Informationsaustausch mehr möglich,
+wenn deren gegenseitige Fluchtgeschwindigkeit
+\[
+Hl > c
+\]
+ist.
+Die maximale Distanz von Punkten, zwischen denen ein Informationsaustausch
+möglich ist, ist daher die {\em Hubble-Distanz}
+\begin{equation}
+l = \frac{c}{H}.
+\end{equation}
+\index{Hubble-Distanz}
+Jenseits dieser Distanz ist zum Beispiel kein Temperaturausgleich mehr
+möglich, da sogar die Wärmestrahlung als Ausgleichsmechanismus sich zu
+langsam ausbreitet.
+
+Die Hubble-Distanz ist für die Kosmologie von besonderer Bedeutung.
+Vor der letzten Streuung kann man davon ausgehen, dass die Strahlung
+als Temperaturausgleichsmechanismus funktioniert hat und Temperaturdifferenzen,
+die eine kleinere Distanz voneinander entfernt waren als die Hubble Distanz
+angibt.
+Temperaturdifferenzen, die weiter als eine Hubble-Distanz auseinander lagen
+konnten jedoch nicht mehr ausgeglichen werden.
+Mit der letzten Streuung entkoppelt sich die Strahlung von der Materie,
+jetzt ist es erst recht nicht mehr möglich, dass sich Temperaturunterschiede
+ausgleichen können.
+Wir erwarten daher, dass wir im kosmischen Mikrowellenhintergrund
+Anistropien von der Grössenordnung der Hubble-Distanz zur Zeit der
+letzten Streuung beobachten können.
+
+Seit der letzten Streuung ist das Universum von Materie dominiert,
+wir können daher die ungefähre Grösse der Hubble-Konstante zur
+Zeit der letzten Streuung mit Hilfe der
+Friedmann-Gleichung~\eqref{skript:friedmann:omegagleichung}
+abschätzen.
+Zunächst ist
+\[
+H(t) = H_0\sqrt{\Omega_{0,m}}\frac{1}{a(t)^\frac32},
+\]
+wobei wir für die beiden Konstanten $H_0$ und $\Omega_{0,m}$ die
+im Standardmodell üblichen Werte
+\[
+H_0
+=
+70 \frac{\text{km/s}}{\text{Mpc}}
+\qquad\text{und}\qquad
+\Omega_{0,m}=0.3
+\]
+wählen.
+Die letzte Streuung erfolgt bei einer Rotverschiebung von $z=1100$, also
+gilt
+\[
+H(t_{\text{ls}})
+=
+H_0\sqrt{\Omega_{0,m}}\frac{1}{a(t_{\text{ls}})^\frac32}
+=
+H_0\sqrt{\Omega_{0,m}}(1+z)^\frac32.
+\]
+Setzen wir die genannten Zahlenwerte ein, erhalten wir
+\[
+H(t_{\text{ls}})
+=
+70\cdot \sqrt{0.3}\cdot 1001^\frac32
+=
+1.4\cdot 10^{6}\frac{\text{km/s}}{\text{Mpc}}
+\]
+für die Hubble-Konstante und 
+\[
+d
+=
+\frac{c}{H(t_{\text{ls}})}
+=
+\frac{2.998\cdot 10^{5}\text{km/s}}%
+{1.4\cdot 10^{6}\frac{\text{km/s}}{\text{Mpc}}}
+=
+0.21\text{Mpc}
+\]
+für die Hubble-Distanz zur Zeit der letzten Streuung.
+Zum Vergleich: unsere Milchstrasse hat einen maximalen Durchmesser
+von etwa 55kpc, die Andromeda-Galaxie ist etwa 770kpc entfernt.
+Die Hubbledistanz zur Zeit der letzten Streuung ist als etwa viermal
+so gross wie der Durchmesser der Milchstrasse und etwa ein viertel der
+Entfernung zur Andromeda-Galaxie.
+Die im kosmischen Mikrowellenhintergrund sichtbaren Anisotropien
+entsprechen daher Strukturen von der grösse des lokalen Haufens von
+Galaxien.
+
+\subsection{Horizont-Distanz}
+Wie weit weg sind die Anisotropien des kosmischen Mikrowellenhintergrundes,
+die wir heute beobachten?
+Oder allgemeiner: wie weit ist die Quelle eines Photons heute von uns
+entfernt, welches bei einer Rotverschiebung $z$ ausgesandt wurde?
+Die gesuchte Distanz heisst die {\em Horizont-Distanz}.
+\index{Horizont-Distanz}
+
+Nehmen wir also an, ein Photon sei zur Zeit $t$ ausgestrahlt worden,
+es war also während der Zeit $t_0-t$ mit Lichtgeschwindigkeit unterwegs,
+und hat daher die Distanz $c(t_0-t)$ zurückgelegt.
+Wir teilen jetzt des Zeitinterval zwischen $t$ und $t_0$ in kleine
+Intervalle der Länge $dt$.
+Das Photon braucht legt während dieser Zeit die Distanz $c\,dt$
+zurück.
+Jedes solche Interval ist seither auf
+\[
+c {a(t_0)}{a(t)}\,dt
+\]
+angewachsen.
+Die gesamte Distanz zwischen zur Quelle ist daher
+\[
+d_\text{hor} = c \int_t^{t_0} \frac{a(t_0)}{a(t)}\,dt.
+\]
+
+Für die Zeit seit der letzten Streuung lässt sich $a(t)$ als
+Lösung der Friedmann-Gleichung angeben eines materiedominierten
+Universums finden.
+Die Differentialgleichung ist
+\[
+\frac{\dot a(t)^2}{\dot a(t)^2}
+=
+H_0^2\Omega_{0,m}\frac1{a(t)^3},
+\]
+die wir nach $\dot a(t)$ auflösen können:
+\[
+\dot a(t)
+=
+H_0\sqrt{\Omega_{0,m}} a(t)^{-\frac12}.
+\]
+Diese Differentialgleichung hat die Lösung
+\[
+a(t) = \biggl(\frac{t}{t_0}\biggr)^\frac23.
+\]
+Daraus lässt sich jetzt die Horizont-Distanz für jede beliebige 
+Rotverschiebung berechnen.
+Es ist nämlich
+\begin{align*}
+d_{\text{hor}}(t)
+&=
+c\int_t^{t_0} \frac{dt}{(\tau/t_0)^\frac23}
+\\
+&=
+3ct_0\biggl(1-\biggl(\frac{t}{t_0}\biggr)^\frac13\biggr)
+\\
+&=
+3ct_0(1-a(t)^\frac12)
+\end{align*}
+Für ein solches Universum gilt aber auch 
+\[
+t_0=\frac{2}{3H_0},
+\]
+so, dass die Horizontdistanz
+\[
+d_{\text{hor}}(t)
+=
+3ct_0\biggl(1-\frac1{\sqrt{1+z}}\biggr)
+=
+2\frac{c}{H_0}(1-a(t)^\frac12)
+=
+\frac{2c}{H_0}\biggl(1-\frac{1}{\sqrt{1+z}}\biggr)
+\]
+ist in Abhängigkeit von der Rotverschiebung.
+Für die Rotverschiebung der letzten Streuung von $z=1100$ folgt, dass
+die Horizontdistanz
+\[
+d_{\text{hor}}(t_{\text{ls}})
+=
+3ct_0 \biggl(1-\frac{1}{\sqrt{1101}}\biggr)
+=
+2.90958 ct_0
+\]
+ist.
+Die Fläche der letzten Streuung ist also fast drei mal so weit von uns
+entfernt wie ein Photon seit dem Big Bang unterwegs sein konnte.
+
+
+\subsection{Anisotropien des CMB}
+
+
+
+
+
 
 
