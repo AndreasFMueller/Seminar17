@@ -22,13 +22,13 @@ Das Thema Zeitreisen fasziniert den Menschen schon seit er sich der Zeit bewusst
 Eine Zeitreise beschreibt eine Bewegung durch die Zeit, abweichend von der eines Bezugssystems. Man unterscheidet dabei von Reisen in die Vergangenheit oder in die Zukunft. Gerade ersteres wirft schwerwiegende Fragen auf. Was geschieht z.B. wenn der Lauf der Dinge wie sie bis anhin bekannt waren geändert wird? Wenn der Reisende in der Vergangenheit auf sich selber trifft, oder noch absurder gar sein altes ``Ich`` ermordet? 
 Mathematisch gesehen wird eine Reise in die Vergangenheit ebenfalls ein wenig anspruchsvoller. Hier beschränken wir uns daher auf Reisen in die Zukunft. 
 
-Natürlich könnte man später argumentieren, dass sich bei gleichbleibender Theorie die Bezugssysteme vertauschen lassen. So könnte man ein Objekt seiner Wahl reissen lassen und sich selber als Bezugssystem sehen. Dies entspricht aber nicht einer Reise in die Vergangenheit sondern lediglich ``weniger schnellem altern``. Das zeitreisende  Objekt könnte trotz Zeit\"anderung immer nur älter sein als zu Beginn der Betrachtung. Obwohl der Beobachter in seinem Bezugssystem einiges schneller gealtert wäre.
+Natürlich könnte man später argumentieren, dass sich bei gleichbleibender Theorie die Bezugssysteme vertauschen lassen. So könnte man ein Objekt seiner Wahl reisen lassen und sich selber als Bezugssystem sehen. Dies entspricht aber nicht einer Reise in die Vergangenheit sondern lediglich ``weniger schnellem altern``. Das zeitreisende  Objekt könnte trotz Zeit\"Anderung immer nur älter sein als zu Beginn der Betrachtung. Obwohl der Beobachter in seinem Bezugssystem einiges schneller gealtert wäre.
 
 Es stellt sich nun die Frage, wie wir mathematisch gesehen eine Zeitreise definieren. Im Abschnitt XXXXXX führten wir den Begriff der Eigenzeit ein. Sie beschreibt die Zeit, welche im Bezugssystem des Reisenden aus der Sicht eines Beobachters vergeht.
 
 Nun müssen wir noch ausformulieren wie wir die Abweichungen von der Eigenzeit erreichen wollen. Die sogenannte Zeitdilatation wie es in der Physik heisst erreicht man entweder durch Geschwindigkeit oder Gravitation. Geschwindigkeit setzt eine zuvorkommende Beschleunigung voraus. Wir wissen bereits, dass Beschleunigung und Gravitation einhergehen. Daher kommt es nicht all zu \"uberaschend, dass wenn das Eine auch das Andere einen Einfluss haben muss.
 
-Wie wir sehen werden bringen schon kleinste \"Anderungen eine Zeitänderung mit sich. Da die praktische Anwendung in diesem Kapitel im Fordergrund steht, interessieren uns in erster Linie natürlich signifikante Unterschiede. Erst doppelt oder sogar zehnfach- schneller vergehenden Eigenzeiten w\"urden uns Effekte best\"atigen, welche man sie uns in Science Fiction Filmen und Romanen verspricht.
+Wie wir sehen werden bringen schon kleinste \"Anderungen eine Zeitänderung mit sich. Da die praktische Anwendung in diesem Kapitel im Vordergrund steht, interessieren uns in erster Linie natürlich signifikante Unterschiede. Erst doppelt oder sogar zehnfach- schneller vergehenden Eigenzeiten w\"urden uns Effekte best\"atigen, welche man uns in Science Fiction Filmen und Romanen verspricht.
 
 \subsection{Geschwindigkeit}
 
@@ -195,35 +195,59 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 	Der Gravitationsradius der Erde beträgt etwa 8.8mm. Wenn wir die Erde also unter  diese 8.8mm komprimieren, würde sie sich in ein schwarzes Loch verwandeln. Ihre Dichte wäre dann so gross, dass nichts mehr der Anziehung widerstehen kann.
 	%do vlt no chli was... weiss aber nonig genau was
 	
-	\subsection{Realisierbarkeit}
+	\section{Realisierbarkeit}
 	
-	%probleme mit Reiseweg, und nur kleine Zeiteinssparung bei 20%c
-	%energie
+	Wie erreichen wir nun eine grössere Zeitdilatation um in der Zeit zu reisen? Entweder mit grosser Geschwindigkeit oder mittels eines Massereichen Objektes. Zeitdilatation durch hohe Geschwindigkeiten zu erreichen ist sehr schwierig, da die benötigte Energie im quadrat mit der Geschwindigkeit anwächst. Und wie (Figure 1) zeigt, muss für eine grosse Zeitverlangsamung annähernd Lichtgeschwindigkeit erreicht werden. Erst ab ca. $0.9c$ beginnt der lorentzfaktor wirklich zu wachsen.
+	Das bedeutet, dass wir uns auf den Effekt der Gravitation  konzentrieren müssen.
+	Doch wir lösen wir dieses Problem? Wir suchen also ein Massereiches Objekt in unserer Umgebung. Die Sonne genügt für unsere Zwecke leider nicht, ihr Schwarzschildradius ist erstens viel zu klein, und zweitens innerhalb des Körpers. Wir suchen also weiter... Schliesslich finden wir Sagittarrius A*, ein supermassives schwarzes loch im Zentrum unserer Milchstrase. Dieses sollte für unsere Zwecke genügen. 
+	Doch hier beginnen die Probleme. 
+	Sagittarrius A* ist 26'000 Lichtjahre von uns entfernt, das bedeutet mit Lichtgeschwindigkeit bräuchten Wir 26'000 Jahre bis wir am Ziel ankommen. Die Hoffnung wäre nun, dass sich durch eine hohe Fluggeschwindigkeit und die daraus resultierende Zeitdehnung, die benötigte Zeit signifikant reduziert. 
+	Nehmen wir nun an wir fliegen mit 0.5-facher Lichtgeschwindigkeit ins Zentrum unserer Milchstrasse. Die Eigenflugzeit im Raumschiff wäre immer noch
 	
-	\subsubsection{Lasersegel}
-	%Bsp Laser mit lichtsegel...
+	\begin{align*}
+	\tau
+	&= 
+	\int_{}^{26000}\frac{1}{\gamma}dt=\int_{}^{26000}\sqrt{1-\frac{v^2}{c^2}}dt
+	= 
+	\frac{1}{c}\int_{0}^{26000}\sqrt{-(-c^2+(0.5c)^2)}ds\\
+	&=
+	\biggl[s\sqrt{1-\frac{(0.5c)^{2}}{c^2}}\biggr]_0^{26000}
+	=
+	22516.7.
+	\end{align*}
 	
-	\section{Umkreisung}
+	Was also grosszügig gerundet immer noch 22500 Jahre dauern würde. 
+	Wir müssen Mit unserem Projekt also warten, bis Geschwindigkeiten von 0.99c mit Raumschiffen Erreicht werden können. Doch auch mit 0.99c würde die Reise noch 3600 Jahre Dauern. Die Energie die benötigt würde, um ein Raumschiff auf diese Geschwindigkeit zu beschleunigen, vernachlässigen wir hier. Das ist ein anderes Problem welches noch gelöst werden muss.\\
+	Wir verschieben unser Projekt also in hypothetische und stellen uns Vor wir wären bereits da.
 	
+	\section{Am Ziel... Was nun?}
+	
+	Wenn wir nun also diese Reise auf uns genommen haben, und Sagittarrius A* wirklich erreichen, öffnen sich uns zwei Möglichkeiten:
+	
+	\begin{itemize}
+		\item eine Gesteuerte Bahn
+		\item wir lassen uns "fallen"
+	\end{itemize}
+
+	Eine gesteuerte Kreisbahn um das schwarze Loch bringt die besten Resultate, da wir eine Kreisbahn sehr nahe am Ereignishorizont wählen können. Das Ganze wäre jedoch sehr Energieaufwändig, da wir mit Steuerdüsen unseren Absturz in den Ereignishorizont verhindern müssen. Je nach Geschwindigkeit und Abstand zum schwarzen Loch wird mehr oder weniger Energie benötigt.\\
+	Die zweite Möglichkeit wäre, dass wir uns, wenn wir angekommen sind "fallenlassen" und sehen was passiert. So können wir je nach Anfangsgeschwindigkeit, Abstand und £Position verschiedene Bahnen erreicht werden. Vom Absturz in den Ereignishorizont bis zu einer Bahn auf der wir der Gravitation des schwarzen Lochs entkommen und uns in die weiten des Weltalls verabschieden. Beides sind eher unangenehme Szenarien. 
+	Wie finden wir also eine Bahn möglichst nahe an der Singularität, ohne das eines dieser zwei Ereignisse auftritt?
+	Lösung unseres Problem sind die Geodätengleichungen, welche uns aufgrund der Anfangsbedingungen eine Bahn berechnen lassen.
 	
 	%am Sagitarrius A* angekommen: -Gesteuerte Bahn
 	%							   -lösung mit geodäten
 	
-	\subsubsection{gesteuerte Bahn}
-	
- 	%kurze erklärung, probleme energie für gesteuerte bahn, ...
-	
-	\subsubsection{Geodätenlösung}
+	\section{Geodätenbahnen}
 	
 	%"herleitung" geodätegleichung
 	%Christoffelsymbole berechnung und aufstellung
 	%einsetzen und erstellung der Diffgleichungen für simulation
 	
-	\subsection{Simulation}
+	\section{Simulation}
 	
 	%Erklärung sourcecode
 	
-	\subsection{fazit}
+	\section{fazit}
 	
 	%üseri erkenntnis us de arbet
 	
