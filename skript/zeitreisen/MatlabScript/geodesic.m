@@ -32,7 +32,7 @@
 %  compute the geodesic
 % 
 function [ solution ] = geodesic( x0,s )
-s = s(:);
+%s = s(:);
 
 [T,Y]=ode45(@dgeodesic,s,x0);
 sol=ode45(@dgeodesic,s,x0);
