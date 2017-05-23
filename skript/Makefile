@@ -6,7 +6,7 @@
 all:	skript.pdf
 
 #SUBDIRECTORIES = chapters uebungsaufgaben 
-SUBDIRECTORIES = chapters cmb
+SUBDIRECTORIES = chapters
 
 images:
 	for d in $(SUBDIRECTORIES); \
