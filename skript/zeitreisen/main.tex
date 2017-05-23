@@ -67,12 +67,12 @@ Minowski-Metrik:
 
 Standard Vierervektor:
 
-\begin{list}{}{}
-    \item \(x^{0}=ct\)
-    \item \(x^{1}=x\)
-    \item \(x^{2}=y\)
-    \item \(x^{3}=z\)
-\end{list}
+\begin{align*}
+    x^{0}=ct
+    x^{1}=x
+    x^{2}=y
+    x^{3}=z
+\end{align*}
 
 Ein wenig Umstellen und vereinfachen und man kommt auf diese Form:
 
@@ -86,36 +86,36 @@ Je nachdem wie die Bewegung gew\"ahlt wird, fallen einer oder mehrere der Basisv
 
 Hier ein Beispiel bei welchem nur eine Geschwindigkeit in x-Richtung vorhanden ist (c=Lichtgeschwindigkeit, u beschreibt den Bruchteil):
 
-\begin{list}{}{}
-    \item $t(s)=1s, \dot{t}(s)=1$
-    \item $x(s)=u*c*s, \dot{x}(s)=u*c$
-    \item $y(s)=0, \dot{y}(s)=0$
-    \item $z(s)=0, \dot{z}(s)=0$
-\end{list}
+\begin{align*}
+     t(s)=s, \dot{t}(s)=1,
+ 	 x(s)=ucs, \dot{x}(s)=uc,
+     y(s)=0, \dot{y}(s)=0,
+     z(s)=0, \dot{z}(s)=0
+\end{align*}
 
 \begin{align*}
     \tau
     &=
     \frac{1}{c}\int_{}^{}\sqrt{-(-c^2\dot{t}(s)^2+\dot{x}(s)^2)}ds 
     =
-    \frac{1}{c}\int_{}^{}\sqrt{-(-c^2*1+(u*c)^{2}}ds\\
+    \frac{1}{c}\int_{}^{}\sqrt{-(-c^2 +(uc)^{2}}ds\\
     &=
-    \frac{s*\sqrt{c^2+(u*c)^{2}}}{c} 
+    \frac{s\sqrt{c^2+(uc)^{2}}}{c} 
     =
-    s*\sqrt{1-\frac{u^2*c^2}{c^2}}
+    s\sqrt{1-\frac{u^2c^2}{c^2}}
 \end{align*}
 
-Welches die einfachste Form einer Zeitdilatation darstellt.\\
-\\
-Hier ein Zahlenbeispiel bei welchem zuf\"allige Werte gew\"ahlt wurden:
-$s=5000, u=0.2$ 
+	Welches die einfachste Form einer Zeitdilatation darstellt.
 
-\begin{list}{}{}
-    \item $t(s)=1s, \dot{t}(s)=1$
-    \item $x(s)=0.2cs, \dot{x}(s)=0.2c$
-    \item $y(s)=0, \dot{y}(s)=0$
-    \item $z(s)=0, \dot{z}(s)=0$
-\end{list}
+	Hier ein Zahlenbeispiel bei welchem zuf\"allige Werte gew\"ahlt wurden:
+	$s=5000, u=0.2$ 
+
+\begin{align*}
+    t(s)=s, \dot{t}(s)=1,
+    x(s)=0.2cs, \dot{x}(s)=0.2c,
+    y(s)=0, \dot{y}(s)=0,
+    z(s)=0, \dot{z}(s)=0,
+\end{align*}
 
 \begin{align*}
     \tau
@@ -124,7 +124,7 @@ $s=5000, u=0.2$
     &=
     \frac{1}{c}\int_{0}^{5000}\sqrt{-(-c^2+((0.2c)^2))}ds\\
     &=
-    5000*\sqrt{1-\frac{u^2*c^2}{c^2}} = 4898.98
+    5000\sqrt{1-\frac{u^2 c^2}{c^2}} = 4898.98
 \end{align*}
 
 Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr hohen Geschwindigkeiten erreicht wird
@@ -140,8 +140,12 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 
 	In diesem Kapitel beschäftigen wir uns mit dem Einfluss der Gravitation auf die Zeit. Gravitation muss durch eine Krümmung des Raumes beschrieben werden. Erkennen lässt sich die Gravitation z.B. an der Anziehungskraft der Erde. Alles wird mit $g=9.81\frac{m}{s^2}$ in Richtung Erdmittelpunkt beschleunigt. $F=\frac{KMm}{r^2}$
 	Die Beschleunigung ist also unabhängig von der Masse.
-	Ein beschleunigtes Koordinatensystem kann zwar durch eine Koordinatentransformation erreicht werden, doch diese ist keine Lorentztransformation und lässt sich nicht durch die die Minkowski-metrik darstellen.\\ Der Ansatz $ -c^2dt^2 + dx^2 + dy^2 + dz^2$ genügt nicht mehr. Wir müssen also Metriken und Transformationen zulassen, welche von der Minkowski-Metrik und der Standarttransformation abweichen.\\
-	Eine Metrik, welche wir für unsere Zwecke benützen können, ist die Schwarzschild-Metrik. Sie berücksichtigt die Gravitation, durch eine Krümmung des Raumes dargestellt, und beschreibt so Gravitationsfelder in der nähe von massereichen Objekten. Diese Lösung wurde von Karl Schwarzschild nur wenige Monate nach der Präsentierung der Einsteinschen Feldgleichungen gefunden. Aus ihr lassen sich Bewegungsgleichungen von Körpern in einem Gravitationstrichter herleiten.\\\\
+	Ein beschleunigtes Koordinatensystem kann zwar durch eine Koordinatentransformation erreicht werden, doch diese ist keine Lorentztransformation und lässt sich nicht durch die die Minkowski-metrik darstellen.
+	
+	Der Ansatz $ -c^2dt^2 + dx^2 + dy^2 + dz^2$ genügt nicht mehr. Wir müssen also Metriken und Transformationen zulassen, welche von der Minkowski-Metrik und der Standarttransformation abweichen.
+	
+	Eine Metrik, welche wir für unsere Zwecke benützen können, ist die Schwarzschild-Metrik. Sie berücksichtigt die Gravitation, durch eine Krümmung des Raumes dargestellt, und beschreibt so Gravitationsfelder in der nähe von massereichen Objekten. Diese Lösung wurde von Karl Schwarzschild nur wenige Monate nach der Präsentierung der Einsteinschen Feldgleichungen gefunden. Aus ihr lassen sich Bewegungsgleichungen von Körpern in einem Gravitationstrichter herleiten.
+	
 	Die Schwarzschildmetrik in Vektordarstellung:
 
 
@@ -158,12 +162,12 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 
 	Der Vierervektor in Kugelkoordinaten:
 
-	\begin{list}{}{}
-		\item \(x^{0}=ct\)
-		\item \(x^{1}=r\)
-		\item \(x^{2}=\vartheta\)
-		\item \(x^{3}=\varphi\)
-	\end{list}
+	\begin{align*}
+		x^{0}=ct
+		x^{1}=r
+		x^{2}=\vartheta
+		x^{3}=\varphi
+	\end{align*}
 
 	Daraus lässt sich die Längenmessung zusammenstellen. Auf die Herleitung der Schwarzsdchild-Metrik verzichten wir an dieser Stelle.
 
@@ -184,7 +188,8 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 	\subsubsection{Bedeutung von $R_{g}$ und Ereignishorizonte}
 
 
-	Der Ereignishorizont beschreibt in der allgemeinen Relativitätstheorie eine Grenzfläche dar. Er beschreibt die Entfernung ab welcher das Licht nicht mehr aus der Gravitationstrichter entkommen kann. Teilchen die den Ereignishorizont passiert haben, können diesen nicht mehr verlassen. Alles ausserhalb dieses Radius hätte die Möglichkeit zu entkommen, die frage ist nur wie viel Energie benötigt wird. Da Licht nicht mehr entkommen kann nennt man diese Körper auch schwarze Löcher.\\
+	Der Ereignishorizont beschreibt in der allgemeinen Relativitätstheorie eine Grenzfläche dar. Er beschreibt die Entfernung ab welcher das Licht nicht mehr aus der Gravitationstrichter entkommen kann. Teilchen die den Ereignishorizont passiert haben, können diesen nicht mehr verlassen. Alles ausserhalb dieses Radius hätte die Möglichkeit zu entkommen, die frage ist nur wie viel Energie benötigt wird. Da Licht nicht mehr entkommen kann nennt man diese Körper auch schwarze Löcher.
+	
 	Der Gravitationsradius lässt sich mit 
 
 	\begin{equation}
@@ -217,7 +222,8 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 	\end{align*}
 	
 	Was also grosszügig gerundet immer noch 22500 Jahre dauern würde. 
-	Wir müssen Mit unserem Projekt also warten, bis Geschwindigkeiten von 0.99c mit Raumschiffen Erreicht werden können. Doch auch mit 0.99c würde die Reise noch 3600 Jahre Dauern. Die Energie die benötigt würde, um ein Raumschiff auf diese Geschwindigkeit zu beschleunigen, vernachlässigen wir hier. Das ist ein anderes Problem welches noch gelöst werden muss.\\
+	Wir müssen Mit unserem Projekt also warten, bis Geschwindigkeiten von 0.99c mit Raumschiffen Erreicht werden können. Doch auch mit 0.99c würde die Reise noch 3600 Jahre Dauern. Die Energie die benötigt würde, um ein Raumschiff auf diese Geschwindigkeit zu beschleunigen, vernachlässigen wir hier. Das ist ein anderes Problem welches noch gelöst werden muss.
+	
 	Wir verschieben unser Projekt also in hypothetische und stellen uns Vor wir wären bereits da.
 	
 	\section{Am Ziel... Was nun?}
@@ -229,19 +235,43 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 		\item wir lassen uns "fallen"
 	\end{itemize}
 
-	Eine gesteuerte Kreisbahn um das schwarze Loch bringt die besten Resultate, da wir eine Kreisbahn sehr nahe am Ereignishorizont wählen können. Das Ganze wäre jedoch sehr Energieaufwändig, da wir mit Steuerdüsen unseren Absturz in den Ereignishorizont verhindern müssen. Je nach Geschwindigkeit und Abstand zum schwarzen Loch wird mehr oder weniger Energie benötigt.\\
+	Eine gesteuerte Kreisbahn um das schwarze Loch bringt die besten Resultate, da wir eine Kreisbahn sehr nahe am Ereignishorizont wählen können. Das Ganze wäre jedoch sehr Energieaufwändig, da wir mit Steuerdüsen unseren Absturz in den Ereignishorizont verhindern müssen. Je nach Geschwindigkeit und Abstand zum schwarzen Loch wird mehr oder weniger Energie benötigt.
+	
 	Die zweite Möglichkeit wäre, dass wir uns, wenn wir angekommen sind "fallenlassen" und sehen was passiert. So können wir je nach Anfangsgeschwindigkeit, Abstand und £Position verschiedene Bahnen erreicht werden. Vom Absturz in den Ereignishorizont bis zu einer Bahn auf der wir der Gravitation des schwarzen Lochs entkommen und uns in die weiten des Weltalls verabschieden. Beides sind eher unangenehme Szenarien. 
 	Wie finden wir also eine Bahn möglichst nahe an der Singularität, ohne das eines dieser zwei Ereignisse auftritt?
 	Lösung unseres Problem sind die Geodätengleichungen, welche uns aufgrund der Anfangsbedingungen eine Bahn berechnen lassen.
 	
-	%am Sagitarrius A* angekommen: -Gesteuerte Bahn
-	%							   -lösung mit geodäten
 	
 	\section{Geodätenbahnen}
 	
-	%"herleitung" geodätegleichung
-	%Christoffelsymbole berechnung und aufstellung
-	%einsetzen und erstellung der Diffgleichungen für simulation
+	Mit den Geodäten lassen sich nun physikalisch korrekte Bahnen um ein schwarzes Loch herleiten. Dafür benötigen wir die in Kapitel 3.4 vorgestellte Geodätengleichung
+	
+	\begin{equation}
+	\ddot{x}^{\alpha} + \Gamma^{\alpha}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu} = 0
+	\end{equation}
+	
+	Wir können nun in der nähe des schwarzen Lochs alle Antriebe ausschalten und uns treiben lassen. Die aktuelle Geschwindigkeit, Position, Richtung und Abstand stellen nun die Anfangsbedingungen dar. Mit einer numerischen Lösung dieser Gleichungen können wir nun Schritt für Schritt die neuen Faktoren ausrechnen. Dazu kommt noch dass wir die Vergehend Zeit auch messen können.
+	Wir können nun die Gleichung wie folgt umstellen:
+	
+	\begin{equation}
+	\ddot{x}^{\alpha} = -\Gamma^{\alpha}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}
+	\end{equation}
+	
+	Daraus lässt sich interpretieren, dass die Beschleunigungen, welche für die nächste Position wichtig sind, ein Produkt sind aus den Christoffelsymbolen 2.Art und den zugehörigen Ableitungen.
+	Nun können Wir diese Gleichung in die vier Komponenten aufspalten
+	
+	\begin{align*}
+		\ddot{t}(s) = -\Gamma^{1}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
+		\ddot{r}(s) = -\Gamma^{2}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
+		\ddot{\vartheta}(s) = -\Gamma^{3}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
+		\ddot{\varphi}(s) = -\Gamma^{4}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}		
+	\end{align*}
+	
+	Da wir uns in einer Ebene bewegen ist der Winkel$\vartheta = const$ und somit auch seine Ableitungen. Dadurch fällt der   ganze $\ddot{\vartheta}$ Term weg. Das Problem reduziert sich also auf drei Dimensionen
+	
+	
+	
+	
 	
 	\section{Simulation}
 	
