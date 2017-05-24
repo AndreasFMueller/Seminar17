@@ -35,7 +35,7 @@ PEDANTIC_FLAG = -pedantic -pedantic-errors
 
 CXX_FLAGS = $(STD_FLAG) $(OPTIMIZE_FLAG) $(WARNING_FLAG) $(PEDANTIC_FLAG)
 
-# Library dependencies
+# Binary dependencies
 TIFF_LIB = -ltiff
 SHCL_LIB = -lSHCL
 
@@ -50,14 +50,14 @@ CPP_FILES = $(MAIN_CPP)
 # Install directories
 BIN_DIR = /usr/bin
 
-# Current library version
+# Current binary version
 BIN_MAJOR_VERSION = 0
 BIN_MINOR_VERSION = 1
 BIN_PATCH_VERSION = 0
 
 BIN_VERSION = $(BIN_MAJOR_VERSION).$(BIN_MINOR_VERSION).$(BIN_PATCH_VERSION)
 
-# Library file name
+# Binary file name
 BIN_FILE = cmb-analyzer
 BIN_FILE_FULL = $(BIN_FILE).$(BIN_VERSION)
 
