@@ -131,11 +131,11 @@ f.Visible = 'on';
         plot(ax1,solution(:,1), quotient);
         title(ax1,'time deviation')
         
-        plot(ax2,solution(:,1), solution(:,9),'Color', 'r');
-        title(ax2,'angular velocity')
+        plot(ax2,solution(:,1), solution(:,6),'Color', 'r');
+        title(ax2,'time derivative')
         
-        plot(ax3,solution(:,1), solution(:,6));
-        title(ax3,'radial velocity')
+        plot(ax3,solution(:,1), solution(:,9));
+        title(ax3,'angular velocity')
     end
 
 end
