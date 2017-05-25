@@ -1,0 +1,38 @@
+DOXYFILE_ENCODING      = UTF-8
+QUIET                  = YES
+PROJECT_NAME           = SHCL
+PROJECT_NUMBER         = 0.1.0
+PROJECT_BRIEF          = "The SHCL core library"
+PROJECT_LOGO           =
+OUTPUT_DIRECTORY       = docs/
+OUTPUT_LANGUAGE        = English
+ABBREVIATE_BRIEF       = "The $name class" \
+                         "The $name widget" \
+                         "The $name file" \
+                         is \
+                         provides \
+                         specifies \
+                         contains \
+                         represents \
+                         a \
+                         an \
+                         the
+FULL_PATH_NAMES        = NO
+TAB_SIZE               = 2
+OPTIMIZE_OUTPUT_FOR_C  = NO
+IDL_PROPERTY_SUPPORT   = NO
+INPUT                  = include/shcl
+FILE_PATTERNS          = *.h
+RECURSIVE              = YES
+IMAGE_PATH             =
+GENERATE_HTML          = YES
+GENERATE_LATEX         = YES
+GENERATE_XML           = NO
+XML_OUTPUT             = xml
+XML_PROGRAMLISTING     = YES
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+PREDEFINED             = SHCL_DLL_EXPORT=
+ALIASES                += "rst=@verbatim embed:rst:leading-asterisk"
+ALIASES                += "endrst=@endverbatim"
+EXCLUDE                = 

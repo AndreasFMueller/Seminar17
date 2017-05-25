@@ -1,1 +1,47 @@
-Source-Code zum CMB-Projekt
+# Source-Code zum CMB-Projekt
+
+## Lizenz
+Sowohl der Code der SHCL Library als auch des CMB-Analyzers steht unter der GPLv3 Lizenz.
+
+## Neuere Versionen und Updates
+Die aktuelleste Version des Codes kann direkt in folgenden Github Repositores gefunden und heruntergeladen werden:
+* https://github.com/Darnor/SHCL
+* https://github.com/Darnor/CMB-Analyzer
+
+## Unterstütze Plattformen
+Momentan wird nur Linux unterstützt.
+
+## Abhängigkeiten
+Das Projekt baut auf der SHCL Library auf und benötigt zusätzlich noch eine Library um Tiff Bilder zu öffnen.
+
+Es folgen daher folgende Abhängigkeiten zu anderen Libraries:
+* FFTW3 Library
+* OpenCL (1.2)
+* GSL Library
+* pthread
+* libtiff
+
+## Installation
+Für die Installation reicht es `make` direkt in diesem Verzeichnis auszuführen. Dies installiert sowohl
+die Libary als auch den CMB-Analyzer.
+Mittels `make clean` kann das bestehende Verzeichnis wieder aufgeräumt werden.
+`make uninstall` löscht die auf dem System installierten Dateien wieder.
+
+_Achtung: Für die Installation werden root-Rechte benötigt.
+
+## Standard Installationspfade
+SHCL:
+* /usr/include (für Header)
+* /usr/lib (für Library)
+
+CMB-Analyzer:
+* /usr/bin
+
+Anpassungen können im jeweiligen Makefile der einzelnen Projekte manuell vorgenommen werden.
+
+## Testdaten
+Um den CMB-Analyzer zu testen kann das Bild des CMB der ESA Planck Mission in Rektangularprojektion verwendet
+werden. Um die im Buch vorgenommene Analyse nachzuvollziehen, sollte mindestens das 4k aufgelöste Tiff Bild
+verwendet werden.
+
+URL: http://sci.esa.int/planck/52886-cosmic-microwave-background-seen-by-planck-equirectangular-projection/
