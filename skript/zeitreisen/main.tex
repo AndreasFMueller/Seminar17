@@ -3,7 +3,7 @@
 \begin{refsection}
 \chapterauthor{Sascha Jecklin und Jonas Gründler}
 \section{Einleitung}
-Das Thema Zeitreisen fasziniert den Menschen schon seit er sich der Zeit bewusst ist. Früh schon entstanden Träume, den Verlauf der Zeit manipulieren zu können. Erste schriftliche und bildliche Belege dafür gab es bereits in der hinduistischen Mythologie und in der buddhistischen Religion. Auch in der modernen Literatur und in der Filmindustrie sind Zeitreisen ein beliebtes Thema. Klassische Beispiele daf\"ur sind: 
+Das Thema Zeitreisen fasziniert den Menschen schon seit er sich der Zeit bewusst ist. Früh schon entstanden Träume, den Verlauf der Zeit manipulieren zu können. Erste schriftliche und bildliche Belege dafür gab es bereits in der hinduistischen Mythologie und in der buddhistischen Religion. Auch in der modernen Literatur und in der Filmindustrie sind Zeitreisen ein beliebtes Thema. Einige Beispiele daf\"ur sind: 
 \begin{itemize}
     \item Time Machine, H.G.Wells, 1895 
     \item Das Ende der Ewigkeit, Isaac Asimov, 1955
@@ -11,34 +11,39 @@ Das Thema Zeitreisen fasziniert den Menschen schon seit er sich der Zeit bewusst
     \item Star Trek
     \item Doctor Who
     \item Interstellar
-    \item \ldots
+
 \end{itemize}
-\section{Was ist eine Zeitreise}
-Eine Zeitreise beschreibt eine Bewegung durch die Zeit, abweichend von der eines Bezugssystems. Man unterscheidet dabei von Reisen in die Vergangenheit oder in die Zukunft. Insbesondere ersteres wirft Fragen auf. Was geschieht z.B. wenn der Lauf der Dinge wie sie bis anhin bekannt waren geändert wird? Wenn der Reisende in der Vergangenheit auf sich selber trifft, oder noch absurder gar sein altes ``Ich`` ermordet? 
-Mathematisch gesehen wird eine Reise in die Vergangenheit ebenfalls ein wenig anspruchsvoller. Hier beschränken wir uns daher auf Reisen in die Zukunft. 
+In diesem Kapitel beschäftigen wir uns mit der mathematischen Beschreibung von Zeitreisen, wie man solche Effekte erreichen kann und ob sie mit heutigen Mitteln erreichbar sind. Zu beginn soll gezeigt werden, wie man eine Zeitreise mit Hilfe der Eigenzeit beschreibt. Danach stellt sich die Frage, wie der Verlauf solcher Eigenzeiten beeinflusst werden kann. Es zeigt sich das dies mit Gravitation und Geschwindigkeit möglich ist. Ein besonderes Augenmerk gelten dabei schwarzen Löchern. Nach dem wir die nötige Mathematik eingeführt haben veranschaulichen wir das ganze mit einer Simulation. Natürlich wollen wir uns auch Gedanken über die Realisierbarkeit machen. Wie sich zeigen wird sind Zeitreisen keine reine Fiktion. Allerdings sind sie auch nicht in diesem Ausmass möglich wie man sich vielleicht erhofft.
+\section{Was ist eine Zeitreise?}
+Um diese Frage besser beantworten zu können starten wir mit einem Gedankenexperiment. Wir stellen uns vor zwei Autos fahren mit der gleichen Geschwindigkeit an einander vorbei. Fahren die beiden Autos z.B. 100km/h schnell ist die Geschwindigkeit mit der sie sich passieren gerade doppelt so hoch, also 200 km/h. In der klassischen Physik wäre das eine korrektes Ergebnis. In einem zweiten Anlauf sollen beide Fahrer Lichtgeschwindigkeit fahren. Spätestens jetzt macht sich der Fehler bemerkbar. Den die Geschwindigkeit in der sich die beiden Fahrzeuge kreuzen ist nicht etwas Doppelte Lichtgeschwindigkeit, sondern einfache Lichtgeschwindigkeit. Den wir wissen das dies die grösste Geschwindigkeit im Universum ist.
+Beide Fahrer behaupten nun aber vehement ihre eigene Geschwindigkeitsmessung sei korrekt gewesen. Folglich müsste es Unterschiede in der Längen und Zeitmessung geben.
+Wie wir in Kapitel \ref{chap:lichtkegel} festgehalten haben ist dies auch der Fall. Jeder Beobachter misst die gleiche Lichtgeschwindigkeit. Längenmessungen und Zeitmessungen müssen in einem solchen System angepasst werden. Genau dies tun wir mit der Lorentztransformation von Kapitel \ref{chap:lorenz}. Folglich gibt es nicht mehr eine allgemeine Zeitmessung für alle Objekte. Jedes Objekt hat seine eigene zeit, die Eigenzeit.
+Integrieren wir entlang einer Weltenlinie erhalten wir für die Eigenzeit
+\begin{equation}\label{Eigenzeit}
+\tau
+=
+\int_{}^{}\frac{1}{\gamma}dt=\int_{}^{}\sqrt{1-\frac{v^2}{c^2}}dt
+=
+\frac{1}{c}\int_{}^{}\sqrt{g_{\mu\nu}\dot{x}^{\mu}(s)\dot{x}^{\nu}(s)}ds
+\end{equation}
+Da wir nun für jedes Objekt eine Eigenzeit festhalten, können wir auch Unterschiede dieser Zeiten angeben.
+Eine Zeitreise beschreibt daher eine Bewegung durch die Zeit, abweichend von der eines Bezugssystems. 
 
-Natürlich könnte man später argumentieren, dass sich bei gleichbleibender Theorie die Bezugssysteme vertauschen lassen. So könnte man ein Objekt seiner Wahl reisen lassen und sich selber als Bezugssystem sehen. Dies entspricht aber nicht einer Reise in die Vergangenheit sondern lediglich ``weniger schnellem altern``. Das zeitreisende  Objekt könnte trotz Zeit\"anderung immer nur älter sein als zu Beginn der Betrachtung. Obwohl der Beobachter in seinem Bezugssystem einiges schneller gealtert wäre.
+Nicht nur hohe Geschwindigkeiten bringen Änderungen in der Zeitmessung. Wie wir sehen werden verursachen auch andere Effekte Dehnungen der Zeit. Man spricht dabei auch von Zeitdilatation.
+Streng genommen bringt schon jede Geschwindigkeit eine Abweichung der Eigenzeit. Da die praktische Anwendung in diesem Kapitel im Vordergrund steht, interessieren uns in erster Linie natürlich signifikante Unterschiede. Erst doppelt oder sogar zehnmal schneller vergehenden Eigenzeiten w\"urden uns Effekte best\"atigen, welche man uns in Science Fiction Filmen und Romanen verspricht.
 
-Es stellt sich nun die Frage, wie wir mathematisch gesehen eine Zeitreise definieren. Im Abschnitt XXXXXX führten wir den Begriff der Eigenzeit ein. Sie beschreibt die Zeit, welche im Bezugssystem des Reisenden aus der Sicht eines Beobachters vergeht.
-
-Nun müssen wir noch ausformulieren wie wir die Abweichungen von der Eigenzeit erreichen wollen. Eine Dehnung der Zeit, die sogenannte Zeitdilatation, erreicht man entweder durch Geschwindigkeit oder Gravitation. Geschwindigkeit setzt eine zuvorkommende Beschleunigung voraus. Wir wissen bereits, dass Beschleunigung und Gravitation einhergehen. Daher kommt es nicht all zu \"uberaschend, dass wenn das Eine auch das Andere einen Einfluss haben muss.
-
-Wie wir sehen werden bringen schon kleinste \"Anderungen eine Zeitänderung mit sich. Da die praktische Anwendung in diesem Kapitel im Vordergrund steht, interessieren uns in erster Linie natürlich signifikante Unterschiede. Erst doppelt oder sogar zehnmal-schneller vergehenden Zeiten w\"urden uns Effekte best\"atigen, welche man uns in Science Fiction Filmen und Romanen verspricht.
-
+Es stellt sich noch die Frage ob das nun Reisen in die Zukunft oder in die Vergangenheit sind. Generell sind Reisen in die Vergangheit sehr komplex. Dort treten nämlich Kausalitätsprobleme auf. Was z.B geschieht wenn ein Zeitreisender seine Entstehung verhindern würde?
+Mit unterschiedlichen schnell verlaufenden Eigenzeiten beschreibt man salopp ausgedrückt Reisen in die Zukunft oder ``weniger schnelles altern``. Ein Beobachter  A mit halb so grosser Eigenzeit wie eine Referenz B wäre quasi in die Zukunft gereist. Während für A ganz normal ein Jahr verstrich wäre für B zwei Jahre vergangen. Umgekehrt ist aus Sicht von B A weniger schnell gealtert. A ist damit aber nicht in die Vergangenheit gereist und kann trotz Zeit\"anderung immer nur älter sein als zu Beginn der Betrachtung
+\section{Einfluss von Geschwindigkeit und Gravitation}
+Da wir nun Wissen wie wir eine Zeitreise beschreiben können, müssen wir uns nun Gedanken machen wie wir Zeitdilation erreichen können. Im wesentlichen gelingt dies durch Geschwindigkeiten oder Gravitation. 
 \subsection{Geschwindigkeit}
 Eine M\"oglichkeit eine Zeitdillatation zu bewirken ist durch hohe Geschwindigkeit. Wenn sich eine Person relativ zu einem Bezugssystem schnell bewegt, vergeht f\"ur diese Person die Zeit im Vergleich zum Bezugssystem langsamer. Die Ver\"anderung wird durch den Lorentzfaktor beschrieben, welcher sich aus der Lorentztransformation herleiten l\"asst. Er beschreibt das Verh\"altnis zwischen der Eigenzeit und der Zeit des Bezugssystems.
 \begin{equation}
     \gamma=\frac{1}{\sqrt{1-\displaystyle\frac{v^2}{c^2}}} 
 \end{equation}
-Die Eigenzeit ist also:
-\begin{equation}
-    \tau
-    =
-    \int_{}^{}\frac{1}{\gamma}dt=\int_{}^{}\sqrt{1-\frac{v^2}{c^2}}dt
-    =
-    \frac{1}{c}\int_{}^{}\sqrt{g_{\mu\nu}\dot{x}^{\mu}(s)\dot{x}^{\nu}(s)}ds
-\end{equation}
-Diese Formel ist in dieser Form noch nicht sehr anschaulich. Sie beschreibt nur, dass eine Metrik mit den jeweiligen Basisvektoren "multipliziert" werden muss(Einsteinsche Summenkonvention). Von dem Ganzen die Wurzel ziehen und dann noch integrieren.
+Das ist genau das $\gamma$ welches in der Eigenzeit Berechnung vorkommt.
+
+Die Formel \ref{Eigenzeit} ist in dieser Form noch nicht sehr anschaulich. Sie beschreibt nur, dass eine Metrik mit den jeweiligen Basisvektoren "multipliziert" werden muss (Einsteinsche Summenkonvention). Von dem Ganzen die Wurzel ziehen und dann noch integrieren.
 Durch das verwenden der Minkowski-Metrik, welche Raum und Zeit miteinander verbindet, und der Basisvektoren $t, x, y, z$ l\"asst sich eine verst\"andliche Form herleiten. 
 Minowski-Metrik:
 \begin{equation}
@@ -135,6 +140,7 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 	\right.
 	\eqref{skript:gravitation:beschleunigt}
 	\end{equation}
+<<<<<<< Updated upstream
 	Die Gleichungen oben sind zwar eine Koordinatentransformation, doch sie sind keine Lorentztransformation und enthält somit die Minkowski-Metrik nicht. Mit ihr lässt sich der Einfluss der Gravitation auf die Zeit nicht berechnen. 
 	Der Ansatz $ -c^2dt^2 + dx^2 + dy^2 + dz^2$ genügt also nicht mehr. Wir müssen also Metriken und Transformationen zulassen, welche von der Minkowski-Metrik und der Standarttransformation abweichen.
 	Doch welche Metrik beinhaltet den Einfluss der Gravitation auf die Zeit? 
@@ -143,11 +149,22 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 	
 	
 	
+=======
+	$r_g$ beschreibt den Gravitationsradius(Ereignishorizont) des betrachteten Körpers.
+	\subsubsection{Bedeutung von $R_{g}$ und Ereignishorizonte}
+	Der Ereignishorizont beschreibt in der allgemeinen Relativitätstheorie eine Grenzfläche dar. Er beschreibt die Entfernung ab welcher das Licht nicht mehr aus der Gravitationstrichter entkommen kann. Teilchen die den Ereignishorizont passiert haben, können diesen nicht mehr verlassen. Alles ausserhalb dieses Radius hätte die M\"oglichkeit zu entkommen, die frage ist nur wie viel Energie benötigt wird. Da Licht nicht mehr entkommen kann nennt man diese Körper auch schwarze Löcher.
+	Der Gravitationsradius lässt sich mit \ref{Gravitationsradius} berechnen.
+	\begin{equation} \label{Gravitationsradius}
+		r_{g}= \frac{2MG}{c^2}
+	\end{equation}
+    Der Gravitationsradius der Erde beträgt etwa 8.8mm. Wenn wir die Erde also unter diese 8.8mm komprimieren, würde sie sich in ein schwarzes Loch verwandeln. Ihre Dichte wäre dann so gross, dass nichts mehr der Anziehung widerstehen kann.
+	%do vlt no chli was... weiss aber nonig genau was
+>>>>>>> Stashed changes
 	
 	\section{Realisierbarkeit}
 	
 	Wie erreichen wir nun eine grössere Zeitdilatation um in der Zeit zu reisen? Entweder mit grosser Geschwindigkeit oder mittels eines Massereichen Objektes. Zeitdilatation durch hohe Geschwindigkeiten zu erreichen ist sehr schwierig, da die benötigte Energie im Quadrat mit der Geschwindigkeit anwächst. Und wie (Figure 1) zeigt, muss für eine grosse Zeitverlangsamung annähernd Lichtgeschwindigkeit erreicht werden. Erst ab ca. $0.9c$ beginnt der Lorentzfaktor wirklich zu wachsen.
-	Das bedeutet, dass wir uns auf den Effekt der Gravitation  konzentrieren müssen.
+	Das bedeutet, dass wir uns auf den Effekt der Gravitation konzentrieren müssen.
 	Doch wir lösen wir dieses Problem? Wir suchen also ein Massereiches Objekt in unserer Umgebung. Die Sonne genügt für unsere Zwecke leider nicht, ihr Schwarzschildradius ist erstens viel zu klein, und zweitens innerhalb des Körpers. Wir suchen also weiter\dots Schliesslich finden wir Sagittarrius A*, ein supermassives schwarzes Loch im Zentrum unserer Milchstrasse. Dieses sollte für unsere Zwecke genügen. 
 	Doch hier beginnen die Probleme. 
 	Sagittarrius A* ist 26'000 Lichtjahre von uns entfernt, das bedeutet mit Lichtgeschwindigkeit bräuchten Wir 26'000 Jahre bis wir am Ziel ankommen. Die Hoffnung wäre nun, dass sich durch eine hohe Fluggeschwindigkeit und die daraus resultierende Zeitdehnung, die benötigte Zeit signifikant reduziert. 
@@ -257,6 +274,7 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 	x^{2}=\vartheta
 	x^{3}=\varphi
 	\end{align*}
+<<<<<<< Updated upstream
 	Daraus folgt also folgende Metrik in Zeilenform, welche auch gleich die Längenmessung darstellt.
 	
 	\begin{equation}
@@ -281,11 +299,14 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 	\begin{equation} \label{Gravitationsradius}
 	r_{g}= \frac{2MG}{c^2}
 	\end{equation}
-	Der Gravitationsradius der Erde beträgt etwa 8.8mm. Wenn wir die Erde also unter  diese 8.8mm komprimieren, wäre sie kleiner als der Gravitationsradius und wäre so nicht mehr sichtbar.
+	Der Gravitationsradius der Erde beträgt etwa 8.8mm. Wenn wir die Erde also unter diese 8.8mm komprimieren, wäre sie kleiner als der Gravitationsradius und wäre so nicht mehr sichtbar.
 	
 	\subsection{Christoffelsymbole}
 	
 	Die Berechnung der Christoffelsymbole aus der Schwarzschild-Metrik ist kompliziert und sehr Rechenaufwändig. Wir beschränken uns hier auf die Berechnung, die Herleitung wird in Kapitel (:::LABEL:::) ausführlich beschrieben. Es gibt Christoffelsymbole erster und zweiter Art, die Christoffelsymbole 2.Art lassen sich aus denen 1.Art berechnen.
+=======
+	Da wir uns in einer Ebene bewegen ist der Winkel$\vartheta = const$ und somit auch seine Ableitungen. Dadurch fällt der ganze $\ddot{\vartheta}$ Term weg. Das Problem reduziert sich also auf drei Dimensionen.	
+>>>>>>> Stashed changes
 	
 	$g_{\mu\nu}$ ist hier die Schwarzschild-Metrik in Vektorform(:::LABEL:::).
 	
