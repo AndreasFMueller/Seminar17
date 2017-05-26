@@ -17,7 +17,7 @@ In diesem Kapitel beschäftigen wir uns mit der mathematischen Beschreibung von 
 \section{Was ist eine Zeitreise?}
 Um diese Frage besser beantworten zu können starten wir mit einem Gedankenexperiment. Wir stellen uns vor zwei Autos fahren mit der gleichen Geschwindigkeit an einander vorbei. Fahren die beiden Autos z.B. 100km/h schnell ist die Geschwindigkeit mit der sie sich passieren gerade doppelt so hoch, also 200 km/h. In der klassischen Physik wäre das eine korrektes Ergebnis. In einem zweiten Anlauf sollen beide Fahrer Lichtgeschwindigkeit fahren. Spätestens jetzt macht sich der Fehler bemerkbar. Den die Geschwindigkeit in der sich die beiden Fahrzeuge kreuzen ist nicht etwas Doppelte Lichtgeschwindigkeit, sondern einfache Lichtgeschwindigkeit. Den wir wissen das dies die grösste Geschwindigkeit im Universum ist.
 Beide Fahrer behaupten nun aber vehement ihre eigene Geschwindigkeitsmessung sei korrekt gewesen. Folglich muss es Unterschiede in der Längen- und Zeitmessung geben.
-Wie wir in Kapitel \ref{chap:lichtkegel} festgehalten haben ist dies auch der Fall. Jeder Beobachter misst die gleiche Lichtgeschwindigkeit. Längenmessungen und Zeitmessungen müssen in einem solchen System jedoch angepasst werden. Genau dies tun wir mit der Lorentztransformation aus Kapitel \ref{chap:lorenz}. Folglich gibt es nicht mehr "Die Eine" allgemeine Zeitmessung für alle Objekte. Jedes Objekt hat seine eigene Zeit, die sogenannte Eigenzeit.
+Wie wir in Kapitel \ref{chap:lichtkegel} festgehalten haben ist dies auch der Fall. Jeder Beobachter misst die gleiche Lichtgeschwindigkeit. Längenmessungen und Zeitmessungen müssen in einem solchen System jedoch angepasst werden. Genau dies tun wir mit der Lorentztransformation aus Kapitel \ref{chap:lorentz}. Folglich gibt es nicht mehr ``die Eine`` allgemeine Zeitmessung für alle Objekte. Jedes Objekt hat seine eigene Zeit, die sogenannte Eigenzeit.
 Integrieren wir entlang einer Weltenlinie erhalten wir für die Eigenzeit
 \begin{equation}\label{Eigenzeit}
 \tau
@@ -37,7 +37,7 @@ Mit unterschiedlich schnell verlaufenden Eigenzeiten beschreibt man salopp ausge
 \section{Einfluss von Geschwindigkeit und Gravitation}
 Da wir nun Wissen wie wir eine Zeitreise beschreiben können, müssen wir uns nun Gedanken machen wie wir Zeitdilation erreichen können. Im wesentlichen gelingt dies durch Geschwindigkeiten oder Gravitation. 
 \subsection{Geschwindigkeit}
-Eine M\"oglichkeit eine Zeitdillatation zu bewirken ist durch hohe Geschwindigkeit. Wenn sich eine Person relativ zu einem Bezugssystem schnell bewegt, vergeht f\"ur diese Person die Zeit im Vergleich zum Bezugssystem langsamer. Die Ver\"anderung wird durch den Lorentzfaktor beschrieben, welcher sich aus der Lorentztransformation herleiten l\"asst. Er beschreibt das Verh\"altnis zwischen der Eigenzeit und der Zeit des Bezugssystems.
+Eine M\"oglichkeit eine Zeitdillatation zu bewirken ist durch hohe Geschwindigkeit. Wenn sich eine Person relativ zu einem Bezugssystem schnell bewegt, vergeht f\"ur diese Person die Zeit im Vergleich zum Bezugssystem langsamer. Die Ver\"anderung wird durch den Lorentzfaktor beschrieben, welcher sich aus der Lorentztransformation herleiten l\"asst. Er beschreibt wie stark  die Eigenzeit gedehnt wird %das Verh\"altnis zwischen der Eigenzeit und der Zeit des Bezugssystems. (naja eigentlich gits jo kek allgemeins bezugssystem...)
 \begin{equation}
     \gamma=\frac{1}{\sqrt{1-\displaystyle\frac{v^2}{c^2}}} 
 \end{equation}
@@ -62,21 +62,24 @@ Standard Vierervektor:
     x^{2}=y,
     x^{3}=z,
 \end{align*}
-Ein wenig Umstellen und vereinfachen und man kommt auf diese Form:
+%Ein wenig Umstellen und vereinfachen und man kommt auf diese Form:
+Bildet man daraus den Geschwindigkeitsvektor und setzt ihn in für $v$ ein ergibt sich daraus die Eigenzeitformel mit der Minwoski-Metrik
+%villicht sowas in dia richtig?
 \begin{equation}
     \tau
     =
     \frac{1}{c}\int_{}^{}\sqrt{-(-c^2\dot{t}(s)^{2}+\dot{x}(s)^{2}+\dot{y}(s)^{2}+\dot{z}(s)^{2})}ds
 \end{equation}
+Andere Metriken beschreiben also andere Verläufe der Eigenzeit. 
 Je nachdem wie die Bewegung gew\"ahlt wird, fallen Einer oder mehrere der Koordinaten $x, y, z$ weg.
-Hier ein Beispiel bei welchem nur eine Geschwindigkeit in x-Richtung vorhanden ist ($c=$Lichtgeschwindigkeit, u beschreibt den Bruchteil):
+Hier ein Beispiel bei welchem nur eine Geschwindigkeit in x-Richtung vorhanden ist ($c =$ Lichtgeschwindigkeit, u beschreibt den Bruchteil)
 \begin{align*}
      t(s)=1\cdot s, \dot{t}(s)=1,
  	 x(s)=u\cdot c \cdot s, \dot{x}(s)=u\cdot c,
      y(s)=0, \dot{y}(s)=0,
      z(s)=0, \dot{z}(s)=0
 \end{align*}
-Diese Koordinaten in das Integral eingesetzt ergeben folgendes Form:
+Diese Koordinaten in das Integral eingesetzt ergeben folgendes Form
 \begin{align*}
     \tau
     &=
@@ -88,8 +91,8 @@ Diese Koordinaten in das Integral eingesetzt ergeben folgendes Form:
     =
     s\sqrt{1-\frac{u^2\cdot c^2}{c^2}}
 \end{align*}
-Welches die einfachste Form einer Zeitdilatation darstellt.
-Hier ein Zahlenbeispiel bei welchem willkürliche Werte gew\"ahlt wurden:
+Welches die einfachste Form einer Zeitdilatation darstellt. $u$  ist lediglich ein Parameter mit welchem Bruchteil der Lichtgeschwindigkeit sich das Objekt bewegt.
+Hier ein Zahlenbeispiel mit 20\% Lichtgeschwindigkeit:
 $s=5000, u=0.2$ 
 \begin{align*}
     t(s)=s, \dot{t}(s)=1,
@@ -101,18 +104,18 @@ Diese Werte in die Gleichung eingesetzt ergeben
 \begin{align*}
     \tau
     &=
-    \frac{1}{c}\int_{s_{a}}^{s_{b}}\sqrt{-(-c^2\dot{t}(s)^2+\dot{x}(s)^2)}ds
+    \frac{1}{c}\int_{0}^{s}\sqrt{-(-c^2\dot{t}(s)^2+\dot{x}(s)^2)}ds
     &=
     \frac{1}{c}\int_{0}^{5000}\sqrt{-(-c^2+((0.2c)^2))}ds\\
     &=
     5000\sqrt{1-\frac{u^2 c^2}{c^2}} = 4898.98
 \end{align*}
-Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr hohen Geschwindigkeiten erreicht wird. Um eine wirkliche Zeitreise zu machen müssen wir also sehr hohe Geschwindigkeiten erreichen.
+In \ref{skript:zeitreisen:fig:lorentz}  sieht man den Zusammenhang der Geschwindigkeit und dem Lorenzfaktor. Dieses Beispiel zeigt, dass eine relevante Zeitdilatation erst bei sehr hohen Geschwindigkeiten erreicht wird. Um wirklich grosse Zeitdilatationen zu erreichen braucht man annähernd Lichtgeschwindigkeit. Dies wird sich noch als Problem für die Realisierung erweisen wie wir sehen werden.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\hsize]{zeitreisen/Lorentzfaktor.jpg}
-    \caption{Ver\"anderung des Lorentzfaktor in Abh\"angigkeit der Geschwindigkeit%
-        \label{skript:geodaten:fig:transport}}
+    \caption{Änderung des Lorentzfaktors in Abh\"angigkeit der Geschwindigkeit}
+        \label{skript:zeitreisen:fig:lorentz} 
 \end{figure}
 \subsection{Gravitation}
 
@@ -120,9 +123,7 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 	\begin{align*}
 		m\cdot a = \frac{KMm}{r^2} \rightarrow a=\frac{KM}{r^2} 
 	\end{align*}
-	
 	dieser Effekt lässt sich auch im Alltag betrachten, grosse fallende Objekte werden gleich stark richtung Erdmittelpunkt beschleunigt wie Kleine.
-	
 	\begin{equation}
 	\left.
 	\begin{aligned}
@@ -145,7 +146,22 @@ Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr 
 	Der Ansatz $ -c^2dt^2 + dx^2 + dy^2 + dz^2$ genügt also nicht mehr. Wir müssen also Metriken und Transformationen zulassen, welche von der Minkowski-Metrik und der Standarttransformation abweichen.
 	Doch welche Metrik beinhaltet den Einfluss der Gravitation auf die Zeit? 
 	Die Lösung unseres Problems ist die Schwarzschild-Metrik, mit ihr lässt sich die Zeitveränderung in der Umgebung von Massereichen Objekten berechnen. Wir werden sie jedoch erst später vorstellen, wenn wir versuchen, eine Zeitreise tatsächlich durchzuführen. %be patient;)
+    
+    Saschas Vorschlag zu Gravitation
+    
+    Ein weiterer Verursacher von Zeitdilatationen ist die Gravitation. Einstein hat erstmals erkannt das Gravitation als Krümmung des Raumes aufgefasst werden muss. Wird ein Raum durch Gravitation gekrümmt setzt dies zur Längenmessen eine Metrik voraus, welche gravitative Effekte mit einbezieht. Zum Glück kennen wir so eine Metrik bereits. Die Schwarzschild-Metrik eignet sich bestens dazu. Sie beschreibt die Raumkrümmung um Massereiche Objekte.
+    Wir verwenden die Schwarzschild-Metrik später auch für schwarze Löcher, allerdings solche die nicht rotieren. Dadurch nimmt man natürlich einen Fehler in Kauf. Der Vorteil ist, das die Schwarzschild-Metrik einiges einfacher zu verwenden ist, als z.B eine Kerr-Metrik. Die Kerr-Metrik würde alleine schon für eine Bahnberechnung ein vielfaches an Termen produzieren. ....Metrik zeugs
+    
+    (Kommentar)De Teil mit Metrik isch passend und interessant, au wenni nonid ganz vestohn was du meinsch... de Teil mit F=ma gsiani etz nid ganz für was mer de bruchen. Hemmer echt verwendig für de?
 	\section{Realisierbarkeit}
+    
+    (SASCHA)
+    Theoretisch sind Zeitreisen also umsetzbar. Nun gilt es zu überprüfen inwiefern so etwas Praktisch möglich ist. Betrachten wir zuerst grosse Geschwindigkeiten. Wie wir in \ref{skript:zeitreisen:fig:lorentz} bereits gesehen haben treten die Gewünschten Effekte erst bei vergleichbar grossen Geschwindigkeiten ein. Ab $0.99c$ beginnt der Faktor stark zu wachsen.  Die kinetische Energie wird mit $E_{kin}=1/2mv^2$ ermittelt. Also auch für Raumschiffe leichter als ein Gramm wird die benötigte Energie unerreichbar gross. Der Faktor $c^2$ lässt die Werte ins unermessliche schnellen.
+    Aktuelle Projekte planen kleine Segel im Weltraum auf bis zu 20\% Lichtgeschwindigkeit zu beschleunigen. Ein Mensch und sein Fortbewegungsmittel können also in naher Zukunft nicht genug schnell werden um von richtigen Zeitreisen sprechen zu können. Auch wenn dieser Effekt in gewissen Präzisionsanwendungen berücksichtigt werden muss ist er für unsere Zwecke alleine uninteressant.
+    
+    Bleibt zu hoffen das mittels Gravitation grössere Zeitdilatationen bewirkt werden können. Nimmt man z.B die Erde verursacht die Gravitation schon eine derart grosse Wirkung, dass GPS Satelliten diese kompensieren müssen. Diese Tatsache haben wir in Kapitel  XXXX bereits angetroffen. Weil das für eindrückliche Zeitreisen immer noch zu wenig ist könnte man die gleiche Rechnung mit der Sonnen machen. Schnell wird klar, selbst die grössten Sterne in unserer nähe haben eine zu schwache Gravitation, als dass sie uns genug grosse Zeitdilatationen verursachen könnten. Was wir brauchen sind also noch Schwerere Objekte an die man im besten Fall auch noch näher heran fliegen kann. Denn die Wirkung der Gravitation nimmt quadratisch mit dem Abstand ab. Schwarze Löcher scheinen die ideale Lösung für unser Vorhaben zu sein.
+    
+    to be continued.... (ENDE SASCHA)
 	Wie erreichen wir nun eine grössere Zeitdilatation um in der Zeit zu reisen? Entweder mit grosser Geschwindigkeit oder mittels eines Massereichen Objektes. Zeitdilatation durch hohe Geschwindigkeiten zu erreichen ist sehr schwierig, da die benötigte Energie im Quadrat mit der Geschwindigkeit anwächst. Und wie (Figure 1) zeigt, muss für eine grosse Zeitverlangsamung annähernd Lichtgeschwindigkeit erreicht werden. Erst ab ca. $0.9c$ beginnt der Lorentzfaktor wirklich zu wachsen.
 	Das bedeutet, dass wir uns auf den Effekt der Gravitation konzentrieren müssen.
 	Doch wir lösen wir dieses Problem? Wir suchen also ein Massereiches Objekt in unserer Umgebung. Die Sonne genügt für unsere Zwecke leider nicht, ihr Schwarzschildradius ist erstens viel zu klein, und zweitens innerhalb des Körpers. Wir suchen also weiter\dots Schliesslich finden wir Sagittarrius A*, ein supermassives schwarzes Loch im Zentrum unserer Milchstrasse. Dieses sollte für unsere Zwecke genügen. 
