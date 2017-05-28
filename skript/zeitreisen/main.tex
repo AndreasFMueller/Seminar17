@@ -3,7 +3,8 @@
 \begin{refsection}
 \chapterauthor{Sascha Jecklin und Jonas Gründler}
 \section{Einleitung}
-Das Thema Zeitreisen fasziniert den Menschen schon seit er sich der Zeit bewusst ist. Früh schon entstanden Träume, den Verlauf der Zeit manipulieren zu können. Erste schriftliche und bildliche Belege dafür gab es bereits in der hinduistischen Mythologie und in der buddhistischen Religion. Auch in der modernen Literatur und in der Filmindustrie sind Zeitreisen ein beliebtes Thema. Klassische Beispiele daf\"ur sind: 
+
+	Das Thema Zeitreisen fasziniert den Menschen schon seit er sich der Zeit bewusst ist. Früh schon entstanden Träume, den Verlauf der Zeit manipulieren zu können. Erste schriftliche und bildliche Belege dafür gab es bereits der hinduistischen Mythologie und in der buddhistischen Religion. Auch in der modernen Literatur und in der Filmindustrie sind Zeitreisen ein beliebtes Thema. Einige Beispiele daf\"ur sind: 
 \begin{itemize}
     \item Time Machine, H.G.Wells, 1895 
     \item Das Ende der Ewigkeit, Isaac Asimov, 1955
@@ -11,36 +12,38 @@ Das Thema Zeitreisen fasziniert den Menschen schon seit er sich der Zeit bewusst
     \item Star Trek
     \item Doctor Who
     \item Interstellar
-    \item \ldots
+    \item \dots
+
 \end{itemize}
-\section{Was ist eine Zeitreise}
-Eine Zeitreise beschreibt eine Bewegung durch die Zeit, abweichend von der eines Bezugssystems. Man unterscheidet dabei von Reisen in die Vergangenheit oder in die Zukunft. Insbesondere ersteres wirft Fragen auf. Was geschieht z.B. wenn der Lauf der Dinge wie sie bis anhin bekannt waren geändert wird? Wenn der Reisende in der Vergangenheit auf sich selber trifft, oder noch absurder gar sein altes ``Ich`` ermordet? 
-Mathematisch gesehen wird eine Reise in die Vergangenheit ebenfalls ein wenig anspruchsvoller. Hier beschränken wir uns daher auf Reisen in die Zukunft. 
-
-Natürlich könnte man später argumentieren, dass sich bei gleichbleibender Theorie die Bezugssysteme vertauschen lassen. So könnte man ein Objekt seiner Wahl reisen lassen und sich selber als Bezugssystem sehen. Dies entspricht aber nicht einer Reise in die Vergangenheit sondern lediglich ``weniger schnellem altern``. Das zeitreisende  Objekt könnte trotz Zeit\"anderung immer nur älter sein als zu Beginn der Betrachtung. Obwohl der Beobachter in seinem Bezugssystem einiges schneller gealtert wäre.
-
-Es stellt sich nun die Frage, wie wir mathematisch gesehen eine Zeitreise definieren. Im Abschnitt XXXXXX führten wir den Begriff der Eigenzeit ein. Sie beschreibt die Zeit, welche im Bezugssystem des Reisenden aus der Sicht eines Beobachters vergeht.
-
-Nun müssen wir noch ausformulieren wie wir die Abweichungen von der Eigenzeit erreichen wollen. Eine Dehnung der Zeit, die sogenannte Zeitdilatation, erreicht man entweder durch Geschwindigkeit oder Gravitation. Geschwindigkeit setzt eine zuvorkommende Beschleunigung voraus. Wir wissen bereits, dass Beschleunigung und Gravitation einhergehen. Daher kommt es nicht all zu \"uberaschend, dass wenn das Eine auch das Andere einen Einfluss haben muss.
-
-Wie wir sehen werden bringen schon kleinste \"Anderungen eine Zeitänderung mit sich. Da die praktische Anwendung in diesem Kapitel im Vordergrund steht, interessieren uns in erster Linie natürlich signifikante Unterschiede. Erst doppelt oder sogar zehnmal-schneller vergehenden Zeiten w\"urden uns Effekte best\"atigen, welche man uns in Science Fiction Filmen und Romanen verspricht.
-
+In diesem Kapitel beschäftigen wir uns mit der mathematischen Beschreibung von Zeitreisen, wie man solche Effekte erreichen kann und ob sie mit heutigen Mitteln erreichbar sind. Zu beginn soll gezeigt werden, wie man eine Zeitreise mit Hilfe der Eigenzeit beschreibt. Danach stellt sich die Frage, wie der Verlauf solcher Eigenzeiten beeinflusst werden kann. Es zeigt sich das dies mit Gravitation und Geschwindigkeit möglich ist. Ein besonderes Augenmerk gelte dabei schwarzen Löchern. Nach dem wir die nötige Mathematik eingeführt haben, veranschaulichen wir das Ganze mit einer Simulation. Natürlich wollen wir uns auch Gedanken über die Realisierbarkeit machen. Wie sich zeigen wird, sind Zeitreisen keine reine Fiktion. Allerdings sind sie auch nicht in einem Ausmass möglich, wie man sich vielleicht erhofft.
+\section{Was ist eine Zeitreise?}
+Um diese Frage besser beantworten zu können, starten wir mit einem Gedankenexperiment. Wir stellen uns vor, zwei Autos fahren mit der gleichen Geschwindigkeit an einander vorbei. Fahren die beiden Autos z.B. 100km/h schnell, ist die Geschwindigkeit mit der sie sich passieren gerade doppelt so hoch, also 200 km/h. In der klassischen Physik wäre das ein korrektes Ergebnis. In einem zweiten Anlauf sollen beide Fahrer Lichtgeschwindigkeit fahren. Spätestens jetzt macht sich ein Fehler bemerkbar. Denn die Geschwindigkeit, in der sich die beiden Fahrzeuge kreuzen ist nicht etwa doppelte Lichtgeschwindigkeit, sondern einfache Lichtgeschwindigkeit. Denn wir wissen das dies die grösste existierende Geschwindigkeit ist.
+Beide Fahrer behaupten nun aber vehement, ihre eigene Geschwindigkeitsmessung sei korrekt gewesen. Folglich muss es Unterschiede in der Längen- und Zeitmessung geben.
+Wie wir in Kapitel \ref{chap:lichtkegel} festgehalten haben, ist dies auch der Fall. Jeder Beobachter misst die gleiche Lichtgeschwindigkeit. Längen- und Zeitmessung muss in einem solchen System jedoch angepasst werden. Genau dies tun wir mit der Lorentztransformation aus Kapitel \ref{chap:lorentz}. Folglich gibt es nicht mehr "die Eine" allgemeine Zeitmessung für alle Objekte. Jedes Objekt hat seine eigene Zeit, die sogenannte Eigenzeit.
+Integrieren wir entlang einer Weltenlinie erhalten wir für die Eigenzeit:
+\begin{equation}\label{Eigenzeit}
+\tau
+=
+\int_{}^{}\frac{1}{\gamma}dt=\int_{}^{}\sqrt{1-\frac{v^2}{c^2}}dt
+=
+\frac{1}{c}\int_{}^{}\sqrt{g_{\mu\nu}\dot{x}^{\mu}(s)\dot{x}^{\nu}(s)}ds.
+\end{equation}
+Da wir nun für jedes Objekt eine Eigenzeit festhalten, können wir auch Unterschiede dieser Zeiten angeben.
+Eine Zeitreise beschreibt daher eine Bewegung durch die Zeit, abweichend von der eines Bezugssystems. 
+Nicht nur hohe Geschwindigkeiten bringen Änderungen in der Zeitmessung. Wie wir sehen werden, verursachen auch andere Effekte Dehnungen der Zeit. Man spricht dabei auch von Zeitdilatation.
+Streng genommen, bringt schon jede Geschwindigkeit eine Abweichung der Eigenzeit. Da die praktische 	Anwendung in diesem Kapitel im Vordergrund steht, interessieren uns natürlich in erster Linie signifikante Unterschiede. Erst doppelt oder sogar zehnmal schneller vergehende Eigenzeiten w\"urden uns Effekte best\"atigen, welche man uns in Science Fiction Filmen und Romanen verspricht.
+Es stellt sich noch die Frage, ob das nun Reisen in die Zukunft oder in die Vergangenheit sind. Generell sind Reisen in die Vergangheit sehr komplex. Dort treten nämlich Kausalitätsprobleme auf. Was z.B geschieht, wenn ein Zeitreisender seine Entstehung verhindern würde?
+Mit unterschiedlich schnell verlaufenden Eigenzeiten beschreibt man salopp ausgedrückt Reisen in die Zukunft oder "weniger schnelles altern". Ein Beobachter A mit halb so grosser Eigenzeit wie eine Referenz B wäre quasi in die Zukunft gereist. Während für A ganz normal ein Jahr verstrich, wären für B zwei Jahre vergangen. Umgekehrt ist aus Sicht von B A weniger schnell gealtert. A ist damit aber nicht in die Vergangenheit gereist und kann trotz Zeit\"anderung immer nur älter sein als zu Beginn der Betrachtung.
+\section{Einfluss von Geschwindigkeit und Gravitation}
+Da wir nun Wissen, wie wir eine Zeitreise beschreiben können, müssen wir uns nun Gedanken machen, wie wir Zeitdilation erreichen können. Im wesentlichen gelingt dies durch Geschwindigkeiten oder Gravitation. 
 \subsection{Geschwindigkeit}
-Eine M\"oglichkeit eine Zeitdillatation zu bewirken ist durch hohe Geschwindigkeit. Wenn sich eine Person relativ zu einem Bezugssystem schnell bewegt, vergeht f\"ur diese Person die Zeit im Vergleich zum Bezugssystem langsamer. Die Ver\"anderung wird durch den Lorentzfaktor beschrieben, welcher sich aus der Lorentztransformation herleiten l\"asst. Er beschreibt das Verh\"altnis zwischen der Eigenzeit und der Zeit des Bezugssystems.
+Eine M\"oglichkeit eine Zeitdilatation zu bewirken, ist durch hohe Geschwindigkeit. Wenn sich eine Person relativ zu einem Bezugssystem schnell bewegt, vergeht f\"ur diese Person die Zeit im Vergleich zum Bezugssystem langsamer. Die Ver\"anderung wird durch den Lorentzfaktor beschrieben, welcher sich aus der Lorentztransformation herleiten l\"asst. Er beschreibt wie stark die Eigenzeit im  Verhältnis zu einem Bezugssystem gedehnt wird. %corrected^^
 \begin{equation}
     \gamma=\frac{1}{\sqrt{1-\displaystyle\frac{v^2}{c^2}}} 
 \end{equation}
-Die Eigenzeit ist also:
-\begin{equation}
-    \tau
-    =
-    \int_{}^{}\frac{1}{\gamma}dt=\int_{}^{}\sqrt{1-\frac{v^2}{c^2}}dt
-    =
-    \frac{1}{c}\int_{}^{}\sqrt{g_{\mu\nu}\dot{x}^{\mu}(s)\dot{x}^{\nu}(s)}ds
-\end{equation}
-Diese Formel ist in dieser Form noch nicht sehr anschaulich. Sie beschreibt nur, dass eine Metrik mit den jeweiligen Basisvektoren "multipliziert" werden muss(Einsteinsche Summenkonvention). Von dem Ganzen die Wurzel ziehen und dann noch integrieren.
-Durch das verwenden der Minkowski-Metrik, welche Raum und Zeit miteinander verbindet, und der Basisvektoren $t, x, y, z$ l\"asst sich eine verst\"andliche Form herleiten. 
-Minowski-Metrik:
+Dieses $\gamma$ kommt wie oben bei der Rechnung gezeigt und auch beschrieben, in der Berechnung der Eigenzeit vor. %angepasst
+Die Formel \ref{Eigenzeit} ist in dieser Form noch nicht sehr anschaulich. Sie zeigt jedoch, dass die jeweils gewählte Metrik mit den jeweiligen Basisvektoren "multipliziert" werden muss (Einsteinsche Summenkonvention). Je nach Metrik können andere Resultate entstehen.
+Durch das Verwenden der Minkowski-Metrik, welche Raum und Zeit miteinander verbindet, und der Koordinaten $t, x, y, z$ l\"asst sich eine verst\"andliche Form herleiten. 
 \begin{equation}
     g_{\mu\nu}=
     \begin{pmatrix}
@@ -52,25 +55,33 @@ Minowski-Metrik:
 \end{equation}
 Standard Vierervektor:
 \begin{align*}
-    x^{0}=c \cdot t,
+    x^{0}=ct,
     x^{1}=x,
     x^{2}=y,
     x^{3}=z,
 \end{align*}
-Ein wenig Umstellen und vereinfachen und man kommt auf diese Form:
+Aus diesen Koordinaten kann man nun mittels Ableiten die Geschwindigkeiten bilden und in $v$ einsetzen.
+Daraus Bildet sich eine Eigenzeitformel auf Basis der Minkowski-Metrik.
+%corrected
 \begin{equation}
     \tau
     =
     \frac{1}{c}\int_{}^{}\sqrt{-(-c^2\dot{t}(s)^{2}+\dot{x}(s)^{2}+\dot{y}(s)^{2}+\dot{z}(s)^{2})}ds
 \end{equation}
-Je nachdem wie die Bewegung gew\"ahlt wird, fallen einer oder mehrere der Koordinaten $x, y, z$ weg.
-Hier ein Beispiel bei welchem nur eine Geschwindigkeit in x-Richtung vorhanden ist ($c=$Lichtgeschwindigkeit, u beschreibt den Bruchteil):
+Andere Metriken beschreiben andere Verläufe der Eigenzeit, da je nach Metrik unterschiedliche Räume und Faktoren in die Berechnung mit einbezogen werden. 
+Je nachdem wie die Bewegung gew\"ahlt wird, können Koordinaten $x, y, z$ wegfallen.
+Hier ein Beispiel bei welchem nur eine Geschwindigkeit in x-Richtung vorhanden ist ($c =$ Lichtgeschwindigkeit, $u$ beschreibt den Bruchteil von $c$)
 \begin{align*}
-     t(s)=1\cdot s, \dot{t}(s)=1,
- 	 x(s)=u\cdot c \cdot s, \dot{x}(s)=u\cdot c,
-     y(s)=0, \dot{y}(s)=0,
-     z(s)=0, \dot{z}(s)=0
+     t(s)= s, 
+ 	 x(s)=u\cdot c \cdot s, 
+     y(s)=0, 
+     z(s)=0 \\
+     \dot{t}(s)=1,
+     \dot{x}(s)=u\cdot c,
+     \dot{y}(s)=0,
+     \dot{z}(s)=0
 \end{align*}
+Diese Koordinaten in das Integral eingesetzt ergeben folgende Form
 \begin{align*}
     \tau
     &=
@@ -82,61 +93,183 @@ Hier ein Beispiel bei welchem nur eine Geschwindigkeit in x-Richtung vorhanden i
     =
     s\sqrt{1-\frac{u^2\cdot c^2}{c^2}}
 \end{align*}
-Welches die einfachste Form einer Zeitdilatation darstellt.
-Hier ein Zahlenbeispiel bei welchem willkürliche Werte gew\"ahlt wurden:
+Welches eine einfache Form einer Zeitdilatation darstellt. $u$ ist lediglich ein Parameter der zeigt mit welchem Bruchteil der Lichtgeschwindigkeit sich das Objekt bewegt.
+Hier ein Zahlenbeispiel mit 20\% Lichtgeschwindigkeit:
 $s=5000, u=0.2$ 
 \begin{align*}
-    t(s)=s, \dot{t}(s)=1,
-    x(s)=0.2c \cdot s, \dot{x}(s)=0.2c,
-    y(s)=0, \dot{y}(s)=0,
-    z(s)=0, \dot{z}(s)=0,
+    t(s)=s, 
+    x(s)=0.2c \cdot s,
+    y(s)=0, 
+    z(s)=0 \\
+    \dot{t}(s)=1,
+    \dot{x}(s)=0.2c,
+    \dot{y}(s)=0,
+    \dot{z}(s)=0
 \end{align*}
 Diese Werte in die Gleichung eingesetzt ergeben
 \begin{align*}
     \tau
     &=
-    \frac{1}{c}\int_{s_{a}}^{s_{b}}\sqrt{-(-c^2\dot{t}(s)^2+\dot{x}(s)^2)}ds
-    &=
+    \frac{1}{c}\int_{0}^{5000}\sqrt{-(-c^2\dot{t}(s)^2+\dot{x}(s)^2)}ds
+    =
     \frac{1}{c}\int_{0}^{5000}\sqrt{-(-c^2+((0.2c)^2))}ds\\
     &=
-    5000\sqrt{1-\frac{u^2 c^2}{c^2}} = 4898.98
+    5000\sqrt{1-\frac{(0.2)^2 c^2}{c^2}} 
+    =
+    5000\sqrt{1-(0.2)^2}
+    =
+    4898.98
 \end{align*}
-Dieses Beispiel zeigt auch, dass eine relevante Zeitverlangsamung erst bei sehr hohen Geschwindigkeiten erreicht wird.
+In Abbildung \ref{skript:zeitreisen:fig:lorentz}  sieht man den Zusammenhang zwischen Geschwindigkeit und Lorenzfaktor als Graph. Dieses Beispiel und die Abbildung zeigen, dass eine relevante Zeitdilatation erst bei sehr hohen Geschwindigkeiten erreicht wird. Um wirklich grosse Zeitdilatationen zu erreichen, braucht man annähernd Lichtgeschwindigkeit. Wie wir sehen werden, wird dies ein gravierendes Problem bei der Realisierung darstellen.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\hsize]{zeitreisen/Lorentzfaktor.jpg}
-    \caption{Ver\"anderung des Lorentzfaktor in Abh\"angigkeit der Geschwindigkeit%
-        \label{skript:geodaten:fig:transport}}
+    \caption{Änderung des Lorentzfaktors in Abh\"angigkeit der Geschwindigkeit}
+        \label{skript:zeitreisen:fig:lorentz} 
 \end{figure}
-\subsection{Gravitation}
+\subsection{Gravitation} \label{Gravitation}
 
-	In diesem Kapitel beschäftigen wir uns mit dem Einfluss der Gravitation auf die Zeit. Gravitation muss durch eine Krümmung des Raumes beschrieben werden. Erkennen lässt sich die Gravitation z.B. an der Anziehungskraft der Erde. Alles wird mit $g=9.81\frac{m}{s^2}$ in Richtung Erdmittelpunkt beschleunigt. $F=\frac{KMm}{r^2}$
-	Die Beschleunigung ist also unabhängig von der Masse.
-	Ein beschleunigtes Koordinatensystem kann zwar durch eine Koordinatentransformation erreicht werden, doch diese ist keine Lorentztransformation und lässt sich nicht durch die Minkowski-Metrik darstellen.
-	
-	Der Ansatz $ -c^2dt^2 + dx^2 + dy^2 + dz^2$ genügt nicht mehr. Wir müssen also Metriken und Transformationen zulassen, welche von der Minkowski-Metrik und der Standarttransformation abweichen.
-	
-	Eine Metrik, welche wir für unsere Zwecke benützen können, ist die Schwarzschild-Metrik. Sie berücksichtigt die Gravitation, durch eine Krümmung des Raumes dargestellt, und beschreibt so Gravitationsfelder in der nähe von massereichen Objekten. Diese Lösung wurde von Karl Schwarzschild nur wenige Monate nach der Präsentierung der Einsteinschen Feldgleichungen gefunden. Aus ihr lassen sich Bewegungsgleichungen von Körpern in einem Gravitationstrichter herleiten.
-	
-	Die Schwarzschildmetrik in Vektordarstellung:
-
-    \begin{equation}
-		g_{\mu\nu}=
-		\begin{pmatrix}
-		-\biggl(-1-\frac{r_{g}}{r}\biggr) & 0 & 0 & 0 \\
-		0 & \frac{1}{\displaystyle1-\frac{r_{g}}{r}} & 0 & 0 \\
-		0 & 0 & r^{2} & 0 \\
-		0 & 0 & 0 & r^{2}\sin^{2}(\vartheta)
-		\end{pmatrix}
-	\end{equation}
-Der Vierervektor in Kugelkoordinaten:
+	In diesem Kapitel beschäftigen wir uns mit dem Einfluss der Gravitation auf die Zeit. Einstein hat erkannt, dass die Gravitation durch eine Krümmung des Raumes beschrieben werden muss. Erkennen lässt sich die Gravitation z.B. an der Erdbeschleunigung. Alles wird mit $g=9.81\frac{m}{s^2}$ in Richtung Erdmittelpunkt beschleunigt. $F=\frac{KMm}{r^2}$. F lässt sich jedoch nach dem zweiten Newtonschen Gesetz auch als $F=m\cdot a$ schreiben. Eingesetzt und gekürzt zeigt sich, dass die Beschleunigung nicht von der Masse des betrachteten Objektes abhängt.
 	\begin{align*}
-		x^{0}=c\cdot t
-		x^{1}=r
-		x^{2}=\vartheta
-		x^{3}=\varphi
+		m\cdot a = \frac{KMm}{r^2} \rightarrow a=\frac{KM}{r^2} 
 	\end{align*}
-	Daraus lässt sich die Längenmessung zusammenstellen. Die Schwarzschild-Metrik wird im Kapitel (:::LABEL:::) hergeleitet
+	Dieser Effekt lässt sich auch im Alltag betrachten. Grosse fallende Objekte werden gleich stark richtung Erdmittelpunkt beschleunigt wie kleine.
+	\begin{equation}
+	\left.
+	\begin{aligned}
+	t'&=t\\
+	x'&=x+\frac12gt^2
+	\end{aligned}
+	\right\}
+	\qquad
+	\Leftrightarrow
+	\qquad
+	\left\{
+	\begin{aligned}
+	t&=t'\\
+	x&=x'-\frac12gt'^2
+	\end{aligned}
+	\right.
+	%\eqref{skript:gravitation:beschleunigt}
+	\end{equation}
+	Die Gleichungen oben sind zwar eine Koordinatentransformation, doch sie sind keine Lorentztransformation und enthalten somit die Minkowski-Metrik nicht. Mit ihr lässt sich der Einfluss der Gravitation auf die Zeit nicht berechnen. 
+	Der Ansatz $ -c^2dt^2 + dx^2 + dy^2 + dz^2$ genügt also nicht mehr. Wir müssen also Metriken und Transformationen zulassen, welche von der Minkowski-Metrik und der Standarttransformation abweichen.
+	Doch welche Metrik beinhaltet den Einfluss der Gravitation auf die Zeit? 
+	Da der Raum durch die Gravitation gekrümmt wird, benötigen wir ein Metrik und auch eine Längenmessung, welche gravitative Effekte miteinbezieht.
+	Zum Glück kennen wir bereits eine solche Metrik. Die Schwarzschild-Metrik eignet bestens dazu, denn sie beschreibt die Raumkrümmung um massereiche Objekte. Wir werden sie später auf ein schwarzes Loch anwenden. Allerdings nehmen wir an, dass diese nicht rotieren und auch keine Ladung besitzen. Dadurch nehmen wir zwar Fehler in Kauf, dafür hält sich der rechnerische Aufwand in Grenzen. Um diese weiteren Effekte miteinzubeziehen wird die Kerr- oder die Kerr-Newman Metrik benötigt. Doch das Rechnen mit diesen Metriken ist um ein vielfaches komplizierter und ausserhalb unserer Möglichkeiten. Deshalb beschränken wir uns auf die Schwarzschild-Metrik.
+
+	\section{Realisierbarkeit}
+    
+    Theoretisch sind Zeitreisen also umsetzbar. Nun gilt es zu prüfen, inwiefern so etwas in der Praxis möglich ist. Betrachten wir zuerst grosse Geschwindigkeiten. Wie wir in Abbildung \ref{skript:zeitreisen:fig:lorentz} bereits gesehen haben, treten die gewünschten Effekte erst bei vergleichbar grossen Geschwindigkeiten auf. Ab $0.99c$ beginnt der Faktor  $\gamma$ stark zu wachsen und die Zeitdilatation würde für uns akzeptable Werte erreichen.
+    Doch wie aus der Physik bekannt ist, berechnet sich die kinetische Energie eines Objekts aus $E_{kin}=\frac{1}{2}mv^2$. Doch der Faktor $c^2$ lässt die kinetische Energie auch für verschwindend kleine Massen ins unerreichbare schnellen.
+    In aktuellen wissenschaftlichen Experimenten, plant man, kleine Segel mittels Laserstrahlen auf 20\% Lichtgeschwindigkeit zu beschleunigen. Bis der Mensch und seine Fortbewegungsmittel also solche Geschwindigkeiten erreichen und die dafür benötigte Energie zur Verfügung stellen können, wird noch einige Zeit vergehen.
+    Das bedeutet also, dass mittels Geschwindigkeit in naher Zukunft keine signifikanten Zeitdilatationen erreicht werden können. Auch wenn der Effekt in gewissen Präzisionsanwendungen berücksichtigt werden muss, ist er für uns nur anders als eigentlich Erwartet relevant. Bleibt zu hoffen, dass die Gravitation bessere Resultate bringt. 
+    
+    Betrachten wir als nächstes die Erde. Die Gravitation der Erde beeinflusst die Zeit in GPS-Satelliten bereits derart, dass die resultierenden Fehler mathematisch herausgerechnet werden müssen. Nachzulesen in Kapitel \ref{skript:gps:main} %Wie got das genau?.
+    Da der Effekt jedoch zu klein ist für eine wirkliche Zeitreise, lässt sich die gleiche Rechnung mit der Sonne machen. Schnell wird klar, dass selbst die grössten Sterne zu wenig Masse haben, um eine nennenswerte Zeitdilatation zu verursachen. Benötigt werden also schwere Objekte an die man, im besten Fall, auch noch nahe heran fliegen kann. Das Ergebnis aus diesem Ausschlussverfahren sind also, als letzte Option, schwarze Löcher. Von unserer Position aus gesehen ist das nächste schwarze Loch Sagittarrius A*, welches sich im Zentrum unserer Galaxis befindet. Dieses supermassive schwarze Loch sollte den Anforderungen genügen. Unsere späteren Simulationen werden auch zeigen, dass sich mittels Sagittarrius A*  tatsächlich eine signifikante Zeitdilatation erreichen lässt.
+    Doch hier beginnen auch neue Probleme. Sagittarrius A* ist 26'000 Lichtjahre von uns entfernt. Das bedeutet, auch mit Lichtgeschwindigkeit benötigen wir 26'000 Jahre um dort anzukommen. Die grosse Hoffnung ist, dass wir durch eine hohe Fluggeschwindigkeit und die daraus resultierende Zeitdilatation die Eigenzeit, an Bord des Raumschiffes, verkürzen können. 
+    Doch wie bereits oben erwähnt, lässt sich eine für unsere Zwecke ausreichende Zeitdilatation erst ab $0.99c$ erreichen. Dies ist jedoch momentan Technisch nicht möglich. 
+    Hier eine Beispielrechnung, in welcher wir mit einer Geschwindigkeit von $0.5c$ fliegen.
+	\begin{align*}
+	\tau
+	&= 
+	\int_{}^{26000}\frac{1}{\gamma}dt=\int_{}^{26000}\sqrt{1-\frac{v^2}{c^2}}dt
+	= 
+	\frac{1}{c}\int_{0}^{26000}\sqrt{-(-c^2+(0.5c)^2)}ds\\
+	&=
+	\biggl[s\sqrt{1-\frac{(0.5c)^{2}}{c^2}}\biggr]_0^{26000}
+	=
+	22516.7
+	\end{align*}
+	Wir benötigen für die Strecke also ca. 22'500 Jahre.
+	Auch bei einem Flug mit einer Geschwindigkeit von $0.999c$, würde die Reise noch 1162.46 Jahre dauern. Was zwar sehr viel kürzer, für uns jedoch immer noch zu lange ist.
+	Wir müssen mit unserem Projekt also warten, bis mit Raumschiffen annähernd Lichtgeschwindigkeit erreicht werden kann. Zusätzlich muss auch noch das Energieproblem gelöst werde. Es muss ein Treibstoff mit grosser Energiedichte gefunden werden, sodass nicht riesige Mengen an Treibstoff mit befördert werden müssen. Dies würde die Masse des Raumschiffes zusätzlich erhöhen und dadurch auch wieder die Benötigte Energie vergrössern. Ein Teufelskreis.
+	Wir verschieben unser Projekt also in hypothetische und stellen uns vor, wir wären bereits da.
+	
+	\section{Am Ziel\dots Was nun?}
+	
+	Wenn wir nun also diese Reise auf uns genommen haben, und Sagittarrius A* wirklich erreichen, eröffnen sich uns zwei Möglichkeiten:
+	\begin{itemize}
+		\item eine gesteuerte Bahn
+		\item wir lassen uns "fallen"
+	\end{itemize}
+	Eine gesteuerte Kreisbahn um das schwarze Loch bringt die besten Resultate, da wir eine Kreisbahn sehr nahe am Ereignishorizont wählen können. Das Ganze wäre jedoch sehr Energieaufwändig, da wir mit Steuerdüsen unseren Absturz in den Ereignishorizont verhindern müssen. Je nach Geschwindigkeit und Abstand zum schwarzen Loch wird mehr oder weniger Energie benötigt.
+	Die zweite Möglichkeit wäre, dass wir uns, wenn wir angekommen sind "fallenlassen" und sehen was passiert. So können wir je nach Anfangsgeschwindigkeit, Abstand und Position verschiedene Bahnen erreicht werden. Vom Absturz in den Ereignishorizont bis zu einer Bahn auf der wir dem Gravitationstrichter des schwarzen Lochs entkommen und uns in die weiten des Weltalls verabschieden. Beides sind eher unangenehme Szenarien. 
+	Wie finden wir also eine Bahn möglichst nahe am schwarzen Loch, ohne dass eines dieser zwei Ereignisse auftritt und ohne weitere Steuerenergie zu verwenden?
+	Lösung unseres Problem sind die Geodätengleichungen, welche uns aufgrund der Anfangsbedingungen eine Bahn berechnen lassen. Aus der Lösung dieser Gleichungen lässt sich dann auch die Eigenzeit und somit die Effizienz unserer Zeitreise berechnen. Dies werden wir am Schluss der Arbeit mittels einer Simulation durchführen, und so sehen, wie viel Zeit wir tatsächlich einsparen können.
+	
+	\section{Umsetzung mittels Geodätenbahnen}
+	
+	Mit den Geodäten lassen sich nun physikalisch korrekte Bahnen um ein schwarzes Loch herleiten. Dafür benötigen wir die in Kapitel \ref{skript:geodaeten:Geodatengleichung}
+	%funktioniert nöd
+	vorgestellte Geodätengleichung:	
+	\begin{equation}
+	\ddot{x}^{\alpha} + \Gamma^{\alpha}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu} = 0
+	\end{equation}
+	Nun können in der nähe des schwarzen Lochs alle Antriebe ausgeschaltet werden. Die aktuelle Geschwindigkeit, Position, Richtung und Abstand stellen nun die Anfangsbedingungen dar. Daran dass die Gleichung $=0$ ist, können wir erkennen, dass kein weiterer Energieinput benötigt wird. Die Gleichungen berücksichtigen auch die Energieerhaltung und somit, wie sich das Raumschiff in Zukunft mit abgeschalteten Antrieben bewegen wird. Mit einer numerischen Lösung dieses Differentialgleichungssystems lassen sich nun Schritt für Schritt die neuen Faktoren ausrechnen. Wir werden im nächsten Kapitel sehen, dass dann die Zeit in der Simulation langsamer vergeht und wir so daraus die Zeitdilatation extrahieren können.
+	Wir k\"onnen nun die Gleichung wie folgt umstellen:	
+	\begin{equation}
+	\ddot{x}^{\alpha} = -\Gamma^{\alpha}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}
+	\end{equation}
+	Daraus lässt sich interpretieren, dass die Beschleunigungen, welche für die nächste Position wichtig sind, ein Produkt aus den Christoffelsymbole 2.Art und den zugehörigen Ableitungen sind. Die Christoffelsymbole sind die $\Gamma^{\alpha}_{\mu\nu}$. Sie beschreiben, wie sich die im Raumschiff enthaltene Energie transformiert, und sich so die Beschleunigungen in die jeweiligen Richtungen, die Geschwindigkeiten und die Position verändern. Zusätzlich beschreiben sie auch den Einfluss das Gravitationsfeldes auf unser Raumschiff.
+	Doch woher kommen diese Symbole, und wie lassen sie sich berechnen?
+	Sie errechnen sich aus der jeweilig gewählten Metrik. Wie bereits im Abschnitt \ref{Gravitation} über Gravitation angedeutet, benötigen Wir für unsere Zwecke die Schwarzschild-Metrik, da sie den Einfluss der Gravitation auf unser Raumschiff berücksichtigt. Die genaue Erklärung der Christoffelsymbole \ref{christoffel} und der Schwarzschildmetrik \ref{Schwarzschild-Metrik} folgen in den nächsten zwei Unterkapiteln.
+	Nun lässt sich die Gleichung von oben in vier Komponenten aufspalten.
+	Entsprechend dem gewählten Koordinatensystem teilt sie sich in vier Gleichungen auf.
+	\begin{align*}
+	\ddot{t}(s) = -\Gamma^{1}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
+	\ddot{r}(s) = -\Gamma^{2}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
+	\ddot{\vartheta}(s) = -\Gamma^{3}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
+	\ddot{\varphi}(s) = -\Gamma^{4}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}		
+	\end{align*}
+	Die Ähnlichkeiten zum Kugelkoordinatensystem sind ersichtlich und werden in Kapitel \ref{Schwarzschild-Metrik} genauer erklärt.
+	Da wir uns in einer Ebene bewegen ist der Winkel$\vartheta = const$ und somit sind seine Ableitungen $=0$. Die dritte Gleichung reduziert sich also auf $\ddot{\vartheta}(s)=0$ und fällt somit weg. Das Problem reduziert sich also auf 3 Dimensionen.
+	\begin{align*}
+	\ddot{t}(s) = -\Gamma^{1}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
+	\ddot{r}(s) = -\Gamma^{2}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
+	\ddot{\varphi}(s) = -\Gamma^{4}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}		
+	\end{align*}
+	Da nun alle Elemente bekannt sind, lässt sich folgendes Differentialgleichungssystem aufstellen:
+	\begin{equation}
+	\begin{aligned}
+	\ddot t(s)
+	&=
+	-\frac{1}{1-\displaystyle\frac{r_g}{r}}\frac{r_g}{r}\frac{1}{r}\dot t(s)\,\dot r(s)
+	\\
+	\ddot r(s)
+	&=
+	-\biggl(1-\frac{r_g}{r}\biggr)\frac{r_g}{r}\frac1{2r}\dot t(s)^2
+	+\frac{1}{1-\displaystyle\frac{r_g}{r}} \frac{r_g}{r}\frac1{2r}\dot r(s)^2
+	- (r_g-r) \dot\varphi(s)^2
+	\\
+	\ddot \varphi(s)
+	&=
+	-\frac2r \dot r(s)\,\dot\varphi(s)
+	\end{aligned}
+	\end{equation}\label{finaleq}
+	Dieses nichttriviale System lässt sich nur numerisch lösen. Im nächsten Kapitel werden die Gleichungen mittels einem Matlab-Simulationprogramm gelöst. Dann finden wir auch heraus, wie effizient Zeitreisen mittels schwarzer Löcher wirklich sind.
+	
+	\subsection{Schwarzschild-Metrik}\label{Schwarzschild-Metrik}
+	
+	Die Metrik welche von Karl Schwarzschild gefunden wurde, ist ein Lösung der Einsteinschen Feldgleichungen und wurde nur wenige Monate nach deren Vorstellung gefunden.
+	Die Schwarzschildmetrik in Vektordarstellung:
+	\begin{equation}
+	g_{\mu\nu}=
+	\begin{pmatrix}
+	-\biggl(-1-\frac{r_{g}}{r}\biggr) & 0 & 0 & 0 \\
+	0 & \frac{1}{\displaystyle1-\frac{r_{g}}{r}} & 0 & 0 \\
+	0 & 0 & r^{2} & 0 \\
+	0 & 0 & 0 & r^{2}\sin^{2}(\vartheta)
+	\end{pmatrix}
+	\end{equation}
+	Dazu gehört folgender Vierervektor, welcher ein um die Zeit erweitertes Kugelkoordinatensystem beschreibt.
+	\begin{align*}
+	x^{0}=ct,
+	x^{1}=r,
+	x^{2}=\vartheta,
+	x^{3}=\varphi
+	\end{align*}
+	Die Metrik lässt sich nun auch in Zeilenform darstellen. So geschrieben, stellt sie auch gleich die Längenmessung im betrachteten Raum dar.
 	\begin{equation}
 	ds^2
 	=
@@ -149,76 +282,87 @@ Der Vierervektor in Kugelkoordinaten:
 	r^2\sin^2(\vartheta)d\varphi
 	\end{equation}
 	$r_g$ beschreibt den Gravitationsradius(Ereignishorizont) des betrachteten Körpers.
-	\subsubsection{Bedeutung von $R_{g}$ und Ereignishorizonte}
-	Der Ereignishorizont beschreibt in der allgemeinen Relativitätstheorie eine Grenzfläche dar. Er beschreibt die Entfernung ab welcher das Licht nicht mehr aus der Gravitationstrichter entkommen kann. Teilchen die den Ereignishorizont passiert haben, können diesen nicht mehr verlassen. Alles ausserhalb dieses Radius hätte die Möglichkeit zu entkommen, die frage ist nur wie viel Energie benötigt wird. Da Licht nicht mehr entkommen kann nennt man diese Körper auch schwarze Löcher.
-	Der Gravitationsradius lässt sich mit \ref{Gravitationsradius} berechnen.
+	Sie berücksichtigt auch die Krümmung des Raumes, also die Gravitation, und ist so für unsere Zwecke bestens geeignet. Die Metrik beschreibt den Gravitationstrichter um ein ungeladenes, nicht rotierendes schwarzes Lochs, und ist somit die einfachste Lösung. Es gibt noch weiter Metriken, welche diese Faktoren ebenfalls berücksichtigen (Kapitel \ref{Gravitation}), doch diese werden nicht weiter betrachtet.
+	Die Herleitung der Metrik sparen wir uns hier, der Prozess wird bereits in Kapitel\ref{skript:chapters:schwarzschild} beschrieben.
+	\subsubsection{Bedeutung von $R_{g}$ und der Ereignishorizont}
+	Der Ereignishorizont stellt in der allgemeinen Relativitätstheorie eine Grenzfläche dar. Er beschreibt die Entfernung ab welcher das Licht nicht mehr aus dem Gravitationstrichter entkommen kann. Teilchen, welche den Ereignishorizont passiert haben, können diesen nicht mehr verlassen. Alle Teilchen oder Objekte die den Ereignishorizont passieren werden unweigerlich ins Zentrum stürzen. Alles ausserhalb dieses Radius hätte die Möglichkeit zu entkommen, die Frage ist nur, wie viel Energie benötigt wird. Da sogar das Licht nicht mehr entkommt, nennt man diese Objekte auch schwarze Löcher oder Singularitäten.
+	Der Gravitationsradius lässt sich wie folgt berechnen.
 	\begin{equation} \label{Gravitationsradius}
-		r_{g}= \frac{2MG}{c^2}
+	r_{g}= \frac{2MG}{c^2}
 	\end{equation}
-    Der Gravitationsradius der Erde beträgt etwa 8.8mm. Wenn wir die Erde also unter  diese 8.8mm komprimieren, würde sie sich in ein schwarzes Loch verwandeln. Ihre Dichte wäre dann so gross, dass nichts mehr der Anziehung widerstehen kann.
-	%do vlt no chli was... weiss aber nonig genau was
-	
-	\section{Realisierbarkeit}
-	
-	Wie erreichen wir nun eine grössere Zeitdilatation um in der Zeit zu reisen? Entweder mit grosser Geschwindigkeit oder mittels eines Massereichen Objektes. Zeitdilatation durch hohe Geschwindigkeiten zu erreichen ist sehr schwierig, da die benötigte Energie im Quadrat mit der Geschwindigkeit anwächst. Und wie (Figure 1) zeigt, muss für eine grosse Zeitverlangsamung annähernd Lichtgeschwindigkeit erreicht werden. Erst ab ca. $0.9c$ beginnt der Lorentzfaktor wirklich zu wachsen.
-	Das bedeutet, dass wir uns auf den Effekt der Gravitation  konzentrieren müssen.
-	Doch wir lösen wir dieses Problem? Wir suchen also ein Massereiches Objekt in unserer Umgebung. Die Sonne genügt für unsere Zwecke leider nicht, ihr Schwarzschildradius ist erstens viel zu klein, und zweitens innerhalb des Körpers. Wir suchen also weiter... Schliesslich finden wir Sagittarrius A*, ein supermassives schwarzes Loch im Zentrum unserer Milchstrasse. Dieses sollte für unsere Zwecke genügen. 
-	Doch hier beginnen die Probleme. 
-	Sagittarrius A* ist 26'000 Lichtjahre von uns entfernt, das bedeutet mit Lichtgeschwindigkeit bräuchten Wir 26'000 Jahre bis wir am Ziel ankommen. Die Hoffnung wäre nun, dass sich durch eine hohe Fluggeschwindigkeit und die daraus resultierende Zeitdehnung, die benötigte Zeit signifikant reduziert. 
-	Nehmen wir nun an wir fliegen mit 0.5-facher Lichtgeschwindigkeit ins Zentrum unserer Milchstrasse. Die Eigenflugzeit im Raumschiff wäre immer noch
-	\begin{align*}
-	\tau
-	&= 
-	\int_{}^{26000}\frac{1}{\gamma}dt=\int_{}^{26000}\sqrt{1-\frac{v^2}{c^2}}dt
+	Der Gravitationsradius der Erde beträgt etwa 8.8mm. Wenn wir die Erde also unter diese 8.8mm komprimieren, wäre sie kleiner als der Gravitationsradius und wäre so nicht mehr sichtbar.
+	\subsection{Christoffelsymbole}\label{christoffel}
+	Die Berechnung der Christoffelsymbole aus der Schwarzschild-Metrik ist kompliziert und sehr Rechenaufwändig. Wir beschränken uns hier auf die Berechnung, die Herleitung wird in Kapitel \ref{skript:chapters:geodaeten} ausführlich beschrieben. Es gibt Christoffelsymbole erster und zweiter Art, die Christoffelsymbole 2. Art lassen sich aus denen 1. Art berechnen.
+	$g_{\mu\nu}$ ist hier die Schwarzschild-Metrik in Vektorform \ref{Schwarzschild-Metrik}.
+	Die Christoffelsymbole 1. Art berechnen sich aus:
+	\begin{equation}
+	%\begin{align*}
+		\Gamma_{\alpha,\mu\nu} 
+		= 
+		\frac{1}{2}\biggl(\frac{\partial g_{\nu\alpha}}{\partial x^{\mu}} 
+		+
+		\frac{\partial g_{\alpha\mu}}{\partial x^{\nu}}
+		+
+		\frac{\partial g_{\mu\nu}}{\partial x^{\alpha}}
+		 \biggr)
+	%\end{align*}
+	\end{equation}
+	Die Christoffelsymbole 2. Art:
+	\begin{equation}
+	%\begin{align*}
+	\Gamma^{\sigma}_{\mu\nu} 
 	= 
-	\frac{1}{c}\int_{0}^{26000}\sqrt{-(-c^2+(0.5c)^2)}ds\\
-	&=
-	\biggl[s\sqrt{1-\frac{(0.5c)^{2}}{c^2}}\biggr]_0^{26000}
+	g^{\sigma\alpha}\Gamma_{\alpha,\mu\nu} 
 	=
-	22516.7.
-	\end{align*}
-	was also grosszügig gerundet immer noch 22500 Jahre dauern würde. 
-	Wir müssen Mit unserem Projekt also warten, bis Geschwindigkeiten von 0.99c mit Raumschiffen Erreicht werden können. Doch auch mit 0.99c würde die Reise noch 3600 Jahre Dauern. Die Energie die benötigt würde, um ein Raumschiff auf diese Geschwindigkeit zu beschleunigen, vernachlässigen wir hier. Das ist ein anderes Problem welches noch gelöst werden muss.
-	Wir verschieben unser Projekt also in hypothetische und stellen uns vor wir wären bereits da.
-	
-	\section{Am Ziel\dots Was nun?}
-	
-	Wenn wir nun also diese Reise auf uns genommen haben, und Sagittarrius A* wirklich erreichen, öffnen sich uns zwei Möglichkeiten:
-	\begin{itemize}
-		\item eine gesteuerte Bahn
-		\item wir lassen uns "fallen"
-	\end{itemize}
-	Eine gesteuerte Kreisbahn um das schwarze Loch bringt die besten Resultate, da wir eine Kreisbahn sehr nahe am Ereignishorizont wählen können. Das Ganze wäre jedoch sehr Energieaufwändig, da wir mit Steuerdüsen unseren Absturz in den Ereignishorizont verhindern müssen. Je nach Geschwindigkeit und Abstand zum schwarzen Loch wird mehr oder weniger Energie benötigt.
-	
-	Die zweite Möglichkeit wäre, dass wir uns, wenn wir angekommen sind "fallenlassen" und sehen was passiert. So können wir je nach Anfangsgeschwindigkeit, Abstand und £Position verschiedene Bahnen erreicht werden. Vom Absturz in den Ereignishorizont bis zu einer Bahn auf der wir der Gravitation des schwarzen Lochs entkommen und uns in die weiten des Weltalls verabschieden. Beides sind eher unangenehme Szenarien. 
-	Wie finden wir also eine Bahn möglichst nahe an der Singularität, ohne das eines dieser zwei Ereignisse auftritt?
-	Lösung unseres Problem sind die Geodätengleichungen, welche uns aufgrund der Anfangsbedingungen eine Bahn berechnen lassen.
-	
-	
-	\section{Geodätenbahnen}
-	
-	Mit den Geodäten lassen sich nun physikalisch korrekte Bahnen um ein schwarzes Loch herleiten. Dafür benötigen wir die in Kapitel 3.4 vorgestellte Geodätengleichung	
-	\begin{equation}
-	\ddot{x}^{\alpha} + \Gamma^{\alpha}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu} = 0
-	\end{equation}	
-	Wir können nun in der nähe des schwarzen Lochs alle Antriebe ausschalten und uns treiben lassen. Die aktuelle Geschwindigkeit, Position, Richtung und Abstand stellen nun die Anfangsbedingungen dar. Mit einer numerischen Lösung dieser Gleichungen können wir nun Schritt für Schritt die neuen Faktoren ausrechnen. Dazu kommt noch dass wir die Vergehend Zeit auch messen können.
-	Wir k\"onnen nun die Gleichung wie folgt umstellen:	
-	\begin{equation}
-	\ddot{x}^{\alpha} = -\Gamma^{\alpha}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}
+	\frac{1}{2}g^{\sigma\alpha}\biggl(\frac{\partial g_{\nu\alpha}}{\partial x^{\mu}} 
+	+
+	\frac{\partial g_{\alpha\mu}}{\partial x^{\nu}}
+	+
+	\frac{\partial g_{\mu\nu}}{\partial x^{\alpha}}
+	\biggr)
+	%\end{align*}
 	\end{equation}
-	Daraus lässt sich interpretieren, dass die Beschleunigungen, welche für die nächste Position wichtig sind, ein Produkt sind aus den Christoffelsymbolen 2.Art und den zugehörigen Ableitungen.
-	Nun können Wir diese Gleichung in die vier Komponenten aufspalten
+	Sie werden Auch Zusammenhangskoeffizienten genannt.
+	Folgende Christoffelsymbole entstehen nach einer Berechnung mit MAXIMA.
+	%\begin{equation}
 	\begin{align*}
-		\ddot{t}(s) = -\Gamma^{1}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
-		\ddot{r}(s) = -\Gamma^{2}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
-		\ddot{\vartheta}(s) = -\Gamma^{3}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
-		\ddot{\varphi}(s) = -\Gamma^{4}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}		
+	\Gamma^0_{01}
+	&=
+	\frac{1}{1-\displaystyle\frac{r_g}{r}}
+	\frac{r_g}{r}
+	\frac{1}{2r}
+	\\
+	\Gamma^1_{00}
+	&=
+	\biggl(1-\displaystyle\frac{r_g}{r}\biggr)
+	\frac{r_g}{r}
+	\frac{1}{2r}
+	&
+	\Gamma^1_{11}
+	&=
+	-\frac1{1-\displaystyle\frac{r_g}{r}}
+	\frac{r_g}{r}
+	\frac{1}{2r}
+	&
+	\Gamma^1_{22}
+	&=
+	r_g-r
+	&
+	\Gamma^1_{33}
+	&=
+	r_g-r
+	\\
+	\Gamma^2_{12}
+	&=
+	\frac1r
+	\\
+	\Gamma^3_{13}
+	&=
+	\frac1r
 	\end{align*}
-	Da wir uns in einer Ebene bewegen ist der Winkel$\vartheta = const$ und somit auch seine Ableitungen. Dadurch fällt der   ganze $\ddot{\vartheta}$ Term weg. Das Problem reduziert sich also auf drei Dimensionen.	
-	
-	%Work in Progress;)
-	
-	
+	%\end{equation}
+	Theoretisch würden für ein vierdimensionales Koordinatensystem $4^{3}$ Christoffelsymbole entstehen. Die Berechnung hat jedoch gezeigt, dass der grösste Teil der Symbole zu $0$ wird und so aus der Gleichung \ref{finaleq} herausfallen. Was die Berechnung und Simulation um ein vielfaches erleichtert.
+		
 	\section{Simulation}
 	
 	%Erklärung sourcecode
