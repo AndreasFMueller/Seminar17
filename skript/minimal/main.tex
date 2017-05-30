@@ -38,7 +38,7 @@ In diesem Abschnitt wird die mathematische Herleitung des Katenoids mit Hilfe de
 In der Skizze ~\ref{Katenoid} ist ein Katenoid abgebildet, bei welchem in Bezug auf die $z$ Achse, der untere Drahtring bei $-L$ und der obere bei $+L$ ist. 
 Die beiden Kreise sollen die gleichen Radien haben, also gilt $r(-L)=r(+L)=R$. 
 Die Flächenpunkte des Katenoids werden mit der Funktion $r(z)$ beschrieben. 
-Um die Fläche des Katenoids zu berechnen, braucht man eine Gleichung, welche eine Länge auf der Katenoidoberfläche beschreibt. 
+Um dn Flächeninhalt des Katenoids zu berechnen, braucht man eine Gleichung, welche eine Länge auf der Katenoidoberfläche beschreibt. 
 Mit Hilfe von Pythagoras kann man schreiben $ds^2=dz^2+dr^2$.
 Formt man diese Gleichung, um erhält man die Gleichung \eqref{ds}.
 
@@ -53,10 +53,12 @@ Demzufolge muss das Integral
   S= \int 2 \pi r ds 
 \end{equation}
 minimiert werden. 
-Durch Einsetzen von Gleichung \eqref{ds} erhält man die Gleichung \eqref{S2}, welche man als Funktion $F(r,\dot r, z)$ noch verallgemeinert schreiben kann.
+Durch Einsetzen von Gleichung \eqref{ds} erhält man die Gleichung 
 \begin{equation} \label{S2}
   S=2 \pi \int_{-L}^{+L} r\sqrt{(1+\dot r^2)}\,dz =2 \pi \int_{-L}^{+L}  F(r,\dot r, z) \,dz 
 \end{equation}
+, welche man als Funktion $F(r,\dot r, z)$ noch verallgemeinert schreiben kann.
+
 
 
 Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differenzialgleichung der Variationsrechnung bedienen 
@@ -65,27 +67,28 @@ Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differe
 Die Eulerschen Differenzialgleichung der Variationsrechnung wird im Kapitel der Geodäten genauer erklärt.
 Das Anwendungsprinzip kurz zusammengefasst. Hat man ein kompliziertes Integral, welches man nicht einfach fundamental lösen kann, um die Extremwerte zu bestimmen, kann man die Eulersche Differentialgleichung anwenden. Diese besagt, dass anstelle des Ausrechnens  einer Integralfunktion der Art \eqref{E_DGL1}, kann auch die Differentialgleichung \eqref{E_DGL2} gelöst werden, um die Extremwerte solcher Funktionen zu finden.
 
-\begin{equation} \label{E_DGL1}  
-  I(y)= \int_a^b F(x,y(x),\dot y(x))\,dx       
-\end{equation}
+
 
 \begin{equation} \label{E_DGL2}
 \bigg(\frac{\partial F}{\partial y}\bigg)- \frac{d}{dx} \bigg(\frac{\partial F}{\partial \dot{y}}\bigg)=0         
 \end{equation}
 
-Für die Gleichung des Katenoids \eqref{S2} erhält man somit die Differentialgleichung \eqref{K_DGL1}.
+Für die Gleichung des Katenoids \eqref{S2} erhält man somit die Differentialgleichung
 \begin{equation} \label{K_DGL1}
 \bigg(\frac{\partial F}{\partial r}\bigg)- \frac{d}{dz} \bigg(\frac{\partial F}{\partial \dot{r}}\bigg)=0    
 \end{equation}
 
-Die Gleichung \eqref{K_DGL_H} wird nun schrittweise umgeformt, bis eine  Differentialgleichung zweiter Ordnung \eqref{K_DGL_R} entsteht.
+Die Gleichung 
 \begin{equation} \label{K_DGL_H}
 \sqrt{1+{\dot {r}}^2}-\frac{ d }{ dx } \bigg( r \frac{ 1 }{2  }\left( {1+{\dot {r}}^2}  \right)^{-1/2} 2 \dot {r}\bigg)=0
 \\
 \end{equation}
+ wird nun schrittweise umgeformt, bis eine  Differentialgleichung zweiter Ordnung \eqref{K_DGL_R} entsteht.
+
 \begin{equation} \label{K_DGL_H2}
 \left(1+{\dot {r}}^2  \right)^{-1/2}-\bigg(r \frac{ -1 }{2  } \left({1+{\dot {r}}^2}  \right)^{-3/2} 2 \dot{r} \ddot{r}  \dot{r}+ r \left({1+{\dot {r}}^2}  \right)^{-1/2} \ddot{r} +\dot{r} \left({1+{\dot {r}}^2}  \right)^{-1/2} \dot{r}\bigg)=0
 \end{equation}
+
 \begin{equation} \label{K_DGL_R}
 1+{\dot {r}}^2=r  \ddot{r}
 \end{equation}
@@ -100,13 +103,17 @@ Beim Ableiten von $\cosh$ erhält man $\sinh$ und $\sinh$ abgeleitet ergibt wied
 Mit dieser Erkenntnis kann man durch das Vergleichen der Gleichungen versuchen die Form der Lösung der DGL \eqref{K_DGL_R2} zu erraten. 
 Der $\sinh^2$  (zweiter Term links) soll der quadrierten Ableitung einer Funktion entsprechen ${\dot {r}}^2$ also kann man schreiben $(\cosh)'^2$. 
 Auf der rechten Seite sollte $\cosh^2=\cosh \cosh$ dem Produkt von einer Funktion und ihrer doppelten Ableitung gleich kommen. Da gilt $(\cosh)''=(\sinh)'=\cosh$ kann die rechte Seite so $(\cosh) (\cosh)''$ auch durch $\cosh$ ausgedrückt werden.
+
+
+Zusammengefasst kann man die Gleichung 
 \begin{equation} \label{K_hTrigo}
 1+\sinh^2=\cosh^2
 \end{equation}
-\begin{equation} \label{K_DGL_R2}
+ in die Gleichung 
+ \begin{equation} \label{K_DGL_R2}
 1+{\dot {r}}^2=r  \ddot{r}
 \end{equation}
-Zusammengefasst kann man die Gleichung \eqref{K_hTrigo} in die Gleichung \eqref{K_hTrigoU} umformen und sieht daraus das $r(z)$ eine $\cosh$ Funktion sein muss.
+ umformen und sieht daraus das $r(z)$ eine $\cosh$ Funktion sein muss.
 \begin{equation} \label{K_hTrigoU}
 1+(\cosh)'^2=(\cosh) (\cosh)''
 \end{equation}
@@ -117,7 +124,7 @@ Die exakte Lösung der Differentialgleichung \eqref{K_DGL_R} beinhaltet noch die
 r(z)=K \cosh\bigg(\frac{z-\xi}{K}\bigg)
 \end{equation}
 
-Bei $z= \pm L$ ergibt sich \eqref{K_rL}.
+Bei $z= \pm L$ ergibt sich 
 \begin{equation} \label{K_rL}
 K \cosh\bigg(\frac{L-\xi}{K}\bigg)=K \cosh\bigg(\frac{-L-\xi}{K}\bigg)
 \end{equation}
@@ -145,10 +152,10 @@ Folgend wird zuerst das Konzept der Krümmung kurz zusammengefasst und anschlies
 
 Intuitiv ist Krümmung einer Fläche für uns ein Mass der Abweichung eines Objekts im Bezug zu einer Ebene. 
 
-Die Krümmung einer Fläche im Punkt $P$ kann in der Mathematik indirekt durch die Hauptkrümmungsradien $R1$ und $R2$ ausgedrückt werden. 
+Die Krümmung einer Fläche im Punkt $P$ kann in der Mathematik indirekt durch die Hauptkrümmungsradien $R_1$ und $R_2$ ausgedrückt werden. 
 Die Hauptkrümmungsradien hängen von den Tangentenrichtungen im Punkt P ab. 
 Die Tangentenrichtungen stehen senkrecht aufeinander.
-Sie sind so definiert, dass $R1$ den Minimalwert und $R2$ den Maximalwert annimmt.
+Sie sind so definiert, dass $R_1$ den Minimalwert und $R_2$ den Maximalwert annimmt.
 
 Unter dem Krümmungsradius versteht man den Radius des Kreises, welcher die Kurve im Punkt $P$ am besten approximiert. 
 Da wir intuitiv bei einem Kreis oder einer Kugel eine grosse Krümmungszahl erwarten und bei einer fast geraden Fläche eine kleine, ist die Krümmung $k$  als der Kehrwert des Krümmungsradius definiert$k=1/R$ . 
@@ -159,17 +166,17 @@ Da wir intuitiv bei einem Kreis oder einer Kugel eine grosse Krümmungszahl erwa
   \caption{Krümmungsradius} 
 \end{figure}
 
-Überträgt man das Konzept der Krümmung ins Dreidimensionale braucht es zwei Krümmungen, welche orthogonal zueinander stehen, um die Krümmung an einem Punkt zu bestimmen. Diese werden als Hauptkrümmungen $k1$ und $k2$ bezeichnet.
+Überträgt man das Konzept der Krümmung ins Dreidimensionale braucht es zwei Krümmungen, welche orthogonal zueinander stehen, um die Krümmung an einem Punkt zu bestimmen. Diese werden als Hauptkrümmungen $k_1$ und $k_2$ bezeichnet.
 Zur nummerischen Charakterisierung der Krümmung einer Fläche in der Mathematik werden hauptsächlich zwei Grössen benutzt.
-Zum einen die Gauss Krümmung, welche eine intrinsische Krümmung ist und zum andern die mittlere Krümmung bei welcher es sich um eine extrinsische Krümmung handelt. Bei Minimalflächen ist vor allem die mittlere Krümmung von Bedeutung, da diese für Minimalflächen null ist.
+Zum einen die Gauss Krümmung, welche eine intrinsische Krümmung ist und zum andern die mittlere Krümmung bei welcher es sich um eine extrinsische Krümmung handelt. Bei Minimalflächen ist vor allem die mittlere Krümmung von Bedeutung.
 
 
 \index{Gauss Krümmung}
 
-Die Gauss Krümmung einer Fläche im Punkt $P$ ist definiert als das Produkt der zwei Hauptkrümmungen $k1$ und $k2$.
+Die Gauss Krümmung einer Fläche im Punkt $P$ ist definiert als das Produkt der zwei Hauptkrümmungen $k_1$ und $k_2$.
 
 \begin{equation} \label{Gauss_Kruemmung_D}
-  H=k1\, k2= \frac{1}{R1}\frac{1}{R2}
+  H=k_1\, k_2= \frac{1}{R_1}\frac{1}{R_2}
 \end{equation}
 
 
@@ -180,10 +187,10 @@ Wenn die Ameise auf einer Kugel ist kann sie feststellen, dass nur schon in ihre
 
 \index{mittlere Krümmung}
 
-Die mittlere Krümmung einer Fläche im Punkt $P$ ist definiert durch den Mittelwert der zwei Hauptkrümmungen $k1$ und $k2$.
+Die mittlere Krümmung einer Fläche im Punkt $P$ ist definiert durch den Mittelwert der zwei Hauptkrümmungen $k_1$ und $k_2$.
 
 \begin{equation} \label{Mittlere Kruemmung_D}
-  H=\frac{1}{2}(k1+k2)= \frac{1}{2}\bigg(\frac{1}{R1}+\frac{1}{R2}\bigg)
+  H=\frac{1}{2}(k_1+k_2)= \frac{1}{2}\bigg(\frac{1}{R_1}+\frac{1}{R_2}\bigg)
 \end{equation}
 
 Die mittlere Krümmung ist eine extrinsische Krümmung. 
@@ -191,8 +198,9 @@ Im Gegensatz zur intrinsischen Krümmung kommt es bei einer extrinsischen Krümm
 Man kann sich vorstellen, dass man zum Beispiel die Krümmung eines Zylinders (zweidimensionales Objekt) von aussen, also in einem dreidimensionalen Raum betrachtet. 
 Ein Zylinder ist aus der Ameisenperspektive flach, schaut man von aussen, sieht er jedoch gekrümmt aus.
 Dies, weil er eine positive mittlere Krümmung aufweist. 
-Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fläche) aus, dort ist die Gausskrümmung negativ, hingegen kann die mittlere Krümmung im Spezialfall, dass $R1=-R2$, also die Krümmungsradien ein umgekehrtes Vorzeichen aufweisen, aber vom Betrag her identisch sind, gleich null sein. 
+Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fläche) aus, dort ist die Gausskrümmung negativ, hingegen kann die mittlere Krümmung im Spezialfall, dass $R_1=-R_2$, also die Krümmungsradien ein umgekehrtes Vorzeichen aufweisen, aber vom Betrag her identisch sind, gleich null sein. 
 In diesem Fall ist diese Sattelfläche ein Beispiel für eine Minimalfläche.
+Die besondere Bedeutung der mittleren Krümmung H besteht darin, dass Minimalflächen dadurch charakterisiert sind, dass für sie gilt H=0
 
 \begin{figure} 
   \centering
