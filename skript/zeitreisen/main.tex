@@ -15,11 +15,20 @@
     \item \dots
 
 \end{itemize}
-In diesem Kapitel beschäftigen wir uns mit der mathematischen Beschreibung von Zeitreisen; wie man solche Effekte erreichen kann und ob sie mit heutigen Mitteln erreichbar sind. Zu beginn soll gezeigt werden, wie man eine Zeitreise mit Hilfe der Eigenzeit beschreibt. Danach stellt sich die Frage, wie der Verlauf solcher Eigenzeiten beeinflusst werden kann. Es zeigt sich das dies mit Gravitation und Geschwindigkeit möglich ist. Ein besonderes Augenmerk gilt dabei schwarzen Löchern. Nach dem wir die nötige Mathematik eingeführt haben, veranschaulichen wir das Ganze mit einer Simulation. Natürlich wollen wir uns auch Gedanken über die Realisierbarkeit machen. Wie sich zeigen wird, scheinen Zeitreisen keine reine Fiktion zu sein. Allerdings sind sie auch nicht in einem Ausmass möglich, wie man sich vielleicht erhofft.
-\section{Was ist eine Zeitreise?}
-Um diese Frage besser beantworten zu können, starten wir mit einem Gedankenexperiment. Wir stellen uns vor, zwei Autos fahren mit der gleichen Geschwindigkeit aneinander vorbei. Fahren die beiden Autos z.B. 100km/h schnell, ist die Relativgeschwindigkeit, mit der sie sich passieren gerade doppelt so hoch, also 200 km/h. In der klassischen Physik wäre das ein korrektes Ergebnis. In einem zweiten Anlauf sollen beide Fahrer Lichtgeschwindigkeit fahren. Spätestens jetzt macht sich ein Fehler bemerkbar. Denn die relative Geschwindigkeit, in der sich die beiden Fahrzeuge kreuzen ist nicht etwa doppelte Lichtgeschwindigkeit, sondern einfache Lichtgeschwindigkeit. Denn wir wissen das dies die grösste existierende Geschwindigkeit ist.
+In diesem Kapitel beschäftigen wir uns mit der mathematischen Beschreibung von Zeitreisen; wie man solche Effekte erreichen kann und ob sie mit heutigen Mitteln erreichbar sind. Zu beginn soll gezeigt werden, wie man eine Zeitreise mit Hilfe der Eigenzeit beschreibt.
+Doch was ist genau die Eigenzeit? 
+Die Eigenzeit ist die Geschwindigkeit mit der eine Uhr an Bord eines bewegten Objektes geht(Eigenzeit), im Vergleich zu einer relativ dazu unbewegten Uhr(Koordinatenzeit). 
+Es zeigt sich das dies mit Gravitation und Geschwindigkeit möglich ist. Ein besonderes Augenmerk gilt dabei schwarzen Löchern. Nach dem wir die nötige Mathematik eingeführt haben, veranschaulichen wir das Ganze mit einer Simulation. Natürlich wollen wir uns auch Gedanken über die Realisierbarkeit machen. Wie sich zeigen wird, scheinen Zeitreisen keine reine Fiktion zu sein. Allerdings sind sie auch nicht in einem Ausmass möglich, wie man sich vielleicht erhofft.
+
+\section{Was ist eine Zeitreise?}\label{}
+
+Um diese Frage besser beantworten zu können, starten wir mit einem Gedankenexperiment. Wir stellen uns vor, zwei Autos fahren mit der gleichen Geschwindigkeit aneinander vorbei. Fahren die beiden Autos z.B. 100km/h schnell, ist die Relativgeschwindigkeit, mit der sie sich passieren gerade doppelt so hoch, also 200 km/h. In der klassischen Physik wäre das ein korrektes Ergebnis. In einem zweiten Anlauf sollen beide Fahrer Lichtgeschwindigkeit fahren. Spätestens jetzt macht sich ein Fehler bemerkbar. Denn die relative Geschwindigkeit, in der sich die beiden Fahrzeuge kreuzen ist nicht etwa doppelte Lichtgeschwindigkeit, sondern einfache Lichtgeschwindigkeit. Denn wir wissen das dies die grösste erreichbare Geschwindigkeit ist.
 Beide Fahrer behaupten nun aber vehement, ihre eigene Geschwindigkeitsmessung sei korrekt gewesen. Folglich muss es Unterschiede in der Längen- und Zeitmessung geben.
-Wie wir in Kapitel \ref{chap:lichtkegel} festgehalten haben, ist dies auch der Fall. Jeder Beobachter misst die gleiche Lichtgeschwindigkeit. Längen- und Zeitmessung muss in einem solchen System jedoch angepasst werden. Genau dies tun wir mit der Lorentztransformation aus Kapitel \ref{chap:lorentz}. Folglich gibt es nicht mehr "die Eine, "allgemeine Zeitmessung" für alle Objekte. Jedes Objekt hat seine eigene Zeit, die sogenannte Eigenzeit.
+Wie wir in Kapitel \ref{chap:lorentz} festgehalten haben, ist dies auch der Fall. Jeder Beobachter misst die gleiche Lichtgeschwindigkeit. Längen- und Zeitmessung muss in einem solchen System jedoch angepasst werden.
+
+\subsection{Die Lorentz-Transformation}
+
+Genau dies tun wir mit der Lorentz-Transformation aus Kapitel \ref{chap:lorentz}. Folglich gibt es nicht mehr "die Eine", allgemeine Zeitmessung" für alle Objekte. Jedes Objekt hat seine eigene Zeit, die sogenannte Eigenzeit.
 Integrieren wir entlang einer Weltenlinie erhalten wir für die Eigenzeit:
 \begin{equation}\label{Eigenzeit}
 \tau
@@ -28,17 +37,35 @@ Integrieren wir entlang einer Weltenlinie erhalten wir für die Eigenzeit:
 =
 \frac{1}{c}\int_{}^{}\sqrt{g_{\mu\nu}\dot{x}^{\mu}(s)\dot{x}^{\nu}(s)}\,ds.
 \end{equation}
+Welche für jedes Objekt entsprechend ihrer Geschwindigkeit anders ist.
 Da wir nun für jedes Objekt eine Eigenzeit festhalten, können wir auch Unterschiede dieser Zeiten angeben.
 Eine Zeitreise beschreibt daher eine Bewegung durch die Zeit, abweichend von der eines Bezugssystems. 
-Nicht nur hohe Geschwindigkeiten bringen Änderungen in der Zeitmessung. Wie wir sehen werden, verursachen auch andere Effekte Dehnungen der Zeit. Man spricht dabei auch von Zeitdilatation.
-Streng genommen, bringt schon jede Geschwindigkeit eine Abweichung der Eigenzeit. Da die praktische 	Anwendung in diesem Kapitel im Vordergrund steht, interessieren uns natürlich in erster Linie signifikante Unterschiede. Erst doppelt oder sogar zehnmal schneller vergehende Eigenzeiten w\"urden uns Effekte best\"atigen, welche man uns in Science Fiction Filmen und Romanen verspricht.
-Es stellt sich noch die Frage, ob das nun Reisen in die Zukunft oder in die Vergangenheit sind. Generell sind Reisen in die Vergangheit sehr schwierig. Dort treten nämlich Kausalitätsprobleme auf. Was z.B geschieht, wenn ein Zeitreisender seine Entstehung verhindern würde?
-Mit unterschiedlich schnell verlaufenden Eigenzeiten beschreibt man salopp ausgedrückt Reisen in die Zukunft oder "weniger schnelles altern". Ein Beobachter $A$ mit halb so grosser Eigenzeit wie eine Referenz $B$ wäre quasi in die Zukunft gereist. Während für $A$ ganz normal ein Jahr verstrich, wären für $B$ zwei Jahre vergangen. Umgekehrt ist aus Sicht von $B$ $A$ weniger schnell gealtert. $A$ ist damit aber nicht in die Vergangenheit gereist und kann trotz Zeit\"anderung immer nur älter sein als zu Beginn der Betrachtung.
+Nicht nur hohe Geschwindigkeiten bringen Änderungen in der Zeitmessung. Wie wir sehen werden, verursachen auch andere Ursachen Dehnungen der Zeit. Der Effekte der verlangsamten Eigenzeit, heisst auch Zeitdilatation.
+Streng genommen, bringt schon jede kleinste Geschwindigkeit eine Änderung der Eigenzeit. Da die praktische Anwendung in diesem Kapitel im Vordergrund steht, interessieren uns natürlich in erster Linie signifikante Unterschiede. Erst doppelt oder sogar zehnmal schneller vergehende Eigenzeiten w\"urden uns Effekte best\"atigen, welche man uns in Science Fiction Filmen und Romanen verspricht.
+
+\subsection{Zukunft und Vergangenheit}
+
+Es stellt sich noch die Frage, ob das nun Reisen in die Zukunft oder in die Vergangenheit sind. Beide unterscheiden sich Grundlegend voneinander.
+
+\subsubsection{Vergangenheit}
+
+Generell sind Reisen in die Vergangenheit sehr schwierig. Denn dort können Kausalitätsprobleme auftreten. Was z.B geschieht, wenn ein Zeitreisender seine Entstehung verhindern würde? Diese Frage lässt sich im Moment nicht beantworten, weil man schlicht und einfach nicht weiss, was passieren würde. Diese eher philosophischen Probleme, plus die Technische Umsetzbarkeit verhindern momentan eine Reise in die Vergangenheit.
+
+\subsubsection{Zukunft}
+
+%Vorschlag Jonas
+Mit unterschiedlich schnell verlaufenden Eigenzeiten beschreibt man salopp ausgedrückt Reisen in die Zukunft oder "weniger schnelles altern". Ein Beobachter $A$ mit halb so schnell verlaufender Eigenzeit wie eine Referenz $B$ wäre quasi in die Zukunft gereist.
+Ein Beobachter $A$ reist mit hoher Geschwindigkeit ein Jahr durch das Weltall. Für Beobachter $B$, welcher auf der Erde geblieben ist, vergehen in dieser Zeit zwei Jahre. Wenn $A$ also zurückkehrt ist er ein Jahr weniger alt als $B$ und somit in die Zukunft gereist. $A$ hat ein ganzes Jahr überbrückt. Aus der Sicht von $B$ ist $A$ also weniger schnell gealtert. Dazu kommt dass keiner in die Vergangenheit gereist ist, da beide trotz unterschiedlicher Eigenzeiten, älter geworden sind.
+
+%original
+%Mit unterschiedlich schnell verlaufenden Eigenzeiten beschreibt man salopp ausgedrückt Reisen in die Zukunft oder "weniger schnelles altern". Ein Beobachter A mit halb so grosser Eigenzeit wie eine Referenz B wäre quasi in die Zukunft gereist. Während für A ganz normal ein Jahr verstrich, wären für B zwei Jahre vergangen. Umgekehrt ist aus Sicht von B A weniger schnell gealtert. A ist damit aber nicht in die Vergangenheit gereist und kann trotz Zeit\"anderung immer nur älter sein als zu Beginn der Betrachtung.
+
 \section{Einfluss von Geschwindigkeit und Gravitation}
+
 Da wir nun Wissen, wie wir eine Zeitreise beschreiben können, müssen wir uns nun Gedanken machen, wie wir Zeitdilation erreichen können. Im wesentlichen gelingt dies durch Geschwindigkeit oder Gravitation. 
 \subsection{Geschwindigkeit}
 Hohe Geschwindigkeit ist eine Möglichkeit, Zeitdilatationen zu erreichen. Wenn sich eine Person relativ zu einem Bezugssystem schnell bewegt, vergeht f\"ur diese Person die Zeit im Vergleich zum Bezugssystem langsamer. Die Ver\"anderung wird durch den Lorentzfaktor beschrieben, welcher sich aus der Lorentztransformation herleiten l\"asst. Er beschreibt wie stark die Eigenzeit im Verhältnis zu einem Bezugssystem gedehnt wird. %corrected^^
-\begin{equation}
+\begin{equation} \label{lorentzfaktor}
     \gamma=\frac{1}{\sqrt{1-\displaystyle\frac{v^2}{c^2}}} 
 \end{equation}
 Dieses $\gamma$ kommt wie oben bei der Rechnung gezeigt und auch beschrieben, in der Berechnung der Eigenzeit vor. %angepasst
@@ -92,7 +119,11 @@ Diese Koordinaten in das Integral eingesetzt ergeben folgende Form,
 =
 s\sqrt{1-\frac{u^2\cdot c^2}{c^2}}
 \end{align*}
-welche eine einfache Form einer Zeitdilatation darstellt. $u$ ist lediglich ein Parameter der zeigt mit welchem Bruchteil der Lichtgeschwindigkeit sich das Objekt bewegt.
+welche eine einfache Form einer Zeitdilatation darstellt. Durch die Vereinfachung und das einsetzen der Werte entsteht also eine Form, welche dem Lorentzfaktor \eqref{lorentzfaktor} oben entspricht.
+$u$ ist lediglich ein Parameter der zeigt mit welchem Bruchteil der Lichtgeschwindigkeit sich das Objekt bewegt.
+
+\subsubsection{Beispiel}
+
 Hier ein Zahlenbeispiel mit 20\% Lichtgeschwindigkeit:
 $s=5000, u=0.2$ 
 \begin{align*}
@@ -120,7 +151,10 @@ Diese Werte in die Gleichung eingesetzt ergeben
 =
 4898.98
 \end{align*}
-In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwischen Geschwindigkeit und Lorentzfaktor als Graph. Dieses Beispiel und die Abbildung zeigen, dass eine relevante Zeitdilatation erst bei sehr hohen Geschwindigkeiten erreicht wird. Um wirklich grosse Zeitdilatationen zu erreichen, braucht man annähernd Lichtgeschwindigkeit. Wie wir sehen werden, wird dies ein gravierendes Problem bei der Realisierung darstellen.
+
+\subsubsection{Der Lorentzfaktor in Abhängigkeit von $v$}
+
+In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwischen Geschwindigkeit und Lorentzfaktor als Graph. Obiges Beispiel und die Abbildung zeigen, dass eine relevante Zeitdilatation erst bei sehr hohen Geschwindigkeiten erreicht wird. Um wirklich grosse Zeitdilatationen zu erreichen, braucht man annähernd Lichtgeschwindigkeit. Wie bald ersichtlich wird, stellt dies ein gravierendes Problem bei der Realisierung dar.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\hsize]{zeitreisen/Lorentzfaktor.jpg}
@@ -134,6 +168,11 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 		m\cdot a = \frac{KMm}{r^2} \Leftrightarrow a=\frac{KM}{r^2} 
 	\end{align*}
 	Dieser Effekt lässt sich auch im Alltag betrachten. Grosse fallende Objekte werden gleich stark richtung Erdmittelpunkt beschleunigt wie kleine.
+	
+	\subsubsection{Koordinatentransformationen}
+	
+	Die folgenden Gleichungen sind zwar eine Koordinatentransformation, doch sie sind keine Lorentztransformation und enthalten somit die Minkowski-Metrik nicht. Mit ihr lässt sich der Einfluss der Gravitation auf die Zeit nicht berechnen. 
+	
 	\begin{equation}
 	\left.
 	\begin{aligned}
@@ -152,21 +191,36 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	\right.
 	%\eqref{skript:gravitation:beschleunigt}
 	\end{equation}
-	Die Gleichungen oben sind zwar eine Koordinatentransformation, doch sie sind keine Lorentztransformation und enthalten somit die Minkowski-Metrik nicht. Mit ihr lässt sich der Einfluss der Gravitation auf die Zeit nicht berechnen. 
+	Das $t'$ entspricht immer noch $t$ obwohl eine Transformation durchgeführt wurde. 
 	Der Ansatz $ -c^2dt^2 + dx^2 + dy^2 + dz^2$ genügt also nicht mehr. Wir müssen also Metriken und Transformationen zulassen, welche von der Minkowski-Metrik und der Standarttransformation abweichen.
+	
+	\subsubsection{Metriken}
+	
 	Doch welche Metrik beinhaltet den Einfluss der Gravitation auf die Zeit? 
 	Da der Raum durch die Gravitation gekrümmt wird, benötigen wir ein Metrik und auch eine Längenmessung, welche gravitative Effekte miteinbezieht.
 	Zum Glück kennen wir bereits eine solche Metrik. Die Schwarzschild-Metrik eignet bestens dazu, denn sie beschreibt die Raumkrümmung um massereiche Objekte. Wir werden sie später auf ein schwarzes Loch anwenden. Allerdings nehmen wir an, dass diese nicht rotieren und auch keine Ladung besitzen. Dadurch nehmen wir zwar Fehler in Kauf, dafür hält sich der rechnerische Aufwand in Grenzen. Um diese weiteren Effekte miteinzubeziehen wird die Kerr- oder die Kerr-Newman Metrik benötigt. Doch das Rechnen mit diesen Metriken ist um ein vielfaches komplizierter und ausserhalb unserer Möglichkeiten. Deshalb beschränken wir uns auf die Schwarzschild-Metrik.
 
 	\section{Realisierbarkeit}
     
-    Theoretisch sind Zeitreisen also umsetzbar. Nun gilt es zu prüfen, inwiefern so etwas in der Praxis möglich ist. Betrachten wir zuerst grosse Geschwindigkeiten. Wie wir in Abbildung \ref{skript:zeitreisen:fig:lorentz} bereits gesehen haben, treten die gewünschten Effekte erst bei vergleichbar grossen Geschwindigkeiten auf. Ab $0.99c$ beginnt der Faktor $\gamma$ stark zu wachsen und die Zeitdilatation würde für uns akzeptable Werte erreichen.
+    Theoretisch sind Zeitreisen also umsetzbar. Nun gilt es zu prüfen, inwiefern so etwas in der Praxis möglich ist. Es gibt jedoch mehrere Probleme, die eine Zeitreise verhindern können.
+    Betrachten wir zuerst grosse Geschwindigkeiten. Wie wir in Abbildung \ref{skript:zeitreisen:fig:lorentz} bereits gesehen haben, treten die gewünschten Effekte erst bei vergleichbar grossen Geschwindigkeiten auf. Ab $0.99c$ beginnt der Faktor $\gamma$ stark zu wachsen und die Zeitdilatation würde für uns akzeptable Werte erreichen.
+    Doch wie lässt sich diese Geschwinigkeit überhaupt erreichen?
+    
+    \subsubsection{Energie}
+    
     Doch wie aus der Physik bekannt ist, berechnet sich die kinetische Energie eines Objekts aus $E_{\text{kin}}=\frac{1}{2}mv^2$. Doch der Faktor $c^2$ lässt die kinetische Energie auch für verschwindend kleine Massen ins unerreichbare schnellen.
     In aktuellen wissenschaftlichen Experimenten, plant man, kleine Segel mittels Laserstrahlen auf 20\% Lichtgeschwindigkeit zu beschleunigen. Bis der Mensch und seine Fortbewegungsmittel also solche Geschwindigkeiten erreichen und die dafür benötigte Energie zur Verfügung stellen können, wird noch einige Zeit vergehen.
     Das bedeutet also, dass mittels Geschwindigkeit in naher Zukunft keine signifikanten Zeitdilatationen erreicht werden können. Auch wenn der Effekt in gewissen Präzisionsanwendungen berücksichtigt werden muss, ist er für uns anders als eigentlich Erwartet relevant. Bleibt zu hoffen, dass die Gravitation bessere Resultate bringt. 
     
+    \subsubsection{Massereiche Objekte}
+    
     Betrachten wir als nächstes die Erde. Die Gravitation der Erde beeinflusst die Zeit in GPS-Satelliten bereits derart, dass die resultierenden Fehler mathematisch herausgerechnet werden müssen. Nachzulesen in Kapitel \ref{chap:gps} %Wie got das genau?. Das machi no wenns online isch.
-    Da der Effekt jedoch zu klein ist für eine wirkliche Zeitreise, lässt sich die gleiche Rechnung mit der Sonne machen. Schnell wird klar, dass selbst die grössten Sterne zu wenig Masse haben, um eine nennenswerte Zeitdilatation zu verursachen. Benötigt werden also schwere Objekte an die man, im besten Fall, auch noch nahe heran fliegen kann. Das Ergebnis aus diesem Ausschlussverfahren sind deshalb, als letzte Option, schwarze Löcher. Von unserer Position aus gesehen ist das nächste schwarze Loch Sagittarrius A*, welches sich im Zentrum unserer Galaxis befindet. Dieses supermassive schwarze Loch sollte den Anforderungen genügen. Unsere späteren Simulationen werden auch zeigen, dass sich mittels Sagittarrius A* tatsächlich eine signifikante Zeitdilatation erreichen lässt.
+    Da der Effekt jedoch zu klein ist für eine wirkliche Zeitreise, lässt sich die gleiche Rechnung mit der Sonne machen. Schnell wird klar, dass selbst die grössten Sterne zu wenig Masse haben, um eine nennenswerte Zeitdilatation zu verursachen. 
+    %simulation rg_erde = 8.8mm Geostationärer orbit 35800km -> effekt = 0...
+    Benötigt werden also schwere Objekte an die man, im besten Fall, auch noch nahe heran fliegen kann. Das Ergebnis aus diesem Ausschlussverfahren sind deshalb, als letzte Option, schwarze Löcher. Von unserer Position aus gesehen ist das nächste schwarze Loch Sagittarrius A*, welches sich im Zentrum unserer Galaxis befindet. Dieses supermassive schwarze Loch sollte den Anforderungen genügen. Unsere späteren Simulationen werden auch zeigen, dass sich mittels Sagittarrius A* tatsächlich eine signifikante Zeitdilatation erreichen lässt.
+    
+    \subsection{Reise}
+    
     Doch hier beginnen auch neue Probleme. Sagittarrius A* ist 26000 Lichtjahre von uns entfernt. Das bedeutet, auch mit Lichtgeschwindigkeit benötigen wir 26000 Jahre um dort anzukommen. Die grosse Hoffnung ist, dass wir durch eine hohe Fluggeschwindigkeit und die daraus resultierende Zeitdilatation die Eigenzeit, an Bord des Raumschiffes, verkürzen können. 
     Doch wie bereits oben erwähnt, lässt sich eine für unsere Zwecke ausreichende Zeitdilatation erst ab $0.99c$ erreichen. Dies ist jedoch momentan Technisch nicht möglich. 
     Hier eine Beispielrechnung, in welcher wir mit einer Geschwindigkeit von $0.5c$ fliegen.
@@ -181,6 +235,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	=
 	22516.7
 	\end{align*}
+	%Tabelle mit verschiedenen Reisezeiten, 
 	Wir benötigen für die Strecke also ca. 22500 Jahre.
 	Auch bei einem Flug mit einer Geschwindigkeit von $0.999c$, würde die Reise noch 1162.46 Jahre dauern. Was zwar sehr viel kürzer, für uns jedoch immer noch zu lange ist.
 	Wir müssen mit unserem Projekt also warten, bis mit Raumschiffen annähernd Lichtgeschwindigkeit erreicht werden kann. Zusätzlich muss auch noch das Energieproblem gelöst werde. Es muss ein Treibstoff mit grosser Energiedichte gefunden werden, sodass nicht riesige Mengen an Treibstoff mit befördert werden müssen. Dies würde die Masse des Raumschiffes zusätzlich erhöhen und dadurch auch wieder die Benötigte Energie vergrössern. Ein Teufelskreis.
