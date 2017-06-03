@@ -194,7 +194,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	Das $t'$ entspricht immer noch $t$ obwohl eine Transformation durchgeführt wurde. 
 	Der Ansatz $ -c^2dt^2 + dx^2 + dy^2 + dz^2$ genügt also nicht mehr. Wir müssen also Metriken und Transformationen zulassen, welche von der Minkowski-Metrik und der Standarttransformation abweichen.
 	
-	\subsubsection{Metriken}
+	\subsubsection{Metriken}\label{skript:chapter:zeitreisen:metriken}
 	
 	Doch welche Metrik beinhaltet den Einfluss der Gravitation auf die Zeit? 
 	Da der Raum durch die Gravitation gekrümmt wird, benötigen wir ein Metrik und auch eine Längenmessung, welche gravitative Effekte miteinbezieht.
@@ -214,7 +214,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
     
     \subsubsection{Massereiche Objekte}
     
-    Um also eine Zeitdilatation zu erreichen, müssen wir auf Die Gravitation ausweichen. Betrachten wir als nächstes die Erde. Die Gravitation der Erde beeinflusst die Zeit in GPS-Satelliten bereits derart, dass die resultierenden Fehler mathematisch herausgerechnet werden müssen. Nachzulesen in Kapitel \ref{chap:gps} %Wie got das genau?. Das machi no wenns online isch.
+    Um also eine Zeitdilatation zu erreichen, müssen wir auf Die Gravitation ausweichen. Betrachten wir als nächstes die Erde. Die Gravitation der Erde beeinflusst die Zeit in GPS-Satelliten bereits derart, dass die resultierenden Fehler mathematisch herausgerechnet werden müssen. Nachzulesen in Kapitel \ref{chapter:gps} %Wie got das genau?. Das machi no wenns online isch.
     Da der Effekt jedoch zu klein ist für eine wirkliche Zeitreise, lässt sich die gleiche Rechnung mit der Sonne machen. Schnell wird klar, dass selbst die grössten Sterne zu wenig Masse haben, um eine nennenswerte Zeitdilatation zu verursachen. Unsere Simulationen Zeigen, dass selbst riesige Sonnen einen zu kleinen Effekt auf die Zeit haben
     %simulation rg_erde = 8.8mm Geostationärer orbit 35800km -> effekt = 0...
     Benötigt werden also schwere Objekte an die man, im besten Fall, auch nahe heran fliegen kann. Das Ergebnis aus diesem Ausschlussverfahren sind deshalb, als letzte Option, schwarze Löcher. Von unserer Position aus gesehen ist das nächste schwarze Loch Sagittarrius A*, welches sich im Zentrum unserer Galaxis befindet. Dieses supermassive schwarze Loch sollte den Anforderungen genügen. Unsere späteren Simulationen werden auch zeigen, dass sich mittels Sagittarrius A* tatsächlich eine signifikante Zeitdilatation erreichen lässt.
@@ -278,76 +278,67 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	
 	\section{Umsetzung mittels Geodätenbahnen}
 	
-	Mit den Geodäten lassen sich nun physikalisch korrekte Bahnen um ein schwarzes Loch herleiten. Dafür benötigen wir die in Kapitel \ref{chap:geodaeten}
-	%funktioniert nöd
+	Mit den Geodäten lassen sich nun physikalisch korrekte Bahnen um ein schwarzes Loch herleiten. Sie beschreiben im allgemeinen den kürzesten Weg zwischen zwei Punkten. In diesem Fall sind die Geodäten jedoch anders zu interpretieren. Sie beschreiben nicht den kürzesten weg, sondern den Weg, welcher am wenigsten Energie benötigt. Also welchen Weg unser Raumschiff bei gegebenen Anfangsbedingungen, unter Berücksichtigung der Gravitation, nehmen wird.  
+	Wir benötigen dazu 3 Elemente:
+	\begin{itemize}
+		\item Die Geodätengleichungen
+		\item Die Schwarzschild-Metrik
+		\item Die Christoffelsymbole
+	\end{itemize}
+	Diese drei Elemente lassen uns nun eine korrekte Bahn ausrechnen.
+
+	\subsection{Die Geodätengleichung}
+	
+	Wie bereits erwähnt, suchen die Geodäten einen Weg, welcher am wenigsten Energie benötigt.
+	Folgende Geodätengleichung verdeutlicht diese Tatsache damit, dass sie $=0$ ist. Es wird also kein weiterer Energieinput stattfinden (Antriebe ausgeschaltet). Alles was noch passiert ist eine Energieumwandlung, welche auch die Effekte der Gravitation berücksichtigt. 
+	%Mit einer numerischen Lösung dieses Differentialgleichungssystems lassen sich nun Schritt für Schritt die neuen Faktoren ausrechnen. Wir werden im nächsten Kapitel sehen, dass dann die Zeit in der Simulation langsamer vergeht und wir so daraus die Zeitdilatation extrahieren können.
+	Dafür benötigen wir die in Kapitel \ref{skript:chapter:geodaeten}
 	vorgestellte Geodätengleichung:	
 	\begin{equation}
 	\ddot{x}^{\alpha} + \Gamma^{\alpha}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu} = 0
 	\end{equation}
-	Nun können in der nähe des schwarzen Lochs alle Antriebe ausgeschaltet werden. Die aktuelle Geschwindigkeit, Position, Richtung und Abstand stellen nun die Anfangsbedingungen dar. Daran dass die Gleichung $=0$ ist, können wir erkennen, dass kein weiterer Energieinput benötigt wird. Die Gleichungen berücksichtigen auch die Energieerhaltung und somit, wie sich das Raumschiff in Zukunft mit abgeschalteten Antrieben bewegen wird. Mit einer numerischen Lösung dieses Differentialgleichungssystems lassen sich nun Schritt für Schritt die neuen Faktoren ausrechnen. Wir werden im nächsten Kapitel sehen, dass dann die Zeit in der Simulation langsamer vergeht und wir so daraus die Zeitdilatation extrahieren können.
 	Wir k\"onnen nun die Gleichung wie folgt umstellen:	
+	
 	\begin{equation}
 	\ddot{x}^{\alpha} = -\Gamma^{\alpha}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}
 	\end{equation}
-	Daraus lässt sich interpretieren, dass die Beschleunigungen, welche für die nächste Position wichtig sind, ein Produkt aus den Christoffelsymbole 2. Art und den zugehörigen Ableitungen sind. Die Christoffelsymbole sind die $\Gamma^{\alpha}_{\mu\nu}$. Sie beschreiben, wie sich die im Raumschiff enthaltene Energie transformiert, und sich so die Beschleunigungen in die jeweiligen Richtungen, die Geschwindigkeiten und die Position verändern. Zusätzlich beschreiben sie auch den Einfluss das Gravitationsfeldes auf unser Raumschiff.
-	Doch woher kommen diese Symbole, und wie lassen sie sich berechnen?
-	Sie errechnen sich aus der jeweilig gewählten Metrik. Wie bereits im Abschnitt \ref{Gravitation} über Gravitation angedeutet, benötigen Wir für unsere Zwecke die Schwarzschild-Metrik, da sie den Einfluss der Gravitation auf unser Raumschiff berücksichtigt. Die genaue Erklärung der Christoffelsymbole \ref{christoffel} und der Schwarzschildmetrik \ref{Schwarzschild-Metrik} folgen in den nächsten zwei Unterkapiteln.
-	Nun lässt sich die Gleichung von oben in vier Komponenten aufspalten.
-	Entsprechend dem gewählten Koordinatensystem teilt sie sich in vier Gleichungen auf.
-	\begin{align*}
-	\ddot{t}(s) = -\Gamma^{1}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}
-	\ddot{r}(s) = -\Gamma^{2}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
-	\ddot{\vartheta}(s) = -\Gamma^{3}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
-	\ddot{\varphi}(s) = -\Gamma^{4}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}		
-	\end{align*}
-	Die Ähnlichkeiten zum Kugelkoordinatensystem sind ersichtlich und werden in Kapitel \ref{Schwarzschild-Metrik} genauer erklärt.
-	Da wir uns in einer Ebene bewegen ist der Winkel$\vartheta = const$ und somit sind seine Ableitungen $=0$. Die dritte Gleichung reduziert sich also auf $\ddot{\vartheta}(s)=0$ und fällt somit weg. Das Problem reduziert sich also auf 3 Dimensionen.
+	Daraus lässt sich Interpretieren, dass die Beschleunigungen, welche für die nächste Position wichtig sind, ein Produkt aus den $\Gamma$ mit den jeweiligen Beschleunigungen sind.
+	Doch was sind diese $\Gamma$ genau? Es sind sogenannte Christoffelsymbole, auch Zusammenhangskoeffizienten genannt. Sie beschreiben, ihrem Namen entsprechend, wie die Geschwindigkeiten und Beschleunigungen zusammenhängen sowie auch wie die Energie innerhalb des Systems transformiert wird. Also kurz gesagt, wie sich das Raumschiff im Gravitationsfeld bewegt. Wenn wir nun die einzelnen Koordinaten Ausschreiben wird es zu einem Differentialgleichungssystem 2. Ordnung.
+	
 	\begin{align*}
 	\ddot{t}(s) = -\Gamma^{1}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
 	\ddot{r}(s) = -\Gamma^{2}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
+	\ddot{\vartheta}(s) = -\Gamma^{3}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
 	\ddot{\varphi}(s) = -\Gamma^{4}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}		
-	\end{align*}
-	Da nun alle Elemente bekannt sind, lässt sich folgendes Differentialgleichungssystem aufstellen:
-	\begin{equation}
-	\begin{aligned}
-	\ddot t(s)
-	&=
-	-\frac{1}{1-\displaystyle\frac{r_g}{r}}\frac{r_g}{r}\frac{1}{r}\dot t(s)\,\dot r(s)
-	\\
-	\ddot r(s)
-	&=
-	-\biggl(1-\frac{r_g}{r}\biggr)\frac{r_g}{r}\frac1{2r}\dot t(s)^2
-	+\frac{1}{1-\displaystyle\frac{r_g}{r}} \frac{r_g}{r}\frac1{2r}\dot r(s)^2
-	- (r_g-r) \dot\varphi(s)^2
-	\\
-	\ddot \varphi(s)
-	&=
-	-\frac2r \dot r(s)\,\dot\varphi(s)
-	\end{aligned}
-	\end{equation}\label{finaleq}
-	Dieses nichttriviale System lässt sich nur numerisch lösen. Im nächsten Kapitel werden die Gleichungen mittels einem Matlab-Simulationprogramm gelöst. Dann finden wir auch heraus, wie effizient Zeitreisen mittels schwarzer Löcher wirklich sind.
-	
+	\end{align*}\label{skript:chapter:zeitreisen:geodaeten4dim}
+	Die Ähnlichkeiten zum Kugelkoordinatensystem sind offensichtlich und werden in Kapitel \ref{Schwarzschild-Metrik} genauer erklärt.
+	Doch woher kommen diese Symbole, und wie lassen sie sich berechnen?
+	Sie errechnen sich aus der jeweilig gewählten Metrik. 
+	Wie bereits im Abschnitt \ref{Gravitation} über Gravitation angedeutet, benötigen Wir für unsere Zwecke die Schwarzschild-Metrik, da sie den Einfluss der Gravitation auf unser Raumschiff berücksichtigt. 
+
 	\subsection{Schwarzschild-Metrik}\label{Schwarzschild-Metrik}
 	
-	Die Metrik welche von Karl Schwarzschild gefunden wurde, ist ein Lösung der Einsteinschen Feldgleichungen und wurde nur wenige Monate nach deren Vorstellung gefunden.
+	Diese Metrik, welche von Karl Schwarzschild gefunden wurde, ist ein Lösung der Einsteinschen Feldgleichungen. Sie wurde nur wenige Monate nach der Vorstellung der Feldgleichungen gefunden und stellt eine vergleichsweise einfache Lösung dar. Wie in Kapitel \ref{skript:chapter:zeitreisen:metriken} bereits angedeutet wurde, berücksichtigt sie weder Ladung noch Rotation des schwarzen Lochs. 
 	Die Schwarzschildmetrik in Vektordarstellung:
+	
 	\begin{equation}
 	g_{\mu\nu}=
 	\begin{pmatrix}
-	-\biggl(-1-\frac{r_{g}}{r}\biggr) & 0 & 0 & 0 \\
-	0 & \frac{1}{\displaystyle1-\frac{r_{g}}{r}} & 0 & 0 \\
+	-\biggl(-1- \displaystyle \frac{r_{g}}{r}\biggr) & 0 & 0 & 0 \\
+	0 & \frac{\displaystyle 1}{\displaystyle1-\frac{r_{g}}{r}} & 0 & 0 \\
 	0 & 0 & r^{2} & 0 \\
 	0 & 0 & 0 & r^{2}\sin^{2}(\vartheta)
 	\end{pmatrix}
 	\end{equation}
+	Wie bei der Minkowski-Metrik ist die Zeitkoordinate negativ, dies entspricht der klassischen Raum-Zeit-Signatur. Die erklärung ist im Kapitel \ref{chap:lichtkegel} zu finden.
 	Dazu gehört folgender Vierervektor, welcher ein um die Zeit erweitertes Kugelkoordinatensystem beschreibt.
 	\begin{align*}
-	x^{0}=ct,
-	x^{1}=r,
-	x^{2}=\vartheta,
+	x^{0}=c \cdot t, \,
+	x^{1}=r,\,
+	x^{2}=\vartheta,\,
 	x^{3}=\varphi
 	\end{align*}
-	Die Metrik lässt sich nun auch in Zeilenform darstellen. So geschrieben, stellt sie auch gleich die Längenmessung im betrachteten Raum dar.
+	Die Metrik lässt sich auch in Zeilenform darstellen. So geschrieben, stellt sie auch gleich die Längenmessung im betrachteten Raum dar.
 	\begin{equation}
 	ds^2
 	=
@@ -359,20 +350,24 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	+ 
 	r^2\sin^2(\vartheta)d\varphi
 	\end{equation}
-	$r_g$ beschreibt den Gravitationsradius(Ereignishorizont) des betrachteten Körpers.
-	Sie berücksichtigt auch die Krümmung des Raumes, also die Gravitation, und ist so für unsere Zwecke bestens geeignet. Die Metrik beschreibt den Gravitationstrichter um ein ungeladenes, nicht rotierendes schwarzes Lochs, und ist somit die einfachste Lösung. Es gibt noch weiter Metriken, welche diese Faktoren ebenfalls berücksichtigen (Kapitel \ref{Gravitation}), doch diese werden nicht weiter betrachtet.
+	$r_g$ beschreibt den Gravitationsradius(Ereignishorizont) des betrachteten Körpers. Die Bedeutung wird im nächsten Unterkapitel erklärt.
+	Sie berücksichtigt die Krümmung des Raumes, also die Gravitation, und ist so für unsere Zwecke bestens geeignet. 
 	Die Herleitung der Metrik sparen wir uns hier, der Prozess wird bereits in Kapitel \ref{skript:chapter:schwarzschild} beschrieben.
+	
 	\subsubsection{Bedeutung von $R_{g}$ und der Ereignishorizont}
+	
 	Der Ereignishorizont stellt in der allgemeinen Relativitätstheorie eine Grenzfläche dar. Er beschreibt die Entfernung ab welcher das Licht nicht mehr aus dem Gravitationstrichter entkommen kann. Teilchen, welche den Ereignishorizont passiert haben, können diesen nicht mehr verlassen. Alle Teilchen oder Objekte die den Ereignishorizont passieren werden unweigerlich ins Zentrum stürzen. Alles ausserhalb dieses Radius hätte die Möglichkeit zu entkommen, die Frage ist nur, wie viel Energie benötigt wird. Da sogar das Licht nicht mehr entkommt, nennt man diese Objekte auch schwarze Löcher oder Singularitäten.
 	Der Gravitationsradius lässt sich wie folgt berechnen.
 	\begin{equation} \label{Gravitationsradius}
 	r_{g}= \frac{2MG}{c^2}
 	\end{equation}
 	Der Gravitationsradius der Erde beträgt etwa 8.8mm. Wenn wir die Erde also unter diese 8.8mm komprimieren, wäre sie kleiner als der Gravitationsradius und wäre so nicht mehr sichtbar.
+	
 	\subsection{Christoffelsymbole}\label{christoffel}
+	
 	Die Berechnung der Christoffelsymbole aus der Schwarzschild-Metrik ist kompliziert und sehr Rechenaufwändig. Wir beschränken uns hier auf die Berechnung, die Herleitung wird in Kapitel \ref{skript:chapters:geodaeten} ausführlich beschrieben. Es gibt Christoffelsymbole erster und zweiter Art, die Christoffelsymbole 2. Art lassen sich aus denen 1. Art berechnen.
 	$g_{\mu\nu}$ ist hier die Schwarzschild-Metrik in Vektorform \ref{Schwarzschild-Metrik}.
-	Die Christoffelsymbole 1. Art berechnen sich aus:
+	Die Christoffelsymbole 1. Art berechnen folgendermassen:
 	\begin{equation}
 	%\begin{align*}
 		\Gamma_{\alpha,\mu\nu} 
@@ -385,7 +380,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 		 \biggr)
 	%\end{align*}
 	\end{equation}
-	Die Christoffelsymbole 2. Art:
+	Die Christoffelsymbole 2. Art berechnen sich aus den Christoffelsymbolen 1. Art:
 	\begin{equation}
 	%\begin{align*}
 	\Gamma^{\sigma}_{\mu\nu} 
@@ -400,9 +395,8 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	\biggr)
 	%\end{align*}
 	\end{equation}
-	Sie werden Auch Zusammenhangskoeffizienten genannt.
-	Folgende Christoffelsymbole entstehen nach einer Berechnung mit MAXIMA.
-	%\begin{equation}
+	Für die Schwarzschildmetrik entstehen nach einer berechnung mit MAXIMA folgende Terme:
+	
 	\begin{align*}
 	\Gamma^0_{01}
 	&=
@@ -438,10 +432,41 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	&=
 	\frac1r
 	\end{align*}
-	%\end{equation}
-	Theoretisch würden für ein vierdimensionales Koordinatensystem $4^{3}$ Christoffelsymbole entstehen. Die Berechnung hat jedoch gezeigt, dass der grösste Teil der Symbole zu $0$ wird und so aus der Gleichung \ref{finaleq} herausfallen. Was die Berechnung und Simulation um ein vielfaches erleichtert.
+	Theoretisch würden für ein vierdimensionales Koordinatensystem $4^{3}$ also $64$ Christoffelsymbole entstehen. Die Berechnung hat jedoch gezeigt, dass der grösste Teil der Symbole zu $0$ wird und so wegfallen. Diese Tatsache vereinfacht auch die Geodätengleichungen um viele Terme. Komplett ausgeschrieben würden nach Einsteinscher Summenkonvention für jede Koordinatengleichung $16$ Terme entstehen.
+	
+	\subsection{Aufstellen der Gleichungen}
+	
+	Nun Da alle Elemente bekannt sind lassen sich die Geodätengleichungen \eqref{skript:chapter:zeitreisen:geodaeten4dim} von oben ausschreiben. Da wir uns bei unseren Umkreisungen auf einer Ebene bewegen und diese nicht verlassen, ist der Winkel $\vartheta = const$. Glücklicherweise fallen somit alle seine Ableitungen weg. Die dritte Gleichung reduziert sich als auf $\ddot{\vartheta}(s)=0$ und ist für uns nicht mehr relevant. Das Problem welches wir lösen müssen, reduziert sich also auf 3 Dimensionen. 
+	
+	\begin{align*}
+	\ddot{t}(s) = -\Gamma^{1}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
+	\ddot{r}(s) = -\Gamma^{2}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
+	\ddot{\varphi}(s) = -\Gamma^{4}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}		
+	\end{align*}
+	Da auch die 1. Ableitungen ($\dot{\vartheta}(s)$) $= 0$ sind fallen zusätzlich noch weitere Terme weg. Es entsteht also folgendes vereinfachtes Differentialgleichungssystem.
+	\begin{equation}
+	\begin{aligned}
+	\ddot t(s)
+	&=
+	-\frac{1}{1-\displaystyle\frac{r_g}{r}}\frac{r_g}{r}\frac{1}{r}\dot t(s)\,\dot r(s)
+	\\
+	\ddot r(s)
+	&=
+	-\biggl(1-\frac{r_g}{r}\biggr)\frac{r_g}{r}\frac1{2r}\dot t(s)^2
+	+\frac{1}{1-\displaystyle\frac{r_g}{r}} \frac{r_g}{r}\frac1{2r}\dot r(s)^2
+	- (r_g-r) \dot\varphi(s)^2
+	\\
+	\ddot \varphi(s)
+	&=
+	-\frac2r \dot r(s)\,\dot\varphi(s)
+	\end{aligned}
+	\end{equation}\label{finaleq}
+	Dieses nichttriviale System lässt sich leider nur numerisch lösen. Wir haben zu diesem Zweck ein modulares Matlab-Skript geschrieben, mit welchem sich die Gleichungen nun Schritt für Schritt lösen lassen. Im Code ist die $\vartheta$ Komponente noch enthalten, da sich mit diesem Programm auch nicht ebene Bahnen simulieren lassen. Die Erklärung des Programmcodes und wie sich daraus nun die Zeitdilatation berechnen lässt folgen im nächsten Kapitel.
 		
 	\section{Simulation}
+	
+	
+	
 	
 	%Erklärung sourcecode
 	
