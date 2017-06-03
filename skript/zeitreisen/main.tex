@@ -206,7 +206,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
     Betrachten wir zuerst grosse Geschwindigkeiten. Wie wir in Abbildung \ref{skript:zeitreisen:fig:lorentz} bereits gesehen haben, treten die gewünschten Effekte erst bei vergleichbar grossen Geschwindigkeiten auf. Ab $0.99c$ beginnt der Faktor $\gamma$ stark zu wachsen und die Zeitdilatation würde für uns akzeptable Werte erreichen.
     Doch wie lässt sich diese Geschwinigkeit überhaupt erreichen?
     
-    \subsubsection{Energie}
+    \subsubsection{Energie}\label{skript:chapters:zrirtreisen:energie}
     
     Doch wie aus der Physik bekannt ist, berechnet sich die kinetische Energie eines Objekts aus $E_{\text{kin}}=\frac{1}{2}mv^2$. Doch der Faktor $c^2$ lässt die kinetische Energie auch für verschwindend kleine Massen ins unerreichbare schnellen.
     In aktuellen wissenschaftlichen Experimenten, plant man, kleine Segel mittels Laserstrahlen auf 20\% Lichtgeschwindigkeit zu beschleunigen. Bis der Mensch und seine Fortbewegungsmittel also solche Geschwindigkeiten erreichen und die dafür benötigte Energie zur Verfügung stellen können, wird noch einige Zeit vergehen.
@@ -214,15 +214,15 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
     
     \subsubsection{Massereiche Objekte}
     
-    Betrachten wir als nächstes die Erde. Die Gravitation der Erde beeinflusst die Zeit in GPS-Satelliten bereits derart, dass die resultierenden Fehler mathematisch herausgerechnet werden müssen. Nachzulesen in Kapitel \ref{chap:gps} %Wie got das genau?. Das machi no wenns online isch.
-    Da der Effekt jedoch zu klein ist für eine wirkliche Zeitreise, lässt sich die gleiche Rechnung mit der Sonne machen. Schnell wird klar, dass selbst die grössten Sterne zu wenig Masse haben, um eine nennenswerte Zeitdilatation zu verursachen. 
+    Um also eine Zeitdilatation zu erreichen, müssen wir auf Die Gravitation ausweichen. Betrachten wir als nächstes die Erde. Die Gravitation der Erde beeinflusst die Zeit in GPS-Satelliten bereits derart, dass die resultierenden Fehler mathematisch herausgerechnet werden müssen. Nachzulesen in Kapitel \ref{chap:gps} %Wie got das genau?. Das machi no wenns online isch.
+    Da der Effekt jedoch zu klein ist für eine wirkliche Zeitreise, lässt sich die gleiche Rechnung mit der Sonne machen. Schnell wird klar, dass selbst die grössten Sterne zu wenig Masse haben, um eine nennenswerte Zeitdilatation zu verursachen. Unsere Simulationen Zeigen, dass selbst riesige Sonnen einen zu kleinen Effekt auf die Zeit haben
     %simulation rg_erde = 8.8mm Geostationärer orbit 35800km -> effekt = 0...
-    Benötigt werden also schwere Objekte an die man, im besten Fall, auch noch nahe heran fliegen kann. Das Ergebnis aus diesem Ausschlussverfahren sind deshalb, als letzte Option, schwarze Löcher. Von unserer Position aus gesehen ist das nächste schwarze Loch Sagittarrius A*, welches sich im Zentrum unserer Galaxis befindet. Dieses supermassive schwarze Loch sollte den Anforderungen genügen. Unsere späteren Simulationen werden auch zeigen, dass sich mittels Sagittarrius A* tatsächlich eine signifikante Zeitdilatation erreichen lässt.
+    Benötigt werden also schwere Objekte an die man, im besten Fall, auch nahe heran fliegen kann. Das Ergebnis aus diesem Ausschlussverfahren sind deshalb, als letzte Option, schwarze Löcher. Von unserer Position aus gesehen ist das nächste schwarze Loch Sagittarrius A*, welches sich im Zentrum unserer Galaxis befindet. Dieses supermassive schwarze Loch sollte den Anforderungen genügen. Unsere späteren Simulationen werden auch zeigen, dass sich mittels Sagittarrius A* tatsächlich eine signifikante Zeitdilatation erreichen lässt.
     
     \subsection{Reise}
     
     Doch hier beginnen auch neue Probleme. Sagittarrius A* ist 26000 Lichtjahre von uns entfernt. Das bedeutet, auch mit Lichtgeschwindigkeit benötigen wir 26000 Jahre um dort anzukommen. Die grosse Hoffnung ist, dass wir durch eine hohe Fluggeschwindigkeit und die daraus resultierende Zeitdilatation die Eigenzeit, an Bord des Raumschiffes, verkürzen können. 
-    Doch wie bereits oben erwähnt, lässt sich eine für unsere Zwecke ausreichende Zeitdilatation erst ab $0.99c$ erreichen. Dies ist jedoch momentan Technisch nicht möglich. 
+    Doch wie bereits oben erwähnt, lässt sich eine für unsere Zwecke ausreichende Zeitdilatation erst mit sehr hohen Geschwindigkeiten erreichen. Wie bereits oben beschrieben, sind solche hohen Geschwindigkeiten momentan nicht möglich.
     Hier eine Beispielrechnung, in welcher wir mit einer Geschwindigkeit von $0.5c$ fliegen.
 	\begin{align*}
 	\tau
@@ -235,22 +235,45 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	=
 	22516.7
 	\end{align*}
-	%Tabelle mit verschiedenen Reisezeiten, 
 	Wir benötigen für die Strecke also ca. 22500 Jahre.
-	Auch bei einem Flug mit einer Geschwindigkeit von $0.999c$, würde die Reise noch 1162.46 Jahre dauern. Was zwar sehr viel kürzer, für uns jedoch immer noch zu lange ist.
-	Wir müssen mit unserem Projekt also warten, bis mit Raumschiffen annähernd Lichtgeschwindigkeit erreicht werden kann. Zusätzlich muss auch noch das Energieproblem gelöst werde. Es muss ein Treibstoff mit grosser Energiedichte gefunden werden, sodass nicht riesige Mengen an Treibstoff mit befördert werden müssen. Dies würde die Masse des Raumschiffes zusätzlich erhöhen und dadurch auch wieder die Benötigte Energie vergrössern. Ein Teufelskreis.
+	Folgende Tabelle zeigt die Eigenzeit im reisenden Raumschiff abhängig von der Geschwindigkeit.
+	
+	\begin{center}
+		\begin{tabular}{ | l | p{5cm} |}
+			\hline
+			Geschwindigkeit & Eigenzeit im Raumschiff \\ \hline
+			$20\%c$ & 25474.5 Jahre \\ \hline
+			$50\%c$ & 22516.7 Jahre \\ \hline
+			$80\%c$ & 15600 Jahre \\ \hline
+			$99\%c$ & 3667.75 Jahre \\ \hline
+			$99.99\%c$ & 367.686 Jahre \\ \hline
+			$99.9999\%c$ & 36.76 Jahre \\ \hline
+			$99.999999\%c$ & 3.6 Jahre \\ \hline
+		\end{tabular}
+	\end{center}
+	Wie die Tabelle zeigt, würde auch ein Flug mit $0.99c$ noch viel zu lange dauern. 
+	Die Eigenzeit im Raumschiff beträgt zwar nur noch einen Bruchteil der von aussen gesehenen Reisezeit, jedoch ist es trotz dieser Zeiteinsparnis nicht möglich so das Ziel zu erreichen.
+	Wir müssen mit unserem Projekt also warten, bis mit Raumschiffen annähernd Lichtgeschwindigkeit erreicht werden kann. Zusätzlich muss auch noch das oben genannte Energieproblem gelöst werden (Abschnitt \ref{skript:chapters:zrirtreisen:energie}). Es muss ein Treibstoff mit grosser Energiedichte gefunden werden, sodass nicht riesige Mengen an Treibstoff mit befördert werden müssen. Dies würde die Masse des Raumschiffes zusätzlich erhöhen und dadurch auch wieder die benötigte Energie vergrössern. Ein Teufelskreis.
 	Wir verschieben unser Projekt also in hypothetische und stellen uns vor, wir wären bereits da.
 	
-	\section{Am Ziel\dots Was nun?}
+	\subsection{Am Ziel\dots Was nun?}
 	
 	Wenn wir nun also diese Reise auf uns genommen haben, und Sagittarrius A* wirklich erreichen, eröffnen sich uns zwei Möglichkeiten:
 	\begin{itemize}
 		\item eine gesteuerte Bahn
 		\item wir lassen uns "fallen"
 	\end{itemize}
-	Eine gesteuerte Kreisbahn um das schwarze Loch bringt die besten Resultate, da wir eine Kreisbahn sehr nahe am Ereignishorizont wählen können. Das Ganze wäre jedoch sehr Energieaufwändig, da wir mit Steuerdüsen unseren Absturz in den Ereignishorizont verhindern müssen. Je nach Geschwindigkeit und Abstand zum schwarzen Loch wird mehr oder weniger Energie benötigt.
-	Die zweite Möglichkeit wäre, dass wir uns, wenn wir angekommen sind "fallenlassen" und sehen was passiert. So können wir je nach Anfangsgeschwindigkeit, Abstand und Position verschiedene Bahnen erreicht werden. Vom Absturz in den Ereignishorizont bis zu einer Bahn auf der wir dem Gravitationstrichter des schwarzen Lochs entkommen und uns in die weiten des Weltalls verabschieden. Beides sind eher unangenehme Szenarien. 
-	Wie finden wir also eine Bahn möglichst nahe am schwarzen Loch, ohne dass eines dieser zwei Ereignisse auftritt und ohne weitere Steuerenergie zu verwenden?
+	In den folgenden Abschnitten werden die Vor- und Nachteile der jeweiligen Methoden beschrieben.
+	
+	\subsubsection{Eine Gesteuerte Bahn}
+	Eine gesteuerte Kreisbahn um das schwarze Loch bringt die besten Resultate, da wir eine Kreisbahn sehr nahe am Ereignishorizont wählen können. Denn je näher wir uns am Ereignishorizont befinden, desto stärker sind die Auswirkungen auf die Zeit. 
+	Um jedoch einen konstanten und nahen Orbit am schwarzen Loch zu fliegen , muss das Raumschiff in der Lage sein, der Gravitation zu widerstehen. Das liesse sich auf zwei Arten erreichen. Entweder mittels einer Hohen Geschwindigkeit, bei welcher die Fliehkraft des Raumschiffs der Gravitation entgegenwirkt. Oder mit langsamerer Geschwindigkeit, bei welcher der Gravitationskraft mittels Steuerdüsen entgegengewirkt wird. 
+	Beide Methoden benötigen sehr viel Energie, und sind deshalb keine Option. Der grösste Teil des Treibstoffes wurde bereits während der Reise  verbraucht.
+	%Rückreise?
+	\subsubsection{Wir lassen uns "fallen"}
+	
+	Die zweite Möglichkeit wäre, dass wir uns, wenn wir angekommen sind "fallenlassen" und sehen was passiert. So können je nach Anfangsgeschwindigkeit, Abstand und Position verschiedene Bahnen erreicht werden. Die Geschwindigkeit, Richtung und Abstand vom schwarzen Loch stellen Bei der Ankunft also gerade die Anfangsbedingungen dar. Vom Absturz in den Ereignishorizont, bis zu einer Bahn auf der wir dem Gravitationstrichter des schwarzen Lochs entkommen und uns in die weiten des Weltalls verabschieden ist alles möglich. Beides sind jedoch eher unangenehme Szenarien. 
+	Wie findet man also eine Bahn möglichst nahe am schwarzen Loch, ohne dass eines dieser zwei Ereignisse eintritt und ohne weitere Steuerenergie zu verwenden?
 	Lösung unseres Problem sind die Geodätengleichungen, welche uns aufgrund der Anfangsbedingungen eine Bahn berechnen lassen. Aus der Lösung dieser Gleichungen lässt sich dann auch die Eigenzeit und somit die Effizienz unserer Zeitreise berechnen. Dies werden wir am Schluss der Arbeit mittels einer Simulation durchführen, und so sehen, wie viel Zeit wir tatsächlich einsparen können.
 	
 	\section{Umsetzung mittels Geodätenbahnen}
