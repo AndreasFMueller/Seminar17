@@ -16,19 +16,16 @@
 
 \end{itemize}
 In diesem Kapitel beschäftigen wir uns mit der mathematischen Beschreibung von Zeitreisen; wie man solche Effekte erreichen kann und ob sie mit heutigen Mitteln erreichbar sind. Zu Beginn soll gezeigt werden, wie man eine Zeitreise mit Hilfe der Eigenzeit beschreibt.
-Doch was ist genau die Eigenzeit? 
-Die Eigenzeit ist die Geschwindigkeit, mit der eine Uhr an Bord eines bewegten Objektes geht (Eigenzeit), im Vergleich zu einer relativ dazu unbewegten Uhr (Koordinatenzeit). 
-Es zeigt sich das eine Zeitreise mit Gravitation und Geschwindigkeit möglich ist. Ein besonderes Augenmerk gilt dabei schwarzen Löchern. Nach dem wir die nötige Mathematik eingeführt haben, veranschaulichen wir das Ganze mit einer Simulation. Natürlich wollen wir uns auch Gedanken über die Realisierbarkeit machen. Wie sich zeigen wird, scheinen Zeitreisen keine reine Fiktion zu sein. Allerdings sind sie auch nicht in einem Ausmass möglich, wie man es sich vielleicht erhofft.
+Die Eigenzeit kann als die Zeit verstanden werden, welcher eine mit einem Raumfahrer mitfliegenden Uhr anzeigen würde, während die Koordinatenzeit einer am Ausgangspunkt der Reise zurückgebliebenen Uhr ist.
+Es zeigt sich, dass die beiden Uhren durch Geschwindigkeit und Gravitation tatsächlich unterschiedlich schnell laufen können. Ein besonderes Augenmerk gilt dabei schwarzen Löchern. Nach dem wir die nötige Mathematik eingeführt haben, veranschaulichen wir das Ganze mit einer Simulation. Natürlich wollen wir uns auch Gedanken über die Realisierbarkeit machen. Wie sich zeigen wird, scheinen Zeitreisen keine reine Fiktion zu sein. Allerdings sind sie auch nicht in einem Ausmass möglich, wie man es sich vielleicht erhofft.
 
-\section{Was ist eine Zeitreise?}\label{}
-
+\section{Was ist eine Zeitreise?}
 Um diese Frage besser beantworten zu können, starten wir mit einem Gedankenexperiment. Wir stellen uns vor, zwei Autos fahren mit der gleichen Geschwindigkeit aneinander vorbei. Fahren die beiden Autos z.B. 100 km/h, ist die Relativgeschwindigkeit mit der sie sich passieren gerade doppelt so hoch, also 200 km/h. In der klassischen Physik wäre das ein korrektes Ergebnis. In einem zweiten Anlauf sollen beide Fahrer Lichtgeschwindigkeit fahren. Spätestens jetzt macht sich ein Fehler bemerkbar. Denn die relative Geschwindigkeit, in der sich die beiden Fahrzeuge kreuzen ist nicht etwa doppelte Lichtgeschwindigkeit, sondern einfache Lichtgeschwindigkeit. Denn wir wissen, dass dies die grösste erreichbare Geschwindigkeit ist.
 Beide Fahrer behaupten nun aber vehement, ihre eigene Geschwindigkeitsmessung sei korrekt gewesen. Folglich muss es Unterschiede in der Längen- und Zeitmessung geben.
-Wie wir in Kapitel \ref{chap:lorentz} festhalten, ist dies auch der Fall. Jeder Beobachter misst die gleiche Lichtgeschwindigkeit. Längen- und Zeitmessung müssen in einem solchen System jedoch angepasst werden.
+Wie wir in Kapitel \ref{skript:speziell:section:lichtkegel} festgehalten haben, ist dies auch der Fall. Jeder Beobachter misst die gleiche Lichtgeschwindigkeit. Längen- und Zeitmessung müssen also angepasst werden. Zeit ist also dehnbar. Diese Dehnung nennt man Zeitdilatation. Wir brauchen also die Lorentztransformation aus Kapitel \ref{skript:speziell:section:lorentztransformation}, welche immer auch die Zeit beeinflusst.
 
-\subsection{Die Lorentz-Transformation}
-
-Genau dies tun wir mit der Lorentz-Transformation aus Kapitel \ref{chap:lorentz}. Folglich gibt es nicht mehr "die Eine", allgemeine Zeitmessung für alle Objekte. Jedes Objekt hat seine eigene Zeit, die sogenannte Eigenzeit.
+\subsection{Die Eigenzeit}
+Es gibt also nicht mehr "die Eine", allgemeine Zeitmessung für alle Objekte. Jedes Objekt hat seine eigene Zeit, die sogenannte Eigenzeit.
 Integrieren wir entlang einer Weltenlinie erhalten wir für die Eigenzeit:
 \begin{equation}\label{Eigenzeit}
 \tau
@@ -37,28 +34,24 @@ Integrieren wir entlang einer Weltenlinie erhalten wir für die Eigenzeit:
 =
 \frac{1}{c}\int_{}^{}\sqrt{g_{\mu\nu}\dot{x}^{\mu}(s)\dot{x}^{\nu}(s)}\,ds.
 \end{equation}
-Diese ist für jedes Objekt entsprechend ihrer Geschwindigkeit anders.
 Da wir nun für jedes Objekt eine Eigenzeit festhalten, können wir auch Unterschiede dieser Zeiten angeben.
 Eine Zeitreise beschreibt daher eine Bewegung durch die Zeit, abweichend von der eines Bezugssystems. 
-Nicht nur hohe Geschwindigkeiten bringen Änderungen in der Zeitmessung. Wie wir sehen werden, verursachen auch andere Ursachen Dehnungen der Zeit. Der Effekt der verlangsamten Eigenzeit, heisst auch Zeitdilatation.
+
+Nicht nur hohe Geschwindigkeiten bringen Änderungen in der Zeitmessung. Wie wir sehen werden, gibt es auch andere Ursachen.
+
 Streng genommen bringt schon jede kleinste Geschwindigkeit eine Änderung der Eigenzeit. Da die praktische Anwendung in diesem Kapitel im Vordergrund steht, interessieren uns natürlich in erster Linie signifikante Unterschiede. Erst doppelt oder sogar zehnmal schneller vergehende Eigenzeiten w\"urden uns Effekte best\"atigen, welche man uns in Science Fiction Filmen und Romanen verspricht.
 
 \subsection{Zukunft und Vergangenheit}
-
-Es stellt sich noch die Frage, ob das nun Reisen in die Zukunft oder in die Vergangenheit sind. Beide unterscheiden sich Grundlegend voneinander.
-
-\subsubsection{Vergangenheit}
-
-Generell sind Reisen in die Vergangenheit sehr schwierig. Denn dort können Kausalitätsprobleme auftreten. Was z.B geschieht, wenn ein Zeitreisender seine Entstehung verhindern würde? Diese Frage lässt sich im Moment nicht beantworten, weil man schlicht und einfach nicht weiss, was passieren würde. Diese eher philosophischen Probleme plus die Technische Umsetzbarkeit verhindern momentan eine Reise in die Vergangenheit.
+Es stellt sich noch die Frage, ob das nun Reisen in die Zukunft oder in die Vergangenheit sind. Dazu folgende Überlegungen:
 
 \subsubsection{Zukunft}
-
-%Vorschlag Jonas
 Mit unterschiedlich schnell verlaufenden Eigenzeiten beschreibt man, salopp ausgedrückt, Reisen in die Zukunft oder "weniger schnelles Altern". Ein Beobachter $A$ mit halb so schnell verlaufender Eigenzeit wie eine Referenz $B$ wäre quasi in die Zukunft gereist.
-Ein Beobachter $A$ reist mit hoher Geschwindigkeit ein Jahr durch das Weltall. Für Beobachter $B$, welcher auf der Erde geblieben ist, vergehen in dieser Zeit zwei Jahre. Wenn $A$ also zurückkehrt ist er ein Jahr weniger alt als $B$ und somit in die Zukunft gereist. $A$ hat ein ganzes Jahr überbrückt. Aus der Sicht von $B$ ist $A$ also weniger schnell gealtert. Dazu kommt, dass keiner in die Vergangenheit gereist ist, da beide trotz unterschiedlicher Eigenzeiten, älter geworden sind.
+Während z.B. für ein Beobachter $A$ ganz normal ein Jahr verstrich wären für $B$ zwei Jahre vergangen. $A$ ist somit in die Zukunft gereist. Aus Sicht von $B$ ist $A$ weniger schnell gealtert. Wichtig ist dabei, dass beide älter wurden. Die Zeit hat keine Sprünge gemacht, oder ist stehen geblieben. $A$ und $B$ haben beide einen ''normalen''~Verlauf der Zeit erlebt.
 
-%original
-%Mit unterschiedlich schnell verlaufenden Eigenzeiten beschreibt man salopp ausgedrückt Reisen in die Zukunft oder "weniger schnelles altern". Ein Beobachter A mit halb so grosser Eigenzeit wie eine Referenz B wäre quasi in die Zukunft gereist. Während für A ganz normal ein Jahr verstrich, wären für B zwei Jahre vergangen. Umgekehrt ist aus Sicht von B A weniger schnell gealtert. A ist damit aber nicht in die Vergangenheit gereist und kann trotz Zeit\"anderung immer nur älter sein als zu Beginn der Betrachtung.
+\subsubsection{Vergangenheit}
+Generell sind Reisen in die Vergangenheit sehr schwierig. Denn dort können Kausalitätsprobleme auftreten. Eine Wirkung folgt nicht mehr zwingend der Ursache. Was z.B geschieht, wenn ein Zeitreisender seine Entstehung verhindern würde? Diese Frage lässt sich im Moment nicht beantworten. 
+
+Nebst Philosophischen Fragen gibt es auch noch technische Probleme. Selbst wenn sich eine Reise in die Vergangenheit mathematisch korrekt formulieren lassen würde ist eine praktische Umsetzung momentan undenkbar.
 
 \section{Einfluss von Geschwindigkeit und Gravitation}
 
@@ -68,8 +61,8 @@ Hohe Geschwindigkeit ist eine Möglichkeit, Zeitdilatationen zu erreichen. Wenn 
 \begin{equation} \label{lorentzfaktor}
     \gamma=\frac{1}{\sqrt{1-\displaystyle\frac{v^2}{c^2}}} 
 \end{equation}
-Dieses $\gamma$ kommt, wie oben bei der Rechnung gezeigt und auch beschrieben, in der Berechnung der Eigenzeit vor. %angepasst
-Die Formel \eqref{Eigenzeit} ist in dieser Form noch nicht sehr anschaulich. Sie zeigt jedoch, dass die jeweils gewählte Metrik mit den jeweiligen Basisvektoren "multipliziert" werden muss (Einsteinsche Summenkonvention). Je nach Metrik können andere Resultate entstehen.
+Die ist das $\gamma$, welches in der Berechnung der Eigenzeit \eqref{Eigenzeit} vorkommt. %nomol gändert. besser?
+Die Formel \eqref{Eigenzeit} ist in dieser Form noch nicht sehr anschaulich. Sie zeigt, dass die gewählte Metrik mit den jeweiligen Basisvektoren "multipliziert" werden muss (Einsteinsche Summenkonvention). Die Metrik beschreibt also die Krümmung des Raumes und damit auch die Dehnung der Zeit. %amol en versuach. z andera isch immerno inhaltsleer gise
 Durch das Verwenden der Minkowski-Metrik, welche Raum und Zeit miteinander verbindet und der Koordinaten $t, x, y, z$ l\"asst sich eine verst\"andliche Form herleiten. 
 \begin{equation}
     g_{\mu\nu}=
