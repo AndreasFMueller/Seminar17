@@ -53,7 +53,7 @@ x0(4,1) = 0;        %start phi
 x0(5,1) = 0.5;      %derived time
 x0(6,1) = 0;        %radial velocity
 x0(7,1) = 0;        %derived theta
-x0(8,1) = 0.0004;   %angualr velocity
+x0(8,1) = 0.0004;   %angular velocity
 
 x0 = mnormalize(x0);
 x0
