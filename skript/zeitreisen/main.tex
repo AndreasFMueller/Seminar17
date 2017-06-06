@@ -205,7 +205,10 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
     \subsubsection{Energie}\label{skript:chapters:zrirtreisen:energie}
     
     Wie aus der Physik bekannt ist, berechnet sich die kinetische Energie eines Objekts aus $E_{\text{kin}}=\frac{1}{2}mv^2$. Doch der Faktor $c^2$ lässt die kinetische Energie auch für verschwindend kleine Massen ins unerreichbare schnellen.
-    Momentan wird darüber nachgedacht, kleine Sonnensegel mittels Laserstrahlen auf 20\% Lichtgeschwindigkeit zu beschleunigen und diese dann Richtung Proxima-Centauri (nächste Sonne ausserhalb unseres Sonnensystems) zu schiessen. Das sind jedoch erst wilde Ideen, und es ist nicht mal für winzige Segel möglich auf $20\%c$ zu beschleunigen. Bis der Mensch und seine Fortbewegungsmittel also solche Geschwindigkeiten erreichen und wir die dafür benötigte Energie zur Verfügung stellen können, wird noch einige Zeit vergehen.
+    
+    Momentan wird darüber nachgedacht, kleine Sonnensegel mittels Laserstrahlen auf 20\% Lichtgeschwindigkeit zu beschleunigen und diese dann Richtung Proxima-Centauri (nächste Sonne ausserhalb unseres Sonnensystems) zu schiessen. Das sind jedoch erst wilde Ideen, und es ist nicht mal für winzige Segel möglich auf $20\%c$ zu beschleunigen. 
+    
+    Bis der Mensch und seine Fortbewegungsmittel also solche Geschwindigkeiten erreichen und wir die dafür benötigte Energie zur Verfügung stellen können, wird noch einige Zeit vergehen.
     Das bedeutet also, dass mittels Geschwindigkeit in naher Zukunft keine signifikanten Zeitdilatationen erreicht werden können. Auch wenn der Effekt in gewissen Präzisionsanwendungen berücksichtigt werden muss, ist er für uns anders als eigentlich erwartet relevant. Bleibt zu hoffen, dass die Gravitation bessere Resultate bringt. 
     
     \subsubsection{Massereiche Objekte}
@@ -214,7 +217,9 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
     
     Da der Effekt jedoch zu klein ist für eine wirkliche Zeitreise, lässt sich die gleiche Rechnung mit der Sonne machen. Schnell wird klar, dass selbst die grössten Sterne zu wenig Masse haben, um eine nennenswerte Zeitdilatation zu verursachen. Unsere Simulationen zeigen, dass selbst riesige Sonnen einen zu kleinen Effekt auf die Zeit haben.
     %Villeicht Tabelle mit Zeitabweichung Erde, sonne
-    Benötigt werden also schwere Objekte an die man, im besten Fall, auch nahe heran fliegen kann. Das Ergebnis aus diesem Ausschlussverfahren sind deshalb, als letzte Option, schwarze Löcher. Von unserer Position aus gesehen ist das nächste grosse schwarze Loch Sagittarrius A*, welches sich im Zentrum unserer Galaxis befindet. Dieses ist ein sogenanntes supermassive schwarze Loch sollte den Anforderungen genügen. Im Vergleich dazu gibt es noch stellare schwarze Löcher, diese besitzen für uns jedoch auch zu wenig Masse. Unsere späteren Simulationen werden auch zeigen, dass sich mittels Sagittarrius A* tatsächlich eine signifikante Zeitdilatation erreichen lässt.
+    Benötigt werden also schwere Objekte an die man, im besten Fall, auch nahe heran fliegen kann. 
+    
+    Das Ergebnis aus diesem Ausschlussverfahren sind deshalb, als letzte Option, schwarze Löcher. Von unserer Position aus gesehen ist das nächste grosse schwarze Loch Sagittarrius A*, welches sich im Zentrum unserer Galaxis befindet. Dieses ist ein sogenanntes supermassive schwarze Loch sollte den Anforderungen genügen. Im Vergleich dazu gibt es noch stellare schwarze Löcher, diese besitzen für uns jedoch auch zu wenig Masse. Unsere späteren Simulationen werden auch zeigen, dass sich mittels Sagittarrius A* tatsächlich eine signifikante Zeitdilatation erreichen lässt.
     
     \subsection{Reise}
     
@@ -270,6 +275,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	\subsubsection{Wir lassen uns "fallen"}
 	
 	Die zweite Möglichkeit wäre, dass wir uns, wenn wir angekommen sind "fallenlassen" \ und sehen was passiert. So können je nach Anfangsgeschwindigkeit, Abstand und Position verschiedene Bahnen erreicht werden. Die Geschwindigkeit, Richtung und Abstand vom schwarzen Loch stellen bei der Ankunft also gerade die Anfangsbedingungen dar. Vom Absturz in den Ereignishorizont bis zu einer Bahn, auf der wir dem Gravitationstrichter des schwarzen Lochs entkommen und uns in die Weiten des Weltalls verabschieden, ist alles möglich. Beides sind jedoch eher unangenehme Szenarien. 
+	
 	Wie findet man also eine Bahn möglichst nahe am schwarzen Loch, ohne dass eines dieser zwei Ereignisse eintritt und ohne weitere Steuerenergie zu verwenden?
 	Lösung unseres Problem sind die Geodäten, welche uns aufgrund der Anfangsbedingungen eine Bahn berechnen lassen. Aus der Lösung dieser Gleichungen lässt sich dann auch die Eigenzeit und somit die Effizienz unserer Zeitreise berechnen. Dies werden wir am Schluss der Arbeit mittels einer Simulation durchführen und so sehen, wie viel Zeit wir tatsächlich einsparen können.
 	
@@ -300,7 +306,11 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	\ddot{x}^{\alpha} = -\Gamma^{\alpha}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}
 	\end{equation}
 	Daraus lässt sich interpretieren, dass die Beschleunigungen, welche für die nächste Position wichtig sind, ein Produkt aus den $\Gamma$ mit den jeweiligen Beschleunigungen sind.
-	Doch was sind diese $\Gamma$ genau? Es sind sogenannte Christoffelsymbole, auch Zusammenhangskoeffizienten genannt. Sie beschreiben wie die Geschwindigkeiten und Beschleunigungen zusammenhängen und wie Energie innerhalb des Systems transformiert wird. Also kurz gesagt, wie sich das Raumschiff im Gravitationsfeld bewegt. 
+	Doch was sind diese $\Gamma$ genau?
+	
+	Es sind sogenannte Christoffelsymbole, auch Zusammenhangskoeffizienten genannt. Sie beschreiben wie die Geschwindigkeiten und Beschleunigungen zusammenhängen und wie Energie innerhalb des Systems transformiert wird. Also kurz gesagt, wie sich das Raumschiff im Gravitationsfeld bewegt.
+	
+	 
 	Da wir ja, wie im Kapitel über Gravitation \ref{Gravitation} bereits erwähnt, die Schwarzschild-Metrik verwenden müssen wir nun zu Kugelkoordinaten wechseln, da die Metrik auf diesen beruht. Wenn wir nun die einzelnen Koordinaten ausschreiben entsteht ein Differentialgleichungssystem 2. Ordnung.
 	
 	\begin{equation}\label{skript:chapter:zeitreisen:geodaeten4dim}
@@ -337,7 +347,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	x^{2}=\vartheta, \qquad
 	x^{3}=\varphi
 	\end{align*}
-	Wenn wir nun wie im Kapitel über Geschwindigkeit \ref{Eigenzeit}mittels Einsteinscher Summenkonvention die Matrix mit den Koordinaten multiplizieren ergibt sich folgende Zeilenform:
+	Wenn wir nun wie im Kapitel über Geschwindigkeit \ref{Eigenzeit}mittels Einsteinscher Summenkonvention die Matrix mit den Koordinaten multiplizieren, lässt sie sich auch in Zeilenform
 	\begin{equation}
 	ds^2
 	=
@@ -349,6 +359,8 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	+ 
 	r^2\sin^2(\vartheta)d\varphi
 	\end{equation}
+	darstellen, welche auch gleich die Längenmessung im betrachteten Raum darstellt.
+	
 	So geschrieben, stellt sie auch gleich die Längenmessung im betrachteten Raum dar.
 	$r_g$ beschreibt den Gravitationsradius (Ereignishorizont) des betrachteten Körpers. Die Bedeutung wird im nächsten Unterkapitel erklärt.
 	Sie berücksichtigt die Krümmung des Raumes, also die Gravitation, und ist so für unsere Zwecke bestens geeignet. 
@@ -410,14 +422,14 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	
 	\subsection{Aufstellen der Gleichungen}
 	
-	Nun da alle Elemente bekannt sind, lassen sich die Geodätengleichungen  von oben ausschreiben. Da wir uns bei unseren Umkreisungen auf einer Ebene bewegen und diese nicht verlassen, ist der Winkel $\vartheta = \pi/2$. Glücklicherweise fallen somit alle seine Ableitungen weg. Die dritte Gleichung reduziert sich als auf $\ddot{\vartheta}(s)=0$ und ist für uns nicht mehr relevant. Das Problem welches wir lösen müssen, reduziert sich also auf 3 Dimensionen. Hier nochmal die Grundform von oben \eqref{skript:chapter:zeitreisen:geodaeten4dim}, jedoch um die $\vartheta$ Koordinate reduziert:
-	
+	Nun da alle Elemente bekannt sind, lassen sich die Geodätengleichungen  von oben ausschreiben. Da wir uns bei unseren Umkreisungen auf einer Ebene bewegen und diese nicht verlassen, ist der Winkel $\vartheta = \pi/2$. Glücklicherweise fallen somit alle seine Ableitungen weg. Die dritte Gleichung reduziert sich als auf $\ddot{\vartheta}(s)=0$ und ist für uns nicht mehr relevant. Das Problem welches wir lösen müssen, reduziert sich also auf 3 Dimensionen. Hier nochmal die Grundform von oben \eqref{skript:chapter:zeitreisen:geodaeten4dim},
 	\begin{align*}
 	\ddot{t}(s) = -\Gamma^{1}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
 	\ddot{r}(s) = -\Gamma^{2}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}\\
 	\ddot{\varphi}(s) = -\Gamma^{4}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}		
 	\end{align*} 
-	Wenn wir jetzt alle Christoffelsymbole mit den jeweiligen Koordinaten in die Gleichungen einsetzen, entsteht also das folgende vereinfachte Differentialgleichungssystem:
+ 	jedoch um die $\vartheta$ Koordinate reduziert.
+	Folgendes Differentialgleichungssystem
 	\begin{equation}\label{finaleq}
 	\begin{aligned}
 	\ddot t(s)
@@ -432,10 +444,12 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	\\
 	\ddot \varphi(s)
 	&=
-	-\frac2r \dot r(s)\,\dot\varphi(s)
+	-\frac2r \dot r(s)\,\dot\varphi(s).
 	\end{aligned}
 	\end{equation}
-	Dieses nichttriviale System lässt sich leider nur numerisch lösen. Wir haben zu diesem Zweck ein modulares Matlab-Skript geschrieben, mit welchem sich die Gleichungen nun Schritt für Schritt lösen lassen. Im Code ist die $\vartheta$ Komponente noch enthalten, da sich mit diesem Programm auch nicht ebene Bahnen simulieren lassen. Die Erklärung des Programmcodes und wie sich daraus nun die Zeitdilatation berechnen lässt, folgen im nächsten Kapitel.
+	entsteht, wenn wir alle verbleibenden Christoffelsymbole mit den jeweiligen Koordinaten in das System einsetzen.
+	
+	Dieses nichttriviale System lässt sich leider nur numerisch lösen. Wir haben zu diesem Zweck ein modulares Matlab-Skript geschrieben, mit welchem sich die Gleichungen Schritt für Schritt lösen lassen. Im Code ist die $\vartheta$ Komponente noch enthalten, da sich mit diesem Programm auch nicht ebene Bahnen simulieren lassen. Die Erklärung des Programmcodes und wie sich daraus nun die Zeitdilatation berechnen lässt, folgen im nächsten Kapitel.
 		
 	\section{Simulation}
 		
