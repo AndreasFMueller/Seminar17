@@ -6,30 +6,31 @@
 \section{Einleitung}
 \rhead{Einleitung}
 Was sind Minimalflächen? 
-\\
 Wie werden sie definiert? 
-\\
 Warum passen sie in den Kontext dieses Buches?
-\\
 Diese Fragestellungen werden im Laufe dieses Kapitel an Hand von Beispielen illustriert und erörtert.
 
+Wie der Name erahnen lässt beschreiben Minimalflächen Flähen mit minimalem Flächeninhalt. 
+Ein gängiges Beispiel aus der Physik sind Seifenfilme. Wenn die Luft auf beiden Seiten eines Seifenfilms den gleichen Druck hat, dann ist er eine Minimalfläche.
 
 
 \section{Katenoid}
 \rhead{Katenoid}
-Wie der Name erahnen lässt beschreiben Minimalflächen Formen mit minimalem Flächeninhalt. 
-Ein gängiges Beispiel aus der Physik sind Seifenfilme. Ein Seifenfilm, welcher auf allen Seiten den selben Druck hat, ist eine Minimalfläche.
+Wenn man zwei koaxiale Drahtringe parallel zueinander in Seifenwasser taucht, entsteht eine Rotationsfläche (Abbildung \ref{KatenoidSeifenfilm}) welche Katenoid genannt wird. 
+
+Das Katenoid ist die erste entdeckte Minimalfläche.
+Sie wurde schon 1776 von Jean Baptiste Meusnier erstmals beschrieben.
+In diesem Abschnitt wird die mathematische Herleitung des Katenoids mit Hilfe der Eulerschen Differenzialgleichung der Variationsrechnung aufgezeigt.
 \subsection{Beispiel Katenoid}
-Wenn man zwei Drahtringe parallel zueinander in Seifenwasser taucht, entsteht eine Rotationsfläche \ref{KatenoidSeifenfilm} welche Katenoid gennant wird. 
+
 \begin{figure}
   \centering
   \includegraphics[scale=0.5]{minimal/Cartenoid_Foto.png}
   \caption{Seifenfilm Katenoid} 
   \label{KatenoidSeifenfilm}
 \end{figure}
-Das Katenoid ist die erste entdeckte Minimalfläche.
-Sie wurde schon 1776 von Jean Baptiste Meusnier erstmals beschrieben.
-In diesem Abschnitt wird die mathematische Herleitung des Katenoids mit Hilfe der Eulerschen Differenzialgleichung der Variationsrechnung aufgezeigt.
+
+
 \begin{figure}
   \centering
   \includegraphics[scale=0.3]{minimal/Catenoid34Black.pdf}
@@ -40,7 +41,7 @@ In der Skizze ~\ref{Katenoid} ist ein Katenoid abgebildet, bei welchem in Bezug 
 Die beiden Kreise sollen die gleichen Radien haben, also gilt $r(-L)=r(+L)=R$. 
 Mathematisch werden die Flächenpunkte des Katenoids mit der Funktion $r(z)$ beschrieben, diese wird um die Rotationsachse $z$ rotiert um den Flächeninhalt des Katenoids zu berechnen.
 Hierzu braucht man eine Gleichung, welche eine Länge auf der Katenoidoberfläche beschreibt. 
-Mit Hilfe von Pythagoras kann man schreiben $ds^2=dz^2+dr^2$.
+Mit Hilfe Satzes von Pythagoras (Abbildung \ref{Katenoid}) kann man schreiben $ds^2=dz^2+dr^2$.
 Formt man diese Gleichung um, erhält man die Gleichung
 
 \begin{equation} \label{ds}
@@ -62,47 +63,52 @@ welche man als Funktion $F(r,\dot r, z) = r \sqrt{1+\dot r^2}$ noch verallgemein
 
 
 
-Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differenzialgleichung der Variationsrechnung bedienen 
-\ref{skript:geodaeten:section:variationsprinzip}. 
+Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differenzialgleichung der Variationsrechnung bedienen. 
 \subsubsection{Variationsrechnung}
 Die Eulerschen Differenzialgleichung der Variationsrechnung wird im Kapitel der Geodäten \ref{skript:geodaeten:section:variationsprinzip} genauer erklärt.
-Das Anwendungsprinzip kurz zusammengefasst. Hat man ein kompliziertes Integral, welches man nicht einfach fundamental lösen kann, um die Extremwerte zu bestimmen, kann man die Eulersche Differentialgleichung anwenden. Diese besagt, dass anstelle des Ausrechnens  einer Integralfunktion der Art \eqref{E_DGL1}, kann auch die Differentialgleichung \eqref{E_DGL2} gelöst werden, um die Extremwerte solcher Funktionen zu finden.
+Das Anwendungsprinzip wird hier kurz zusammengefasst. Hat man ein kompliziertes Integral, kann man die Eulersche Differentialgleichung anwenden, um die Extremwerte zu bestimmen. Diese besagt, dass anstelle des Ausrechnens  einer Integralfunktion der Art \begin{equation} \label{E_DGL1}  
+  I(y)= \int_a^b F(x,y(x),\dot y(x))\,dx       
+\end{equation}
+kann auch die Differentialgleichung  
 
 
 
 \begin{equation} \label{E_DGL2}
 \bigg(\frac{\partial F}{\partial y}\bigg)- \frac{d}{dx} \bigg(\frac{\partial F}{\partial \dot{y}}\bigg)=0         
 \end{equation}
+gelöst werden, um die Extremwerte eines solchen Integrals zu finden.
 
-Für die Gleichung des Flächeninhaltes des Katenoids \eqref{S2} erhält man somit die Differentialgleichung
+Für die Gleichung \eqref{S2} des Flächeninhaltes des Katenoids  erhält man somit die Differentialgleichung
 \begin{equation} \label{K_DGL1}
 \bigg(\frac{\partial F}{\partial r}\bigg)- \frac{d}{dz} \bigg(\frac{\partial F}{\partial \dot{r}}\bigg)=0    
 \end{equation}
 
-Die Gleichung 
+Setzt man F ein, erhält man
 \begin{equation} \label{K_DGL_H}
 \sqrt{1+{\dot {r}}^2}-\frac{ d }{ dz } \bigg( r \frac{ 1 }{2  }\left( {1+{\dot {r}}^2}  \right)^{-1/2} 2 \dot {r}\bigg)=0
 \\
 \end{equation}
- wird nun schrittweise umgeformt, 
+Dies wird nun schrittweise umgeformt zunächst durch ausrechnen der Ableitung
 
 \begin{equation} \label{K_DGL_H2}
 \left(1+{\dot {r}}^2  \right)^{-1/2}-\bigg(r \frac{ -1 }{2  } \left({1+{\dot {r}}^2}  \right)^{-3/2} 2 \dot{r} \ddot{r}  \dot{r}+ r \left({1+{\dot {r}}^2}  \right)^{-1/2} \ddot{r} +\dot{r} \left({1+{\dot {r}}^2}  \right)^{-1/2} \dot{r}\bigg)=0
 \end{equation}
-bis eine  Differentialgleichung zweiter Ordnung  
+bis die Differentialgleichung zweiter Ordnung  
 \begin{equation} \label{K_DGL_R}
 1+{\dot {r}}^2=r  \ddot{r}
 \end{equation}
 entsteht. 
-Gesucht ist also eine Funktion $r(z)$, die die Differentialgleichung \eqref{K_DGL_R} erfüllt.
+Gesucht ist also eine Funktion $r(z)$, die die Differentialgleichung \eqref{K_DGL_R} erfüllt. Als Randbedingungen für die Funktion $r(z)$ sind in diesem Beispiel $r(+L)=R$ und $r(-L)=R$ aus der Abbildung \ref{Katenoid} gegeben.
 
 \subsubsection{Lösen der Differentialgleichung}
-Die Differenzialgleichung zweiter Ordnung \eqref{K_r} kann mit Hilfe einiger mathematischer Umformungen, Aufleiten und hyperbolischer Trigonometrie berechnet werden. 
+Die Differenzialgleichung zweiter Ordnung \eqref{K_r} kann mit Hilfe einiger mathematischer Umformungen, Aufleiten und hyperbolischer Trigonometrie gelöst werden. 
 Dies ist eine langwierige Berechnung und wird daher hier nicht durchgeführt.
+
 Anstelle des konkreten Ausrechnens kann man die Lösung der Differentialgleichung \eqref{K_DGL_R} auch erraten. 
 Aus der hyperbolischen Trigonometrie ist $\cosh^2-\sinh^2=1$ oder anders geschrieben $1+\sinh^2=\cosh^2$ \eqref{K_hTrigo} bekannt. 
 Beim Ableiten von $\cosh$ erhält man $\sinh$ und $\sinh$ abgeleitet ergibt wieder $\cosh$. 
 Mit dieser Erkenntnis kann man durch das Vergleichen der Gleichungen versuchen die Form der Lösung der DGL \eqref{K_DGL_R2} zu erraten. 
+
 Der Term $\sinh^2$  (zweiter Term links) soll der quadrierten Ableitung einer Funktion ${\dot {r}}^2$ entsprechen also kann man schreiben $(\cosh)'^2$. 
 Auf der rechten Seite sollte $\cosh^2=\cosh \cosh$ dem Produkt von einer Funktion und ihrer doppelten Ableitung gleich kommen. Da gilt $(\cosh)''=(\sinh)'=\cosh$, kann die rechte Seite so $(\cosh) (\cosh)''$ auch durch $\cosh$ ausgedrückt werden.
 
@@ -120,27 +126,27 @@ Zusammengefasst kann man die Gleichung
 1+(\cosh)'^2=(\cosh) (\cosh)''
 \end{equation}
 dass $r(z)$ eine Funktion in $\cosh$ sein muss.
-Die exakte Lösung der Differentialgleichung \eqref{K_DGL_R} beinhaltet noch die zwei Konstanten $K$ und $\xi$, welche durch die doppelte Integration dazukommen.
+Die exakte Lösung der Differentialgleichung \eqref{K_DGL_R} beinhaltet noch die zwei Konstanten $K$ und $\xi$, welche durch die doppelte Integration dazukommen. Daraus resultiert somit für $r(z)$ die Gleichung 
 
 \begin{equation} \label{K_r}
 r(z)=K \cosh\bigg(\frac{z-\xi}{K}\bigg)
 \end{equation}
 
-Unter Einbezug der Anfangsbedingungen $r(+L)=R$ und $r(-L)=R$ ergibt sich für $z= \pm L$ die Gleichung
+Unter Einbezug der Anfangsbedingungen $r(+L)=R$ und $r(-L)=R$, aus Abbildung \ref{Katenoid}, ist der Radius $R$ bei $z= \pm L$ gleich gross. Deshalb kann man $r(+L)$ mit $r(+L)$ und $R$ gleichsetzen. Durch einsetzen der Funktion $r(z)$ erhält man folglich die Gleichung
 \begin{equation} \label{K_rL}
 K \cosh\bigg(\frac{L-\xi}{K}\bigg)=K \cosh\bigg(\frac{-L-\xi}{K}\bigg)=R
 \end{equation}
 
-Da der $\cosh$ eine gerade Funktion ist, kommt man entweder auf $L-\xi=-L-\xi$ oder auf $L-\xi=-(-L-\xi)$.
-Beim ersten Fall wäre $L=-L$, was keinen Sinn ergibt, da dann $L=0$ wäre. Beim zweiten Fall muss $\xi=0$ sein, also ist die Lösung für das Katenoid die Funktionsgleichung
+Da der $\cosh$ eine gerade Funktion ist, kommt man entweder auf $L-\xi=-L-\xi$ oder auf $L-\xi=-(-L-\xi)$. Die Integrationskonstante $K$ kann bei diesen zwei Gleichungen für $L$ weggelassen werden, da eine beidseitige Division bei den Gleichungen überflüssig ist.
+Beim ersten Fall wäre $L=-L$, was keinen Sinn ergibt, da dann $L=0$ wäre. Beim zweiten Fall muss $\xi=0$ sein, also ist die Lösung für das Katenoid die Funktionsgleichung 
 
 \begin{equation} \label{K_rz}
 r(z)=K \cosh\left(\frac{z}{K}\right)
 \end{equation}
-
+mit $z$ als Parameter und $K$ als Integrationskonstante.
 \section{Sattelfläche}
 \rhead{Sattelfläche}
-Es gibt mehrere verschiedene Definitionen von Minimalflächen, das Beispiel des Katenoids illustriert das Konzept des minimalen Flächeninhaltes. 
+Es gibt mehrere verschiedene Arten Minimalflächen zu Charakterisieren, das Beispiel des Katenoids illustriert das Konzept des minimalen Flächeninhaltes. 
 Eine mathematischere Definition basiert auf der mittleren Krümmung. 
 In diesem Buch wurde bis anhin hauptsächlich die Gauss Krümmung betrachtet. 
 Dies weil wir uns auf der Erde in (oder direkt auf) der zu Betrachtenden Fläche befinden. 
@@ -202,7 +208,7 @@ Ein Zylinder ist aus der Ameisenperspektive flach, schaut man von aussen, sieht 
 Dies, weil er eine positive mittlere Krümmung aufweist. 
 Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fläche) aus, dort ist die Gausskrümmung negativ, hingegen kann die mittlere Krümmung im Spezialfall, dass $R_1=-R_2$, also die Krümmungsradien ein umgekehrtes Vorzeichen aufweisen, aber vom Betrag her identisch sind, gleich null sein. 
 In diesem Fall ist diese Sattelfläche ein Beispiel für eine Minimalfläche.
-Die besondere Bedeutung der mittleren Krümmung H besteht darin, dass Minimalflächen dadurch charakterisiert sind, dass für sie gilt H=0. Der Beweis, dass die mittlere Krümmung bei Minimalflächen gleich null sein muss, übersteigt den Umfang dieses Kapitels er kann jedoch in der Literatur \ref{minimal:MotionOfSurfaceByItsMeanCurvature} nachgelesen werden.
+Die besondere Bedeutung der mittleren Krümmung H besteht darin, dass Minimalflächen dadurch charakterisiert sind, dass für sie gilt $H=0$. Im Abschnitt \ref{Young-Laplace} wird die Young-Laplace-Gleichung hergeleitet, welche erklärt warum Minimalflächen die Eigenschaft $H=0$ haben. Der Beweis, dass die mittlere Krümmung bei Minimalflächen gleich null sein muss, übersteigt jedoch den Umfang dieses Kapitels er kann bei Interesse in der Literatur \ref{minimal:MotionOfSurfaceByItsMeanCurvature} nachgelesen werden. 
 
 \begin{figure} 
   \centering
@@ -221,7 +227,9 @@ Die Sattelfläche beschreibt eine Fläche, bei der auf einer Höhe vier Ebenen z
   \caption{Sattelfläche von Scherk} 
   \label{fig:Scherk}
 \end{figure}
-Die Ebenen fliessen zur einfacheren Berechnung und Darstellung auf der Höhe null ($z=0$) ineinander. Die dabei gebildete Sattelfläche hat gemäß Definition \. (Def: \ref{Variationsproblem}) eine Mittlere Krümmung $H=0$. Diese Fläche wird im Abschnitt \ref{Scherk Berechnung}  nachgerechnet.\\ Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlösung nachgebildet werden \. (Abb: \ref{fig:SoapScherk}). Dies folgt direkt aus der äquivalenten Definition \ref{Seifenfilm}. Die einzelnen Seifenmoleküle versuchen ein stabiles Gleichgewicht der abstossenden und anziehenden Kräfte zu finden. Dieser stabile Punkt braucht durch das Gleichgewicht ein Minimum an Energie.
+Die Ebenen fliessen zur einfacheren Berechnung und Darstellung auf der Höhe null ($z=0$) ineinander. Die dabei gebildete Sattelfläche hat gemäß Definition \. (Def: \ref{Variationsproblem}) eine Mittlere Krümmung $H=0$. Diese Fläche wird im Abschnitt \ref{Scherk Berechnung}  nachgerechnet.
+
+Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlösung nachgebildet werden \. (Abb: \ref{fig:SoapScherk}). Dies folgt direkt aus der äquivalenten Definition \ref{Seifenfilm}. Die einzelnen Seifenmoleküle versuchen ein stabiles Gleichgewicht der abstossenden und anziehenden Kräfte zu finden. Dieser stabile Punkt braucht durch das Gleichgewicht ein Minimum an Energie.
 \begin{figure}
   \centering
   \includegraphics[scale=0.3]{minimal/SattelflacheSoapFilm.png}
