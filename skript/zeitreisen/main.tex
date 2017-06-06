@@ -16,12 +16,16 @@
 
 \end{itemize}
 In diesem Kapitel beschäftigen wir uns mit der mathematischen Beschreibung von Zeitreisen; wie man solche Effekte erreichen kann und ob sie mit heutigen Mitteln erreichbar sind. Zu Beginn soll gezeigt werden, wie man eine Zeitreise mit Hilfe der Eigenzeit beschreibt.
+
 Die Eigenzeit kann als die Zeit verstanden werden, welcher eine mit einem Raumfahrer mitfliegenden Uhr anzeigen würde, während die Koordinatenzeit einer am Ausgangspunkt der Reise zurückgebliebenen Uhr ist.
-Es zeigt sich, dass die beiden Uhren durch Geschwindigkeit und Gravitation tatsächlich unterschiedlich schnell laufen können. Ein besonderes Augenmerk gilt dabei schwarzen Löchern. Nach dem wir die nötige Mathematik eingeführt haben, veranschaulichen wir das Ganze mit einer Simulation. Natürlich wollen wir uns auch Gedanken über die Realisierbarkeit machen. Wie sich zeigen wird, scheinen Zeitreisen keine reine Fiktion zu sein. Allerdings sind sie auch nicht in einem Ausmass möglich, wie man es sich vielleicht erhofft.
+Es zeigt sich, dass die beiden Uhren durch Geschwindigkeit und Gravitation tatsächlich unterschiedlich schnell laufen können. Ein besonderes Augenmerk gilt dabei schwarzen Löchern. 
+
+Nach dem wir die nötige Mathematik eingeführt haben, veranschaulichen wir das Ganze mit einer Simulation. Natürlich wollen wir uns auch Gedanken über die Realisierbarkeit machen. Wie sich zeigen wird, scheinen Zeitreisen keine reine Fiktion zu sein. Allerdings sind sie auch nicht in einem Ausmass möglich, wie man es sich vielleicht erhofft.
 
 \section{Was ist eine Zeitreise?}
 Um diese Frage besser beantworten zu können, starten wir mit einem Gedankenexperiment. Wir stellen uns vor, zwei Autos fahren mit der gleichen Geschwindigkeit aneinander vorbei. Fahren die beiden Autos z.B. 100 km/h, ist die Relativgeschwindigkeit mit der sie sich passieren gerade doppelt so hoch, also 200 km/h. In der klassischen Physik wäre das ein korrektes Ergebnis. In einem zweiten Anlauf sollen beide Fahrer Lichtgeschwindigkeit fahren. Spätestens jetzt macht sich ein Fehler bemerkbar. Denn die relative Geschwindigkeit, in der sich die beiden Fahrzeuge kreuzen ist nicht etwa doppelte Lichtgeschwindigkeit, sondern einfache Lichtgeschwindigkeit. Denn wir wissen, dass dies die grösste erreichbare Geschwindigkeit ist.
 Beide Fahrer behaupten nun aber vehement, ihre eigene Geschwindigkeitsmessung sei korrekt gewesen. Folglich muss es Unterschiede in der Längen- und Zeitmessung geben.
+
 Wie wir in Kapitel \ref{skript:speziell:section:lichtkegel} festgehalten haben, ist dies auch der Fall. Jeder Beobachter misst die gleiche Lichtgeschwindigkeit. Längen- und Zeitmessung müssen also angepasst werden. Zeit ist also dehnbar. Diese Dehnung nennt man Zeitdilatation. Wir brauchen also die Lorentztransformation aus Kapitel \ref{skript:speziell:section:lorentztransformation}, welche immer auch die Zeit beeinflusst.
 
 \subsection{Die Eigenzeit}
@@ -51,18 +55,22 @@ Während z.B. für ein Beobachter $A$ ganz normal ein Jahr verstrich wären für
 \subsubsection{Vergangenheit}
 Generell sind Reisen in die Vergangenheit sehr schwierig. Denn dort können Kausalitätsprobleme auftreten. Eine Wirkung folgt nicht mehr zwingend der Ursache. Was z.B geschieht, wenn ein Zeitreisender seine Entstehung verhindern würde? Diese Frage lässt sich im Moment nicht beantworten. 
 
-Nebst Philosophischen Fragen gibt es auch noch technische Probleme. Selbst wenn sich eine Reise in die Vergangenheit mathematisch korrekt formulieren lassen würde ist eine praktische Umsetzung momentan undenkbar.
+Nebst dies philosophischen Aspekten gibt es auch noch technische Probleme. Selbst wenn sich eine Reise in die Vergangenheit mathematisch korrekt formulieren lassen würde, ist eine praktische Umsetzung momentan undenkbar.
 
 \section{Einfluss von Geschwindigkeit und Gravitation}
-
 Da wir nun wissen, wie wir eine Zeitreise beschreiben können, müssen wir uns nun Gedanken machen, wie wir Zeitdilation erreichen können. Im wesentlichen gelingt dies durch Geschwindigkeit oder Gravitation. 
 \subsection{Geschwindigkeit}
-Hohe Geschwindigkeit ist eine Möglichkeit, Zeitdilatationen zu erreichen. Wenn sich eine Person relativ zu einem Bezugssystem schnell bewegt, vergeht f\"ur diese Person die Zeit im Vergleich zum Bezugssystem langsamer. Die Differenz wird durch den Lorentzfaktor beschrieben, welcher sich aus der Lorentztransformation herleiten l\"asst. Er beschreibt wie stark die Eigenzeit im Verhältnis zu einem Bezugssystem gedehnt wird. %corrected^^
+Hohe Geschwindigkeit ist eine Möglichkeit, Zeitdilatationen zu erreichen. Wenn sich eine Person relativ zu einem Bezugssystem schnell bewegt, vergeht f\"ur diese Person die Zeit im Vergleich zum Bezugssystem langsamer. Die Differenz wird durch den Lorentzfaktor beschrieben, welcher sich aus der Lorentztransformation herleiten l\"asst. Er beschreibt wie stark die Eigenzeit im Verhältnis zu einem Bezugssystem gedehnt wird. 
 \begin{equation} \label{lorentzfaktor}
     \gamma=\frac{1}{\sqrt{1-\displaystyle\frac{v^2}{c^2}}} 
 \end{equation}
+<<<<<<< Updated upstream
 Die ist das $\gamma$, welches in der Berechnung der Eigenzeit \eqref{Eigenzeit} vorkommt. %nomol gändert. besser?
 Die Formel \eqref{Eigenzeit} ist in dieser Form noch nicht sehr anschaulich. Sie zeigt, dass die gewählte Metrik mit den jeweiligen Koordinaten "multipliziert" werden muss (Einsteinsche Summenkonvention). Je nach Metrik werden auch andere Faktoren in die Berechnung mit einbezogen, wie z.B. auch die Gravitation. Die Beschreibung einer weiterer Metriken folgt im nächsten Kapitel.
+=======
+Die ist das $\gamma$, welches in der Berechnung der Eigenzeit \eqref{Eigenzeit} vorkommt.
+Die Formel \eqref{Eigenzeit} ist in dieser Form noch nicht sehr anschaulich. Sie zeigt, dass die gewählte Metrik mit den jeweiligen Basisvektoren "multipliziert" werden muss (Einsteinsche Summenkonvention). Die Metrik beschreibt also die Krümmung des Raumes und damit auch die Dehnung der Zeit. %amol en versuach. z andera isch immerno inhaltsleer gise
+>>>>>>> Stashed changes
 Durch das Verwenden der Minkowski-Metrik, welche Raum und Zeit miteinander verbindet und der Koordinaten $t, x, y, z$ l\"asst sich eine verst\"andliche Form herleiten. 
 \begin{equation}
     g_{\mu\nu}=
@@ -149,10 +157,10 @@ Diese Werte in die Gleichung eingesetzt ergeben:
 
 In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwischen Geschwindigkeit und Lorentzfaktor als Graph. Obiges Beispiel und die Abbildung zeigen, dass eine relevante Zeitdilatation erst bei sehr hohen Geschwindigkeiten erreicht wird. Um wirklich grosse Zeitdilatationen zu erreichen, braucht man annähernd Lichtgeschwindigkeit. Wie bald ersichtlich wird, stellt dies ein gravierendes Problem bei der Realisierung dar.
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=\hsize]{zeitreisen/Lorentzfaktor.jpg}
-    \caption{Änderung des Lorentzfaktors in Abh\"angigkeit der Geschwindigkeit}
-        \label{skript:zeitreisen:fig:lorentz} 
+   \centering
+   \includegraphics[width=12cm]{zeitreisen/tikz/lorentz.pdf}
+   \caption{Änderung des Lorentzfaktors in Abh\"angigkeit der Geschwindigkeit}
+   \label{skript:zeitreisen:fig:lorentz} 
 \end{figure}
 \subsection{Gravitation} \label{Gravitation}
 
@@ -457,18 +465,13 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	Dieses nichttriviale System lässt sich leider nur numerisch lösen. Wir haben zu diesem Zweck ein modulares Matlab-Skript geschrieben, mit welchem sich die Gleichungen nun Schritt für Schritt lösen lassen. Im Code ist die $\vartheta$ Komponente noch enthalten, da sich mit diesem Programm auch nicht ebene Bahnen simulieren lassen. Die Erklärung des Programmcodes und wie sich daraus nun die Zeitdilatation berechnen lässt, folgen im nächsten Kapitel.
 		
 	\section{Simulation}
-	
-	
-	
-	
+		
 	%Erklärung sourcecode
 	
 	\section{Fazit}
 	
 	Welche Erkenntnisse ziehen wir also aus unserem Projekt?
 	Wir haben herausgefunden, dass sich mittels der Gravitation eine Zeitreise erreichen lässt. Jedoch zeigen unsere Simulationen, dass es schwierig ist mehr als 20\% Zeitverlangsamung zu erreichen. Dass grösste Problem ist jedoch, überhaupt ein schwarzes Loch zu erreichen. Momentan scheitert das "Projekt Zeitreise" hauptsächlich daran. Auch mit 99\% Lichtgeschwindigkeit dauert es noch hunderte von Jahren, bis wir das Ziel, trotz Zeitdilatation, erreichen. Wir werden also warten müssen, bis die Wissenschaft einen Weg gefunden hat, diese Strecke in brauchbarer Zeit zu reisen, oder zu überbrücken. %Science-fiction lässt grüssen;)
-	
-
 
 	\printbibliography[heading=subbibliography]
 	\end{refsection}
