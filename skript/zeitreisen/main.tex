@@ -5,7 +5,7 @@
 \section{Einleitung}
 	Das Thema Zeitreisen fasziniert den Menschen schon seit Jahrhunderten. Früh entstanden Träume, den Verlauf der Zeit manipulieren zu können. Erste schriftliche und bildliche Belege dafür gab es bereits in der hinduistischen Mythologie und in der buddhistischen Religion. Auch in der modernen Literatur und in der Filmindustrie sind Zeitreisen ein beliebtes Thema. Einige Beispiele daf\"ur sind: 
 \begin{itemize}
-    \item Time Machine, 1895 von H.G.Wells. Erste literarische Beschreibung einer Zeitreise in die Zukunft mittel Zeitmaschine.
+    \item Time Machine, 1895 von H.G. Wells. Erste literarische Beschreibung einer Zeitreise in die Zukunft mittel Zeitmaschine.
     \item Back to the Future, 1985. Einer der bekannteren Filme über Zeitreisen mit Michael J. Fox.
     \item Star Trek, 1966. Eine Serie mit zahlreichen Ablegern in Film und Büchern. Der Klassiker schlechthin. 
     \item Doctor Who, 1963. Die von BBC produzierte Serie feiert vor allem in den Vereinigten Staaten grosse Beliebtheit. 1996 wurde sogar ein Film produziert. Seit 2005 werden wieder neue Folgen ausgestrahlt.
@@ -192,8 +192,6 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	Doch welche Metrik beinhaltet den Einfluss der Gravitation auf die Zeit? 
 	Da der Raum durch die Gravitation gekrümmt wird, benötigen wir ein Metrik für die Längen- und Zeitmessung, welche gravitative Effekte miteinbezieht.
 	Zum Glück kennen wir bereits eine solche Metrik. Die Schwarzschild-Metrik eignet sich bestens dazu, denn sie beschreibt die Raumkrümmung um massereiche Objekte. Wir werden sie später auf ein schwarzes Loch anwenden. 
-	
-	Allerdings nehmen wir an, dass diese nicht rotieren und auch keine Ladung besitzen. Dadurch nehmen wir einerseits einen Fehler in Kauf, andererseits hält sich der rechnerische Aufwand in Grenzen. Um diese weiteren Effekte miteinzubeziehen müsste man die Kerr- oder die Kerr-Newman Metrik verwenden. Das Rechnen mit diesen Metriken ist um ein vielfaches komplizierter. Der Ansatz ist genau der gleiche. Allerdings entstehen viel mehr Terme welche nummerisch auch schwieriger Hand zu haben sind. Die Schwarzschild-Metrik genügt um zu überprüfen ob merkliche Zeitreisen überhaupt möglich sind. Deshalb beschränken wir uns auf sie.
 
 	\section{Realisierbarkeit}
     
@@ -215,7 +213,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
     Um also eine Zeitdilatation zu erreichen, müssen wir auf die Gravitation ausweichen. Betrachten wir als erstes die Erde. Die Gravitation der Erde beeinflusst die Zeit in GPS-Satelliten bereits derart, dass die resultierenden Fehler mathematisch herausgerechnet werden müssen. Weiter Details und Berechnungen dazu sind im Kapitel über GPS \ref{chapter:gps} zu finden. %label noch nicht online 
     
     Da der Effekt jedoch zu klein ist für eine wirkliche Zeitreise, lässt sich die gleiche Rechnung mit der Sonne machen. Schnell wird klar, dass selbst die grössten Sterne zu wenig Masse haben, um eine nennenswerte Zeitdilatation zu verursachen. Wir müssen also noch schwerer Objekte betrachten. Objekte an denen man im besten Fall auch nahe vorbei fliegen kann. 
-     %Villeicht Tabelle mit Zeitabweichung Erde, sonne
+    (Bsp aus GPS)
      
     Das Ergebnis aus diesem Ausschlussverfahren sind deshalb, als letzte Option, schwarze Löcher. Die sogenannten ''Stellar-size black holes'' kommen relativ häufig vor, besitzen aber nur einige Sonnenmassen. Wir benötigen supermassive schwarze Löcher. Und davon gibt es in unserer Galaxie lediglich eines.
     
@@ -317,11 +315,14 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	\ddot{\varphi}(s) = -\Gamma^{4}_{\mu\nu}\dot{x}^{\mu}\dot{x}^{\nu}	
 	\end{aligned}
 	\end{equation}
-    und entsteht ein Differentialgleichungssystem 2. Ordnung.
+    und es entsteht ein Differentialgleichungssystem 2. Ordnung.
 
 	\subsection{Schwarzschild-Metrik}\label{Schwarzschild-Metrik}
 	
-	Die von Karl Schwarzschild gefunden Metrik ist ein Lösung der Einsteinschen Feldgleichungen. Sie wurde nur wenige Monate nach der Vorstellung der Feldgleichungen gefunden und stellt eine vergleichsweise einfache Lösung dar. Wie in Kapitel \ref{skript:chapter:zeitreisen:metriken} bereits angedeutet wurde, berücksichtigt sie weder Ladung noch Rotation des schwarzen Lochs. 
+	Die von Karl Schwarzschild gefunden Metrik ist ein Lösung der Einsteinschen Feldgleichungen. Sie wurde nur wenige Monate nach der Vorstellung der Feldgleichungen gefunden und stellt eine vergleichsweise einfache Lösung dar. 
+    
+    Sie geht davon aus, dass das schwarze Loch nicht rotieren und auch keine Ladung besitzen. Dadurch nehmen wir einerseits einen Fehler in Kauf, andererseits hält sich der rechnerische Aufwand in Grenzen. Um diese weiteren Effekte miteinzubeziehen müsste man die Kerr- oder die Kerr-Newman Metrik verwenden. Das Rechnen mit diesen Metriken ist um ein vielfaches komplizierter. Der Ansatz ist genau der gleiche. Allerdings entstehen viel mehr Terme welche nummerisch auch schwieriger Hand zu haben sind. Die Schwarzschild-Metrik genügt um zu überprüfen ob merkliche Zeitreisen überhaupt möglich sind. Deshalb beschränken wir uns auf sie.
+    
 	In Matrixdarstellung
 	\begin{equation}\label{equation:schwarzschild}
 	g_{\mu\nu}=
@@ -372,7 +373,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	
 	\subsection{Christoffelsymbole}\label{christoffel}
 	
-	Die Berechnung der Christoffelsymbole aus der Schwarzschild-Metrik ist kompliziert und sehr rechenaufwändig. Wir beschränken uns hier auf die Berechnung, die Herleitung wird in Kapitel \ref{skript:chapters:geodaeten} ausführlich beschrieben. 
+	Die Berechnung der Christoffelsymbole aus der Schwarzschild-Metrik ist kompliziert und sehr rechenaufwändig. Wir beschränken uns hier auf die Berechnung, die Herleitung wird in Kapitel \ref{skript:chapter:geodaeten} ausführlich beschrieben. 
 	
 	Theoretisch würden für ein vierdimensionales Koordinatensystem $4^{3}$ also $64$ Christoffelsymbole entstehen. Der grösste Teil der Symbole wird allerdings zu $0$ und fällt somit weg. Das vereinfacht auch die Geodätengleichungen um viele Terme. 
 	Für die Schwarzschildmetrik entstehen nach einer Berechnung mit MAXIMA folgende Terme:
@@ -412,7 +413,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	&=
 	\frac1r
 	\end{align*}
-	Terme welche $\dot{\vartheta}(s)$ enthalten werden ebenfalls zu $0$ da $\vartheta$ konstant $\frac{\pi}{2}$ ist. Dadurch vereinfacht sich zum Schluss auch noch der letzte Term der Schwarzschild-Metrik $r^{2}\sin^{2}(\vartheta)$ zu $r^2$. 
+	Terme welche $\dot{\vartheta}(s)$ enthalten werden ebenfalls zu $0$ da $\vartheta$ konstant $\frac{\pi}{2}$ ist. Dadurch vereinfacht sich zum Schluss auch noch der letzte Term der Schwarzschild-Metrik $r^{2}\sin^{2}(\vartheta)$ zu $r^2$. Etwas veranschaulichter kann man das wie folgt begründen. $\vartheta$ beschreibt die Neigung im Raum. Da wir uns immer auf einer Flachen Bahn befinden und wir von einem Statischen schwarze Loch ausgehen, spielt diese Neigung keine Rolle.
 	
 	
 	\subsection{Aufstellen der Gleichungen}
@@ -450,12 +451,10 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
 	%Erklärung sourcecode
 	
 	\section{Fazit}
-    Fazit schribi am schluss nomol
+    (Fazit schribi am schluss nomol)
     
 	Welche Erkenntnisse ziehen wir also aus unserem Projekt?
 	Wir haben herausgefunden, dass sich mittels der Gravitation eine Zeitreise erreichen lässt. Jedoch zeigen unsere Simulationen, dass es schwierig ist mehr als 20\% Zeitverlangsamung zu erreichen. Dass grösste Problem ist jedoch, überhaupt ein schwarzes Loch zu erreichen. Momentan scheitert das ''Projekt Zeitreise'' hauptsächlich daran. Auch mit 99\% Lichtgeschwindigkeit dauert es noch hunderte von Jahren, bis wir das Ziel, trotz Zeitdilatation, erreichen. Wir werden also warten müssen, bis die Wissenschaft einen Weg gefunden hat, diese Strecke in brauchbarer Zeit zu reisen, oder zu überbrücken. %Science-fiction lässt grüssen;)
-
-    Fazit schribi am schluss nomol
     
 	\printbibliography[heading=subbibliography]
 	\end{refsection}
