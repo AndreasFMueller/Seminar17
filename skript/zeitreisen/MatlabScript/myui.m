@@ -121,7 +121,7 @@ f.Visible = 'on';
 
     function btnCallBack(hObj,event)
         solution;
-        quotient = solution(:,2)./solution(:,1)-1;
+        quotient = solution(:,2)-solution(:,1);
         
         figure;
         ax1 = subplot(3,1,1); % top subplot
