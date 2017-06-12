@@ -121,7 +121,7 @@ f.Visible = 'on';
 
     function btnCallBack(hObj,event)
         solution;
-        quotient = solution(:,2)./solution(:,1)-1;
+        quotient = solution(:,2)-solution(:,1);
         
         figure;
         ax1 = subplot(3,1,1); % top subplot
@@ -129,7 +129,7 @@ f.Visible = 'on';
         ax3 = subplot(3,1,3);
         
         plot(ax1,solution(:,1), quotient);
-        title(ax1,'time deviation')
+        title(ax1,'time difference')
         
         plot(ax2,solution(:,1), solution(:,6),'Color', 'r');
         title(ax2,'time derivative')
