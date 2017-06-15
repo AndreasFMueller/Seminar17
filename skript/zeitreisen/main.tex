@@ -454,7 +454,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
     Die Aufgabe liesse sich grundsätzlich mit einem beliebigen Tool lösen. In Kapitel \ref{skript:chapters:s-perihel} wurde z. B. ein ähnliches Problem mit einem Octave-Skript gelöst. 
 
     \subsection{Gliederung des Matlab-Skriptes}
-    Das Matlab-Skript gliedert sich in einzelne Funktionen. Jede Funktion löst ein Teilproblem. Nebst den Funktionen gibt es noch zwei Main Files. Das \text{schwarzschild.m}, welches unsere Simulation startet, und zusätzlich das \text{periheldrehung.m}, dass genau das gleiche Problem löst, wie in Kapitel \ref{skript:chapters:s-perihel}. Auf letzteres wird nicht weiter eingegangen, da dieses schon ausführlich beschrieben wurde.
+    Das Matlab-Skript gliedert sich in einzelne Funktionen. Jede Funktion löst ein Teilproblem. Nebst den Funktionen gibt es noch zwei Main Files. Das \texttt{schwarzschild.m}, welches unsere Simulation startet, und zusätzlich das \texttt{periheldrehung.m}, dass genau das gleiche Problem löst, wie in Kapitel \ref{skript:chapters:s-perihel}. Auf letzteres wird nicht weiter eingegangen, da dieses schon ausführlich beschrieben wurde.
     
     Nachfolgend wollen wir die wichtigsten Komponenten des Skripts genauer anschauen.
 
@@ -471,25 +471,25 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
     Um die Differentialgleichungen nicht nur allgemein, sondern auch spezifisch auf eine Position lösen zu können, brauchen wir natürlich auch einen Anfangsvektor. Deshalb gibt es im Skript den Vektor \texttt{x0}. Er enthält die gleichen Elemente wie \texttt{X}.
     
     \subsubsection{Normierung}
-    Die Geschwindigkeit des Anfangsvektors normieren wir im File \text{mnormalize.m} mit der gleichnamigen Funktion 
+    Die Geschwindigkeit des Anfangsvektors normieren wir im File \texttt{mnormalize.m} mit der gleichnamigen Funktion 
     \lstinputlisting[style=Matlab]{zeitreisen/listings/mnormalize.m} 
     auf $1$. Dies Geschieht durch Skalierung mittels dem Kehrwert der ermittelten Länge des Vektor. Dadurch ist später die Geodäte gerade auf die Bogenlänge parametrisiert. Die Bogenlänge \texttt{s} im Skript entspricht dann gerade der Eigenzeit und wir können uns dadurch das integrieren sparen.
     
     \subsubsection{Metrik}
     Da wir die Schwarzschild-Metrik verwenden müssen wir diese natürlich auch noch implementieren.
-    Im File \text{metrik.m} ermittelt die Funktion
+    Im File \texttt{metrik.m} ermittelt die Funktion
     \lstinputlisting[style=Matlab]{zeitreisen/listings/metrik.m} 
     das Skalarprodukt zweier Vektoren an einer bestimmten Stelle.
     \subsubsection{Christoffelsymbole}
-    Für die Christoffelsymbole gibt es das \text{christoffel.m} File. Die Funktion 
+    Für die Christoffelsymbole gibt es das \texttt{christoffel.m} File. Die Funktion 
     \lstinputlisting[style=Matlab]{zeitreisen/listings/christoffel.m} 
     gibt das jeweilige \texttt{Gamma}, welches mit der Schwarzschild-Metrik berechnet wurde, zurück.
     \subsubsection{Geodätengleichung erstellen und lösen}
-    Zum Schluss werden die Gleichungen im File \text{dgeodesic.m} zusammengesetzt
+    Zum Schluss werden die Gleichungen im File \texttt{dgeodesic.m} zusammengesetzt
     \lstinputlisting[style=Matlab]{zeitreisen/listings/dgeodesic.m} 
-    und in dem File \text{geodesic.m} gelöst. 
+    und in dem File \texttt{geodesic.m} gelöst. 
     \lstinputlisting[style=Matlab]{zeitreisen/listings/geodesic.m} 
-    \text{geodesic.m} greift auf den Differentialgleichungslöser \texttt{ode45} zurück. Für verschiedene Genauigkeiten und Arten von Differentialgelichungen gibt es in Matlab verschiedene solver. Der \texttt{ode45} ist für unsere Anwendung ausreichend.
+    \texttt{geodesic.m} greift auf den Differentialgleichungslöser \texttt{ode45} zurück. Für verschiedene Genauigkeiten und Arten von Differentialgelichungen gibt es in Matlab verschiedene solver. Der \texttt{ode45} ist für unsere Anwendung ausreichend.
     
     In der Variable \texttt{solution} wird eine Matrix mit den Lösungen gespeichert. Jede Zeile enthält als ersten Wert die Eigenzeit, gefolgt von den acht Werten des Zustandsvektors \texttt{X}.
     
@@ -500,7 +500,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
     Eine im Verhältnis geringe Anzahl fehlgeschlagener Berechnungen ist akzeptabel und hat keine grösseren Auswirkungen auf die Simulation. Sind hingegen viele Berechnungen fehlgeschlagen, liegt das in der Regel daran das der Abstand zum schwarzen Loch zu klein wurde. In der grafischen Oberfläche wird sich dies später auch als Absturz in das schwarze Loch zeigen.
     
     \subsubsection{GUI}
-    Das gelöste Gleichungssystem ist in der Matrix-Form nicht sehr anschaulich. Die Eigenzeiten lassen sich zwar verfolgen, die mühsam erarbeitete Geodäte ist aber nur in Form von Kugelkoordinaten ersichtlich. Deshalb ist im File \text{myui.m} ein ''Graphical User Interface'' kurz GUI implementiert worden. Der Ausgangssituation des GUI sieht man im Bild \ref{skript:zeitreisen:fig:gui} 
+    Das gelöste Gleichungssystem ist in der Matrix-Form nicht sehr anschaulich. Die Eigenzeiten lassen sich zwar verfolgen, die mühsam erarbeitete Geodäte ist aber nur in Form von Kugelkoordinaten ersichtlich. Deshalb ist im File \texttt{myui.m} ein ''Graphical User Interface'' kurz GUI implementiert worden. Der Ausgangssituation des GUI sieht man im Bild \ref{skript:zeitreisen:fig:gui} 
     \begin{figure}[H]
         \centering
         \includegraphics[width=12cm]{zeitreisen/gui.png}
@@ -508,7 +508,7 @@ In Abbildung \ref{skript:zeitreisen:fig:lorentz} sieht man den Zusammenhang zwis
         \label{skript:zeitreisen:fig:gui} 
     \end{figure}
     
-    Das GUI beinhaltet einen polaren Plot der Geodäte, sowie Schieber zum verändern der Startposition und Startgeschwindigkeit. Bei jeder Änderung dieser Werte wird im \text{myui.m} File die Funktion \texttt{update} aufgerufen, 
+    Das GUI beinhaltet einen polaren Plot der Geodäte, sowie Schieber zum verändern der Startposition und Startgeschwindigkeit. Bei jeder Änderung dieser Werte wird im \texttt{myui.m} File die Funktion \texttt{update} aufgerufen, 
      \lstinputlisting[style=Matlab]{zeitreisen/listings/update.m} 
     welche die Berechnung neu startet und den Inhalt des Fensters aktualisiert.
     
