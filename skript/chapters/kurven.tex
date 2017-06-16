@@ -344,7 +344,8 @@ die sie entlang der Kurve zurückgelegt hat, die einzige geometrische
 Information, die ihr zugänglich ist.
 Sie kann verschiedene Kurven im Raum nicht voneinander unterscheiden.
 
-\section{Krümmung}
+\section{Krümmung%
+\label{section:kurve:kruemmung}}
 \rhead{Krümmung}
 \begin{figure}
 \centering
@@ -489,8 +490,9 @@ für die Krümmung einer ebenen Kurve.
 
 
 \begin{beispiel}
-Wir berechnen die Krümmung einer Ellipse mit den Halbachsen
-$a$ und $b$, und verwenden dazu die Parametrisierung mit Hilfe des
+\index{Ellipse!Krümmung}
+Wir berechnen die Krümmung einer {\em Ellipse mit den Halbachsen
+$a$ und $b$}, und verwenden dazu die Parametrisierung mit Hilfe des
 Zentriwinkels, also
 \[
 c
@@ -547,6 +549,66 @@ die beiden Extremwerte gleich gross, nämlich
 \frac{b}{a^2}=\frac{r}{r^2}=\frac1r,
 \]
 wie wir früher bereits gefunden haben.
+\end{beispiel}
+
+\begin{beispiel}
+\index{Parabel!Krümmung}
+Für spätere Anwendungen berechnen wir noch die Krümmung einer {\em Parabel},
+genauer des Graphen der Funktion
+\[
+y = ax^2 + bx + c.
+\]
+Als Parameterdarstellung ausgedrückt geht es also um die Kurve
+\[
+t\mapsto c(t)
+=
+\begin{pmatrix}
+t\\
+at^2+bt+c
+\end{pmatrix}.
+\]
+Davon sind zunächst die Ableitungen nach $t$ zu bestimmen, sie sind
+\begin{align*}
+\dot c(t)
+&=
+\begin{pmatrix}1\\2at+b\end{pmatrix},
+\\
+\ddot c(t)
+&=
+\begin{pmatrix}0\\2a\end{pmatrix}.
+\end{align*}
+Die Krümmung ist dann nach Formel~\ref{skript:kruemmung:krkurveallg}
+\begin{align}
+\kappa(t)
+&=
+\frac{\left|\begin{matrix}1&0\\2at+b&2a\end{matrix}\right|}{
+(1+(2at+b)^2)^{\frac32}
+}
+=
+\frac{2a}{(1+(2at+b)^2)^{\frac32}}.
+\label{skript:kruemmung:parabelkruemmung}
+\end{align}
+Der Scheitelpunkt befindet sich bei $t=-b/2a$, an dieser Stelle verschwindet
+die innere Klammer im Nenner von~\eqref{skript:kruemmung:parabelkruemmung}.
+Am Scheitel ist die Krümmung daher viel einfacher
+\begin{equation}
+\kappa_{\text{Scheitel}}
+=
+\kappa\biggl(-\frac{b}{2a}\biggr)
+=
+2a
+\qquad
+\Rightarrow
+\qquad
+\varrho_{\text{Scheitel}}
+=
+\frac1{\kappa_{\text{Scheitel}}}
+=
+\frac1{2a}.
+\label{skript:kruemmung:parabel:scheitel}
+\end{equation}
+Der Krümmungsradius im Scheitel der Normalparabel $y=x^2$ ist also
+$\varrho=\frac12$.
 \end{beispiel}
 
 Für eine Kurve in drei Dimension lässt sich das bei der Herleitung
@@ -699,6 +761,9 @@ Diese Funktionen legen dann die Kurve bis auf die Wahl einer Anfangslage
 des Koordinatensystem eindeutig fest.
 Mit anderen Worten, wenn zwei Kurven in $n$ Dimensionen in den genannten
 $n-1$ Funtionen übereinstimmen, dann sind sie kongruent.
+
+\input{chapters/schnittkruemmung.tex}
+\input{chapters/hauptkruemmungen.tex}
 
 \section*{Übungsaufgaben}
 \rhead{Übungsaufgaben}

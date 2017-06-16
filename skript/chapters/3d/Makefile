@@ -5,7 +5,8 @@
 #
 all:	transport kurve lichtkegel geodaete blackhole flach sphere \
 	negativ eben positiv \
-	pringles-positiv pringles-negativ pringles-flach
+	pringles-positiv pringles-negativ pringles-flach \
+	schnittkruemmung hauptkruemmungen
 
 images:	all
 
@@ -146,3 +147,28 @@ pringles-flach.png:	pringles-flach.pov pringles.inc
 pringles-animation:
 	sh ../../../povray $(povrayoptions) -W1920 -H1080 \
 		-Opringles/p pringles.ini
+
+schnittkruemmung:	schnittkruemmung.jpg
+schnittkruemmung.jpg:	schnittkruemmung.png Makefile
+	convert -extract 2164x1704+816+0 schnittkruemmung.png \
+		-units PixelsPerInch -density 300 schnittkruemmung.jpg
+schnittkruemmung.png:	schnittkruemmung.pov
+	sh ../../../povray $(povrayoptions) $(highdimensions) \
+		-Oschnittkruemmung.png \
+		schnittkruemmung.pov || touch schnittkruemmung.png
+
+hauptkruemmungen:	hauptkruemmungen.jpg
+hauptkruemmungen.jpg:	hauptkruemmungen.png Makefile
+	convert -extract 2104x1340+856+460 hauptkruemmungen.png \
+		-units PixelsPerInch -density 300 hauptkruemmungen.jpg
+hauptkruemmungen.png:	hauptkruemmungen.pov
+	sh ../../../povray $(povrayoptions) $(highdimensions) \
+		-Ohauptkruemmungen.png \
+		hauptkruemmungen.pov || touch hauptkruemmungen.png
+
+
+
+
+
+
+
