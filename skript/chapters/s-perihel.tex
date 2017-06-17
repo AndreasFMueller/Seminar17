@@ -4,7 +4,8 @@
 % (c) 2017 Prof Dr Andreas Müller, Hochschule Rappersiwl
 %
 
-\section{Periheldrehung}
+\section{Periheldrehung%
+\label{skript:chapters:s-perihel}}
 \rhead{Periheldrehung}
 \begin{figure}
 \centering
@@ -53,6 +54,7 @@ sondern nur zu zeigen, dass die allgemeine Relativitätstheorie
 qualititativ einen solchen Effekt vorhersagt.
 
 \subsection{Geodätengleichung für die Schwarzschild-Metrik}
+\label{skript:schwarzschild:geodaetengleichung}
 %(%i5) 		        ratsimp(Christoffel2(1, 1, 1))
 %(%o5) 				       0
 %(%i6) 		        ratsimp(Christoffel2(1, 1, 2))
@@ -426,12 +428,32 @@ Für den Vektor $X$ geschrieben lautet diese
 \frac{dX}{ds}
 =
 \begin{pmatrix}
-X_5\\X_6\\X_7\\X_8
+\dot X^1\\
+\dot X^2\\
+\dot X^3\\
+\dot X^4\\
+\dot X^5\\
+\dot X^6\\
+\dot X^7\\
+\dot X^8
+\end{pmatrix}
+=
+\begin{pmatrix}
+X^5\\X^6\\X^7\\X^8
 \\
--\Gamma^1_{ij}X^iX^j\\
--\Gamma^2_{ij}X^iX^j\\
--\Gamma^3_{ij}X^iX^j\\
--\Gamma^4_{ij}X^iX^j
+\ddot X^1\\
+\ddot X^2\\
+\ddot X^3\\
+\ddot X^4
+\end{pmatrix}
+=
+\begin{pmatrix}
+X^5\\X^6\\X^7\\X^8
+\\
+-\Gamma^1_{ij}X^{i+4}X^{j+4}\\
+-\Gamma^2_{ij}X^{i+4}X^{j+4}\\
+-\Gamma^3_{ij}X^{i+4}X^{j+4}\\
+-\Gamma^4_{ij}X^{i+4}X^{j+4}
 \end{pmatrix},
 \]
 wobei die Indizes $i$ und $j$ von $1$ bis $4$ laufen.
