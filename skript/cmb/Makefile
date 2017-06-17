@@ -1,7 +1,8 @@
-.PHONY:	images
+.PHONY:	images data
 
 images:
-	cd images && make images
+	make -C images images
+	make -C data images
 
 clean:
-	cd images && make clean
+	make -C images clean
