@@ -270,7 +270,7 @@ Es bleibt also der quadratische Term als krümmungsbestimmend, wir
 können die Formel~\eqref{skript:kruemmung:parabel:scheitel} verwenden, um die
 Krümmung in Abhängigkeit von $\alpha$ zu ermitteln.
 Wir erhalten
-\[
+\begin{equation}
 \kappa(\alpha)
 =
 2(a\cos^2\alpha + 2b\cos\alpha\sin\alpha + c\sin^2 \alpha)
@@ -282,7 +282,8 @@ Wir erhalten
 +
 \frac{\partial^2 f}{\partial y^2}\sin^2 \alpha
 \biggr).
-\]
+\label{skript:kurve:kruemmungalpha}
+\end{equation}
 Die Krümmung einer Schnittkurve in Richtung des Tangentialvektors
 $(\cos\alpha,\sin\alpha)$ ist daher durch die zweiten Ableitungen von
 $f$ im Punkt $P$ vollständig bestimmt.
@@ -296,3 +297,65 @@ Sie heisst die Schnittkrümmung der Fläche in Richtung $e$.
 Das Vorzeichen von $\kappa(e)$ ist so gewählt, dass $P+n(P)/\kappa(e)$ der
 Mittelpunkt des Krümmungskreises ist.
 \end{definition}
+
+\subsection{Mittlere Krümmung%
+\label{skript:kurve:mittlerekruemmung}}
+Aus dem Ausdruck~\eqref{skript:kurve:kruemmungalpha}
+für $\kappa(\alpha)$ kann man jetzt auch den Mittelwert
+der Krümmung für alle Richtungen berechnen.
+Dazu berechnet man
+\begin{align*}
+M
+&=
+\frac{1}{2\pi}\int_0^{2\pi} \kappa(\alpha)\,d\alpha
+\\
+&=
+2\cdot
+\frac{1}{2\pi}\int_0^{2\pi}
+a\cos^2\alpha + 2b\cos\alpha\sin\alpha + c\sin^2 \alpha
+\,d\alpha
+\\
+&=
+2\cdot\biggl( \frac{a}2 + \frac{c}2\biggr)
+=
+a+c
+=
+\frac{\partial^2 f}{\partial x^2}
++
+\frac{\partial^2 f}{\partial y^2}
+=
+\operatorname{Spur}H
+=
+\Delta f.
+\end{align*}
+Darin wurde
+\begin{align*}
+\frac1{2\pi}\int_0^{2\pi}\cos^2\alpha\,d\alpha
+&=
+\frac1{2\pi}\int_0^{2\pi}\sin^2\alpha\,d\alpha
+=
+\frac12
+\qquad\text{und}\qquad
+\\
+\frac{1}{2\pi}\int_0^{2\pi}2\sin\alpha\cos\alpha\,d\alpha
+&=
+\frac{1}{2\pi}\int_0^{2\pi}\sin2\alpha\,d\alpha
+=
+0
+\end{align*}
+verwendet.
+Der Mittelwert der Krümmung ist also die Spur der Hessischen Matrix.
+
+\begin{definition}
+\label{skript:definition:mittlerekruemmung}
+Die {\em Mittlere Krümmung} $M$ ist der Mittelwert der Schnittkrümmung
+$\kappa(\alpha)$ über alle Winkel $\alpha$.
+\end{definition}
+
+Man beachte, dass die Beziehung $M=\operatorname{Spur}H$ nur 
+im Nullpunkt gilt und nur dann, wenn die Fläche im Nullpunkt tangential
+an die $x$-$y$-Ebene verläuft.
+
+
+
+
