@@ -12,12 +12,44 @@ Rektangularprojektion \ref{bib:cmb_public_equirectangular} verwendet.
 \begin{figure}
 	\centering
 	\includegraphics[width=\linewidth]{cmb/images/CMB_Planck_E.jpg}
-	\caption{Das generierte Bild des CMB in Rektangularprojektion der ESA 
-	Planck mission, welches die Datengrundlage für die Analyse liefert.}
+	\caption{Das generierte Bild des CMBs in Rektangularprojektion der ESA 
+	Planck mission. Es liefert die Datengrundlage für die weitere Analyse.}
 	\label{fig:cmb-rectangular}
 \end{figure}
 % TODO: Image CMB (rectangular)
 % TODO: Aufzeugung funktion der conversiation RBG -> "Kelvin"
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{cmb/images/color-strip-full.png}
+	\caption{Farbverlauf der für die Codierung des CMB Bildes der ESA Planck 
+		Mission verwendet wurde.}
+	\label{fig:color-strip-orig}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{cmb/converter/rgb-graph.pdf}
+	\caption{RGB Profil des in Abbildung~\ref{fig:color-strip-orig} 
+		verwendeten Farbverlaufs.}
+	\label{fig:color-strip-orig-rgb}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{cmb/converter/converter-function-strip.png}
+	\caption{Der für die erste Analye verwendete Farbverlauf.}
+	\label{fig:color-strip}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{cmb/converter/converter-function.pdf}
+	\caption{RGB Profil des in Abbildung~\ref{fig:color-strip} 
+		verwendeten Farbverlaufs.}
+	\label{fig:color-strip-rgb}
+\end{figure}
+
 
 \subsection{Das Leistungsspektrum}
 
@@ -29,22 +61,6 @@ Rektangularprojektion \ref{bib:cmb_public_equirectangular} verwendet.
 % TODO: Problemstellung bei berechnung rauschen -> grosse zahl -> lösung
 
 \subsection{Resultate}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{cmb/images/color-strip-full.png}
-	\caption{Farbverlauf der für die Codierung des CMB Bildes der ESA Planck 
-	Mission verwendet wurde.}
-	\label{fig:color-strip-orig}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{cmb/converter/rgb-graph.pdf}
-	\caption{RGB Profil des in Abbildung~\ref{fig:color-strip-orig} 
-	verwendeten Farbverlaufs.}
-	\label{fig:color-strip-orig-rgb}
-\end{figure}
 
 Abbildung \ref{fig:cmb-power-spec-2000} zeigt, was wir mit unseren Berechnungen 
 ein ähnliches Bild wie erwartet bekommen. Natürlich ist das ganze nicht 
