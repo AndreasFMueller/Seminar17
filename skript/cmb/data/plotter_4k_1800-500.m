@@ -1,6 +1,7 @@
 load("4k1800-500.m");
 
 C = CMB_4K;
+scalefactor = 1 / 1985
 
 order = 55;
 xmin = 3;
@@ -13,7 +14,7 @@ graphics_toolkit("gnuplot")
 figure("visible", "off");
 
 for l = xmin:xmax
-	C(l) = l * (l + 1) * C(l) / (2 * pi);
+	C(l) = l * (l + 1) * C(l) / (2 * pi) * scalefactor;
 endfor
 
 p = polyfit(xmin:xmax, C(xmin:xmax), order);
@@ -51,6 +52,6 @@ plot(x,y);
 set(gca, 'xtick', 0:200:xmax);
 
 axis('tight');
-axis([xmin 1600]);
+axis([xmin 1600 0 6600]);
 
 print("4k1800-500.eps", "-depsc2", "-FScript:12");

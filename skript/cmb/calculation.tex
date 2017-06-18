@@ -2,12 +2,16 @@
 
 % TODO Acronyms
 Die Analyse des CMB Leistungsspektrums wird mit Hilfe der in einer 
-Semesterarbeit entwickelte SHCL Library (zu finden auf Github unter 
-\url{https://github.com/Darnor/SHCL}) durchgeführt.
+Semesterarbeit an der HSR entwickelten SHCL Library durchgeführt. Eine Version 
+der Library und des Analyse Tools sind auf der diesem Buch beigelegten DVD 
+enthalten. Die aktuellste Version ist frei verfügbar unter 
+\url{https://github.com/Darnor/SHCL} für die Library beziehungsweise 
+\url{https://github.com/Darnor/CMB-Analyzer} für das Analyse Tool.
 
 \subsection{Was sind unsere Daten}
 Als Datengrundlage wird erst das öffentlich verfügbare CMB Bild in 
-Rektangularprojektion \ref{bib:cmb_public_equirectangular} verwendet.
+Rektangularprojektion \ref{bib:cmb_public_equirectangular} verwendet, welches 
+in Abbildung \ref{fig:cmb-rectangular} zu sehen ist.
 
 \begin{figure}
 	\centering
@@ -16,6 +20,8 @@ Rektangularprojektion \ref{bib:cmb_public_equirectangular} verwendet.
 	Planck mission. Es liefert die Datengrundlage für die weitere Analyse.}
 	\label{fig:cmb-rectangular}
 \end{figure}
+
+
 % TODO: Image CMB (rectangular)
 % TODO: Aufzeugung funktion der conversiation RBG -> "Kelvin"
 
@@ -67,6 +73,14 @@ ein ähnliches Bild wie erwartet bekommen. Natürlich ist das ganze nicht
 perfekt, so stimmt die $l(l+1)C_l/2\pi$ Skala um rund einen Faktor 10 nicht mit 
 dem erwarteten überein. Das alles macht deutlich, dass unsere Umwandlung der 
 RGB Werte in Kelvin nicht ganz korrekt ist.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{cmb/data/2k900-500.pdf}
+	\caption{Leistungsspektrum berechnet bis zu $l = 900$. Grundlage für die 
+		Berechnung sind die 2k Bilder der ESA Planck Mission.}
+	\label{fig:cmb-power-spec-900}
+\end{figure}
 
 \begin{figure}
 	\centering

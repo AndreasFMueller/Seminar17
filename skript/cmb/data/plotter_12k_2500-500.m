@@ -1,6 +1,7 @@
 load("12k2500-500.m");
 
 C = CMB_12K;
+scalefactor = 1 / 6900;
 
 order = 55;
 xmin = 3;
@@ -15,7 +16,7 @@ graphics_toolkit("gnuplot")
 figure("visible", "off");
 
 for l = xmin:xmax
-	C(l) = l * (l + 1) * C(l) / (2 * pi);
+	C(l) = l * (l + 1) * C(l) / (2 * pi) * scalefactor;
 endfor
 
 p = polyfit(xmin:xmax, C(xmin:xmax), order);
@@ -55,6 +56,6 @@ plot(x(1:plotmax),y(1:plotmax));
 set(gca, 'xtick', 0:200:xmax);
 
 axis('tight');
-axis([xmin plotmax]);
+axis([xmin plotmax 0 6600]);
 
 print("12k2500-500.eps", "-depsc2", "-FScript:12");
