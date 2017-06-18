@@ -46,6 +46,7 @@
 #include "../fourier/impl/OCLFFT.hpp"
 
 #include <complex>
+#include <functional>
 #include <memory>
 #include <stdexcept>
 #include <type_traits>
