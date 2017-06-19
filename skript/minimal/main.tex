@@ -158,7 +158,6 @@ Katenoids an der engsten Stelle.
 
 Es gibt auch einen physikalischen Grund, warum die Bestimmung des $K $ nicht ganz trivial ist. 
 Stellt man sich vor, dass man die beiden Drahtringe immer weiter auseinander zieht. Dann macht man das $L$ fortlaufend grösser und dabei wird die engste Stelle der Minimalfläche immer enger. Irgendwann kommt der Punkt wo sie so eng wird, dass es für die Minimalfläche günstiger wäre, wenn sie platzen würde und stattdessen einfach jeden der Drahtringe mit einer Kreisfläche ausfüllen würde.
-
 \section{Sattelfläche}
 \rhead{Sattelfläche}
 Es gibt mehrere verschiedene Arten Minimalflächen zu charakterisieren, das Beispiel des Katenoids illustriert das Konzept des minimalen Flächeninhaltes. 
@@ -277,33 +276,40 @@ Im Abschnitt \ref{Young-Laplace} wird die Young-Laplace-Gleichung hergeleitet, w
   \caption{Sattelfläche von Scherk} 
   \label{fig:Scherk}
 \end{figure}
-Die Scherksche Sattelfläche \,(Abbildung: \ref{fig:Scherk})\, hat neben den zwingenden Eigenschaften einer Minimalfläche, deren Gausskrümmung kleiner als null ist und die zusätzlich eine mittlere Krümmung von genau null hat, die Eigenschaft, dass sie, im Gegensatz zur Rotationsfläche des Katenoids, der Graph einer Funktion $z=Z(x,y)$ ist. Sie ist neben der trivialen Ebene eine der wenigen Minimalflächen mit dieser Eigenschaft.
+Die Scherksche Sattelfläche \, (Abbildung: \ref{fig:Scherk})\, hat neben den zwingenden Eigenschaften einer Minimalfläche, deren Gausskrümmung kleiner als null ist und die zusätzlich eine mittlere Krümmung von genau null hat, die Eigenschaft, dass sie, im Gegensatz zur Rotationsfläche des Katenoids, der Graph einer Funktion $z=Z(x,y)$ ist. Sie ist neben der trivialen Ebene eine der wenigen Minimalflächen mit dieser Eigenschaft.
 
-Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlösung nachgebildet werden \,(Abbildung: \ref{fig:SoapScherk}). Die einzelnen Seifenmoleküle versuchen ein stabiles Gleichgewicht der abstossenden und anziehenden Kräfte zu finden. Dieser stabile Punkt braucht durch das Gleichgewicht ein Minimum an Energie. Dies bedeutet auch, dass die Krümmung, welche Energie benötigt, minimiert wird.
+Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlösung nachgebildet werden \, (Abbildung: \ref{fig:SoapScherk}). Die einzelnen Seifenmoleküle versuchen ein stabiles Gleichgewicht der abstossenden und anziehenden Kräfte zu finden. Dieser stabile Punkt braucht durch das Gleichgewicht ein Minimum an Energie. Dies bedeutet auch, dass die Krümmung, welche Energie benötigt, minimiert wird.
 \begin{figure}
   \centering
   \includegraphics[scale=0.4]{minimal/SattelflacheSoapFilm.png}
   \caption{Seifenfilm bildet Minimalfläche} 
   \label{fig:SoapScherk}
 \end{figure}
-Die Sattelfläche wurde erstmals 1834 von H. F. Scherk beschrieben \cite{minimal:JournalAM} und hergeleitet. Sie war nach dem 1776 von Meusnier beschriebenen Katanoid die erste neue Minimalfläche. 
+Die Sattelfläche wurde erstmals 1834 von H. F. Scherk beschrieben \cite{minimal:JournalAM} und hergeleitet. Sie war nach der in 1776 von Meusnier beschriebene Katanoid die erste neue Minimalfläche. 
 
-Die noch unbekannte Funktion $z=Z(x,y)$  um die Minimalfläche zu beschreiben wird mit mittels Minimalflächengleichung (im Englischen unter dem Namen Minimal Surface Equation bekannt) \cite{minimal:Osserman}
-\begin{equation}\label{MFG}
-(1+ Z_x^{2})Z_{xx} - 2 Z_x Z_y Z_{xy} + (1+ Z_x^{2}) Z_{yy}=0
+Die mittlere Krümmung eines Graphen welcher mit $z=Z(x,y)$ definiert wird kann auch mit $H=-\frac{1}{2} \nabla \cdot \hat{n}$\ref{minimal:Spivak} berechnet werden. Die Berechnung an sich ist recht aufwendig, deshalb wird hier nur das Ergebnis betrachtet:
+
+\begin{equation}\label{MeanCurv}
+H=\frac{Z_{xx}(Z_y^2+1) - 2 Z_xZ_yZ_{xy}+Z_{yy}(Z_x^2+1)}{\|\vec{n}\|^3}.
 \end{equation}
-berechnet. 
 
-Die Minimalflächengleichung ist eine partielle Differentialgleichung, welche durch Lösen der Euler-Lagrange Gleichung \ref{skript:geodaeten:subsection:Euler-Lagrange-Gleichung} für Flächen mit mittlerer Krümmung $H=0$ gefunden wird. Das Lösen der Euler-Lagrange Gleichung um die Minimalflächengleichung zu finden würde den Rahmen hier aber deutlich übersteigen. 
+Wobei ${x,y}$ die Koordinaten in der Ebene sind, welche nach $z$ Abgebildet werden (siehe Abbildung \ref{fig:Scherk}). $Z_x$ ist die erste Ableitung der Funktion $Z(x,y)$ nach $x$. $Z_y$ ist analog dazu die erste Ableitung der Funktion $Z(x,y)$ nach $y$. $Z_{xx}$ und $Z_{yy}$ sind die jeweils 2. Ableitungen der Funktion $Z(x,y)$ nach den entsprechenden Indizes. $Z_{xy}$ ist die Ableitung von $Z_x$ nach $y$. Beziehungsweise die Funktion $Z(x,y)$ erst nach $x$ und dann zusätzlich nach $y$ abgeleitet. 
 
-$Z_x$ ist die erste Ableitung der Funktion $Z(x,y)$ nach $x$. $Z_y$ ist analog dazu die erste Ableitung der Funktion $Z(x,y)$ nach $y$. $Z_{xx}$ und $Z_{yy}$ sind die jeweils 2. Ableitungen der Funktion $Z(x,y)$ nach den entsprechenden Indizes. $Z_{xy}$ ist die Ableitung von $Z_x$ nach $y$. Beziehungsweise die Funktion $Z(x,y)$ erst nach $x$ und dann zusätzlich nach $y$ abgeleitet. 
+Wie wir im Kapitel \ref{Young-Laplace} sehen werden, muss die mittlere Krümmung bei Minimalflächen gleich null sein. Damit können wir den Zähler der Gleichung \eqref{MeanCurv} gleich null setzen
+\begin{equation}\label{MFG}
+Z_{xx}(Z_y^2+1) - 2 Z_xZ_yZ_{xy}+Z_{yy}(Z_x^2+1)=0.
+\end{equation}
+Diese Gleichung ist als Minimalflächengleichung (im Englischen Minimal Surface Equation \cite{minimal:Osserman}) bekannt.
 
-Zusätzlich stellen wir zwei Nebenbedingungen. Die erste Bedingung, $Z(0,0)=0$, bedingt, dass der Graph im Nullpunkt auf der Höhe null ist. Die zweite, $\nabla Z(0,0)=0$, fordert, dass im Nullpunkt der Graph horizontal ist.
+Mittels dieser partiellen Differentialgleichung kann die noch unbekannte Gleichung $z=Z(x,y)$ berechnet werden. Was im folgenden Abschnitt auch getan wird.
+
 
 \subsubsection{Lösen der Partiellen Differentialgleichung}\label{Scherk Berechnung}
-Angenommen $z=Z(x,y)$ ist der Graph einer Funktion. Wobei ${x,y}$ die Koordinaten in der Ebene sind, welche nach $z$ Abgebildet werden (siehe Abbildung \ref{fig:Scherk}). 
+Angenommen $z=Z(x,y)$ ist der Graph einer Funktion.  
 
 Um die Minimalflächengleichung zu lösen nehmen wir an, dass die Funktion $Z(x,y)$ eine lineare Zusammensetzung von zwei Funktionen ist. Die einfachste Möglichkeit dies zu erreichen, ist die Addition von zwei Funktionen: $z=Z(x,y)=f(x)+g(y)$. Dieser Separationsansatz ist nur eine von vielen Möglichkeit eine partielle Differentialgleichung zu lösen.
+
+Zusätzlich stellen wir zwei Nebenbedingungen. Die erste Bedingung, $Z(0,0)=0$, bedingt, dass der Graph im Nullpunkt auf der Höhe null ist. Die zweite, $\nabla Z(0,0)=0$, fordert, dass im Nullpunkt der Graph horizontal ist.
 
 Wir setzen die benötigten Ableitungen und mehrfachen Ableitungen der Funktion $Z(x,y)$ in die Minimalflächengleichung (\ref{MFG}) ein. Da $ Z_x = f'(x),\ Z_y = g'(y),\ Z_{xx}=f''(x),\ Z_{yy} = g''(y) \ \text{und} \ Z_{xy}=0$ ist, vereinfacht sich die Minimalflächengleichung zu 
 \begin{equation}\label{MFG Scherk}
@@ -364,6 +370,7 @@ Z(x,y)=\dfrac{\log(\cos(cx))}{c}-\dfrac{\log(\cos(cy))}{c}.
 In den vorangegangenen Beispielen wurde jeweils eine Lösung gesucht, bei der die mittlere Krümmung $H=0$ ist. Bei den meisten Oberflächen ist dies jedoch nicht der Fall. Beispielsweise haben Seifenblasen innen und aussen einen anderen Druck. Oder in einem Blutgefäss herrscht innen der Blutdruck und außerhalb der Druck durch die Gewebe. Diese Druckdifferenz wirkt eine Kraft auf eine Oberfläche ein und verunmöglicht damit eine minimale Oberfläche wie bei einer Minimalfläche.
 
 Dennoch haben solche Oberflächen ähnliche Eigenschaften, da auch hier die Energie minimiert wird. Dies wird durch die Young-Laplace Gleichung \cite{minimal:Laplace} beschrieben, welche im folgenden Abschnitt mittels geometrischen und physikalischen Überlegungen hergeleitet wird.
+
 \subsubsection{Herleitung der Young-Laplace Gleichung}\label{YL-Herleitung}
 Angenommen zwei Medien (z.B. Luft/Wasser) werden durch eine Oberfläche \, (Abbildung: \ref{fig:YoungCone}) getrennt. Da in den Medien verschiedene Drücke $p_1$ und $p_2$ herrschen, wölbt sich die Oberfläche. Die Veränderung des Krümmungsradius sei $\delta\zeta$ \,(Abbildung: \ref{fig:Strahlensatz}). Das Volumen eines einzelnen infinitesimalen Volumensegments sei $\delta\zeta\,dA$ \,(Abbildung: \ref{fig:Volumentransaltion}). Dann ist die benötigte Arbeit um das Volumensegment um $\delta\zeta$ zu verschieben:
 \begin{figure}
@@ -466,6 +473,48 @@ was in der Grössenordnung von einem Hundertstel des atmosphärischen Drucks lie
 
 %\subsection{Anwendung: Seifenblasen sind keine Minimalfläche}
 %Mithilfe der bei \ref{YL-Result2} gewonnen Erkenntnis können wir leicht erkennen, dass bei einem %Druckunterschied auf beiden Seiten eines Seifenfilms, Beispielsweise bei einer Seifenblase, die %mittlere Krümmung nicht null sein kann. Somit kann eine Seifenblase nicht eine Minimalfläche sein.
+
+\iffalse
+\subsubsection{Minimalflächengleichung}\label{MFG}
+\begin{equation}
+\begin{split}
+\vec{n} &= \begin{pmatrix}Z_x \\ Z_y \\ -1\end{pmatrix} \\
+\|\vec{n}\| &= \sqrt{Z_x^2+Z_y^2+1} \\
+\hat{n} &= \frac{\vec{n}}{\|\vec{n}\|} \\
+\end{split}
+\end{equation}
+
+\begin{equation}
+\nabla \cdot \hat{n} = \frac{\partial}{\partial x} \frac{Z_x}{\|\vec{n}\|} + \frac{\partial}{\partial y} \frac{Z_y}{\|\vec{n}\|} + \frac{\partial}{\partial z}\frac{-1}{\|\vec{n}\|}
+\end{equation}
+\begin{equation}
+\frac{\partial}{\partial x} \frac{Z_x}{\|\vec{n}\|} = \frac{1}{\|\vec{n}\|} \frac{\partial Z_x}{\partial x} + Z_x \frac{\partial}{\partial x} \frac{1}{\|\vec{n}\|}
+\end{equation}
+\begin{equation}
+\frac{\partial}{\partial x} \frac{1}{\|\vec{n}\|} = \frac{\partial}{\partial x} (Z_x^2+Z_y^2+1)^{-1/2} = \frac{-\frac{1}{2} (2\frac{\partial Z_x}{\partial x} + 2\frac{\partial Z_y}{\partial x})}{\|\vec{n}\|^3} =\frac{-(Z_x Z_{xx}+Z_y Z_{xy})}{\|\vec{n}\|^3}
+\end{equation}
+\begin{equation}
+\frac{\partial}{\partial x} \frac{Z_x}{\|\vec{n}\|} = \frac{Z_{xx}}{\|\vec{n}\|}-\frac{Z_x(Z_x Z_{xx} + Z_y Z_{xy})}{\|\vec{n}\|^3}
+\end{equation}
+Äquivaltnt für d/dy
+\begin{equation}
+\frac{\partial}{\partial z}\frac{-1}{\|\vec{n}\|}=0
+\end{equation}
+\begin{equation}
+\begin{split}
+\nabla \cdot \hat{n} &= \frac{Z_{xx}}{\|\vec{n}\|}-\frac{Z_x(Z_x Z_{xx} + Z_y Z_{xy})}{\|\vec{n}\|^3} + \frac{Z_{yy}}{\|\vec{n}\|}-\frac{Z_y(Z_y Z_{yy} + Z_x Z_{xy})}{\|\vec{n}\|^3} \\
+&=\frac{Z_{xx}\|\vec{n}\|^2 - Z_x(Z_x Z_{xx} + Z_y Z_{xy}) + Z_{yy}\|\vec{n}\|^2 - Z_y(Z_y Z_{yy} + Z_x Z_{xy})}{\|\vec{n}\|^3}
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+\nabla \cdot \hat{n} &= \frac{Z_{yy}(Z_x^2+Z_y^2+1)-Z_x^2Z_{xx} - Z_xZ_yZ_{xy}}{\|\vec{n}\|^3} \\
+& \quad \frac{+ \, Zyy(Z_x^2+Z_y^2+1)-2_y^2Z_{yy}-Z_yZ_xZ_{xy}}{\|\vec{n}\|^3} \\
+&= \frac{Z_{yy}(Z_y^2+1) - 2 Z_xZ_yZ_{xy}+Zyy(Z_x^2+1)}{\|\vec{n}\|^3}
+\end{split}
+\end{equation}
+\fi
+
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
