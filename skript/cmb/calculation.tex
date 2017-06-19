@@ -1,17 +1,43 @@
 \section{CMB Analyse}
 
-% TODO Acronyms
 Die Analyse des CMB Leistungsspektrums wird mit Hilfe der in einer 
-Semesterarbeit an der HSR entwickelten SHCL Library durchgeführt. Eine Version 
-der Library und des Analyse Tools sind auf der diesem Buch beigelegten DVD 
-enthalten. Die aktuellste Version ist frei verfügbar unter 
+Semesterarbeit an der HSR entwickelten Library für die schnelle berechnung 
+spärischer harmonischer Koeffizienten durchgeführt \cite{SAPatzen}. Eine 
+Version der Library und des Analyse Tools sind auf der diesem Buch beigelegten 
+DVD enthalten. Die aktuellste Version ist frei verfügbar unter 
 \url{https://github.com/Darnor/SHCL} für die Library beziehungsweise 
 \url{https://github.com/Darnor/CMB-Analyzer} für das Analyse Tool.
 
-\subsection{Was sind unsere Daten}
-Als Datengrundlage wird erst das öffentlich verfügbare CMB Bild in 
-Rektangularprojektion \ref{bib:cmb_public_equirectangular} verwendet, welches 
-in Abbildung \ref{fig:cmb-rectangular} zu sehen ist.
+\subsection{Das Leistungsspektrum}
+
+Für die Analyse des CMBs ist, wie in Abbildung~\ref{fig:planck_spectrum} zu 
+sehen, vor allem das Leistungsspektrum relevant. Für dessen Berechnung werden 
+die verschiedenen
+\begin{equation}
+	C_l = \frac{1}{2l + 1}\sum_{m=-l}^{l}|c_l^m|^2 = \frac{1}{2l + 
+	1}\sum_{m=-l}^{l}\overline{c_l^{m}}c_l^m
+	\label{eq:cmb:cl}
+\end{equation}
+benötigt.
+
+Teilweise wird statt der Summe aller $c_l^m$, wie in Gleichung~\ref{eq:cmb:cl}, 
+auch
+\begin{equation*}
+	C_l = c_{l'}^{m'}\overline{c_{l'}^{m'}}\delta_{l'}^m\delta_l^{m'}
+\end{equation*}
+verwendet.
+
+% TODO: Erklärung C_l
+% TODO: diff cosmic variance \Delta C_l und C_l
+
+\subsection{Spärische harmonische Koeffizienten}
+% TODO: c_l^m erklärung
+% TODO: Problemstellung bei berechnung rauschen -> grosse zahl -> lösung
+
+\subsection{Datengrundlage}
+Als Datengrundlage wird das öffentlich verfügbare CMB Bild der ESA Planck 
+Mission in Rektangularprojektion \cite{cmb_public_equirectangular} 
+verwendet. Dieses ist in Abbildung \ref{fig:cmb-rectangular} zu sehen.
 
 \begin{figure}
 	\centering
@@ -20,6 +46,13 @@ in Abbildung \ref{fig:cmb-rectangular} zu sehen ist.
 	Planck mission. Es liefert die Datengrundlage für die weitere Analyse.}
 	\label{fig:cmb-rectangular}
 \end{figure}
+
+Für die Analyse werden drei verschiedene Auflösungen des Bildes untersucht. 
+Diese reichen von 2K (2000x1000 Pixel) über 4K (4000x2000 Pixel) bis hin zu 12K 
+(12572x6286 Pixel). Diese Resultate der einzelnen Analysen finden sich im 
+Abschnitt \ref{subsec:cmb:results}.
+
+\subsection{RGB Konvertierung}
 
 
 % TODO: Image CMB (rectangular)
@@ -56,17 +89,7 @@ in Abbildung \ref{fig:cmb-rectangular} zu sehen ist.
 	\label{fig:color-strip-rgb}
 \end{figure}
 
-
-\subsection{Das Leistungsspektrum}
-
-% TODO: Erklärung C_l
-% TODO: diff cosmic variance \Delta C_l und C_l
-
-\subsection{Spärische harmonische Koeffizienten}
-% TODO: c_l^m erklärung
-% TODO: Problemstellung bei berechnung rauschen -> grosse zahl -> lösung
-
-\subsection{Resultate}
+\subsection{Resultate \label{subsec:cmb:results}}
 
 Abbildung \ref{fig:cmb-power-spec-2000} zeigt, was wir mit unseren Berechnungen 
 ein ähnliches Bild wie erwartet bekommen. Natürlich ist das ganze nicht 
