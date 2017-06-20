@@ -142,23 +142,69 @@ Es gilt
 =
 \frac12(\kappa_1+\kappa_2).
 \]
-Die Spur von $H$ ist also auch gleich der Mittelwert der Hauptkrümmungen.
-Dies führt auf die folgende Definition.
+In Abschnitt~\ref{skript:kurve:mittlerekruemmung} haben wir nachgeweisen,
+dass die mittlere Krümmung gleichzeitig die Spur der Hessischen Matrix ist.
+Obige Überlegung zeigt, dass dies auch der Mittelwert der Hauptkrümmungen ist.
+Dies führt auf die folgende alternative Definition der mittleren Krümmung.
 
 \begin{definition}
-\label{skript:definition:mittlerekruemmung}
-Wir nennen den Mittelwert
+\label{skript:definition:mittlerekruemmung2}
+Die {\em mittlere Krümmung} ist auch der Mittelwert
 \[
 H=\frac12(\kappa_1+\kappa_2)
 \]
-der Hauptkrümmungen die {\em mittlere Krümmung}.
+der Hauptkrümmungen.
 \end{definition}
 Die mittlere Krümmung ist wichtig zur Charakterisierung von Minimalflächen
 im Kapitel~\ref{chapter:minimal}.
 
+\subsection{Gausskrümmung und Flächeninhalt}
+Die mittlere Krümmung $M$ hat eine einfach geometrische Interpretation,
+die auch ganz offensichtlich zeigt, dass sie eine Eigenschaft der Einbettung
+einer Fläche in den dreidimensionalen Raum ist.
+Für die Gausskrümmung fehlt uns eine vergleichbare Charakterisierung.
+Wir wollen daher in diesem Abschnitt zeigen, dass die Gausskrümmung
+mit der Fläche eines kleinen Kreises um den Nullpunkt zusammenhängt.
+Da der Flächeninhalt unabhängig von der Einbettung gemessen werden kann,
+wird dies auch gleichzeitig illustrieren, dass die Gausskrümmung eine
+innere Eigenschaft einer Fläche ist.
 
-
-
+Wir approximieren die Fläche wieder als quadratische Funktion
+\[
+z = ax^2 + 2bxy + cy^2.
+\]
+Der Flächeninhalt einer parametrisierten Fläche wird mit dem Integral
+\[
+F
+=
+\int \frac{\partial g}{\partial u} \times \frac{\partial g}{\partial v}
+\,du\,dv
+\]
+berechnet.
+Für den Graphen ist das Vektorprodukt der Ableitungen
+\[
+\begin{pmatrix}
+1\\1\\\frac{\partial f}{\partial x}
+\end{pmatrix}
+\times
+\begin{pmatrix}
+1\\1\\\frac{\partial f}{\partial y}
+\end{pmatrix}
+=
+\begin{pmatrix}
+1\\1\\2ax+2by
+\end{pmatrix}
+\times
+\begin{pmatrix}
+1\\1\\2bx+2cy
+\end{pmatrix}
+=
+\begin{pmatrix}
+2bx+2cy-2ax-2by\\
+2ax+2by-2bx+2ay\\
+0
+\end{pmatrix}
+\]
 
 
 
