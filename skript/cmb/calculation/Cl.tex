@@ -1,4 +1,4 @@
-\subsection{Das Leistungsspektrum}
+\subsection{Das Leistungsspektrum\label{subsec:cmb:cl}}
 
 Für die Analyse des CMBs ist, wie in Abbildung~\ref{fig:planck_spectrum} zu 
 sehen, vor allem das Leistungsspektrum relevant. Für dessen Berechnung werden 
@@ -17,18 +17,22 @@ benötigt. Teilweise wird statt der Summengleichung~\ref{eq:cmb:cl} auch
 	c_{l}^{m}c_{l'}^{m'*}\delta_{l'l}\delta_{m'm}
 	\label{eq:cmb:cl-single}
 \end{equation*}
-verwendet. Bei der Gleichung~\ref{eq:cmb:cl-single} wird ein einzelnes 
+verwendet. Die für die Berechnung benötigten sphärischen harmonischen 
+Koeffizienten $c_l^m$ werden im Kapitel~\ref{skript:chapter:kugelfunktionen} 
+näher beschrieben. Die $\delta$-Funktionen in Gleichung~\ref{eq:cmb:cl-single} 
+nennt man Kronecker-Delta. Es gilt dabei
+\begin{equation}
+\delta_{ij} =
+\begin{cases}
+0 & \text{für} j \neq j, \\
+1 & \text{für} i = j.
+\end{cases}
+\end{equation}
+
+Bei der Gleichung~\ref{eq:cmb:cl-single} wird ein einzelnes 
 $c_l^m$ für jedes $l$ ausgewählt. Dies mit der Begründung, dass bei einer 
 unendlichen Anzahl Universen die Durchschnitte der jeweiligen $c_l^m$ für 
-jeweils ein $l$ genau gleich wären. \cite{cmb_klauber} Die $\delta$-Funktionen 
-in Gleichung~\ref{eq:cmb:cl-single} nennt man Kronecker-Delta. Es gilt dabei
-\begin{equation}
-	\delta_{ij} =
-	\begin{cases}
-		0 & \text{für} j \neq j, \\
-		1 & \text{für} i = j.
-	\end{cases}
-\end{equation}
+jeweils ein $l$ genau gleich wären. \cite{cmb_klauber}
 
 Da wir nur ein einzelnes Universum kennen und messen können, bleibt uns 
 nichts anderes übrig als auf die Gleichung~\ref{eq:cmb:cl} zurückzugreifen. Die 
@@ -42,3 +46,7 @@ zwischen zweier Maxima der $Y_l^m$-Funktion dann $1\degree$ beträgt. Die
 Auswertung der ESA Planck Mission bestätigt dies bereits wie in 
 Abbildung~\ref{fig:planck_spectrum} zu sehen. Unsere Resultate nach der CMB 
 Analyse sind im Abschnitt~\ref{subsec:cmb:results} zu finden.
+
+Um aus den berechneten $C_l$-Werten schlussendlich das Leistungsspektrum zu 
+erhalten, müssen diese jeweils noch zusätzlich mit dem Faktor 
+$\dfrac{l(l+1)}{2\pi}$ multipliziert werden.

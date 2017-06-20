@@ -9,7 +9,7 @@ xmax = size(C)(2);
 %ymin = 10;
 %ymax = 45;
 
-plotmax = 2000;
+plotmax = 2100;
 
 graphics_toolkit("gnuplot")
 
