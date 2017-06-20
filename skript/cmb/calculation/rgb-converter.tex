@@ -1,19 +1,19 @@
 \subsection{RGB Konvertierung}
 
 Für die Analyse des CMBs werden die sphärischen harmonische Koeffizienten 
-$c_l^m$ benötigt. Dafür müssen aber erst die Bilddaten, welche im RGB Format 
-vorliegen Kelvin Werte umgewandelt werden. Da nicht klar ist, wie genau die 
-Ursprüngliche Transformation aussah, wird die Analyse mittels einer Annäherung 
-an die wirkliche Transformationsfunktion durchgeführt.
+$c_l^m$ benötigt. Dafür müssen aber erst die Bilddaten, welche im Rot-Grün-Blau 
+(RGB) Format vorliegen, in Kelvin Werte umgewandelt werden. Da nicht klar ist, 
+wie genau die Ursprüngliche Transformation aussah, wird die Analyse mittels 
+einer Annäherung an die wirkliche Transformationsfunktion durchgeführt.
 
 Den dafür benötigten Referenzfarbverlauf finden wir in den Resultaten der 
-Planck Mission \cite{planck_overview}, zu sehen in 
+Planck Mission \cite{cmb:planck_overview}, zu sehen in 
 Abbildung~\ref{fig:color-strip-orig}. Ein Blick auf die einzelnen RGB Kanäle 
 zeigt, wie eine mögliche Funktion aussehen könnte (siehe 
 Abbildung~\ref{fig:color-strip-orig-rgb}). Da es dabei aber um einen Screenshot 
-der im PDF Dokument enthaltenen Grafik handelt, ist nicht anzunehmen, dass die 
-Funktion genau so aussieht. Als mögliche Annäherung wird daher der Farbverlauf 
-in Abbildung~\ref{fig:color-strip} mit dem RGB Profil in 
+der im PDF Dokument enthaltenen Grafik handelt, kann man nicht davon ausgehen, 
+dass die Funktion genau diese Form hat. Als mögliche Annäherung wird daher der 
+Farbverlauf in Abbildung~\ref{fig:color-strip} mit dem RGB Profil in 
 Abbildung~\ref{fig:color-strip-rgb} als Transformationsfunktion verwendet. 
 Diese hat den Vorteil, dass man, wenn man die einzelnen Kanäle zusammenzählt, 
 zwei einfache Lineare Funktionen
@@ -30,7 +30,7 @@ was uns
 	x_1 &= \frac{y - 765}{m}\\
 	x_2 &= -\frac{y - 765}{m}
 \end{align*}
-liefert. Um die beiden Fälle zu unterscheiden, genügt es lediglich den Anteil 
+liefert. Um die beiden Fälle zu unterscheiden, genügt es, lediglich den Anteil 
 des blauen und roten Kanals miteinander zu vergleichen. Enthält ein Pixel mehr 
 Rot als Blau gilt die Formel für $x_2$ andernfalls diejenige für $x_1$.
 
@@ -71,6 +71,3 @@ Rot als Blau gilt die Formel für $x_2$ andernfalls diejenige für $x_1$.
 		\label{fig:color-strip-rgb}
 	\end{subfigure}
 \end{figure}
-
-% TODO: Image CMB (rectangular)
-% TODO: Aufzeugung funktion der conversiation RBG -> "Kelvin"
