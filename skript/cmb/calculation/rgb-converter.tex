@@ -11,24 +11,24 @@ Planck Mission \cite{cmb:planck_overview}, zu sehen in
 Abbildung~\ref{fig:color-strip-orig}. Ein Blick auf die einzelnen RGB Kanäle 
 zeigt, wie eine mögliche Funktion aussehen könnte (siehe 
 Abbildung~\ref{fig:color-strip-orig-rgb}). Da es dabei aber um einen Screenshot 
-der im PDF Dokument enthaltenen Grafik handelt, kann man nicht davon ausgehen, 
-dass die Funktion genau diese Form hat. Als mögliche Annäherung wird daher der 
-Farbverlauf in Abbildung~\ref{fig:color-strip} mit dem RGB Profil in 
-Abbildung~\ref{fig:color-strip-rgb} als Transformationsfunktion verwendet. 
-Diese hat den Vorteil, dass man, wenn man die einzelnen Kanäle zusammenzählt, 
+der im PDF Dokument enthaltenen Grafik handelt, ist die Farbtreue nicht gegeben 
+und somit ist auch dies nicht die echte Transformationsfunktion. Als mögliche 
+Annäherung wird daher der Farbverlauf in Abbildung~\ref{fig:color-strip} mit 
+dem RGB Profil in Abbildung~\ref{fig:color-strip-rgb} verwendet. 
+Diese hat den Vorteil, dass man, wenn man die einzelnen Kanäle aufsummiert, 
 zwei einfache Lineare Funktionen
 \begin{equation*}
 	y =
-	\begin{cases}
-		+mx + 765 & \text{für} x \leq 0,\\
-		-mx + 765 & \text{für} x \geq 0,\\
-	\end{cases}
+	\begin{dcases}
+		\frac{765}{500}x + 765 & \text{für} x \leq 0,\\
+		-\frac{765}{500}x + 765 & \text{für} x \geq 0,\\
+	\end{dcases}
 \end{equation*}
-erhält. Da wir ja nur die $y$-Werte kennen, müssen wir die Funktion umkehren, 
+erhält. Da wir ja die $y$-Werte kennen, müssen wir die Funktion umkehren, 
 was uns
 \begin{align*}
-	x_1 &= \frac{y - 765}{m}\\
-	x_2 &= -\frac{y - 765}{m}
+	x_1 &= 500\frac{y - 765}{765}\\
+	x_2 &= -500\frac{y - 765}{765}
 \end{align*}
 liefert. Um die beiden Fälle zu unterscheiden, genügt es, lediglich den Anteil 
 des blauen und roten Kanals miteinander zu vergleichen. Enthält ein Pixel mehr 
