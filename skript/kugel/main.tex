@@ -180,7 +180,7 @@ Das Polardreieck verdient seinen Namen der beiden Pole der Erdkugel dem Nord- un
 %WINKELKOSINUSSATZ
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.4\textwidth]{kugel/Zweieck.jpg}
+\includegraphics[width=0.9\textwidth]{kugel/Dreiecksarten.jpg}
 \caption{Die Polarbögen zweier Grosskreise bilden einen Schnittwinkel $\alpha$, welche durch einen Grosskreisbogen (Polarbogen) der Seitenlänge $a’$ verbunden werden.}
 \label{V8}
 \end{figure}
@@ -188,17 +188,33 @@ Das Polardreieck verdient seinen Namen der beiden Pole der Erdkugel dem Nord- un
 In der Abbildung \eqref{V8} wird ersichtlich, dass die Beziehung
 
 \begin{align*}
-\alpha + $a’$ = \pi
+\alpha + a’ = \pi
 \end{align*}
 
 gilt. 
-Somit können wir das Polardreieck eines sphärischen Dreieckes bestimmen, und stellen fest, dass die Strecke $\overline{MA}$ orthogonal auf der Seite $a’$ liegt. Daraus folgen die Beziehungen
 
-\begin{align*}
-\overline{MA’} &\perp \overline{MB} \text{und} \overline{MC} \\
-\overline{MB’} &\perp \overline{MC} \und \overline{MA} \\
-\overline{MC’} &\perp \overline{MA} \und \overline{MB}
-\end{align*}
+%POLARDREIECK
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.4\textwidth]{kugel/Zweieck.jpg}
+\caption{PLAZUHALTERBILD}
+\label{V8}
+\end{figure}
+
+Somit können wir das Polardreieck eines sphärischen Dreieckes bestimmen und stellen fest, dass die Längen des Polardreiecks und die gegenüberliegenden Winkel des sphärischen Dreiecks sich immer zu $\pi$ ergänzen. Die Beziehungen
+
+
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{cccc}
+$\alpha$ + a $^{\prime}$ = $\pi$ & & & $\alpha ^{\prime}$ + a = $\pi$ \\
+$\beta$ + b $^{\prime}$ = $\pi$ & & & $\beta ^{\prime}$ + b = $\pi$ \\
+$\gamma$ + c $^{\prime}$ = $\pi$ & & & $\gamma ^{\prime}$ + c = $\pi$
+\end{tabular}
+\end{center}
+
+entstehen.
+
 
 \section{Dreiecksfläche und sphärischer Exzess} \label{Flaeche}
 Betrachten wir das hellgraue Dreieck in der Abbildung 13.5 ist $A_{ \triangle{ ABC }}$ dessen Flächeninhalt. Dieser lässt sich folgendermassen berechnen
@@ -940,8 +956,8 @@ Um es den alten Seefahrern gleichzutun und seinen eigenen Standort herauszufinde
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{llll}
 \textbf{Messwerte Sextant} & \textbf{Aufzeichnungen Nautisches Jahrbuch} \\
-Elevation der Sonne ($h$) $26^{\circ}$ 18’ 00.000’’ & Deklination der Sonne ($\delta$)  $17^{\circ}$ 16’ 01.200’’ \\
-Geografische Breite ($\phi$) $47^{\circ}$ 13’ 24.751’’ N
+Elevation der Sonne ($h$) $26^{\circ}$ $18^{\prime}$ $00.000^{\prime \prime}$ & Deklination der Sonne ($\delta$)  $17^{\circ}$ $16^{\prime}$ $01.200^{\prime \prime}$ \\
+Geografische Breite ($\phi$) $47^{\circ}$ $13^{\prime}$ $24.751^{\prime \prime}$ N
 \end{tabular}
 \end{center}
 
@@ -952,7 +968,7 @@ Geografische Breite ($\phi$) $47^{\circ}$ 13’ 24.751’’ N
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ll}
 \textbf{Aufzeichnungen Nautisches Jahrbuch} \\
-Rektaszension der Sonne ($e_\delta$) $03^{\circ}$ 03’ 14.400’’ \\
+Rektaszension der Sonne ($e_\delta$) $03^{\circ}$ $03^{\prime}$ $14.400^{\prime \prime}$ \\
 Kulmination der Sonne 13h 21min 18s \\
 Meridiandurchgang der Sonne 11h 56min 29s
 \end{tabular}
@@ -987,9 +1003,9 @@ In die Formel eingesetzt erhalten wir
 
 b) \quad  Durch den direkten Zusammenhang der Koordinaten und dem Zeitmass, lassen sich Gradmasse direkt in Stunden umrechnen
 \begin{align*}
-\tau = 110.319^{\circ} \\
+\tau &= 110.319^{\circ} \\
 \Rightarrow \quad \quad
-\tau = 7.3546h
+\tau &= 7.3546h
 \end{align*}
 Um den gesuchten Längengrad nun zu erhalten, müssen wir $\tau$ in seine Komponenten Zeit ($t$), Rektaszension der Sonne ($e_\delta$) und unseren gesuchten Längengrad ($\lambda$) zerlegen
 \begin{align*}
@@ -1013,7 +1029,7 @@ Achtung: Es ist Sommer, also sind es zwei Stunden Zeitunterschied, sprich $\tria
 
 Die Rektaszension der Sonne $e_\delta$ lässt sich aus dem Sternatlas herauslesen und ist in Stunden
 \begin{align*}
-03^{\circ} 03 14.400 &= 0.2036 \text{h}
+03^{\circ} 03^{\prime} 14.400^{\prime \prime} &= 0.2036 \text{h}
 \end{align*}
 
 Der Meridiandurchgang eines Tages ist nicht immer gleich, sprich nicht jeder Sonnentag ist gleich lang. Dies muss berücksichtigt werden, da sich kleinste Abweichungen direkt auf die Genauigkeit des Längengrades niederschlagen.
@@ -1036,15 +1052,15 @@ Dieser Betrag dazu addiert ergibt
 
 Umgerechnet in Bogenmass ergibt sich für $\lambda$
 \begin{align*}
-\lambda = - 8.7945^{\circ} = -8^{\circ} 47 40.2
+\lambda = - 8.7945^{\circ} = -8^{\circ} 47^{\prime} 40.2^{\prime \prime}
 \end{align*}
 
 
 
 Daraus ergeben sich folgende Koordinaten, mit welchen wir unseren Standort genau ermitteln können
 \begin{align*}
-8^{\circ}47 40.2 \text{E} \\
-47^{\circ}13 24.751 \text{N}
+8^{\circ}  47^{\prime}  40.2^{\prime \prime} \text{E} \\
+47^{\circ}  13^{\prime}  24.751^{\prime \prime} \text{N}
 \end{align*}
 
 
