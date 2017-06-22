@@ -174,13 +174,31 @@ Daraus können wir schliessen, das eine einzelne Seite durchaus die Grösse $180
 
 
 \subsection{Polardreieck}
-Für jedes Dreieck auf der Kugeloberfläche gibt es das zugehörige Polardreieck. Wenn man einen Grosskreis auf die Kugeloberfläche projiziert, bilden die Schnittpunkte der Senkrechten durch den Mittelpunkt $M$ dabei die beiden Pole. 
-Der Name kommt von den Polen auf der Erdkugel; Nord- und Südpol welche die Pole des Äquators bilden.
+Für jedes Dreieck auf der Kugeloberfläche gibt es das zugehörige Polardreieck\footnote{%
+Das Polardreieck verdient seinen Namen der beiden Pole der Erdkugel dem Nord- und Südpol, denn sie bilden die beiden Pole des Äquators ab.}. Wenn man einen Grosskreis auf die Kugeloberfläche projiziert, bilden die Schnittpunkte der Senkrechten durch den Mittelpunkt $M$ dabei die beiden Pole. 
 
-XXBILDXX
+%WINKELKOSINUSSATZ
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.4\textwidth]{kugel/Zweieck.jpg}
+\caption{Die Polarbögen zweier Grosskreise bilden einen Schnittwinkel $\alpha$, welche durch einen Grosskreisbogen (Polarbogen) der Seitenlänge $a’$ verbunden werden.}
+\label{V8}
+\end{figure}
 
+In der Abbildung \eqref{V8} wird ersichtlich, dass die Beziehung
 
+\begin{align*}
+\alpha + $a’$ = \pi
+\end{align*}
 
+gilt. 
+Somit können wir das Polardreieck eines sphärischen Dreieckes bestimmen, und stellen fest, dass die Strecke $\overline{MA}$ orthogonal auf der Seite $a’$ liegt. Daraus folgen die Beziehungen
+
+\begin{align*}
+\overline{MA’} &\perp \overline{MB} \text{und} \overline{MC} \\
+\overline{MB’} &\perp \overline{MC} \und \overline{MA} \\
+\overline{MC’} &\perp \overline{MA} \und \overline{MB}
+\end{align*}
 
 \section{Dreiecksfläche und sphärischer Exzess} \label{Flaeche}
 Betrachten wir das hellgraue Dreieck in der Abbildung 13.5 ist $A_{ \triangle{ ABC }}$ dessen Flächeninhalt. Dieser lässt sich folgendermassen berechnen
@@ -274,7 +292,7 @@ Berechnen wir den maximalen sphärischen Exzess bei allgemeinen Kugeldreiecken w
 
 
 \subsection{Grenzfall - Satz von Legendre}
-Würden wir den sphärischen Exzess in der ebenen Trigonometrie anwenden, wäre dieser immer $\epsylon=0$. Betrachten wir nun sehr kleine Kugeldreiecke oder solche mit grossen aber endlichen Radien, würde die Innenwinkelsumme $\pi$ nur wenig übersteigen. Dies besagt, dass wir sphärische Dreiecke mit geringer Grösse durch „Verebnung“ annähernd als solche der ebenen Trigonometrie betrachten können. Diese Erkenntnis beschreibt der Satz von Legendre
+Würden wir den sphärischen Exzess in der ebenen Trigonometrie anwenden, wäre dieser immer $\epsilon=0$. Betrachten wir nun sehr kleine Kugeldreiecke oder solche mit grossen aber endlichen Radien, würde die Innenwinkelsumme $\pi$ nur wenig übersteigen. Dies besagt, dass wir sphärische Dreiecke mit geringer Grösse durch „Verebnung“ annähernd als solche der ebenen Trigonometrie betrachten können. Diese Erkenntnis beschreibt der Satz von Legendre
 
 %BILD LEGENDRE
 \begin{figure}[htbp]
@@ -470,11 +488,9 @@ Wenden wir den sphärischen Seitenkosinussatz auf dem Polardreieck an, erhalten 
 %WINKELKOSINUSSATZ
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.4\textwidth]{kugel/Beispielbild.jpg}
+\includegraphics[width=0.4\textwidth]{kugel/Zweieck.jpg}
 \caption{Hilfsskizze um die Beziehungen auf der Kugel zwischen dem sphärischen Dreieck und dem Polardreieck mithilfe des Winkelkosinussatzes zu illustrieren und aufzuzeigen}
 \end{figure}
-
-
 
 Durch die Beziehung zwischen dem Polardreieck und dem sphärischen Dreieck, lässt sich der Seitenkosinussatz folgendermassen umformen
 \begin{align*}
@@ -862,6 +878,13 @@ Der Winkel $\tau$ setzt sich aus folgenden Komponenten zusammen
 \cos (\tau) &= \cos (t - e_\delta - \lambda) 
 \end{align*}
 
+%BILD MIT UHR
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.4\textwidth]{kugel/Zweieck.jpg}
+\caption{BILD MIT UHR}
+\end{figure}
+
 Die zugehörigen bekannten Grössen sind:
 \begin{itemize}
 \item Zeit ($t$) $\Rightarrow$ Uhr
@@ -1013,7 +1036,7 @@ Dieser Betrag dazu addiert ergibt
 
 Umgerechnet in Bogenmass ergibt sich für $\lambda$
 \begin{align*}
-\lambda = - 8.7945^{\circ} = -8^{\circ} 47’ 40.2’’
+\lambda = - 8.7945^{\circ} = -8^{\circ} 47 40.2
 \end{align*}
 
 
