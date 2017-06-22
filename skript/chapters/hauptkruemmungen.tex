@@ -164,47 +164,229 @@ die auch ganz offensichtlich zeigt, dass sie eine Eigenschaft der Einbettung
 einer Fläche in den dreidimensionalen Raum ist.
 Für die Gausskrümmung fehlt uns eine vergleichbare Charakterisierung.
 Wir wollen daher in diesem Abschnitt zeigen, dass die Gausskrümmung
-mit der Fläche eines kleinen Kreises um den Nullpunkt zusammenhängt.
-Da der Flächeninhalt unabhängig von der Einbettung gemessen werden kann,
+mit der Längenmessung entlang eines kleinen Kreises um den Nullpunkt
+zusammenhängt.
+Da sowohl die Länge wie auch der Flächeninhalt unabhängig von der
+Einbettung gemessen werden kann,
 wird dies auch gleichzeitig illustrieren, dass die Gausskrümmung eine
 innere Eigenschaft einer Fläche ist.
 
-Wir approximieren die Fläche wieder als quadratische Funktion
+Dazu betrachten wir wieder eine Fläche der Form $z=f(x,y)$, deren
+Tangentialebene im Nullpunkt die $x$-$y$-Ebene ist.
+In dieser Fläche betrachten wir den Kreis parametrisiert mit
+$x=R\cos t$ und $y=R\sin t$. In einer Ebene wird
+der Flächeninhalt $F=\pi R^2$ sein, die Umfang $U=2\pi R$.
+Man kann auch sagen, dass
 \[
-z = ax^2 + 2bxy + cy^2.
+U^2 = 4\pi F
+\qquad\Rightarrow\qquad
+\frac{4\pi F}{U^2}=1 \]
+ist.
+Wir untersuchen, wie sich diese Beziehung ändert, wenn die
+Fläche nicht mehr eine Ebene ist.
+
+Wir approximieren die Fläche wieder als quadratische Funktion.
+Zur Vereinfachung der Rechnung
+verwenden dabei ein Koordinatensystem, in dem die Hauptrkümmungsrichtungen
+die Achsen sind.
+Die Funktion $f(x,y)$ hat daher die Form
+\[
+f(x,y)
+=
+\kappa_1 x^2 + \kappa_2 y^2
+\qquad\text{und}\qquad
+g(x,y)=\begin{pmatrix}x\\y\\\kappa_1x^2 + \kappa_2y^2\end{pmatrix}.
 \]
+Für diese Fläche berechnen wir jetzt Flächeninhalt $F$ und 
+Umfang $U$.
+
+\subsubsection{Flächeninhalt}
 Der Flächeninhalt einer parametrisierten Fläche wird mit dem Integral
 \[
 F
 =
-\int \frac{\partial g}{\partial u} \times \frac{\partial g}{\partial v}
+\int
+\biggr|\frac{\partial g}{\partial u} \times \frac{\partial g}{\partial v}\biggr|
 \,du\,dv
 \]
 berechnet.
-Für den Graphen ist das Vektorprodukt der Ableitungen
+Der Integrand ist
+\begin{align*}
+dF
+&=
+\biggl|
+\frac{\partial g}{\partial x}
+\times
+\frac{\partial g}{\partial y}
+\biggr|
+\,dx\,dy
+=
+\left|
+\begin{pmatrix}1\\0\\\frac{\partial f}{\partial x}\end{pmatrix}
+\times
+\begin{pmatrix}0\\1\\\frac{\partial f}{\partial y}\end{pmatrix}
+\right|
+\,dx\,dy
+=
+\left|
+\begin{pmatrix}1\\0\\2\kappa_1 x\end{pmatrix}
+\times
+\begin{pmatrix}0\\1\\2\kappa_2 y\end{pmatrix}
+\right|
+\,dx\,dy
+=
+\left|
+\begin{pmatrix}-2\kappa_1 x\\-2\kappa_2 y\\1
+\end{pmatrix}
+\right|
+\,dx\,dy
+\\
+&=
+(1 + 4\kappa_1^2 x^2 + 4 \kappa_2^2 y^2)
+\,dx\,dy.
+\end{align*}
+Da das Integrationsgebiet eine Kreisscheibe mit Radius $R$ ist, verwenden
+wir mit Vorteil Polarkoordinaten.
+Wir ersetzen $x=r\cos\varphi$, $y=r\sin\varphi$ und $dx\,dy = r\,dr\,d\varphi$
+und schreiben das Integral als
+\begin{align*}
+F
+&=
+\int_0^{2\pi}
+\int_0^R
+\sqrt{1 + 4\kappa_1^2 r^2 \cos^2 \varphi + 4\kappa_2^2 r^2\sin^2\varphi}
+\,
+r\,dr\,d\varphi
+\end{align*}
+Der Integrand ist leider zu kompliziert, um das Integral in geschlossener
+Form derart auszuwerten, dass wir daraus die beabsichtigten Schlüsse
+ziehen können.
+Da wir aber ohnehin nur mit einer Approximation für kleine Werte von $r$
+arbeiten, können wir den Integranden in eine Taylorreihe in $r$ entwickeln.
+Die Rechnung mit dem Maxima Programm
+\lstinputlisting[style=Maxima]{chapters/listings/flaecheninhalt.m}
+ergibt
+\begin{align*}
+F
+%&=
+%\int_0^{2\pi}
+%\int_0^R
+%\frac12R^2(1+R^2\kappa_1^2 \cos^2\varphi + R^2 \kappa_2^2\sin^2\varphi)
+%\,r\,dr\,d\varphi
+%\\
+&=
+\pi R^2
+\bigl(
+1
++
+{\textstyle\frac12} R^2(\kappa_1^2+\kappa_2^2)
+\bigr).
+\end{align*}
+Der erste Terme ist natürlich exakt der Flächeninhalt einer Kreisscheibe
+in der Ebene.
+
+\subsubsection{Umfang}
+Für den Umfang berechnen wir das Wegintegral entlang des Randes.
+Um eine Parametrisierung der Randkurve zu bekommen,
+ersetzen wir $x=R\cos t$ und $y=R\sin t$ in $g(x,y)$ und erhalten
 \[
-\begin{pmatrix}
-1\\1\\\frac{\partial f}{\partial x}
-\end{pmatrix}
-\times
-\begin{pmatrix}
-1\\1\\\frac{\partial f}{\partial y}
-\end{pmatrix}
+c(t)
 =
 \begin{pmatrix}
-1\\1\\2ax+2by
-\end{pmatrix}
-\times
-\begin{pmatrix}
-1\\1\\2bx+2cy
+R\cos t\\ R\sin t\\ R^2(\kappa_1\cos^2 t + \kappa_2^2\sin^2 t)
 \end{pmatrix}
 =
+R
 \begin{pmatrix}
-2bx+2cy-2ax-2by\\
-2ax+2by-2bx+2ay\\
-0
+\cos t\\ \sin t\\ R(\kappa_1\cos^2 t + \kappa_2^2\sin^2 t)
 \end{pmatrix}
 \]
+Wir müssen den Betrag der Ableitung $\dot c(t)$ integrieren.
+Das ist das Integral
+\begin{align*}
+U
+&=
+R
+\int_0^{2\pi}
+\sqrt{
+\sin^2 t + \cos^2 t 
++ R^2(\kappa_1^2 \cos^2 t + \kappa_2\sin^2 t)
+}
+\,dt,
+\end{align*}
+welches sich ebenfalls nicht in geschlossener Form auswerten lässt.
+Auch hier wählen wir wieder die Entwicklung in eine Taylorreihe nach $R$,
+denn wir brauchen $U$ ja nur für kleine Werte von $R$.
+Die Rechnung mit dem Maxima Programm
+\lstinputlisting[style=Maxima]{chapters/listings/umfang.m}
+gibt wieder
+\begin{align*}
+U
+&\simeq
+R
+\int_0^{2\pi}
+1 + 2(\kappa_1^2 - 2\kappa_1\kappa_2 + \kappa_2^2)R^2 \cos^2 t\sin^2 t
+\,dt
+\\
+&=
+2\pi R
+(
+1
++ 
+\frac12 (\kappa_1^2 -2\kappa_1\kappa_2+\kappa_2^2) R^2
+).
+\end{align*}
+Für die Beziehung zwischen Umfang und Flächeninhalt brauchen wir aber nicht
+$U$ sondern sein Quadrat (auch dies wird im oben gelisteten Programm bereits
+berechnet).
+In unserer Näherung brauchen wir dabei nur Terme bis zur vierten Ordnung
+in $R$ zu berücksichtigen, also
+\begin{align*}
+U^2
+&\simeq
+4\pi^2 R^2(
+1
++
+(\kappa_1^2-2\kappa_1\kappa_2 + \kappa_2^2)R^2
+).
+\end{align*}
+
+\subsubsection{Beziehung zwischen Umfang und Flächeninhalt}
+Wir müssen die Grösse $4\pi F/U^2$ untersuchen.
+Mit den bisher berechneten Ausdrücken für $F$ und $U$ erhalten wir
+\begin{align*}
+\frac{4\pi F}{U^2}
+&=
+\frac{4\pi^2R^2(1+(\kappa_1^2 + \kappa_2^2)R^2)}%
+{4\pi^2 R^2(1+(\kappa_1^2-\kappa_1\kappa_2+\kappa_2^2)R^2)}
+=
+\frac{1+(\kappa_1^2 + \kappa_2^2)R^2}%
+{1+(\kappa_1^2-\kappa_1\kappa_2+\kappa_2^2)R^2}.
+\label{skript:kurven:4piu2}
+\end{align*}
+Wieder brauchen wir nur eine Taylorreihe bis zur zweiten Ordnung in $R$.
+Mit Hilfe von
+\[
+\frac1{1+x}= 1-x+x^2-x^3
+\]
+können wir den Nenner in~\eqref{skript:kurven:4piu2} in den Zähler
+bringen.
+Wenn wir wieder Terme höherer Ordnung als $R^2$ weglassen, bekommen
+wir 
+\begin{equation}
+\frac{4\pi F}{U^2}
+\simeq
+1+\kappa_1\kappa_2R^2
+=
+1 + KR^2
+\end{equation}
+als Schlussresultat.
+Das Produkt der Hauptkrümmungen ist die Gausskrümmung $K=\kappa_1\kappa_2$,
+diese beschreibt also im Wesentlichen das Anwachsen des Verhältnisses
+von Flächeninhalt zu Umfang im Quadrat eines Kreises in Abhängigkeit
+von dessen Radius.
+Bei positiver Gausskrümmung wächst das Verhältniss schneller an
+als auf einer Ebene, bei negativer Gausskrümmung langsamer.
 
 
 
