@@ -174,13 +174,14 @@ innere Eigenschaft einer Fläche ist.
 Dazu betrachten wir wieder eine Fläche der Form $z=f(x,y)$, deren
 Tangentialebene im Nullpunkt die $x$-$y$-Ebene ist.
 In dieser Fläche betrachten wir den Kreis parametrisiert mit
-$x=R\cos t$ und $y=R\sin t$. In einer Ebene wird
-der Flächeninhalt $F=\pi R^2$ sein, die Umfang $U=2\pi R$.
+$x=R\cos t$ und $y=R\sin t$.
+In einer Ebene wird der Flächeninhalt $F=\pi R^2$ sein, die Umfang $U=2\pi R$.
 Man kann auch sagen, dass
 \[
 U^2 = 4\pi F
 \qquad\Rightarrow\qquad
-\frac{4\pi F}{U^2}=1 \]
+\frac{4\pi F}{U^2}=1
+\]
 ist.
 Wir untersuchen, wie sich diese Beziehung ändert, wenn die
 Fläche nicht mehr eine Ebene ist.
@@ -200,15 +201,21 @@ Für diese Fläche berechnen wir jetzt Flächeninhalt $F$ und
 Umfang $U$.
 
 \subsubsection{Flächeninhalt}
-Der Flächeninhalt einer parametrisierten Fläche $g(u,v)$ wird mit dem Integral
+Der Flächeninhalt einer mit $(u,v)$ parametrisierten Fläche $g(u,v)$
+wird mit dem Integral
 \[
 F
 =
-\int_D
+\int_{D}
 \biggr|\frac{\partial g}{\partial u} \times \frac{\partial g}{\partial v}\biggr|
 \,du\,dv
 \]
 über das Definitionsgebiet $D$ der Fläche berechnet.
+In unserem Fall verwenden wir $x$ und $y$ als Parameter und das
+Definitionsgebiet
+\[
+D_R = \{ (x,y)\;|\; x^2 + y^2 < R\}.
+\]
 Der Betrag des Vektorprodukts im Integranden ist in unserem Fall
 \begin{align*}
 \biggl|
@@ -286,12 +293,12 @@ ersetzen wir $x=R\cos t$ und $y=R\sin t$ in $g(x,y)$ und erhalten
 c(t)
 =
 \begin{pmatrix}
-R\cos t\\ R\sin t\\ R^2(\kappa_1\cos^2 t + \kappa_2^2\sin^2 t)
+R\cos t\\ R\sin t\\ R^2(\kappa_1^2\cos^2 t + \kappa_2^2\sin^2 t)
 \end{pmatrix}
 =
 R
 \begin{pmatrix}
-\cos t\\ \sin t\\ R(\kappa_1\cos^2 t + \kappa_2^2\sin^2 t)
+\cos t\\ \sin t\\ R(\kappa_1^2\cos^2 t + \kappa_2^2\sin^2 t)
 \end{pmatrix}
 \]
 Wir müssen den Betrag der Ableitung $\dot c(t)$ integrieren.
@@ -303,7 +310,7 @@ R
 \int_0^{2\pi}
 \sqrt{
 \sin^2 t + \cos^2 t 
-+ R^2(\kappa_1^2 \cos^2 t + \kappa_2\sin^2 t)
++ R^2(\kappa_1^2 \cos^2 t + \kappa_2^2\sin^2 t)
 }
 \,dt,
 \end{align*}
@@ -313,36 +320,44 @@ denn wir brauchen $U$ ja nur für kleine Werte von $R$.
 Die Rechnung mit dem Maxima Programm
 \lstinputlisting[style=Maxima]{chapters/listings/umfang.m}
 gibt wieder
-\begin{align*}
+\begin{align}
 U
 &\simeq
 R
 \int_0^{2\pi}
 1 + 2(\kappa_1^2 - 2\kappa_1\kappa_2 + \kappa_2^2)R^2 \cos^2 t\sin^2 t
 \,dt
+\notag
 \\
 &=
 2\pi R
 (
 1
 + 
-\frac12 (\kappa_1^2 -2\kappa_1\kappa_2+\kappa_2^2) R^2
+{\textstyle \frac14}(\kappa_1^2 -2\kappa_1\kappa_2+\kappa_2^2) R^2
 ).
-\end{align*}
+\label{skript:kurven:U1}
+\end{align}
 Für die Beziehung zwischen Umfang und Flächeninhalt brauchen wir aber nicht
 $U$ sondern sein Quadrat (auch dies wird im oben gelisteten Programm bereits
 berechnet).
 In unserer Näherung brauchen wir dabei nur Terme bis zur vierten Ordnung
-in $R$ zu berücksichtigen, also
+in $R$ zu berücksichtigen.
+Wegen $(1+x)^2 \simeq 1+2x$ in niedrigster Ordnung, bedeutet das nur,
+dass wir den Term zweiten Term in der Klammer in \eqref{skript:kurven:U1}
+verdoppeln müssen.
+Wir bekommen daher
 \begin{align*}
 U^2
 &\simeq
 4\pi^2 R^2(
 1
 +
+{\textstyle \frac12}
 (\kappa_1^2-2\kappa_1\kappa_2 + \kappa_2^2)R^2
-).
+)
 \end{align*}
+als Approximation in niedrigster Ordnung.
 
 \subsubsection{Beziehung zwischen Umfang und Flächeninhalt}
 Wir müssen die Grösse $4\pi F/U^2$ untersuchen.
@@ -350,11 +365,11 @@ Mit den bisher berechneten Ausdrücken für $F$ und $U$ erhalten wir
 \begin{align}
 \frac{4\pi F}{U^2}
 &=
-\frac{4\pi^2R^2(1+(\kappa_1^2 + \kappa_2^2)R^2)}%
-{4\pi^2 R^2(1+(\kappa_1^2-\kappa_1\kappa_2+\kappa_2^2)R^2)}
+\frac{4\pi^2R^2(1+{\textstyle\frac12}(\kappa_1^2 + \kappa_2^2)R^2)}%
+{4\pi^2 R^2(1+{\textstyle\frac12}(\kappa_1^2-2\kappa_1\kappa_2+\kappa_2^2)R^2)}
 =
 \frac{1+(\kappa_1^2 + \kappa_2^2)R^2}%
-{1+(\kappa_1^2-\kappa_1\kappa_2+\kappa_2^2)R^2}.
+{1+(\kappa_1^2-2\kappa_1\kappa_2+\kappa_2^2)R^2}.
 \label{skript:kurven:4piu2}
 \end{align}
 Wieder brauchen wir nur eine Taylorreihe bis zur zweiten Ordnung in $R$.

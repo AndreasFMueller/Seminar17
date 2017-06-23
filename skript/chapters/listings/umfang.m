@@ -14,4 +14,5 @@ laengetaylor: subst(1, sin(t)^2 + cos(t)^2, laengetaylor);
 
 /* Wegintegral ergibt Umfang */
 U: ratsimp(integrate(laengetaylor, t, 0, 2 * %pi));
-ratsimp(U^2);
+taylor(U, R, 0, 3);
+taylor(ratsimp(U^2), R, 0, 4);
