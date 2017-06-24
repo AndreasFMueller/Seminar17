@@ -1,5 +1,4 @@
 % Shows the Apsidal precession
-% Slightly Differ from the Octave Plot. Not sure why (yet).
 
 x3(1,1) = 0;
 x3(2,1) = 10;
@@ -9,7 +8,6 @@ x3(5,1) = 0.5;
 x3(6,1) = 0;
 x3(7,1) = 0;
 x3(8,1) = 0.00868;
-
 
 xa = mnormalize(x3);
 xa
