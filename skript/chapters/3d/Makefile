@@ -6,7 +6,8 @@
 all:	transport kurve lichtkegel geodaete blackhole flach sphere \
 	negativ eben positiv \
 	pringles-positiv pringles-negativ pringles-flach \
-	schnittkruemmung hauptkruemmungen
+	schnittkruemmung hauptkruemmungen \
+	kpos kneg kzero
 
 images:	all
 
@@ -166,7 +167,26 @@ hauptkruemmungen.png:	hauptkruemmungen.pov
 		-Ohauptkruemmungen.png \
 		hauptkruemmungen.pov || touch hauptkruemmungen.png
 
+kpos:	kpos.jpg
+kpos.jpg:	kpos.png
+	convert kpos.png -units PixelsPerInch -density 300 kpos.jpg
+kpos.png:	kpos.pov kvis.inc
+	sh ../../../povray $(povrayoptions) $(lowdimensions) \
+		-Okpos.png kpos.pov || touch kpos.png
 
+kneg:	kneg.jpg
+kneg.jpg:	kneg.png
+	convert kneg.png -units PixelsPerInch -density 300 kneg.jpg
+kneg.png:	kneg.pov kvis.inc
+	sh ../../../povray $(povrayoptions) $(lowdimensions) \
+		-Okneg.png kneg.pov || touch kneg.png
+
+kzero:	kzero.jpg
+kzero.jpg:	kzero.png
+	convert kzero.png -units PixelsPerInch -density 300 kzero.jpg
+kzero.png:	kzero.pov kvis.inc
+	sh ../../../povray $(povrayoptions) $(lowdimensions) \
+		-Okzero.png kzero.pov || touch kzero.png
 
 
 

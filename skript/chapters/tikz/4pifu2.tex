@@ -1,0 +1,21 @@
+%
+% 4piku2.tex -- 
+%
+\documentclass[tikz]{standalone}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usetikzlibrary{arrows,intersections}
+\begin{document}
+\begin{tikzpicture}[thick, scale = 4]
+\coordinate (O) at (0,0);
+\node at (-1,0) {\includegraphics[width=0.3\hsize]{../3d/kpos.jpg}};
+\node at (0,0) {\includegraphics[width=0.3\hsize]{../3d/kzero.jpg}};
+\node at (1,0) {\includegraphics[width=0.3\hsize]{../3d/kneg.jpg}};
+\node at (-1,0.4) {$\displaystyle \frac{4\pi F}{U^2}>1$};
+\node at (0,0.4) {$\displaystyle \frac{4\pi F}{U^2}=1$};
+\node at (1,0.4) {$\displaystyle \frac{4\pi F}{U^2}<1$};
+\end{tikzpicture}
+\end{document}
+

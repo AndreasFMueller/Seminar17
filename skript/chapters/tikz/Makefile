@@ -8,7 +8,7 @@ all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
 	friedmann-materie.pdf friedmann-strahlung.pdf friedmann-leer.pdf \
 	darkenergy.pdf orbit.pdf orbit2.pdf lichtablenkung.pdf dipol1.pdf \
 	dipol2.pdf ionisation.pdf kreisbogen.pdf tangente.pdf kruemmung.pdf \
-	wald.pdf
+	wald.pdf 4pifu2.pdf
 
 images:	all
 
@@ -81,4 +81,5 @@ kruemmung.pdf:	kruemmung.tex
 wald.pdf:	wald.tex waldbaeume.tex
 	pdflatex wald.tex
 
-
+4pifu2.pdf:	4pifu2.tex
+	pdflatex 4pifu2.tex
