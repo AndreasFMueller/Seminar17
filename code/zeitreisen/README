@@ -1,7 +1,7 @@
 # Source-Code zum Zeitreisen-Projekt
 
 ## Unterstützte Version
-Getestet unter Matlab R2016b und R2017a
+Getestet unter Matlab R2016b und R2017a.
 
 ## Start
 `schwarschild.m` oder `perhildrehung.m` aufrufen.
