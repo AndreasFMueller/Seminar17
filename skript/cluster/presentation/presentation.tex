@@ -145,19 +145,20 @@
 
     \only<2->{
     \node [circle] (circleSmall) at (A) [minimum size=2*.8cm,
-      inner sep=0]{};
+      inner sep=0]{};}
+    \only<3->{
     \draw [color=red] (D) -- (tangent cs:node=circleSmall, point={(D)},
       solution=2) coordinate[label=below left:$C$] (C);}
 
-    \only<3>{
+    \only<4>{
     \path (C) ++ ($ (C)-(A) $) coordinate (Cs);
     \path (D) ++ ($ (C)-(A) $) coordinate (Ds);
     \draw [very thick, color=red, ->, >=stealth] (A) -- (C) -- ($ (C)!1.4!(Cs) $);
     \draw [very thick, color=red, ->, >=stealth] (D) -- ($ (D)!1.4!(Ds) $);
     \draw [color=red] (Cs) -- (Ds);}
 
-    \only<1>{\foreach \point in {A,B,D}}
-    \only<2->{\foreach \point in {A,B,C,D}}
+    \only<1-2>{\foreach \point in {A,B,D}}
+    \only<3->{\foreach \point in {A,B,C,D}}
       \draw [black, fill=white] (\point) circle (.6mm);
   \end{tikzpicture}
 \end{frame}
@@ -188,9 +189,9 @@
 \end{frame}
 
 
-\subsection{Gravitations Linse}
+\subsection{Gravitationslinse}
 \begin{frame}
-  \frametitle{Gravitations Linse (Punktquelle)}
+  \frametitle{Gravitationslinse (Punktquelle)}
   \begin{itemize}
   \item schwache Gravitationsfelder
   \item \(\rightarrow\) nur Zeitveränderung
@@ -246,7 +247,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{todo}
+  \frametitle{Zeitintegral (1)}
   \begin{equation*}
     I = \nint{}{}
     \only<2>{\underbrace}
@@ -258,7 +259,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{todo}
+  \frametitle{Zeitintegral (2)}
   \begin{equation*}
     I = \frac{1}{c} \nint{}{}
     \sqrt{\dot{x}(l)^2+\dot{y}(l)^2+\dot{z}(l)^2} \cdot
@@ -279,7 +280,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{da}
+  \frametitle{Euler-Lagrange}
   \begin{equation*}
     0 = \prac{F}{x} - \drac{}{l}\prac{F}{\dot{x}}
   \end{equation*}
@@ -295,7 +296,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{als}
+  \frametitle{Logarithmische Differentiation}
   \begin{equation*}
     \ddot{x} = (-\dot{x}^2+\dot{y}^2+\dot{z}^2) \frac{1}{n}\prac{n}{x} -
     2\dot{x}\dot{y} \frac{1}{n}\prac{n}{y} - 2\dot{x}\dot{z} \frac{1}{n}\prac{n}{z}
@@ -314,7 +315,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{asldf}
+  \frametitle{Gravitationspotential}
   \begin{equation*}
     \ddot{x} = (-\dot{x}^2+\dot{y}^2+\dot{z}^2) \prac{\ln n}{x} -
     2\dot{x}\dot{y} \prac{\ln n}{y} - 2\dot{x}\dot{z} \prac{\ln n}{z}
@@ -332,7 +333,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{2D, Punktquelle auf \(y\)-Achse}
+  \frametitle{2D, Punktquelle auf \(x\)-Achse}
   \begin{align*}
     \ddot{x} &= -\frac{2(-\dot{x}^2+\dot{y}^2)(x-x_L)KM}
                {c^2\sqrt{(x-x_L)^2+y^2}^3}+
@@ -476,13 +477,13 @@
 \end{frame}
 
 
-\appendix
-\frame{\tableofcontents}
+% \appendix
+% \frame{\tableofcontents}
 
 
-\begin{frame}
-  \frametitle{Number of Measurement Points}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Number of Measurement Points}
+% \end{frame}
 
 \end{document}
 %%% Local Variables:
