@@ -30,6 +30,7 @@ CHAPTERS = 								\
 	chapters/k-speziell.tex                                         \
 	chapters/koordtrafo.tex                                         \
 	chapters/kruemmung.tex                                          \
+	chapters/tensoren.tex                                           \
 	chapters/m-1dim.tex                                             \
 	chapters/m-kugelfunktionen.tex                                  \
 	chapters/m-multipole.tex                                        \

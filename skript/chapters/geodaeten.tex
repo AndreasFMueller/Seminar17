@@ -53,7 +53,7 @@ gekrümmt.
 In diesem Abschnitt suchen wir daher nach einer allgemeinen Methode,
 die kürzeste Verbindung, die sogenannten Geodäten zu finden.
 
-\section{Paralleltransport}
+\section{Paralleltransport und kovariante Ableitung}
 \rhead{Paralleltransport}
 \begin{figure}
 \centering
@@ -82,6 +82,7 @@ Es ist aber klar, dass die Komponenten des transportierten Vektors
 sowohl von der Transportrichtung wie auch vom ursprünglichen Vektor
 abhängen.
 
+\subsection{Kovariante Ableitung}
 Seien $A^\mu$ die Komponenten eines Vektors, die Richtung mit Komponenten
 $\Delta x^\nu$ transport werden soll.
 Wenn wir uns entlang einer Kurve in diese Richtung bewegen, werden sich
@@ -117,13 +118,13 @@ Ausdruck
 \end{equation}
 die Koeffizienten $\Gamma^\mu_{\alpha\nu}$ heissen Christoffelsymbole
 zweiter Art oder Zusammenhangskoeffizienten.
-Eine weiter verbreitete Schreibweise für die kovariante Ableitung
-ist
-\[
+Eine weit verbreitete, aber in diesem Buch nicht verwendete,
+alternative Schreibweise für die kovariante Ableitung ist
+$
 \nabla_\nu A^\mu
 =
-A^\mu\mathstrut_{;\nu}.
-\]
+A^\mu\mathstrut_{;\nu}
+$.
 \end{definition}
 
 Die kovariante Ableitung soll ausdrücken, wie sich die Komponenten eines
@@ -161,6 +162,7 @@ Wir fordern daher zusätzlich, dass die Zusammenhangskoeffizienten
 symmetrisch sein sollen.
 Es wird sich gleich zeigen, dass dies tatsächlich möglich ist.
 
+\subsection{Paralleltransport}
 Bis jetzt haben wir die Metrik nicht verwendet.
 Wir möchten, dass der Paralleltransport die Länge des Vektors beim
 Transport entlang einer Kurve nicht verändert.
@@ -367,6 +369,7 @@ die einzelnen Faktoren nicht verschwindende kovariante Ableitung haben?
 Ziel dieses Abschnittes ist, Rechenregeln für die kovariante Ableitung
 zusammenzustellen.
 
+\subsection{Ableitung eines Skalarproduktes}
 Wir betrachten zwei Vektorfelder $A^\mu$ und $B^\mu$ und möchten wissen,
 wie sich der Wert des Skalarproduktes $g_{\mu\nu}A^\mu B^\nu$ entlang
 einer Kurve mit Tangentenrichtung $C^\mu$ ändert.
@@ -435,6 +438,7 @@ g_{\mu\nu}A^\mu\nabla_\alpha B^\nu.
 \end{equation}
 \end{satz}
 
+\subsection{Kovariante Ableitung kontravarianter Vektoren}
 Bis jetzt können wir nur die kovariante Ableitung von Vektorkomponenten
 $A^\mu$ berechnen, eine kovariante Ableitung von Komponenten $B_\nu$
 ist noch gar nicht definiert.
@@ -602,22 +606,30 @@ ist
 \begin{equation}
 \nabla_\alpha B_\nu
 =
-\frac{\partial B_\nu}{\partial\alpha}
+\frac{\partial B_\nu}{\partial x^\alpha}
 -\Gamma^{\sigma}_{\alpha\nu}B_\sigma,
 \label{skript:geodaeten:kovabl2}
 \end{equation}
-Diese wird auch $\nabla_\alpha B_\nu=B_{\nu;\alpha}$ geschrieben.
+diese wird auch $\nabla_\alpha B_\nu=B_{\nu;\alpha}$ geschrieben.
 \end{definition}
 
 % TODO: kovariante Ableitung und Verjüngung
 
+\subsection{Kovariante Ableitung von Tensoren beliebiger Stufe}
 Wir möchten die kovariante Ableitung jetzt auf beliebige Tensoren
 verallgemeinern.
-Sie soll natürlich linear bleiben und die Produktregel muss ebenfalls
-erhalten bleiben.
+Sie soll natürlich linear bleiben und die Produktregel, die für jede
+Art von Ableitung gilt, muss ebenfalls erhalten bleiben.
+Aus diesen Voraussetzungen lässt sich eine allgemeine Formel für
+die kovariante Ableitung eines beliebigen Tensors herleiten.
+
 Ein Tensor der Form $t_{\mu\nu}$ kann immer geschrieben werden
-als eine Summe von Tensoren der Form $a_\mu b_\nu$.
-Auf einem solchen Tensor muss die kovariante Ableitung die Form
+als Linearkombination von Tensoren der Form $a_\mu b_\nu$, es reicht
+also wegen der Linearität der kovarianten Ableitung, wenn wir solche
+Produkte ableiten können.
+Dafür muss aber die Produktregel gelten.
+
+Auf einem Produkt $a_\mu b_\nu$ muss die kovariante Ableitung die Form
 \begin{align*}
 \nabla_\alpha (a_\mu b_\nu)
 &=
@@ -642,11 +654,38 @@ a_\mu
 &=
 \frac{\partial a_\mu b_\nu}{\partial x^\alpha}
 -\Gamma^\sigma_{\alpha\mu}a_\sigma b_\nu
--\Gamma^\sigma_{\alpha\nu}
+-\Gamma^\sigma_{\alpha\nu}a_\mu b_\sigma.
 \end{align*}
-
+Auf analoge Art können auch obere Indizes behandelt werden.
+Dies führt uns auf die folgende allgemeine Definition für die 
+koveriante Ableitung von Tensonren beliebiger Stufe.
 
 \begin{definition}
+Sei $A$ ein beliebiger Tensor, von dem wir nur die Indizes
+$\mu$ und $\nu$ in der Form
+$A^{\dots \mu\dots}\mathstrut_{\dots\nu\dots}$
+explizit ausschreiben wollen.
+Die kovariante Ableitung von $A$ ist
+\begin{equation}
+\nabla_\alpha A^{\dots \mu\dots}\mathstrut_{\dots\nu\dots}
+=
+\frac{\partial A^{\dots \mu\dots}\mathstrut_{\dots\nu\dots}}{\partial x^\alpha}
++
+\dotsc
++
+\Gamma^\mu_{\sigma\alpha}
+A^{\dots \sigma\dots}\mathstrut_{\dots\nu\dots}
++
+\dotsc
+-
+\Gamma^\sigma_{\alpha\nu}
+A^{\dots \mu\dots}\mathstrut_{\dots\sigma\dots}
++
+\dotsc,
+\end{equation}
+wobei für jeden kontravarianten Index ein Term mit positivem
+Vorzeichen und für jeden kovarianten Index ein Term mit negativem
+Vorzeichen hinzukommen.
 \end{definition}
 
 \section{Beispiele}
