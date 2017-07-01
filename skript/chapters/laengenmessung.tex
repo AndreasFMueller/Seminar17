@@ -30,7 +30,9 @@ Resultat einer axiomatischen Beschreibung, wie Euklid sie gegeben hat,
 vielmehr ist sie zu einer experimentellen Wissenschaft geworden.
 
 Da wir nicht weiter annehmen wollen, dass sich der Raum mit Hilfe
-eines rechtwinkligen Koordinatensystems adäquat beschreiben lässt,
+eines rechtwinkligen Koordinatensystems mit der
+Längenmessung~\eqref{skript:kruemmung:pytagoras}
+adäquat beschreiben lässt,
 müssen wir automatisch beliebige Koordinatensysteme zulassen.
 Je nach Wahl eines Koordinatensystems werden dann Vektoren, die
 wir für die Beschreibung der physikalischen Gesetze benötigen,
@@ -40,6 +42,9 @@ wir Vektoren auf einheitliche Art umrechnen können.
 Ausserdem müssen die Naturgesetze so formuliert sein, dass
 sie in jedem beliebigen Koordinatensystem gleich aussehen.
 
+In diesem Kapitel müssen wir daher einen Formalismus für
+Koordinatensysteme und Längenmessung entwickeln.
+
 \section{Koordinatensystem}
 \rhead{Koordinatensysteme}
 In diesem Kapitel beginnen wir damit, den Begriff der Längenmessung
@@ -47,25 +52,17 @@ auf beliebige Koordinatensysteme auszudehnen.
 Ein Punkt wird beschrieben durch seine Koordinaten, die wir mit
 $x^\mu$ bezeichnen, wobei $\mu$ von $1$ bis $n$ läuft, $n$
 ist die Dimension des Raumes. 
-Die etwas ungewohnte Schreibweise für die Indizes wie Exponenten
+Die etwas ungewohnte Schreibweise für die Indizes
 hat einen tieferen Grund in der Tensorrechnung und wird später
 verständlich werden.
-
-%\section{Vektoren und Koordinatentransformation}
-%\rhead{Vektoren und Koordinatentransformation}
-%Eine Koordinatentransformation zwischen zwei Koordinatensystemen ist
-%eine Abbildung, die die Koordinaten $x^\mu$ des einen Koordinatensystems
-%in die Koordinaten $y^\nu$ des anderen Koordinatensystems umrechnet.
-%Man kann also schreiben
-%\begin{equation}
-%y^{\nu}=y^{\nu}(x^1,\dots,x^n).
-%\label{skript:kruemmung:umrechnung}
-%\end{equation}
+Im Folgenden werden $k$-te Potenzen einer Koordinate $x^\mu$ durch
+Klammern wie in $(x^\mu)^k$ deutlich gemacht.
 
 Uns interessiert vor allem die Beschreibung von Bahnkurven, wir möchten
-ja zum Beispiel den Absturz in ein schwarzes Loch berechnen können.
-Eine Bahnkurve erhält man, indem man die Koordinaten mit der Zeit
-varieren lässt.
+zum Beispiel den Absturz eines Astronauten in ein schwarzes Loch berechnen
+können.
+Eine Bahnkurve erhält man, indem man die Koordinaten von der Zeit
+abhängen lässt.
 Eine Kurve wird also beschrieben durch Funktionen $x^\mu(t)$.
 
 In der physikalischen Beschreibung werden meistens Vektoren wie
@@ -86,8 +83,10 @@ a^\mu(t)
 \ddot x^\mu(t)
 \]
 nach dem Parameter $t$.
+Natürlich haben wir diese Konstrukte in weniger verallgemeinerungsfähiger
+Notation bereits im Kapitel~\ref{skript:chapter:kurven} angetroffen.
 
-Im Moment arbeiten wir nur mit einem einzigen Koordinatensystem.
+Bis jetzt arbeiten wir nur mit einem einzigen Koordinatensystem.
 Die Komponenten $\dot x^\mu$ der Geschwindigkeit hängen offenbar
 von der Wahl des Koordinatensystems ab.
 Ein anderes Koordinatensystem ist gegeben durch
@@ -121,7 +120,7 @@ Geschwindigkeitskomponenten zu definieren, doch immerhin kann man
 angeben, wie die Geschwindigkeitskomponenten zwischen verschiedenen
 Koordinatensystemen umzurechnen sind.
 Wir leiten daraus ab, dass wir in Zukunft von jedem Objekt, welches
-eine koordinatenunabhängige Bedeutung haben soll zwar, zwar nicht
+eine koordinatenunabhängige Bedeutung haben soll, zwar nicht
 annehmen können, dass dessen Komponenten koordinatenunabhängig sind,
 aber wir können fordern, dass wir immer eine Koordinatenumrechnungsformel
 analog zu \eqref{skript::summenformel} aufstellen können, die nur die
@@ -137,58 +136,35 @@ oben als auch unten vorkommen.
 In der Tat kommt es praktisch nicht vor, dass ein oberer und unterer
 Index übereinstimmt {\em ohne} dass darüber summiert werden muss.
 Wir werden daher in Zukunft in dieser Situation das Summenzeichen weglassen.
-Dies ist die {\em Einsteinsche Summenkonvention} Summenkonvention.
-\index{Summenkonvention!Einsteinsche}
-
-%Wie sieht der Geschwindigkeitsvektor in $y^{\nu}$ Koordinaten aus?
-%Dazu setzen wir die Bahnkurve in die Umrechnungsformeln
-%\eqref{skript:kruemmung:umrechnung} ein.
-%Die Kettenregel liefert
-%\begin{align*}
-%y^{\nu}(t)&=y^{\nu}(x^1(t),\dots,x^n(t))
-%\\
-%u^{\nu}
-%=
-%\frac{dy^{\nu}(t)}{dt}
-%&=
-%\frac{\partial y^{\nu}}{\partial x^1}\frac{dx^1(t)}{dt}
-%+\dots+
-%\frac{\partial y^{\nu}}{\partial x^n}\frac{dx^n(t)}{dt}
-%=
-%\sum_{\mu=1}^n
-%\frac{\partial y^{\nu}}{\partial x^{\mu}}\frac{dx^{\mu}(t)}{dt}
-%\end{align*}
-%Auf der rechten Seite steht eine Summe von Termen, in denen
-%der Summationsindex sowohl oben als auch unten auftritt.
-%Diese Art von Summe kommt in der zu entwickelnden Theorie sehr
-%häufig vor, daher schreiben wir in Zukunft die Summe nicht mehr.
+Dies ist die {\em Einsteinsche Summenkonvention}.
+\index{Summenkonvention!Einsteinsche}%
+Mit der Summenkonvention lässt sich~\eqref{skript::summenformel} kompakter
+als
+\begin{equation}
+\frac{dy^\alpha(t)}{dt}
+=
+\frac{\partial y^\alpha}{\partial x^\mu}\frac{dx^\mu(t)}{dt}
+\end{equation}
+schreiben.
+Man beachte, dass der Index $\mu$ im Nenner der partiellen Ableitung nach
+$x^\mu$ als unterer Index gilt.
 
 %
-%Die Koeffizienten 
-%\[
-%\alpha_\mu^\nu=\frac{\partial y^{\nu}}{\partial x^{\mu}}
-%\]
-%dienen also der Umrechnung der Komponenten eines Vektors vom
-%$x^{\mu}$-Koordinatensystem ins $y^{\nu}$-Koordinatensystem.
-%Man kann die Rechnung auch in Matrixform schreiben:
-%\[
-%\begin{pmatrix}y^1\\\vdots\\y^n\end{pmatrix}
-%=
-%\begin{pmatrix}
-%\frac{\partial y^1}{\partial x^1}&\dots&\frac{\partial y^1}{\partial x^n}\\
-%\vdots&\ddots&\vdots\\
-%\frac{\partial y^n}{\partial x^1}&\dots&\frac{\partial y^n}{\partial x^n}
-%\end{pmatrix}
-%\begin{pmatrix}x^1\\\vdots\\x^n\end{pmatrix}.
-%\]
-%Die Summationskonvention lässt sich zum Beispiel dadurch rechtfertigen,
-%dass bei der Matrizenmultiplikation die Summation ja auch nicht
-%explizit hingeschrieben wird.
-
-\section{Metrik}
+% Abschnitt über die Metrik
+%
+\section{Metrik%
+\label{skript:laengenmessung:section:metrik}}
 \rhead{Metrik}
-In einem rechtwinkligen Koordinatensystem können wir die Länge
-einer Kurve durch Zerlegen in beliebig kleine Teilstücke 
+Die Länge einer Kurve können wir durch Zerlegen in viele kleine Teilstücke
+approximieren.
+Dazu unterteilen wir den Definitionsbereich $[a,b]$ des Kurvenparameters $t$
+mit Hilfe der Teilpunkte
+\[
+a = t_0 < t_1 < \dots < t_{i-1} < t_i < t_{i+1} < \dots < t_n = b.
+\]
+In einem rechtwinkligen Koordinatensystem können wir dann die Länge
+der Kurve als Summe der Länge der Strecken zwischen aufeinanderfolgenden
+Punkten $x^\nu(t_i)$ und $x^\mu(t_{i+1})$ mit der Summe
 \begin{align*}
 l
 &\simeq
@@ -197,33 +173,54 @@ l
 &\rightarrow
 \int_{t_0}^{t_n} \sqrt{\sum_{\mu}\biggl(\frac{dx^{\mu}(t)}{dt}\biggr)^2}\,dt
 \end{align*}
-bestimmen.
+annähern.
 Unter der Wurzel sehen wir die Quadratsummen wieder, die für den
 Satz des Pythagoras charakteristisch sind.
+Machen wir die Unterteilung beliebig fein, wird diese Summe in ein
+Integral übergehen, wie in der zweiten Zeile angedeutet.
 
-In einem beliebigen Koordinatensystem funktioniert dies jedoch nicht
-mehr.
+In einem beliebigen Koordinatensystem funktioniert dies jedoch nicht mehr.
 Wir müssen zulassen, dass die Koordinaten entlang verschiedener
 Achsen nicht mehr direkt der Länge entsprechen, dass wir also
 entlang der Achsen Skalierungsfaktoren haben.
-Weiter ist damit zu rechnen, dass auch gemischte Termen auftauchen.
+Weiter ist damit zu rechnen, dass auch gemischte Termen auftauchen, ein
+Ausdruck der Tatsache, dass Koordinatenrichtungen nicht senkrecht aufeinander
+stehen müssen.
 Die allgemeinstmögliche Form einer Längenmessungsformel ist daher
 \begin{equation}
 l
 =
 \int_{t_0}^{t_1}
-\sqrt{\sum_{\mu,\nu} g_{\mu\nu} \frac{dx^{\mu}(t)}{dt}\frac{dx^{\nu}(t)}{dt}}\,dt.
+\sqrt{\sum_{\mu,\nu} g_{\mu\nu}(x^1(t),\dots,x^n(t)) \frac{dx^{\mu}(t)}{dt}\frac{dx^{\nu}(t)}{dt}}\,dt.
 \label{skript:kruemmung:metrikformel}
 \end{equation}
-Die Zahlen $g_{\mu\nu}$ können dabei auch noch von den Koordinaten
-abhängen.
-Wir verlangen ausserdem, dass $g_{\mu\nu}=g_{\nu\mu}$ ist, denn
-diese beiden Terme sind in \eqref{skript:kruemmung:metrikformel}
-auf symmetrische Art und Weise vertreten.
+Die Zahlen $g_{\mu\nu}(x^1,\dots,x^n)$ hängen im Allgemeinen auch noch von
+den Koordinaten ab, wir werden diese Abhängigkeit im Folgenden aber
+normalerweise nicht explizit ausdrücken.
+
+Da in der Formel~\eqref{skript:kruemmung:metrikformel} immer beide Terme
+\[
+g_{\mu\nu} \frac{dx^\mu(t)}{dt} \frac{dx^\nu(t)}{dt}
+\qquad\text{und}\qquad
+g_{\nu\mu} \frac{dx^\nu(t)}{dt} \frac{dx^\mu(t)}{dt}
+=
+g_{\nu\mu} \frac{dx^\mu(t)}{dt} \frac{dx^\nu(t)}{dt}
+\]
+vorkommen, können wir zum Beispiel durch Zusammenfassen in neue Komponenten
+\[
+g'_{\mu\nu} = \frac12(g_{\mu\nu}+g_{\nu\mu})
+\]
+erreichen, dass für die Koeffizienten $g_{\mu\nu}$ die Symmetriebedingung
+\[
+g_{\mu\nu}=g_{\nu\mu}
+\]
+gilt.
 
 \begin{definition}
 Die Zahlen $g_{\mu\nu}$ heissen der metrische Tensor.
-\index{Tensor!metrischer}
+Er ist symmetrisch, d.~h.~$g_{\mu\nu}=g_{\nu\mu}$.
+\index{Tensor!metrischer}%
+\index{Tensor!symmetrischer}%
 \end{definition}
 
 Die Schreibweise~\eqref{skript:kruemmung:metrikformel} ist nicht
@@ -231,25 +228,26 @@ sehr handlich.
 Wesentlich an der Notation ist einzig, wie die Koeffizienten $g_{\mu\nu}$
 mit den Koordinateninkrementen $dx^\mu$ kombiniert werden müssen.
 Wir können daher formal auch schreiben:
-\[
+\begin{equation}
 ds^2
 =
 g_{\mu\nu}\,dx^\mu\,dx^\nu.
-\]
-Diese Notation ist konsistent, denn die Längenberechnung ist
+\label{skript:kruemmung:laengenelement}
+\end{equation}
+Man nennt \eqref{skript:kruemmung:laengenelement} das {\em Längenelement}
+der Metrik $g_{\mu\nu}$.
+\index{Längenelement}%
+Diese Notation ist konsistent, denn die Längen\-berechnung ist
 \begin{equation}
 \int\,ds
 =
 \int \sqrt{g_{\mu\nu}\,dx^\mu\,dx^\nu}
 =
 \int \sqrt{\mathstrut g_{\mu\nu}\,\dot x^\mu\,\dot x^\nu}\,dt,
-\label{skript:kruemmung:laengenelement}
+\label{skript:kruemmung:laengenformel}
 \end{equation}
 wozu man einzig die Konvention braucht, dass man in Integralen
 $dx^\mu=\dot x^\mu\,dt$ schreiben kann.
-Man nennt \eqref{skript:kruemmung:laengenelement} das {\em Längenelement}
-der Metrik $g_{\mu\nu}$.
-\index{Längenelement}
 
 %
 % Beispiel für Längenmessung in einem Koordinatensystem mit nicht
@@ -257,7 +255,7 @@ der Metrik $g_{\mu\nu}$.
 %
 \begin{beispiel}
 Wir untersuchen die Längenmessung mit nicht orthogonalen Achsen.
-Statt des gewöhnlichen Koordinatensystems in einer Ebene verwenden
+Statt des gewöhnli\-chen Koordinatensystems in einer Ebene verwenden
 wir die Koordinaten $x'=x$ und $y'=x+y$.
 In den ungestrichenen Koordinaten ist der Abstand zwischen zwei
 Punkten durch den Satz von Pythagoras
@@ -296,6 +294,15 @@ g_{11} = 2,\quad
 g_{12}=g_{21}=-1\quad\text{und}\quad
 g_{22}=1.
 \]
+Als Matrix geschrieben ist
+\[
+(g_{\mu\nu})
+=
+\begin{pmatrix}
+ 2&-1\\
+-1& 1
+\end{pmatrix}.
+\]
 Diese Koeffizienten beschreiben die gleiche Längenmessung in den 
 gestrichenen Koordinaten wie der Satz von Pythagoras in den ursprünglichen
 Koordinaten.
@@ -310,15 +317,15 @@ dx^2+dy^2
 als Längenelemente beschreiben.
 \end{beispiel}
 
-Die Formel \eqref{skript:kruemmung:metrikformel} ist etwas unhandlich.
-Wir können aber wieder die Einsteinsche Summenkonvention verwenden,
-um das Summenzeichen los zu werden.
-Ausserdem kann man die Ableitungen nach $t$ auch mit einem Punkt abkürzen.
-Damit lässt sich die Längenmessung daher etwas kompakter als
-\[
-l=\int_{t_0}^{t_1} \sqrt{g_{\mu\nu}\dot x^{\mu}(t) \dot x^{\nu}(t)}\,dt
-\]
-schreiben.
+%Die Formel \eqref{skript:kruemmung:metrikformel} ist etwas unhandlich.
+%Wir können aber wieder die Einsteinsche Summenkonvention verwenden,.
+%um das Summenzeichen los zu werden..
+%Ausserdem kann man die Ableitungen nach $t$ auch mit einem Punkt abkürzen.
+%Damit lässt sich die Längenmessung daher etwas kompakter als
+%\[
+%l=\int_{t_0}^{t_1} \sqrt{g_{\mu\nu}\dot x^{\mu}(t) \dot x^{\nu}(t)}\,dt
+%\]
+%schreiben.
 
 \section{Beispiele}
 \rhead{Beispiele}
@@ -368,9 +375,20 @@ ds^2
 =
 dr^2 + r^2\,d\varphi^2.
 \]
-\index{Längenelement!in Polarkoordinaten}
-Die Koeffizienten hängen zwar von den Koordinaten ab, doch bedeutet
-das noch nicht, dass ein gekrümmter Raum vorliegt.
+\index{Längenelement!in Polarkoordinaten}%
+In Matrix Form ist
+\[
+(g_{\mu\nu})
+=
+\begin{pmatrix}
+1&0\\0&r^2
+\end{pmatrix}.
+\]
+Die Diagonalform der Matrix bedeutet, dass sich die Koordinatenlinien
+in Polarkoordinaten orthogonal schneiden.
+
+Die metrischen Koeffizienten $g_{\mu\nu}$ hängen zwar von den Koordinaten ab,
+doch bedeutet das noch nicht, dass ein gekrümmter Raum vorliegt.
 Diese $g_{\mu\nu}$ beschreiben ja die gleiche Längenmessung wie der Satz
 des Pythagoras in $x$-$y$-Koordinaten.
 
@@ -399,7 +417,17 @@ ds^2
 =
 dr^2+r^2\,d\varphi^2 + dz^2.
 \]
-\index{Längenelement!in Zylinderkoordinaten}
+\index{Längenelement!in Zylinderkoordinaten}%
+Die Matrixform ist
+\[
+(g_{\mu\nu})
+=
+\begin{pmatrix}
+1&  0&0\\
+0&r^2&0\\
+0&  0&1
+\end{pmatrix}.
+\]
 
 \subsection{Zylinderoberfläche}
 Beschränken wir uns auf die Punkte im Abstand $1$ zur $z$-Achse, erhalten
@@ -418,14 +446,23 @@ ds^2
 =
 d\varphi^2+dz^2,
 \]
-\index{Längenelement!auf der Zylinderoberfläche}
+\index{Längenelement!auf der Zylinderoberfläche}%
 die Koeffizienten des metrischen Tensors sind
 \[
 g_{11}=1,\qquad
 g_{12}=g_{21}=0
 \qquad\text{und}\qquad
-g_{22}=1.
+g_{22}=1,
 \]
+oder
+\[
+(g_{\mu\nu})
+=
+\begin{pmatrix}
+1&0\\0&1
+\end{pmatrix}
+\]
+in Matrixform.
 Dies ist der metrische Tensor einer Ebene mit rechtwinkligen Koordinaten.
 Daraus können wir bereits ablesen, dass die Zylinderoberfläche sich durch
 Längenmessung nicht von einer Ebene unterscheiden lässt.
@@ -444,7 +481,8 @@ y&= r\sin\vartheta\sin\varphi\\
 z&= r\cos\vartheta
 \end{align*}
 Wir bestimmen wieder die Koeffizienten des metrischen Tensors.
-Dazu leiten wir zunächst nach $t$ ab.
+Dazu leiten wir zunächst nach $t$ ab und erhalten
+die Geschwindigkeitskomponenten
 \begin{align*}
 \dot x
 &=
@@ -466,12 +504,14 @@ r\dot\varphi\sin\vartheta\cos\varphi
 &=
 \dot r\cos\vartheta
 -
-r\dot\vartheta \sin\vartheta
+r\dot\vartheta \sin\vartheta.
 \end{align*}
-Bei der Berechnung der Länge werden sich wieder viele Terme
-wegen der verschiedenen Vorzeichen des letzten Terms im
-Ausdruck für $\dot x$ und $\dot y$ aufheben.
-Für den Ausdruck $ \dot x^2 + \dot y^2 + \dot z^2$ findet man
+Für die Berechnung der Länge müssen wir das Skalarprodukt dieses
+Vektors mit sich selbst bilden.
+Wegen der verschiedenen Vorzeichen des letzten Terms im Ausdruck für
+$\dot x$ und $\dot y$  werden sich viele Terme gegenseitig wegheben.
+Die etwas mühselige Rechnung ergibt für den Ausdruck
+$\dot x^2 + \dot y^2 + \dot z^2$ 
 \[
 \begin{array}{clclclcl}
  &
@@ -490,7 +530,7 @@ Für den Ausdruck $ \dot x^2 + \dot y^2 + \dot z^2$ findet man
 \dot r^2\cos^2\vartheta
 	&+&r^2\dot\vartheta^2\sin^2\vartheta
 		& &
-			&-&2r\dot r\dot\vartheta \sin\vartheta \cos\vartheta
+			&-&2r\dot r\dot\vartheta \sin\vartheta \cos\vartheta.
 \\
 \end{array}
 \]
@@ -513,15 +553,27 @@ g_{22}=r^2
 \qquad\text{und}\qquad
 g_{33}= r^2\sin^2\vartheta
 \]
-für die nicht verschwindenden Komponenten des metrischen Tensors.
-Alternativ kann man dies auch als
+für die nicht verschwindenden Komponenten des metrischen Tensors,
+oder
 \[
+(g_{\mu\nu})
+=
+\begin{pmatrix}
+1&  0&       0          \\
+0&r^2&       0          \\
+0&  0&r^2\sin^2\vartheta
+\end{pmatrix}
+\]
+in Matrixform.
+Alternativ kann man dies auch als
+\begin{equation}
 ds^2
 =
 dr^2 + r^2\,d\vartheta^2 + r^2\sin^2\vartheta\,d\varphi^2,
-\]
+\label{skript:laengenmessung:kugelkoordinaten}
+\end{equation}
 also als Längenelement schreiben.
-\index{Längenelement!in Kugelkoordinaten}
+\index{Längenelement!in Kugelkoordinaten}%
 
 \subsection{Kugeloberfläche}
 Aus dem metrischen Tensor der Kugelkoordinaten lässt sich durch festhalten
@@ -540,23 +592,47 @@ finden wir
 \[
 g_{11} = 1
 \qquad\text{und}\qquad
-g_{22}=\sin^2\vartheta.
+g_{22}=\sin^2\vartheta
 \]
-Etwas übersichtlicher ist 
+oder
 \[
+(g_{\mu\nu})
+=
+\begin{pmatrix}
+1&0\\
+0&\sin^2\vartheta
+\end{pmatrix}
+\]
+in Matrixform.
+Etwas übersichtlicher ist 
+\begin{equation}
 ds^2
 =
 d\vartheta^2 + \sin^2\vartheta\,d\varphi^2,
-\]
+\label{skript:laengenmessung:kugeloberflaeche}
+\end{equation}
 das Längenelement auf der Kugeloberfläche.
-\index{Längenelement!auf der Kugeloberfläche}
+\index{Längenelement!auf der Kugeloberfläche}%
+
 Man erkennt, dass der Koeffizient $g_{22}$ bei $\vartheta \in\{0,\pi\}$
 verschwindet.
-Man spricht von einer Singularität der Längenmessung.
+Man spricht von einer Singularität der Längenmessung an den Polen der Kugel.
 Dies ist jedoch nur ein Artefakt der Tatsache, dass die Kugelkoordinaten
 bei den Polen nicht mehr eindeutig sind.
 Zur Beschreibung der Pole sind alle möglichen Werte der geographischen
 Länge gleichermassen geeignet.
+
+Die Metrik 
+\eqref{skript:laengenmessung:kugelkoordinaten}
+des mit Kugelkoordinaten beschriebenen dreidimensionalen Raumes
+ist nahe verwandt mit der Metrik
+\eqref{skript:laengenmessung:kugeloberflaeche}
+der Kugeloberfläche.
+Es ist jedoch ganz offensichtlich, dass die Kugeloberfläche sich ganz
+offensichtlich durch ihre Krümmung vom dreidimensionalen Raum unterscheidet.
+Die Ähnlichkeit ist also nicht ausreichend, um die Krümmung festzustellen,
+dazu müssen weitergehende Hilfsmittel in Kapitel~\ref{skript:chapter:kruemmung}
+entwickelt werden.
 
 \section{Übungsaufgaben}
 \rhead{Übungsaufgaben}
