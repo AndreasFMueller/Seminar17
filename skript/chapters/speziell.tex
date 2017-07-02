@@ -838,6 +838,8 @@ E=mc^2
 \end{equation}
 heisst die {\em Ruheenergie} der Masse $m$.
 \index{Ruheenergie}
+Eine Masseverteilung mit Dichte $\varrho$ hat daher auch
+eine Energiedichte $\varepsilon=\varrho c^2$.
 
 \section{Energie-Impuls-Tensor}
 \rhead{Energie-Impuls-Tensor}
@@ -952,7 +954,7 @@ $T^{\mu\nu}$ heisst der {\em Energie-Impuls-Tensor}.
 Er codiert die Information über den im Universum vorhandenen
 Viererimpuls.
 
-\index{Energie-Impuls-Tensor}
+\index{Energie-Impuls-Tensor}%
 
 \subsection{Energie-Impuls-Tensor eines idealen Gases%
 \label{skript:speziell:subsection:idealesgas}}
@@ -966,7 +968,9 @@ Daher gilt
 \[
 T^{00}
 =
-\varrho
+\varepsilon
+=
+\varrho c^2
 \qquad
 \text{und}
 \qquad
@@ -983,7 +987,7 @@ Also ist
 T^{ik}
 =
 \begin{pmatrix}
-\varrho&0&0&0\\
+\varepsilon&0&0&0\\
 0&p&0&0\\
 0&0&p&0\\
 0&0&0&p
@@ -991,6 +995,7 @@ T^{ik}
 \]
 der Energie-Impuls-Tensor eines ruhenden idealen Gases mit Dichte
 $\varrho$ und Drucke $p$.
+\index{Energie-Impuls-Tensor!eines idealen Gases}
 
 Um daraus den Energie-Impuls-Tensor eines idealen in einem
 beliebigen, möglicherweise auch bewegten Koordinatensystem zu
@@ -1001,7 +1006,7 @@ Wir behaupten, der gesuchte Tensor sei
 \begin{equation}
 T^{\mu\nu}
 =
-p g^{\mu\nu} + (p + \varrho)u^\mu u^\nu.
+p g^{\mu\nu} + (p + \varepsilon)u^\mu u^\nu.
 \label{skript:speziell:idealesgas}
 \end{equation}
 In der Tat ist für ein ideales Gas in Ruhe $u^0=1$ und $u^k=0$ und damit
@@ -1010,7 +1015,7 @@ Setzt man dies ein, erhält man
 \begin{align*}
 T^{00}
 &=
-pg^{00} + (p+\varrho) = -p+p+\varrho=\varrho
+pg^{00} + (p+\varepsilon) = -p+p+\varepsilon=\varepsilon
 \\
 T^{k0}
 &=0
@@ -1019,7 +1024,7 @@ T^{kl}
 &=
 p\delta^{kl}
 +
-(p+\varrho)\cdot 0
+(p+\varepsilon)\cdot 0
 =
 p\delta^{kl}.
 \end{align*}
@@ -1029,6 +1034,7 @@ im Ruhesystem des Gases mit dem korrekten Energie-Impuls-Tensor
 daher ist er die allgemeine Form für den Energie-Impuls-Tensor.
 
 \subsection{Energie-Impuls-Erhaltung}
+\index{Energie-Impuls-Erhaltung}%
 In einem kräftefreien System sind Energie und Impuls erhalten, wir
 möchten diese Aussage auch in unserem vierdimensionalen Formalismus
 ausdrücken können.
@@ -1157,6 +1163,8 @@ die Form
 \frac{\partial u^\mu}{\partial x^\mu}
 \end{align*}
 für die Viererimpulsdichte $u^\mu$ an.
+\index{Viererimpulsdichte}%
+\index{Erhaltungssatz}%
 Der Erhaltungssatz für den Viererimpuls kann daher
 geschrieben werden als
 \begin{equation}
@@ -1173,6 +1181,7 @@ der allgemeine Ausdruck dafür, dass die Grösse $A^0$ und der zugehörige
 Strom $A^k$ erhalten bleiben.
 
 \subsection{Symmetrie des Energie-Impuls-Tensors}
+\index{Energie-Impuls-Tensor!Symmetrie}
 Der Energie-Impuls-Tensor ist symmetrisch, dies kann man wie folgt einsehen.
 Wir betrachten einen kleinen Würfel mit Kantenlänge $L$.
 Die Komponenten $T^{ik}$ des Energie-Impuls-Tensors beschreiben die
@@ -1196,7 +1205,6 @@ Da dies nicht sein kann, folgt $T^{12}-T^{21}=0$ oder allgemeine
 \[
 T^{\mu\nu}=T^{\nu\mu}.
 \]
-
 
 \section*{Übungsaufgaben}
 \rhead{Übungsaufgaben}
