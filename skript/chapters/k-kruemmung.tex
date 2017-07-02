@@ -45,6 +45,8 @@ Krümmung einer Fläche.
 In diesem Kapitel wollen wir zeigen, wie aus dem Konzept des
 Paralleltransportes ein mathematisch wohldefiniertes Mass für die
 Krümmung gewonnen werden kann.
+Die physikalische Bedeutung der Krümmung wie auch der Christoffelsymbole
+werden wird erst im Kapitel~\ref{skript:chapter:gravitation} klären.
 
 \subsection{Krümmungstensor}
 Wir möchten Berechnen, wie sich ein Vektor beim Paralleltransport entlang
@@ -646,7 +648,7 @@ im dreidimensionalen Raum, und ist $\vec A$ ein Vektorfeld, dann gilt
 \]
 \end{satz}
 
-\subsubsection{Der Krümmunmgstensor}
+\subsubsection{Der Krümmungstensor}
 Krümmung äussert sich dadurch, dass beim Paralleltransport eines Vektors
 entlang eines geschlossenen Weges die Richtung des Vektors ändert.
 Der Satz von Stokes besagt, dass Information, die entlang eines
@@ -713,7 +715,7 @@ k
 \label{skript:kruemmung:matrix}
 \end{equation}
 Wir suchen also ein Zahl $k$, die als Proportionalitätsfaktor den Zusammenhang
-zwischen dem Flächenelement und der Matrix~\eqref{skript:kruemmung:matrix}
+zwischen dem Flächen\-element und der Matrix~\eqref{skript:kruemmung:matrix}
 herstellt.
 In unserer Notation wäre so eine Matrix als $R^\mu\mathstrut_\nu$ zu
 schreiben, wobei
@@ -1066,7 +1068,7 @@ R_{\mu\nu\varrho\sigma}
 +
 \frac{\partial^2 g_{\nu\varrho}}{\partial x^\mu\partial x^\sigma}
 -
-\frac{\partial^2 g_{\mu\varrho}}{\partial x\nu\partial x^\sigma}
+\frac{\partial^2 g_{\mu\varrho}}{\partial x^\nu\partial x^\sigma}
 -
 \frac{\partial^2 g_{\nu\sigma}}{\partial x^\mu\partial x^\varrho}
 \biggr)
@@ -1076,10 +1078,13 @@ R_{\mu\nu\varrho\sigma}
 )
 \label{skript:kruemmung:riemann2abl}
 \end{equation}
-
-\begin{proof}
-TODO
-\end{proof}
+Für einen vollständigen Beweis dieser Formel muss man die Darstellung
+der Christoffelsymbole durch die metrischen Koeffizienten in die
+Definition~\eqref{skript:kruemmung:riemannmixed} des Riemannschen
+Krümmungstensors einsetzen.
+Die danach notwendigen Umformungen, die auf~\eqref{skript:kruemmung:riemann2abl}
+sind nicht schwierig, aber etwas mühsehlig, und werden daher hier
+nicht durchgeführt.
 
 Aus der Darstellung~\eqref{skript:kruemmung:riemann2abl} des Riemann-Tensors
 mit zweiten Ableitungen von $g_{\mu\nu}$ kann man jetzt die erste
@@ -1178,43 +1183,23 @@ gerade die erste Bianchi-Identität.
 \end{proof}
 
 \subsection{Lokalgeodätische Koordinatensysteme}
-Bei einem Wechsel des Koordinatensystems transformieren sich die 
-Christoffelsymbole zweiter Art wie folgt:
-\begin{equation}
-\Gamma^\alpha_{\mu\nu}
-=
-\Gamma'^\beta_{\varrho\sigma}
-\frac{\partial x^\alpha}{\partial x'^\beta}
-\frac{\partial x'^\varrho}{\partial x^\mu}
-\frac{\partial x'^\sigma}{\partial x^\nu}
-+
-\frac{\partial^2 x'^\beta}{\partial x^\mu\partial x^\nu}
-\frac{\partial x^\alpha}{\partial x'^\beta}
-\label{skript:kruemmung:christoffeltransformation}
-\end{equation}
 
-\begin{proof}
-TODO
-\end{proof}
-
-Die Christoffelsymbole zweiter Art transformierem sich daher nicht
+Die Christoffelsymbole zweiter Art transformierem sich nicht
 wie ein Tensor, wie der zweite Term
-im Ausruck~\label{skript:kruemmung:christoffeltransformation}
+in der Transformationsformel~\eqref{skript:geodaeten:gmma2trafo}
 mit den zweiten Ableitungen zeigt.
-Bei einer linearen Transformation verschwinden die zweiten Ableitungen
-und damit dieser Term.
+Nur bei einer linearen Transformation verschwinden die zweiten Ableitungen
+und damit dieser zweite Term.
 Lineare Transformationen erhalten Geraden, führen also Inertialsysteme
 in Inertialsysteme über.
 
-Die Formel~\label{skript:kruemmung:christoffeltransformation}
+Die Formel~\eqref{skript:geodaeten:gmma2trafo}
 bedeutet aber auch, dass man durch eine geeignete Transformation
 erreichen kann, dass wenigstens in einem Punkt alle Christoffelsymbole
-den Wert $0$ haben.
-Dies bedeutet physikalisch, dass man ein Koordinatensyteme gewählt welches
-in diesem Punkt nicht von einem Inertialsystem zu unterscheiden ist.
-Auf ein Teilchen scheint in diesem Punkt keine Kraft zu wirken.
+den Wert $0$ haben, wie wir im Folgenden zeigen wollen.
 Ein solches Koordinatensystem heisst {\em lokalgeodätisch}.
 \index{lokalgeodätisch}
+
 
 \begin{proof}
 % Landau-Lifshitz, p 288
@@ -1256,7 +1241,7 @@ erhält man am Koordinatenursprung
 \frac12\bigl(
 (\Gamma^\beta_{\mu\nu}
 \bigr)
-\delta^\alpha_\beta.
+\delta^\alpha_\beta
 \\
 &=
 \Gamma'^\alpha_{\mu\nu}
@@ -1281,6 +1266,15 @@ Es bleiben zum Beispiel in~\label{skript:kruemmung:riemann2abl}
 nur die Terme der zweiten Ableitungen stehen.
 Als Anwendung dieses Prinzip wird im nächsten Abschnitt die zweite
 Bianchi-Identität bewiesen.
+
+Wir werden später sehen, dass die Christoffelsymbole physikalisch die
+Scheinkräfte im gewählten Koordinatensystem beschreiben.
+Die Tatsache, dass man sie in einem Punkt durch wahl des Koordinatensystems
+zum verschwinden bringen kann bedeutet also physikalisch, dass es immer
+ein Koordinatensystem gibt, in dem keine Scheinkräfte auftreten.
+In der Tat sind für einen Astronauten in der ISS keine Kräfte beobachtbar,
+wenn er als Koordinatensystem das mit der ISS mitbewegte Koordinatensystem
+verwendet.
 
 \subsection{Zweite Bianchi-Identität}
 Der Riemann-Tensor verfügt noch über weitere Symmetrien, die am
