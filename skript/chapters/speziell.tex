@@ -216,6 +216,7 @@ werden.
 Raum und Zeit verschmelzen so zu einem einzigen vierdimensionalen
 Kontinuum mit den Koordinaten $(t,x,y,z)$, welche wir die Raumzeit
 nennen.
+\index{Raumzeit}%
 Quadrupel $(t,x,y,z)$ heissen auch {\em Ereignisse}.
 \index{Ereignis}
 Zwei Ereignisse $(t_1,x_1,y_1,z_1)$ und $(t_2,x_2,y_2,z_2)$ können
@@ -1205,6 +1206,58 @@ Da dies nicht sein kann, folgt $T^{12}-T^{21}=0$ oder allgemeine
 \[
 T^{\mu\nu}=T^{\nu\mu}.
 \]
+
+\section{Kräfte}
+Die Beschreibung der Welt als vierdimensionale Raumzeit und der Bewegung
+eines Teilchens als Bahnkurve in der Raumzeit hat zur Folge, dass auch
+Kräfte einer geometrischen Beschreibung zugänglich werden.
+Eine geradlinige Bewegung in einem Koordinatensystem zeichnet sich
+dadurch aus, dass $\ddot x^\mu=0$ ist.
+Eine Abweichung davon äussert sich als Krümmung der Weltlinie.
+Das zweite Newtonsche Gesetz muss also ungefähr die Form
+\begin{equation}
+\ddot x^\mu = F^\mu
+\label{skript:speziell:newton2}
+\end{equation}
+annehmen.
+
+Naturgesetze sind fast immer als Minimalprinzipien formulierbar.
+Wir hoffen daher, dass~\eqref{skript:speziell:newton2} der Ausdruck
+eines Minimalprinzips ist.
+Naheliegend wäre die Geodätengleichung, die Kurven minimaler Länge 
+beschreibt.
+Leider passt \eqref{skript:speziell:newton2}
+überhaupt nicht zur Form der Geodätengleichung.
+
+Die Physik hilft uns jedoch nochmals weiter, da
+eine Weltlinie nur zeitartig sein kann.
+Für langsam bewegt Objekte sind die Raumkomponenten $\dot x^i(t)$
+der Vierergeschwindigkeit jedoch sehr klein, $\dot x^i(t)\simeq 0$,
+($1\le k\le 3$), während
+die Zeitkomponente $\dot x^0(t)\simeq 1$ ist.
+In dieser Näherung könnten wir \eqref{skript:speziell:newton2}
+auch als
+\begin{equation}
+\ddot x^\mu
+=
+F^\mu
+=
+F^\mu\cdot 1 \cdot 1
+\simeq
+\Gamma^\mu_{\alpha\beta}\dot x^\alpha\dot x^\beta
+\end{equation}
+schreiben, was genau die Geodätengleichung ist.
+Die $\Gamma^\mu_{00}$ bekommen in diesem Licht die Bedeutung der 
+Kräfte der klassischen Mechanik.
+
+Eine koordinatensystemunabhängige Formulierung des zweiten Newtonschen
+Gesetzes wird deshalb fordern, dass sich ein Teilchen entlang einer
+Geodäten bewegt.
+Unser Plan ist daher, das Auftreten von Gravitationskräften als
+Ausdruck nicht verschwindender Christoffelsymbole zu verstehen.
+Dieser Plan wird in Kapitel~\ref{skript:chapter:gravitation}
+umgesetzt.
+
 
 \section*{Übungsaufgaben}
 \rhead{Übungsaufgaben}

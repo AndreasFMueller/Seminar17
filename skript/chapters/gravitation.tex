@@ -350,7 +350,8 @@ g(x)=\frac{\partial \varphi}{\partial y}.
 Die linke Seite des Satzes von Green ist das Integral
 \begin{equation}
 \oint_{C}
-\frac{\partial \varphi}{\partial x} \dot (-x(s))
+\frac{\partial \varphi}{\partial x} (-\dot x(s))
++
 \frac{\partial \varphi}{\partial y} \dot y(s)
 \,ds
 \label{skript:gravitation:fluss1}
@@ -386,7 +387,7 @@ Der Satz von Gauss besagt daher
 \int_{D} \Delta\varphi\,dx\,dy.
 \]
 In dieser zweidimensionalen Darstellung nützt uns der Satz allerdings
-wenig, denn das Gravitationsfeld ist natürlich dreidimensional.
+wenig, denn das Gravita\-tions\-feld ist natürlich dreidimensional.
 Die dreidimensionale Version kann jedoch mit ganz ähnlichen Ideen
 bewiesen werden wie der Satz von Green:
 
@@ -436,8 +437,8 @@ sehr kleinen Ball $B_r$ mit Radius $r$ hat daher den Wert
 \]
 Andererseits kann man nach dem Satz von Gauss auch die rechte 
 Seite berechnen:
-\begin{align*}
-\int_{B_r} 4\pi G\varrho\,dx\,dy\,dz
+\begin{align}
+\int_{B_r} 4\pi K\varrho\,dx\,dy\,dz
 &=
 \int_{B_r}
 \frac{\partial F_x}{\partial x}+
@@ -450,11 +451,12 @@ Seite berechnen:
 \frac{\partial^2\varphi}{\partial y^2}+
 \frac{\partial^2\varphi}{\partial z^2}
 \,dx\,dy\,dz
+\notag
 \\
 &=
 \int_{B_r} \Delta\varphi\,dx\,dy\,dz.
 \label{skript:gravitation:poisson-integral}
-\end{align*}
+\end{align}
 mit der Abkürzung
 \begin{equation*}
 \Delta \varphi
@@ -469,7 +471,7 @@ gilt, müssen die Integranden in~\eqref{skript:gravitation:poisson-integral}
 übereinstimmen.
 Es folgt, dass das Gravitationspotential $\varphi$ die Gleichung
 \begin{equation}
-\Delta \varphi = 4\pi G\varrho
+\Delta \varphi = 4\pi K\varrho
 \label{skript:gravitation:potentialgleichung}
 \end{equation}
 erfüllen.
@@ -588,6 +590,14 @@ eine Gleichung der Form
 4\pi K\cdot \text{``Tensor mit Energie und Impuls''}
 \]
 das Gravitationsfeld beschreiben.
+Der feldbeschreibende Tensor $G_{\mu\nu}$ auf der linken wird aber leicht
+anders aussehen, so dass die angestrebte Feldgleichung die Form
+\[
+G_{\mu\nu}
+=
+\frac{8\pi K}{c^4} T_{\mu\nu}
+\]
+haben wird.
 
 \subsection{Massedichte und Energie-Impuls-Tensor}
 Die Massedichte $\varrho$, die wir auf der rechten Seite der
@@ -609,7 +619,7 @@ In Analogie zur
 Gleichung~\eqref{skript:gravitation:potentialgleichung}
 erwarten wir dann eine Gleichung der Form
 \[
-G_{\mu\nu} = 4\pi KT_{\mu\nu}
+G_{\mu\nu} = \frac{4\pi K}{c^4}T_{\mu\nu}
 \]
 als allgemeine Feldgleichung für die Gravitation.
 
@@ -643,9 +653,10 @@ R=R^\alpha\mathstrut_\alpha
 \]
 bilden.
 Den gesuchten Tensor $G_{\mu\nu}$ können wir als Linearkombination
-\[
+\begin{equation}
 G_{\mu\nu}=a R_{\mu\nu} + bg_{\mu\nu} R
-\]
+\label{skript:gravitation:einsteinansatz}
+\end{equation}
 ansetzen.
 Der Krümmungsskalar $R$ ist eine Invariante, wir brauchen den Faktor
 $g_{\mu\nu}$, um daraus einen Tensor zu machen, der mit dem Ricci-Tensor
@@ -665,7 +676,7 @@ gelten wird.
 Das Gravitationsfeld kann ja zum Beispiel ein Gas beschleunigen und 
 verdichten, so dass sich Energie- und Impuls-Inhalt verändern können.
 Dies können durch die kovariante Ableitung
-\[
+\begin{equation}
 0
 =
 \nabla_\mu T^\mu_\nu
@@ -673,29 +684,173 @@ Dies können durch die kovariante Ableitung
 \frac{\partial T^\mu_\nu}{\partial x^\mu}
 -
 \Gamma^{\mu}_{\alpha\mu}T^\alpha_\nu
-\]
+\label{skript:gravitation:erhaltung}
+\end{equation}
 ausdrücken.
 Die Terme mit den Christoffel-Symbolen zeigen, wie die Gravitationskraft
 Energie und Impuls verändert.
 
-Die zweite Bianchi-Identität
+Die Koeffizienten $a$ und $b$ im Ansatz
+\label{skript:gravitation:einsteinansatz}
+für den Einstein-Tensor müssen daher so gewählt sein, dass der 
+Erhaltungssatz~\eqref{skript:gravitation:erhaltung} für $G^\mu_\nu$
+erfüllt ist.
+Wir müssen daher die kovarianten Ableitungen von $R^\mu_\nu$ und
+$\delta^\mu_\nu R$ bestimmen.
+
+\subsubsection{Divergenz des Ricci-Tensors}
+Die Divergenz von $R^\mu_\nu$ ist
+\[
+\nabla_\mu R^\mu_\nu
+=
+\nabla_\mu (g^{\mu\alpha}R_{\alpha\nu})
+=
+g^{\mu\alpha} \nabla_\mu R^\beta\mathstrut_{\alpha\beta\nu}.
+\]
+In dieser kovarianten Ableitung des Riemannschen Krümmungstensors
+wurde der zweite Index hochgezogen und darüber verjüngt.
+Die kovariante Ableitung kommt auch in der zweiten Bianchi-Identität
+vor, die wir für den vorliegenden Zweck wie folgt schreiben:
+\[
+\nabla_\beta R^\gamma\mathstrut_{\alpha\nu\sigma}
++
+\nabla_\nu R^\gamma\mathstrut_{\alpha\sigma\beta}
++
+\nabla_\sigma R^\gamma\mathstrut_{\alpha\beta\nu}
+=
+0.
+\]
+Wir multiplizieren dies mit $g^{\mu\alpha}$ und setzen $\gamma=\beta$
+und $\sigma=\mu$:
+\[
+g^{\mu\alpha}
+\nabla_\beta R^\beta\mathstrut_{\alpha\nu\mu}
++
+g^{\mu\alpha}
+\nabla_\nu R^\beta\mathstrut_{\alpha\mu\beta}
++
+g^{\mu\alpha}
+\nabla_\mu R^\beta\mathstrut_{\alpha\beta\nu}
+=
+0.
+\]
+Der letzte Term darin ist $\nabla_\mu R^\mu_\nu$, also die
+kovariante Divergenz des Ricci-Tensors.
+Wir wollen die anderen Terme berechnen.
+
+Der erste Term ist 
+\begin{align*}
+g^{\mu\alpha}
+\nabla_\beta R^\beta\mathstrut_{\alpha\nu\mu}
+&=
+g^{\mu\alpha}
+g^{\beta\sigma}
+\nabla_\beta R_{\sigma\alpha\nu\mu}
+=
+g^{\mu\alpha}
+g^{\beta\sigma}
+\nabla_\beta R_{\alpha\sigma\mu\nu}
+=
+g^{\beta\sigma}
+\nabla_\beta R_{\sigma\nu}
+=
+\nabla_\beta R^\beta_\nu
+\end{align*}
+also erneut die Divergenz des Ricci-Tensors.
+
+Der mittlere Term ist 
+\begin{align*}
+g^{\mu\alpha}
+\nabla_\nu R^\beta\mathstrut_{\alpha\mu\beta}
+&=
+-
+g^{\mu\alpha}
+\nabla_\nu R^\beta\mathstrut_{\alpha\beta\mu}
+=
+-g^{\mu\alpha}
+\nabla_\nu R_{\alpha\mu}
+=
+\nabla_\nu R
+=
+-\frac{\partial R}{\partial x^\nu},
+\end{align*}
+die erste Ableitung des Krümmungs-Skalars.
+
+Damit haben wir alle Terme der Bianchi-Identität identifiziert und können
+schliessen, dass
 \begin{equation}
-\nabla_\beta R^\alpha\mathstrut_{\mu\nu\sigma}
-+
-\nabla_\nu R^\alpha\mathstrut_{\mu\sigma\beta}
-+
-\nabla_\sigma R^\alpha\mathstrut_{\mu\beta\nu}
-=0
+\nabla_\mu R^\mu_\nu
+=
+\frac12\frac{\partial R}{\partial x^\nu}.
+\label{skript:gravitation:divRicci}
 \end{equation}
-für den Riemannschen Krümmungstensor können wir nach den
-Indizes $\alpha$ und $\nu$
+
+\subsubsection{Divergenz des Terms $g_{\mu\nu}R$}
+Für die Divergenz müssen wir erste einen Index hochziehen, bevor
+wir die kovarianten Ableitungen berechnung und verjüngen können.
+Dies fühert auf
+\begin{align}
+\nabla_\alpha g^{\alpha\mu}g_{\mu\nu}R
+&=
+\delta^\alpha_\nu \nabla_\alpha R
+=
+\nabla_\nu R
+=
+\frac{\partial R}{\partial x^\nu}.
+\label{skript:gravitation:divR}
+\end{align}
+Auch dies ist eine gewöhnliche partielle Ableitung nach $x^\nu$.
+
+\subsubsection{Einstein-Tensor}
+Es bleibt, die Koeffizienten $a$ und $b$ im Einstein-Tensor zu
+bestimmen.
+Wir berechnen die Divergenz von $G^\mu_\nu$ und verwenden
+\eqref{skript:gravitation:divRicci} für den Term mit $a$ und
+\eqref{skript:gravitation:divR} für den Term mit $b$.
+So finden wird die Bedingung
+\begin{align*}
+\nabla_\mu G^\mu_\nu
+&=
+a \nabla_\mu R^\mu_\nu + b \nabla_\mu (g^{\mu\alpha}g_{\alpha\nu} R)
+\\
+&=
+a \frac12\frac{\partial R}{\partial x^\nu}
++
+b \frac{\partial R}{\partial x^\nu}
+=
+\biggl(\frac12a+b\biggr)
+\frac{\partial R}{\partial x^\nu}
+=
+\frac12(2a+b)
+\frac{\partial R}{\partial x^\nu}
+=
+0
+\end{align*}
+für $a$ und $b$.
+Es folgt $b = -\frac12a$.
+
+Die Newtonsche Theorie soll als Grenzfall herauskommen, so dass
+$a$ bereits als $a=1$ festgelegt ist.
+Damit folgt $b=-\frac12$ und damit erhalten wir die folgende Definition
+des Einstein-Tensors
+
+\begin{definition}
+Der Einstein-Tensor ist der symmetrische Tensor zweiter Stufe
 \begin{equation}
-\nabla_\beta R^\alpha\mathstrut_{\mu\alpha\sigma}
-+
-\nabla_\alpha R^\alpha\mathstrut_{\mu\sigma\beta}
-+
-\nabla_\sigma R^\alpha\mathstrut_{\mu\beta\alpha}
-=0.
+G_{\mu\nu} = R_{\mu\nu} - \frac12g_{\mu\nu}R.
 \end{equation}
+\end{definition}
+\index{Einstein-Tensor}%
+
+\begin{satz}[Einstein]
+Das Gravitationsfeld beschrieben durch den metrischen Tensor erfüllt
+die Gleichung
+\begin{equation}
+G_{\mu\nu} = \frac{8\pi K}{c^4} T_{\mu\nu}.
+\label{skript:gravitation:feldgleichung}
+\end{equation}
+\end{satz}
+
+
 
 
