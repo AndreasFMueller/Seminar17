@@ -48,7 +48,7 @@ Krümmung gewonnen werden kann.
 Die physikalische Bedeutung der Krümmung wie auch der Christoffelsymbole
 werden wird erst im Kapitel~\ref{skript:chapter:gravitation} klären.
 
-\subsection{Krümmungstensor}
+\section{Krümmungstensor}
 Wir möchten Berechnen, wie sich ein Vektor beim Paralleltransport entlang
 einer geschlossenen Kurve ändert.
 In dieser Form ist das Problem sicher zu kompliziert, die Wahl
@@ -78,7 +78,7 @@ $y^\mu$ berechnen kann:
 y^\alpha = R^\alpha\mathstrut_{\mu\nu\sigma}u^\mu v^\nu A^\sigma.
 \]
 
-\subsubsection{Wegintegral und Gebietsintegral in der Ebene}
+\subsection{Wegintegral und Gebietsintegral in der Ebene}
 In diesem Abschnitt betrachten wir Funktionen $f(x,y)$ und $g(x,y)$
 in der Ebene und ein Teilgebiet $D\subset \mathbb R^2$, welches
 von einer Kurve $c\colon [a,b]\to\mathbb R^2\colon t\mapsto c(t)$
@@ -131,7 +131,7 @@ beschreiben, dann kann man das Gebietsintegral auch als
 \]
 schreiben, und die beiden Formeln stimmen überein.
 
-\subsubsection{Der Satz von Green}
+\subsection{Der Satz von Green}
 Der Satz von Green stellt einen Zusammenhang zwischen einem Wegintegral
 und einem Flächenintegral her.
 
@@ -215,7 +215,7 @@ Addiert man beide Gleichungen erhält man
 also die Aussage des Satzes von Green.
 \end{proof}
 
-\subsubsection{Der Satz von Stokes}
+\subsection{Der Satz von Stokes}
 Der Satz von Stokes verallgemeinert das zweidimensionale Resultat des
 Satzes von Green auf beliebige Dimensionen.
 Die Form, die wir hier formulieren, ist noch nicht die allgemeinst
@@ -648,7 +648,7 @@ im dreidimensionalen Raum, und ist $\vec A$ ein Vektorfeld, dann gilt
 \]
 \end{satz}
 
-\subsubsection{Der Krümmungstensor}
+\subsection{Der Krümmungstensor}
 Krümmung äussert sich dadurch, dass beim Paralleltransport eines Vektors
 entlang eines geschlossenen Weges die Richtung des Vektors ändert.
 Der Satz von Stokes besagt, dass Information, die entlang eines
@@ -913,7 +913,7 @@ Er heisst der {\em Riemannsche Krümmungstensor}.
 \index{Krümmungstensor, Riemannscher}
 \index{Riemannscher Krümmungstensor}
 
-\subsubsection{Beispiele}
+\subsection{Beispiele}
 
 \begin{beispiel}
 Krümmungstensor der Kugeloberfläche.
@@ -1013,7 +1013,7 @@ R_{2121}
 \]
 \end{beispiel}
 
-\subsubsection{Berechnung des Riemann-Tensors}
+\subsection{Berechnung des Riemann-Tensors}
 Die Berechnung schon der Christoffelsymbole und erst recht des
 Riemann-Tensors ist ausgesprochen mühseelig, es empfiehlt sich
 daher, für diese Berechnungen ein Computer-Algebra-System (CAS) einzusetzen.
@@ -1032,7 +1032,13 @@ des Maxima-Programmes herauslesen:
 \verbatiminput{chapters/kugel.out}
 }
 
-\subsubsection{Symmetrieeigenschaften}
+\section{Eigenschaften des Krümmungstensors}
+Zusätzlich zu den offensichtlichen Symmetrieeigenschaften des Riemann-Tensors
+werden für die Begründung der Einsteingleichungen weitere Eigenschaften
+benötigt, insbesondere die Bianchi-Identitäten, die in den folgenden
+Abschnitten bereitgestellt werden sollen.
+
+\subsection{Erste Bianchi-Identität}
 Wie bereits nachgerechnet, erfüllen die Komponenten des Riemann-Tensors
 die Symmetrieeigenschaften, die wir als Folge seiner geometrischen
 Interpretation als einer Beschreibung der Drehung erwarten.
@@ -1183,7 +1189,6 @@ gerade die erste Bianchi-Identität.
 \end{proof}
 
 \subsection{Lokalgeodätische Koordinatensysteme}
-
 Die Christoffelsymbole zweiter Art transformierem sich nicht
 wie ein Tensor, wie der zweite Term
 in der Transformationsformel~\eqref{skript:geodaeten:gmma2trafo}

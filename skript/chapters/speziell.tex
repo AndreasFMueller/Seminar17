@@ -49,7 +49,7 @@ x'&=x+vt
 \end{equation}
 \index{Galiei-Transformation}
 Man nennt \eqref{skript:kruemmung:galileitransformation} die
-Galilei-Transformation (Abbildung~\eqref{skript:spezielle:galileigraphik}).
+Galilei-Transformation (Abbildung~\ref{skript:spezielle:galileigraphik}).
 \begin{figure}
 \centering
 \includegraphics{chapters/tikz/galilei.pdf}
@@ -63,6 +63,8 @@ Die Bahn des Körpers wird durch eine Funktion $x(t)$ in $(t,x)$-Koordinaten
 beschrieben.
 In $(t',x')$-Koordinaten wird nach der Galilei-Transformation daraus
 $t'=t$ und $x'(t')=x(t)+vt$.
+\index{Galilei-Transformation}
+\index{Transformation!Galilei}
 Die Bewegung wird bestimmt durch die Kräfte, nach dem zweiten Newtonschen
 Gesetz also durch die Beschleunigung:
 \begin{align}
@@ -96,7 +98,10 @@ Sobald sich die Ladung bewegt, entsteht zusätzlich ein magnetisches Feld,
 welches von der Magnetnadel detektiert werden kann.
 Man kann daher keine voll\-ständige Beschreibung dieser Phänomene erwarten,
 solange man nicht beide in einer einzigen Theorie, der sogenannten
-Elektrodynamik zusammenfasst.
+Elektrodynamik zusammenfasst, wie dies James Clark Maxwell (1831-1879)
+getan hat.
+\index{Maxwell, James Clark}
+\index{Elektrodynamik}
 
 Diese Theorie sagt Wellen voraus, die wir als Licht oder auch als Radiowellen
 täglich nutzen.
@@ -105,6 +110,7 @@ den sogenannten Äther, welches
 diese Wellen transportiert, und dessen Geschwindigkeit gemessen werden
 kann, so wie man bei einer Schifffahrt die Geschwindigkeit des Wassers
 messen kann, welches auch Wellen transportiert.
+\index{Äther}%
 Wenn diese mechanische Betrachtungsweise der Lichtwellenausbreitung
 zutrifft, dann müsste die gemessene Lichtgeschwindigkeit von der
 Geschwindigkeit abhängen, mit der sich ein Labor relativ zum Medium
@@ -155,6 +161,10 @@ isolieren.
 \label{MMinterferometer}}
 \end{figure}
 Dies ist der Kontext, in dem Albert A.~Michelson und Edward W.~Morley
+\index{Michelson, Albert A.}%
+\index{Morley, Edward W.}%
+\index{Interferometer}%
+\index{Michelson-Morley-Experiment}%
 ihr berühmtes Interfero\-meter-Experiment durchführten.
 Das Experiment vergleicht die Lichtausbreitung entlang zweier aufeinander
 senkrecht stehender gleich langer Wege, indem es die Lichtwellen nach 
@@ -188,6 +198,8 @@ Einstein hat diesen Schritt 1905 in seiner Arbeit \cite{skript:einstein}
 vollzogen, seine Theorie wird heute die speziellen Relativitätstheorie genannt.
 Ziel dieses Kapitels ist zu zeigen, welche Auswirkungen seine
 Erkenntnis auf die Mechanik aber auch auf unser Weltbild hat.
+\index{Einstein, Albert}
+\index{spezielle Relativitätstheorie}
 
 \section{Lichtkegel%
 \label{skript:speziell:section:lichtkegel}}
@@ -257,6 +269,7 @@ Die Fläche mit der Gleichung
 -c^2t^2+x^2+y^2+z^2=0
 \]
 heisst der Lichtkegel.
+\index{Lichtkegel}
 Ereignisse innerhalb des Lichtkegels mit $t>0$ können vom Nullpunkt aus
 beeinflusst werden.
 Ereignisse innerhalb des Lichtkegels imt $t<0$ können auf den Nullpunkt
@@ -306,6 +319,7 @@ Kausalitätsstruktur der Welt.
 
 In diesem Bild gibt es also keinen sinnvollen Begriff der Gleichzeitigkeit
 mehr.
+\index{Gleichzeitigkeit}%
 Wäre das Universum nicht aus einem Punkt entstanden, wie das Big Bang-Modell
 besagt, dann wäre bereits die Frage ``Wann ist das Universum entstanden''
 unsinnig, denn es gibt keinen sinnvollen Art und Weise, wie etwas gleichzeitig
@@ -343,9 +357,12 @@ g_{\mu\nu} x^\mu x^\nu
 =
 g_{00}(x^0)^2 = -c^2 t^2<0.
 \]
-Man nennt einen Vektor $A^\mu$ zeitartig, wenn er $g_{\mu\nu}A^\mu A^\nu<0$ 
+Man nennt einen Vektor $A^\mu$ {\em zeitartig},
+wenn er $g_{\mu\nu}A^\mu A^\nu<0$ 
 erfüllt.
-Raumartig dagegen heisst ein Vektor $A^\mu$, für den
+\index{zeitartig}%
+\index{raumartig}%
+{\em Raumartig} dagegen heisst ein Vektor $A^\mu$, für den
 $g_{\mu\nu} A^\mu A^\nu>0$
 gilt, wie zum Beispiel für einen Vektor mit $x^0=0$:
 \[
@@ -441,7 +458,11 @@ a_{21}a_{22}&=c^2a_{11}a_{12}.
 \end{aligned}
 \]
 Da die Differenz der Quadrate jeweils $1$ ist, können die Basen
-als Werte des hyperbolischen Kosinus und Sinus dargestellt werden:
+als Werte des hyperbolischen Kosinus und Sinus%
+\footnote{In Anhang \ref{skript:chapter:hyperbolisch} werden einige für
+diesen Abschnitt nützliche Eigenschaften der hyperbolischen Funktionen
+zusammengestellt.}
+dargestellt werden:
 \[
 \begin{aligned}
 a_{11}&=\cosh\beta_1, &&&\frac{a_{21}}{c}&=\sinh\beta_1,
@@ -556,7 +577,6 @@ der Lauf der Zeit ist in den beiden Koordinatensystemen verschieden.
 Im $t'$-$x'$-Koordinatensystem läuft die Zeit um den Faktor $\gamma$
 gedehnt.
 Umgekehrt gilt natürlich auch $t=t'/\gamma$.
-
 
 Die Darstellung \eqref{skript:kruemmung:lorentz} der Lorenztransformation
 ist nicht sehr symmetrisch.
