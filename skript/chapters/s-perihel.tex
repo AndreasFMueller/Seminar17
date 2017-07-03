@@ -35,7 +35,7 @@ Schon in seinem ursprünglichen Entwurf der allgemeinen Relativitätstheorie
 hat Einstein die durch die Abweichung von der Newtonschen Theorie
 verursachte Periheldrehung der Merkurbahn berechnet und gute Übereinstimmung
 mit der bekannten Drehung gefunden.
-Damit hat er bereits selbst eine erste experimentelle Bestätigung
+Damit hat er selbst bereits eine erste experimentelle Bestätigung
 der Theorie gegeben.
 
 Um den Effekt überhaupt darstellen zu können, muss die Bahn sehr nahe
@@ -52,6 +52,11 @@ Es geht dabei nicht darum, den exakten Wert für die Periheldrehung
 des Merkur zu bestimmen,
 sondern nur zu zeigen, dass die allgemeine Relativitätstheorie
 qualititativ einen solchen Effekt vorhersagt.
+
+Der Einfachheit halber rechnen wir in diesem Abschnitt immer mit
+Masseinheiten, in denen $c=1$ ist.
+In den numerischen Bespielen werden dann sogar $r_g=1$ setzen,
+d.~h.~wir verwenden den Gravitationsradius als Längeneinheit.
 
 \subsection{Geodätengleichung für die Schwarzschild-Metrik}
 \label{skript:schwarzschild:geodaetengleichung}
@@ -168,7 +173,7 @@ finden:
 &=
 \frac{1}{1-\displaystyle\frac{r_g}{r}}
 \frac{r_g}{r}
-\frac{1}{2r}
+\frac{1}{2r},
 \\
 %(%i15)                  ratsimp(Christoffel2(2, 1, 1))
 %                                     2
@@ -180,7 +185,7 @@ finden:
 &=
 \biggl(1-\displaystyle\frac{r_g}{r}\biggr)
 \frac{r_g}{r}
-\frac{1}{2r}
+\frac{1}{2r},
 &
 %(%i19)                  ratsimp(Christoffel2(2, 2, 2))
 %                                      rg
@@ -191,20 +196,20 @@ finden:
 &=
 -\frac1{1-\displaystyle\frac{r_g}{r}}
 \frac{r_g}{r}
-\frac{1}{2r}
+\frac{1}{2r},
 &
 %(%i22) 		        ratsimp(Christoffel2(2, 3, 3))
 %(%o22) 				    rg - r
 \Gamma^1_{22}
 &=
-r_g-r
+r_g-r,
 &
 %(%i24)                  ratsimp(Christoffel2(2, 4, 4))
 %                                         2
 %(%o24)                       (rg - r) sin (theta)
 \Gamma^1_{33}
 &=
-(r_g-r)\sin^2\vartheta
+(r_g-r)\sin^2\vartheta,
 \\
 %(%i30)                  ratsimp(Christoffel2(3, 2, 3))
 %                                       1
@@ -212,13 +217,13 @@ r_g-r
 %                                       r
 \Gamma^2_{12}
 &=
-\frac1r
+\frac1r,
 &
 %(%i34) 		        ratsimp(Christoffel2(3, 4, 4))
 %(%o34) 			    - cos(theta) sin(theta)
 \Gamma^2_{33}
 &=
--\cos\vartheta \sin\vartheta
+-\cos\vartheta \sin\vartheta,
 \\
 %(%i41)                  ratsimp(Christoffel2(4, 2, 4))
 %                                       1
@@ -226,7 +231,7 @@ r_g-r
 %                                       r
 \Gamma^3_{13}
 &=
-\frac1r
+\frac1r,
 &
 %(%i43)                  ratsimp(Christoffel2(4, 3, 4))
 %                                  cos(theta)
@@ -234,7 +239,7 @@ r_g-r
 %                                  sin(theta)
 \Gamma^3_{23}
 &=
-\cot\vartheta
+\cot\vartheta.
 \end{align*}
 Wir betrachten jetzt eine Geodäte, die mit dem Parameter $s$ parametrisiert ist.
 In allgemeiner Form schreiben wir dafür $x^\mu(s)$, im speziellen
@@ -274,6 +279,7 @@ Die zugehörigen Geodätengleichungen sind
 \end{align*}
 Darin ist natürlich $r$ in den Koeffizienten jeweils als $r(s)$ zu lesen.
 
+\subsubsection{Äquatoriale Bahn}
 Wir wollen eine Bahn in der Ebene $\vartheta=\frac{\pi}2$ berechnen.
 Setzen wir diesen Wert ein, verschwinden auch noch die Terme, die
 $\cos\vartheta$ enthalten.
@@ -284,27 +290,27 @@ Es bleiben nur noch
 &=
 \frac{1}{1-\displaystyle\frac{r_g}{r}}
 \frac{r_g}{r}
-\frac{1}{2r}
+\frac{1}{2r},
 \\
 \Gamma^1_{00}
 &=
 \biggl(1-\displaystyle\frac{r_g}{r}\biggr)
 \frac{r_g}{r}
-\frac{1}{2r}
+\frac{1}{2r},
 &
 \Gamma^1_{11}
 &=
 -\frac1{1-\displaystyle\frac{r_g}{r}}
 \frac{r_g}{r}
-\frac{1}{2r}
+\frac{1}{2r},
 &
 \Gamma^1_{22}
 &=
-r_g-r
+r_g-r,
 &
 \Gamma^1_{33}
 &=
-r_g-r
+r_g-r,
 \\
 %(%i30)                  ratsimp(Christoffel2(3, 2, 3))
 %                                       1
@@ -312,7 +318,7 @@ r_g-r
 %                                       r
 \Gamma^2_{12}
 &=
-\frac1r
+\frac1r,
 \\
 %(%i41)                  ratsimp(Christoffel2(4, 2, 4))
 %                                       1
@@ -320,7 +326,7 @@ r_g-r
 %                                       r
 \Gamma^3_{13}
 &=
-\frac1r
+\frac1r.
 \end{aligned}
 \label{skript:schwarzschild:christoffelaequator}
 \end{equation}
@@ -341,6 +347,7 @@ ist, kann man ganz allgemein sagen, dass Geodäten in einer Schwarzschild-Metrik
 in einer Ebene liegen.
 Man hätte also auch von Anfang an in Polarkoordinaten rechnen können.
 
+\subsubsection{Ebene Bahngleichungen}
 Die vereinfachten Christoffelsymbole für die Äquatorebene
 \eqref{skript:schwarzschild:christoffelaequator}
 führen auch auf vereinfachte Geodätengleichungen, wenn wir $\dot\vartheta(s)=0$
@@ -349,22 +356,23 @@ Wir erhalten
 \begin{align*}
 \ddot t(s)
 &=
--\frac{1}{1-\displaystyle\frac{r_g}{r}}\frac{r_g}{r}\frac{1}{r}\dot t(s)\,\dot r(s)
+-\frac{1}{1-\displaystyle\frac{r_g}{r}}\frac{r_g}{r}\frac{1}{r}\dot t(s)\,\dot r(s),
 \\
 \ddot r(s)
 &=
 -\biggl(1-\frac{r_g}{r}\biggr)\frac{r_g}{r}\frac1{2r}\dot t(s)^2
 +\frac{1}{1-\displaystyle\frac{r_g}{r}} \frac{r_g}{r}\frac1{2r}\dot r(s)^2
-- (r_g-r) \dot\varphi(s)^2
+- (r_g-r) \dot\varphi(s)^2,
 \\
-\ddot \vartheta(s)
-&=
-0
-\\
+%\ddot \vartheta(s)
+%&=
+%0,
+%\\
 \ddot \varphi(s)
 &=
--\frac2r \dot r(s)\,\dot\varphi(s)
+-\frac2r \dot r(s)\,\dot\varphi(s),
 \end{align*}
+wobei wir die Gleichung $\ddot\vartheta(s) = 0$ weggelassen haben.
 Diese Gleichungen lassen sich nicht in geschlossener Form integrieren.
 Durch numerische Lösung für geeignete Anfangswerte kann man jedoch die
 Drehung der Apsidenlinie sichtbar machen.
@@ -376,11 +384,14 @@ Um zu etwas leichter verständlichen Zahlen zu kommen, rechnen wir
 in diesen Programmen immer mit Masseinheiten so, dass $r_g=1$ ist,
 d.~h.~der Gravitationsradius des Zentralkörpers ist die Längeneinheit,
 und $c=1$, d.~h.~$r_g/c$ ist die Zeiteinheit.
+Die Programme berücksichtigen auch $\vartheta(s)$, machen also die 
+im vorangegangenen Abschnitt diskutierten Vereinfachungen für
+$\vartheta=\frac{\pi}2$ nicht.
 
 Der Parameter $s$ der Geodätengleichung ist genau dann die Eigenzeit,
 wenn die Anfangsgeschwindigkeit den den Wert $-1$ hat.
 In den Rechnungen muss daher die Anfangs-Vierergschwindigkeit $u^\mu$
-so normiert werden, dass $g_\mu\nu u^\mu u^\nu=-1$ ist.
+so normiert werden, dass $g_{\mu\nu}u^\mu u^\nu=-1$ ist.
 
 \subsubsection{Zustandsvektor}
 Da die Geodätengleichungen Differentialgleichungen zweiter Ordnung sind,
@@ -396,10 +407,10 @@ wie gesagt bei geeigneter Normierung der Anfangsgeschwindigkeit mit
 der Eigenzeit übereinstimmt.
 Aus dem Vektor $X$ lässt sich jederzeit die Position und die
 Vierergeschwindigkeit extrahieren.
-Im File \text{geodesic.m} dienen dazu die Funktionen
+Im File \texttt{geodesic.m} dienen dazu die Funktionen
 \texttt{position} und \texttt{velocity}
 \lstinputlisting[style=Octave]{chapters/listings/schwarzschild-extract.m}
-Mit der Funktion \texttt{rescale} kann man im Vektor $X$ den
+Mit der Funktion \texttt{mrescale} kann man im Vektor $X$ den
 Geschwindigkeitsanteil um einen gegebenen Faktor strecken:
 \lstinputlisting[style=Octave]{chapters/listings/schwarzschild-rescale.m}
 
@@ -412,8 +423,20 @@ Für die Schwarzschild-Metrik geschieht dies im File
 \lstinputlisting[style=Octave]{chapters/listings/schwarzschild-metrik.m}
 Diese Funktion berechnet das Skalarprodukt der Vektoren \texttt{u} und
 \texttt{v} an der Stelle $x$.
+
 Das File \texttt{christoffel-schwarzschild.m} definiert auch die Funktion
-\texttt{christoffel}, die für jeden Index-Wert $\alpha$ die Matrix mit
+\texttt{christoffel}, die für jeden Index-Wert $\alpha$ die Matrix
+\[
+\Gamma^\alpha
+=
+\begin{pmatrix}
+\Gamma^\alpha_{00}   &\Gamma^\alpha_{01}   &\dots &\Gamma^\alpha_{0,n-1}  \\
+\Gamma^\alpha_{10}   &\Gamma^\alpha_{11}   &\dots &\Gamma^\alpha_{1,n-1}  \\
+\vdots               &\vdots               &\ddots&\vdots                 \\
+\Gamma^\alpha_{n-1,0}&\Gamma^\alpha_{n-1,1}&\dots &\Gamma^\alpha_{n-1,n-1}
+\end{pmatrix}
+\]
+mit
 den Einträgen $\Gamma^\alpha_{\mu\nu}$ für die Koordinatenwerte \texttt{x}
 zurückgibt.
 Für die Schwarzschild-Metrik ist dies
