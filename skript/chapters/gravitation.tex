@@ -619,7 +619,7 @@ In Analogie zur
 Gleichung~\eqref{skript:gravitation:potentialgleichung}
 erwarten wir dann eine Gleichung der Form
 \[
-G_{\mu\nu} = \frac{4\pi K}{c^4}T_{\mu\nu}
+G_{\mu\nu} = \frac{8\pi K}{c^4}T_{\mu\nu}
 \]
 als allgemeine Feldgleichung für die Gravitation.
 
@@ -633,6 +633,7 @@ Die Verjüngung
 R_{\mu\nu} = R^{\alpha}\mathstrut_{\mu\alpha\nu}
 \]
 heisst der {\em Ricci-Tensor}.
+\index{Ricci-Tensor}
 Wegen
 \[
 R_{\mu\nu}
@@ -652,6 +653,8 @@ Diesen kann man weiter verjüngen und daraus den Krümmungs-Skalar
 R=R^\alpha\mathstrut_\alpha
 \]
 bilden.
+\index{Ricci-Skalar}
+\index{Krümmungs-Skalar}
 Den gesuchten Tensor $G_{\mu\nu}$ können wir als Linearkombination
 \begin{equation}
 G_{\mu\nu}=a R_{\mu\nu} + bg_{\mu\nu} R
@@ -665,12 +668,12 @@ Die Koeffizienten $a$ und $b$ sind noch zu bestimmen.
 
 \subsection{Energieerhaltung und Feldgleichungen}
 Der Energie-Impuls-Tensor der speziellen Relativitätstheorie
-% XXX Referenz
 erfüllt den Erhaltungssatz
 \[
 \frac{\partial T^\mu_\nu}{\partial x^\mu}
-=0.
+=0
 \]
+(Siehe auch \eqref{skript:speziell:energieerhaltung}).
 Wir können allerdings nicht annehmen, dass diese Formel weiterhin
 gelten wird.
 Das Gravitationsfeld kann ja zum Beispiel ein Gas beschleunigen und 
@@ -852,7 +855,23 @@ G_{\mu\nu} = \frac{8\pi K}{c^4} T_{\mu\nu}.
 \label{skript:gravitation:feldgleichung}
 \end{equation}
 \end{satz}
+Wenigstens überschlagsmässig kann man die acht im Zähler von
+\eqref{skript:gravitation:feldgleichung}
+wie folgt verstehen.
+In der Näherung für schwache Felder \eqref{skript:gravitation:naeherung}
+haben wir für $g_{00}=-1-2\varphi/c^2$ gefunden.
+Wenn der Einstein-Tensor tatsächlich dem Laplace-Operator von $g$ entspricht,
+dann ist $G_{00}=-2\Delta\varphi/c^2$, was die $8$ anstelle der $4$ in
+\eqref{skript:gravitation:potentialgleichung}
+erklären würde.
 
-
+Den Nenner $c^4$ in
+\eqref{skript:gravitation:feldgleichung}
+kann man wie folgt plausibel machen.
+Im $00$-Term auf der rechten Seite steht die Energiedichte
+$\varepsilon=\varrho c^2$, für die Potentialgleichung braucht man
+aber die Massedichte, also $\varepsilon/c^2$.
+Auf der linken Seite steht in der Näherung für schwache Felder
+$2\Delta\varphi/c^2$, dies liefert einen weiteren Faktor $c^2$ im Nenner.
 
 

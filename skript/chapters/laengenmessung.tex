@@ -482,6 +482,7 @@ x&= r\sin\vartheta\cos\varphi\\
 y&= r\sin\vartheta\sin\varphi\\
 z&= r\cos\vartheta
 \end{align*}
+\subsubsection{Metrik}
 Wir bestimmen wieder die Koeffizienten des metrischen Tensors.
 Dazu leiten wir zunächst nach $t$ ab und erhalten
 die Geschwindigkeitskomponenten
@@ -577,6 +578,27 @@ dr^2 + r^2\,d\vartheta^2 + r^2\sin^2\vartheta\,d\varphi^2,
 also als Längenelement schreiben.
 \index{Längenelement!in Kugelkoordinaten}%
 
+\subsubsection{Isotropie}
+Die hinteren zwei Terme der Metrik
+\eqref{skript:laengenmessung:kugelkoordinaten}
+beschreiben die Längenmessung entlang von Kurven auf Kugel mit Radius $r$.
+Aus der Konstruktion ist klar, dass diese Längenmessung unabhängig ist
+von Position der Kurve auf einer solchen Kugel.
+Eine Drehung des Raumes ändert an diesem Beitrag nichts, man sagt, die
+Metrik \eqref{skript:laengenmessung:kugelkoordinaten} sei isotrop.
+\index{isotrop}%
+Will man sie modifzieren, aber die Isotropie erhalten, dann darf man
+diese zwei Terme höchstens mit einem Faktor multiplizieren, der nur von $r$
+abhängt.
+Es ist daher üblich, diese beiden Terme in
+\begin{equation}
+r^2 d\Omega^2
+=
+r^2\,d\vartheta^2 + r^2\sin^2\vartheta\,d\varphi^2
+\label{skript:laengenmessung:omega2}
+\end{equation}
+zusammenzufassen.
+
 \subsection{Kugeloberfläche}
 Aus dem metrischen Tensor der Kugelkoordinaten lässt sich durch festhalten
 des Radius der metrische Tensor einer Kugeloberfläche ableiten.
@@ -610,7 +632,9 @@ Etwas übersichtlicher ist
 \begin{equation}
 ds^2
 =
-d\vartheta^2 + \sin^2\vartheta\,d\varphi^2,
+d\vartheta^2 + \sin^2\vartheta\,d\varphi^2
+=
+d\Omega^2,
 \label{skript:laengenmessung:kugeloberflaeche}
 \end{equation}
 das Längenelement auf der Kugeloberfläche.
