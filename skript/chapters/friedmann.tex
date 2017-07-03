@@ -36,10 +36,10 @@ a(t)^2\bigl(
 dr^2 + S_\kappa(r)^2d\Omega^2
 \bigr)
 \]
-hat.
+mit der noch unbekannten Funktion $a(t)$ hat.
 Ausserdem muss die Metrik eine Lösung der Einstein-Gleichungen sein.
 Auf deren rechten Seite steht der Energie-Impuls-Tensor des Universums.
-Da das Universum homogen und isotrop ist, muss auch der Energie-Impuls-Tensor
+Da das Universum isotrop und homogen ist, muss auch der Energie-Impuls-Tensor
 isotrop und homogen sein.
 Für einen mit Gas der Dichte $\varrho$ und Druck $p$ gefülltes Universum
 ist der Energie-Impuls-Tensor durch
@@ -60,7 +60,7 @@ Einstein-Gleichung bestimmen lassen, sofern wir den Energie-Impuls-Tensor
 des Universums berechnen können.
 Dabei ist zu beachten, dass mit der Ausdehnung des Universums sich sowohl
 die Dichte $\varrho$ als auch der Druck $p$ ändern werden.
-Wir erwraten daher, ein System von Differentialgleichungen zu erhalten.
+Wir erwarten daher, ein System von Differentialgleichungen zu erhalten.
 Die Einstein-Gleichungen werden einen Zusammenhang zwischen den 
 Ableitungen von $a(t)$ und der Dichte herstellen,
 andererseits müssen wir aus unserer Kenntnis des Verhaltens von
@@ -74,7 +74,7 @@ in Abhängigkeit von $\varrho$ ermitteln.
 Dazu betrachten wir ausschliesslich die $00$-Komponente der
 Einsteingleichungen, also
 \begin{equation}
-G_{00} = \frac{8\pi K}{c^2} T_{00}=\frac{8\pi K\varrho}{c^2}.
+G_{00} = \frac{8\pi K}{c^4} T_{00}=\frac{8\pi K\varrho}{c^2}.
 \label{skript:friedmann:einstein}
 \end{equation}
 Wir berechnen den Einstein-Tensor der Robertson-Walker-Metrik
@@ -119,7 +119,7 @@ G_{00}
 \\
 &=
 3\frac{\dot a(t)^2}{a(t)^2}
-+\frac{3c^2\kappa}{a(t)^2R_c^2}
++\frac{3c^2\kappa}{a(t)^2R_c^2}.
 \end{align*}
 Die $00$-Komponente der Einstein-Gleichung liefert uns jetzt die Gleichung
 \begin{equation}
@@ -127,8 +127,10 @@ Die $00$-Komponente der Einstein-Gleichung liefert uns jetzt die Gleichung
 +
 \frac{c^2\kappa}{a(t)^2R_c^2}
 =
-\frac{8\pi K}{3c^2}\varrho.
+\frac{8\pi K}{3c^2}\varrho,
 \end{equation}
+sie heisst die (erste) {\em Friedmann-Gleichung}.
+\index{Friedmann-Gleichung}%
 Üblicherweise wird die Gleichung als Gleichung für $H=\dot a(t)/a(t)$
 geschrieben, also
 \begin{equation}
@@ -140,7 +142,7 @@ H^2
 =
 \frac{8\pi K}{3c^2}\varrho
 -
-\frac{c^2\kappa }{a(t)^2R_c^2}
+\frac{c^2\kappa }{a(t)^2R_c^2}.
 \label{skript:friedmann:friedmann}
 \end{equation}
 
@@ -280,10 +282,13 @@ Solange also die rechte Seite der Friedmann-Gleichung keine Nullstelle
 hat, wird sich das Universum weiter ausdehnen.
 Dies trifft zum Beispiel für $\kappa=-1$ zu.
 
-In einem Universum mit $\kappa=1$ gibt es dagegen ist einen Zeitpunkt, für
+\subsubsection{$\kappa=1$}
+In einem Universum mit $\kappa=1$ gibt es dagegen einen Zeitpunkt, für
 den die rechte Seite eine Nullstelle hat:
 \[
-\frac{8\pi K}{3c^2}\varrho(t)=\frac{c^2}{a(t)^2R_c^2}
+\frac{8\pi K}{3c^2}\varrho -\frac{c^2\kappa}{a(t)^2R_c^2}
+\qquad\Rightarrow\qquad
+\frac{8\pi K}{3c^2}\varrho(t)=\frac{c^2}{a(t)^2R_c^2}.
 \]
 In einem sich ausdehnenden Universum nicht die Dichte $\varrho(t)$ mit
 der dritten Potenz von $a(t)$ ab, es gilt
@@ -301,11 +306,12 @@ a(t)
 Inbesondere gibt es einen Zeitpunkt $t$, nach dem das Universum sich
 wieder zusammenziehen wird.
 
-In einem Universum mit $\kappa=0$ fällt der Krümmungsterm der in 
+\subsubsection{$\kappa=1$}
+In einem Universum mit $\kappa=0$ fällt der Krümmungsterm in 
 der Friedmann-Gleichung ganz weg.
 Die Entwicklung des Universums wird allein bestimmt von der Dichte.
 Die rechte Seite der Friedmann-Gleichung ist immer positiv, ein
-solches Universum dehnt sich daher auf.
+solches Universum dehnt sich daher aus.
 
 \subsection{Das leere Universum}
 \begin{figure}
@@ -324,15 +330,22 @@ Die Differentialgleichung wird dann zu
 =
 -\frac{c^2\kappa}{a(t)^2R_c^2}.
 \]
+Die linke Seite dieser Gleichung ist immer postiv.
+
+\subsubsection{$\kappa=1$}
 Für $\kappa=1$ ist die rechte Seite negativ, die Differentialgleichung
 kann also gar keine Lösung haben.
-Ein leeres Universum muss also automatisch $\kappa=-1$ oder $\kappa=0$.
+Ein leeres Universum muss also automatisch $\kappa=-1$ oder $\kappa=0$
+erfüllen.
+
+\subsubsection{$\kappa=0$}
 Für $\kappa=0$ ist die rechte Seite $0$, woraus man schliessen kann,
 dass $\dot a(t)=0$ sein muss.
 Ein leeres, flaches Universum ist also auch statisch und entspricht
 damit nicht unserem Universum.
 
-Für ein Universum mit $\kappa=-1$ kann die Friedmann-Gleichung sofort
+\subsubsection{$\kappa=-1$}
+Für ein leeres Universum mit $\kappa=-1$ kann die Friedmann-Gleichung sofort
 gelöst werden, man erhält
 \[
 \dot a(t)^2
@@ -344,11 +357,12 @@ gelöst werden, man erhält
 a(t)= 1 + \frac{c}{R_c}(t-t_0).
 %= 1 + H_0(t-t_0).
 \]
+Diese Lösung ist in Abbildung~\ref{chapter:friedmann:graph:ller} dargestellt.
 Der Skalenfaktor wächst also linear mit der Zeit.
 Aus den Messungen von Hubble und Humason ist die
 $H_0=H(t_0)=\dot a(t_0)/a(t_0)=\dot a(t_0)$
 bekannt.
-Damit kann man den Skalenfaktor auch mit der Hubble-Konstante
+Damit kann man den Skalenfaktor auch mit der Hubble-Konstanten
 bestimmen:
 \[
 H(t) =  \frac{\dot a(t)}{a(t)} = 1 + H_0(t-t_0).
@@ -384,17 +398,17 @@ Dann ändert zwar $\dot a(t)$ das Vorzeichen, aber $\dot a(t)$ kommt
 nur im Quadrat vor, so dass mit $a(t)$ auch $a(-t)$ die Friedmann-Gleichung
 erfüllt.
 Die Friedmann-Gleichung sind zeitumkehrinvariant.
-Daraus folgt auch, dass ein Universum, das zum Zeitpunkt $t_0$
-von Expansion zu Kontraktion übergeht, für $t>t_0$ durch
-$a(t)=a(t_0-t)$ beschrieben werden kann, die Lösungsfunktion ist
-also symmetrisch bezüglich $t=t_0$.
+Daraus folgt auch, dass ein Universum, das zum Zeitpunkt $t_1$
+von Expansion zu Kontraktion übergeht, für $t>t_1$ durch
+$a(t)=a(t_1-t)$ beschrieben werden kann, die Lösungsfunktion ist
+also symmetrisch bezüglich $t=t_1$.
 Ausserdem muss
-am Punkt $t_0$ die Ableitung von $a(t)$ verschwinden, also ist
-$\dot a(t_0)=0$.
+am Punkt $t_1$ die Ableitung von $a(t)$ verschwinden, also ist
+$\dot a(t_1)=0$.
 
 Der Term $8\pi K\varrho/3c^2$ ist für ein nicht leeres Universum
 immer positiv.
-Der Krümmungsterm $-\kappa c^2\kappa/a(t)^2R_c^2$ hat das gleiche Vorzeichen
+Der Krümmungsterm $c^2\kappa/a(t)^2R_c^2$ hat das gleiche Vorzeichen
 wie $\kappa$.
 Für ein negativ gekrümmtes Universum ist er immer positiv, so dass
 nach der Friedmann-Gleichung ein solches Universum niemals $\dot a(t)=0$
@@ -444,8 +458,9 @@ der {\em Dichteparameter}.
 
 \section{Komponenten}
 \rhead{Komponenten}
-Das reale Universum ist nicht leer.
-Die Funktionen $\varrho(t)$ und $p(t)$ sind jedoch für verschiedene
+Das reale Universum ist nicht leer, in den Beispielen haben wir den
+Fall gewöhnlicher Materie bereits näher angeschaut.
+Die Funktionen $\varrho(t)$ und $p(t)$ sind für verschiedene
 Arten von Materie oder Energie verschieden.
 Wir sprechen von verschiedenen Komponenten des Universums.
 Jede Komponente hat ihre eigene Zustandsgleichung und führt
@@ -495,7 +510,7 @@ Staubteilchen werden trotz grösserer Masse noch seltener kollidieren.
 %vollständig charakterisiert.
 
 \subsubsection{Das flache, gasgefüllte Universum}
-In einem gasgefüllten flachen Universum ist $\kappa=0$,
+In einem flachen, gasgefüllten Universum ist $\kappa=0$,
 der Krümmungsterm fällt weg und
 es erfüllt daher die vereinfachte Friedmann-Gleichung
 \[
@@ -631,9 +646,11 @@ Die Friedmann-Gleichung für ein mit Strahlung gefülltes Universum ist
 \frac{c^2\kappa }{a(t)^2R_c^2}
 \end{equation}
 Leider lässt sich diese Differentialgleichung im allgemeinen
-nicht geschlossen integrieren, wir verschieben die Diskussion der
-Lösung auf einen späteren Abschnitt, wo wir die Gleichung numerisch lösen
-können.
+nicht in geschlossener Form integrieren.
+Wir beschränken uns daher auf den einfacheren Spezialfall $\kappa=0$.
+%wir verschieben die Diskussion der
+%Lösung auf einen späteren Abschnitt, wo wir die Gleichung numerisch lösen
+%können.
 
 \subsubsection{Das flache, strahlungserfüllte Universum}
 Für ein flaches Universum ist $\kappa=0$, der Krümmungsterm fällt wieder
@@ -689,7 +706,7 @@ expandierendes oder schrumpfendes Universum.
 In keinem Fall ist jedoch $\dot a(t)=0$ möglich, die Expansion kann
 also nicht anhalten und in eine Kontraktion übergehen.
 Da wir in einem expandierenden Universum leben, fällt der Fall
-des sich zusammenziehenden Universums daher ausser betracht,
+des sich zusammenziehenden Universums ausser betracht,
 wir untersuchen im Folgenden nur noch das positive Vorzeichen.
 
 \begin{figure}
@@ -706,10 +723,11 @@ Das Alter des Universums ist nur eine halbe Hubble-Zeit.
 
 Wir müssen den Zusammenhang zu unserem Universum herstellen, welches
 aktuell mit $\dot a(t_0)= H_0$ ausdehnt.
-Dazu berechnen wir die Ableitung von~\eqref{skript:friedmann:a(t)}
+Dazu berechnen wir die Ableitung
 \[
-\dot a(t_0)=\frac{8\pi K\varrho_0}{3c^2}=H_0.
+\dot a(t_0)=\frac{8\pi K\varrho_0}{3c^2}=H_0
 \]
+von~\eqref{skript:friedmann:a(t)}.
 Damit können wir den Skalenfaktor auch durch die Hubble-Konstane ausdrücken,
 es gilt
 \begin{equation}
@@ -755,11 +773,14 @@ Energieinhaltes unvollständig ist.
 
 \section{Dunkle Energie}
 \rhead{Dunkle Energie}
-Einstein stellte bald fest, dass seine Gleichungen ein Universum nach
-seinen Vorstellungen nicht beschreiben konnte.
-Er fügte daher seiner Gleichung einen Term hinzu, den er nach der
-Entdekckung der Expansion des Universums durch Hubble als
-den grössten Fehler seines bezeichnete.
+Einstein erwartete, dass das Universum statisch und unendlich alt sein
+müsste Universum.
+Er stellte jedoch bald fest, dass seine Gleichungen ein solches Universum
+nicht beschreiben konnten.
+Er fügte daher seiner Gleichung einen Term hinzu, der dies ermöglichte.
+Diesen ``kosmologischen'' Term bezeichnete er nach der
+Entdeckung der Expansion des Universums durch Hubble als
+den grössten Fehler seines Lebens.
 Heute erhält dieser Term als ``dunkle Energie'' eine neue Interpretation.
 
 \subsection{Die kosmologische Konstante}
@@ -778,7 +799,7 @@ Friedmann-Gleichung lautet jetzt
 \begin{align}
 \frac{\dot a(t)^2}{a(t)^2}
 &=
-\frac{8\pi K}{3}\varrho - \frac{\kappa c^2}{a(t)^2R_c^2} + \frac{\Lambda c^2}{3},
+\frac{8\pi K}{3c^2}\varrho - \frac{\kappa c^2}{a(t)^2R_c^2} + \frac{\Lambda c^2}{3},
 \label{skript:friedmann:dunkleenergie}
 \\
 \intertext{
@@ -831,14 +852,14 @@ Die Friedmann-Gleichung dafür lautet
 \[
 \frac{\dot a(t)^2}{a(t)^2}
 =
-\frac{8\pi K \varrho_0}{3a(t)^3} + \frac{\Lambda c^2}{3}
+\frac{8\pi K \varrho_0}{3c^2a(t)^3} + \frac{\Lambda c^2}{3}
 \]
 Zur Zeit $t=t_0$ steht auf der linken Seite das Quadrat der Hubble-Konstanten,
 es muss also gelten
 \[
 H_0^2
 =
-\frac{8\pi K \varrho_0}{3} + \frac{\Lambda c^2}{3},
+\frac{8\pi K \varrho_0}{3c^2} + \frac{\Lambda c^2}{3},
 \]
 für die Simulation müssen wir daher $\varrho_0$ und $\Lambda$ jeweils
 so varieren, dass $H_0$ gleich bleibt.
@@ -857,7 +878,8 @@ Friedmann-Gleichung, die wir daher als
 \label{skript:friedmann:de:friedmann}
 \end{equation}
 schreiben\footnote{Das Zeichen $\Rho_0$ ist ein grosses griechisches Rho.}.
-Die Werte $\Rho_0$ und $\Lambda$ müssen die Bedingung
+Da zur heutigen Zeit die kritische Dichte $\Rho_0$ und $\Lambda$ die gesamte
+Energiedichte des Universums ausmachen, müssen sie die Bedingung
 \begin{equation}
 \Rho_0 + \frac{\Lambda}{3}=1
 \end{equation}
@@ -882,12 +904,13 @@ In expliziter Form wird daraus die Differentialgleichung
 \end{equation}
 mit der Anfangsbedingung $a(t_0)=1$.
 
-In Abbildung~\ref{skript:friedman:graph:darkenergy} sind die Lösungen
+In Abbildung~\ref{skript:friedman:graph:darkenergy} sind die numerisch
+gewonnenen Lösungen
 der Differentialgleichung~\eqref{skript:friedmann:de:dgl} für verschiedene
-Werte von $\Lambda$.
+Werte von $\Lambda$ dargestellt.
 Man kann erkennen dass grössere Werte von $\Lambda$ zu einer stärkeren
 Beschleunigung der Expansion des Universums führt.
-Ausserdem ist wächst das Alter des Universums von $2/3H_3$ für ein
+Ausserdem wächst das Alter des Universums von $2/3H_3$ für ein
 Universum ohne dunkle Energie auch über die Hubble Zeit an.
 Der aktuell genaueste Wert für das Alter des Universums von 13.72Gyr
 ist daher nur möglich, wenn ein beträchtlicher Teil der Energie im
