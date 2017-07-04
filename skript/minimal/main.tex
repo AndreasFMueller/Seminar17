@@ -4,24 +4,26 @@
 \chapterauthor{Nadja Rutz und Ambroise Suter}
 
 \section{Einleitung}
+ \label{A_Einleitung}
 \rhead{Einleitung}
 Was sind Minimalflächen? 
 Wie werden sie definiert? 
 Warum passen sie in den Kontext dieses Buches?
 Diese Fragestellungen werden im Laufe dieses Kapitel an Hand von Beispielen illustriert und erörtert.
 
-Wie der Name erahnen lässt beschreiben Minimalflächen Flächen mit minimalem Flächeninhalt. 
+Wie der Name erahnen lässt, beschreiben Minimalflächen Flächen mit minimalem Flächeninhalt. 
 Ein gängiges Beispiel aus der Physik sind Seifenfilme. Wenn die Luft auf beiden Seiten eines Seifenfilms den gleichen Druck hat, dann ist er eine Minimalfläche.
 
 
 \section{Katenoid}
+ \label{A_Katenoid}
 \rhead{Katenoid}
-Wenn man zwei koaxiale Drahtringe parallel zueinander in Seifenwasser taucht, entsteht eine Rotationsfläche (Abbildung \ref{KatenoidSeifenfilm}) welche Katenoid genannt wird. 
+Wenn man zwei koaxiale Drahtringe parallel zueinander in Seifenwasser taucht, entsteht eine Rotationsfläche, (Abbildung \ref{KatenoidSeifenfilm}) welche Katenoid genannt wird. 
 
 Das Katenoid ist die erste entdeckte Minimalfläche.
 Sie wurde schon 1776 von Jean Baptiste Meusnier erstmals beschrieben.
-In diesem Abschnitt wird die mathematische Herleitung des Katenoids mit Hilfe der Eulerschen Differenzialgleichung der Variationsrechnung aufgezeigt.
-\subsection{Beispiel Katenoid}
+In diesem Abschnitt wird die Funktion des Katenoids mit Hilfe der Eulerschen Differentialgleichung, der Variationsrechnung hergeleitet.
+\subsubsection{Beispiel Katenoid als Rotationsfläche}
 
 \begin{figure}
   \centering
@@ -37,9 +39,9 @@ In diesem Abschnitt wird die mathematische Herleitung des Katenoids mit Hilfe de
   \caption{Skizze Katenoid} 
   \label{Katenoid}
 \end{figure}
-In der Skizze \ref{Katenoid} ist ein Katenoid abgebildet, bei welchem in Bezug auf die $z$ Achse, der untere Drahtring bei $-L$ und der obere bei $+L$ ist. 
+In der Skizze \ref{Katenoid} ist ein Katenoid abgebildet, bei welchem in Bezug auf die $z$ Achse der untere Drahtring bei $-L$ und der obere bei $+L$ ist. 
 Die beiden Kreise sollen die gleichen Radien haben, also gilt $r(-L)=r(+L)=R$. 
-Die Flächenpunkte des Katenoids werden mit der Funktion $r(z)$ beschrieben, diese wird um die Rotationsachse $z$ rotiert um den Flächeninhalt des Katenoids zu berechnen.
+Die Flächenpunkte des Katenoids werden mit der Funktion $r(z)$ beschrieben. Diese wird um die Rotationsachse $z$ rotiert, um den Flächeninhalt des Katenoids zu berechnen.
 Hierzu braucht man eine Gleichung, welche eine Länge entlang eines Meridians auf der Katenoidoberfläche beschreibt. 
 Mit Hilfe des Satzes von Pythagoras (Abbildung \ref{Katenoid}) kann man $ds^2=dz^2+dr^2$ schreiben.
 Formt man diese Gleichung um nach $ds$, erhält man die Gleichung
@@ -47,7 +49,7 @@ Formt man diese Gleichung um nach $ds$, erhält man die Gleichung
 \begin{equation} \label{ds}
   ds=\sqrt{dz^2\bigg(1+\frac{dr^2}{dz^2}\bigg)}= \sqrt{dz^2(1+\dot r^2)}=\sqrt{(1+\dot r^2)}\,dz .
 \end{equation}
-\subsubsection{Minimalfläche}
+\subsubsection{Minimalflächeneigeschaft}
 Der Seifenfilm bewegt sich automatisch in den minimalenergetischen Zustand. 
 In diesem Zustand ist dann auch der Flächeninhalt $S$ des Seifenfilms minimal.
 Demzufolge muss das Integral 
@@ -63,37 +65,35 @@ welche man als Funktion
 \begin{equation} \label{F}
  F(r,\dot r, z) = r \sqrt{1+\dot r^2}
 \end{equation}
-noch verallgemeinert schreiben kann.
+noch etwas übersichtlicher schreiben kann.
 
 
 
-Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differenzialgleichung der Variationsrechnung bedienen. 
+Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differentialgleichung der Variationsrechnung bedienen. 
 \subsubsection{Variationsrechnung}
-Die Eulerschen Differenzialgleichung der Variationsrechnung wird im Kapitel Nummer  \ref{skript:geodaeten:section:variationsprinzip}  der Geodäten genauer erklärt.
-Das Anwendungsprinzip wird hier kurz zusammengefasst. Hat man ein Integral $I$ welches von einer Funktion $y(x)$ abhängt, kann man die Eulersche Differentialgleichung anwenden, um die Funktion $y(x)$ zu finden, für welche das Integral $I$ extrem wird. Die Eulersche Differentialgleichung besagt, dass anstelle des Ausrechnens  einer Integralfunktion der Art \begin{equation} \label{E_DGL1}  
-  I(y)= \int_a^b F(x,y(x),\dot y(x))\,dx       
+Die Eulersche Differentialgleichung der Variationsrechnung wird im Kapitel \ref{skript:geodaeten:section:variationsprinzip}  der Geodäten genauer erklärt.
+Das Anwendungsprinzip wird hier kurz zusammengefasst. Hat man ein Integral $I$, welches von einer Funktion $y(x)$ abhängt, kann man die Eulersche Differentialgleichung anwenden, um die Funktion $y(x)$ zu finden, für welche das Integral $I$ extrem wird. Die Eulersche Differentialgleichung besagt, dass anstelle des Ausrechnens  einer Integralfunktion der Art \begin{equation} \label{E_DGL1}  
+  I(y)= \int_a^b F(x,y(x),\dot y(x))\,dx ,       
 \end{equation}
-kann auch die Differentialgleichung  
+auch die Differentialgleichung  
 
 
 
 \begin{equation} \label{E_DGL2}
 \bigg(\frac{\partial F}{\partial y}\bigg)- \frac{d}{dx} \bigg(\frac{\partial F}{\partial \dot{y}}\bigg)=0         
 \end{equation}
-gelöst werden.
+gelöst werden kann.
 
-Die Gleichung \eqref{S2} des Flächeninhaltes des Katenoids ist ein solches Integral, da es von der Funktion $r(z)$ abhängt und die Aufgabe ist es eben diese zu finden. Wendet man also das prinzip der Variationsrechnung an, erhält man die Differentialgleichung
+Die Gleichung \eqref{S2} für den Flächeninhalte des Katenoids ist ein solches Integral, da es von der Funktion $r(z)$ abhängt und die Aufgabe ist es eben diese zu finden. Wendet man also das Prinzip der Variationsrechnung an, erhält man die Differentialgleichung
 \begin{equation} \label{K_DGL1}
 \bigg(\frac{\partial F}{\partial r}\bigg)- \frac{d}{dz} \bigg(\frac{\partial F}{\partial \dot{r}}\bigg)=0 .
 \end{equation}
-
 Setzt man $F$ aus der Gleichung \eqref{F} ein, erhält man
 \begin{equation} \label{K_DGL_H}
 \sqrt{1+{\dot {r}}^2}-\frac{ d }{ dz } \bigg( r \frac{ 1 }{2  }\left( {1+{\dot {r}}^2}  \right)^{-1/2} 2 \dot {r}\bigg)=0 .
 \\
 \end{equation}
-Dies wird nun schrittweise umgeformt zunächst durch Ausrechnen der Ableitung
-
+Dies wird nun schrittweise umgeformt, zunächst durch Ausrechnen der Ableitung
 \begin{equation} \label{K_DGL_H2}
 \left(1+{\dot {r}}^2  \right)^{-1/2}-\bigg(r \frac{ -1 }{2  } \left({1+{\dot {r}}^2}  \right)^{-3/2} 2 \dot{r} \ddot{r}  \dot{r}+ r \left({1+{\dot {r}}^2}  \right)^{-1/2} \ddot{r} +\dot{r} \left({1+{\dot {r}}^2}  \right)^{-1/2} \dot{r}\bigg)=0
 \end{equation}
@@ -105,7 +105,7 @@ entsteht.
 Gesucht ist also eine Funktion $r(z)$, die die Differentialgleichung \eqref{K_DGL_R} erfüllt. Als Randbedingungen für die Funktion $r(z)$ sind in diesem Beispiel $r(+L)=R$ und $r(-L)=R$ aus der Abbildung \ref{Katenoid} gegeben.
 
 \subsubsection{Lösen der Differentialgleichung}
-Die Differenzialgleichung zweiter Ordnung \eqref{K_DGL_R} kann mit Hilfe einiger mathematischer Umformungen, Aufleiten und hyperbolischer Trigonometrie gelöst werden. 
+Die Differentialgleichung zweiter Ordnung \eqref{K_DGL_R} kann mit Hilfe einiger mathematischer Umformungen, Aufleiten und hyperbolischer Trigonometrie gelöst werden. 
 Dies ist eine langwierige Berechnung und wird daher hier nicht durchgeführt.
 
 Anstelle des konkreten Ausrechnens kann man die Lösung der Differentialgleichung \eqref{K_DGL_R} auch erraten. 
@@ -113,7 +113,7 @@ Aus der hyperbolischen Trigonometrie ist $\cosh^2-\sinh^2=1$ oder anders geschri
 Beim Ableiten von $\cosh$ erhält man $\sinh$ und $\sinh$ abgeleitet ergibt wiederum $\cosh$. 
 Mit dieser Erkenntnis kann man durch das Vergleichen der Gleichungen versuchen die Form der Lösung der Differentialgleichung \eqref{K_DGL_R2} zu erraten. 
 
-Der Term $\sinh^2$  (zweiter Term links) soll der quadrierten Ableitung einer Funktion ${\dot {r}}^2$ entsprechen also kann man schreiben $(\cosh)'^2$. 
+Der Term $\sinh^2$  (zweiter Term links) soll der quadrierten Ableitung einer Funktion ${\dot {r}}^2$ entsprechen, also kann man schreiben $(\cosh)'^2$. 
 Auf der rechten Seite sollte $\cosh^2=\cosh \cosh$ dem Produkt von einer Funktion und ihrer doppelten Ableitung gleich kommen. Da gilt $(\cosh)''=(\sinh)'=\cosh$, kann die rechte Seite so $(\cosh) (\cosh)''$ auch durch $\cosh$ ausgedrückt werden.
 
 
@@ -136,7 +136,7 @@ Die exakte Lösung der Differentialgleichung \eqref{K_DGL_R} beinhaltet noch die
 r(z)=K \cosh\bigg(\frac{z-\xi}{K}\bigg) .
 \end{equation}
 
-Unter Einbezug der Anfangsbedingungen $r(+L)=R$ und $r(-L)=R$ aus Abbildung \ref{Katenoid} ist der Radius $R$ bei $z= \pm L$ gleich gross. Deshalb kann man $r(+L)$ mit $r(+L)$ und $R$ gleichsetzen. Durch einsetzen der Funktion $r(z)$ erhält man folglich die Gleichung
+Unter Einbezug der Anfangsbedingungen $r(+L)=R$ und $r(-L)=R$ aus Abbildung \ref{Katenoid} ist der Radius $R$ bei $z= \pm L$ gleich gross. Deshalb kann man $r(+L)$ mit $r(+L)$ und $R$ gleichsetzen. Durch Einsetzen der Funktion $r(z)$ erhält man folglich die Gleichung
 \begin{equation} \label{K_rL}
 K \cosh\bigg(\frac{L-\xi}{K}\bigg)=K \cosh\bigg(\frac{-L-\xi}{K}\bigg)=R .
 \end{equation}
@@ -146,23 +146,23 @@ Beim ersten Fall wäre $L=-L$, was keinen Sinn ergibt, da dann $L=0$ wäre. Beim
 \begin{equation} \label{K_rzl}
 R=K \cosh\left(\frac{L}{K}\right).
 \end{equation}
-Die Parameter $L$ und $R$ sind vorgegeben, dass heist $K$ kann aus dieser Gleichung \eqref{K_rzl} bestimmt werden.
+Die Parameter $L$ und $R$ sind vorgegeben, dass heist $K$ kann durch das Auflösen der Gleichung \eqref{K_rzl} nach $K$ bestimmt werden.
 
-Daraus folgt für die Lösung des Katenoids die Funktionsgleichung 
+Daraus folgt für die Lösung für die Funktion des Katenoids die Funktionsgleichung 
 \begin{equation} \label{K_rz}
 r(z)=K \cosh\left(\frac{z}{K}\right).
 \end{equation}
 
-Noch Anzumerken ist, dass $K$ auch eine geometrische Bedeutung hat. Da $cosh(x)$ ein Minimum bei $x=0$ hat und dort den Wert $1$ annimmt, ist $K$ der minimale Wert, den $r(z)=K \cosh\left(\frac{z}{K}\right)$ annehmen kann. $K$ ist also der Radius des 
+Noch anzumerken ist, dass $K$ auch eine geometrische Bedeutung hat. Da $\cosh(x)$ ein Minimum bei $x=0$ hat und dort den Wert $1$ annimmt, ist $K$ der minimale Wert, den $r(z)=K \cosh\left(\frac{z}{K}\right)$ annehmen kann. $K$ ist also der Radius des 
 Katenoids an der engsten Stelle.
 
 Es gibt auch einen physikalischen Grund, warum die Bestimmung des $K $ nicht ganz trivial ist. 
-Stellt man sich vor, dass man die beiden Drahtringe immer weiter auseinander zieht. Dann macht man das $L$ fortlaufend grösser und dabei wird die engste Stelle der Minimalfläche immer enger. Irgendwann kommt der Punkt wo sie so eng wird, dass es für die Minimalfläche günstiger wäre, wenn sie platzen würde und stattdessen einfach jeden der Drahtringe mit einer Kreisfläche ausfüllen würde.
+Stellt man sich vor, dass man die beiden Drahtringe immer weiter auseinander zieht. Dann macht man das $L$ fortlaufend grösser und dabei wird die engste Stelle der Minimalfläche immer enger. Irgendwann kommt der Punkt, wo sie so eng wird, dass es für die Minimalfläche günstiger wäre, wenn sie platzen würde und stattdessen einfach jeden der Drahtringe mit einer Kreisfläche ausfüllen würde.
 
 
 \section{Sattelfläche}
 \rhead{Sattelfläche}
-Anfangs dieses Kapitels wurde im Abschnitt 14.1 definiert, dass eine Minimalfläche minimalen Flächeninhalt hat. Diese Eigenschaft wurde im Abschnitt 14.2 genutzt um mittels Variationsrechnung eine Minimalfläche, hier das Katenoid, zu parametrisieren. Die Variationsrechnung ist im allgemeinen jedoch ein recht umfangreiches Verfahren. Tricks wie bei Gleichung \ref{K_hTrigoU} sind nur selten vorzufinden. Eine weitere Möglichkeit Minimalflächen zu Parametrisieren nutzt die Eigenschaft, dass Minimalflächen eine mittlere Krümmung von null haben. Was die mittlere Krümmung ist, wird im Abschnitt \ref{KruemmungEinerFlaeche} beschrieben. Im Abschnitt \ref{minimal:ScherkSattel} wird aufgezeigt, wie man mittels einer Formel für die mittlere Krümmung eine partielle Differentialgleichung für Minimalflächen erhält. Diese Differentialgleichung wird anschliessend für den bestimmten Fall der Scherkschen Sattelfläche gelöst. In \ref{Young-Laplace} wird abschliessend bewiesen, dass bei Minimalflächen die mittlere Krümmung tatsächlich gleich null ist.
+Anfangs dieses Kapitels wurde im Abschnitt \ref{A_Einleitung} definiert, dass eine Minimalfläche minimalen Flächeninhalt hat. Diese Eigenschaft wurde im Abschnitt \ref{A_Katenoid} genutzt, um mittels Variationsrechnung eine Minimalfläche, hier das Katenoid, zu parametrisieren. Die Variationsrechnung ist im allgemeinen jedoch ein recht umfangreiches Verfahren. Tricks wie bei Gleichung \ref{K_hTrigoU} sind nur selten vorzufinden. Eine weitere Möglichkeit Minimalflächen zu parametrisieren nutzt die Eigenschaft, dass Minimalflächen eine mittlere Krümmung von null haben. Was die mittlere Krümmung ist, wird im Abschnitt \ref{KruemmungEinerFlaeche} beschrieben. Im Abschnitt \ref{minimal:ScherkSattel} wird aufgezeigt, wie man mittels einer Formel für die mittlere Krümmung eine partielle Differentialgleichung für Minimalflächen erhält. Diese Differentialgleichung wird anschliessend für den Fall der Scherkschen Sattelfläche gelöst. In \ref{Young-Laplace} wird abschliessend bewiesen, dass bei Minimalflächen die mittlere Krümmung tatsächlich gleich null ist.
 
 \subsection{Krümmung einer Fläche}
 \index{Krümmung einer Fläche}
@@ -207,10 +207,10 @@ In den vorhergehenden Kapiteln wurde hauptsächlich die Gausskrümmung betrachte
 Dies weil wir uns auf der Erde in (oder direkt auf) der zu betrachtenden Fläche befinden und die gestellten Probleme innerhalb der Fläche eingebettet sind.   
 
 Eine gute Vorstellungshilfe ist die Ameisenperspektive. 
-Wenn eine Ameise auf einer Kugel ist kann sie feststellen, dass nur schon in ihrem kleinen Blickfeld die Winkelsummen eines Dreiecks auf der Oberfläche grösser als 180° ist, demzufolge besitzt die Kugel eine positive Gausskrümmung. Dies ist in der Abbildung \ref{skript:kruemmung:transportkugel} gut ersichtlich. Anders sieht es bei einem Zylinder aus. Dort misst die Ameise auf der Zylinderoberfläche genau 180° Winkelsumme, dass heisst die Gausskrümmung eines Zylinders ist null. Man kann sich dies leicht vorstellen, wenn man den Zylinder lediglich als aufgerollte Ebene ansieht. Zeichnet man beispielsweise ein Dreieck auf ein Blatt Papier, verändern sich die Winkel durch aufrollen des Papiers nicht. Im Gegensatz dazu, verändern sich die Winkel auf einem Luftballon stark, wenn man diesen aufbläst. Dieser Effekt lässt sich gut in der Abbildung \ref{skript:kurven:4pifu2vis} sehen.
+Wenn eine Ameise auf einer Kugel ist kann sie feststellen, dass nur schon in ihrem kleinen Blickfeld die Winkelsumme eines Dreiecks auf der Oberfläche grösser als 180° ist, demzufolge besitzt die Kugel eine positive Gausskrümmung. Dies ist in der Abbildung \ref{skript:kruemmung:transportkugel} gut ersichtlich. Anders sieht es bei einem Zylinder aus. Dort misst die Ameise auf der Zylinderoberfläche genau 180° Winkelsumme, dass heisst die Gausskrümmung eines Zylinders ist null. Man kann sich dies leicht vorstellen, wenn man den Zylinder lediglich als aufgerollte Ebene ansieht. Zeichnet man beispielsweise ein Dreieck auf ein Blatt Papier, verändern sich die Winkel durch aufrollen des Papiers nicht. Im Gegensatz dazu verändern sich die Winkel auf einem Luftballon stark, wenn man diesen aufbläst. Dieser Effekt lässt sich gut in der Abbildung \ref{skript:kurven:4pifu2vis} sehen.
 
 %Im Kontext dieses Buches ist noch zu erwähnen, dass für Flächen die Gausskrümmung genau dem Krümmungsskalar entspricht, dieses wurde im früheren Verlauf des Buches aus dem Riemann-Tensor abgeleitet (\ref{skript:maxima:curvature}).
-Wie bei \ref{skript:definition:gausskruemmung} definiert wurde ist die Gausskrümmung das Produkt der Hauptkrümmungen $k_1$ und $k_2$. 
+Wie im Abschnitt \ref{skript:definition:gausskruemmung} Definition definiert wurde, ist die Gausskrümmung das Produkt der Hauptkrümmungen $k_1$ und $k_2$. 
 Da wir intuitiv bei einem Kreis oder einer Kugel eine grosse Krümmungszahl erwarten und bei einer fast ebenen Fläche eine kleine, ist die Krümmung $k$ als der Kehrwert des Krümmungsradius $k=1/R$ definiert.
 Wir schreiben damit die Gausskrümmung
 \begin{equation} \label{Gauss_Kruemmung_D}
@@ -225,12 +225,12 @@ Wir schreiben damit die Gausskrümmung
 % H=\frac{1}{2}(k_1+k_2)= \frac{1}{2}\bigg(\frac{1}{R_1}+\frac{1}{R_2}\bigg)
 %\end{equation}
 
-Die bei \ref{skript:definition:mittlerekruemmung2} definierte mittlere Krümmung wird wie bei \eqref{Gauss_Kruemmung_D} zum besseren Verständnis zu
+Ebenfalls im Abschnitt 1.6.1 wurde bei Definition \ref{skript:definition:mittlerekruemmung2} die mittlere Krümmung definiert. Die mittlere Krümmung wird wie bei \eqref{Gauss_Kruemmung_D} zum besseren Verständnis zu
 \begin{equation} \label{Mittlere Kruemmung_D}
 H=\frac{1}{2}(k_1+k_2)= \frac{1}{2}\bigg(\frac{1}{R_1}+\frac{1}{R_2}\bigg)
 \end{equation}
 umgeschrieben.
-Im Gegensatz zur intrinsischen Gausskrümmung kommt es bei der extrinsischen mittleren Krümmung auf die Umgebung an. Beziehungsweise wie die Fläche in der Umgebung eingebettet ist.
+Im Gegensatz zur intrinsischen Gausskrümmung, kommt es bei der extrinsischen mittleren Krümmung auf die Umgebung an. Beziehungsweise wie die Fläche in der Umgebung eingebettet ist.
 Man stellt sich wieder die Mantelfläche eines Zylinders im dreidimensionalen Raum vor.
 Aus der Ameisenperspektive ist die Mantelfläche eine zweidimensionale Fläche, betrachtet man die Mantelfläche jedoch von aussen, ist sie klar gekrümmt.
 Dies, weil die Mantelfläche eine positive mittlere Krümmung aufweist. 
@@ -239,7 +239,7 @@ Dies, weil die Mantelfläche eine positive mittlere Krümmung aufweist.
 
 
 %Anders sieht es zum Beispiel bei einer Sattelfläche (Pringels-Chips artigen Fläche) aus, dort ist %die Gausskrümmung negativ, hingegen kann die mittlere Krümmung im Spezialfall, dass $R_1=-R_2$, %also die Krümmungsradien ein umgekehrtes Vorzeichen aufweisen, aber vom Betrag her identisch sind, %gleich null sein. 
-Anders sieht es bei einer Sattelfläche aus (Abbildung: \ref{fig:Scherk}). Hier ist die Gausskrümmung negativ, daraus folgt, dass die Winkelsumme eines Dreiecks kleiner als 180° ist. Die mittlere Krümmung ist je nach Hauptkrümmungen $k_1$ und $k_2$ positiv oder negativ. In besonderen Fällen kann die mittlere Krümmung gleich null sein. Dies ist der Fall wenn die Hauptkrümmungen $k_1$ und $k_2$ vom Betrag gleich sind, aber umgekehrtes Vorzeichen haben. Setzt man $k_2 = - k_1$ in die Gleichung \ref{Mittlere Kruemmung_D} ein,
+Anders sieht es bei einer Sattelfläche aus (Abbildung \ref{fig:Scherk}). Hier ist die Gausskrümmung negativ. Daraus folgt, dass die Winkelsumme eines Dreiecks kleiner als 180° ist. Die mittlere Krümmung ist je nach Hauptkrümmungen $k_1$ und $k_2$ positiv oder negativ. In besonderen Fällen kann die mittlere Krümmung gleich null sein. Dies ist der Fall wenn die Hauptkrümmungen $k_1$ und $k_2$ vom Betrag gleich sind, aber umgekehrte Vorzeichen haben. Setzt man $k_2 = - k_1$ in die Gleichung \ref{Mittlere Kruemmung_D} ein,
 \begin{equation}
 H=\frac{1}{2}(k_1-k_1),
 \end{equation}
@@ -248,11 +248,11 @@ erhält man
 H=\frac{1}{2}(0)=0.
 \end{equation}
 
-In diesem besonderen Fall ist die Sattelfläche ein Beispiel für eine Minimalfläche. Diese Eigenschaft führt auch dazu, dass jeder, genügend kleine Ausschnitt einer beliebigen Minimalfläche eine Sattelfläche ist. Nimmt man beispielsweise das Katenoid und halbiert es senkrecht erkennt man die vorhandene Sattelfläche (Abbildung: \ref{fig:CatenoidHalf}). 
+In diesem besonderen Fall ist die Sattelfläche ein Beispiel für eine Minimalfläche. Diese Eigenschaft führt auch dazu, dass jeder, genügend kleine Ausschnitt einer beliebigen Minimalfläche eine Sattelfläche ist. Nimmt man beispielsweise das Katenoid und halbiert es senkrecht erkennt man die vorhandene Sattelfläche (Abbildung \ref{fig:CatenoidHalf}). 
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.1]{minimal/CatenoidHalf.pdf}
+  \includegraphics[angle=270,scale=0.1]{minimal/CatenoidHalf.pdf}
   \caption{Halbiertes Katenoid} 
   \label{fig:CatenoidHalf}
 \end{figure}
@@ -274,11 +274,11 @@ In diesem besonderen Fall ist die Sattelfläche ein Beispiel für eine Minimalfl
   \caption{Sattelfläche von Scherk} 
   \label{fig:Scherk}
 \end{figure}
-Die Scherksche Sattelfläche wurde erstmals 1834 von H. F. Scherk beschrieben \cite{minimal:JournalAM} und hergeleitet. Sie war nach der in 1776 von Meusnier beschriebene Katenoid die erste neue Minimalfläche. 
+Die Scherksche Sattelfläche wurde erstmals 1834 von H. F. Scherk beschrieben \cite{minimal:JournalAM}. Sie war nach der in 1776 von Meusnier beschriebene Katenoid die erste neue Minimalfläche. 
 
-Die Scherksche Sattelfläche \, (Abbildung: \ref{fig:Scherk})\, hat neben den zwingenden Eigenschaften einer Minimalfläche, deren Gausskrümmung kleiner als null ist und eine mittlere Krümmung von genau null hat, die Eigenschaft, dass sie, im Gegensatz zur Rotationsfläche des Katenoids, der Graph einer Funktion $z=Z(x,y)$ ist. Sie ist neben der trivialen Ebene eine der wenigen Minimalflächen mit dieser Eigenschaft.
+Die Scherksche Sattelfläche \, (Abbildung \ref{fig:Scherk})\, hat neben den zwingenden Eigenschaften einer Minimalfläche, deren Gausskrümmung kleiner als null ist und eine mittlere Krümmung von genau null hat. Die Eigenschaft, dass sie im Gegensatz zur Rotationsfläche des Katenoids, der Graph einer Funktion $z=Z(x,y)$ ist. 
 
-Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlösung nachgebildet werden \, (Abbildung: \ref{fig:SoapScherk}). Die einzelnen Seifenmoleküle versuchen ein stabiles Gleichgewicht der abstossenden und anziehenden Kräfte zu finden. Dieser stabile Punkt braucht durch das Gleichgewicht ein Minimum an Energie. Dies bedeutet auch, dass die Krümmung, welche Energie benötigt, minimiert wird.
+Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlösung nachgebildet werden \, (Abbildung \ref{fig:SoapScherk}). Die einzelnen Seifenmoleküle versuchen ein stabiles Gleichgewicht der abstossenden und anziehenden Kräfte zu finden. Dieser stabile Punkt braucht durch das Gleichgewicht ein Minimum an Energie. Dies bedeutet auch, dass die Krümmung, welche Energie benötigt, minimiert wird.
 \begin{figure}
   \centering
   \includegraphics[scale=0.4]{minimal/SattelflacheSoapFilm.png}
@@ -287,13 +287,13 @@ Eine Approximation an die Fläche kann mittels Drahtgeflecht und einer Seifenlö
 \end{figure}
 
 
-Die mittlere Krümmung eines Graphen welcher mit $z=Z(x,y)$ definiert wird kann auch mit $H=-\frac{1}{2} \nabla \cdot \hat{n}$\cite{minimal:Spivak} berechnet werden. Die Berechnung an sich ist recht aufwendig, deshalb wird hier nur das Ergebnis betrachtet:
+Die mittlere Krümmung eines Graphen welcher mit $z=Z(x,y)$ definiert wird, kann auch mit $H=-\frac{1}{2} \nabla \cdot \hat{n}$\, \cite{minimal:Spivak}  berechnet werden, wobei $\hat{n}$ die normierte Normale auf der Ebene ist. Die Berechnung an sich ist recht aufwändig, deshalb wird hier nur das Ergebnis betrachtet:
 
 \begin{equation}\label{MeanCurv}
 H=\frac{Z_{xx}(Z_y^2+1) - 2 Z_xZ_yZ_{xy}+Z_{yy}(Z_x^2+1)}{\|\vec{n}\|^3}.
 \end{equation}
 
-Wobei ${x,y}$ die Koordinaten in der Ebene sind, welche nach $z$ Abgebildet werden (siehe Abbildung \ref{fig:Scherk}). $Z_x$ ist die erste Ableitung der Funktion $Z(x,y)$ nach $x$. $Z_y$ ist analog dazu die erste Ableitung der Funktion $Z(x,y)$ nach $y$. $Z_{xx}$ und $Z_{yy}$ sind die jeweils zweite Ableitungen der Funktion $Z(x,y)$ nach den entsprechenden Indizes. $Z_{xy}$ ist die Ableitung von $Z_x$ nach $y$.
+Wobei ${x,y}$ die Koordinaten in der Ebene sind, welche nach $z$ abgebildet werden (siehe Abbildung \ref{fig:Scherk}). $Z_x$ ist die erste Ableitung der Funktion $Z(x,y)$ nach $x$. $Z_y$ ist analog dazu die erste Ableitung der Funktion $Z(x,y)$ nach $y$. $Z_{xx}$ und $Z_{yy}$ sind die jeweils zweite Ableitungen der Funktion $Z(x,y)$ nach den entsprechenden Indizes. $Z_{xy}$ ist die Ableitung von $Z_x$ nach $y$.
 
 Wie wir im Kapitel \ref{Young-Laplace} sehen werden, muss die mittlere Krümmung bei Minimalflächen gleich null sein. Damit können wir den Zähler der Gleichung \eqref{MeanCurv} gleich null setzen
 \begin{equation}\label{MFG}
@@ -304,10 +304,10 @@ Diese Gleichung ist als Minimalflächengleichung (im Englischen Minimal Surface 
 Mittels dieser partiellen Differentialgleichung kann die noch unbekannte Funktion $z=Z(x,y)$ berechnet werden. Was im folgenden Abschnitt auch getan wird.
 
 
-\subsubsection{Lösen der Partiellen Differentialgleichung}\label{Scherk Berechnung}
+\subsubsection{Lösen der partiellen Differentialgleichung}\label{Scherk Berechnung}
 Angenommen $z=Z(x,y)$ ist der Graph einer Funktion. Um die Minimalflächengleichung zu lösen nehmen wir an, dass die Funktion $Z(x,y)$ eine lineare Zusammensetzung von zwei Funktionen ist. Die einfachste Möglichkeit dies zu erreichen, ist die Addition von zwei Funktionen: $z=Z(x,y)=f(x)+g(y)$. Dieser Separationsansatz ist nur eine von vielen Möglichkeit eine partielle Differentialgleichung zu lösen.
 
-Zusätzlich stellen wir zwei Nebenbedingungen. Die erste Bedingung, $Z(0,0)=0$, bedingt, dass der Graph im Nullpunkt auf der Höhe null ist. Die zweite, $\nabla Z(0,0)=0$, fordert, dass im Nullpunkt der Graph horizontal ist.
+Zusätzlich stellen wir zwei Nebenbedingungen. Die erste Bedingung, $Z(0,0)=0$, bedingt, dass der Graph im Nullpunkt auf der Höhe null ist. Die Zweite, $\nabla Z(0,0)=0$, fordert, dass im Nullpunkt der Graph horizontal ist.
 
 Wir setzen die benötigten Ableitungen und mehrfachen Ableitungen der Funktion $Z(x,y)$ in die Minimalflächengleichung (\ref{MFG}) ein. Da $ Z_x = f'(x),\ Z_y = g'(y),\ Z_{xx}=f''(x),\ Z_{yy} = g''(y) \ \text{und} \ Z_{xy}=0$ ist, vereinfacht sich die Minimalflächengleichung zu 
 \begin{equation}\label{MFG Scherk}
@@ -317,9 +317,9 @@ Durch Separieren von $f$ und $g$ erhalten wir zwei gewöhnliche Differentialglei
 \begin{equation}\label{MFG Scherk2}
 -\dfrac{f''(x)}{1+(f'(x))^2}=\dfrac{g''(y)}{1+(g'(y))^2}=c
 \end{equation}
-mit $c \in \mathbb{R}$ konstant. $c$ ist konstant, da die Gleichung nur stimmen kann, wenn trotz unterschiedlichen Variablen $x$ und $y$ beide Quotienten bei einer Veränderung in $x$- beziehungsweise $y$-Richtung gleich bleiben. Wird zum Beispiel $x=0$ fixiert und $y$ variiert muss die Differentialgleichung in $g(y)$ konstant bleiben, da sonst die Gleichung durch die Veränderung des zweiten Quotienten ungleich wäre. Ist c gleich null tritt der spezielle Fall der Ebene ein. Diese ist vielfach, zum Beispiel bei einem Einfachen Kreisring, auch Intuitiv, die Lösung einer Minimalfläche.
+mit $c \in \mathbb{R}$ konstant. $c$ ist konstant, da die Gleichung nur stimmen kann, wenn trotz unterschiedlichen Variablen $x$ und $y$ beide Quotienten bei einer Veränderung in $x$- beziehungsweise $y$-Richtung gleich bleiben. Wird zum Beispiel $x=0$ fixiert und $y$ variiert, muss die Differentialgleichung in $g(y)$ konstant bleiben, da sonst die Gleichung durch die Veränderung des zweiten Quotienten ungleich wäre. Ist $c=0$ tritt der spezielle Fall der Ebene ein. Diese ist vielfach, zum Beispiel bei einem einfachen Kreisring, auch intuitiv die Lösung einer Minimalfläche.
 
-Die Differenzialgleichungen in $f$ und $g$ werden nun separat gelöst. Erst wird $f'(x)$ mit $w(x)$ substituiert. 
+Die Differentialgleichungen in $f$ und $g$ werden nun separat gelöst. Erst wird $f'(x)$ mit $w(x)$ substituiert. 
 \begin{equation}\label{ScherkDGL1}
 -\dfrac{w'(x)}{1+w(x)^2}= c  , \quad w(x)=f'(x).
 \end{equation}
@@ -331,7 +331,7 @@ und wir erhalten die folgende Gleichung:
 \begin{equation}
 -\arctan(w(x)) = cx+k_1,
 \end{equation}
-welche wir nach $w(x)$ auflösen.
+welche wir nach $w(x)$ auflösen:
 \begin{equation}
 w(x) = -\tan(cx+k_1).
 \end{equation}
@@ -339,11 +339,11 @@ Wir führen eine Rücksubstitution durch und erhalten
 \begin{equation}\label{SchreckDGL2}
 f'(x) = -\tan(cx+k_1).
 \end{equation}
-Um die Lösung der Differentialgleichung zu erhalten Integrieren wir erneut
+Um die Lösung der Differentialgleichung zu erhalten integrieren wir erneut
 \begin{equation}
 \int f'(x)\ dx = \int -\tan(cx+k_1)\ dx.
 \end{equation}
- Die Lösung lautet gemäss Integrationstabelle
+ Die Lösung lautet
 \begin{equation}
 f(x) = \dfrac{\log(\cos(cx+k_1))}{c}+k_2.
 \end{equation}
@@ -351,7 +351,7 @@ Mit den Nebenbedingung $f(0)=0$ und $f'(0)=0$ ergibt sich $k_1=k_2=0$ und wir er
 \begin{equation}
 f(x) = \dfrac{\log(\cos(cx))}{c}.
 \end{equation}
-Analog dazu ergibt sich für die zweite Differenzialgleichung:
+Analog dazu ergibt sich für die zweite Differentialgleichung:
 \begin{equation}
 g(y) = - \dfrac{\log(\cos(cx))}{c}.
 \end{equation}
@@ -365,12 +365,12 @@ Z(x,y)=\dfrac{\log(\cos(cx))}{c}-\dfrac{\log(\cos(cy))}{c}.
 \label{Young-Laplace}
 
 \label{YL-Beschreibung}
-In den vorangegangenen Beispielen wurde jeweils eine Lösung gesucht, bei der die mittlere Krümmung $H=0$ ist. Bei den meisten Oberflächen ist dies jedoch nicht der Fall. Beispielsweise haben Seifenblasen innen und aussen einen anderen Druck. Oder in einem Blutgefäss herrscht innen der Blutdruck und außerhalb der Druck durch die Gewebe. Diese Druckdifferenz wirkt eine Kraft auf eine Oberfläche ein und verunmöglicht damit eine minimale Oberfläche wie bei einer Minimalfläche.
+In den vorangegangenen Beispielen wurde jeweils eine Lösung gesucht, bei der die mittlere Krümmung $H=0$ ist. Bei den meisten Oberflächen ist dies jedoch nicht der Fall. Beispielsweise haben Seifenblasen innen und aussen einen anderen Druck. Oder in einem Blutgefäss herrscht innen der Blutdruck und außerhalb der Druck durch das Gewebe. Diese Druckdifferenz wirkt eine Kraft auf eine Oberfläche ein und verunmöglicht damit eine minimale Oberfläche wie bei einer Minimalfläche.
 
 Dennoch haben solche Oberflächen ähnliche Eigenschaften, da auch hier die Energie minimiert wird. Dies wird durch die Young-Laplace Gleichung \cite{minimal:Laplace} beschrieben, welche im folgenden Abschnitt mittels geometrischen und physikalischen Überlegungen hergeleitet wird.
 
 \subsubsection{Herleitung der Young-Laplace Gleichung}\label{YL-Herleitung}
-Angenommen zwei Medien (z.B. Luft/Wasser) werden durch eine Oberfläche \, (Abbildung: \ref{fig:YoungCone}) getrennt. Da in den Medien verschiedene Drücke $p_1$ und $p_2$ herrschen, wölbt sich die Oberfläche. Die Veränderung des Krümmungsradius sei $\delta\zeta$ \,(Abbildung: \ref{fig:Strahlensatz}). Das Volumen eines einzelnen infinitesimalen Volumensegments sei $\delta\zeta\,dA$ \,(Abbildung: \ref{fig:Volumentransaltion}). Dann ist die benötigte Arbeit um das Volumensegment um $\delta\zeta$ zu verschieben:
+Angenommen zwei Medien (z.B. Luft/Wasser) werden durch eine Oberfläche \, (Abbildung \ref{fig:YoungCone}) getrennt. Da in den Medien verschiedene Drücke $p_1$ und $p_2$ herrschen, wölbt sich die Oberfläche. Die Veränderung des Krümmungsradius sei $\delta\zeta$ \,(Abbildung \ref{fig:Strahlensatz}). Das Volumen eines einzelnen infinitesimalen Volumensegments sei $\delta\zeta\,dA$ \,(Abbildung \ref{fig:Volumentransaltion}). Dann ist die benötigte Arbeit um das Volumensegment um $\delta\zeta$ zu verschieben:
 \begin{figure}
   \centering
   \includegraphics[scale=0.3]{minimal/YoungCone.png}
@@ -386,11 +386,11 @@ Angenommen zwei Medien (z.B. Luft/Wasser) werden durch eine Oberfläche \, (Abbi
 \begin{equation}
 \delta W=\int(-p_1+p_2)\,\delta\zeta\,dA.
 \end{equation}
-Die Gesamte Arbeit ergibt sich, wenn zur Arbeit der Volumenänderung die Arbeit der Veränderung der Oberfläche $\delta W=\gamma \, \delta A $ dazu addiert wird, wobei $\gamma$ die Oberflächenspannung und $\delta A$ die veränderte Oberfläche ist. Wir erhalten
+Die gesamte Arbeit ergibt sich, wenn zur Arbeit der Volumenänderung die Arbeit der Veränderung der Oberfläche $\delta W=\gamma \, \delta A $ dazu addiert wird, wobei $\gamma$ die Oberflächenspannung und $\delta A$ die veränderte Oberfläche ist. Wir erhalten
 \begin{equation}\label{YL-Arbeit_1}
 \delta W=\int(-p_1+p_2)\,\delta\zeta dA + \gamma \,\delta A.
 \end{equation}
-Sind $R_1$ und $R_2$ die Krümmungsradien der Oberfläche, werden die infinitesimalen Längenstücke $dl_1$ und $dl_2$ bei einer Veränderung der Radien $R$ um $\delta\zeta$ mittels Strahlensatz \,(Abbildung: \ref{fig:Strahlensatz})
+Sind $R_1$ und $R_2$ die Krümmungsradien der Oberfläche, werden die infinitesimalen Längenstücke $dl_1$ und $dl_2$ bei einer Veränderung der Radien $R$ um $\delta\zeta$ mittels Strahlensatz \,(Abbildung \ref{fig:Strahlensatz})
 \begin{equation}
 \frac{R}{dl}=\frac{R+\delta\zeta}{dl+x}
 \end{equation}
@@ -402,12 +402,12 @@ durch einfache Umformungen erhalten wir
 \begin{equation}
 \begin{split}
 dl' &= dl\bigg(1+\frac{\delta\zeta}{R}\bigg)\\
-&=dl+\frac{dl\,\delta\zeta}{R}
-\end{split}
+&=dl+\frac{dl\,\delta\zeta}{R} .
+\end{split} 
 \end{equation}
 \begin{figure}
   \centering
-  \includegraphics[scale=0.3]{minimal/Langenanderung.png}
+  \includegraphics[scale=0.3]{minimal/Langenanderung2.png}
   \caption{Längenänderung} 
   \label{fig:Strahlensatz}
 \end{figure}
@@ -425,16 +425,16 @@ Somit ist die Änderung eines Flächenstück $\delta dA=dA'-dA$
 &= dl_1\,dl_2\,\delta\zeta\,(\frac{1}{R_1}+\frac{1}{R_2}).
 \end{split}
 \end{equation}
-Um die gesamte veränderte Oberfläche zu erhalten, Integrieren wir die Änderung der Flächenstücke über die gesamte Oberfläche
+Um die gesamte veränderte Oberfläche zu erhalten, integrieren wir die Änderung der Flächenstücke über die gesamte Oberfläche
 \begin{equation}
 \delta A = \int \delta\zeta \, \bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg)\,dA.
 \end{equation}
 Die veränderte Oberfläche setzen wir in die Gleichung der Variation der Arbeit \ref{YL-Arbeit_1} ein. 
-Befindet sich die Oberfläche im Gleichgewicht, muss auch die Variation der Arbeit gleich Null sein.
-\begin{equation}
+Befindet sich die Oberfläche im Gleichgewicht, muss auch die Variation der Arbeit gleich Null sein:
+\begin{equation} \label{YL-Rechnung7}
 \delta W = \int \delta\zeta \, \bigg[ (-p_1+p_2)-\gamma \, \bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg) \bigg]\,dA =0.
 \end{equation}
-Da $\delta\zeta=0$ eine triviale Lösung wäre, ist $\delta\zeta \neq 0$. Daraus folgt die Young-Laplace Gleichung:
+Da $\delta\zeta=0$ eine triviale Lösung wäre, ist $\delta\zeta \neq 0$. Darum muss die eckige Klammer aus der vorherigen Gleichung gleich null sein. Daraus folgt die Young-Laplace Gleichung:
 \begin{equation}
 -p_1+p_2 = \gamma \, \bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg)
 \end{equation}
@@ -442,7 +442,7 @@ oder
 \begin{equation}\label{Young-Laplace-Equation}
 \Delta p = \gamma \, \bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg).
 \end{equation}
-Anzumerken ist, dass sie der Gleichung der mittleren Krümmung (\ref{Mittlere Kruemmung_D}) bis auf $2\gamma$ entspricht. Wir lösen die Gleichung der mittleren Krümmung nach $\bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg)$ auf und erhalten
+Anzumerken ist, dass sie der Gleichung der mittleren Krümmung (\ref{Mittlere Kruemmung_D}) bis auf $2\gamma$ entspricht. Wir lösen die Gleichung der mittleren Krümmung nach $( \frac{1}{R_1}+\frac{1}{R_2} )$ auf und erhalten
 \begin{equation}
 \bigg( \frac{1}{R_1}+\frac{1}{R_2} \bigg)=2H.
 \end{equation}
@@ -453,13 +453,13 @@ Somit kann man die Young-Laplace Gleichung auch als
 schreiben.
 
 \subsubsection{Schlussfolgerung}\label{YL-conclusion}
-Ist der Druckunterschied $\Delta p =0$, was beispielsweise bei einem Seifenfilm der Fall ist, muss entweder $\gamma$ oder $H$ gleich null sein. Da im allgemeinen Fall  die Oberflächenspannung $\gamma$ undgleich null ist \cite{minimal:Eotvos},  schliessen wir daraus, dass bei  $\Delta p =0$ die mittlere Krümmung gleich null sein muss.
+Ist der Druckunterschied $\Delta p =0$, was beispielsweise bei einem Seifenfilm der Fall ist, muss entweder $\gamma$ oder $H$ gleich null sein. Da im allgemeinen Fall  die Oberflächenspannung $\gamma$ ungleich null ist \cite{minimal:Eotvos},  schliessen wir daraus, dass bei  $\Delta p =0$ die mittlere Krümmung gleich null sein muss.
 
 \subsection{Anwendung: Seifenblase}
-Durch diese Erkenntnis ist klar, dass eine Seifenblase keine Minimalfläche sein kann, da zwischen der Luft innen und aussen der Seifenblase immer ein Druckunterschied vorhanden ist.
+Durch die in der Schlussfolgerung gewonnene Erkenntnis ist klar, dass eine Seifenblase keine Minimalfläche sein kann, da zwischen der Luft innen und aussen der Seifenblase immer ein Druckunterschied vorhanden ist.
 
 \subsection{Anwendung: Druck innerhalb eines Regentropfens}
-Nehmen wir an, ein Regentropfen wird nicht durch den Luftwiederstand verformt so bildet er eine Kugel. Da bei einer Kugel $R_1=R_2=r$ gilt, vereinfacht sich die Young-Laplace Gleichung \ref{Young-Laplace-Equation} zu
+Nehmen wir an, ein Regentropfen wird nicht durch den Luftwiderstand verformt, so bildet er eine Kugel. Da bei einer Kugel $R_1=R_2=r$ gilt, vereinfacht sich die Young-Laplace Gleichung \ref{Young-Laplace-Equation} zu
 \begin{equation}
 \Delta p = 2\gamma \, \bigg(\frac{1}{r}\bigg).
 \end{equation}
