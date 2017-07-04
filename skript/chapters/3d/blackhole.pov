@@ -65,6 +65,7 @@ cylinder {
 #declare a = pi / 3;
 #declare r0 = 2;
 #declare taumax = R0(r0);
+#declare taur = function(r) { taumax - (2/3) * pow(r, 3/2) }
 #declare taustep = taumax / 200;
 #declare tau = taustep;
 union {
@@ -87,18 +88,16 @@ union {
 	}
 }
 
-#declare conelength = 0.2;
+#declare conelength = 0.15;
 
 #macro lightcone(r, a, tau)
 	#declare apex = <r * cos(a), tau, r * sin(a)>;
 
-	#declare p = 1/sqrt(r) * (1/sqrt(r) - 1);
-	#declare p = sqrt(r) * (sqrt(r) - 1);
+	#declare p = -1/sqrt(r) * (1/sqrt(r) - 1);
 	#declare plusdirection = <p * cos(a), 1, p * sin(a)>;
 	#declare plusdirection = vnormalize(plusdirection);
 
 	#declare n = 1/sqrt(r) * (-1/sqrt(r) - 1);
-	#declare n = sqrt(r) * (-sqrt(r) - 1);
 	#declare minusdirection = <n * cos(a), 1, n * sin(a)>;
 	#declare minusdirection = vnormalize(minusdirection);
 
@@ -113,6 +112,7 @@ union {
 	}
 #end
 
+/*
 #declare tau = 0;
 #declare taustep = 0.41;
 #while (tau < 1.7)
@@ -120,9 +120,15 @@ union {
 	lightcone(lightconeradius, a, tau)
 	#declare tau = tau + taustep;
 #end
-
-
-
+*/
+#declare r = 2;
+#declare rstep = 0.25;
+#while (r > 0)
+	#declare tau = taur(r);
+	#declare lightconeradius = rss(taumax, tau);
+	lightcone(lightconeradius, a, tau)
+	#declare r = r - rstep;
+#end
 
 
 

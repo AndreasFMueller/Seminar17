@@ -32,7 +32,7 @@ Diese Metrik sollte eine erste Approximation für die Gravitation in
 der Umgebung eines Sterns sein.
 Natürlich berücksichtigt dieses Modell weder, dass sich Sterne mit
 der Zeit entwickeln, noch die Tatsache, dass sich Sterne normalerweise
-um eine Achse drehen, dass man also gar nicht eine rotationssymmetrische
+um eine Achse drehen, dass man also gar nicht eine kugelsymmetrische
 Lösung erwarten darf.
 
 Die Längenmessung
@@ -41,17 +41,23 @@ ds^2
 =
 -c^2\,dt^2 + dr^2 + r^2 d\Omega^2
 \qquad
+\text{mit}
+\quad
 d\Omega^2 = d\vartheta^2 + \sin^2\vartheta\,d\varphi^2
 \label{skript:kruemmung:euklid}
 \end{equation}
-im Raum mit Kugelkoordinaten ist natürlich eine solche Metrik,
-doch da dies nur eine andere Parametrisierung des euklidischen
-Raumes ist, ist diese Geometrie flach.
-Sie kann also sich nicht ein Modell eines Sternes sein.
+(Siehe auch \eqref{skript:laengenmessung:omega2} auf Seite
+\pageref{skript:laengenmessung:omega2})
+im Raum mit Kugelkoordinaten ist natürlich eine solche Metrik.
+Die Schreibweise $d\Omega^2$ soll daran erinnern, dass dieser Teil der
+Metrik nicht von der Richtung abhängt.
+Kugelkoordinaten sind jedoch nur eine andere Parametrisierung des euklidischen
+Raumes, dessen Geometrie ist flach.
+Diese Metrik kann also sich nicht Modell eines Sternes sein.
 
 Man kann eine Lösung der Feldgleichungen finden, indem man den
 einzelnen Termen der euklidischen Metrik~\eqref{skript:kruemmung:euklid}
-zunächst unbestimmte Faktoren hinzufügt, die nur von $r$ abhängt,
+zunächst unbestimmte Faktoren hinzufügt, die nur von $r$ abhängen,
 und dann mit Hilfe der Feldgleichungen dafür Differentialgleichungen
 herleitet.
 Wir wollen diesen beschwerlichen Weg nicht gehen, und uns mit dem
@@ -66,15 +72,19 @@ ds^2
 Man kann nachrechnen, zum Beispiel mit Hilfe der früher vorgestellen
 Maxima-Programme, dass der Einstein-Tensor für diese Metrik überall
 verschwindet.
+Die physikalische Bedeutung des Parameter $r_g$ später in
+Abschnitten~\ref{skript:section:ereignishorizont}
+und~\ref{skript:schwarzschild:rg} erklärt.
 
 \section{Der Fall $r=r_g$}
 \rhead{Der Fall $r=r_g$}
 Es scheint, dass die Metrik für $r=r_g$ nicht wohldefiniert ist,
-da dann der Nenner im zweiten Term nicht wohldefiniert ist.
+da dann der Nenner im zweiten Term verschwindet.
 Dem ist jedoch nicht so, wie man durch Wahl eines anderen Koordinatensystems
 zeigen kann.
-Wir ersetzen die Zeitkoordinaten $t$ durch $\tau$, und die $r$-Koordinate
-durch $R$ mit der vorläufig noch unbestimmten Funktion $f(r)$.
+
+Wir ersetzen die Zeitkoordinaten $t$ durch $\tau$ und die $r$-Koordinate
+durch $R$.
 Es soll gelten
 \begin{equation}
 \begin{aligned}
@@ -258,8 +268,8 @@ Die Berechnung mit Maxima ergibt
 \Gamma^2_{21} &= \frac1{3(R-c\tau)},&
 \Gamma^2_{22} &= -\frac1{3(R-c\tau)}.
 \end{align*}
-Wir beschreiben die Bahn eines Teilchens welches sich in diesem Feld
-radial bewegt mit den Funktionen $\tau(s)$ und $R(s)$.
+Wir beschreiben die Bahn eines Teilchens, welches sich in diesem Feld
+radial bewegt, mit den Funktionen $\tau(s)$ und $R(s)$.
 Wir untersuchen ein Teilchen, welches beim Punkt $\tau(0)=0$ und $R(0)=R_0$
 mit Anfangsrichtung $\dot\tau(0)=1$ und $\dot R(0)=0$ in das Gravitationsfeld
 stürzt.
@@ -284,7 +294,8 @@ Die Lösungskurve ist also $R=R_0$ und $\tau=s$, rot dargestellt in
 Abbildung~\ref{skript:kruemmung:fig:absturz}.
 
 Mit Hilfe der Formel~\eqref{skript:kruemmung:finkelsteinr}
-kann man damit auch $r$ für den radialen Absturz angeben:
+kann man damit auch $r$ in Abhängigkeit von $\tau$ für den radialen Absturz
+angeben:
 \[
 r(\tau)=\biggl(\frac32(R_0-c\tau)\biggr)^{\frac23}r_g^{\frac13}.
 \]
@@ -297,10 +308,10 @@ Schwarzschild-Metrik~\eqref{skript:kruemmung:schwarzschildmetrik}
 und möchten genauer verstehen, was bei $r=r_g$ passiert.
 Dazu überlegen wir uns, wie ein Geodäte eines realen Teilchens 
 aussieht.
-Wir wissen, dass reale Teilchen sich so bewegen müssen, dass der
-Tangentialvektor negative Metrik hat.
+Wir wissen, dass reale Teilchen sich entlang von Weltlinien bewegen müssen,
+deren Tangentialvektor zeitartig ist.
 Ein Teilchen in Ruhe hat zum Beispiel $\dot r=0$, $\dot \vartheta=0$ und
-$\dot varphi=0$, einzig $\dot t\ne 0$.
+$\dot\varphi=0$, einzig $\dot t\ne 0$.
 Da der Koeffizient von $dt^2$
 \[
 -\biggl(1-\frac{r_g}{r}\biggr)
@@ -341,7 +352,7 @@ es unausweichlich in endlicher Zeit ins Zentrum stürzen wird.
 $(\tau,r,\varphi)$-Koordinaten.
 Sobald das Teilchen durch den Ereignishorizont gefallen ist,
 befindet sich der ganze zukünftige Lichtkegel eines Teilchens 
-immer vollständig im inneren des Gebietes $r<r_g$.
+immer vollständig im Inneren des Gebietes $r<r_g$.
 \label{skript:kruemmung:fig:blackhole}}
 \end{figure}
 
@@ -351,24 +362,25 @@ immer vollständig im inneren des Gebietes $r<r_g$.
 \rhead{Was spürt man am Ereignishorizont?}
 Der Riemannsche Krümmungstensor gibt an, wie schnell Geodäten von Teilchen
 wegen unterschiedlicher Gravitationswirkung sich voneinander entfernen.
-Er bestimmt also die Gezeitenkräfte, die ein Astronaut spürt, der in
-diesem Gravitationsfeld abstürzt.
-die Gezeitenkräfte, die ein Astronaut spürt, der in
-diesem Gravitationsfeld abstürzt.
+Er bestimmt also die sogenannten Gezeitenkräfte, die ein Astronaut spürt,
+der in diesem Gravitationsfeld abstürzt.
+\index{Gezeitenkräfte}%
 Die Berechnung des Riemann-Tensors mit Maxima ergibt aber:
 \begin{align*}
 R_{1212}&=-\frac{r_g}{r^3},
 \end{align*}
 die Gezeitenkräfte in radialer Richtung werden für den Astronauten
-also zwar immer grösser, aber bei $r=r_g$ spürt er nichts besonderes.
+also zwar immer grösser, er wird in die Länge gezogen und schliesslich 
+zerrissen, darüber hinaus aber spürt er bei $r=r_g$ nichts Besonderes.
 
-\section{Bedeutung von $r_g$}
+\section{Bedeutung von $r_g$%
+\label{skript:schwarzschild:rg}}
 \rhead{Bedeutung von $r_g$}
 In Abschnitt~\ref{skript:section:ereignishorizont} haben wir gefunden,
 dass sich bei der Koordinaten $r=r_g$ der Ereignishorizont befindet.
 Es ist auch einigermassen klar, dass dieser Radius $r_g$ mit der
 Masse des Objektes zusammenhängen muss.
-Doch wie gross ist eiegentlich der Gravitations-Radius $r_g$ verschiedener
+Doch wie gross ist eigentlich der Gravitations-Radius $r_g$ verschiedener
 uns umgebender Himmelskörper? Kann es überhaupt einen Körper geben, der
 so dicht ist, dass er kleiner ist als sein Gravitationsradius?
 
@@ -377,9 +389,9 @@ das Feld ist dort sehr schwach.
 Durch Vergleich mit der Näherung~\eqref{skript:gravitation:naeherung}
 finden wir
 \[
-\frac{r_g}{r} = \frac{2MG}{r},
+\frac{r_g}{r} = \frac{2MG}{c^2r}
 \qquad\Rightarrow\qquad
-r_g=\frac{2MG}{c^2}
+r_g=\frac{2MG}{c^2}.
 \]
 Der Radius $r_g=2MG$ heisst der {\em Gravitationsradius} oder 
 \index{Gravitationsradius}
@@ -427,531 +439,3 @@ Der Gravitationsradius ist also kleiner als ein Zentimeter.
 \input{chapters/s-perihel.tex}
 \input{chapters/s-lichtablenkung.tex}
 
-%\section{Periheldrehung}
-%\rhead{Periheldrehung}
-%\begin{figure}
-%\centering
-%\includegraphics{chapters/tikz/orbit.pdf}
-%\caption{Periheldrehung um den Winkel $\alpha$ in jedem Umlauf um den
-%Zentralkörper in einer Schwarzschild-Metrik mit Anfangsbedingungen
-%\label{skript:schwarzschild:anfangsbedingung:normal}.
-%\label{skript:schwarzschild:perihelorbit}}
-%\end{figure}
-%Das erste Keplersche Gesetz sagt, dass ein Planet sich auf einer
-%Ellipsenbahn bewegt.
-%Die Newtonsche Gravitationstheorie bestätigt dies, die Differentialgleichungen
-%für das Zweikörperproblem sind in geschlossener Form lösbar.
-%Insbesondere zeigt die Richtung zum sonnennächsten Punkt, dem Perihel,
-%immer in die gleiche Richtung.
-%Für die Merkurbahn wurde jedoch eine Abweichung festgestellt, die
-%Perihelrichtung dreht sich mit der Zeit um die Sonne.
-%Einen Teil dieser Drehung konnte mit der newtonschen Theorie erklärt werden.
-%So führen zum Beispiel die Abplattung der Sonne und die Störungen durch
-%andere Planeten zu einem solchen Effekt.
-%Von den gemessenen $571.91''$ Periheldrehung des Merkur pro Jahrhundert
-%verblieben jedoch $43.11''$ pro Jahrhundert, die die Newtonsche
-%Theorie nicht erklären konnte.
-%
-%
-%Schon in seinem ursprünglichen Entwurf der allgemeinen Relativitätstheorie
-%hat Einstein die durch die Abweichung von der Newtonschen Theorie
-%verursachte Periheldrehung der Merkurbahn berechnet und gute Übereinstimmung
-%mit der bekannten Drehung gefunden.
-%Damit hat er bereits selbst eine erste experimentelle Bestätigung
-%der Theorie gegeben.
-%
-%Um den Effekt überhaupt darstellen zu können, muss die Bahn sehr nahe
-%am Zentralkörper vorbeiführen, der nächste Punkt, das Apastron darf
-%also nur wenige Gravitationsradien entfernt sein.
-%In Abbildung~\ref{skript:schwarzschild:perihelorbit} ist die
-%Umlaufbahn eines Körpers dargestellt, dessen Apastron-Entfernung
-%$100 r_g$ ist und der sich im Periastron auf etwa $20r_g$ 
-%nähert.
-%Die Apsidenlinie dreht sich hier in jedem Umlauf um $\alpha = 21.61^\circ$.
-%Ziel dieses Abschnittes ist zu zeigen, wie die Periastron-Drehung
-%in einer Schwarzschild-Metrik numerisch berechnet werden kann.
-%Es geht dabei nicht darum, den exakten Wert für die Periheldrehung
-%des Merkur zu bestimmen,
-%sondern nur zu zeigen, dass die allgemeine Relativitätstheorie
-%qualititativ einen solchen Effekt vorhersagt.
-%
-%\subsection{Geodätengleichung für die Schwarzschild-Metrik}
-%%(%i5) 		        ratsimp(Christoffel2(1, 1, 1))
-%%(%o5) 				       0
-%%(%i6) 		        ratsimp(Christoffel2(1, 1, 2))
-%%				       rg
-%%(%o6) 			        - -------------
-%%					      2
-%%				  2 r rg - 2 r
-%%(%i7) 		        ratsimp(Christoffel2(1, 1, 3))
-%%(%o7) 				       0
-%%(%i8) 		        ratsimp(Christoffel2(1, 1, 4))
-%%(%o8) 				       0
-%%(%i9) 		        ratsimp(Christoffel2(1, 2, 2))
-%%(%o9) 				       0
-%%(%i10) 		        ratsimp(Christoffel2(1, 2, 3))
-%%(%o10) 				       0
-%%(%i11) 		        ratsimp(Christoffel2(1, 2, 4))
-%%(%o11) 				       0
-%%(%i12) 		        ratsimp(Christoffel2(1, 3, 3))
-%%(%o12) 				       0
-%%(%i13) 		        ratsimp(Christoffel2(1, 3, 4))
-%%(%o13) 				       0
-%%(%i14) 		        ratsimp(Christoffel2(1, 4, 4))
-%%(%o14) 				       0
-%%(%i15) 		        ratsimp(Christoffel2(2, 1, 1))
-%%				     2
-%%				   rg  - r rg
-%%(%o15) 				 - ----------
-%%					 3
-%%				      2 r
-%%(%i16) 		        ratsimp(Christoffel2(2, 1, 2))
-%%(%o16) 				       0
-%%(%i17) 		        ratsimp(Christoffel2(2, 1, 3))
-%%(%o17) 				       0
-%%(%i18) 		        ratsimp(Christoffel2(2, 1, 4))
-%%(%o18) 				       0
-%%(%i19) 		        ratsimp(Christoffel2(2, 2, 2))
-%%				      rg
-%%(%o19) 				 -------------
-%%					     2
-%%				 2 r rg - 2 r
-%%(%i20) 		        ratsimp(Christoffel2(2, 2, 3))
-%%(%o20) 				       0
-%%(%i21) 		        ratsimp(Christoffel2(2, 2, 4))
-%%(%o21) 				       0
-%%(%i22) 		        ratsimp(Christoffel2(2, 3, 3))
-%%(%o22) 				    rg - r
-%%(%i23) 		        ratsimp(Christoffel2(2, 3, 4))
-%%(%o23) 				       0
-%%(%i24) 		        ratsimp(Christoffel2(2, 4, 4))
-%%					 2
-%%(%o24) 			     (rg - r) sin (theta)
-%%(%i25) 		        ratsimp(Christoffel2(3, 1, 1))
-%%(%o25) 				       0
-%%(%i26) 		        ratsimp(Christoffel2(3, 1, 2))
-%%(%o26) 				       0
-%%(%i27) 		        ratsimp(Christoffel2(3, 1, 3))
-%%(%o27) 				       0
-%%(%i28) 		        ratsimp(Christoffel2(3, 1, 4))
-%%(%o28) 				       0
-%%(%i29) 		        ratsimp(Christoffel2(3, 2, 2))
-%%(%o29) 				       0
-%%(%i30) 		        ratsimp(Christoffel2(3, 2, 3))
-%%				       1
-%%(%o30) 				       -
-%%				       r
-%%(%i31) 		        ratsimp(Christoffel2(3, 2, 4))
-%%(%o31) 				       0
-%%(%i32) 		        ratsimp(Christoffel2(3, 3, 3))
-%%(%o32) 				       0
-%%(%i33) 		        ratsimp(Christoffel2(3, 3, 4))
-%%(%o33) 				       0
-%%(%i34) 		        ratsimp(Christoffel2(3, 4, 4))
-%%(%o34) 			    - cos(theta) sin(theta)
-%%(%i35) 		        ratsimp(Christoffel2(4, 1, 1))
-%%(%o35) 				       0
-%%(%i36) 		        ratsimp(Christoffel2(4, 1, 2))
-%%(%o36) 				       0
-%%(%i37) 		        ratsimp(Christoffel2(4, 1, 3))
-%%(%o37) 				       0
-%%(%i38) 		        ratsimp(Christoffel2(4, 1, 4))
-%%(%o38) 				       0
-%%(%i39) 		        ratsimp(Christoffel2(4, 2, 2))
-%%(%o39) 				       0
-%%(%i40) 		        ratsimp(Christoffel2(4, 2, 3))
-%%(%o40) 				       0
-%%(%i41) 		        ratsimp(Christoffel2(4, 2, 4))
-%%				       1
-%%(%o41) 				       -
-%%				       r
-%%(%i42) 		        ratsimp(Christoffel2(4, 3, 3))
-%%(%o42) 				       0
-%%(%i43) 		        ratsimp(Christoffel2(4, 3, 4))
-%%				  cos(theta)
-%%(%o43) 				  ----------
-%%				  sin(theta)
-%%(%i44) 		        ratsimp(Christoffel2(4, 4, 4))
-%%(%o44) 				       0
-%%
-%Für die Geodätengleichungen brauchen wir die Christoffsymbole 
-%für die Schwarzschild Metrik.
-%Mit Maxima kann man die folgenden nicht verschwindenden
-%$\Gamma^\mu_{\alpha\beta}$ 
-%finden:
-%\begin{align*}
-%%(%i6) 		        ratsimp(Christoffel2(1, 1, 2))
-%%				       rg
-%%(%o6) 			        - -------------
-%%					      2
-%%				  2 r rg - 2 r
-%\Gamma^0_{01}
-%&=
-%\frac{1}{1-\displaystyle\frac{r_g}{r}}
-%\frac{r_g}{r}
-%\frac{1}{2r}
-%\\
-%%(%i15)                  ratsimp(Christoffel2(2, 1, 1))
-%%                                     2
-%%                                  rg  - r rg
-%%(%o15)                          - ----------
-%%                                         3
-%%                                      2 r
-%\Gamma^1_{00}
-%&=
-%\biggl(1-\displaystyle\frac{r_g}{r}\biggr)
-%\frac{r_g}{r}
-%\frac{1}{2r}
-%&
-%%(%i19)                  ratsimp(Christoffel2(2, 2, 2))
-%%                                      rg
-%%(%o19)                           -------------
-%%                                             2
-%%                                 2 r rg - 2 r
-%\Gamma^1_{11}
-%&=
-%-\frac1{1-\displaystyle\frac{r_g}{r}}
-%\frac{r_g}{r}
-%\frac{1}{2r}
-%&
-%%(%i22) 		        ratsimp(Christoffel2(2, 3, 3))
-%%(%o22) 				    rg - r
-%\Gamma^1_{22}
-%&=
-%r_g-r
-%&
-%%(%i24)                  ratsimp(Christoffel2(2, 4, 4))
-%%                                         2
-%%(%o24)                       (rg - r) sin (theta)
-%\Gamma^1_{33}
-%&=
-%(r_g-r)\sin^2\vartheta
-%\\
-%%(%i30)                  ratsimp(Christoffel2(3, 2, 3))
-%%                                       1
-%%(%o30)                                 -
-%%                                       r
-%\Gamma^2_{12}
-%&=
-%\frac1r
-%&
-%%(%i34) 		        ratsimp(Christoffel2(3, 4, 4))
-%%(%o34) 			    - cos(theta) sin(theta)
-%\Gamma^2_{33}
-%&=
-%-\cos\vartheta \sin\vartheta
-%\\
-%%(%i41)                  ratsimp(Christoffel2(4, 2, 4))
-%%                                       1
-%%(%o41)                                 -
-%%                                       r
-%\Gamma^3_{13}
-%&=
-%\frac1r
-%&
-%%(%i43)                  ratsimp(Christoffel2(4, 3, 4))
-%%                                  cos(theta)
-%%(%o43)                            ----------
-%%                                  sin(theta)
-%\Gamma^3_{23}
-%&=
-%\cot\vartheta
-%\end{align*}
-%Wir betrachten jetzt eine Geodäte, die mit dem Parameter $s$ parametrisiert ist.
-%In allgemeiner Form schreiben wir dafür $x^\mu(s)$, im speziellen
-%Koordinatensystem der Schwarzschild-Metrik ist
-%\[
-%\begin{aligned}
-%x^0(s)&=t(s),
-%&
-%x^1(s)&=r(s),
-%&
-%x^2(s)&=\vartheta(s),
-%&
-%x^3(s)&=\varphi(s).
-%\end{aligned}
-%\]
-%Die zugehörigen Geodätengleichungen sind
-%\begin{align*}
-%\ddot t(s)
-%&=
-%-\frac{1}{1-\displaystyle\frac{r_g}{r}}\frac{r_g}{r}\frac{1}{r}\dot t(s)\,\dot r(s)
-%\\
-%\ddot r(s)
-%&=
-%-\biggl(1-\frac{r_g}{r}\biggr)\frac{r_g}{r}\frac1{2r}\dot t(s)^2
-%+\frac{1}{1-\displaystyle\frac{r_g}{r}} \frac{r_g}{r}\frac1{2r}\dot r(s)^2
-%-(r_g-r)\dot \vartheta(s)^2 + (r_g-r)\sin^2 \vartheta \cdot \dot \varphi(s)^2
-%\\
-%\ddot \vartheta(s)
-%&=
-%-\frac{2}{r} \dot r(s)\, \dot \vartheta(s)
-%+\cos\vartheta\sin\vartheta \cdot \dot\varphi(s)^2
-%\\
-%\ddot \varphi(s)
-%&=
-%-\frac{2}{r} \dot r(s)\,\dot \varphi(s)
-%-2\cot\vartheta \cdot \dot r(s)\,\dot\varphi(s)
-%\end{align*}
-%Darin ist natürlich $r$ in den Koeffizienten jeweils als $r(s)$ zu lesen.
-%
-%Wir wollen eine Bahn in der Ebene $\vartheta=\frac{\pi}2$ berechnen.
-%Setzen wir diesen Wert ein, verschwinden auch noch die Terme, die
-%$\cos\vartheta$ enthalten.
-%Es bleiben nur noch
-%\begin{equation}
-%\begin{aligned}
-%\Gamma^0_{01}
-%&=
-%\frac{1}{1-\displaystyle\frac{r_g}{r}}
-%\frac{r_g}{r}
-%\frac{1}{2r}
-%\\
-%\Gamma^1_{00}
-%&=
-%\biggl(1-\displaystyle\frac{r_g}{r}\biggr)
-%\frac{r_g}{r}
-%\frac{1}{2r}
-%&
-%\Gamma^1_{11}
-%&=
-%-\frac1{1-\displaystyle\frac{r_g}{r}}
-%\frac{r_g}{r}
-%\frac{1}{2r}
-%&
-%\Gamma^1_{22}
-%&=
-%r_g-r
-%&
-%\Gamma^1_{33}
-%&=
-%r_g-r
-%\\
-%%(%i30)                  ratsimp(Christoffel2(3, 2, 3))
-%%                                       1
-%%(%o30)                                 -
-%%                                       r
-%\Gamma^2_{12}
-%&=
-%\frac1r
-%\\
-%%(%i41)                  ratsimp(Christoffel2(4, 2, 4))
-%%                                       1
-%%(%o41)                                 -
-%%                                       r
-%\Gamma^3_{13}
-%&=
-%\frac1r
-%\end{aligned}
-%\label{skript:schwarzschild:christoffelaequator}
-%\end{equation}
-%Hat eine Geodäte eine Anfangsgeschwindigkeit in der Äquatorebene, dann
-%ist $\dot x^3(0) = \dot\vartheta(0)=0$.
-%Die Geodätengleichung für $\ddot \vartheta$ ist dann
-%\[
-%\ddot \vartheta(s)
-%=
-%\ddot x^2(s)
-%=
-%\Gamma^2_{12}\dot r(s)\dot \vartheta(s),
-%\]
-%insbesondere bleibt $\dot\vartheta(s)=0$ entlang der ganzen Geodäten.
-%Die Geodäte wird daher die Äquatorebenen nicht verlassen.
-%Da man das Koordinatensystem immer so wählen kann, dass $\dot\vartheta(0)=0$
-%ist, kann man ganz allgemein sagen, dass Geodäten in einer Schwarzschild-Metrik
-%in einer Ebene liegen.
-%Man hätte also auch von Anfang an in Polarkoordinaten rechnen können.
-%
-%Die vereinfachten Christoffelsymbole für die Äquatorebene
-%\eqref{skript:schwarzschild:christoffelaequator}
-%führen auch auf vereinfachte Geodätengleichungen, wenn wir $\dot\vartheta(s)=0$
-%berücksichtigen.
-%Wir erhalten
-%\begin{align*}
-%\ddot t(s)
-%&=
-%-\frac{1}{1-\displaystyle\frac{r_g}{r}}\frac{r_g}{r}\frac{1}{r}\dot t(s)\,\dot r(s)
-%\\
-%\ddot r(s)
-%&=
-%-\biggl(1-\frac{r_g}{r}\biggr)\frac{r_g}{r}\frac1{2r}\dot t(s)^2
-%+\frac{1}{1-\displaystyle\frac{r_g}{r}} \frac{r_g}{r}\frac1{2r}\dot r(s)^2
-%- (r_g-r) \dot\varphi(s)^2
-%\\
-%\ddot \vartheta(s)
-%&=
-%0
-%\\
-%\ddot \varphi(s)
-%&=
-%-\frac2r \dot r(s)\,\dot\varphi(s)
-%\end{align*}
-%Diese Gleichungen lassen sich nicht in geschlossener Form integrieren.
-%Durch numerische Lösung für geeignete Anfangswerte kann man jedoch die
-%Drehung der Apsidenlinie sichtbar machen.
-%
-%\subsection{Numerische Lösung}
-%Im Repository zu befinden sich einige Octave-Programme, mit denen man
-%die Geodäten in einer Schwarzschild-Metrik berechnen kann.
-%Um zu etwas leichter verständlichen Zahlen zu kommen, rechnen wir
-%in diesen Programmen immer mit Masseinheiten so, dass $r_g=1$ ist,
-%d.~h.~der Gravitationsradius des Zentralkörpers ist die Längeneinheit,
-%und $c=1$, d.~h.~$r_g/c$ ist die Zeiteinheit.
-%
-%Der Parameter $s$ der Geodätengleichung ist genau dann die Eigenzeit,
-%wenn die Anfangsgeschwindigkeit den den Wert $-1$ hat.
-%In den Rechnungen muss daher die Anfangs-Vierergschwindigkeit $u^\mu$
-%so normiert werden, dass $g_\mu\nu u^\mu u^\nu=-1$ ist.
-%
-%\subsubsection{Zustandsvektor}
-%Da die Geodätengleichungen Differentialgleichungen zweiter Ordnung sind,
-%muss man als Zustandsvektor den Vektor
-%\[
-%X=\begin{pmatrix}
-%t\\r\\\vartheta\\\varphi \\\dot t\\\dot r\\\dot \vartheta\\\dot\varphi
-%\end{pmatrix}
-%\]
-%verwenden.
-%Der Punkt bezeichnet darin die Ableitung nach dem Parameter $s$, der
-%wie gesagt bei geeigneter Normierung der Anfangsgeschwindigkeit mit
-%der Eigenzeit übereinstimmt.
-%Aus dem Vektor $X$ lässt sich jederzeit die Position und die
-%Vierergeschwindigkeit extrahieren.
-%Im File \text{geodesic.m} dienen dazu die Funktionen
-%\texttt{position} und \texttt{velocity}
-%\lstinputlisting[style=Octave]{chapters/listings/schwarzschild-extract.m}
-%Mit der Funktion \texttt{rescale} kann man im Vektor $X$ den
-%Geschwindigkeitsanteil um einen gegebenen Faktor strecken:
-%\lstinputlisting[style=Octave]{chapters/listings/schwarzschild-rescale.m}
-%
-%\subsubsection{Metrik und Christoffel-Symbole}
-%Natürlich braucht man die Metrik, um den korrekten Wert zu berechnen.
-%Das File \texttt{geodesic.m} geht davon aus, dass die Funktion \texttt{metrik}
-%bereits definiert worden ist.
-%Für die Schwarzschild-Metrik geschieht dies im File
-%\texttt{christoffel-schwarzschild.m} mit der Funktion
-%\lstinputlisting[style=Octave]{chapters/listings/schwarzschild-metrik.m}
-%Diese Funktion berechnet das Skalarprodukt der Vektoren \texttt{u} und
-%\texttt{v} an der Stelle $x$.
-%Das File \texttt{christoffel-schwarzschild.m} definiert auch die Funktion
-%\texttt{christoffel}, die für jeden Index-Wert $\alpha$ die Matrix mit
-%den Einträgen $\Gamma^\alpha_{\mu\nu}$ für die Koordinatenwerte \texttt{x}
-%zurückgibt.
-%Für die Schwarzschild-Metrik ist dies
-%\lstinputlisting[style=Octave]{chapters/listings/schwarzschild-christoffel.m}
-%
-%\subsubsection{Differentialgleichung}
-%Mit diesen zwei Funktionen ist es jetzt nicht mehr schwierig, eine Funktion
-%zu konstruieren, die Geodäten für jede beliebige Metrik berechnen kann.
-%Zunächst ist eine Funktion nötig, die die Differentialgleichung implementiert.
-%Für den Vektor $X$ geschrieben lautet diese
-%\[
-%\frac{dX}{ds}
-%=
-%\begin{pmatrix}
-%X_5\\X_6\\X_7\\X_8
-%\\
-%-\Gamma^1_{ij}X^iX^j\\
-%-\Gamma^2_{ij}X^iX^j\\
-%-\Gamma^3_{ij}X^iX^j\\
-%-\Gamma^4_{ij}X^iX^j
-%\end{pmatrix},
-%\]
-%wobei die Indizes $i$ und $j$ von $1$ bis $4$ laufen.
-%Da die Funktion \texttt{christoffel} die Werte der Christoffelsymbole
-%als Matrix $\Gamma^\alpha$ liefert, kann man für die Vierergschwindigkeit
-%$u$ die rechte Seite auch als $u^t \Gamma^\alpha u$ schreiben.
-%Die Differentialgleichung lässt sich daher in Octave durch die
-%Funktion
-%\lstinputlisting[style=Octave]{chapters/listings/geodesic-dgl.m}
-%implementieren.
-%
-%Die Differentialgleichung lässt sich mit der Funktion \texttt{lsode}
-%lösen.
-%Die nötigen Schritt sind in der Funktion
-%\lstinputlisting[style=Octave]{chapters/listings/geodesic-solution.m}
-%zusammengefasst.
-%
-%\subsubsection{Drehung der Apsidenlinie}
-%Die Drehung der Apsiden-Linie ist daran erkennbar, dass die Werte von
-%$\varphi(s)$, bei denen $r(s)$ sein Maximum und Minimum annimmt,
-%nicht jeweils um $\pi$ auseinanderliegen, sondern um einen grösseren
-%Wert.
-%Die Extrema von $r(s)$ sind erkennbar daran, dass $\dot r(s)=0$.
-%Man kann daher den Betrag der Drehung der Apsidenlinie dadurch
-%bestimmen, dass man numerisch die Nullstellen von $\dot r(s)$
-%bestimmt, und die zugehörigen Werte von $\varphi(s)$ ermittelt.
-%
-%Die numerische Rechnung kann mit der Funktion \texttt{apsidbetween}
-%\lstinputlisting[style=Octave]{chapters/listings/apsiden-between.m}
-%durchgeführt werden.
-%Als Argument nimmt diese Funktion zwei Zustandsvektoren in der Form,
-%wie sie von der Funktion \texttt{geodesic}
-%zurückgegeben wird, also eine Zeile bestehend aus der aktuellen
-%Eigenzeit und den acht Komponenten des Zustandsvektors.
-%Die Funktion \texttt{apsidbetween} integriert dann auf Zeile~20
-%zehnmal kleinere Integrationsschritte in diesem Interval (und aus numerischen
-%Gründen noch etwas darüber hinaus) und sucht in den Zeilen 22 bis 25
-%das
-%erste Teilinterval, in dem das Vorzeichen von $\dot r(s)$ wechselt.
-%Mit den zugehörigen Zuständen wird \texttt{apsidbetween}
-%in Zeile 26
-%rekursiv augerufen, bis auf Zeile~6 die Differenz der Winkel $\phi(s)$ zwischen
-%den beiden Zuständen kleiner als $10^{-6}$ ist.
-%
-%Der folgende Code berechnet die Werte von $\varphi(s)$ für alle
-%Extrema von $r(s)$ und ermittelt den Mittelwert:
-%\lstinputlisting[style=Octave]{chapters/listings/apsiden-winkel.m}
-%
-%\subsubsection{Beispiel}
-%Die Umlaufbahn aus Abbildung~\ref{skript:schwarzschild:perihelorbit}
-%wurde mit den Anfangsbedingungen
-%\begin{equation}
-%\begin{aligned}
-%t(s)        &=\phantom{00}0.00000                    &\dot t(s)         &= 1.00577\\
-%r(s)        &=          100.00000                    &\dot r(s)         &= 0.00000\\
-%\vartheta(s)&=\phantom{00}1.57080=\textstyle\frac\pi2&\dot \vartheta(s) &= 0.00000\\
-%\varphi(s)  &=\phantom{00}0.00000                    &\dot \varphi(s)   &= 0.00038
-%\end{aligned}
-%\label{skript:schwarzschild:anfangsbedingung:normal}
-%\end{equation}
-%berechnet.
-%Es ergibt sich ein durchschnittlicher Wert von $21.6114^\circ$, um den die
-%Apsidenlinie vorrückt.
-%
-%\subsubsection{Extreme Bahnen}
-%\begin{figure}
-%\centering
-%\includegraphics{chapters/tikz/orbit2.pdf}
-%\caption{Periheldrehung für eine Bahn, die sehr nahe an den Gravitationsradius
-%heranführt.
-%Anfangsbedingungen dieser Bahn sind
-%\eqref{skript:schwarzschild:anfangsbedingunge:extrem}.
-%\label{skript:schwarzschild:apside:extrem}}
-%\end{figure}
-%Bahnen, die sehr nahe an den Ereignishorizont heranführen, erfahren eine
-%noch viel deutlichere Drehung der Apsidenlinie.
-%In Abbildung~\ref{skript:schwarzschild:apside:extrem}
-%ist eine Bahn dargestellt, die sich auf weniger als $3r_g$ dem Zentralkörper
-%nähert.
-%Schon der Winkel $\varphi$ für das Perihel unterscheidet sich um um mehr
-%als $180^\circ$ vom Winkel $180^\circ$, der für eine Kepler-Bahn zu
-%erwarten wäre.
-%Die Anfangsbedingungen dieser Bahn sind
-%\begin{equation}
-%%    0.00000
-%%   10.00000
-%%    1.57080
-%%    0.00000
-%%    1.07220
-%%    0.00000
-%%    0.00000
-%%    0.01861
-%\begin{aligned}
-%t(s)        &=\phantom{0}0.00000                    &\dot t(s)         &= 1.07220\\
-%r(s)        &=          10.00000                    &\dot r(s)         &= 0.00000\\
-%\vartheta(s)&=\phantom{0}1.57080=\textstyle\frac\pi2&\dot \vartheta(s) &= 0.00000\\
-%\varphi(s)  &=\phantom{0}0.00000                    &\dot \varphi(s)   &= 0.01861
-%\end{aligned}
-%\label{skript:schwarzschild:anfangsbedingunge:extrem}
-%\end{equation}

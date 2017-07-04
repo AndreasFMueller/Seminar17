@@ -53,7 +53,7 @@ gekrümmt.
 In diesem Abschnitt suchen wir daher nach einer allgemeinen Methode,
 die kürzeste Verbindung, die sogenannten Geodäten zu finden.
 
-\section{Paralleltransport}
+\section{Paralleltransport und kovariante Ableitung}
 \rhead{Paralleltransport}
 \begin{figure}
 \centering
@@ -82,6 +82,7 @@ Es ist aber klar, dass die Komponenten des transportierten Vektors
 sowohl von der Transportrichtung wie auch vom ursprünglichen Vektor
 abhängen.
 
+\subsection{Kovariante Ableitung}
 Seien $A^\mu$ die Komponenten eines Vektors, die Richtung mit Komponenten
 $\Delta x^\nu$ transport werden soll.
 Wenn wir uns entlang einer Kurve in diese Richtung bewegen, werden sich
@@ -117,13 +118,13 @@ Ausdruck
 \end{equation}
 die Koeffizienten $\Gamma^\mu_{\alpha\nu}$ heissen Christoffelsymbole
 zweiter Art oder Zusammenhangskoeffizienten.
-Eine weiter verbreitete Schreibweise für die kovariante Ableitung
-ist
-\[
+Eine weit verbreitete, aber in diesem Buch nicht verwendete,
+alternative Schreibweise für die kovariante Ableitung ist
+$
 \nabla_\nu A^\mu
 =
-A^\mu\mathstrut_{;\nu}.
-\]
+A^\mu\mathstrut_{;\nu}
+$.
 \end{definition}
 
 Die kovariante Ableitung soll ausdrücken, wie sich die Komponenten eines
@@ -161,6 +162,7 @@ Wir fordern daher zusätzlich, dass die Zusammenhangskoeffizienten
 symmetrisch sein sollen.
 Es wird sich gleich zeigen, dass dies tatsächlich möglich ist.
 
+\subsection{Paralleltransport}
 Bis jetzt haben wir die Metrik nicht verwendet.
 Wir möchten, dass der Paralleltransport die Länge des Vektors beim
 Transport entlang einer Kurve nicht verändert.
@@ -367,6 +369,7 @@ die einzelnen Faktoren nicht verschwindende kovariante Ableitung haben?
 Ziel dieses Abschnittes ist, Rechenregeln für die kovariante Ableitung
 zusammenzustellen.
 
+\subsection{Ableitung eines Skalarproduktes}
 Wir betrachten zwei Vektorfelder $A^\mu$ und $B^\mu$ und möchten wissen,
 wie sich der Wert des Skalarproduktes $g_{\mu\nu}A^\mu B^\nu$ entlang
 einer Kurve mit Tangentenrichtung $C^\mu$ ändert.
@@ -435,6 +438,7 @@ g_{\mu\nu}A^\mu\nabla_\alpha B^\nu.
 \end{equation}
 \end{satz}
 
+\subsection{Kovariante Ableitung kontravarianter Vektoren}
 Bis jetzt können wir nur die kovariante Ableitung von Vektorkomponenten
 $A^\mu$ berechnen, eine kovariante Ableitung von Komponenten $B_\nu$
 ist noch gar nicht definiert.
@@ -551,7 +555,7 @@ g^{\beta\sigma}
 \\
 &=
 \biggl(
--\frac{\partial g_{\beta\nu}}{\partial x^\alpha} g^{\beta\sigma}
+-\frac{\partial g_{\beta\nu}}{\partial x^\alpha}
 +
 \delta_\nu^\gamma
 \frac12
@@ -568,7 +572,7 @@ g^{\beta\sigma}
 &=
 \frac12
 \biggl(
--2\frac{\partial g_{\beta\nu}}{\partial x^\alpha} g^{\beta\sigma}
+-2\frac{\partial g_{\beta\nu}}{\partial x^\alpha}
 +
 \frac{\partial g_{\alpha\nu}}{\partial x^\beta}
 +
@@ -588,6 +592,8 @@ g^{\beta\sigma}
 \frac{\partial g_{\alpha\nu}}{\partial x^\beta}
 \biggr)
 g^{\beta\sigma}
+=
+\Gamma_{\beta,\alpha\nu}g^{\beta\sigma}
 \\
 &=-\Gamma^\sigma_{\alpha\nu}.
 \end{align*}
@@ -602,22 +608,28 @@ ist
 \begin{equation}
 \nabla_\alpha B_\nu
 =
-\frac{\partial B_\nu}{\partial\alpha}
+\frac{\partial B_\nu}{\partial x^\alpha}
 -\Gamma^{\sigma}_{\alpha\nu}B_\sigma,
 \label{skript:geodaeten:kovabl2}
 \end{equation}
-Diese wird auch $\nabla_\alpha B_\nu=B_{\nu;\alpha}$ geschrieben.
+diese wird auch $\nabla_\alpha B_\nu=B_{\nu;\alpha}$ geschrieben.
 \end{definition}
 
-% TODO: kovariante Ableitung und Verjüngung
-
+\subsection{Kovariante Ableitung von Tensoren beliebiger Stufe}
 Wir möchten die kovariante Ableitung jetzt auf beliebige Tensoren
 verallgemeinern.
-Sie soll natürlich linear bleiben und die Produktregel muss ebenfalls
-erhalten bleiben.
+Sie soll natürlich linear bleiben und die Produktregel, die für jede
+Art von Ableitung gilt, muss ebenfalls erhalten bleiben.
+Aus diesen Voraussetzungen lässt sich eine allgemeine Formel für
+die kovariante Ableitung eines beliebigen Tensors herleiten.
+
 Ein Tensor der Form $t_{\mu\nu}$ kann immer geschrieben werden
-als eine Summe von Tensoren der Form $a_\mu b_\nu$.
-Auf einem solchen Tensor muss die kovariante Ableitung die Form
+als Linearkombination von Tensoren der Form $a_\mu b_\nu$, es reicht
+also wegen der Linearität der kovarianten Ableitung, wenn wir solche
+Produkte ableiten können.
+Dafür muss aber die Produktregel gelten.
+
+Auf einem Produkt $a_\mu b_\nu$ muss die kovariante Ableitung die Form
 \begin{align*}
 \nabla_\alpha (a_\mu b_\nu)
 &=
@@ -642,12 +654,148 @@ a_\mu
 &=
 \frac{\partial a_\mu b_\nu}{\partial x^\alpha}
 -\Gamma^\sigma_{\alpha\mu}a_\sigma b_\nu
--\Gamma^\sigma_{\alpha\nu}
+-\Gamma^\sigma_{\alpha\nu}a_\mu b_\sigma.
 \end{align*}
-
+Auf analoge Art können auch obere Indizes behandelt werden.
+Dies führt uns auf die folgende allgemeine Definition für die 
+koveriante Ableitung von Tensonren beliebiger Stufe.
 
 \begin{definition}
+Sei $A$ ein beliebiger Tensor, von dem wir nur die Indizes
+$\mu$ und $\nu$ in der Form
+$A^{\dots \mu\dots}\mathstrut_{\dots\nu\dots}$
+explizit ausschreiben wollen.
+Die kovariante Ableitung von $A$ ist
+\begin{equation}
+\nabla_\alpha A^{\dots \mu\dots}\mathstrut_{\dots\nu\dots}
+=
+\frac{\partial A^{\dots \mu\dots}\mathstrut_{\dots\nu\dots}}{\partial x^\alpha}
++
+\dotsc
++
+\Gamma^\mu_{\sigma\alpha}
+A^{\dots \sigma\dots}\mathstrut_{\dots\nu\dots}
++
+\dotsc
+-
+\Gamma^\sigma_{\alpha\nu}
+A^{\dots \mu\dots}\mathstrut_{\dots\sigma\dots}
++
+\dotsc,
+\label{skript:geodaten:kovablbel}
+\end{equation}
+wobei für jeden kontravarianten Index ein Term mit positivem
+Vorzeichen und für jeden kovarianten Index ein Term mit negativem
+Vorzeichen hinzukommen.
 \end{definition}
+
+Aus der Formel~\eqref{skript:geodaten:kovablbel} können wir jetzt eine
+ganze Reihen von Schlussfolgerungen über das Rechnen mit der kovarianten
+ableiten.
+In den folgenden Abschnitten soll gezeigt werden, dass die kovariante
+Ableitung mit den Tensoroperationen Verjüngung und Index hoch-
+bzw.~herunterziehen verträglich ist.
+
+\subsubsection{Kovariante Ableitung und Verjüngung%
+\label{skript:geodaeten:kovablverj}}
+Wir betrachten jetzt einen Tensor der Form $T^\mu_\nu$, seine kovariante
+Ableitung ist nach \eqref{skript:geodaeten:kovabl2}
+\begin{equation}
+\nabla_\alpha T^\mu_\nu
+=
+\frac{\partial T^\mu\nu}{\partial x^\alpha}
++\Gamma^\mu_{\sigma\alpha} T^\sigma_\nu
+-\Gamma^\sigma_{\alpha\nu} T^\mu_\sigma.
+\end{equation}
+Verjüngen wir die beiden Indizes $\mu$ und $\nu$ wird daraus 
+\begin{equation}
+\nabla_\alpha T^\mu_\mu
+=
+\frac{\partial T^\mu\mu}{\partial x^\alpha}
++\Gamma^\mu_{\sigma\alpha} T^\sigma_\mu
+-\Gamma^\sigma_{\alpha\mu} T^\mu_\sigma.
+\label{skript:geodaeten:kovablverj1}
+\end{equation}
+Die letzten zwei Terme sind bis auf die Benennung der Indizes, über die
+summiert wird, gleich, sie heben sich daher weg.
+Wir schliessen daher, dass 
+\begin{equation}
+\nabla T^\mu_\mu = \frac{\partial}{\partial x^\alpha}T^\mu_\mu
+\label{skript:geodaeten:kovablverj2}
+\end{equation}
+ist.
+
+Man beachte, dass in der Notation von
+\eqref{skript:geodaeten:kovablverj1}
+und
+eine Zweideutigkeit steckt.
+Es ist daraus nämlich klar, ab zuerst die Verjüngung gebildet werden muss
+und dann die kovariante Ableitung oder Umgekehrt.
+Da die Verjüngung ein Skalar ist, ist die kovariante Ableitung einfach
+nur die partielle Ableitung.
+Die Schlussfolgerung~\eqref{skript:geodaeten:kovablverj2} besagt daher
+einfach nur, dass man auch erst die kovariante Ableitung bilden und
+dann erst verjüngen kann, dass die Zweideutigkeit der Notation also
+kein Problem ist.
+
+\subsubsection{Kovariante Ableitung der Metrik}
+Mit Hilfe der Formel~\eqref{skript:geodaten:kovablbel} erlaubt uns nun
+auch, die kovariante Ableitung des metrischen Tensors zu berechnen.
+Die Rechnung ergibt
+\begin{align*}
+\nabla_\alpha g_{\mu\nu}
+&=
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+-\Gamma^\sigma_{\alpha\mu}g_{\sigma\nu}
+-\Gamma^\sigma_{\alpha\nu}g_{\mu\sigma}
+=
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+-\Gamma_{\nu,\alpha\mu}
+-\Gamma_{\mu,\alpha\nu}
+\\
+&=
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+-
+\frac12\biggl(
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
++
+\frac{\partial g_{\alpha\nu}}{\partial x^\mu}
+-
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+\biggr)
+-
+\frac12\biggl(
+\frac{\partial g_{\nu\mu}}{\partial x^\alpha}
++
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+-
+\frac{\partial g_{\alpha\nu}}{\partial x^\mu}
+\biggr)
+=0.
+\end{align*}
+Die kovariante Ableitung des metrischen Tensors verschwindet.
+Dies ist nicht überraschend, die kovariante Ableitung war ja mit dem Ziel
+konstruiert worden, dass sie ausdrücken kann, dass sich Längen und
+Winkel, die mit dem metrischen Tensor konstruiert werden, nicht ändern.
+
+\subsubsection{Index Herunterziehen und kovariante Ableitung}
+Sie $A^\mu$ ein kontravarianter Vektor.
+Der zugehörige kovariante Vektor $A_\nu=A^\mu g_{\mu\nu}$ entsteht
+durch Herunterziehen des Index mit Hilfe der Metrik.
+Aus Abschnitt \ref{skript:geodaeten:kovablverj} wissen wir, dass es nicht
+auf die Reihenfolge von kovarianter Ableitung und Verjüngung ankommt.
+Wir schliessen daher aus der Rechnung
+\begin{align*}
+\nabla_\alpha A_\nu
+&=
+\nabla_\alpha(A^\mu g_{\mu\nu})
+=
+\nabla_\alpha A^\mu g_{\mu\nu} + A^\mu\nabla_\alpha g_{\mu\nu}
+=
+\nabla_\alpha A^\mu g_{\mu\nu},
+\end{align*}
+dass herunterziehen eines Index ebenfalls mit der kovarianten Ableitung
+vertauscht.
 
 \section{Beispiele}
 \rhead{Beispiele}
@@ -1125,7 +1273,7 @@ F(x^\alpha(t) + s\eta^\alpha(t), \dot x^\alpha(t) + s \dot \eta^\alpha(t), t)
 \]
 Dieses Integral soll minimal werden für $s=0$, also muss die Ableitung
 dort verschwinden.
-Wir leiten daher nach $s$ ab:
+Wir leiten daher $I(s)$ nach $s$ ab:
 \begin{align*}
 \frac{dI(s)}{ds}
 &=
@@ -1135,8 +1283,10 @@ Wir leiten daher nach $s$ ab:
 +
 \frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t) + s\eta^\alpha(t),
 \dot x^\alpha(t) + s\dot\eta^\alpha(t), t) \dot\eta^\alpha(t)
-\,dt
-\\
+\,dt.
+\end{align*}
+Wir brauchen nur den Wert an der Stelle $s=0$:
+\begin{align*}
 \frac{dI(0)}{ds}
 &=
 \int_{t_0}^{t_1}
