@@ -30,6 +30,4 @@ function [ Gamma ] = christoffel( x, alpha )
 		Gamma(4,3) = Gamma(3,4);
 	otherwise
     end
-
-
 end
