@@ -30,6 +30,7 @@ CHAPTERS = 								\
 	chapters/k-speziell.tex                                         \
 	chapters/koordtrafo.tex                                         \
 	chapters/kruemmung.tex                                          \
+	chapters/tensoren.tex                                           \
 	chapters/m-1dim.tex                                             \
 	chapters/m-kugelfunktionen.tex                                  \
 	chapters/m-multipole.tex                                        \
@@ -53,6 +54,7 @@ TEXFILES = $(SKRIPTFILES) \
 	$(THEMA_FILES)
 
 BLXFILES = \
+	skript.bbl \
 	skript1-blx.bbl \
  	skript2-blx.bbl skript3-blx.bbl skript4-blx.bbl skript5-blx.bbl \
 	skript6-blx.bbl skript7-blx.bbl skript8-blx.bbl skript9-blx.bbl

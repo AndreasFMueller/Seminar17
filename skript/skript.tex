@@ -9,6 +9,7 @@
 \geometry{papersize={170mm,240mm},total={140mm,200mm},top=21mm,bindingoffset=10mm}
 \usepackage[english,ngerman]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{cancel}
 \usepackage{times}
 \usepackage{amsmath,amscd}
@@ -107,7 +108,7 @@
 \lstdefinelanguage{Maxima}{
   keywords={addrow,addcol,zeromatrix,ident,augcoefmatrix,ratsubst,sum,diff,ev,tex,%
     with_stdout,nouns,express,depends,load,length,submatrix,div,grad,curl,matrix,%
-    invert,lambda,facsum,expand,false,then,if,else,subst,%
+    invert,lambda,facsum,expand,false,then,if,else,subst,batchload,%
     rootscontract,solve,part,assume,sqrt,integrate,abs,inf,exp,sin,cos,sinh,cosh,taylor},
   sensitive=true,
   comment=[n][\itshape]{/*}{*/}

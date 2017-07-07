@@ -1,0 +1,400 @@
+%
+% tensoren.tex -- TEnsoren
+%
+% (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\section{Tensoren}
+Der bisher entwickelte Formalismus zielt darauf ab, dass die Formeln der
+Theorie in jedem beliebigen Koordinatensystem aufgestellt werden können.
+Sie müssen also derart formuliert sein, dass sie bei Koordinatenwechsel
+der Form nach unverändert bleiben.
+Das heisst natürlich nicht, dass zum Beispiel die metrischen Koeffizienten
+$g_{\mu\nu}$ in jedem Koordinatensystem gleich aussehen müssen, sondern
+nur, dass zum Objekt $g_{\mu\nu}$ in einem Koordinatensystem sofort
+das Transformationsgesetz für die Transformation in ein anderes
+Koordinatensystem angegeben werden kann.
+Man nennt dies Eigenschaft die {\em allgemeine Kovarianz}.
+\index{Kovarianz, allgemeine}
+\index{allgemeine Kovarianz}
+Nur allgemein kovariante Gleichungen kommen als von der speziellen
+Wahl des Koordinatensystems unabhängige Naturgesetze in Frage.
+
+Bis jetzt haben wir uns nicht darum gekümmert, wie sich eine Grösse
+bei Wechsel des Koordinatensystems verändert.
+In diesem Abschnitt soll dies nachgeholt werden.
+Wir werden in diesem Abschnitt daher untersuchen, wie sich verschiedene
+Grössen beim Wechsel vom Koordinatensystem $x^1,\dots,x^n$ auf ein
+anderes Koordinatensystem $y^1,\dots,y^n$ transformieren.
+Wir nehmen dabei im Allgemeinen an, dass sich die Koordinaten $y^\alpha$
+als Funktionen
+\[
+y^\alpha = y^\alpha(x^1,\dots,x^n)
+\]
+der Koordinaten $x^1,\dots,x^n$ ausdrücken lassen.
+Grössen im $y$-Koordinatensystem werden im Folgenden jeweils mit
+einem Querstrich bezeichnet.
+
+\subsection{Vektoren}
+
+\subsubsection{Tangentialvektoren}
+Als einfachstes Beispiel eines Vektors betrachten wir den Tangentialvektor
+einer Kurve $x^\mu(s)$.
+Die Komponenten des Tangentialvektors sind in diesem Koordinatensystem
+gegeben durch die Ableitungen
+\[
+v^\mu
+=
+\frac{x^\mu(s)}{ds}.
+\]
+Wenn der Vektor eine vom Koordinatensystem unabhängige Bedeutung haben soll,
+dann muss er sich im $y$-Kooordinatensystem ebenfalls durch Ableitung nach
+$s$ finden lassen.
+Wir berechnen daher 
+\begin{align}
+\bar v^\alpha
+=
+\frac{d}{ds}y^\alpha(x^1(s),\dots,x^n(s))
+&=
+\frac{\partial y^\alpha(x^1,\dots,x^n)}{\partial x^\mu}\frac{x^\mu(s)}{ds}
+=
+\frac{\partial y^\alpha}{\partial x^\mu} v^\mu
+\label{skript:trafo:kontra}
+\end{align}
+mit der Kettenregel für Funktionen mehrer Veränderlicher.
+Wir lesen daraus ab, dass sich die Komponenten $v^\mu$ mit Hilfe der
+partiellen Ableitungen $\partial y^\alpha/\partial x^\mu$ transformieren.
+
+Man kann auch sagen, dass die Kettenregel für Funktionen mehrere Variablen
+in der Formel~\eqref{skript:trafo:kontra}
+die Einsteinsche Summationskonvention rechtfertigt.
+
+\subsubsection{Linearformen}
+Bei der Berechnung der Arbeit entlang eines Weges wird in der klassischen
+Physik das Skalarprodukt des Tangentialvektors $v^\mu$ mit dem Kraftvektor
+gebildet und integriert.
+Etwas allgemeiner geht es also um Koeffizienten $A_\mu$ einer Linearform,
+für welche der Skalar $B=A_\mu\dot x^\mu$ eine koordinatensystemunabhängige
+Bedeutung haben soll.
+\index{Linearform}
+Es soll also gelten
+$B=\bar A_\alpha \dot y^\alpha$.
+Setzen wir die Transformationsformel für $\dot y^\alpha$ ein, erhalten
+wir
+\begin{equation}
+B=\bar A_\alpha\dot y^\alpha
+=
+\bar A_\alpha \frac{\partial y^\alpha}{\partial x^\mu}\dot x^\mu
+=
+A_\mu\dot x^\mu.
+\end{equation}
+Dies ist nur möglich, wenn für $\bar A_\alpha$ gilt
+\begin{equation}
+\bar A_\alpha \frac{\partial y^\alpha}{\partial x^\mu}
+= 
+A_\mu.
+\label{skript:trafo:kov}
+\end{equation}
+
+\subsubsection{Kovariante und kontravariante Vektoren}
+Man erkennt, dass sich die Transformationsformel~\eqref{skript:trafo:kov}
+für $A_\mu$ von der Transformationsformel~\eqref{skript:trafo:kontra}
+für $\dot x^\mu$ durch die Position der partiellen Ableitungen unterscheiden.
+Man nennt den Vektor $\dot x^\mu$ einen {\em kontravarianten Vektor},
+\index{Vektor, kontravarianter}
+\index{kontravariant}
+die Koeffizienten $A_\mu$ der Linearform dagegen einen {\em kovarianten Vektor}.
+\index{kovariant}
+\index{Vektor, kovarianter}
+Der Formalismus trägt dem Unterschied zwischen kovarianten und kontravarianten
+Vektoren dadurch Rechnung, dass für die Komponenten kovarianter Vektoren
+immer tiefgestellte Indizes verwendet werden, während für die Komponenten
+kontravarianter Vektoren hochgestellte Indizes zu verwenden sind.
+
+Sei $\bar f(y^1,\dots,y^n)$ eine beliebige Funktion der Koordinaten.
+Man kann die Funktion natürlich auch in den Koordinaten $x^1,\dots,x^n$
+ausdrücken, indem man 
+\[
+f(x^1,\dots,x^n) = \bar f(y^1(x^1,\dots,x^n),\dots, y^n(x^1,\dots,x^n))
+\]
+setzt.
+Die partiellen Ableitungen von $f$ nach den Koordinaten können wir
+als kovarianten Vektor betrachten, denn es gilt
+\[
+\frac{\partial f}{\partial x^\mu}
+=
+\frac{\partial f}{\partial y^\alpha}\frac{\partial y^\alpha}{\partial x^\mu}
+=
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial f}{\partial y^\alpha}
+\]
+nach der Kettenregel.
+Schreiben wir dies in Operatorform, wir wegen
+\[
+\frac{\partial}{\partial x^\mu}
+=
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial}{\partial y^\alpha}
+\]
+klar, dass wir die partiellen Ableitungsoperatoren als kovariante Vektoren
+betrachten können.
+
+In der Beschreibung der Metrik haben wir die symbolischen Grössen $dx^\mu$
+verwendet, die zunächst nur in einem Integral eine Bedeutung haben.
+Wendet man auf diese Grössen die Variablentransformation an, dann
+folgt
+\[
+dy^\alpha
+=
+\frac{\partial y^\alpha}{\partial x^\mu}\,dx^\mu,
+\]
+die Grössen $dx^\mu$ können daher wie ein kontravarianter Vektor behandelt
+werden.
+
+\subsubsection{Inverse Transformation}
+Die Koordinaten $x^\mu$ können auch durch $y^\alpha$ ausgedrückt werden.
+Insbesondere ist
+\begin{align}
+x^\mu
+&=
+x^\mu(y^1,\dots,y^n)
+\notag
+\\
+&=
+y^\mu(y^1(x^1,\dots,x^n),\dots,y^n(x^1,\dots,x^n))
+\notag
+\\
+\Rightarrow\qquad
+\delta^\mu_\nu
+=
+\frac{\partial x^\mu}{\partial x^\nu}
+&=
+\frac{\partial x^\mu}{\partial y^\alpha}(y^1,\dots,y^n)
+\frac{\partial y^\alpha}{\partial x^\nu}(x^1,\dots,x^n)
+=
+\frac{\partial x^\mu}{\partial y^\alpha}
+\frac{\partial y^\alpha}{\partial x^\nu}.
+\label{label:trafo:t}
+\end{align}
+Die Matrizen $\partial x^\mu/\partial y^\alpha$ und
+$\partial x^\alpha/\partial y^\nu$ sind also zueinander invers.
+Dasselbe gilt, wenn wir die Funktionen $x^\mu(y^1,\dots,y^n)$
+als Argumente in den Funktionen $y^\mu(x^1,\dots,x^n)$ einsetzen:
+\begin{align}
+\delta^\alpha_\beta
+=
+\frac{\partial y^\alpha}{\partial y^\beta}
+&=
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial x^\mu}{\partial y^\beta}.
+\label{label:trafo:tinv}
+\end{align}
+Auch hier ist darauf zu achten, dass die Ableitungen am selben
+Punkt zu nehmen sind.
+
+\subsection{Metrik}
+Die Koeffizienten $g_{\mu\nu}$ des metrischen Tensors dienen dazu,
+das Längenelement entlang einer Kurve zu berechnen.
+.ird eine mit $s$ parametrisierte Kurve wird durch die Funktionen
+$x^\mu(s)$ beschrieben, dann ist die Länge der Kurve durch das
+Integral
+\begin{equation}
+l = \int_a^b
+\sqrt{g_{\mu\nu}(x^\alpha(s))\,\frac{dx^\mu}{ds}\,\frac{dx^\nu}{ds}}
+\,ds
+\label{skript:koord:metrik}
+\end{equation}
+gegeben.
+Die Länge der Kurve ist eine grösse, die vom Koordinatensystem 
+unabhängig definiert werden kann.
+Die Formel~\eqref{skript:koord:metrik} darf also ihre Form nicht verändern,
+wenn man die Kurvenlänge in einem anderen Koordinatensystem berechnen will.
+
+Die allgemeine Kovarianz fordert, dass es $\bar g_{\alpha\beta}(y^1,\dots,y^n)$
+gibt derart, dass die Kurvenlänge mit der Formel
+\begin{equation}
+l = \int_a^b
+\sqrt{\bar g_{\alpha\beta}(y^\sigma(s))\,\frac{dy^\alpha}{ds}\,\frac{dy^\beta}{ds}}
+\,ds
+\label{skript:koord:metrikbar}
+\end{equation}
+berechnet werden kann.
+
+Damit die Längenmessung mit der Formel
+\eqref{skript:koord:metrikbar} auf das gleiche Resultat wie 
+\eqref{skript:koord:metrik} führt, müssen die Integranden übereinstimmen.
+Setzt man \eqref{skript:trafo:kontra} in \eqref{skript:koord:metrikbar}
+ein, erhält man unter der Wurzel
+\begin{equation*}
+\bar g_{\alpha\beta}
+\frac{dy^\alpha}{ds}\frac{dy^\beta}{ds}
+=
+\bar g_{\alpha\beta}
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial y^\beta}{\partial x^\nu}
+\frac{dx^\mu}{ds}\frac{dx^\nu}{ds}
+=
+g_{\mu\nu}
+\frac{dx^\mu}{ds}\frac{dx^\nu}{ds}.
+\end{equation*}
+Gleichheit ist nur möglich, wenn
+\begin{equation}
+\bar g_{\alpha\beta}
+\frac{\partial y^\alpha}{\partial x^\mu}
+\frac{\partial y^\beta}{\partial x^\nu}
+=
+g_{\mu\nu}
+\end{equation}
+gilt.
+Die metrischen Koeffizienten $g_{\mu\nu}$ sind folglich in beiden
+Indizes kovariant.
+
+\subsubsection{Der inverse metrische Tensor $g^{\mu\nu}$}
+Die Grössen $g^{\mu\nu}$ sind so definiert, dass in jedem Koordinatensystem
+gilt
+\[
+\delta^\mu_\nu = g^{\mu\sigma}g_{\sigma\nu},
+\]
+wir müssen die Transformationsregeln für $g^{\mu\nu}$ herausfinden.
+Dazu rechnen wir
+\begin{align*}
+\delta^\mu_\nu
+&=
+\bar g^{\mu\sigma}\bar g_{\sigma\nu}
+=
+\bar g^{\mu\sigma}
+\biggl(
+g_{\alpha\beta}
+\frac{\partial x^\alpha}{\partial y^\mu}
+\frac{\partial x^\beta}{\partial y^\sigma}
+\biggr)
+=
+\biggl(
+\bar g^{\mu\sigma}
+\frac{\partial x^\alpha}{\partial y^\mu}
+\frac{\partial x^\beta}{\partial y^\sigma}
+\biggr)
+g_{\alpha\beta}
+\quad
+\Rightarrow
+\quad
+g^{\alpha\beta}
+=
+\bar g^{\mu\sigma}
+\frac{\partial x^\alpha}{\partial y^\mu}
+\frac{\partial x^\beta}{\partial y^\sigma}.
+\end{align*}
+Die Koeffizienten sind daher, wie die Notation suggeriert, tatsächlich
+kontravariant.
+
+\subsection{Tensoren}
+In Erweiterung der eben diskutierten Beispiele nennen wir die Grössen
+$
+A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}
+$
+einen zweifach kontravarianten und dreifach kovarianten Tensor, wenn
+\[
+\bar 
+A^{\mu\nu}\mathstrut_{\varrho\sigma\tau}
+\frac{\partial y^\delta}{\partial x^\mu}
+\frac{\partial y^\epsilon}{\partial x^\nu}
+=
+A^{\delta\epsilon}\mathstrut_{\alpha\beta\gamma}
+\frac{\partial y^\alpha}{\partial x^\varrho}
+\frac{\partial y^\beta}{\partial x^\sigma}
+\frac{\partial y^\gamma}{\partial x^\tau}
+\]
+gilt.
+Geometrische Aussagen oder Naturgesetze sind nur dann von der Wahl
+eines Koordinatensystems unabhängig, wenn sie mit Hilfe von Tensoren
+beschrieben werden.
+Der Formalismus unterstützt dies, indem die im folgenden genauer
+untersuchten Operationen zwischen Tensoren automatisch wieder neue
+Tensoren erzeugen.
+
+\subsubsection{Index hochziehen}
+Zum {\index Hochziehen eines Index} wird ein Tensor mit einem kovarianten
+Index $\mu$ mit dem kontravarianten metrischen Tensor multipliziert.
+\index{Index!hochziehen}
+\index{Hochziehen eines Index}
+Die anderen Indizes des Tensors spielen dabei offenbar keine Rolle,
+ihr Transformationsgesetz wird durch die Operation nicht tangiert.
+Wir schreiben daher nur diesen einen Index, betrachten also den Tensor
+$A_\mu$.
+Die Operation des Hochziehens ist also
+\begin{align*}
+\bar A^\mu
+=
+\bar g^{\mu\nu}\bar A_\nu
+&=
+g^{\alpha\beta}
+\frac{\partial y^\mu}{\partial x^\alpha}
+\frac{\partial y^\nu}{\partial x^\beta}
+A_\gamma
+\frac{\partial x^\gamma}{\partial y^\nu}
+=
+g^{\alpha\beta}
+\frac{\partial y\mu}{\partial x^\alpha}
+A_\gamma
+\underbrace{
+\frac{\partial x^\gamma}{\partial y^\nu}
+\frac{\partial y^\nu}{\partial x^\beta}
+}_{\displaystyle \mathstrut= \delta^\gamma_\beta}
+=
+g^{\alpha\beta}
+A_\beta
+\frac{\partial y^\mu}{\partial x^\alpha}.
+\end{align*}
+Dies ist genau die Transformationsformel für einen kontravarianten Index.
+
+Auf die gleiche Weise kann mit dem metrischen Tensor $g_{\mu\nu}$ ein
+kontravarianter Index heruntergezogen werden zu einem kovarianten Index.
+\index{Herunterziehen eines Index}
+\index{Index!herunterziehen}
+
+\subsubsection{Verjüngung}
+Setzt man in einem Tensor wie $A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}$
+einen kovarianten und einen kovarianten gleich und summiert,
+erhält man die sogenannte {\em Verjüngung} über die beiden Indizes.
+\index{Verjüngung}
+Für die Indizes $\mu$ und $\alpha$ bedeutet dies
+\[
+A^{\sigma\nu}\mathstrut_{\sigma\beta\gamma}
+=
+B^\nu\mathstrut_{\beta\gamma},
+\]
+Man kann die Verjüngung auch etwas komplizierter als
+\begin{equation}
+A^{\sigma\nu}\mathstrut_{\sigma\beta\gamma}
+=
+A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}\delta^\alpha_\mu
+\label{skript:trafo:verjung}
+\end{equation}
+schreiben, darin wird sowohl über $\mu$ als auch über $\alpha$
+summiert.
+Wir behaupten, dass die Verjüngung wieder ein Tensor ist.
+
+Da die Transformationsformeln für die übrigen Indizes von dieser
+Operation offenbar nicht betroffen werden, schreiben wir der Einfachheit
+halber nur die beiden von der Verjüngung betroffenen Indizes.
+Wir müssen also nur nachprüfen, dass $A^\mu_\mu$ sich wie ein Skalar
+verhält, dass also gilt $A^\mu_\mu=\bar A^\alpha_\alpha$ gilt.
+
+Die Tensoreigenschaft der Verjüngung ergibt sich jetzt aus der Schreibweise
+\eqref{skript:trafo:verjung}
+und der Eigenschaft 
+\label{label:trafo:t}
+der Transformationsmatrix mittels der Rechnung
+\begin{align*}
+A^\mu_\mu
+&=
+A^\mu_\sigma
+\delta^\sigma_\mu
+=
+A^\mu_\sigma
+\frac{\partial x^\sigma}{\partial y^\alpha}
+\frac{\partial y^\alpha}{\partial x^\mu}
+=
+\bar A^\alpha\alpha.
+\end{align*}
+Die Verjüngung führt also tatsächlich wieder zu einem Tensor.
+
