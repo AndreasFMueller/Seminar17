@@ -26,7 +26,7 @@ Potential in Abhängigkeit von $x$
 f_1(x) = \frac{q}{4\pi\varepsilon_0} \frac1{|x-a|}.
 \label{skript:multipol:1monopol}
 \end{equation}
-Für $x>$ kann man \eqref{skript:multipol:1monopol} schreiben als
+Für $x>a$ kann man \eqref{skript:multipol:1monopol} schreiben als
 \begin{equation}
 f_1(x)
 =
@@ -35,7 +35,7 @@ f_1(x)
 \frac{q}{4\pi\varepsilon_0} \frac1x\frac1{1-\displaystyle\frac{a}{x}}.
 \label{skript:multipol:1abfall}
 \end{equation}
-Im letzte Term kann man ablesen, dass der Terme $a/x$ im Nenner
+Im letzten Faktor kann man ablesen, dass der Summand $a/x$ im Nenner
 auf der rechten Seite für grosse $x$ unbedeutend wird, so dass $f(x)$
 immer noch wie $1/x$ abfällt, unabhängig davon, wo die Ladung platziert
 wird.
@@ -96,7 +96,7 @@ f_2(x)
 \cdot
 \frac1{1-\frac{a^2}{x^2}}
 =
--\frac{qa}{2\pi\varepsilon_0}\cdot\frac1{x^2}\cdot\frac{1}{1-\frac{a^2}{x^2}}
+-\frac{qa}{2\pi\varepsilon_0}\cdot\frac1{x^2}\cdot\frac{1}{1-\frac{a^2}{x^2}}.
 \label{skript:multipol:2abfall}
 \end{align}
 Der Term $a^2/x^2$ im Nenner des letzten Faktors ist für grosse Werte von
@@ -246,10 +246,10 @@ exakt wiederzugeben:
 &=
 1-\frac{a^2}{x^2}+\frac{a^4}{x^4}-\dots
 =
-\sum_{k=0}^\infty (-1)^k\frac{a^{2k}}{x^{2k}}
+\sum_{k=0}^\infty (-1)^k\frac{a^{2k}}{x^{2k}}.
 \end{align*}
 Die letzte Formel erhält man, indem man in \eqref{skript:multipol:geom}
-$q$ durch $-q$ ersetzt.
+$a$ durch $-a$ ersetzt.
 
 Wir wenden dies jetzt wieder auf eine Ladungsverteilung
 $\varrho(y)$ im Intervall $[-a,a]$ an.
@@ -292,7 +292,7 @@ Termen ab, erhält man die Monopol- und Dipol-Komponenten des
 Fernfeldes.
 Alle späteren Terme der Reihe beschreiben die feineren Strukturen
 der Ladungsverteilung und fallen so rasch mit der Entfernung ab,
-dass sie für Grosse Entfernungen vernachlässigt werde können.
+dass sie für grosse Entfernungen vernachlässigt werde können.
 
 Bei der Diskussion des Dipolmoments haben wir festgestellt, dass das
 Fernfeld nur von der Grösse $d=2aq$ abhängt.
@@ -344,7 +344,7 @@ zu analysieren, die im Punkt $a$ eine Singularität aufweisen.
 Besonders nützlich ist sie dann, wenn $z$ komplex ist, denn man
 kann zeigen, dass jede komplex differenzierbare Funktion mit einer
 Singularität im Punkt $a$ in einer Umgebung von $a$ als Laurent-Reihe
-dargestellt werden kann.
+dargestellt werden kann \cite{skript:mathsemdgl}.
 
 Wenn wir also in der Lage sind, das eindimensionale Beispiel auf höhere
 Dimensionen zu verallgemeinern, dann haben wir auch eine Verallgemeinerung

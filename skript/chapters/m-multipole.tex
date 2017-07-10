@@ -33,7 +33,7 @@ vektoriellen Schreibweise auf drei Dimensionen erweitern.
 Entlang der $z$-Achse kennen wir das Potential bereits aus
 dem vorangegangenen Abschnitt.
 Entlang der $x$-Achse verschwindet das Potential, denn die Punkte
-auf der $x$-Achse sind von den beiden Ladungn gleich weit entfernt,
+auf der $x$-Achse sind von den beiden Ladungen gleich weit entfernt,
 haben als entgegengesetzt gleiches Potential bezüglich beiden Ladungen
 und damit totales Potential 0.
 
@@ -46,7 +46,7 @@ f(x,z)
 \frac{1}{\sqrt{x^2 + (z-a)^2}}
 -
 \frac{1}{\sqrt{x^2 + (z+a)^2}}
-\biggr)
+\biggr).
 \label{skript:multipol:dipol}
 \end{equation}
 Offenbar müssen wir die Nenner besser verstehen, um diese Summe 
@@ -81,11 +81,13 @@ ausrechnen können, wobei wir später $t=(\pm2az+a^2)/r^2$ setzen wollen.
 
 \subsubsection{Binomialreihe}
 Die Taylor-Reihe der Funktion \eqref{skript:multipol:wurzel}
-kann für eine allgemeinere für die Funktionen
+würde unser Problem lösen. 
+Wir können die Reihe aber gleich für die
+allgemeinere Funktionen
 \begin{equation}
 g(t)=(1+t)^\alpha
 \end{equation}
-mit beliebigem Exponenten bestimmt werden.
+mit beliebigem Exponenten bestimmen.
 
 Dazu müssen die Ableitungen der Funktion $g(t)$ bestimmt werden
 \begin{align*}
@@ -131,7 +133,9 @@ Sie heisst die {\em Binomialreihe} und ist konvergent für $|t|<1$.
 \index{Binomialreihe}
 
 \subsubsection{Der Fall $\alpha=-\frac12$}
-Wir betrachten die Binomialreihe für den Fall $\alpha=-\frac12$.
+Wir betrachten die Binomialreihe für den Fall $\alpha=-\frac12$, der
+uns im Zusammenhang mit \eqref{skript:multipol:dipol} speziell
+interessiert.
 Der Term zur Potenz $n$ ist
 \begin{equation}
 \frac{
@@ -210,7 +214,7 @@ f(x,z) = -\frac{d}{4\pi\varepsilon_0 r^2}\frac{z}{r}+\dots
 \label{skript:multipol:dipolpotential}
 \end{equation}
 Darin haben wir statt $z$ den Bruch $z/r$ abgespalten, da dieser
-eintlang eines vom Nullpunkt ausgehenden Strahls vom Zentrum jeweils
+entlang eines vom Nullpunkt ausgehenden Strahls vom Zentrum jeweils
 konstant ist.
 Wir haben daher das Potential in Faktoren aufgeteilt, die verschiedene
 geometrische Bedeutung haben.
@@ -242,9 +246,20 @@ f(\vec{r})
 geschrieben werden.
 In dieser Form ist das Dipolpotential für jede beliebige Orientierung
 des Dipolmomentes verwendbar.
+In Abbildung~\ref{chapter:multipol:dipolniveaux} sind die Niveaulinien
+des Dipolpotentials dargestellt für ein Dipolmoment, welches zur
+$z$-Achse parallel ist..
 
 Der Dipolterm geht für $r\to\infty$ wie $r^{-2}$ gegen $0$, also
 deutlich schneller als das Potential einer Punktladung.
+
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/dipol3.pdf}
+\caption{Niveaulinien des Dipolpotentials für ein Dipolmoment
+parallel zur $z$-Achse
+\label{chapter:multipol:dipolniveaux}}
+\end{figure}
 
 \subsection{Quadrupol}
 Wie in der eindimensionalen Situation vermuten wir, dass sich
@@ -259,12 +274,33 @@ Darin ist $p$ ein Ausdruck, der in beiden Argumenten linear ist.
 
 Schreiben wir die Koordinaten als $(x_1,x_2,x_3)$, dann wird 
 sich $p$ in der Form
-\[
+\begin{equation}
 \sum_{k,l=1}^3 Q_{kl}x_kx_l
-\]
+\label{skript:multipol:qsumme}
+\end{equation}
 schreiben lassen.
 Allerdings kann nicht jede beliebige Matrix zugelassen werden, 
 da ja nur die Abweichungen vom Dipolmoment erfasst werden sollen.
+
+\subsubsection{Symmetrie}
+In der Summe~\eqref{skript:multipol:qsumme} kommt jeder Term
+$x_kx_l$ mit $k\ne l$ zweimal vor, jeweils mit Koeffizient $Q_{kl}$
+und $Q_{lk}$.
+Die Summe kann daher auch geschrieben werden als
+\[
+\sum_{k,l=1}^3 Q_{kl}x_kx_l
+=
+\sum_{k=1}^3 \sum_{l=1}^{k-1} (Q_{kl}+Q_{lk})x_kx_l
++
+\sum_{k=1}^3 Q_{kk}x_k^2
+=
+\sum_{k,l=1}^3 \frac12(Q_{kl}+Q_{lk}) x_kx_l.
+\]
+Die Matrix $\tilde Q_{kl}=\frac12(Q_{kl}+Q_{lk})$ führt also auf den
+gleichen Quadrupolterm, aber mit einer symmetrischen Matrix $\tilde Q_{kl}$.
+Es ist daher keine Einschränkung anzunehmen, dass $Q_{kl}$ symmetrisch ist.
+
+\subsubsection{Spurbedingung}
 Nimmt man für $Q$ die Einheitsmatrix, dann erhält man einfach nur
 \[
 \sum_{k,l=1}^3 Q_{kl}x_kx_l=\sum_{i=1}^3 x_i^2 = \vec{r}\cdot\vec{r}=r^2,
@@ -275,13 +311,60 @@ der Quadrupol-Term wird also
 \]
 was keine Richtungsabhängigkeit mehr enthält und wir daher erwarten
 würden, dass diese Art von Abhängigkeit bereits im ersten Term 
-enthalten war.
+der Multipolreihe enthalten war.
 Man kann dies zum Beispiel dadurch erreichen, dass die Matrix $Q$ 
 verschwindende Spur haben soll, also $\operatorname{Spur}Q=0$.
 
-Die defaillierte Berechnung des Quadrupolanteils ist etwas mühsam,
-wir geben hier nur das Resultat an.
+\begin{figure}
+\includegraphics{chapters/tikz/quadrupol.pdf}
+\includegraphics{chapters/tikz/quadrupol1.pdf}
+\caption{Niveaulinien des Potentials eines Quadrupols.
+Die $Q$-Matrizen sind 
+$Q^{(1)}$ für das linke Bild und $Q^{(2)}$
+für das rechte Bild
+gemäss \eqref{skript:multipol:qmatrix}.
+\label{chapter:multipol:quadrupolniveaux}}
+\end{figure}
+
+\subsubsection{Quadrupolterme in zwei Dimensionen}
+In zwei Dimensionen gibt es nur zwei linear unabhängige Matrizen, die die
+beiden eben genannten Bedingungen erfüllen, nämlich
+\begin{align}
+Q^{(1)}&=\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+&&\text{und}&
+Q^{(2)}&=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\label{skript:multipol:qmatrix}
+\\
+\intertext{%
+Schreibt man in Polarkoordinaten $x_1=r\cos\varphi$ und $x_2=r\sin\varphi$,
+dann ist der Quadrupolterm in den beiden Fällen
+}
+&r^2(\cos^2\varphi-\sin^2\varphi)=r^2\cos 2\varphi
+&&\text{bzw.}&
+&2r^2\cos\varphi\sin\varphi.
+\notag
+\\
+\intertext{%
+Die Niveaulinien haben dann in Polarkoordinaten die Gleichungen
+}
+r&=\sqrt[3]{c \cos2\varphi}
+&&\text{bzw.}&
+r&=\sqrt[3]{c \sin2\varphi}.
+\label{skript:multipol:quadrupolpolar}
+\end{align}
+In der Abbildung~\ref{chapter:multipol:quadrupolniveaux} sind die die
+beiden Funktionen von
+\eqref{skript:multipol:quadrupolpolar} dargestellt.
+Man erkennt, dass $Q^{(2)}$ ein gegenüber $Q^{(1)}$ um $45^\circ$ verdrehtes
+Potential ergibt.
+Linear-Kombination von $Q^{(1)}$ und $Q^{(2)}$ entsprechen um beliebige
+Winkel verdrehte Quadrupolpotentiale.
+
+\subsubsection{Berechnung des Quadrupolterms}
+Die konkrete Berechnung des Quadrupolanteils, also der Koeffizienten
+$Q_{kl}$, ist etwas mühsam, wir geben hier nur das Resultat an.
 Man findet
+\cite{skript:brandtdahmen}
 \[
 Q_{kl}
 =
@@ -302,7 +385,7 @@ gehen, für grosse Entfernung vom Nullpunkt also immer weniger von
 Bedeutung sein werden.
 Die Darstellung dieser höheren Multipole wird allerdings zunehmen
 schwierig. 
-Der nächste Term nach dem Quadrupolterm müsste die Form
+Der nächste Term nach dem Quadrupolterm, der Oktupolterm, müsste die Form
 \begin{equation}
 \frac1{4\pi\varepsilon_0}\frac{p(\vec r)}{r^7}
 \label{skript:multipol:7ord}
@@ -314,12 +397,45 @@ $x$, $y$ und $z$ beschrieben.
 Der Term~\eqref{skript:multipol:7ord} geht wie $r^{-4}$ gegen Null,
 also erneut eine Potenz schneller als der Quadrupolterm.
 
-\section{Zusammenfassung}
-Allen Termen der Multipolentwicklung
+Ganz allgemein erwarten wir, dass der $n$-te Multipolterm von der Form
 \[
+\frac{1}{4\pi\varepsilon_0} \frac{p(\vec r)}{r^{2n+1}}
+\]
+sein muss.
+Darin ist $p(\vec r)$ ein Polynom vom Grade $n$ in den Koordinaten
+des Ortsvektors $\vec r$.
+Die Polynomkoeffizienten lassen sich als Grösse $Q_{i_1i_2\dots i_n}$
+mit $n$ Indizes schreiben,
+der $2^n$-Pol-Term wir zu der Summe
+\begin{equation}
+\frac{1}{4\pi\varepsilon_0}
+\sum_{i_1,\dots,i_n} Q_{i_1\dots i_n} x_{i_1}\cdots x_{i_n}.
+\label{skript:multipol:npolterm}
+\end{equation}
+Wie für die Quadrupolkoeffizienten können wir vollständige Symmetrie
+der $Q_{i_1\dots i_n}$ annehmen, eine Vertauschung zweier beliebiger
+Inidzes ändert nichts.
+Ausserdem können wir annehmen, dass jede Summe über zwei gleichgesetzte
+Indizes $0$ ergibt, denn eine solche Summe entspricht einem $2^{n-2}$-Pol-Term,
+die wir im $2^n$-Pol-Term nicht darstellen wollen.
+
+\section{Richtungsabhängigkeit und Entfernungsbhängigkeit}
+In den Termen \eqref{skript:multipol:npolterm} der Multipolentwicklung
+ist die Richtungsabhängigkeit noch nicht von der Entfernungsabhängigkeit
+getrennt.
+Die Koordinaten $x_i$ wachsen mit zunehmender Entfernung ebenfalls an.
+Wenn wir also wie in der Einleitung versprochen Richtung und Entfernung
+trennen wollen, dann müssen wir die Terme als Funktionen von $r$ für die
+Entfernung und den Komponenten $x/r$, $y/r$ und $z/r$ des Einheitsvektors
+der Richtung ausdrücken.
+Dafür stehen aber im Nenner $1/r^{2n+1}$ genügend Faktoren $r$ zur Verfügung.
+
+Ausdgedrückt durch die Quotienten $x_k/r$ wird die Multipolentwicklung
+also zu
+\begin{align}
 f(\vec r)
-=
-\frac{1}{4\pi\varepsilon 0}
+&=
+\frac{1}{4\pi\varepsilon_0}
 \biggl(
 q
 \frac{1}{r}
@@ -332,17 +448,30 @@ q
 +
 \dots
 \biggr)
-\]
-ist gemeinsam, dass sie die Abhängigkeit des Potentials in einen
+\notag
+\\
+&=
+\frac{1}{4\pi\varepsilon_0}
+\biggl(
+\frac{1}{r} Q
++
+\frac{1}{r^2} \sum_{k}Q_k \frac{x_k}{r}
++
+\frac{1}{r^3} \sum_{k,l}Q_{kl}\frac{x_k}{r}\frac{x_l}{r}
++
+\frac{1}{r^4} \sum_{k,l,j}Q_{klj}\frac{x_k}{r}\frac{x_l}{r}\frac{x_j}{r}
++
+\dots
+\biggr).
+\label{skript:multipol:allgemein}
+\end{align}
+Allen Termen ist gemeinsam, dass sie die Abhängigkeit des Potentials in einen
 aus physikalischen Gründen plausiblen radialen Teil der Form $r^{-k}$
 und einen richtungsabhängigen Teil aufteilen.
-Die reine Richtungsabhängigkeit kann dadurch ausgedrückt werden, dass
-er nur von den Quotienten $x/r$, $y/r$ und $z/r$ abhängt.
+Die reine Richtungsabhängigkeit wird dadurch ausgedrückt, dass
+die einzelnen Summen in \eqref{skript:multipol:allgemein}
+nur von den Quotienten $x/r$, $y/r$ und $z/r$ abhängt, und zwar
+als Polynom vom Grad $k-1$.
 
-TODO:
-\begin{itemize}
-\item Potentiallinien-Plots für Dipol- und Quadrupolfeld
-\item 3D-Plot von Dipolmoment und evtl Quadropolfeld
-\end{itemize}
 
 
