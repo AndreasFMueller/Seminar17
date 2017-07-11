@@ -19,7 +19,7 @@
 \foreach \c in {1,...,30}
 {
 	\draw[domain=1:179,samples=100,red] plot ({\x}:{\c/5 * sqrt(sin(\x))});
-	\draw[domain=181:359,samples=100,red] plot ({\x}:{\c/5 * sqrt(-sin(\x))});
+	\draw[domain=181:359,samples=100,blue] plot ({\x}:{\c/5 * sqrt(-sin(\x))});
 }
 \end{scope}
 

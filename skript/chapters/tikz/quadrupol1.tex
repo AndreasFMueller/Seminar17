@@ -18,7 +18,10 @@
 \clip (-1.62,-1.62) rectangle (1.62,1.62);
 \foreach \c in {1,...,20}
 {
-	\draw[domain=0:360,samples=400,red] plot ({\x}:{\c/2 * sin(2*\x)^1/3});
+	\draw[domain=0:90,samples=100,blue] plot ({\x}:{\c/2 * sin(2*\x)^1/3});
+	\draw[domain=90:180,samples=100,red] plot ({\x}:{\c/2 * sin(2*\x)^1/3});
+	\draw[domain=180:270,samples=100,blue] plot ({\x}:{\c/2 * sin(2*\x)^1/3});
+	\draw[domain=270:360,samples=100,red] plot ({\x}:{\c/2 * sin(2*\x)^1/3});
 }
 \end{scope}
 
