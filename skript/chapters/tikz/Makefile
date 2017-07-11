@@ -9,7 +9,7 @@ all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
 	darkenergy.pdf orbit.pdf orbit2.pdf lichtablenkung.pdf dipol1.pdf \
 	dipol2.pdf ionisation.pdf kreisbogen.pdf tangente.pdf kruemmung.pdf \
 	wald.pdf 4pifu2.pdf dipol3.pdf quadrupol.pdf quadrupol1.pdf \
-	hexapol.pdf hexapol1.pdf monopol.pdf
+	hexapol.pdf hexapol1.pdf monopol.pdf planck1.pdf planck2.pdf
 
 images:	all
 
@@ -102,3 +102,9 @@ hexapol1.pdf:	hexapol1.tex
 
 monopol.pdf:	monopol.tex
 	pdflatex monopol.tex
+
+planck1.pdf:	planck1.tex
+	pdflatex planck1.tex
+
+planck2.pdf:	planck2.tex
+	pdflatex planck2.tex
