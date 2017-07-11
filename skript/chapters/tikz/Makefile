@@ -8,7 +8,8 @@ all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
 	friedmann-materie.pdf friedmann-strahlung.pdf friedmann-leer.pdf \
 	darkenergy.pdf orbit.pdf orbit2.pdf lichtablenkung.pdf dipol1.pdf \
 	dipol2.pdf ionisation.pdf kreisbogen.pdf tangente.pdf kruemmung.pdf \
-	wald.pdf 4pifu2.pdf dipol3.pdf quadrupol.pdf quadrupol1.pdf
+	wald.pdf 4pifu2.pdf dipol3.pdf quadrupol.pdf quadrupol1.pdf \
+	hexapol.pdf hexapol1.pdf
 
 images:	all
 
@@ -92,3 +93,9 @@ quadrupol.pdf:	quadrupol.tex
 
 quadrupol1.pdf:	quadrupol1.tex
 	pdflatex quadrupol1.tex
+
+hexapol.pdf:	hexapol.tex
+	pdflatex hexapol.tex
+
+hexapol1.pdf:	hexapol1.tex
+	pdflatex hexapol1.tex

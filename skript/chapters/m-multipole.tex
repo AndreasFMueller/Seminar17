@@ -326,6 +326,14 @@ gemäss \eqref{skript:multipol:qmatrix}.
 \label{chapter:multipol:quadrupolniveaux}}
 \end{figure}
 
+\begin{figure}
+\includegraphics{chapters/tikz/hexapol.pdf}
+\includegraphics{chapters/tikz/hexapol1.pdf}
+\caption{Niveaulinien des Potentials eines Hexapols.
+Links der Fall $q_0=1,q_1=0$, rechts $q_0=0,q_1=1$.
+\label{chapter:multipol:hexapolniveaux}}
+\end{figure}
+
 \subsubsection{Quadrupolterme in zwei Dimensionen}
 In zwei Dimensionen gibt es nur zwei linear unabhängige Matrizen, die die
 beiden eben genannten Bedingungen erfüllen, nämlich
@@ -418,6 +426,64 @@ Inidzes ändert nichts.
 Ausserdem können wir annehmen, dass jede Summe über zwei gleichgesetzte
 Indizes $0$ ergibt, denn eine solche Summe entspricht einem $2^{n-2}$-Pol-Term,
 die wir im $2^n$-Pol-Term nicht darstellen wollen.
+
+\subsubsection{Multipole in zwei Dimensionen}
+In zwei Dimensionen lassen sich die $Q$ und die Multipolterme vollständig
+ausrechnen.
+Dazu beachten wir, dass wegen der vollständigen Symmetrie alle 
+$Q_{i_1\dots i_n}$ mit der gleichen Anzahl Index $2$ gleich sein
+müssen.
+Wir können sie daher $q_k$ abkürzen, es ist also zum Beispiel
+$Q_{1\dots 1}=q_0$ und $Q_{2\dots 2}=q_n$.
+
+Die Spurbedingungen sagt dann, dass
+\[
+Q_{i_1\dots 11\dots i_n}
++
+Q_{i_1\dots 22\dots i_n}
+=
+0
+\qquad\Rightarrow\qquad
+Q_{i_1\dots 11\dots i_n}
+=-
+Q_{i_1\dots 22\dots i_n}
+\qquad\Rightarrow\qquad
+q_{k+2}=-q_k
+\]
+Es gibt also nur zwei linear unabhängige $Q_{i_1\dots i_n}$, die durch
+die Wahl von $q_0$ bzw.~$q_1$ festgelegt sind, die wir ohne Einschränkung
+$1$ setzen dürfen.
+
+Für die Berechnung des Multipolterms müssen wir wissen, wieviele Terme 
+mit Koeffizient $q_k$ jeweils vorkommen.
+Es gbit $\binom{n}{k}$ Koeffizienten $Q_{i_1\dots i_n}$ mit genau $k$
+Indizes $2$.
+Damit können wir jetzt die Multiplausdrücke berechnen:
+\begin{align*}
+q_0&=1, q_1=0
+&
+&\Rightarrow&
+\frac{1}{4\pi\varepsilon_0}
+\sum_{\text{$k$ gerade}} (-1)^{\frac{k}2}\binom{n}{k}
+	\cos^{n-k}\varphi \sin^k\varphi
+&=
+\frac{1}{4\pi\varepsilon_0}
+\cos n\varphi,
+\\
+q_0&=0, q_1=1
+&
+&\Rightarrow&
+\frac{1}{4\pi\varepsilon_0}
+\sum_{\text{$k$ ungerade}} (-1)^{\frac{k-1}2}\binom{n}{k}
+	\cos^{n-k}\varphi \sin^k\varphi
+&=
+\frac{1}{4\pi\varepsilon_0}
+\sin n\varphi.
+\end{align*}
+Die Multipolterme sind also durch trigonometrische Funktionen der
+vielfachen Winkel gegeben.
+Für den Fall $n=3$ sind die zugehörigen Niveauflächen in
+Abbildung~\ref{chapter:multipol:hexapolniveaux} dargestellt.
 
 \section{Richtungsabhängigkeit und Entfernungsbhängigkeit}
 In den Termen \eqref{skript:multipol:npolterm} der Multipolentwicklung
