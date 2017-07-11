@@ -15,13 +15,14 @@ Situation ausweiten lässt.
 
 \subsection{Monopol und Dipol}
 Das Potential einer Ladung $e$ fällt mit der Entfernung $r$ nach dem
-Gesetz
+Coulomb-Gesetz
+\index{Coulomb-Gesetz}%
 \[
 f(r)=\frac1{4\pi\varepsilon_0}\frac{q}r
 \]
 ab.
-Platziert man die Ladung $q$ stattdessen im Punkt $a$, dann ist das
-Potential in Abhängigkeit von $x$
+Platziert man die Ladung $q$ im Punkt $a$ eines eindimensionalen
+Koordinatensystems, dann ist das Potential in Abhängigkeit von $x$
 \begin{equation}
 f_1(x) = \frac{q}{4\pi\varepsilon_0} \frac1{|x-a|}.
 \label{skript:multipol:1monopol}
@@ -32,7 +33,7 @@ f_1(x)
 =
 \frac{q}{4\pi\varepsilon_0} \frac1{x-a}
 =
-\frac{q}{4\pi\varepsilon_0} \frac1x\frac1{1-\displaystyle\frac{a}{x}}.
+\frac{q}{4\pi\varepsilon_0} \frac1x\frac1{1-\displaystyle\frac{a\mathstrut}{x}}.
 \label{skript:multipol:1abfall}
 \end{equation}
 Im letzten Faktor kann man ablesen, dass der Summand $a/x$ im Nenner
@@ -81,9 +82,9 @@ f_2(x)
 \frac{q}{4\pi\varepsilon_0}\biggl(\frac1{x+a}-\frac1{x-a}\biggr)
 =
 \frac{q}{4\pi\varepsilon_0}\cdot\frac1x\cdot\biggl(
-\frac1{1+\frac{a}{x}}
+\frac1{1+\frac{a\mathstrut}{x}}
 -
-\frac1{1-\frac{a}{x}}
+\frac1{1-\frac{a\mathstrut}{x}}
 \biggr)
 =
 \frac{q}{4\pi\varepsilon_0}\cdot\frac1x\cdot
@@ -110,7 +111,8 @@ vorkommt.
 Das Fernfeld für grosse Werte von $x$ ändert also nicht, wenn wir $a$
 kleiner machen, aber gleichzeitig $q$ vergrössern, so dass das Produkt
 $qa$ konstant bleibt.
-Man nennt $d=2qa$ das Dipolmoment der beiden Ladungen.
+Man nennt $d=2qa$ das {\em Dipolmoment} der beiden Ladungen.
+\index{Dipolmoment}%
 Der Dipol mit Dipolmoment $d$ hat daher für grosse $x$ das Potential
 \[
 f_2(x)
@@ -140,32 +142,43 @@ ableiten:
 \[
 f(x)
 \simeq
-\underbrace{\int_{-a}^a \varrho(y)\,dy }_{\displaystyle =q}\cdot
-\frac{1}{4\pi\varepsilon_0}\cdot\frac1x
+\frac{1}{4\pi\varepsilon_0}
+\underbrace{\int_{-a}^a \varrho(y)\,dy }_{\displaystyle =q}
+\frac1x
 +
-\underbrace{\int_{-a}^a \varrho(y)y \,dy}_{\displaystyle =d}\cdot
-\frac{1}{4\pi\varepsilon_0}\cdot\frac1{x^2}
+\frac{1}{4\pi\varepsilon_0}
+\underbrace{\int_{-a}^a \varrho(y)y \,dy}_{\displaystyle =d}
+\frac1{x^2}
 +
 \dots
 =
-\sum_{k=0}^\infty\int_{-a}^a\varrho(y)y^k\,dy\frac{1}{4\pi\varepsilon_0}\cdot\frac1{x^k} 
+\frac{1}{4\pi\varepsilon_0}
+\sum_{k=0}^\infty
+\frac1{x^{k+1}} 
+\int_{-a}^a\varrho(y)y^k\,dy
 \]
+Der erste Term ist das Potential einer Punktladung $q$ im Ursprung, der
+zweite das Dipolpotential eines Dipols mit Dipolmoment $d$.
+Wir nennen den ersten Term auch den {\em Monopolterm}.
+\index{Monopol}%
+
 Die Integrale 
 \[
 b_k=\int_{-a}^a \varrho(y)\,y^k\,dy
 \]
-heissen die $k$-ten Momente der Verteilung $\varrho$.
-Die $k$-ten Momente bestimmen also die die Darstellung des Fernfeldes
+heissen die {\em $k$-ten Momente} der Verteilung $\varrho$.
+\index{Moment einer Funktion}%
+Die $k$-ten Momente bestimmen also die Darstellung des Fernfeldes
 einer Ladungsverteilung vollständig durch die Formel
 \[
 f(x)
 \simeq
-\frac1{4\pi\varepsilon_0}\sum_{k=0}^\infty b_k\frac{1}{x^k}.
+\frac1{4\pi\varepsilon_0}\sum_{k=0}^\infty b_k\frac{1}{x^{k+1}}.
 \]
-Die Summe auf der rechten Seite muss nicht mit dem Potential der
-Ladungsverteilung übereinstimmen.
-Vielmehr ist die Summe eine Zerlegung des Feldes in grosser Entfernen
-nach ``Abfalls-Geschwindigkeit'',
+Wir behaupten nicht, dass die Summe auf der rechten Seite mit dem Potential
+der Ladungsverteilung übereinstimmen.
+Vielmehr ist die Summe eine Zerlegung des Feldes
+nach ``Abfalls-Geschwindigkeit'' in grosser Entfernung,
 ganz ähnlich wie die Fourier-Koeffizienten einer im Intervall
 $[-\pi,\pi]$ definierten Funktion $f(x)$
 \[
@@ -249,7 +262,7 @@ exakt wiederzugeben:
 \sum_{k=0}^\infty (-1)^k\frac{a^{2k}}{x^{2k}}.
 \end{align*}
 Die letzte Formel erhält man, indem man in \eqref{skript:multipol:geom}
-$a$ durch $-a$ ersetzt.
+$q$ durch $-q$ ersetzt und dann $q=a^2/x^2$ einsetzt.
 
 Wir wenden dies jetzt wieder auf eine Ladungsverteilung
 $\varrho(y)$ im Intervall $[-a,a]$ an.
@@ -274,11 +287,13 @@ f(x)
 =
 \frac{1}{4\pi\varepsilon_0}
 \sum_{k=0}^\infty
+\frac{1}{x^{k+1}}
 \underbrace{\int_{-a}^a\varrho(y)\,y^k\,dy}_{\displaystyle =b_k}
-\cdot\frac{1}{x^{k+1}}.
+\cdot
 =
 \frac{1}{4\pi\varepsilon_0}
-\sum_{k=0}^\infty b_k\frac{1}{x^{k+1}},
+\sum_{k=0}^\infty b_k
+\frac{1}{x^{k+1}},
 \label{skript:multipol:reiheexakte}
 \end{equation}
 wobei die $b_k$ wieder die $k$-ten Momente der Ladungsverteilung
@@ -311,14 +326,15 @@ Im vorangegangenen Abschnitt haben wir gesehen, dass für grosse Werte von
 $x$ die zur Diskussion stehende Funktion im Wesentlichen als Reihe
 der inverse Potenzen $1/x^k$ beschrieben werden kann, also
 \[
-f(x)=\sum_{k=1}^\infty b_k\frac1{x^k}.
+f(x)=\sum_{k=0}^\infty b_k\frac1{x^{k+1}}
 \]
+werden.
 Schreiben wir $z=1/x$, dann wird daraus eine gewöhnliche Potenzreihe
 \[
-\tilde f(z)=\sum_{k=1}^\infty b_k z^k.
+\tilde f(z)=\sum_{k=0}^\infty b_k z^{k+1}.
 \]
 Wenn die Funktion $z\mapsto \tilde f(z)$ differenzierbar ist, dann
-können die Koeffizienten $b_k$ können aus den Ableitungen der Funktion
+können die Koeffizienten $b_k$ aus den Ableitungen der Funktion
 $\tilde f$ gefunden
 \begin{equation}
 b_k=\frac{\tilde f^{(k)}(0)}{k!}
@@ -340,7 +356,7 @@ eine {\em Laurent-Reihe} im Punkt $a$.
 Offensichtlich ist der Funktionswert in $z=a$ nicht definiert, und
 oft wird die Reihe auch in einer Umgebung von $a$ nicht konvergieren.
 Sie ist aber hervorragend dazu geeignet, das Verhalten einer Funktion
-zu analysieren, die im Punkt $a$ eine Singularität aufweisen.
+zu analysieren, die im Punkt $a$ eine Singularität aufweist.
 Besonders nützlich ist sie dann, wenn $z$ komplex ist, denn man
 kann zeigen, dass jede komplex differenzierbare Funktion mit einer
 Singularität im Punkt $a$ in einer Umgebung von $a$ als Laurent-Reihe

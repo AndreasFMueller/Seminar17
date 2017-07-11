@@ -14,6 +14,24 @@ in der Lage, kompliziertere Konfigurationen von Ladungen zu
 konstruieren, und damit auch die späteren Terme der Entwicklung
 genauer zu untersuchen.
 
+\subsection{Monopol}
+\index{Monopol}%
+Eine beliebige Ladungsverteilung macht sich in erster Linie durch
+die Gesamtladung $q$ bemerkbar.
+In grosser Entfernung von der Ladung ist das Potential bestimmt durch
+den durch das Coulomb-Gesetz gegebenen Monopolterm
+\[
+\frac{1}{4\pi\varepsilon_0}\frac{q}{r}.
+\]
+Dieser Term fällt in alle Richtungen gleich schnell mit $1/r$ ab,
+die Niveaulinien in zwei Dimensionen sind Kreise, dargestellt in
+Abbildung~\ref{skript:multipol:monopol}.
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/monopol.pdf}
+\caption{Niveaulinien eines Monopols%
+\label{skript:multipol:monopol}}
+\end{figure}
 
 \subsection{Dipol}
 \begin{figure}
@@ -23,12 +41,13 @@ genauer zu untersuchen.
 \eqref{skript:multipol:dipol} in der $x$-$z$-Ebene
 \label{skript:multipol:figure:dipol}}
 \end{figure}
+\index{Dipol}%
 Wir betrachten das Feld eines Paares von entgegengesetzen Ladungen
 in den Punkten $(0,0,a)$ und $(0,0,-a)$
 (Abbildung~\ref{skript:multipol:figure:dipol}).
 Der Einfachheit halber führen wir die Rechnung zunächst nur
-in der $x$-$z$-Ebene durchführen und erst später mit Hilfe einer
-vektoriellen Schreibweise auf drei Dimensionen erweitern.
+in der $x$-$z$-Ebene durch und erweitern sie erst später mit Hilfe einer
+vektoriellen Schreibweise auf drei Dimensionen.
 
 Entlang der $z$-Achse kennen wir das Potential bereits aus
 dem vorangegangenen Abschnitt.
@@ -104,6 +123,8 @@ g''(t)
 g''(0)&=\alpha(\alpha-1)
 \\
 &\;\vdots
+&
+&\;\vdots
 \\
 g^{(n)}(t)
 &=
@@ -169,6 +190,7 @@ Die zugehörige Potenzreihe ist daher
 %+\dots
 %\]
 
+\subsubsection{Dipolpotential}
 Wir verwenden die binomische Reihe jetzt, um das Dipolpotential
 zu berechnen.
 Setzen wir 
@@ -244,6 +266,8 @@ f(\vec{r})
 \frac{1}{4\pi\varepsilon_0r^2} \frac{\vec{d}\cdot\vec{r}}{r}
 \end{equation*}
 geschrieben werden.
+Der Vektor $\vec d$ heisst das {\em (vektorielle) Dipolmoment}.
+\index{Dipolmoment}%
 In dieser Form ist das Dipolpotential für jede beliebige Orientierung
 des Dipolmomentes verwendbar.
 In Abbildung~\ref{chapter:multipol:dipolniveaux} sind die Niveaulinien
@@ -271,6 +295,8 @@ eine Reihe darstellen lässt, deren nächster Term von der Form
 \end{equation}
 sein muss.
 Darin ist $p$ ein Ausdruck, der in beiden Argumenten linear ist.
+Wir nennen \label{skript:multipol:quadropolterm} den {\em Quadrupolterm}.
+\index{Quadrupol}%
 
 Schreiben wir die Koordinaten als $(x_1,x_2,x_3)$, dann wird 
 sich $p$ in der Form
@@ -307,13 +333,29 @@ Nimmt man für $Q$ die Einheitsmatrix, dann erhält man einfach nur
 \]
 der Quadrupol-Term wird also 
 \[
-\frac1{4\pi\varepsilon_0}\cdot\frac{1}{r^3},
+\frac1{4\pi\varepsilon_0}\cdot\frac{r^2}{r^3}
+=
+\frac1{4\pi\varepsilon_0}\cdot\frac{1}{r},
 \]
-was keine Richtungsabhängigkeit mehr enthält und wir daher erwarten
-würden, dass diese Art von Abhängigkeit bereits im ersten Term 
-der Multipolreihe enthalten war.
-Man kann dies zum Beispiel dadurch erreichen, dass die Matrix $Q$ 
-verschwindende Spur haben soll, also $\operatorname{Spur}Q=0$.
+also das Potential einer Punktladung, welches bereits im ersten Term
+der Multipolreihe berücksichtigt wurde.
+Damit also der Quadrupol-Term kein Punktladungspotential mitbringt,
+darf in der Summe
+\[
+\sum_{k,l=1}^3Q_{kl}x_kx_l
+\]
+kein Summand übrig bleiben, der sich auf ein Vielfaches von $r^2$ 
+reduzieren lässt.
+Man kann eine beliebige Matrix $Q$ immer schreiben als
+\[
+Q = \underbrace{(Q - \operatorname{Spur}(Q)\, E)}_{\tilde Q} + \operatorname{Spur} (Q)\, E.
+\]
+Die Matrix $\tilde Q$ hat $\operatorname{Spur}(\tilde Q)=0$.
+Der Quadrupol-Term, der zur Matrix $\operatorname{Spur}(Q)\,E$ gehört,
+ist eigentlich ein Monopolterm.
+Nur die spurfreie Matrix $\tilde Q$ führt auf einen ``echten'' Quadrupolterm.
+Wir dürfen also ohne Einschränkung annehmen, dass die Matrix $Q$ verschwindende
+Spur hat.
 
 \begin{figure}
 \includegraphics{chapters/tikz/quadrupol.pdf}
@@ -365,7 +407,7 @@ beiden Funktionen von
 \eqref{skript:multipol:quadrupolpolar} dargestellt.
 Man erkennt, dass $Q^{(2)}$ ein gegenüber $Q^{(1)}$ um $45^\circ$ verdrehtes
 Potential ergibt.
-Linear-Kombination von $Q^{(1)}$ und $Q^{(2)}$ entsprechen um beliebige
+Linear-Kombinationen von $Q^{(1)}$ und $Q^{(2)}$ entsprechen um beliebige
 Winkel verdrehte Quadrupolpotentiale.
 
 \subsubsection{Berechnung des Quadrupolterms}
@@ -393,7 +435,7 @@ gehen, für grosse Entfernung vom Nullpunkt also immer weniger von
 Bedeutung sein werden.
 Die Darstellung dieser höheren Multipole wird allerdings zunehmen
 schwierig. 
-Der nächste Term nach dem Quadrupolterm, der Oktupolterm, müsste die Form
+Der nächste Term nach dem Quadrupolterm, der Hexapolterm, müsste die Form
 \begin{equation}
 \frac1{4\pi\varepsilon_0}\frac{p(\vec r)}{r^7}
 \label{skript:multipol:7ord}
@@ -414,7 +456,7 @@ Darin ist $p(\vec r)$ ein Polynom vom Grade $n$ in den Koordinaten
 des Ortsvektors $\vec r$.
 Die Polynomkoeffizienten lassen sich als Grösse $Q_{i_1i_2\dots i_n}$
 mit $n$ Indizes schreiben,
-der $2^n$-Pol-Term wir zu der Summe
+der $2n$-Pol-Term wir zu der Summe
 \begin{equation}
 \frac{1}{4\pi\varepsilon_0}
 \sum_{i_1,\dots,i_n} Q_{i_1\dots i_n} x_{i_1}\cdots x_{i_n}.
@@ -422,18 +464,20 @@ der $2^n$-Pol-Term wir zu der Summe
 \end{equation}
 Wie für die Quadrupolkoeffizienten können wir vollständige Symmetrie
 der $Q_{i_1\dots i_n}$ annehmen, eine Vertauschung zweier beliebiger
-Inidzes ändert nichts.
+Indizes ändert nichts.
 Ausserdem können wir annehmen, dass jede Summe über zwei gleichgesetzte
-Indizes $0$ ergibt, denn eine solche Summe entspricht einem $2^{n-2}$-Pol-Term,
-die wir im $2^n$-Pol-Term nicht darstellen wollen.
+Indizes $0$ ergibt, denn eine solche Summe entspricht einem $2(n-1)$-Pol-Term,
+die wir im $2n$-Pol-Term nicht darstellen wollen.
 
 \subsubsection{Multipole in zwei Dimensionen}
-In zwei Dimensionen lassen sich die $Q$ und die Multipolterme vollständig
-ausrechnen.
+In zwei Dimensionen lassen sich die $Q_{i_1\dots i_n}$ und die Multipolterme
+vollständig ausrechnen.
 Dazu beachten wir, dass wegen der vollständigen Symmetrie alle 
 $Q_{i_1\dots i_n}$ mit der gleichen Anzahl Index $2$ gleich sein
 müssen.
-Wir können sie daher $q_k$ abkürzen, es ist also zum Beispiel
+Wir können die $Q_{i_1\dots i_n}$ daher als $q_k$ abkürzen, wobei $k$ die
+Anzahl der Indizes $2$ von unter den $i_1,\dots,i_n$ ist.
+Es ist also zum Beispiel
 $Q_{1\dots 1}=q_0$ und $Q_{2\dots 2}=q_n$.
 
 Die Spurbedingungen sagt dann, dass
@@ -456,7 +500,7 @@ $1$ setzen dürfen.
 
 Für die Berechnung des Multipolterms müssen wir wissen, wieviele Terme 
 mit Koeffizient $q_k$ jeweils vorkommen.
-Es gbit $\binom{n}{k}$ Koeffizienten $Q_{i_1\dots i_n}$ mit genau $k$
+Es gibt $\binom{n}{k}$ Koeffizienten $Q_{i_1\dots i_n}$ mit genau $k$
 Indizes $2$.
 Damit können wir jetzt die Multiplausdrücke berechnen:
 \begin{align*}
@@ -510,7 +554,7 @@ q
 +
 \frac{1}{r^3} \sum_{k,l}Q_{kl}\frac{x_k}{r}\frac{x_l}{r}
 +
-\frac{1}{r^4} \sum_{k,l,j}Q_{klj}\frac{x_k}{r}\frac{x_l}{r}\frac{x_j}{r}
+\frac{1}{r^4} \sum_{k,l,i}Q_{kli}\frac{x_k}{r}\frac{x_l}{r}\frac{x_i}{r}
 +
 \dots
 \biggr)
@@ -525,7 +569,7 @@ q
 +
 \frac{1}{r^3} \sum_{k,l}Q_{kl}\frac{x_k}{r}\frac{x_l}{r}
 +
-\frac{1}{r^4} \sum_{k,l,j}Q_{klj}\frac{x_k}{r}\frac{x_l}{r}\frac{x_j}{r}
+\frac{1}{r^4} \sum_{k,l,i}Q_{kli}\frac{x_k}{r}\frac{x_l}{r}\frac{x_i}{r}
 +
 \dots
 \biggr).
