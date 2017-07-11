@@ -16,7 +16,7 @@ können in eine Summe von Termen der Form
 \]
 wobei $p(x,y,z)$ ein homogenes Polynom in den Koordinaten $x$, $y$ und
 $z$ war.
-Nehmen wir an,d ass das Polynom homogen vom Grad $l$ ist, dann kann man
+Nehmen wir an, dass das Polynom homogen vom Grad $l$ ist, dann kann man dies
 auch schreiben
 \[
 \frac{p(x,y,z)}{r^k}
@@ -35,10 +35,36 @@ die Produkte sind einer Funktion, die nur von der Richtung abhängig
 ist, und einer Funktion, die die Entfernungsabhängigkeit vom Nullpunkt
 ausdrückt.
 
-In diesem Abschnitt wollen wir zunächst zeigen, dass man die klassische
+Daraus ergibt sich dann eine Familie von Funktionen auf der Kugeloberfläche,
+die also nur von $\vartheta$ und $\varphi$ abhängen.
+Diese Funktionen haben eine grosse Zahl von Anwendungen:
+
+\begin{enumerate}
+\item
+Wie schon in Kapitel~\ref{chapter:multipol} gezeigt, erlaubt 
+die Multipolentwicklung elektromagnetische Felder in grosser
+Entfernung von der Quelle zu beschreiben.
+Man spricht auch vom Nah- und Fernfeld.
+\item
+Jede Funktion auf einer Kugeloberfläche kann zerlegt werden in eine
+Summe von Funktionen ganz ähnlich wie eine periodische Funktion
+zerlegt werden kann in eine Summe von Sinus- und Kosinus-Funktionen.
+Dies wird zum Beispiel für die Analyse des Gravitationsfeldes von
+Erde und Mond verwendet, oder für die Abweichung der Erdoberfläche
+von der Form eines Rotationsellipsoids.
+\item
+Der kosmische Mikrowellenhintergrund kann mit Kugelfunktionen analysiert
+werden.
+Diese Analyse zeigt, dass das Universum flach ist und damit dass der
+gesamte Energieinhalt des Universums $0$ ist.
+In Kapitel~\ref{chapter:cmb} wird gezeigt, wie eine solche Analyse
+durchgeführt werden kann.
+\end{enumerate}
+
+In diesem Kapitel wollen wir zunächst zeigen, dass man die klassische
 Fourier-Theorie genau auf die gleiche Art betrachten kann.
 Eine Funktion in der Ebene lässt sich immer beschreiben als eine Summe
-von Produkten einer Funktion, die die Richtungsabhängigkeit ausdrückt, und
+von Produkten einer Funktion, die die Richtungsabhängigkeit ausdrückt,
 und einer Funktion, die die Entfernungsabhängigkeit codiert.
 
 Die Wahl einer Basis solcher Funktionen ist jedoch nicht eindeutig.
@@ -48,15 +74,15 @@ Berechnung der entsprechenden Koeffizienten besonders einfach und
 führt auf die klassische Fourier-Theorie.
 
 Im letzten Abschnitt wollen wir dann zeigen, dass dasselbe Programm
-auch im $\mathbb R^3$ durchführbar ist, und dann auf die Kugelfunktionen
-führt.
+auch im $\mathbb R^3$ durchführbar ist, und in diesem Fall auf die
+Kugelfunktionen führt.
 
 \section{Approximation mit Polynomen
 \label{skript:section:approximation}}
 In Kapitel~\ref{skript:chapter:multipol} haben wir gelernt, dass es
 sinnvoll sein kann, Funktionen in zwei oder drei Dimensionen zu 
 approximieren als Summe von Funktionen, die sich faktorisieren lassen
-ein einen Teil, der nur vom Radius $r$ abhängt, und einen Faktor,
+in einen Teil, der nur vom Radius $r$ abhängt, und einen Faktor,
 der eine Funktion auf einem Kreis oder auf einer Kugeloberfläche
 ist, parametrisiert durch den Polarwinkel $\varphi$ im Falle des
 Kreises oder der geographischen Breite $\vartheta$ und der geographsichen
@@ -79,7 +105,17 @@ derart, dass
 \]
 für alle $(x_1,\dots,x_n)\in X$.
 \end{satz}
+\index{Weierstrasse, Satz von}%
 
+Dieser Satz besagt, dass sich jede stetige Funktion beliebig genau durch
+Polynome approximieren lässt. 
+Mit einem Computer lassen sich zunächst nur die Grundoperationen ausführen.
+Diese genügen jedoch, um beliebige Polynome berechnen zu können.
+Der Satz von Weierstrass garantiert, dass jede denkbare stetige Funktion
+auf einem Computer mit beliebiger Genauigkeit berechnet werden kann
+und rechtfertigt damit in einem gewissen Sinne die numerische Mathematik.
+
+\subsubsection{Der Satz von Stone-Weierstrass}
 Der Satz von Weierstrass ist ein Spezialfall eines wesentlich allgemeineren
 Resultates.
 Die in Satz~\ref{skript:satz:weierstrass} verwendeten Polynome entstehen
@@ -101,7 +137,7 @@ Eine Familie von Funktionen $f_i\colon X\to \mathbb R$ {\em trennt Punkte},
 wenn es zu jedem Paar von Punkten $p,q\in X$ eine Funktion $f_j$ gibt derart,
 dass $f_j(p)\ne f_j(q)$.
 \end{definition}
-\index{trennt Punkte}
+\index{trennt Punkte}%
 
 Wir bezeichnen die Menge der stetigen Funktionen $X\to\mathbb R$
 mit $C(X,\mathbb R)$ oder $C(X)$, wenn der Wertebereich klar ist.
@@ -109,14 +145,14 @@ In der Menge $C(X)$ der stetigen Funktionen $f\colon X\to\mathbb R$ sind
 Addition, Subtraktion, Multiplikation von Funktionen und Multiplikation
 von Funktionen mit einer Zahl definiert.
 Man sagt, die Menge $C(X)$ sei eine Algebra.
-\index{Algebra}
+\index{Algebra}%
 Ausserdem gibt es in $C(X)$ einen Begriff für die Norm einer Funktion,
 wir setzen
 \begin{equation}
 \| f\| = \sup_{x\in X}|f(x)|.
 \label{skript:multipol:supremum-norm}
 \end{equation}
-\index{Supremum-Norm}
+\index{Supremum-Norm}%
 Damit erhalten wir auch einen Begriff für den Abstand zweier Funktionen:
 \[
 \|f-g\| = \sup_{x\in X}|f(x)-g(x)|.
@@ -129,7 +165,8 @@ gilt für beliebige $x\in X$.
 Mit diese Begriff kann man jetzt auch die Konvergenz von Folgen von
 Funktionen in $C(X)$ definieren.
 
-Eine Folge $f_n$ von Funktionen auf $X$ heisst eine Cauchy-Folge, wenn 
+Eine Folge $f_n$ von Funktionen auf $X$ heisst eine {\em Cauchy-Folge}, wenn 
+\index{Cauchy-Folge}%
 für grosse $n$ die Funktionen nicht weit auseinander liegen.
 Genauer, wenn es für jedes $\varepsilon>0$ ein $N>0$ gibt so, dass
 \[
@@ -143,9 +180,12 @@ gilt.
 Man kann auch zeigen, dass die Menge der Funktionen {\em vollständig} ist,
 dass also jede Cauchy-Folge von Funktionen in $C(X)$ gegen eine stetige
 Funktion konvergiert.
+\index{vollständig}%
 
-Man sagt, eine Menge $F\subset C(X)$ ist dicht in $C(X)$, wenn die Elemente
-von $F$ jedes Element von $C(X)$ beleibig genau approximieren können.
+Man sagt, eine Menge $F\subset C(X)$ ist {\em dicht} in $C(X)$, wenn
+die Elemente von $F$ jedes Element von $C(X)$ beleibig genau approximieren
+können.
+\index{dicht}%
 Für jedes $\varepsilon>0$ und jede Funktion $g\in C(X)$ muss es also eine
 Funktion $f\in F$ geben, so dass
 \[
@@ -154,6 +194,7 @@ Funktion $f\in F$ geben, so dass
 gilt für alle $x\in X$.
 
 \begin{satz}[Stone-Weierstrass]
+\index{Stone-Weierstrass, Satz von}%
 Sei $f_i$ eine Familie von Funktionen auf dem kompakten Gebiet $X$,
 die Punkte separiert, dann ist die von den Funktionen $f_i$ erzeugte
 Unteralgebra dicht in $C(X)$, oder mit anderen Worten, jede Funktion
@@ -175,10 +216,12 @@ in einem gewissen Sinne optimal: die notwendige Bedingung, dass
 die Funktionen $f_i$ Punkte trennen müssen, ist auch hinreichend.
 
 \section{Fourier-Theorie}
-Betrachten wir eine Funktion $f(x,y)$ in der Ebenen $(x,y)\in\mathbb R^2$.
-Aus Kapitel~\ref{skript:chapter:multipol} wissen wir, dass sich die Funktion
-$f(x,y)$ schreiben lässt als Summe von Termen der Form $p(x,y)r^k$, wobei
-$p(x,y)$ ein homogenes Polynom ist.
+Wir betrachten wieder eine Funktion $f(x,y)$ in der Ebenen
+$(x,y)\in\mathbb R^2$.
+Der Satz von Weierstrasse genauso wie die Erfahrungen im
+Kapitel~\ref{skript:chapter:multipol} zeigen, dass sich die Funktion
+$f(x,y)$ beliebig genau approximieren lässt als Summe von Termen der
+Form $p(x,y)r^k$, wobei $p(x,y)$ ein homogenes Polynom ist.
 
 Im Moment interessiert uns nur die Richtungsabhängigkeit, so dass wir
 die Funktion $f(x,y)$ auf einen Kreis mit Radius $r$ einschränken können.
@@ -189,12 +232,13 @@ abgeschlossenen und beschränkten Menge, durch Polynome belieibig
 genau approximieren können.
 
 Die Einschränkung von Kapitel~\ref{skript:chapter:multipol}, dass wir
-für den richtungsabhängigen Teil nur homogene Polynome in den Koordinaten
-verwenden wollten ist kein Hindernis.
+für den richtungsabhängigen Teil nur homogene Poly\-nome in den Koordinaten
+verwenden wollten, ist kein Hindernis.
 Da wir ohnehin mit einer Summe von Funktionen arbeiten, können wir
 die Summe noch weiter zerlegen, so dass in jedem einzelnen Summanden nur ein
 homogenes Polynom der Koordinaten verwendet wird.
 
+\subsection{Homogene Polynome}
 Ein homogenes Polynom $p(x,y)$ vom Grad $l$ erfüllt
 \[
 p(x,y) = p\biggl(\frac{x}{r},\frac{y}{r}\biggr) r^l.
@@ -223,33 +267,34 @@ Die Potenzen machen die Ausdrücke etwas kompliziert, doch gibt
 es eine Reihe von Identitäten für trigonometrische Funktionen,
 die erlauben, solche Produkte auf Summen von Funktionen von 
 Vielfachen des Winkels zu reduzieren.
-Dazu gehören einerseits die Formeln für die Potenzen:
+Dazu braucht man zunächst die Formeln für die Potenzen von trigonometrischen
+Funktionen, die man in jeder guten Formelsammlung finden kann:
 \begin{align*}
-\cos^n\vartheta
+\cos^n\alpha
 &=
 \begin{cases}
 \displaystyle
-\frac{2}{2^n}\sum_{k=0}^{\frac{n-1}2} \binom{n}{k}\cos((n-2k)\vartheta)
+\frac{2}{2^n}\sum_{k=0}^{\frac{n-1}2} \binom{n}{k}\cos((n-2k)\alpha)
 &\qquad\text{$n$ ungerade}
 \\[10pt]
 \displaystyle
 \frac{1}{2^n}\binom{n}{\frac{n}2}
 +
-\frac{2}{2^n}\sum_{k=0}^{\frac{n}2-1}\cos((n-2k)\vartheta)
+\frac{2}{2^n}\sum_{k=0}^{\frac{n}2-1}\cos((n-2k)\alpha)
 &\qquad\text{$n$ gerade}
 \end{cases}
 \\
-\sin^n\vartheta
+\sin^n\alpha
 &=
 \begin{cases}
 \displaystyle
-\frac{2}{2^n}\sum_{k=0}^{\frac{n-1}2} (-1)^{\frac{n-1}2-k}\binom{n}{k}\sin((n-2k)\vartheta)
+\frac{2}{2^n}\sum_{k=0}^{\frac{n-1}2} (-1)^{\frac{n-1}2-k}\binom{n}{k}\sin((n-2k)\alpha)
 &\qquad\text{$n$ ungerade}
 \\[10pt]
 \displaystyle
 \frac{1}{2^n}\binom{n}{\frac{n}2}
 +
-\frac{2}{2^n}\sum_{k=0}^{\frac{n}2-1}(-1)^{\frac{n}2-k}\binom{n}{k}\cos((n-2k)\vartheta)
+\frac{2}{2^n}\sum_{k=0}^{\frac{n}2-1}(-1)^{\frac{n}2-k}\binom{n}{k}\cos((n-2k)\alpha)
 &\qquad\text{$n$ gerade}
 \end{cases}
 \end{align*}
@@ -259,21 +304,21 @@ zwei trigonometrischen Funktionen.
 Solche Produkte können aber immer ersetzt werden durch eine
 Linearkombination von Funktionen dank der Summen- und Differenzenformeln:
 \begin{align*}
-\cos\vartheta\cos\varphi
+\cos\alpha\cos\beta
 &=
-\frac12\bigl(\cos(\vartheta-\varphi)+\cos(\vartheta+\varphi)\bigr)
+\frac12\bigl(\cos(\alpha-\beta)+\cos(\alpha+\beta)\bigr)
 \\
-\sin\vartheta\sin\varphi
+\sin\alpha\sin\beta
 &=
-\frac12\bigl(\cos(\vartheta-\varphi)-\cos(\vartheta+\varphi)\bigr)
+\frac12\bigl(\cos(\alpha-\beta)-\cos(\alpha+\beta)\bigr)
 \\
-\sin\vartheta\cos\varphi
+\sin\alpha\cos\beta
 &=
-\frac12\bigl(\sin(\vartheta-\varphi)+\sin(\vartheta+\varphi)\bigr)
+\frac12\bigl(\sin(\alpha-\beta)+\sin(\alpha+\beta)\bigr)
 \\
-\cos\vartheta\sin\varphi
+\cos\alpha\sin\beta
 &=
-\frac12\bigl(\sin(\vartheta-\varphi)-\sin(\vartheta+\varphi)\bigr)
+\frac12\bigl(\sin(\alpha-\beta)-\sin(\alpha+\beta)\bigr)
 \end{align*}
 Damit ist gezeigt, dass die Funktion $p(\cos\varphi,\sin\varphi)$
 geschrieben werden kann als Linearkombination von trigonometrischen
@@ -287,7 +332,8 @@ p(x,y)=p(\cos\varphi,\sin\varphi)
 a_k\cos k\varphi+b_k\sin k\varphi
 \bigr).
 \]
-Wir vermuten daher, dass sich auch die Funktion $f(x,y)$ als Summe
+Wir schliessen daher, dass sich jede stetige Funktion $f(x,y)$ 
+beliebig genau als Summe
 \begin{equation}
 f(x,y)
 =
@@ -304,7 +350,7 @@ schreiben lässt.
 Die Funktionen $\cos k\varphi$ und $\sin k\varphi$ sind offenbar 
 wesentlich besser geeignet, eine Funktion von $\varphi$ auszudrücken,
 als die Potenzen $\sin^k\varphi$ und $\cos^k\varphi$ und ihre Produkte.
-Dies wird noch unterstütz durch die folgende Beobachtung.
+Dies wird noch unterstützt durch die folgende Beobachtung.
 Zunächst schreiben wir
 \begin{align*}
 c_0(\varphi)&=\frac{1}{\sqrt{2}}
@@ -432,7 +478,7 @@ schreiben, wobei wie früher
 ist.
 Die Beziehungen~\eqref{skript:kugelfunktionen:ortho} heissen die
 Orthogonalitätsrelationen für die Funktioenn $c_k$ und $s_k$.
-\index{Orthogonalitätsrelationen}
+\index{Orthogonalitätsrelationen}%
 
 \subsection{Bestimmung der Koeffizienten $a_k$ und $b_k$}
 Die Orthogonalitätsrelationen~\eqref{skript:kugelfunktionen:ortho} erlauben
@@ -602,15 +648,15 @@ in $\cos\vartheta$ ausdrücken lassen.
 In der Fourier-Theorie haben wir gesehen, dass sich eine Funktion
 auf dem Kreis als Summe homogener Polynome beschreiben lässt.
 Grund dafür war der Satz~\ref{skript:satz:weierstrass}, welcher
-garantierte, dass man eine Funktion mit Polynomen beliebig genau
+garantierte, dass man eine stetige Funktion mit Polynomen beliebig genau
 approximieren kann.
 
 Für Funktionen auf der Kugel gilt dies natürlich auch, jede stetige
-Funktion auf der Oberfläche der Einheitskugel lässt sich als Polynom in
-$x$, $y$ und $z$ schrieben.
-Andererseits diese Koordinaten durch Potenzen von trigonometrischen
-Funktionen von $\vartheta$ und $\varphi$ ausgedrückt werden können.
-Diese können wie früher auch durch Funktionen der Vielfachen Winkel
+Funktion auf der Oberfläche der Einheitskugel lässt sich beliebig
+genau als Polynom in $x$, $y$ und $z$ schreiben.
+Andererseits können diese Koordinaten durch Potenzen von trigonometrischen
+Funktionen von $\vartheta$ und $\varphi$ ausgedrückt werden.
+Diese können wie früher auch durch Funktionen der vielfachen Winkel
 ausgedrückt werden.
 
 Wir möchten aber sogar noch einen Schritt weiter gehen.
@@ -621,12 +667,16 @@ Koordinate.
 Unterscheiden sie sich in $\vartheta$, dann unterscheiden sich auch
 die zugehörigen Werte von $\cos\vartheta$, da der Kosinus auf dem
 Interval $[0,\pi]$ injektiv ist.
-Unterscheiden sie sich in $\varphi$, dann beschreibt
+Insbesondere brauchen wir $\sin\vartheta$ nicht, um Punkte auf der 
+Kugel unterscheiden zu können.
+Unterscheiden sie sich die beiden Punkte in $\varphi$, dann beschreibt
 $(\cos\varphi,\sin\varphi)$ für die beiden Werte von $\varphi$ verschiedene
 Punkte auf einem Einheitskreis, also muss mindestens eine der
 Komponenten $\cos\varphi$ oder $\sin\varphi$ verschieden sein.
-Nach dem Satz~\ref{skript:satz:stone-weierstrass} muss es also schon
-möglich sein, durch Potenzen auch nur von $\cos\vartheta$
+Nach dem Satz~\ref{skript:satz:stone-weierstrass} muss es also 
+möglich sein, durch Potenzen nur von $\cos\vartheta$, $\cos\varphi$
+und $\sin\varphi$ eine Funktion auf der Kugeloberfläche beliebig genau
+zu approximieren.
 
 Man kann dies auch wie folgt verstehen.
 Die Wurzelfunktion auf dem Interval $[0,1]$ kann durch ein Polynom $p(x)$
@@ -646,20 +696,19 @@ P(\cos\vartheta) \cos(m\varphi)
 P(\cos\vartheta) \sin(m\varphi)
 \]
 haben.
-Im nächsten Abschnitt zeigen wir, dass Kugelfunktioen dieses Problem lösen.
-
-
+Im nächsten Abschnitt zeigen wir, dass Kugelfunktionen dieses Problem lösen.
 
 \subsection{Basisfunktionen}
 Es müssen also Funktionen $Y_m^l(\varphi,\vartheta)$ gefunden werden,
 die berzüglich des Skalarproduktes
-\[
+\begin{equation}
 \langle f,g\rangle
 =
 \int_{-\pi}^{\pi} \int_0^\pi 
 f(\varphi,\vartheta) g(\varphi,\vartheta)
 \sin\vartheta\,d\vartheta\,d\varphi
-\]
+\label{skript:kugelfunktionen:skalarprodukt}.
+\end{equation}
 orthonormiert sind.
 Man kann zeigen \cite{skript:tabea}, dass sich diese Funktionen als Lösungen
 einer Differentialgleichung finden lassen.
@@ -690,7 +739,8 @@ P^m_l(z)
 (-1)^m(1-z^2)^{m/2}\frac{d^m}{dz^m}P_l(z).
 \end{equation}
 Das Polynom $P_l(z)$ heisst {\em Legendre-Polynom}
-\index{Legendre-Polynom} und ist definiert durch
+\index{Legendre-Polynom}%
+und ist definiert durch
 \begin{equation}
 \frac{1}{2^ll!}\frac{d^l}{dz^l}(z^2-1)^l.
 \end{equation}
@@ -735,7 +785,7 @@ Wie in der klassischen Fourier-Theorie kann auch hier gezeigt werden,
 dass die Reihe auch noch konvergent ist, wenn die Funktionen nur noch
 quadratintegrierbar ist.
 Die Konvergenz ist dann aber nicht mehr punktweise, sondern nur noch
-im quadratischen Mittel.
+im Sinne des Skalarproduktes~\eqref{skript:kugelfunktionen:skalarprodukt}.
 
 \subsection{Graphische Darstellung der Kugelfunktionen}
 Die Kugelfunktionen für $l=5$ sind in den Abbildungen
