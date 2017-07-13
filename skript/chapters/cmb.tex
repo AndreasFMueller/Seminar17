@@ -7,6 +7,34 @@
 \label{skript:chapter:cmb}}
 \lhead{Der kosmische Mikrowellenhintergrund}
 \rhead{}
+Im Kapitel~\ref{skript:chapter:kosmologie} haben wir aus den
+Einstein-Gleichungen abgeleitet, dass ein homogenes und isotropes
+Universum nicht statisch sein kann.
+Hubbles Entdeckung der Expansion des Universums erlaubt uns zu
+schliessen, dass das frühe Universum sehr heiss und dicht gewesen
+sein muss.
+Die Friedmann-Gleichung und ihre ausführliche Diskussion im
+Kapitel~\ref{skript:chapter:friedmann} hat gezeigt, wie Materie und
+Strahlung im Universum diese Expansion beeinflussen.
+Es wurde dort auch auf das Steady-State-Modell hingewiesen, welches
+ein sich ausdehnendes Universum konstanter Dichte zulässt.
+Dieses wurde mit der Entdeckung des kosmischen Mikrowellenhintergrundes durch
+Penzias und Wilson (mehr dazu im Kapitel~\ref{chapter:cmb}) ausgeschlossen.
+Es bleibt aber noch zu verstehen, wie der kosmische Mikrowellenhintergrund
+entsteht und welche Eigenschaften man von ihme erwarten kann.
+
+Es stellt sich heraus, dass der kosmische Mikrowellenhintergrund mit sehr
+hoher Genauigkeit das Spektrum eines schwarzen Körpers hat.
+In diesem Kapitel wird daher zunächst ein Überblick über die allgemeine
+Theorie der Schwarzkörperstrahlung gegeben.
+Im zweiten Abschnitt wird der Ablauf der Rekombination genauer untersucht.
+In dieser Phase wird aus dem heissen Plasma ein vergleichsweise kaltes Gas,
+in dem sich Licht ungehindert ausbreitet.
+Die in diesem Moment freigesetzte Strahlung messen wir heute als den
+kosmischen Mikrowellenhintergrund.
+Im letzten Teil untersuchen wir dann, ob sich mit unserem Wissen
+bereits Aussagen über Grösse und Temperatur von Anisotropien im kosmischen
+Mikrowellenhintergrund machen lassen.
 
 \section{Schwarzkörperstrahlung}
 \rhead{Schwarzkörperstrahlung}
@@ -569,7 +597,7 @@ Darin ist $\zeta(3)$ der Wert der Riemannschen Zetafuntion an der
 Stelle $3$.
 Ein numerischer Wert ist $\zeta(3)=1.20205690\dots$.
 
-\section{Rekombination%
+\section{Entstehung des kosmischen Mikrowellenhintergrundes%
 \label{skript:cmb:section:rekombination}}
 \rhead{Rekombination}
 Im frühen Universum war die Energiedichte der Strahlung viel höher
@@ -825,11 +853,76 @@ T_\text{rec} = 3740\text{K}
 finden.
 
 \section{Anisotropie des CMB}
-\rhead{Anistrotopie des CMB}
+\rhead{Anisotrotopie des CMB}
 Wenige Jahre nach der Entdeckung des kosmischem Mikrowellenhintergrundes
-haben verschiedene Experimente versucht, die Hypothesen zu überprüfen,
-die dem Big-Bang-Modell zu Grunde liegen.
+haben verschiedene Experimente versucht, die Vorhersagen zu überprüfen,
+die sich aus dem Big-Bang-Modell ableiten lassen:
+\begin{enumerate}
+\item Die kosmische Hintergrundstrahlung hat das Spektrum eines schwarzen
+Körpers.
+\item Die kosmische Hintergrundstrahlung ist isotrop.
+\end{enumerate}
+Im Kapitel~\ref{chapter:cmb} wird etwas detaillierter über die zu diesem
+Zweck gestarteten Satellitenmissionen berichtet.
+Sie haben Aussage~1 mit grosser Genauigkeit bestätigt und detaillierte
+Karten der Anisotropien der Hintegrundstrahlung aufgenommen.
+In diesem Abschnitt soll die Grössse der zu erwartenden Anistropien
+abgeschätzt werden.
 
+\subsection{Dipol-Anistropie%
+\label{section:cmb:dipolaniso}}
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{chapters/images/CMBdipole.jpg}
+\caption{Dipol-Anistropie des kosmischen Mikrowellenhintergrundes.
+\label{skript:cmb:dipolaniso}}
+\end{figure}
+Der kosmische Mikrowellenhintergrund kommt dem Konzept eines ausgezeichneten
+Ruhe-Koordinatensystems an nächsten.
+Die Bewegung der Erde um die Sonne, die Bewegung der Sonne im das Zentrum
+der Milchstrasse und die Eigenbewegung der Milchstrasse relativ zum
+Mikrowellenhintergrund führen dazu, dass die Strahlung blauverschoben
+ist aus der Richtung, in die wir uns bewegen. 
+Die Strahlung aus der Richtung, aus der wir herkommen, ist dagegen
+rotverschoben.
+
+Die Abbildung~\ref{skript:cmb:dipolaniso} zeigt die Dipol-Anistropie.
+Der gemessene Temperaturunterschied ist $\Delta T= \pm 3.35\text{mK}$.
+Die zugehörige Geschwindigkeit ist
+\[
+\frac{\Delta T}{T}=\frac{v}{c}
+\qquad\Rightarrow\qquad
+v=
+\frac{\Delta T}{T}c
+=
+\frac{3.35\cdot 10^{-3}}{2.71}\cdot 2.998\cdot 10^{5}\frac{\text{km}}{\text{s}}
+=
+371\frac{km}{s}.
+\]
+ableiten
+Man kann daraus ableiten, dass sich die Erde mit einer Geschwindigkeit von
+371 km/s in Richtung auf das Sternbild Löwe bewegt.
+
+\subsubsection{Höhere Multipole}
+\begin{figure}
+\centering
+\includegraphics[width=\hsize]{chapters/images/cmb-multipoles.png}
+\caption{Multipole der Anistropie des kosmischen Mikrowellenhintergrundes
+\cite{cmbmultipoles}.
+Die Quadrupol- und Octopol-Anistropien sind mindestens drei Grössenordnungen
+geringer als die Dipol-Anistropie.
+\label{skript:cmb:multipolaniso}}
+\end{figure}
+Im Kapitel~\ref{skript:chapter:multipol} wurde dargelegt, wie man eine
+Funktion auf der Kugeloberfläche nach Kugelfunktionen entwickeln kann.
+die in Abschnitt~\ref{section:cmb:dipolaniso} beschriebene Dipol-Anistropie
+entspricht den Termen für $l=1$.
+Abbildung~\ref{skript:cmb:multipolaniso} zeigt die nächsthöheren Terme für
+$l=2$ und $l=3$ \cite{cmbmultipoles}.
+Die Temperatur-Skala verrät, dass diese Anisotropien mindestens drei
+Grössenordnungen geringer sind.
+Die Dipol-Anistropie ist als bei weitem die dominante Komponente der
+Anisotropien des kosmischen Mikrowellenhintergrundes.
 
 \subsection{Hubble-Distanz}
 Zwei Punkte in Entfernung $l$ entfernen sich in einem Universum, welches
@@ -863,7 +956,7 @@ Mit der letzten Streuung entkoppelt sich die Strahlung von der Materie,
 jetzt ist es erst recht nicht mehr möglich, dass sich Temperaturunterschiede
 ausgleichen können.
 Wir erwarten daher, dass wir im kosmischen Mikrowellenhintergrund
-Anistropien von der Grössenordnung der Hubble-Distanz zur Zeit der
+Anisotropien von der Grössenordnung der Hubble-Distanz zur Zeit der
 letzten Streuung beobachten können.
 
 Seit der letzten Streuung ist das Universum von Materie dominiert,
