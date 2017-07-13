@@ -36,13 +36,13 @@ Im letzten Teil untersuchen wir dann, ob sich mit unserem Wissen
 bereits Aussagen über Grösse und Temperatur von Anisotropien im kosmischen
 Mikrowellenhintergrund machen lassen.
 
-\section{Schwarzkörperstrahlung}
-\rhead{Schwarzkörperstrahlung}
+\section{Thermodynamik und Schwarzkörperstrahlung}
+\rhead{Thermodynamik und Schwarzkörperstrahlung}
 Ein ungelöstes Problem der Physik im ausgehenden neunzehnten Jahrhundert
-war das Strahnungsspektrum eines schwarzen Körpers zu berechnen.
-Ein schwarzer Körper ist eine idealsierte thermische Strahlungsquelle,
+war das Strahlungsspektrum eines schwarzen Körpers zu berechnen.
+Ein schwarzer Körper ist eine idealisierte thermische Strahlungsquelle,
 die auftreffende elektromagnetische Strahlung jeder Wellenlänge absorbiert
-und deren Strahlungsspektrum nicht von der Oberflächebeschaffenheit
+und deren Strahlungsspektrum nicht von der Oberflächenbeschaffenheit
 abhängt, sondern nur von dessen Temperatur.
 Eine mögliche Realisierung ist ein mit Strahlung gefüllter Hohlraum, dessen
 Wände auf konstanter Temperatur gehalten werden.
@@ -59,17 +59,20 @@ Strahlungsgesetzes nicht ändert, so dass die Expansion des Universums
 die Eigenschaften des Schwarzkörperspektrums erhält.
 Daraus werden wir auch ableiten, wie sich die zugehörige Temperatur
 mit der Expansion verändert.
-Die kosmische Mikrowellenhintergrundstrahlung wurde in dem Moment
-ausgestrahlt, als das ionisierte Gas frühen Universums neutral wurde,
-man nennt dies die Rekombination.
-Die Dynamik dieses Ereignisses wird in
-Abschnitt~\ref{skript:cmb:section:rekombination} untersucht.
 
-\subsection{Klassische Theorie%
+%Die kosmische Mikrowellenhintergrundstrahlung wurde in dem Moment
+%ausgestrahlt, als das ionisierte Gas frühen Universums neutral wurde,
+%man nennt dies die Rekombination.
+%Die Dynamik dieses Ereignisses wird in
+%Abschnitt~\ref{skript:cmb:section:rekombination} untersucht.
+
+\subsection{Thermodynamik%
 \label{skript:cmb:section:klassisch}}
+\index{Thermodynamik}%
 Ein thermodynamisches System besteht aus einer grossen Zahl von 
 Teilchen, die ständig interagieren und dabei Energie austauschen.
-Der mikroskopische Zustand des Systems ändert sich ständig.
+Der mikroskopische Zustand des Systems ändert sich laufend
+und sehr rasch.
 \index{mikroskopischer Zustand}
 \index{Zustand, mikroskopisch}
 Es ist daher gar nicht möglich, den aktuellen mikroskopischen
@@ -80,7 +83,7 @@ Wert für die gemessene Grösse.
 Die fundamentale Zustandsgrösse der klassischen Thermodynamik ist
 die Entropie, eine Funktion $S(U,V)$ von inneren Energie $U$ und 
 Volumen $V$ des Systems. 
-\index{Entropie}
+\index{Entropie}%
 Alle mikroskopischen Zustände zur gleichen Energie und im gleichen
 Volumen sind gleichermassen zulässig.
 Offenbar gibt es auch keinen Grund, warum einer dieser Zustände
@@ -114,7 +117,7 @@ deren Produkt
 \[
 \Omega(U,V)=\Omega_1(U_1,V_1)\cdot \Omega_2(U_2,V_2).
 \]
-Die Logarithmus-Funtion erfüllt diese Bedingung, und bis auf einen
+Die Logarithmus-Funktion erfüllt diese Bedingung, und bis auf einen
 Faktor ist sie auch die einzige Funktion mit dieser Eigenschaft.
 Man kann also immer
 \begin{equation}
@@ -128,8 +131,10 @@ Durch die Wahl
 k_B = 1.3807\cdot 10^{-23} \text{J}/\text{K}
 \]
 wird Übereinstimmung mit der Kelvin-Temperaturskala erreicht.
+\index{Kelvin-Temperaturskala}%
 
 \subsubsection{Kanonischer Formalismus}
+\index{kanonischer Formalismus}%
 Dieser Formalismus ist jedoch für die Beschreibung eines Systems 
 nicht geeignet, welches sich in Kontakt mit einem Wärmereservoir
 befindet, mit welchem es zur Erhaltung der Temperatur Energie
@@ -144,6 +149,7 @@ System Energie austauschen kann.
 Die Gesamtenergie $E_\text{tot}$ des kombinierten Systems ist dann zwar eine
 Zustandsvariable, aber das ursprüngliche Teilsystem kann verschiedene
 Zustände annehmen.
+
 Bezeichnen wir die verschiedenen Zustände mit einem Index $j$
 und ihre Energie mit $E_j$, dann können wir die Wahrscheinlichkeit
 berechnen, dass sich das ursprüngliche System im Zustand $j$ befindet.
@@ -227,6 +233,8 @@ e^{-\beta F}=\sum_je^{-\beta E_j}=Z.
 \label{skript:cmb:Z}
 \end{equation}
 Die Zahl $Z$ heisst die {\em kanonische Zustandssumme}.
+\index{kanonische Zustandssumme}%
+\index{Zustandssumme, kanonische}%
 Aus ihr kann man die freie Energie berechnen, indem man
 \eqref{skript:cmb:Z} nach $F$ auflöst:
 \begin{equation}
@@ -241,7 +249,7 @@ w_j
 \end{equation}
 ausdrücken.
 
-\subsubsection{Mittlere Energie}
+\subsubsection{Erwartungswert der Energie}
 Schliesslich lässt sich auch die mittlere Energie des ursprünglichen
 Systems durch $Z$ ausdrücken.
 Dazu verwendet man zunächst die Definition 
@@ -282,6 +290,8 @@ Temperatur $T$ aus der Zustandssumme berechnen.
 Die im vorangegangenen Abschnitt zusammengestellten Grundlagen der
 statischen Mechanik erlauben uns, das Plancksche Strahlungsgesetz
 zu verstehen.
+\index{Plancksches Strahlungsgesetz}%
+\index{Strahlungsgesetzt von Planck}%
 
 \subsubsection{Frequenzdichte}
 Elektromagnetische Strahlung in einem verspiegelten Hohlraum bildet
@@ -296,7 +306,7 @@ von ganze Zahlen $k_x,k_y,k_z\in\mathbb Z$ beschrieben werden, der
 die Anzahl der Wellenlängen angibt, die in jeder Richtung in die
 Abmessungen des Hohlraums hineinpassen.
 Sei $L$ die Seitenlänge des Hohlraumes, das Volumen ist dann $V=L^3$.
-Eine Welle kann dann mit Hilfe der Funktionen
+Eine Welle kann man mit Hilfe der Funktionen
 \[
 \sin \vec{x}\cdot\vec{k}\frac{2\pi}{L}
 \qquad\text{und}\qquad
@@ -356,7 +366,7 @@ zwischen den beiden Radien
 \[
 V(r+dr)-V(r)
 \simeq
-\frac{d}{dr} \frac{4}{3}\pi  r^3 \, dr
+\biggl(\frac{d}{dr} \frac{4}{3}\pi  r^3\biggr) \cdot dr
 =
 4\pi r^2\,dr.
 \]
@@ -378,6 +388,7 @@ Felder mit orthogonalen Polarisierungen ermöglicht, was die Zahl
 der Zustände nochmals verdoppelt.
 
 \subsubsection{UV-Katastrophe}
+\index{UV-Katastrophe}%
 Ein klassischer harmonischer Oszillator kann jede beliebige Energie haben,
 da diese nur von der Amplitude abhängt.
 Die klassische Thermodynamik leitet aus dem kanonischen Formalismus den
@@ -391,7 +402,7 @@ unendlich gross.
 Man nennt dies die UV-Katastrophe.
 Sie zeigt, dass die klassischen Vorstellungen und insbesondere der
 Gleichverteilungssatz nicht anwendbar sind.
-Das Problem kann nur gelöst werden indem man dafür sorgt, indem man
+Das Problem kann nur gelöst werden, indem man
 annimmt, dass die Oszillatoren mit hoher Frequenz nur mit geringerer
 Wahrscheinlichkeit angeregt werden.
 
@@ -538,6 +549,8 @@ verkürzt wurden.
 Der Faktor $B$ muss $B=a^4$ sein, damit dies zutrifft.
 Wir schliessen daraus, dass die Gesamtstrahlung eines schwarzen Körpers
 proportional zu $T^4$ sein muss (Wiensches Verschiebungsgesetz).
+\index{Wiensches Verschiebungsgesetz}%
+\index{Verschiebungsgesetz}%
 
 \subsubsection{Expansion}
 In der Form~\eqref{skript:cmb:planck:lambda}
@@ -552,7 +565,7 @@ Im besten Fall ist $U_1(\lambda_1,T_1)$ wieder das Plancksche
 Strahlungsgesetz, möglicherweise mit einer anderen Temperatur $T_1$, die
 es ebenfalls zu bestimmen gilt.
 
-Aus dem Strahlungsgesetz~\label{skript:cmb:planck:lambda} in Abhängigkeit
+Aus dem Strahlungsgesetz~\eqref{skript:cmb:planck:lambda} in Abhängigkeit
 von der Wellenlänge wird dann
 \begin{align*}
 U_1(\lambda_1,T_1)\,d\lambda_1
@@ -595,6 +608,8 @@ n_\gamma
 \end{equation}
 Darin ist $\zeta(3)$ der Wert der Riemannschen Zetafuntion an der
 Stelle $3$.
+\index{Riemannsche Zetafunktion}%
+\index{Zetafunktion, Riemannsche}%
 Ein numerischer Wert ist $\zeta(3)=1.20205690\dots$.
 
 \section{Entstehung des kosmischen Mikrowellenhintergrundes%
@@ -616,9 +631,10 @@ Elektronen davor noch nie kombiniert gewesen waren.
 
 In diesem Abschnitt wollen wir daher berechnen, wie der Prozess der
 Rekombination abläuft und bei welchem Alter des Universum dies
-etwas stattgefunden haben muss.
+etwa stattgefunden haben muss.
 
-\subsection{Zusammensetzung des Universums}
+\subsection{Zusammensetzung des Universums%
+\label{section:cmb:dichte}}
 Wir nehmen in diesem Abschnitt an, dass das Universum nur aus 
 Protonen, Elektronen und Strahlung besteht.
 Insbesonderen vernachlässigen wir den beträchtlichen Teil
@@ -634,13 +650,153 @@ und die Anzahldichte $n_\text{H}$ der Wasserstoffatome.
 Da das Universum neutral ist, muss $n_e=n_p$ gelten.
 Da jedes Wasserstoffatom auch ein Proton als Atomkern enthält, ist die
 Gesamtzahl der Baryonen im Universum $n_\text{Baryonen} = n_p+n_\text{H}$.
-Der Ionisationsgrad des Unviersums ist daher
+
+Aus Beobachtungen lassen sich diese Zahlen abschätzen.
+Für die Energiedichte der Protonen wurde ein Wert von
+$\varepsilon \simeq = 210\text{MeV}/\text{m}^3$ gefunden.
+Da ein einzelnes Proton die Energie $E_p=939\text{MeV}$ hat, finden wir
+für die Protonendichte heute
+\[
+n_{\text{Baryonen}}
+=
+n_p
+\simeq
+0.22 \text{m}^{-3}.
+\]
+Zum Vergleich: Wasserstoffgas bei Atmosphärendruck hat eine Protonendichte
+von etwa $5.3\cdot 10^{25}\text{m}^{-3}$.
+In einem technischen Ultra-Hochvakuum mit einem Druck von
+$10^{-10}\text{Pa}$ ist die Protonendichte immer noch
+etwa $5.3\cdot 10^{10}$, also über 7 Grössenordnungen höher als im 
+Universum im Grossen.
+
+Auch für die Photonendichte kann man eine Schätzung abgeben.
+Aus der bekannten Temperatur des kosmischen Mikrowellenhintergrundes
+kann man mit der Formel~\eqref{skript:cmb:photonenzahl} die heutige
+Photonendichte abschätzen, sie ist
+\[
+n_{\gamma,0}=4.11\cdot 10^8.
+\]
+Die Photonendichte ist also auch heute wesentlich höher als die 
+Protonendichte, das Verhältnis ist
+\[
+\eta = \frac{n_{\text{Baryonen}}}{n_\gamma} = 5.35\cdot 10^{-10}.
+\]
+Die Energie einzelner Photonen der Hintergrundstrahlung ist
+allerdings sehr klein.
+
+\subsection{Prozesse in einem voll ionisierten Universum}
+Wir betrachten das Universum zu einer Zeit, die der Rotverschiebung
+$z=10^5$ entspricht.
+Das Universum hat damals die Temperatur $T=zT_0 \simeq 3\cdot 10^5\text{K}$.
+Dies ist zu kalt für Fusionsprozesse, aber die mittlere Energie 
+$k_BT\simeq 60\text{eV}$ eines Photons ist deutlich höher als die
+Ionisationsenergie eines Wasserstoffatoms, man kann also davon ausgehen,
+dass zu dieser Zeit das Universum vollständig ionisiert war.
+
+Wie gross war die Materiedichte damals? 
+Die Materiedichte geht mit der dritten Potenz des Skalenfaktors.
+Die Anzahldichte ist daher
+\[
+n = n_0(1+z)^3 
+\simeq
+n_0\cdot 10^{15}
+\simeq
+2\cdot 10^{14}\text{m}^{-3}.
+\]
+Dies entspricht einer Massedichte von $3.7\cdot 10^{13}\text{kg}/\text{m}^3$,
+das war bereits ein extrem verdünntest Plasma.
+
+Der dominierende Prozess in dieser Phase war die Thomson-Streuung
+\[
+\gamma + e^- \to \gamma + e^-
+\]
+\index{Thomson-Streuung}%
+eines Photons an einem Elektron.
+Diesen Prozess kann man im Labor studieren, er lässt ist durch den
+sogenannten Wirkungsquerschnitt
+\[
+\sigma_e
+=
+\frac{1}{n_e\lambda}
+=
+6.65\cdot 10^{-29}
+\]
+charakterisieren.
+Darin ist $n_e$ die Anzahldichte der Elektronen, die mit der Anzahldichte
+der Protonen übereinstimmt, und $\lambda$ ist die mittlere freie
+Weglänge der Photonen.
+Da $n_e$ bekannt ist, kann man dies auch nach $\lambda$ auflösen und
+so die mittlere freie Weglänge $\lambda=1/n_e\sigma_e$ finden.
+Da sich die Photonen mit Lichtgeschwindigkeit ausbreiten, kann man
+die Streurate
+\[
+\Gamma
+=
+\frac{c}{\lambda}
+=
+cn_e\sigma_e\simeq 4.4\cdot 10^{-6}\text{s}^{-1}
+\]
+eines Photons berechnen, das sind etwa 2.6 Streuereignisse pro Woche.
+Die Thomson-Streuung tauscht Energie zwischen Photonen und Elektronen aus.
+Die Elektronen und die Photonen bilden also ein gekoppeltes thermodynamisches
+System.
+
+In einem Universum, welches sich mit Geschwindigkeit $H$ ausdehnt,
+entfernen sich zwei Punkte mit Distanz $l$ mit Geschwindigkeit $Hl$.
+Wenn $Hl>c$ oder $l>c/H$ kann ein Photon die Strecke zwischen den
+beiden Punkten nicht mehr durchlaufen.
+Für die mittlere freie Weglänge $\lambda$ bedeutet dies, dass
+für $\lambda > c/H$ oder $H>c/\lambda=\Gamma$ die das durchschnittli
+Photon das nächste Streuereignis nicht mehr erreicht.
+
+Die Streurate $\Gamma$ nimmt mit der Ausdehnung des Universums ab,
+und zwar ist
+\[
+\Gamma
+=
+cn_e\sigma_e
+\sim
+a(t)^{-3}.
+\]
+Aber auch $H$ nimmt ab,
+im Strahlungsdominierten Universum gilt
+\[
+H^2 = H_0^2  \Omega_{0,s} a(t)^{-4}
+\qquad\Rightarrow\qquad
+H=H_0\sqrt{\Omega_{0,s}} a(t)^{-2}.
+\]
+$\Gamma$ nimmt also schneller ab als $H$, es wird also unweigerlich
+der Moment eintreten, wo $H>\Gamma$ ist, wo also die Streuprozesse
+zum erliegen kommen.
+In diesem Moment findet kein bedeutender Energieaustausch mehr statt
+zwischen Photonen und Elektronen.
+Die Strahlung und die Elektronen entkoppeln.
+
+In dieser Diskussion haben wir aber noch nicht berücksichtigt, dass
+die Ausdehnung auch die Temperatur senkt.
+Bei niedrigerer Photonenenergie können sich Elektronen und Protonen
+zu neutralen Wasserstoffatomen zusammenfinden, man nennt diesen
+Prozess die Rekombination.
+Fängt ein Proton ein Elektron ein, wird ein Photon ausgesendet,
+doch wegen der sehr grossen Zahl der Photonen (dem sehr kleinen Wert
+von $\eta$), fallen diese zusätzlichen Photonen nicht ins Gewicht.
+Durch die Rekombination werden den Streuprozessen die freien Elektronen
+entzogen, der Energieaustausch zwischen Photonen und Elektronen
+kommt also bereits früher, dadurch zum Erliegen.
+
+\subsection{Ionisationsgrad}
+Bei der Rekombination nimmt der Anteil des neutralen Wasserstoffs
+gegenüber ionisierten Protonen und Elektronen stark zu.
+Der Ionisationsgrad des Universums ist 
 \begin{equation}
 X=\frac{n_p}{n_\text{Baryonen}}=\frac{n_p}{n_p+n_\text{H}}.
 \label{skript:cmb:Xb}
 \end{equation}
-Ziel dieses Abschnitts ist die Berechnung von $X$ in Abhängigkeit 
+Ziel dieses Abschnitts ist, den Prozess der Rekombination besser zu
+verstehen durch die Berechnung von $X$ in Abhängigkeit 
 von der Zeit.
+
 Löst man die Definition~\eqref{skript:cmb:Xb} nach $n_\text{H}$ auf,
 findet man
 \begin{align}
@@ -702,7 +858,7 @@ Zustand möglich, der später durch Emission eines Photons in den Grundzustand
 übergehen kann.
 
 Wir möchten berechnen, wie der Ionisationsgrad sich mit der Zeit ändert.
-Wenn die Dichte der Photonen sinkt wird sich das Reaktionsgleichgewicht
+Wenn die Dichte der Photonen sinkt, wird sich das Reaktionsgleichgewicht
 auf die linke Seite von~\eqref{skript:cmb:reaktionsgleichung} verschieben.
 Im statistischen Gleichgewicht kann die Maxwell-Boltzmann-Gleichung
 verwendet werden, um die Teilchendichte in Abhängigkeit von der Temperatur
@@ -813,7 +969,7 @@ und damit
 \]
 Der Ionisationsgrad fällt also in Zukunft gegen 0.
 
-Für $T\to\infty$, also im ganz frühen Universum, geht $S\to\infty$
+Für $T\to\infty$, also im ganz frühen Universum, geht $S\to 0$
 und damit auch $X\to 0$
 Hilfe der Regel von de l'H\^opital wird
 \begin{align*}
@@ -897,9 +1053,8 @@ v=
 =
 \frac{3.35\cdot 10^{-3}}{2.71}\cdot 2.998\cdot 10^{5}\frac{\text{km}}{\text{s}}
 =
-371\frac{km}{s}.
+371\frac{\text{km}}{\text{s}}.
 \]
-ableiten
 Man kann daraus ableiten, dass sich die Erde mit einer Geschwindigkeit von
 371 km/s in Richtung auf das Sternbild Löwe bewegt.
 
@@ -925,6 +1080,7 @@ Die Dipol-Anistropie ist als bei weitem die dominante Komponente der
 Anisotropien des kosmischen Mikrowellenhintergrundes.
 
 \subsection{Hubble-Distanz}
+\index{Hubble-Distanz}%
 Zwei Punkte in Entfernung $l$ entfernen sich in einem Universum, welches
 mit der Hubble-Konstante $H$ expandiert, mit der Geschwindigkeit
 $v=Hl$.
@@ -947,7 +1103,8 @@ langsam ausbreitet.
 
 Die Hubble-Distanz ist für die Kosmologie von besonderer Bedeutung.
 Vor der letzten Streuung kann man davon ausgehen, dass die Strahlung
-als Temperaturausgleichsmechanismus funktioniert hat und Temperaturdifferenzen,
+als Temperaturausgleichsmechanismus funktioniert hat und Temperaturdifferenzen
+ausgeglichen hat,
 die eine kleinere Distanz voneinander entfernt waren als die Hubble Distanz
 angibt.
 Temperaturdifferenzen, die weiter als eine Hubble-Distanz auseinander lagen
@@ -962,7 +1119,7 @@ letzten Streuung beobachten können.
 Seit der letzten Streuung ist das Universum von Materie dominiert,
 wir können daher die ungefähre Grösse der Hubble-Konstante zur
 Zeit der letzten Streuung mit Hilfe der
-Friedmann-Gleichung~\eqref{skript:friedmann:omegagleichung}
+Friedmann-Gleichung \eqref{skript:friedmann:omegagleichung}
 abschätzen.
 Zunächst ist
 \[
@@ -1029,11 +1186,10 @@ es war also während der Zeit $t_0-t$ mit Lichtgeschwindigkeit unterwegs,
 und hat daher die Distanz $c(t_0-t)$ zurückgelegt.
 Wir teilen jetzt des Zeitinterval zwischen $t$ und $t_0$ in kleine
 Intervalle der Länge $dt$.
-Das Photon braucht legt während dieser Zeit die Distanz $c\,dt$
-zurück.
+Das Photon legt während dieser Zeit die Distanz $c\,dt$ zurück.
 Jedes solche Interval ist seither auf
 \[
-c {a(t_0)}{a(t)}\,dt
+c \frac{a(t_0)}{a(t)}\,dt
 \]
 angewachsen.
 Die gesamte Distanz zwischen zur Quelle ist daher
@@ -1041,6 +1197,7 @@ Die gesamte Distanz zwischen zur Quelle ist daher
 d_\text{hor} = c \int_t^{t_0} \frac{a(t_0)}{a(t)}\,dt.
 \]
 
+\subsubsection{Horizontdistanz zur letzten Streuung}
 Für die Zeit seit der letzten Streuung lässt sich $a(t)$ als
 Lösung der Friedmann-Gleichung angeben eines materiedominierten
 Universums finden.
@@ -1060,6 +1217,7 @@ Diese Differentialgleichung hat die Lösung
 \[
 a(t) = \biggl(\frac{t}{t_0}\biggr)^\frac23.
 \]
+\subsubsection{Horizontdistanz für beliebige Rotverschiebung}
 Daraus lässt sich jetzt die Horizont-Distanz für jede beliebige 
 Rotverschiebung berechnen.
 Es ist nämlich
