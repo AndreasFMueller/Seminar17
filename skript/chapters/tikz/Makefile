@@ -9,7 +9,8 @@ all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
 	darkenergy.pdf orbit.pdf orbit2.pdf lichtablenkung.pdf dipol1.pdf \
 	dipol2.pdf ionisation.pdf kreisbogen.pdf tangente.pdf kruemmung.pdf \
 	wald.pdf 4pifu2.pdf dipol3.pdf quadrupol.pdf quadrupol1.pdf \
-	hexapol.pdf hexapol1.pdf monopol.pdf planck1.pdf planck2.pdf
+	hexapol.pdf hexapol1.pdf monopol.pdf planck1.pdf planck2.pdf \
+	planck3.pdf
 
 images:	all
 
@@ -108,3 +109,9 @@ planck1.pdf:	planck1.tex
 
 planck2.pdf:	planck2.tex
 	pdflatex planck2.tex
+
+planck3.pdf:	planck3.tex planck.csv
+	pdflatex planck3.tex
+planck.csv:	planck.m
+	octave planck.m
+

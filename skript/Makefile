@@ -37,7 +37,8 @@ CHAPTERS = 								\
 	chapters/multipol.tex                                           \
 	chapters/s-lichtablenkung.tex                                   \
 	chapters/s-perihel.tex                                          \
-	chapters/schwarzschild.tex
+	chapters/schwarzschild.tex					\
+	chapters/konstanten.tex
 
 SKRIPTFILES = vorwort.tex uebersicht.tex \
 	$(CHAPTERS) \
