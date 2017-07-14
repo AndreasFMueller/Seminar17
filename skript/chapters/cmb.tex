@@ -603,7 +603,16 @@ Die Anzahldichte der Photonen in einem Hohlraum der Temperatur $T$ ist
 n_\gamma
 =
 16\pi\zeta(3)
-\biggl(\frac{k_BT}{hc}\biggr)^3.
+\biggl(\frac{k_BT}{hc}\biggr)^3
+=
+60.422
+\biggl(\frac{k_BT}{hc}\biggr)^3
+=
+16\pi\zeta(3)\cdot (2\pi)^3
+\biggl(\frac{k_BT}{\hbar c}\biggr)^3
+=
+0.24359
+\biggl(\frac{k_BT}{\hbar c}\biggr)^3.
 \label{skript:cmb:photonenzahl}
 \end{equation}
 Darin ist $\zeta(3)$ der Wert der Riemannschen Zetafuntion an der
@@ -872,7 +881,7 @@ auszudrücken, es gilt für die Komponente $x$
 \[
 n_x
 =
-g_x \biggl(\frac{m_xk_BT}{2\pi h^2}\biggr)^{\frac32}
+g_x \biggl(\frac{m_xk_BT}{2\pi \hbar^2}\biggr)^{\frac32}
 \exp\biggl(-\frac{m_xc^2}{k_BT}\biggr).
 \]
 Die Zahl $g_x$ ist die Anzahl der Zustände mit gleichem Impuls.
@@ -886,7 +895,7 @@ Das Verhältnis der Anzahldichten der Reaktionsteilnehmer ist
 =
 \underbrace{\frac{g_\text{H}}{g_pg_e}}_{\displaystyle=1}
 \biggl(\frac{m_\text{H}}{m_pm_e}\biggr)^{\frac32}
-\biggl(\frac{k_BT}{2\pi h^2}\biggr)^{-\frac32}
+\biggl(\frac{k_BT}{2\pi \hbar^2}\biggr)^{-\frac32}
 \exp\biggl( \frac{(m_p+m_e-m_\text{H})c^2}{k_BT} \biggr)
 \label{skript:cmb:saha1}
 \end{equation}
@@ -903,7 +912,7 @@ zu
 \begin{equation}
 \frac{n_\text{H}}{n_pn_e}
 =
-\biggl(\frac{m_ek_BT}{2\pi h^2}\biggr)^{-\frac32}
+\biggl(\frac{m_ek_BT}{2\pi \hbar^2}\biggr)^{-\frac32}
 \exp\biggl( \frac{Q}{k_BT} \biggr),
 \label{skript:cmb:saha}
 \end{equation}
@@ -911,6 +920,15 @@ sie heisst die {\em Saha-Gleichung}.
 \index{Saha-Gleichung}
 
 \subsection{Rekombination}
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/rekombination.pdf}
+\caption{Ionisationsgrad in Abhängigkeit von der Rotverschiebung.
+Die Zeit läuft von links nach rechts.
+Rekombinationszeit ist bei Rotverschiebung $z=1375$ und einer Temperatur
+von $T_{\text{rec}}=3747\text{K}$.
+\label{skript:cmb:rekombinationgraph}}
+\end{figure}
 Die Gleichung~\eqref{skript:cmb:XnH} erlaubt uns, in der
 Saha-Gleichung~\eqref{skript:cmb:saha} das Verhältnis $m_\text{H}/n_p$
 durch $X$ ausdrücken, wir erhalten
@@ -918,14 +936,14 @@ durch $X$ ausdrücken, wir erhalten
 \frac{1-X}{X}
 =
 n_p
-\biggl(\frac{m_ek_BT}{2\pi h^2}\biggr)^{-\frac32}
+\biggl(\frac{m_ek_BT}{2\pi \hbar^2}\biggr)^{-\frac32}
 \exp\biggl( \frac{Q}{k_BT} \biggr).
 \end{equation}
 Die Protonendichte $n_p$ lässt sich dank~\eqref{skript:cmb:etaX}
 durch $\eta$ und die Photonendichte $n_\gamma$ ausdrücken als
 \[
 \frac{1-X}{X^2}=\eta n_\gamma
-\biggl(\frac{m_ek_BT}{2\pi h^2}\biggr)^{-\frac32}
+\biggl(\frac{m_ek_BT}{2\pi \hbar^2}\biggr)^{-\frac32}
 \exp\biggl( \frac{Q}{k_BT} \biggr).
 \]
 Für die Hohlraumstrahlung ist die Photonendichte $n_\gamma$ in Abhängigkeit
@@ -933,14 +951,30 @@ von der Temperatur aus \eqref{skript:cmb:photonenzahl} bekannt.
 \begin{align}
 \frac{1-X}{X^2}
 &=\eta
-16\pi\zeta(3)
-\biggl(\frac{k_BT}{hc}\biggr)^3
-\biggl(\frac{m_ek_BT}{2\pi h^2}\biggr)^{-\frac32}
+\frac{16\pi\zeta(3)}{(2\pi)^3}
+\biggl(\frac{k_BT}{\hbar c}\biggr)^3
+\biggl(\frac{m_ek_BT}{2\pi \hbar^2}\biggr)^{-\frac32}
 \exp\biggl( \frac{Q}{k_BT} \biggr)
 \notag
 \\
 &=
-16\pi\zeta(3)(2\pi)^{\frac32}
+\frac{16\pi\zeta(3)}{(2\pi)^3}(2\pi)^{\frac32}
+\,
+\eta
+\,
+\biggl(\frac{k_BT}{m_ec^2}\biggr)^{\frac32}
+\exp\biggl( \frac{Q}{k_BT} \biggr)
+\\
+&=
+\frac{16\pi\zeta(3)}{(2\pi)^{\frac32}}
+\,
+\eta
+\,
+\biggl(\frac{k_BT}{m_ec^2}\biggr)^{\frac32}
+\exp\biggl( \frac{Q}{k_BT} \biggr)
+\\
+&=
+3.8364
 \,
 \eta
 \,
@@ -1013,6 +1047,8 @@ Nimmt man $\eta=5.5\cdot 10^{-10}$, kann man für die Rekombinationstemperatur
 T_\text{rec} = 3740\text{K}
 \]
 finden.
+Abbildung \ref{skript:cmb:rekombinationgraph} zeigt den Ionisationsgrad
+in Abhängigkeit von der Rotverschiebung.
 
 \section{Anisotropie des CMB}
 \rhead{Anisotrotopie des CMB}

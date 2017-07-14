@@ -10,7 +10,7 @@ all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
 	dipol2.pdf ionisation.pdf kreisbogen.pdf tangente.pdf kruemmung.pdf \
 	wald.pdf 4pifu2.pdf dipol3.pdf quadrupol.pdf quadrupol1.pdf \
 	hexapol.pdf hexapol1.pdf monopol.pdf planck1.pdf planck2.pdf \
-	planck3.pdf
+	planck3.pdf rekombination.pdf
 
 images:	all
 
@@ -114,4 +114,9 @@ planck3.pdf:	planck3.tex planck.csv
 	pdflatex planck3.tex
 planck.csv:	planck.m
 	octave planck.m
+
+rekombination.pdf:	rekombination.tex rekombination.csv
+	pdflatex rekombination.tex
+rekombination.csv:	rekombination.m
+	octave rekombination.m
 
