@@ -15,7 +15,6 @@ Eta = 5.5e-10;
 # 16 * pi * zeta3 * (2 * pi)^(3/2)
 Eta * (kB * Trec / (me * c^2))^(3/2) * exp(Q / (kB * Trec)) / 3.84
 
-exit
 
 function retval = S(T, eta)
 	global zeta3;
