@@ -56,7 +56,7 @@ sind.
 
 \section{``Normale'' Linse}
 \rhead{Normale Linse}
-Zuerst einmal einen Rückblick wie eine ``normale'' Linse funktioniert.
+Zuerst einmal ein Rückblick wie eine ``normale'' Linse funktioniert.
 Eine ``normale'' Linse nutzt die Brechung zwischen dem Linsenmaterial
 und seiner Umgebung aus.  Durch diese Brechung kommt es zu einer
 Winkeländerung des Lichtstrahls.  Bei homogenen Materialien mit
@@ -67,11 +67,11 @@ Optik verwendet werden.
   \frac{\sin \varepsilon_1}{\sin \varepsilon_2} = \frac{n_2}{n_1}
 \end{equation}
 
-Darin kommen die Winkel zur Oberflächennormalen auf der einen Seite
-und die beiden Brechungsindizes auf der Anderen vor.  Der
+Darin kommen die Winkel zur Oberflächennormalen im Sinus-Bruch
+und die beiden Brechungsindizes vor.  Der
 Brechungsindex eines Mediums \(n\), ergibt sich aus der
 Lichtgeschwindigkeit im Vakuum \(c\) geteilt durch die
-Lichtgeschwindigkeit im Medium \(u\).
+Lichtgeschwindigkeit \(u\) im Medium.
 
 \begin{equation}
   n = \frac{c}{u}
@@ -152,13 +152,13 @@ Richtung des Sterns abgelenkt.)
 \rhead{Gravitationslinse}
 \subsection{Lichtkegel}
 \rhead{Lichtkegel}
-Als Start wird die Formel \ref{skript:kruemmung:raumzeitabstand} aus
+Als Start wird die Formel \eqref{skript:kruemmung:raumzeitabstand} aus
 dem Abschnitt über den Lichtkegel genommen.
 \begin{equation*}
   s^2 = -c^2 (t_1-t_2)^2 + (x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2
 \end{equation*}
 Die Gravitationslinse beugt Lichtwellen, somit ist \(s^2=0\), da sich
-die Wirkung in Lichtgeschwindigkeit ausbreitet.  Wird zur
+die Wirkung mit Lichtgeschwindigkeit ausbreitet.  Wird zur
 Vereinfachung \(c=1\) gesetzt, ergibt sich:
 \begin{equation*}
   0 = -(t_1-t_2)^2 + (x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2
@@ -250,9 +250,9 @@ Quelle nicht in einer Linie stehen (wie im Cluster Bild
 Um die Lichtablenkung zu berechnen, benötigt man den Weg des Lichts
 und nicht nur wie stark die Lichtgeschwindigkeit abgebremst wird.  Das
 Licht nimmt den Weg mit der kürzesten Laufzeit.  Aus der Physik kennt
-man, dass die Zeit gleich der Strecke durch die Geschwindigkeit ist.
+man, dass die Zeit gleich der Strecke durch die Geschwindigkeit ist:
 \begin{equation*}
-  t = \frac{s}{v}
+  t = \frac{s}{v}.
 \end{equation*}
 
 Für den Weg des Lichts muss man somit jedes Wegstück mit seiner
@@ -268,7 +268,7 @@ Weg geteilt durch eine Geschwindigkeit im Integral geben.  Eine
 Möglichkeit ist folgendes Integral:
 \begin{equation}
   I = \int\! \sqrt{\dot{x}(l)^2+\dot{y}(l)^2+\dot{z}(l)^2} \cdot
-  \frac{n\bigl(x(l),y(l),z(l)\bigr)}{c} d l
+  \frac{n\bigl(x(l),y(l),z(l)\bigr)}{c} d l.
 \end{equation}
 
 Der Wert unter der Wurzel entspricht dem Wegstück während eines
@@ -279,12 +279,12 @@ Lichtgeschwindigkeit \(c\) unabhängig von der Position ist, kann man
 den Bruch vor das Integral nehmen:
 \begin{equation}
   I = \frac{1}{c}\int\! \sqrt{\dot{x}(l)^2+\dot{y}(l)^2+\dot{z}(l)^2}
-  \cdot n\bigl(x(l),y(l),z(l)\bigr) d l
+  \cdot n\bigl(x(l),y(l),z(l)\bigr) d l.
 \end{equation}
 Des Weiteren benötigt man für Euler-Lagrange nur den Teil im Integral:
 \begin{equation}
   L = \sqrt{\dot{x}(l)^2+\dot{y}(l)^2+\dot{z}(l)^2}
-  \cdot n\bigl(x(l),y(l),z(l)\bigr)
+  \cdot n\bigl(x(l),y(l),z(l)\bigr).
 \end{equation}
 Da die Wurzel die folgenden Rechenschritte verkompliziert, wird sie
 quadriert, was das Extremum nicht verändert.  Weiter wird die
@@ -301,6 +301,7 @@ nur mit \(x\) gezeigt.
   0 = \frac{\partial F}{\partial x} - \frac{d}{d l} \frac{\partial
     F}{\partial \dot{x}}
 \end{equation}
+Die Ableitungen sind
 \begin{align*}
   \frac{\partial F}{\partial x} &= (\dot{x}^2+\dot{y}^2+\dot{z}^2) 2n
                                   \frac{\partial n}{\partial x}\\
@@ -308,7 +309,7 @@ nur mit \(x\) gezeigt.
   \frac{d}{d l}\frac{\partial F}{\partial\dot{x}} &= 2\ddot{x}n^2 + 4\dot{x}n
                                 \left(\frac{\partial n}{\partial x}\dot{x} +
                                 \frac{\partial n}{\partial y}\dot{y} +
-                                \frac{\partial n}{\partial z}\dot{z} \right)
+                                \frac{\partial n}{\partial z}\dot{z} \right).
 \end{align*}
 Setzt man die obigen Berechnungen in \ref{eq:cluster:euler} ein und
 löst diese Formel nach \(\ddot{x}\) auf, erhält man:
@@ -318,7 +319,6 @@ löst diese Formel nach \(\ddot{x}\) auf, erhält man:
   2\dot{x}\dot{y} \frac{1}{n}\frac{\partial n}{\partial y} -
   2\dot{x}\dot{z} \frac{1}{n}\frac{\partial n}{\partial z}
 \end{equation}
-
 Mit der Hilfe der logarithmischen Differentiation
 \begin{equation*}
   \frac{1}{n} \frac{\partial n}{\partial x} = \frac{\partial \ln
@@ -346,7 +346,8 @@ ergibt sich
 \end{equation*}
 
 Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
-\(-\frac{2\varphi}{c^2}\) durchführen.  In einem Beispiel soll dies in
+\(-\frac{2\varphi}{c^2}\) durchführen (d.h. man braucht,
+\(\nabla\varphi=\) Gravitationskraft).  In einem Beispiel soll dies in
 2D gezeigt werden.
 
 \begin{beispiel}
@@ -356,11 +357,11 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
   \begin{equation*}
     \varphi = -\frac{KM}{r}
   \end{equation*}
-  Wobei \(r\) der Abstand zwischen dem aktuellen Punkt und der Linse
-  ist.
+  Wobei
   \begin{equation*}
     r = \sqrt{(x-x_L)^2+(y-y_L)^2}
   \end{equation*}
+  der Abstand zwischen dem aktuellen Punkt und der Linse ist.
 
   Berechnet man mit Hilfe von Maxima Euler-Lagrange nach den beiden
   Koordinatenachsen, erhält man:
@@ -403,16 +404,17 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
                  {c^2\sqrt{\bigl(x(1)-x_L\bigr)^2+x(3)^2}\,^3}
   \end{align*}
 
-  Setzt Man nun Werte der Sonne ein
+  Setzt Man nun die Werte
   \begin{align*}
     x_L &\approx \SI{150e6}{\kilo\meter} &M &\approx
                                               \SI{2e30}{\kilogram}
     &R &\approx \SI{700e3}{\kilo\meter}
   \end{align*}
+  der Sonne ein,
   erhält man eine Winkeländerung von \(\approx \SI{1.77}{''}\),
   vergleicht man dies mit dem Werte aus der Literatur von
   \(\SI{1.75}{''}\) (\cite{misner1973gravitation} S.446), scheint
-  dieses Vorgehen ziemlich korrekt.
+  dieses Vorgehen ziemlich adäquat.
 
   Im Graphen \ref{fig:lichtablenkungSonne} ist der numerisch
   berechnete Lichtweg dargestellt.  Der Beobachter ist im Punkt (0,0)
@@ -540,7 +542,7 @@ die nummerische Berechnung.  Die Algorithmen ode23 und ode45 in Octave
 waren nicht in der Lage den Weg zu berechnen.  Hingegen konnte die
 Lichtablenkung im Beispiel oben mit ode23s aus Octave berechnet
 werden.  Dieser Algorithmus ist fähig steife Probleme zu berechnen.
-Solche Probleme nennt man steif, wenn eine langsame Frequenz von einer
+Solche Probleme nennt man steif, wenn eine tiefe Frequenz von einer
 hohen Frequenz überlagert wird.  Im weiteren Sinn ist dieses Problem
 steif, da zwischen Beobachter, Gravitationslinse und Quelle sehr
 grosse Abstände vorhanden sind, in denen nichts passiert.  Zum Lösen
