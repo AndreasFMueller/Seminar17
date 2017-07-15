@@ -22,7 +22,7 @@ Der Philosoph Emanuel Kant konnte sich zwar keine andere Geometrie
 vorstellen, doch mit den Erkenntnissen von Bolyai, Lobaschevski
 und Gauss wurde klar, dass es durchaus denkbare andere Geometrien
 gibt.
-Bernhard Riemann hat dann auch Methoden entwickelt, wie man die
+Bernhard Riemann hat mathematische Methoden entwickelt, wie man die
 Geometrie studieren kann, indem man ausschliesslich die Längenmessung
 innerhalb des Raumes verwendet.
 Damit ist die Geometrie unseres Raumes nicht länger einfach das
@@ -32,11 +32,11 @@ vielmehr ist sie zu einer experimentellen Wissenschaft geworden.
 Da wir nicht weiter annehmen wollen, dass sich der Raum mit Hilfe
 eines rechtwinkligen Koordinatensystems mit der
 Längenmessung~\eqref{skript:kruemmung:pytagoras}
-adäquat beschreiben lässt,
-müssen wir automatisch beliebige Koordinatensysteme zulassen.
-Je nach Wahl eines Koordinatensystems werden dann Vektoren, die
+adäquat beschreiben lässt, müssen wir zwangsweise beliebige
+Koordinatensysteme zulassen.
+Je nach Wahl des Koordinatensystems werden dann Vektoren, die
 wir für die Beschreibung der physikalischen Gesetze benötigen,
-verschiedenen Koordinaten haben.
+andere Komponenten haben.
 Da alle diese Koordinatensystem gleichberechtigt sind, müssen
 wir Vektoren auf einheitliche Art umrechnen können.
 Ausserdem müssen die Naturgesetze so formuliert sein, dass
@@ -169,21 +169,20 @@ Punkten $x^\nu(t_i)$ und $x^\mu(t_{i+1})$ mit der Summe
 l
 &\simeq
 \sum_{i=1}^n \sqrt{\sum_{\mu} (x^{\mu}(t_i)-x^{\mu}(t_{i-1}))^2}
-\\
-&\rightarrow
+\rightarrow
 \int_{t_0}^{t_n} \sqrt{\sum_{\mu}\biggl(\frac{dx^{\mu}(t)}{dt}\biggr)^2}\,dt
 \end{align*}
 annähern.
 Unter der Wurzel sehen wir die Quadratsummen wieder, die für den
 Satz des Pythagoras charakteristisch sind.
 Machen wir die Unterteilung beliebig fein, wird diese Summe in ein
-Integral übergehen, wie in der zweiten Zeile angedeutet.
+Integral übergehen, wie rechts angedeutet.
 \rhead{Metrik}
 
 In einem beliebigen Koordinatensystem funktioniert dies jedoch nicht mehr.
 Wir müssen zulassen, dass die Koordinaten entlang verschiedener
-Achsen nicht mehr direkt der Länge entsprechen, dass wir also
-entlang der Achsen Skalierungsfaktoren haben.
+Achsen nicht mehr direkt der Länge entlang dieser Achsen entsprechen,
+dass wir also entlang der Achsen Skalierungsfaktoren haben.
 Weiter ist damit zu rechnen, dass auch gemischte Termen auftauchen, ein
 Ausdruck der Tatsache, dass Koordinatenrichtungen nicht senkrecht aufeinander
 stehen müssen.
@@ -197,7 +196,7 @@ l
 \end{equation}
 Die Zahlen $g_{\mu\nu}(x^1,\dots,x^n)$ hängen im Allgemeinen auch noch von
 den Koordinaten ab, wir werden diese Abhängigkeit im Folgenden aber
-normalerweise nicht explizit ausdrücken.
+normalerweise nicht explizit hinschreiben.
 
 Da in der Formel~\eqref{skript:kruemmung:metrikformel} immer beide Terme
 \[
@@ -209,7 +208,7 @@ g_{\nu\mu} \frac{dx^\mu(t)}{dt} \frac{dx^\nu(t)}{dt}
 \]
 vorkommen, können wir zum Beispiel durch Zusammenfassen in neue Komponenten
 \[
-g'_{\mu\nu} = \frac12(g_{\mu\nu}+g_{\nu\mu})
+\tilde g_{\mu\nu} = \frac12(g_{\mu\nu}+g_{\nu\mu})
 \]
 erreichen, dass für die Koeffizienten $g_{\mu\nu}$ die Symmetriebedingung
 \[
@@ -379,7 +378,7 @@ ds^2
 dr^2 + r^2\,d\varphi^2.
 \]
 \index{Längenelement!in Polarkoordinaten}%
-In Matrix Form ist
+In Matrixform ist
 \[
 (g_{\mu\nu})
 =
@@ -481,7 +480,7 @@ Die Umrechnung in kartesische Koordinaten erfolgt mit den Formeln
 \begin{align*}
 x&= r\sin\vartheta\cos\varphi\\
 y&= r\sin\vartheta\sin\varphi\\
-z&= r\cos\vartheta
+z&= r\cos\vartheta.
 \end{align*}
 \subsubsection{Metrik}
 Wir bestimmen wieder die Koeffizienten des metrischen Tensors.
@@ -569,14 +568,14 @@ oder
 \end{pmatrix}
 \]
 in Matrixform.
-Alternativ kann man dies auch als
+Alternativ kann man dies auch als Längenelement
 \begin{equation}
 ds^2
 =
 dr^2 + r^2\,d\vartheta^2 + r^2\sin^2\vartheta\,d\varphi^2,
 \label{skript:laengenmessung:kugelkoordinaten}
 \end{equation}
-also als Längenelement schreiben.
+schreiben.
 \index{Längenelement!in Kugelkoordinaten}%
 
 \subsubsection{Isotropie}
@@ -599,6 +598,9 @@ r^2\,d\vartheta^2 + r^2\sin^2\vartheta\,d\varphi^2
 \label{skript:laengenmessung:omega2}
 \end{equation}
 zusammenzufassen.
+Die Diskussion der Robertson-Walker-Metrik im
+Kapitel~\ref{skript:chapter:kosmologie} wird auf dieser Form der Metrik
+aufbauen.
 
 \subsection{Kugeloberfläche}
 Aus dem metrischen Tensor der Kugelkoordinaten lässt sich durch festhalten
@@ -655,11 +657,11 @@ des mit Kugelkoordinaten beschriebenen dreidimensionalen Raumes
 ist nahe verwandt mit der Metrik
 \eqref{skript:laengenmessung:kugeloberflaeche}
 der Kugeloberfläche.
-Es ist jedoch ganz offensichtlich, dass die Kugeloberfläche sich ganz
-offensichtlich durch ihre Krümmung vom dreidimensionalen Raum unterscheidet.
-Die Ähnlichkeit ist also nicht ausreichend, um die Krümmung festzustellen,
-dazu müssen weitergehende Hilfsmittel in Kapitel~\ref{skript:chapter:kruemmung}
-entwickelt werden.
+%Es ist ganz offensichtlich, dass die Kugeloberfläche sich 
+%durch ihre Krümmung vom dreidimensionalen Raum unterscheidet.
+%Die Ähnlichkeit ist also nicht ausreichend, um die Krümmung zu berechnen,
+%dazu müssen weitergehende Hilfsmittel in Kapitel~\ref{skript:chapter:kruemmung}
+%entwickelt werden.
 
 \input{chapters/tensoren.tex}
 

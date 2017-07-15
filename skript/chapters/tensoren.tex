@@ -61,7 +61,7 @@ Wir berechnen daher
 \frac{\partial y^\alpha}{\partial x^\mu} v^\mu
 \label{skript:trafo:kontra}
 \end{align}
-mit der Kettenregel für Funktionen mehrer Veränderlicher.
+mit der Kettenregel für Funktionen mehrerer Veränderlicher.
 Wir lesen daraus ab, dass sich die Komponenten $v^\mu$ mit Hilfe der
 partiellen Ableitungen $\partial y^\alpha/\partial x^\mu$ transformieren.
 
@@ -76,7 +76,7 @@ gebildet und integriert.
 Etwas allgemeiner geht es also um Koeffizienten $A_\mu$ einer Linearform,
 für welche der Skalar $B=A_\mu\dot x^\mu$ eine koordinatensystemunabhängige
 Bedeutung haben soll.
-\index{Linearform}
+\index{Linearform}%
 Es soll also gelten
 $B=\bar A_\alpha \dot y^\alpha$.
 Setzen wir die Transformationsformel für $\dot y^\alpha$ ein, erhalten
@@ -101,16 +101,17 @@ Man erkennt, dass sich die Transformationsformel~\eqref{skript:trafo:kov}
 für $A_\mu$ von der Transformationsformel~\eqref{skript:trafo:kontra}
 für $\dot x^\mu$ durch die Position der partiellen Ableitungen unterscheiden.
 Man nennt den Vektor $\dot x^\mu$ einen {\em kontravarianten Vektor},
-\index{Vektor, kontravarianter}
-\index{kontravariant}
+\index{Vektor, kontravarianter}%
+\index{kontravariant}%
 die Koeffizienten $A_\mu$ der Linearform dagegen einen {\em kovarianten Vektor}.
-\index{kovariant}
-\index{Vektor, kovarianter}
+\index{kovariant}%
+\index{Vektor, kovarianter}%
 Der Formalismus trägt dem Unterschied zwischen kovarianten und kontravarianten
 Vektoren dadurch Rechnung, dass für die Komponenten kovarianter Vektoren
 immer tiefgestellte Indizes verwendet werden, während für die Komponenten
 kontravarianter Vektoren hochgestellte Indizes zu verwenden sind.
 
+\subsubsection{Ableitungsoperatoren und Integration}
 Sei $\bar f(y^1,\dots,y^n)$ eine beliebige Funktion der Koordinaten.
 Man kann die Funktion natürlich auch in den Koordinaten $x^1,\dots,x^n$
 ausdrücken, indem man 
@@ -195,7 +196,7 @@ Punkt zu nehmen sind.
 \subsection{Metrik}
 Die Koeffizienten $g_{\mu\nu}$ des metrischen Tensors dienen dazu,
 das Längenelement entlang einer Kurve zu berechnen.
-.ird eine mit $s$ parametrisierte Kurve wird durch die Funktionen
+Wird eine mit $s$ parametrisierte Kurve durch die Funktionen
 $x^\mu(s)$ beschrieben, dann ist die Länge der Kurve durch das
 Integral
 \begin{equation}
@@ -205,7 +206,7 @@ l = \int_a^b
 \label{skript:koord:metrik}
 \end{equation}
 gegeben.
-Die Länge der Kurve ist eine grösse, die vom Koordinatensystem 
+Die Länge der Kurve ist eine geometrische Grösse, die vom Koordinatensystem 
 unabhängig definiert werden kann.
 Die Formel~\eqref{skript:koord:metrik} darf also ihre Form nicht verändern,
 wenn man die Kurvenlänge in einem anderen Koordinatensystem berechnen will.
@@ -253,9 +254,9 @@ Indizes kovariant.
 Die Grössen $g^{\mu\nu}$ sind so definiert, dass in jedem Koordinatensystem
 gilt
 \[
-\delta^\mu_\nu = g^{\mu\sigma}g_{\sigma\nu},
+\delta^\mu_\nu = g^{\mu\sigma}g_{\sigma\nu}.
 \]
-wir müssen die Transformationsregeln für $g^{\mu\nu}$ herausfinden.
+Wir müssen die Transformationsregeln für $g^{\mu\nu}$ herausfinden.
 Dazu rechnen wir
 \begin{align*}
 \delta^\mu_\nu
@@ -293,6 +294,7 @@ $
 A^{\mu\nu}\mathstrut_{\alpha\beta\gamma}
 $
 einen zweifach kontravarianten und dreifach kovarianten Tensor, wenn
+das Transformationsgesetz
 \[
 \bar 
 A^{\mu\nu}\mathstrut_{\varrho\sigma\tau}
@@ -305,12 +307,13 @@ A^{\delta\epsilon}\mathstrut_{\alpha\beta\gamma}
 \frac{\partial y^\gamma}{\partial x^\tau}
 \]
 gilt.
-Geometrische Aussagen oder Naturgesetze sind nur dann von der Wahl
-eines Koordinatensystems unabhängig, wenn sie mit Hilfe von Tensoren
-beschrieben werden.
-Der Formalismus unterstützt dies, indem die im folgenden genauer
-untersuchten Operationen zwischen Tensoren automatisch wieder neue
-Tensoren erzeugen.
+
+Tensoren sollen dazu dienen, vom koordinatensystem unabhängige
+geometrische Aussagen oder Naturgesetze zu formulieren.
+Dazu sind Rechenregeln nötig, die aus Tensoren neue Tensoren
+machen.
+In den folgenden Abschnitten stellen wir eine Reihe von Operationen
+mit dieser Eigenschaft zusammen.
 
 \subsubsection{Index hochziehen}
 Zum {\index Hochziehen eines Index} wird ein Tensor mit einem kovarianten
@@ -395,7 +398,7 @@ A^\mu_\sigma
 \frac{\partial x^\sigma}{\partial y^\alpha}
 \frac{\partial y^\alpha}{\partial x^\mu}
 =
-\bar A^\alpha\alpha.
+\bar A^\alpha_\alpha.
 \end{align*}
 Die Verjüngung führt also tatsächlich wieder zu einem Tensor.
 

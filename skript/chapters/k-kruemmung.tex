@@ -26,16 +26,16 @@ also $4\pi/8=\pi/2$, der Drehwinkel ist $\pi/2$.
 \end{figure}
 
 Transportiert man einen Vektor in der Ebene mit dem üblichen euklidischen
-Koordinatensysteme parallel, dann ändert seine Richtung nicht,
+Koordinatensystem parallel, dann ändert seine Richtung nicht,
 denn die Christoffelsymbole verschwinden alle
 (Abbildung~\ref{skript:kruemmung:transportflach}).
 Auf einer Kugeloberfläche sieht das ganz anders aus.
-Transportiert man einen Vektor tangential an den Äquator zunächst entlang 
-des Äquators über einen Winkel von $90^\circ$, dann auf einem Längenkreis
-bis zum Nordpol und wieder zurück zum Ausgangspunkt.
-Wie in Abbildung~\ref{skript:kruemmung:transportkugel}
-sichtbar, dreht sich der Vektor
-dabei um $90^\circ$. 
+In Abbildung~\ref{skript:kruemmung:transportkugel} wird
+eine Vektor tangential an den Äquator zunächst entlang 
+des Äquators über einen Winkel von $90^\circ$ transportiert,
+dann auf einem Längenkreis bis zum Nordpol
+und wieder zurück zum Ausgangspunkt.
+Es ist offensichtlich, dass sich der Vektor dabei um $90^\circ$ dreht. 
 Der Unterschied rührt natürlich daher, dass die Kugeloberfläche gekrümmt
 ist.
 Offenbar ist die Änderung der Richtung eines Tangentialvektors beim
@@ -81,7 +81,21 @@ $y^\mu$ berechnen kann:
 y^\alpha = R^\alpha\mathstrut_{\mu\nu\sigma}u^\mu v^\nu A^\sigma.
 \]
 
-\subsection{Wegintegral und Gebietsintegral in der Ebene}
+Zur Konstruktion des Krümmungstensors gehen wir wie folgt vor.
+Im Abschnitt~\ref{skript:kruemmung:section:wegintegral} definieren
+wir Integrale entlang eines Weges und über ein von einer Kurve begrenztes
+Flächenstück.
+In Abschnitt~\ref{skript:kruemmung:section:green} präsentieren
+wir den Satz von Green, der einen Zusammenhang zwischen Weg- und
+Gebietsintegral herstellt.
+Der Satz von Stokes verallgemeinert dies für beliebige Kurven
+im Raum in \ref{skript:kruemmung:section:stokes}.
+In Abschnitt~\ref{skript:kruemmung:section:kruemmungstensor}
+verwenden wir diese mathematischen Werkzeuge, um den Krümmungstensor
+zu definieren.
+
+\subsection{Wegintegral und Gebietsintegral in der Ebene%
+\label{skript:kruemmung:section:wegintegral}}
 In diesem Abschnitt betrachten wir Funktionen $f(x,y)$ und $g(x,y)$
 in der Ebene und ein Teilgebiet $D\subset \mathbb R^2$, welches
 von einer Kurve $c\colon [a,b]\to\mathbb R^2\colon t\mapsto c(t)$
@@ -107,11 +121,11 @@ Zu dem gegebenen Gebiet $D$ kann man aber auch für jede beliebige
 Funktion $h(x,y)$ das Gebietsintegral bilden.
 Wir tun dies im Detail nur für Gebiete deren Rand sich durch zwei
 Funktionen $y_1(x)$ und $y_2(x)$ beschreiben lassen, so dass das
-Gebiet $D$ durch
+Gebiet $D$ die Menge
 \[
 D=\{ (x,y) \,|\, y_1(x) \le y \le y_2(x), x_1\le x\le x_2\}
 \]
-beschrieben werden kann.
+ist.
 Dann definieren wir
 
 \begin{definition}
@@ -134,7 +148,8 @@ beschreiben, dann kann man das Gebietsintegral auch als
 \]
 schreiben, und die beiden Formeln stimmen überein.
 
-\subsection{Der Satz von Green}
+\subsection{Der Satz von Green%
+\label{skript:kruemmung:section:green}}
 Der Satz von Green stellt einen Zusammenhang zwischen einem Wegintegral
 und einem Flächenintegral her.
 
@@ -149,7 +164,7 @@ von der Kurve $c$ berandet ist, dann gilt
    -\frac{\partial f}{\partial y}\biggr)\,dx\,dy
 \]
 \end{satz}
-\index{Green!Satz von}
+\index{Green!Satz von}%
 
 \begin{proof}[Beweis]
 Wir gehen davon aus, dass wir das Gebiet $D$ durch die Kurven $x_1(y)$
@@ -218,7 +233,8 @@ Addiert man beide Gleichungen erhält man
 also die Aussage des Satzes von Green.
 \end{proof}
 
-\subsection{Der Satz von Stokes}
+\subsection{Der Satz von Stokes%
+\label{skript:kruemmung:section:stokes}}
 Der Satz von Stokes verallgemeinert das zweidimensionale Resultat des
 Satzes von Green auf beliebige Dimensionen.
 Die Form, die wir hier formulieren, ist noch nicht die allgemeinst
@@ -242,20 +258,20 @@ Es entsteht so eine Situation ähnlich dem Satz von Green, wir erwarten
 daher, dass es wieder ein Formel gibt, welche ein Randintegral mit einem
 Flächenintegral in Beziehung setzt.
 
-In drei Dimensionen tritt eine spezielle Situation ein, die sich zum
-Beispiel auch in der Existenz des Vektorproduktes äussert.
-Die Berechnung von Flächeninhalten in drei Dimensionen ist mit Vektoren
-möglich, ein Parallelogramm im dreidimensionalen Raum kann mit dem
-Vektorprodukt aus den beiden Kantenvektoren beschrieben werden.
-Dies hängt damit zusammen, dass es zu jeder Achsenrichtung eine dazu
-senkrechte Ebene gibt.
-In höheren Dimensionen funtioniert das nicht mehr.
-In einem vierdimensionalen Raum gibt es $\binom{4}{2}=6$ verschiedene
-Koordinaten-Ebenen, aber nur vier Achsenrichtungen.
-Wir erwarten in drei Dimensionen also eine spezielle Form des
-Satzes von Stokes.
+%In drei Dimensionen tritt eine spezielle Situation ein, die sich zum
+%Beispiel auch in der Existenz des Vektorproduktes äussert.
+%Die Berechnung von Flächeninhalten in drei Dimensionen ist mit Vektoren
+%möglich, ein Parallelogramm im dreidimensionalen Raum kann mit dem
+%Vektorprodukt aus den beiden Kantenvektoren beschrieben werden.
+%Dies hängt damit zusammen, dass es zu jeder Achsenrichtung eine dazu
+%senkrechte Ebene gibt.
+%In höheren Dimensionen funtioniert das nicht mehr.
+%In einem vierdimensionalen Raum gibt es $\binom{4}{2}=6$ verschiedene
+%Koordinaten-Ebenen, aber nur vier Achsenrichtungen.
+%Wir erwarten in drei Dimensionen also eine spezielle Form des
+%Satzes von Stokes.
 
-Als erstes müssen wir jetzt also eine Beschreibung eines Flächenstückes
+Als erstes müssen wir jetzt eine Beschreibung eines Flächenstückes
 und seines Randes haben.
 Wir brauchen dazu Gebiet $D\subset\mathbb R^2$, die Koordinaten darin
 schreiben wir $u$ und $v$.
@@ -273,7 +289,7 @@ der Randkurve des Flächenstückes in $\mathbb R^n$.
 
 Sei also $A_i$ ein Vektorfeld und $x^i(t)$ eine Kurve.
 Dann kann man das Kurvenintegral entlang der Kurve auf die gleiche Art
-wie in zwei Dimensionen definieren
+wie in zwei Dimensionen definieren als
 \[
 \oint A_\mu dx^\mu = \int A_\mu(x(t)) \dot x^\mu(t)\,dt.
 \]
@@ -338,7 +354,7 @@ sich also weg und es bleibt}
 \frac{\partial A_\mu}{\partial u}\frac{\partial x^\mu}{\partial v}
 -
 \frac{\partial A_\mu}{\partial v}\frac{\partial x^\mu}{\partial u}
-\,du\,dv
+\,du\,dv.
 \notag
 \\
 \intertext{Die Ableitungen von $A_\mu$ müssen wir jetzt noch durch
@@ -364,7 +380,7 @@ Auf der rechten Seite kommen die beiden Indizes noch in unsymmetrischer
 Form vor.
 Wir schreiben die rechte Seite von \eqref{skript:kruemmung:stokes1}
 abkürzend als $I(\mu,\nu)$.
-Wenn man die Indizes $\mu$ und $\nu$ vertauscht ändert sich der Wert nicht,
+Wenn man die Indizes $\mu$ und $\nu$ vertauscht, ändert sich der Wert nicht,
 denn die Indizes sind ja nur Namen für die Laufindizes der Summe, die
 die Summationskonvention verlangt.
 Man kann die rechte Seite also durch
@@ -386,7 +402,7 @@ I(\nu,\mu)
 &=
 -
 \int
-\frac{\partial A_\nu}{\partial x^\nu}
+\frac{\partial A_\nu}{\partial x^\mu}
 \biggl(\frac{\partial x^\nu}{\partial u}\frac{\partial x^\mu}{\partial v}
 -
 \frac{\partial x^\mu}{\partial v}\frac{\partial x^\mu}{\partial u}
@@ -493,6 +509,8 @@ der Aussage
 \end{align*}
 genau wie im Satz von Green.
 
+\subsection{Satz von Stokes in drei Dimensionen%
+\label{skript:kruemmung:section:stokes3}}
 In drei Dimensionen lässt sich der Satz von Stokes noch etwas konkreter
 formulieren.
 Die partiellen Ableitungen von $x^\mu$ nach $u$ und $v$ sind die 
@@ -548,7 +566,7 @@ Da die Vertauschung der Indizes in beiden Faktoren das Vorzeichen
 kehrt, kann man auch einfach nur jeweils einen Summanden doppelt
 zählen, wodurch der Faktor $\frac12$ wegfällt.
 In drei Dimensionen kann man also die drei Flächenelement als Vektor
-schreben $d\vec f$.
+schreiben $d\vec f$.
 
 Aus den Termen
 \[
@@ -557,8 +575,8 @@ Aus den Termen
 \frac{\partial A_\nu}{\partial x^\mu}
 \]
 für Indextripel mit verschiedenen Indizes kann man einen Vektor
-formen, der ebenfalls formal ebenfalls als ein Vektorprodukt
-geschrieben werden kann:
+formen, der formal ebenfalls als ein Vektorprodukt geschrieben
+werden kann:
 \[
 {
 \def\arraystretch{1.9}
@@ -588,7 +606,7 @@ A_1\\A_2\\A_3
 \operatorname{rot}\vec A.
 \]
 Dieser Vektor heisst auch die {\em Rotation} des Vektorfeldes $\vec A$.
-\index{Rotation eines Vektorfeldes}.
+\index{Rotation eines Vektorfeldes}.%
 
 Mit diesen Notationen kann man die Summe im Integral auch als Skalaprodukt
 schreiben:
@@ -651,20 +669,22 @@ im dreidimensionalen Raum, und ist $\vec A$ ein Vektorfeld, dann gilt
 \]
 \end{satz}
 
-\subsection{Der Krümmungstensor}
+\subsection{Der Krümmungstensor%
+\label{skript:kruemmung:section:kruemmungstensor}}
 Krümmung äussert sich dadurch, dass beim Paralleltransport eines Vektors
 entlang eines geschlossenen Weges die Richtung des Vektors ändert.
-Der Satz von Stokes besagt, dass Information, die entlang eines
-Weges kumulieren können, wie eben die Drehung eines Vektors, auch durch
-Integration über die gesamte Fläche gefunden werden kann.
+Der Satz von Stokes besagt, dass wir Information, die wir entlang eines
+Weges zusammentragen können, wie die Drehung eines Vektors, auch durch
+Integration über die vom Weg umschlossenen Fläche gefunden werden kann.
 Wir suchen daher eine Grösse, die das Ausmass der krümmungsbedingten
 Drehung in einem beliebigen kleinen Parallelogram beschreibt.
 
+\subsubsection{Was erwartet man in zwei Dimensionen?}
 Um eine klarere Vorstellung davon zu bekommen, was wir überhaupt erwarten
 können beginnen mit der Diskussion im Falle $n=2$, also einer gekrümmten
 Fläche.
-Wir möchten also wissen, wie in Vektor sich verändert, wenn wir ihn
-entlang einer geschlossene Kurve verschieben.
+Wir möchten also wissen, wie ein Vektor sich verändert, wenn wir ihn
+entlang einer geschlossene Kurve transportieren.
 Der Einfachheit halber verwenden wir als geschlossen Kurve
 ein Koordinaten-Rechteck, wobei wir die Koordinaten immer so wählen
 können, dass dieses in der Form
@@ -677,7 +697,7 @@ beschrieben werden kann.
 
 Da $n=2$ ist, ist der paralleltransportierte Vektor immer ein
 Tangentialvektor.
-Da der Paralleltransport die Skalarprodukte erhält wird jeder beliebige
+Da der Paralleltransport die Skalarprodukte erhält, wird jeder beliebige
 Tangentialvektor bei der Rückkehr zum Ausgangspunkt um den gleichen
 Winkel gedreht worden sein, und seine Länge wird nicht ändern.
 Ausgehend von einem rechtwinkligen Koordinatensystem im Ausgangspunkt
@@ -699,7 +719,7 @@ Uns interessiert also eigentlich die Grösse
 =
 \frac{k}{\alpha}(D_{\alpha}-E).
 \]
-Wir streben aber an, das Parallelogram beleibig klein werden zu lassen.
+Wir streben aber an, das Parallelogram beliebig klein werden zu lassen.
 In diesem Grenzwert wird auch der Winkel $\alpha$ gegen $0$ gehen.
 Wir interessieren uns also eigentlich für
 \begin{equation}
@@ -777,8 +797,9 @@ R^\mu\mathstrut_{\nu12}
 =
 \begin{pmatrix}0&-k\\k&0\end{pmatrix}
 \end{align*}
-gewält wird.
+gewählt wird.
 
+\subsubsection{Was erwartet man im Falle $n>2$?}
 Im allgemeinen Fall suchen wir auch wieder eine Matrix, die
 die Drehung eines Vektors in Abhängigkeit vom Flächeninhalt der
 umlaufenen Fläche $F$ beschreibt.
@@ -816,9 +837,10 @@ antisymmetrisch ist, und die infinitesimale Drehung eines Vektors
 berechnet, der um ein beliebig kleines Parallelogram herum parallel
 transportiert wird.
 
+\subsubsection{Definition des Krümmungstensors}
 Wir betrachten einen Weg, der ein zweidimensionales Fächenstück berandet.
 Wir wissen bereits, wie wir den Paralleltransport eines Vektors entlang
-eines geschlossenen Pfades funktionert, die Änderung des Vektors ist
+EINes geschlossenen Pfades funktionert, die Änderung des Vektors ist
 \[
 \Delta A_\mu
 = 
@@ -870,7 +892,7 @@ A_\alpha
 \Gamma_{\mu\varrho}^\nu
 \Gamma_{\nu\sigma}^\alpha
 A_\alpha
-\,df^{\varrho\sigma}
+\,df^{\varrho\sigma}.
 \end{equation}
 Wir interessieren uns nun aber nur für die infinitesimale Änderung
 im Bezug auf ein Flächenelement $\Delta f^{\nu\sigma}$, so dass wir
@@ -895,7 +917,7 @@ So bekommen wir
 \Gamma_{\nu\sigma}^\alpha
 \biggr)
 A_\alpha
-\Delta f^{\varrho\sigma}
+\Delta f^{\varrho\sigma}.
 \]
 Das gesuchte Mass für die Krümmung ist also der Ausdruck
 \begin{equation}
@@ -912,9 +934,9 @@ R^\alpha\mathstrut_{\mu\varrho\sigma}
 \Gamma_{\nu\sigma}^\alpha,
 \label{skript:kruemmung:riemannmixed}
 \end{equation}
-Er heisst der {\em Riemannsche Krümmungstensor}.
-\index{Krümmungstensor, Riemannscher}
-\index{Riemannscher Krümmungstensor}
+er heisst der {\em Riemannsche Krümmungstensor}.
+\index{Krümmungstensor, Riemannscher}%
+\index{Riemannscher Krümmungstensor}%
 
 \subsection{Beispiele}
 
@@ -1001,7 +1023,7 @@ R_{\alpha\beta\gamma\delta} = g_{\alpha\nu}R^\nu\mathstrut_{\beta\gamma\delta}.
 
 \begin{beispiel}
 In Kugelkoordinaten bekommt man für die nicht verschwindenden Komponenten
-des Riemann-Tensors nach längerer Rechnung
+des Rie\-mann-Tensors nach längerer Rechnung
 \[
 R_{1212}
 =
@@ -1045,7 +1067,7 @@ Abschnitten bereitgestellt werden sollen.
 \subsection{Erste Bianchi-Identität}
 Wie bereits nachgerechnet, erfüllen die Komponenten des Riemann-Tensors
 die Symmetrieeigenschaften, die wir als Folge seiner geometrischen
-Interpretation als einer Beschreibung der Drehung erwarten.
+Interpretation als einer Beschreibung einer Drehung erwarten.
 Doch er erfüllt noch weitere unerwartete Symmetrieeigenschaften, zum
 Beispiel
 \begin{equation}
@@ -1058,7 +1080,9 @@ R_{\alpha\varrho\mu\nu}
 \label{skript:kruemmung:bianchi1}
 \end{equation}
 welche auch die {\em erste Bianchi-Identität} genannt wird.
-\index{Bianchi-Identität!erste}
+\index{Bianchi-Identität!erste}%
+In der Summe werden die hinteren drei Indizes des Riemann-Tensors
+zyklisch vertauscht.
 
 Um diese Identität zu beweisen, ist eine alternative Darstellung des
 Riemann-Tensors nützlich. 
@@ -1092,7 +1116,8 @@ Für einen vollständigen Beweis dieser Formel muss man die Darstellung
 der Christoffelsymbole durch die metrischen Koeffizienten in die
 Definition~\eqref{skript:kruemmung:riemannmixed} des Riemannschen
 Krümmungstensors einsetzen.
-Die danach notwendigen Umformungen, die auf~\eqref{skript:kruemmung:riemann2abl}
+Die danach notwendigen Umformungen, die
+auf~\eqref{skript:kruemmung:riemann2abl}
 sind nicht schwierig, aber etwas mühsehlig, und werden daher hier
 nicht durchgeführt.
 
@@ -1199,22 +1224,21 @@ in der Transformationsformel~\eqref{skript:geodaeten:gmma2trafo}
 mit den zweiten Ableitungen zeigt.
 Nur bei einer linearen Transformation verschwinden die zweiten Ableitungen
 und damit dieser zweite Term.
-Lineare Transformationen erhalten Geraden, führen also Inertialsysteme
-in Inertialsysteme über.
+Lineare Transformationen erhalten Geraden.
 
 Die Formel~\eqref{skript:geodaeten:gmma2trafo}
 bedeutet aber auch, dass man durch eine geeignete Transformation
 erreichen kann, dass wenigstens in einem Punkt alle Christoffelsymbole
 den Wert $0$ haben, wie wir im Folgenden zeigen wollen.
 Ein solches Koordinatensystem heisst {\em lokalgeodätisch}.
-\index{lokalgeodätisch}
+\index{lokalgeodätisch}%
 
 
 \begin{proof}
 % Landau-Lifshitz, p 288
 Wir dürfen ohne Beschränkung der Allgmeinheit annehmen, dass der betrachtete
 Punkt der Nullpunkt ist.
-Sei $\Gamma^\alpha_{\mu\nu})_0$ der Wert des Christoffelsymbols im
+Sei $(\Gamma^\alpha_{\mu\nu})_0$ der Wert des Christoffelsymbols im
 Nullpunkt.
 Wir betrachten jetzt die Transformation
 \[
@@ -1271,15 +1295,15 @@ das $x'^\alpha$-Koordinatensystem ist also lokalgeodätisch.
 Der Vorteil eines lokalgeodätischen Koordinatensystems besteht
 oftmals darin, dass sich darin der Riemann-Tensor sehr viel
 einfacher ausdrücken lässt.
-Es bleiben zum Beispiel in~\label{skript:kruemmung:riemann2abl}
+Es bleiben zum Beispiel in~\eqref{skript:kruemmung:riemann2abl}
 nur die Terme der zweiten Ableitungen stehen.
 Als Anwendung dieses Prinzip wird im nächsten Abschnitt die zweite
 Bianchi-Identität bewiesen.
 
 Wir werden später sehen, dass die Christoffelsymbole physikalisch die
 Scheinkräfte im gewählten Koordinatensystem beschreiben.
-Die Tatsache, dass man sie in einem Punkt durch wahl des Koordinatensystems
-zum verschwinden bringen kann bedeutet also physikalisch, dass es immer
+Die Tatsache, dass man sie in einem Punkt durch Wahl des Koordinatensystems
+zum Verschwinden bringen kann, bedeutet physikalisch, dass es immer
 ein Koordinatensystem gibt, in dem keine Scheinkräfte auftreten.
 In der Tat sind für einen Astronauten in der ISS keine Kräfte beobachtbar,
 wenn er als Koordinatensystem das mit der ISS mitbewegte Koordinatensystem
@@ -1316,19 +1340,27 @@ $\sigma$ und $\beta$, erhält man
 +
 \nabla_\sigma R^\alpha\mathstrut_{\mu\beta\nu}
 &=
+{\color{red}
 \frac{\partial^2\Gamma^\alpha_{\mu\sigma}}{\partial x^\beta\,\partial x^\nu}
+}
+{\color{blue}
 -
 \frac{\partial^2\Gamma^\alpha_{\mu\nu}}{\partial x^\beta\,\partial x^\sigma}
+}
 %
 +
 %
 \frac{\partial^2\Gamma^\alpha_{\mu\beta}}{\partial x^\nu\,\partial x^\sigma}
+{\color{red}
 -
 \frac{\partial^2\Gamma^\alpha_{\mu\sigma}}{\partial x^\nu\,\partial x^\beta}
+}
 %
+{\color{blue}
 +
 %
 \frac{\partial^2\Gamma^\alpha_{\mu\nu}}{\partial x^\sigma\,\partial x^\beta}
+}
 -
 \frac{\partial^2\Gamma^\alpha_{\mu\beta}}{\partial x^\sigma\,\partial x^\nu}
 \end{align*}
@@ -1344,6 +1376,6 @@ Wir erhalten so die {\em zweite Bianchi-Identität}
 =0.
 \label{skript:kruemmung:bianchi2}
 \end{equation}
-\index{Bianchi-Identität!zweite}
+\index{Bianchi-Identität!zweite}%
 
 

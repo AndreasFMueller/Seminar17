@@ -6,10 +6,9 @@
 \section{Koordinatentransformation}
 \rhead{Koordinatentransformation}
 Für die Tensorrechnung ist entscheidend, dass für jede Grösse das Verhalten
-bei Koordinaten bekannt ist.
+bei Koordinatentransformation bekannt ist.
 In diesem Abschnitt sollen die Transformationsregeln für die
 Christoffelsymbole zusammengestellt werden.
-
 Die Zusammenhangskoeffizienten sind keine Tensoren, vielmehr gilt für sie das
 Transformationsgesetz
 \[
@@ -79,9 +78,10 @@ g_{\varrho\sigma}
 +
 \frac{\partial x^\varrho}{\partial y^\mu}
 \frac{\partial^2 x^\sigma}{\partial y^\alpha\partial y^\nu}
-\biggr).
+\biggr)
 \label{skript:trafo:gabl}
 \end{align}
+berechnen.
 Die zusätzlichen Terme mit zweiten Ableitungen der Koordinatentransformation
 auf der rechten Seite zeigen, dass die Ableitungen der metrischen Koeffizienten
 keine Tensoren sein können.
@@ -117,6 +117,7 @@ Wir wenden die Definition auf $\bar g$ an:
 \notag
 \\
 &=
+\underbrace{
 \frac12\biggl(
 \frac{\partial g_{\sigma\tau}}{\partial x^\varrho}
 +
@@ -124,6 +125,7 @@ Wir wenden die Definition auf $\bar g$ an:
 -
 \frac{\partial g_{\varrho\sigma}}{\partial x^\tau}
 \biggr)
+}_{\displaystyle = \Gamma_{\tau,\varrho\sigma}}
 \frac{\partial x^\tau}{\partial y^\alpha}
 \frac{\partial x^\varrho}{\partial y^\mu}
 \frac{\partial x^\sigma}{\partial y^\nu}
@@ -196,7 +198,8 @@ g_{\sigma\tau}
 
 \subsection{Transformationsformel für die Christoffelsymbole zweiter Art}
 Für die Christoffelsymbole zweiter Art müssen wir nur noch auf der
-linken Seite mit $\bar g^{\beta\alpha}$ multiplizieren.
+linken Seite von \eqref{skript:trafo:chr1}
+mit $\bar g^{\beta\alpha}$ multiplizieren.
 Da $g^{\mu\nu}$ ein kontravarianter Tensor ist, gilt
 \begin{equation}
 \bar g^{\alpha\beta}
