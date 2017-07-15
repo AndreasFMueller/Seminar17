@@ -3,7 +3,8 @@
 %
 % (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 %
-\section{Hauptkrümmungen}
+\section{Hauptkrümmungen%
+\label{skript:kurven:section:hauptkruemmungen}}
 In Abschnitt~\eqref{skript:kruemmung:richtungsabhaengigkeit} wurde gezeigt,
 dass die Schnittkrümmungen $\kappa(e)$ in Abhängigkeit von der
 Tangentenrichtung $e$ dank der Wahl eines speziellen Koordinatensystems
@@ -71,12 +72,14 @@ In der linearen Algebra lernt man, dass sich jede symmetrische Matrix
 mit Hilfe einer Matrix in $\textrm{SO}(n)$ diagonalisieren lässt.
 Im vorliegenden Fall gibt es eine Drehung der $x$-$y$-Ebene derart, dass
 die Matrix $H$ Diagonalform bekommt.
-Die Krümmung in Abhängigkeit vom Einheitsvektor $e$ ist daher
+Wir wählen das Koordinatensystem daher os, dass die
+Krümmung in Abhängigkeit vom Einheitsvektor $e$ durch
 \[
 \kappa(e)
 =
 2\lambda_1 e_1^2 + 2\lambda_2 e_2^2,
 \]
+beschrieben wird,
 wobei $\lambda_1$ und $\lambda_2$ die Eigenwerte von $H$ sind.
 Für $e_1=\cos\alpha$ und $e_2=\sin\alpha$ bekommt man
 \[
@@ -98,9 +101,9 @@ immer senkrecht aufeinander stehen.
 
 \subsection{Invarianten}
 Die hessische Matrix $H$ hat die Eigenwerte $\lambda_1$ und $\lambda_2$.
-Diese sind für sich genommen nicht interessant.
+Als einzelne Werte sind diese nicht so interessant.
 Hingegen sind die Determinante und die Spur von $H$ Invarianten, die
-unabhängig von der Richtung der Achsen in der $x$-$y$-Ebene sind.
+unabhängig von der Wahl des Koordinatensystems sind.
 
 \subsubsection{Determinante -- Gausskrümmung}
 \index{Gausskrümmung}
@@ -124,14 +127,14 @@ Es stellt sich heraus, dass die Gausskrümmung auch aus inneren Eigenschaften
 der Fläche ermittelt werden kann
 (Theorema Egregium von Gauss).
 Wir werden in Kapitel~\ref{skript:chapter:kruemmung} 
-mit der Riemannsschen Krümmung ein Konzept der Krümmung eines Raumes
+mit der Riemannschen Krümmung ein Konzept der Krümmung eines Raumes
 definieren, welches für Flächen im Wesentlichen mit der Gausskrümmung
 übereinstimmt.
 
 \subsubsection{Spur -- mittlere Krümmung}
 \index{mittlere Krümmung}
 \index{Krümmung!mittlere}
-Die Spur von $H$ ist eine weitere Invariante der Matrix.
+Die Spur von $H$ ist eine weitere Invariante der Hessischen Matrix.
 Es gilt
 \[
 \operatorname{Spur} H
@@ -160,8 +163,9 @@ im Kapitel~\ref{chapter:minimal}.
 
 \subsection{Gausskrümmung und Flächeninhalt%
 \label{skript:kurven:gaussflaeche}}
-Die mittlere Krümmung $M$ hat eine einfach geometrische Interpretation,
-die auch ganz offensichtlich zeigt, dass sie eine Eigenschaft der Einbettung
+Die mittlere Krümmung $M$ hat eine einfach geometrische Interpretation
+als Mittelwert aller Schnittkrümmungen.
+Sie zeigt auch ganz offensichtlich, dass sie eine Eigenschaft der Einbettung
 einer Fläche in den dreidimensionalen Raum ist.
 Für die Gausskrümmung fehlt uns eine vergleichbare Charakterisierung.
 Wir wollen daher in diesem Abschnitt zeigen, dass die Gausskrümmung
@@ -197,7 +201,7 @@ U^2 = 4\pi F
 \]
 ist.
 Wir untersuchen, wie sich diese Beziehung ändert, wenn die
-Fläche nicht mehr eine Ebene ist (Abbildung~\ref{skript:kurven:2pifu2vis}).
+Fläche nicht mehr eine Ebene ist (Abbildung~\ref{skript:kurven:4pifu2vis}).
 
 Wir approximieren die Fläche wieder als quadratische Funktion.
 Zur Vereinfachung der Rechnung verwenden wir dabei ein Koordinatensystem,
@@ -357,7 +361,7 @@ berechnet).
 In unserer Näherung brauchen wir dabei nur Terme bis zur vierten Ordnung
 in $R$ zu berücksichtigen.
 Wegen $(1+x)^2 \simeq 1+2x$ in niedrigster Ordnung, bedeutet das nur,
-dass wir den Term zweiten Term in der Klammer in \eqref{skript:kurven:U1}
+dass wir den zweiten Term in der Klammer in \eqref{skript:kurven:U1}
 verdoppeln müssen.
 Wir bekommen daher
 \begin{align*}
@@ -402,10 +406,10 @@ wir
 1 + KR^2
 \end{equation}
 als Schlussresultat.
-Das Produkt der Hauptkrümmungen ist die Gausskrümmung $K=\kappa_1\kappa_2$,
-diese beschreibt also im Wesentlichen das Anwachsen des Verhältnisses
-von Flächeninhalt zu Umfang im Quadrat eines Kreises in Abhängigkeit
-von dessen Radius.
+Das Produkt der Hauptkrümmungen ist die Gausskrümmung $K=\kappa_1\kappa_2$.
+Die Gausskrümmung beschreibt also im Wesentlichen das Anwachsen des
+Verhältnisses von Flächeninhalt zu Umfang im Quadrat eines Kreises
+in Abhängigkeit von dessen Radius.
 Bei positiver Gausskrümmung wächst das Verhältnis schneller an
 als auf einer Ebene, bei negativer Gausskrümmung langsamer.
 

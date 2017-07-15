@@ -70,8 +70,8 @@ g(\lambda,\varphi)
 -\frac{\pi}2 \le \varphi \le \frac{\pi}2
 .
 \end{equation}
-Die Koordinatenlinien sind wohlbekannt. 
-Die Koordinatenlinie zu einem vorgegebenen $\varphi_0$ wird von
+Die Koordinatenlinien auf einer Kugeloberfläche sind wohlbekannt. 
+Die Koordinatenlinie zu einem vorgegebenen $\varphi_0$ wird durch
 $\lambda$ parametrisiert und hat die Form
 \[
 \lambda
@@ -80,7 +80,7 @@ $\lambda$ parametrisiert und hat die Form
 \sin\varphi_0\cos\lambda\\
 \sin\varphi_0\sin\lambda\\
 \cos\varphi_0
-\end{pmatrix},\qquad -\pi\le\lambda\le\pi
+\end{pmatrix},\qquad -\pi\le\lambda\le\pi,
 \]
 dies ist ein Breitenkreis.
 Die Koordinatenlinie zu einem vorgegebenen $\lambda_0$ wird durch
@@ -92,11 +92,11 @@ $\varphi$ parametrisiert und hat die Form
 \sin\varphi\cos\lambda_0\\
 \sin\varphi\sin\lambda_0\\
 \cos\varphi
-\end{pmatrix},\qquad -\frac{\pi}2 \le \varphi\le \frac{\pi}2
+\end{pmatrix},\qquad -\frac{\pi}2 \le \varphi\le \frac{\pi}2,
 \]
 dies ist ein Längenkreis.
 Man beachte, dass Werte $-\frac{\pi}2\le \varphi \le \frac{\pi}2$ nur einen
-Halbkreis zwischen Nord- und Südpol beschreiben.
+Halbkreis zwischen Süd- und Nordpol beschreiben.
 \end{beispiel}
 
 Wir betrachten jetzt den Punkt $P=g(u_0,v_0)$ auf der Fläche.
@@ -127,7 +127,7 @@ bestimmen.
 Damit die beiden Tangentialvektoren und der Normalenvektor wohldefiniert sind,
 müssen wir verlangen, dass die partiellen Ableitungen von $g$ nach $u$ und $v$
 wohldefiniert sind und nicht verschwinden.
-Daher soll im folgenden immer angenommen sein, dass $g$ genügend oft stetig
+Daher soll im Folgenden immer angenommen sein, dass $g$ genügend oft stetig
 differenzierbar ist, und dass die ersten Ableitungen nach den Flächenparametern
 nicht verschwinden.
 
@@ -147,14 +147,13 @@ enthalten.
 Die Schnittkurve der Fläche mit einer solchen Ebene ist eine ebene
 Kurve, wir können also deren Krümmung bestimmen
 (Abbildung~\ref{skript:schnittkruemmung}).
-Es gibt einen Punkt $Q = P + \varrho \cdot n(P)$ in der Ebene, so dass
-ein Kreis um den Punkt $Q$ in der Ebene die Krümmung der Kurve bestmöglich
-wiedergibt.
+Der Mittelpunkt $Q$ des Krümmungskreises liegt auf der Normalen
+und ist daher von der Form $Q = P + \varrho \cdot n(P)$.
 Im Gegensatz zur Berechnung der Krümmung in
 Abschnitt~\ref{section:kurve:kruemmung}, die immer eine Zahl $\ge 0$
 als Wert der Krümmung geliefert hat, spielt es hier das Vorzeichen von
 $\varrho$ eine Rolle.
-Ist die Kurve in Richtung von $n(P)$ gekrümmt, ist der Punkte $Q$ auf der
+Ist die Kurve in Richtung von $n(P)$ gekrümmt, liegt der Punkte $Q$ auf der
 gleichen Seite der Fläche wie $n(P)$ und damit $\varrho\ge 0$.
 Ist dagegen die Kurve in die Gegenrichtung von $n(P)$ gekrümmt, liegt der
 Punkt $Q$ auf der anderen Seite und damit ist $\varrho\le 0$.
@@ -185,12 +184,12 @@ t^2(\cos^2\alpha - \sin^2\alpha)
 =
 t^2\cos 2\alpha.
 \]
-In der Schnittebene ist $t$ massstabsgetreu der Parameter entlang der
-horizontalen Achse, $z$ hängt davon quadratisch ab.
+Da der Tangentialvektor ein Einheitsvektor ist, ist $t$ die Länge entlang
+der tangentialen Achse in der Schnittebene.
+Die Koordinate $z$ hängt davon quadratisch von $t$ ab.
 Die Krümmung im Nullpunkt kann daher mit der
 Formel~\eqref{skript:kruemmung:parabel:scheitel}
-berechnet werden,
-wir finden
+berechnet werden, wir finden
 \begin{equation}
 \kappa = 2\cos2\alpha
 \qquad\Rightarrow\qquad
@@ -221,7 +220,8 @@ Offenbar spielt dafür die Lage der Fläche im Raum keine Rolle, wir können
 also in einem ersten Schritt das Koordinatensystem so drehen, dass der
 Punkt $P$ in den Nullpunkt zu liegen kommt, und dass die $x$-$y$-Ebene des
 Koordinatensystems tangential an die Fläche wird.
-In dieser Lage lässt sich die Fläche immer als Graph einer Funktion
+In dieser Lage lässt sich die Fläche in der Umgebung des Punktes $P$
+immer als Graph einer Funktion
 $z=f(x,y)$ schreiben\footnote{%
 Der exakte Beweis dieser intuitiv einleuchtenden Aussage kann mit
 dem Satz über implizite Funktionen erfolgen, wir wollen auf die Details
@@ -344,7 +344,8 @@ Darin wurde
 0
 \end{align*}
 verwendet.
-Der Mittelwert der Krümmung ist also die Spur der Hessischen Matrix.
+Der Mittelwert der Krümmung ist also die Spur der Hessischen Matrix
+(Siehe auch Abschnitt~\ref{skript:kurven:section:hauptkruemmungen}).
 
 \begin{definition}
 \label{skript:definition:mittlerekruemmung}
