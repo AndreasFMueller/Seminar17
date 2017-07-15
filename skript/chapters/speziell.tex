@@ -19,7 +19,8 @@ Sie kann daher als mit herausragender Präzision bestätigt gelten.
 Zum Beispiel beschreibt sie die Ausbreitung von elektromagnetischen
 Wellen wie Licht oder Radiowellen, erklärt aber nicht das Medium, in
 dem diese Wellen sich ausbreiten.
-Der gescheiterte Versuch, ein solches Medium nachzuweisen, hat zu einer
+Der gescheiterte Versuch, ein solches Medium nachzuweisen, hat
+zu Beginn des zwanzigsten Jahrhunderts zu einer
 der tiefgreifendsten Umwälzungen unseres Weltbildes geführt.
 
 \section{Galilei-Transformation}
@@ -47,7 +48,7 @@ x'&=x+vt
 \end{aligned}
 \label{skript:kruemmung:galileitransformation}
 \end{equation}
-\index{Galiei-Transformation}
+\index{Galiei-Transformation}%
 Man nennt \eqref{skript:kruemmung:galileitransformation} die
 Galilei-Transformation (Abbildung~\ref{skript:spezielle:galileigraphik}).
 \begin{figure}
@@ -107,7 +108,7 @@ Diese Theorie sagt Wellen voraus, die wir als Licht oder auch als Radiowellen
 täglich nutzen.
 Im 19.~Jahrhundert lag die Vermutung nahe, dass es ein Medium gibt,
 den sogenannten Äther, welches
-diese Wellen transportiert, und dessen Geschwindigkeit gemessen werden
+diese Wellen transportiert und dessen Geschwindigkeit gemessen werden
 kann, so wie man bei einer Schifffahrt die Geschwindigkeit des Wassers
 messen kann, welches auch Wellen transportiert.
 \index{Äther}%
@@ -161,6 +162,7 @@ isolieren.
 \label{MMinterferometer}}
 \end{figure}
 Dies ist der Kontext, in dem Albert A.~Michelson und Edward W.~Morley
+1887
 \index{Michelson, Albert A.}%
 \index{Morley, Edward W.}%
 \index{Interferometer}%
@@ -238,7 +240,7 @@ s^2
 \label{skript:kruemmung:raumzeitabstand}
 \end{equation}
 gleich $0$ ist.
-Breitet sich die Wirkung langsamer als mit Lichtgeschwindigket aus,
+Breitet sich die Wirkung langsamer als mit Lichtgeschwindigkeit aus,
 wird die zeitliche Differenz noch grösser sein, und damit der
 Ausdruck~\eqref{skript:kruemmung:raumzeitabstand} negativ ist.
 
@@ -273,11 +275,11 @@ heisst der Lichtkegel.
 \index{Lichtkegel}
 Ereignisse innerhalb des Lichtkegels mit $t>0$ können vom Nullpunkt aus
 beeinflusst werden.
-Ereignisse innerhalb des Lichtkegels imt $t<0$ können auf den Nullpunkt
+Ereignisse innerhalb des Lichtkegels mit $t<0$ können auf den Nullpunkt
 Einfluss nehmen.
 Alle anderen Ereignisse können den Nullpunkt weder beeinflussen
 noch von ihm beeinflusst werden.
-Sie müssen daher als die Gegenwart des Nullpunktes bezeichnet
+Sie müssen daher als die objektive Gegenwart des Nullpunktes bezeichnet
 werden.
 
 Der Formalismus einer Metrik passt ganz hervorragend auf die hier
@@ -394,16 +396,15 @@ Dies wären die Koordinaten-Änderungen, die zulässig sind, wenn
 man das grundlegende Gesetz~\eqref{skript:kruemmung:raumzeitabstand}
 der Kausalität erhalten will.
 
-Zunächst sind Koordinatentransformationen, die nur die Raumkoordinaten
-$x$, $y$ und $z$ beeinflussen, und den räumlichen Abstand nicht
-ändern, zulässig.
+Zunächst sind Koordinatentransformationen zulässig, die nur die Raumkoordinaten
+$x$, $y$ und $z$ beeinflussen, und den räumlichen Abstand nicht ändern.
 Diese Transformationen sind aber wohlbekannt.
 In der Linearen Algebra lernt man, dass genau die orthogonalen
 Matrizen $A\in \textrm{O}(3)$, also Matrizen mit $A^tA=E$ diese
 Eigenschaft haben.
 Diese entsprechen räumlichen Drehungen und Spiegelungen.
 
-Wenn sich aber zwei Koordinatensystem gegeneinander verschieben,
+Wenn sich aber zwei Koordinatensystem mit der Zeit gegeneinander bewegen,
 so wie bei der Galilei-Transformation, dann müssen auch die auch
 die Zeitkoordinaten in die Transformation involviert sein.
 Wir suchen also eine Koordinatentransformation, die nur die
@@ -416,7 +417,7 @@ x'&=& a_{21}t&+&a_{22}x
 \end{linsys}
 \end{equation}
 ansetzen.
-Wir verlangen jetzt aber, dass der
+Wir verlangen jetzt, dass der
 Ausdruck~\eqref{skript:kruemmung:raumzeitabstand}
 unverändert bleibt.
 Da die $y$- und $z$-Koordinaten ohnehin nicht involviert sind, bedeutet
@@ -698,12 +699,13 @@ vom Koordinatensystem, ist $\tau$ ebenfalls unabhängig vom Koordinatensystem.
 \section{Energie und Impuls}
 \label{skript:speziell:energieimpuls}
 %\rhead{Energie und Impuls}
-Ein Teilchen der Masse $m$, die im Nullpunkt ruht, hat keinen
-Impuls.
+Ein Teilchen der Masse $m$, welches im Nullpunkt ruht, hat in der
+Newtonschen Mechanik Impuls 0.
 In einem anderen Koordinatensystem nimmt hat das Teilchen dagegen
 eine Geschwindigkeit, und damit auch einen Impuls.
-Dies zeigt, dass eine koordinatensystemunabhägngige Beschreibung
-nicht nur mit dem Impuls funktionieren kann.
+Dies zeigt, dass eine koordinatensystemunabhängige Beschreibung
+nicht allein mit dem Impuls funktionieren kann, wie ihn die klassische
+Mechanik definiert.
 Wir brauchen eine erweiterte Erhaltungsgrösse, die wir zur Beschreibung
 der Bewegung eines Teilchens verwenden können.
 
@@ -713,9 +715,12 @@ Die Kurve $x^\mu(s)$ und die Ableitung nach dem Kurvenparameter sind
 offenbar keine geeigneten Grössen, denn der Kurvenparameter ist
 keine vom Koordinatensystem unabhängige Grösse.
 Die Eigenzeit ist aber eine solche koordinatensystemunabhängige
-Grösse, wir schliessen daraus, dass die Ableitung der Position
-nach der Eigenzeit, die sogenannte Vierergeschwindigket, der einzig
-sinnvolle Ersatz für die Geschwindigkeit.
+Grösse.
+Wir schliessen daraus, dass die Ableitung der Position
+nach der Eigenzeit, die sogenannte Vierergeschwindigkeit, der einzig
+sinnvolle Ersatz ist für die in der klassischen Physik verwendete
+Geschwindigkeit, die koordinatensystemabhängige Ableitung nach der
+Zeitkoordinate.
 Da die Eigenzeit auch im Wesentlichen die Bogenlänge ist, führt die
 Ableitung automatisch auf einen Einheitsvektor.
 
@@ -795,7 +800,7 @@ $M=m\gamma$ heisst die relativistische Masse.
 Eine bewegte Masse ist also grösser als eine ruhende.
 
 Um die Bedeutung der $0$-Komponente des Viererimpulses besser zu
-verstehen, entwickeln wir ihn für kleine Geschwindigkeiten.
+verstehen, entwickeln wir sie für kleine Geschwindigkeiten.
 Dazu verwenden wir die Potenzreihe
 \[
 \frac1{\sqrt{1-x}}
@@ -810,7 +815,9 @@ Die {\em binomische Reihe} für negative Exponenten ist die Reihe
 1\mp mx +\frac{m(m+1)}{2!}x^2 \mp \frac{m(m+1)(m+2)}{3!} x^3 +\dots
 \]
 mit $m>0$.
-\index{binomische Reihe}
+\index{binomische Reihe}%
+Im Abschnitt Binomialriehe auf Seite~\pageref{skript:multipol:binomialreihe}
+wird die Binomialreihe im allgemeinen Fall hergeleitet.
 } für negative Exponenten ableiten kann.
 Setzen wir hier für $x$ den Quotienten $(v/c)^2$ ein, erhalten wir
 \[
@@ -849,7 +856,7 @@ eine Energiedichte $\varepsilon=\varrho c^2$.
 Die Betrachtungen zum Viererimpuls und zur Energie haben gezeigt, dass
 Masse und Geschwindigkeit nicht unabhängig voneinander betrachtet
 werden können.
-Andererseits zeigt das newtonsche Gravitationsgesetz, dass sich Schwerkraft
+Andererseits zeigt das newtonsche Gravitationsgesetz, dass die Schwerkraft
 von der Masse eines Körpers ausgeht.
 Die Newtonsche Theorie ist daher schon im Ansatz nicht der
 speziellen Relativitätstheorie verträglich.
@@ -865,14 +872,14 @@ In der Newtonschen Theorie wird daher das von einer Masseverteilung mit
 Dichte $\varrho(x,y.z)$ verursachte Gravitationsfeld studiert.
 In der verallgemeinerten Theorie reicht die Dichte nicht aus,
 wir müssen zulassen, dass die Materie sich bewegt, was wir mit einem
-Stromdichtevektor $\vec j$ abbilden können.
+Stromdichtevektor $\vec\jmath$ abbilden können.
 Die relativistische Grösse dazu wäre der Vierervektor der Impulsdichte
 bestehend aus den Komponenten $j^\mu=\varrho u^\mu$,
 wobei $u^\mu$ die Komponenten der Vierergeschwindigkeit des Gases sind.
 
 Gesucht ist jetzt also eine Grösse, die zu jeder Zeit und in jedem
 Punkt des Raumes den Viererimpuls der dort vorhandenen Materie zu
-berechnen.
+berechnen gestattet.
 Im Ruhesystem des Gases reicht die Dichte des Gases zur Beschreibung.
 In einem bewegten System wird man aber feststellen, dass das Gas auch
 noch Impuls trägt, der ebenfalls berücksichtigt werden muss.
@@ -939,7 +946,7 @@ Ausserdem ist
 \frac{\text{kg}\cdot\text{m}}{\text{s}^2},
 \]
 dies ist die Masseinheit des Druckes oder einer Spannung.
-Wir können daher die Matrix $T^{\nu\mu}$
+Wir können daher die Matrix $T^{\mu\nu}$
 durch
 \[
 T^{\mu\nu}
@@ -954,7 +961,7 @@ T^{\mu\nu}
 \]
 charakterisieren.
 $T^{\mu\nu}$ heisst der {\em Energie-Impuls-Tensor}.
-Er codiert die Information über den im Universum vorhandenen
+Er codiert die Information über den in der Raumzeit vorhandenen
 Viererimpuls.
 
 \index{Energie-Impuls-Tensor}%
@@ -984,7 +991,7 @@ T^{k0}
 Da sich das Gas nicht bewegt, fliesst auch keine Energie durch räumliche
 Wände einer Box, so dass auch $T^{0k}=0$ gilt.
 Da in einem idealen Gas keine Spannungen herschen, muss $T^{ik}$ diagonal
-sein, und $T^{ik}=p$.
+sein, und $T^{ii}=p$.
 Also ist
 \[
 T^{ik}
@@ -997,7 +1004,7 @@ T^{ik}
 \end{pmatrix}
 \]
 der Energie-Impuls-Tensor eines ruhenden idealen Gases mit Dichte
-$\varrho$ und Drucke $p$.
+$\varrho$ und Druck $p$.
 \index{Energie-Impuls-Tensor!eines idealen Gases}
 
 Um daraus den Energie-Impuls-Tensor eines idealen in einem
@@ -1197,12 +1204,12 @@ M^{12}
 \\
 &\phantom{\mathstrut=}-(-T^{21}L^2)(L/2)-(T^{21}L^2)(-L/2)
 \\
-&=(T^{12}-T^{21})L^3
+&=(T^{12}-T^{21})L^3.
 \end{align*}
 Das Trägheitsmoment des Würfels ist proportional zu $L^5$,
 die Winkelbeschleunigung des Würfels ist daher proportional
 zu $(T^{12}-T^{21})L^{-2}$, was für $L\to 0$ beliebig gross würde.
-ein beliebig kleiner Würfel würde daher zu beliebig grossen 
+Ein beliebig kleiner Würfel würde daher zu beliebig grossen 
 Drehgeschwindigkeit beschleunigt.
 Da dies nicht sein kann, folgt $T^{12}-T^{21}=0$ oder allgemeine
 \[
@@ -1235,9 +1242,11 @@ Leider passt \eqref{skript:speziell:newton2}
 Die Physik hilft uns jedoch nochmals weiter, da
 eine Weltlinie nur zeitartig sein kann.
 Für langsam bewegt Objekte sind die Raumkomponenten $\dot x^i(t)$
-der Vierergeschwindigkeit jedoch sehr klein, $\dot x^i(t)\simeq 0$,
+der Vierergeschwindigkeit sehr klein, $\dot x^i(t)\simeq 0$,
 ($1\le k\le 3$), während
 die Zeitkomponente $\dot x^0(t)\simeq 1$ ist.
+Das Objekt bewegt sich vor allem in der Zeit, ungefährt mit einer
+Geschwindigkeit von einer Sekunde pro Sekunde.
 In dieser Näherung könnten wir \eqref{skript:speziell:newton2}
 auch als
 \begin{equation}
@@ -1256,7 +1265,7 @@ Kräfte der klassischen Mechanik.
 Eine koordinatensystemunabhängige Formulierung des zweiten Newtonschen
 Gesetzes wird deshalb fordern, dass sich ein Teilchen entlang einer
 Geodäten bewegt.
-Unser Plan ist daher, das Auftreten von Gravitationskräften als
+Unser Plan ist, das Auftreten von Gravitationskräften als
 Ausdruck nicht verschwindender Christoffelsymbole zu verstehen.
 Dieser Plan wird in Kapitel~\ref{skript:chapter:gravitation}
 umgesetzt.
