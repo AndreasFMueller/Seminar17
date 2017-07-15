@@ -368,7 +368,7 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
   \begin{align*}
     \ddot{x} &= -\frac{2(-\dot{x}^2+\dot{y}^2)(x-x_L)KM}
                {c^2\sqrt{(x-x_L)^2+y^2}\,^3}+
-               \frac{4\dot{x}^2yKM}{c^2\sqrt{(x-x_L)^2+y^2}\,^3}\\
+               \frac{4\dot{x}y\dot{y}KM}{c^2\sqrt{(x-x_L)^2+y^2}\,^3}\\
     \ddot{y} &= +\frac{4\dot{x}\dot{y}(x-x_L)KM}{c^2\sqrt{(x-x_L)^2+y^2}\,^3}
                - \frac{2(\dot{x}^2-\dot{y}^2)yKM}
                {c^2\sqrt{(x-x_L)^2+y^2}\,^3}
@@ -386,23 +386,27 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
   erster Ordnung, welche beide Formeln enthält.  Wählt man folgende
   Substitutionen
   \begin{align*}
-    x(1) &= x &x(2) &= \dot{x} &x(3) &= y &x(4) &= \dot{y}
+    x_1 &= x &x_2 &= \dot{x} &x_3 &= y &x_4 &= \dot{y}
   \end{align*}
   kann man die beiden Formeln in eine brauchbare Form bringen.  Die
   gängigen Algorithmen fordern die Ableitungen von \(x(k)\) als
   Parametern.
   \begin{align*}
-    \dot{x}(1) &= x(2)\\
-    \dot{x}(2) &= -\frac{2\left(-x(2)^2+x(4)^2\right)\bigl(x(1)-x_L\bigr)KM}
-                 {c^2\sqrt{\bigl(x(1)-x_L\bigr)^2+x(3)^2}\,^3}
-                 + \frac{4 x(2)^2 x(3) KM}
-                 {c^2\sqrt{\bigl(x(1)-x_L\bigr)^2+x(3)^2}\,^3}\\
-    \dot{x}(3) &= x(4)\\
-    \dot{x}(4) &= +\frac{4x(2)x(4)\bigl(x(1)-x_L\bigr)KM}
-                 {c^2\sqrt{\bigl(x(1)-x_L\bigr)^2+x(3)^2}\,^3}
-                 - \frac{2 \left(x(2)^2-x(4)^2\right) x(3) KM}
-                 {c^2\sqrt{\bigl(x(1)-x_L\bigr)^2+x(3)^2}\,^3}
+    \dot{x}_1 &= x_2\\
+    \dot{x}_2 &= -\frac{2\left(-x_2^2+x_4^2\right)\bigl(x_1-x_L\bigr)KM}
+                {c^2\sqrt{\bigl(x_1-x_L\bigr)^2+x_3^2}\,^3}
+                + \frac{4 x_2x_3x_4 KM}
+                {c^2\sqrt{\bigl(x_1-x_L\bigr)^2+x_3^2}\,^3}\\
+    \dot{x}_3 &= x_4\\
+    \dot{x}_4 &= +\frac{4x_2x_4\bigl(x_1-x_L\bigr)KM}
+                {c^2\sqrt{\bigl(x_1-x_L\bigr)^2+x_3^2}\,^3}
+                - \frac{2 \left(x_2^2-x_4^2\right) x_3 KM}
+                {c^2\sqrt{\bigl(x_1-x_L\bigr)^2+x_3^2}\,^3}
   \end{align*}
+
+  In Octave wird \(x_1\) zu \texttt{x(1)}, was zu folgendem Code
+  führt:
+  \lstinputlisting[style=Octave]{cluster/source/dglSubCode.m}
 
   Setzt Man nun die Werte
   \begin{align*}
@@ -411,7 +415,7 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
     &R &\approx \SI{700e3}{\kilo\meter}
   \end{align*}
   der Sonne ein,
-  erhält man eine Winkeländerung von \(\approx \SI{1.77}{''}\),
+  erhält man eine Winkeländerung von \(\approx \SI{1.75}{''}\),
   vergleicht man dies mit dem Werte aus der Literatur von
   \(\SI{1.75}{''}\) (\cite{misner1973gravitation} S.446), scheint
   dieses Vorgehen ziemlich adäquat.
@@ -420,7 +424,7 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
   berechnete Lichtweg dargestellt.  Der Beobachter ist im Punkt (0,0)
   und die Sonne im Punkt (\SI{1.5e11}{\meter},0).  Der Lichtpfad
   startet von der Erde aus so, dass man direkt am Sonnenradius
-  vorbeischaut.  Da die Ablenkung nur \SI{1.77}{''} sieht der Lichtweg
+  vorbeischaut.  Da die Ablenkung nur \SI{1.75}{''} sieht der Lichtweg
   von Auge betrachtet wie eine gerade Strecke aus.  (Eine Bogensekunde
   ist ein 3600stel eines Grades.)
 
