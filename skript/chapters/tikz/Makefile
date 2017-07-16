@@ -10,7 +10,8 @@ all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
 	dipol2.pdf ionisation.pdf kreisbogen.pdf tangente.pdf kruemmung.pdf \
 	wald.pdf 4pifu2.pdf dipol3.pdf quadrupol.pdf quadrupol1.pdf \
 	hexapol.pdf hexapol1.pdf monopol.pdf planck1.pdf planck2.pdf \
-	planck3.pdf rekombination.pdf
+	planck3.pdf rekombination.pdf kruemmung2.pdf kruemmun3.pdf \
+	riemann.pdf
 
 images:	all
 
@@ -80,6 +81,12 @@ tangente.pdf:	tangente.tex
 kruemmung.pdf:	kruemmung.tex
 	pdflatex kruemmung.tex
 
+kruemmung2.pdf:	kruemmung2.tex
+	pdflatex kruemmung2.tex
+
+kruemmung3.pdf:	kruemmung3.tex
+	pdflatex kruemmung3.tex
+
 wald.pdf:	wald.tex waldbaeume.tex
 	pdflatex wald.tex
 
@@ -120,3 +127,5 @@ rekombination.pdf:	rekombination.tex rekombination.csv
 rekombination.csv:	rekombination.m
 	octave rekombination.m
 
+riemann.pdf:	riemann.tex
+	pdflatex riemann.tex

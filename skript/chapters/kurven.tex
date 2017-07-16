@@ -471,6 +471,20 @@ berechnen:
 \frac{\displaystyle\ddot c(t) - \frac{\dot c(t)}{|\dot c(t)|} \left( \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)\right)}{|\dot c(t)|}
 \label{skript:kruemmung:krallg1}
 \end{align}
+\begin{figure}[t!]
+\centering
+\subfigure{}{\includegraphics[]{chapters/tikz/kruemmung2.pdf}}
+\hfill
+\subfigure{}{\includegraphics[]{chapters/tikz/kruemmung3.pdf}}
+\caption{Berechnung der Krümmung aus den ersten zwei Ableitungen
+$\dot c(t)$ und $\ddot c(t)$ der Kurve.
+Die Krümmung ist proportional zur Projektion der zweiten Ableitung
+$\ddot c(t)$ auf die Normale auf der Tangentenrichtung $\dot c(t)$.
+Die Projektion ist in beiden Abbildungen {\color{red}rot} eingezeichnet.
+Auf der rechten Abbildung sieht man, dass dies auch die Höhe des
+von $\dot c(t)$ und $\ddot c(t)$ aufgespannten Parallelogramms ist.
+\label{skript:chapter:kruemmungsberechnung}}
+\end{figure}
 Schreiben wir den Einheitstangentialvektor
 \[
 e(t)= \frac{\dot c(t)}{|\dot c(t)|},
@@ -481,16 +495,18 @@ wird der Zähler etwas übersichtlicher zu
 =
 \ddot c(t) - e(t)\; \bigl(e(t)\cdot \ddot c(t)\bigr).
 \]
-Da $\vec e(t)$ ein Einheitsvektor ist, ist
+Da $e(t)$ ein Einheitsvektor ist, ist
 $e(t) \;(e(t)\cdot\ddot c(t))$ die Projektion des Vektors
-$\ddot c(t)$ auf den Vektor $e(t)$.
-Der Nenner ist also die Komponenten von $\ddot c(t)$ senkrecht auf dem
+$\ddot c(t)$ auf den Vektor $e(t)$
+(Abbildung~\ref{skript:chapter:kruemmungsberechnung} links).
+Der Zähler ist also die Komponenten von $\ddot c(t)$ senkrecht auf dem
 Tangentialvektor.
 Wir brauchen davon aber nur den Betrag, also die Höhe des Parallelograms
-mit den Seiten $e(t)$ und $\ddot c(t)$.
+mit den Seiten $e(t)$ und $\ddot c(t)$
+(Abbildung~\ref{skript:chapter:kruemmungsberechnung} rechts).
 Diese können wir aber auch dadurch erhalten, dass wir den orientierten
 Parallelogramminhalt berechnen, und durch die Länge der Grundseite
-$\vec e(t)$ teilen, die aber ein Einheitsvektor ist.
+$e(t)$ teilen, die aber ein Einheitsvektor ist.
 Den Parallelogramminhalt können wir mit der Determinante berechnen:
 \[
 \biggl|\ddot c(t) - \frac{\dot c(t)}{|\dot c(t)|}

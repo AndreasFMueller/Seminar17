@@ -11,13 +11,13 @@
 \centering
 \includegraphics[width=\hsize]{chapters/3d/flach.jpg}
 \caption{Beim Paralleltransport eines Vektors entlang einer Kurve in
-einer Ebene dreht sich der Vektor nicht
+einer Ebene dreht sich der Vektor nicht.
 \label{skript:kruemmung:transportflach}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\hsize]{chapters/3d/sphere.jpg}
+\includegraphics[width=0.65\hsize]{chapters/3d/sphere.jpg}
 \caption{Drehung eines Tangentialvektors beim Transport entlang eines
 Dreiecks auf der Kugeloberfläche.
 Der Flächeninhalt des Dreiecks ist ein Achtel der Kugeloberfläche,
@@ -56,6 +56,13 @@ In dieser Form ist das Problem sicher zu kompliziert, die Wahl
 einer geschlossenen Kurve beinhaltet viel zu viele Freiheitsgrade.
 
 \rhead{Krümmungstensor}
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/riemann.pdf}
+\caption{Paralleltransport eines Vektors entlang eines
+Koordinaten-Parallelogramms.
+\label{skript:kruemmung:parallelogramm}}
+\end{figure}
 
 Zu zwei Tangentialvektoren $u^\mu$ und $v^\mu$ und in einem Punkt
 $P$ können wir immer eine
@@ -68,6 +75,9 @@ Und statt eine beliebige Kurve zuzulassen, können wir uns weiter
 auf einen Polygonzug beschränken, bei dem wir den Geodäten folgen,
 die als Tangentialrichtung die Richtung der beiden gegebenen
 Tangentialvektoren haben.
+Abbildung~\ref{skript:kruemmung:parallelogramm} zeigt, wie ein Vektor
+entlang eines Koordinatenparallelogramms transport wird und sich
+dabei dreht.
 
 Wenn wir einen Vektor $A^\mu$ entlang einer solchen Kurve parallel
 transportieren, dann aber die Kurve auf einen Punkt zusammenschrumpfen
@@ -80,6 +90,10 @@ $y^\mu$ berechnen kann:
 \[
 y^\alpha = R^\alpha\mathstrut_{\mu\nu\sigma}u^\mu v^\nu A^\sigma.
 \]
+Da der Paralleltransport die Länge erhält, entspricht die Änderung des
+Vektors einer Drehung.
+$R^\alpha\mathstrut_{\mu\nu\sigma}$ codiert also das Ausmass der
+Drehung des Vektors.
 
 Zur Konstruktion des Krümmungstensors gehen wir wie folgt vor.
 Im Abschnitt~\ref{skript:kruemmung:section:wegintegral} definieren
@@ -699,7 +713,8 @@ Da $n=2$ ist, ist der paralleltransportierte Vektor immer ein
 Tangentialvektor.
 Da der Paralleltransport die Skalarprodukte erhält, wird jeder beliebige
 Tangentialvektor bei der Rückkehr zum Ausgangspunkt um den gleichen
-Winkel gedreht worden sein, und seine Länge wird nicht ändern.
+Winkel gedreht worden sein, und seine Länge wird nicht ändern
+(siehe auch Abbildung~\ref{skript:kruemmung:parallelogramm}).
 Ausgehend von einem rechtwinkligen Koordinatensystem im Ausgangspunkt
 suchen wir also eine Drehmatrix, die die Drehung um einen festen Winkel
 beschreibt, eine solche Matrix ist
