@@ -110,10 +110,18 @@ zu definieren.
 
 \subsection{Wegintegral und Gebietsintegral in der Ebene%
 \label{skript:kruemmung:section:wegintegral}}
+\begin{figure}
+\centering
+\subfigure{}{\includegraphics{chapters/tikz/pfadc.pdf}}
+\subfigure{}{\includegraphics{chapters/tikz/pfad.pdf}}
+\caption{Pfad $c(t)$ in der $x$-$y$-Ebene und das vom Pfad eingeschlossen
+Gebiet $D$.
+\label{skript:kruemmung:pfad}}
+\end{figure}
 In diesem Abschnitt betrachten wir Funktionen $f(x,y)$ und $g(x,y)$
 in der Ebene und ein Teilgebiet $D\subset \mathbb R^2$, welches
 von einer Kurve $c\colon [a,b]\to\mathbb R^2\colon t\mapsto c(t)$
-berandet wird.
+berandet wird (Abbildung~\ref{skript:kruemmung:pfad}).
 Die beiden Funktionen $f$ und $g$ kann man auch als ein zweidimensionales
 Vektorfeld in der Ebenen $\mathbb R^2$ betrachten, jedem Punkt der
 Ebene ist ein Vektor 
@@ -131,6 +139,16 @@ Das Wegintegral des $\vec v$ entlang der Kurve $c(t)=(x(t),y(t))$ ist
 \]
 \end{definition}
 
+\begin{figure}
+\centering
+\subfigure{}{\includegraphics{chapters/tikz/pfadx.pdf}}
+\subfigure{}{\includegraphics{chapters/tikz/pfady.pdf}}
+\caption{Das Gebiet $D$ kann einerseits durch die Funktionen
+$y_1(x)$ und $y_2(x)$ in Abhängigkeit von $x$ beschreiben werden,
+andererseits kann es durch die Funktionen
+$x_1(y)$ und $x_2(y)$ in Abhängigkeit von $y$ beschreiben werden.
+\label{skript:kruemmung:gebiet}}
+\end{figure}
 Zu dem gegebenen Gebiet $D$ kann man aber auch für jede beliebige
 Funktion $h(x,y)$ das Gebietsintegral bilden.
 Wir tun dies im Detail nur für Gebiete deren Rand sich durch zwei
@@ -139,7 +157,7 @@ Gebiet $D$ die Menge
 \[
 D=\{ (x,y) \,|\, y_1(x) \le y \le y_2(x), x_1\le x\le x_2\}
 \]
-ist.
+ist (Abbildung~\ref{skript:kruemmung:gebiet}).
 Dann definieren wir
 
 \begin{definition}

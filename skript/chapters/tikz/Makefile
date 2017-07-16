@@ -11,7 +11,9 @@ all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
 	wald.pdf 4pifu2.pdf dipol3.pdf quadrupol.pdf quadrupol1.pdf \
 	hexapol.pdf hexapol1.pdf monopol.pdf planck1.pdf planck2.pdf \
 	planck3.pdf rekombination.pdf kruemmung2.pdf kruemmun3.pdf \
-	riemann.pdf
+	riemann.pdf pfad
+
+pfad: pfad.pdf pfadx.pdf pfady.pdf pfadc.pdf
 
 images:	all
 
@@ -129,3 +131,15 @@ rekombination.csv:	rekombination.m
 
 riemann.pdf:	riemann.tex
 	pdflatex riemann.tex
+
+pfad.pdf:	pfad.tex
+	pdflatex pfad.tex
+
+pfadx.pdf:	pfadx.tex
+	pdflatex pfadx.tex
+
+pfady.pdf:	pfady.tex
+	pdflatex pfady.tex
+
+pfadc.pdf:	pfadc.tex
+	pdflatex pfadc.tex
