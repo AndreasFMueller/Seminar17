@@ -554,6 +554,40 @@ berechnet ode23s auf der gesamten vorgegebenen Strecke Punkte.  Für
 Sonnenabstände ist dies noch gut berechenbar, für Galaxienabstände
 jedoch nicht.
 
+\subsection{Bildverzerrung}
+\rhead{Bildverzerrung}
+Möchte man nun ein Bild der Lichtablenkung erzeugen, muss man für
+jedes Pixel den Lichtweg simuliert.  Wenn man den einfachsten Fall der
+Punktquelle beibehält, kann man die Symmetrie ausnützen und muss somit
+nur ein Achtel der Pixelauflösung berechnen.
+
+Für die Simulation wurde wieder der Abstand von der Erde zur Sonne
+verwendet.  Um die Lichtablenkung noch zu verstärken, wurde die
+tausendfache Sonnenmasse bei gleichem Radius angenommen.  Der
+Pixelabstand in der Sonnenebene liegt bei \SI{10e6}{\meter}.  Das
+Hintergrundbild, die Andromeda Galaxie aus Abbildung \ref{fig:m31},
+ist in rund 6.8 fachem Sonnenabstand von der Erde aus platziert.  Der
+Pixelabstand wurde gleich gewählt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{cluster/images/m31_comolli_2193}
+  \caption{Andromeda Galaxie M31 \cite{nasa:andromedaM31}}
+  \label{fig:m31}
+\end{figure}
+
+In der Abbildung \ref{fig:einsteinringSim} sieht man wie das Zentrum
+der Galaxie zu einem Ring verzogen wird.  Das schwarze Zentrum in der
+Abbildung ist die Position der ``Sonne''.  Die Abbildung hat eine
+Auflösung von \(300\times300\) Pixel und benötigte gut eineinhalb Tage
+Berechnungszeit bei vier Kernen mit Hyper-Threading.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.6\textwidth]{cluster/images/einsteinring}
+  \caption{Bildverzerrung durch 1000 Sonnenmassen}
+  \label{fig:einsteinringSim}
+\end{figure}
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
