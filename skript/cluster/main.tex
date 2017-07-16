@@ -28,8 +28,6 @@ die Hintergrund-Galaxien zu Streifen verzogen werden und nicht mehr zu
 einem ganzen Kreis, da die Ausrichtungen zueinander nicht optimal
 sind.
 
-%Todo: Verwendung, Microlensing
-
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{cluster/images/LRG_3-757}
@@ -56,25 +54,25 @@ sind.
 
 \section{``Normale'' Linse}
 \rhead{Normale Linse}
-Zuerst einmal einen Rückblick wie eine ``normale'' Linse funktioniert.
+Zuerst einmal ein Rückblick wie eine ``normale'' Linse funktioniert.
 Eine ``normale'' Linse nutzt die Brechung zwischen dem Linsenmaterial
 und seiner Umgebung aus.  Durch diese Brechung kommt es zu einer
 Winkeländerung des Lichtstrahls.  Bei homogenen Materialien mit
 bekannten Brechungsindizes kann folgende Formel aus der geometrischen
-Optik verwendet werden.
+Optik verwendet werden:
 
 \begin{equation}
-  \frac{\sin \varepsilon_1}{\sin \varepsilon_2} = \frac{n_2}{n_1}
+  \frac{\sin \varepsilon_1}{\sin \varepsilon_2} = \frac{n_2}{n_1}.
 \end{equation}
 
-Darin kommen die Winkel zur Oberflächennormalen auf der einen Seite
-und die beiden Brechungsindizes auf der Anderen vor.  Der
+Darin kommen die Winkel zur Oberflächennormalen im Sinus-Bruch
+und die beiden Brechungsindizes vor.  Der
 Brechungsindex eines Mediums \(n\), ergibt sich aus der
 Lichtgeschwindigkeit im Vakuum \(c\) geteilt durch die
-Lichtgeschwindigkeit im Medium \(u\).
+Lichtgeschwindigkeit \(u\) im Medium:
 
 \begin{equation}
-  n = \frac{c}{u}
+  n = \frac{c}{u}.
 \end{equation}
 \index{Brechungsindex}
 
@@ -150,32 +148,33 @@ Richtung des Sterns abgelenkt.)
 
 \section{Gravitationslinse}
 \rhead{Gravitationslinse}
-\subsection{Lichtkegel}
-\rhead{Lichtkegel}
-Als Start wird die Formel \ref{skript:kruemmung:raumzeitabstand} aus
-dem Abschnitt über den Lichtkegel genommen.
+\subsection{Einfluss der Gravitation auf die Zeit}
+\rhead{Einfluss der Gravitation auf die Zeit}
+Als Start wird die Formel \eqref{skript:kruemmung:raumzeitabstand}
 \begin{equation*}
   s^2 = -c^2 (t_1-t_2)^2 + (x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2
 \end{equation*}
+aus dem Abschnitt über den Lichtkegel genommen.
+
 Die Gravitationslinse beugt Lichtwellen, somit ist \(s^2=0\), da sich
-die Wirkung in Lichtgeschwindigkeit ausbreitet.  Wird zur
+die Wirkung mit Lichtgeschwindigkeit ausbreitet.  Wird zur
 Vereinfachung \(c=1\) gesetzt, ergibt sich:
 \begin{equation*}
   0 = -(t_1-t_2)^2 + (x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2
 \end{equation*}
 oder anders geschrieben
 \begin{equation*}
-  0 = -dt^2 + dx^2 + dy^2 + dz^2
+  0 = -dt^2 + dx^2 + dy^2 + dz^2.
 \end{equation*}
 
 Die Lichtwellen bewegen sich in minimalen Wegen, was den Geodäten
 entspricht.  Die Lichtablenkung an Sternen und Galaxien befindet sich
 im Bereich von schwachen Gravitationsfeldern.  Zu diesen wurden die
-\(g_{\mu\nu}\) bereits berechnet (Formel
-\ref{skript:gravitation:naeherung}).
+\(g_{\mu\nu}\):
 \begin{align*}
   g_{00} &= -1 -\frac{2\varphi}{c^2} &g_{kk} &= 1,\quad k=1,2,3
 \end{align*}
+bereits berechnet (Formel \ref{skript:gravitation:naeherung}).
 Das Gravitationspotential \(\varphi\) ist für eine Punktmasse:
 \begin{equation*}
   \varphi = -\frac{KM}{r}
@@ -184,7 +183,7 @@ Das Gravitationspotential \(\varphi\) ist für eine Punktmasse:
 (oft als \(G\) bezeichnet) und \(r\) der Abstand zur Punktmasse.
 Setzt man dies nun zusammen, erhält man folgende \(g_{\mu\nu}\):
 \begin{align*}
-  g_{00} &= -1 +\frac{2KM}{rc^2} &g_{kk} &= 1,\quad k=1,2,3
+  g_{00} &= -1 +\frac{2KM}{rc^2} &g_{kk} &= 1,\quad k=1,2,3.
 \end{align*}
 Für grosse Abstände \(r\) wird \(g_{00}=-1\).  Was gleich der normalen
 Minkowski-Metrik ist.
@@ -195,7 +194,7 @@ Minkowski-Metrik ist.
   \begin{align*}
     K &= \SI{6.67e-11}{\meter\cubed\per\kilogram\per\second\squared}
     &M &= \SI{1.99e30}{\kilogram}
-    &c &= \SI{2.99e8}{\meter\per\second}
+    &c &= \SI{2.99e8}{\meter\per\second}.
   \end{align*}
   Die Zeitveränderung wird nur vom zweiten Teil von \(g_{00}\)
   bestimmt, wobei man erhält:
@@ -206,7 +205,7 @@ Minkowski-Metrik ist.
                               \cdot \si{\kilogram}
                               \cdot \si{\per\meter}
                               \cdot \si{\per\meter\squared\second\squared}
-                              = 1
+                              = 1.
   \end{align*}
   Einen Graphen mit den Werten von \(1\) bis \(0.05\) für
   \(\tilde{t}\) mit dem Abstand \(r\) kann in der Abbildung
@@ -250,9 +249,9 @@ Quelle nicht in einer Linie stehen (wie im Cluster Bild
 Um die Lichtablenkung zu berechnen, benötigt man den Weg des Lichts
 und nicht nur wie stark die Lichtgeschwindigkeit abgebremst wird.  Das
 Licht nimmt den Weg mit der kürzesten Laufzeit.  Aus der Physik kennt
-man, dass die Zeit gleich der Strecke durch die Geschwindigkeit ist.
+man, dass die Zeit gleich der Strecke durch die Geschwindigkeit ist:
 \begin{equation*}
-  t = \frac{s}{v}
+  t = \frac{s}{v}.
 \end{equation*}
 
 Für den Weg des Lichts muss man somit jedes Wegstück mit seiner
@@ -268,7 +267,7 @@ Weg geteilt durch eine Geschwindigkeit im Integral geben.  Eine
 Möglichkeit ist folgendes Integral:
 \begin{equation}
   I = \int\! \sqrt{\dot{x}(l)^2+\dot{y}(l)^2+\dot{z}(l)^2} \cdot
-  \frac{n\bigl(x(l),y(l),z(l)\bigr)}{c} d l
+  \frac{n\bigl(x(l),y(l),z(l)\bigr)}{c} d l.
 \end{equation}
 
 Der Wert unter der Wurzel entspricht dem Wegstück während eines
@@ -279,28 +278,31 @@ Lichtgeschwindigkeit \(c\) unabhängig von der Position ist, kann man
 den Bruch vor das Integral nehmen:
 \begin{equation}
   I = \frac{1}{c}\int\! \sqrt{\dot{x}(l)^2+\dot{y}(l)^2+\dot{z}(l)^2}
-  \cdot n\bigl(x(l),y(l),z(l)\bigr) d l
+  \cdot n\bigl(x(l),y(l),z(l)\bigr) d l.
 \end{equation}
 Des Weiteren benötigt man für Euler-Lagrange nur den Teil im Integral:
 \begin{equation}
   L = \sqrt{\dot{x}(l)^2+\dot{y}(l)^2+\dot{z}(l)^2}
-  \cdot n\bigl(x(l),y(l),z(l)\bigr)
+  \cdot n\bigl(x(l),y(l),z(l)\bigr).
 \end{equation}
 Da die Wurzel die folgenden Rechenschritte verkompliziert, wird sie
-quadriert, was das Extremum nicht verändert.  Weiter wird die
-Abhängigkeit von \(l\) nicht mehr geschrieben, was es natürlich
-bleibt.
+quadriert, was das Extremum nicht verändert.  Dieser Schritt wurde
+bereits im Abschnitt
+\ref{skript:geodaeten:subsection:Parametrisierung} angewendet.  Weiter
+wird die Abhängigkeit von \(l\) nicht mehr geschrieben, was es
+natürlich bleibt:
 \begin{equation}
-  F = L^2 = (\dot{x}^2+\dot{y}^2+\dot{z}^2)n^2
+  F = L^2 = (\dot{x}^2+\dot{y}^2+\dot{z}^2)n^2.
 \end{equation}
 
 Für Euler-Lagrange muss man nun dieses \(F\) ableiten, im folgenden
-nur mit \(x\) gezeigt.
+nur mit \(x\) gezeigt:
 \begin{equation}
   \label{eq:cluster:euler}
   0 = \frac{\partial F}{\partial x} - \frac{d}{d l} \frac{\partial
-    F}{\partial \dot{x}}
+    F}{\partial \dot{x}}.
 \end{equation}
+Die Ableitungen sind
 \begin{align*}
   \frac{\partial F}{\partial x} &= (\dot{x}^2+\dot{y}^2+\dot{z}^2) 2n
                                   \frac{\partial n}{\partial x}\\
@@ -308,7 +310,7 @@ nur mit \(x\) gezeigt.
   \frac{d}{d l}\frac{\partial F}{\partial\dot{x}} &= 2\ddot{x}n^2 + 4\dot{x}n
                                 \left(\frac{\partial n}{\partial x}\dot{x} +
                                 \frac{\partial n}{\partial y}\dot{y} +
-                                \frac{\partial n}{\partial z}\dot{z} \right)
+                                \frac{\partial n}{\partial z}\dot{z} \right).
 \end{align*}
 Setzt man die obigen Berechnungen in \ref{eq:cluster:euler} ein und
 löst diese Formel nach \(\ddot{x}\) auf, erhält man:
@@ -316,20 +318,18 @@ löst diese Formel nach \(\ddot{x}\) auf, erhält man:
   \ddot{x} = (-\dot{x}^2+\dot{y}^2+\dot{z}^2)
   \frac{1}{n}\frac{\partial n}{\partial x} -
   2\dot{x}\dot{y} \frac{1}{n}\frac{\partial n}{\partial y} -
-  2\dot{x}\dot{z} \frac{1}{n}\frac{\partial n}{\partial z}
+  2\dot{x}\dot{z} \frac{1}{n}\frac{\partial n}{\partial z}.
 \end{equation}
-
 Mit der Hilfe der logarithmischen Differentiation
 \begin{equation*}
   \frac{1}{n} \frac{\partial n}{\partial x} = \frac{\partial \ln
     n}{\partial x}
 \end{equation*}
-kann man die Formel weiter vereinfachen.
-
+kann man die Formel weiter vereinfachen:
 \begin{equation}
   \ddot{x} = (-\dot{x}^2+\dot{y}^2+\dot{z}^2) \frac{\partial \ln
     n}{\partial x} - 2\dot{x}\dot{y} \frac{\partial \ln n}{\partial y}
-  - 2\dot{x}\dot{z} \frac{\partial \ln n}{\partial z}
+  - 2\dot{x}\dot{z} \frac{\partial \ln n}{\partial z}.
 \end{equation}
 Normalerweise ist ein Logarithmus nicht der einfachste Ansatz.  Die
 Vereinfachung entsteht durch die spezielle Form von \(n\)
@@ -346,31 +346,32 @@ ergibt sich
 \end{equation*}
 
 Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
-\(-\frac{2\varphi}{c^2}\) durchführen.  In einem Beispiel soll dies in
+\(-\frac{2\varphi}{c^2}\) durchführen (d.h. man braucht
+\(\nabla\varphi=\) Gravitationskraft).  In einem Beispiel soll dies in
 2D gezeigt werden.
 
 \begin{beispiel}
   Im Folgenden wird die Lichtablenkung in einem zwei dimensionalen
   Raum numerisch berechnet.  Als \(\varphi\) wird eine Punktquelle
-  verwendet.
+  verwendet:
   \begin{equation*}
-    \varphi = -\frac{KM}{r}
+    \varphi = -\frac{KM}{r}.
   \end{equation*}
-  Wobei \(r\) der Abstand zwischen dem aktuellen Punkt und der Linse
-  ist.
+  Wobei
   \begin{equation*}
     r = \sqrt{(x-x_L)^2+(y-y_L)^2}
   \end{equation*}
+  der Abstand zwischen dem aktuellen Punkt und der Linse ist.
 
   Berechnet man mit Hilfe von Maxima Euler-Lagrange nach den beiden
   Koordinatenachsen, erhält man:
   \begin{align*}
     \ddot{x} &= -\frac{2(-\dot{x}^2+\dot{y}^2)(x-x_L)KM}
                {c^2\sqrt{(x-x_L)^2+y^2}\,^3}+
-               \frac{4\dot{x}^2yKM}{c^2\sqrt{(x-x_L)^2+y^2}\,^3}\\
+               \frac{4\dot{x}y\dot{y}KM}{c^2\sqrt{(x-x_L)^2+y^2}\,^3}\\
     \ddot{y} &= +\frac{4\dot{x}\dot{y}(x-x_L)KM}{c^2\sqrt{(x-x_L)^2+y^2}\,^3}
                - \frac{2(\dot{x}^2-\dot{y}^2)yKM}
-               {c^2\sqrt{(x-x_L)^2+y^2}\,^3}
+               {c^2\sqrt{(x-x_L)^2+y^2}\,^3}.
   \end{align*}
   In diesem Beispiel befindet sich die Gravitationslinse auf \(x=0\),
   somit vereinfacht sich \(y-y_L\) zu \(y\).  Die soeben erhaltenen
@@ -385,40 +386,45 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
   erster Ordnung, welche beide Formeln enthält.  Wählt man folgende
   Substitutionen
   \begin{align*}
-    x(1) &= x &x(2) &= \dot{x} &x(3) &= y &x(4) &= \dot{y}
+    x_1 &= x &x_2 &= \dot{x} &x_3 &= y &x_4 &= \dot{y}
   \end{align*}
   kann man die beiden Formeln in eine brauchbare Form bringen.  Die
-  gängigen Algorithmen fordern die Ableitungen von \(x(k)\) als
-  Parametern.
+  gängigen Algorithmen fordern die Ableitungen von \(x_k\) als
+  Parametern:
   \begin{align*}
-    \dot{x}(1) &= x(2)\\
-    \dot{x}(2) &= -\frac{2\left(-x(2)^2+x(4)^2\right)\bigl(x(1)-x_L\bigr)KM}
-                 {c^2\sqrt{\bigl(x(1)-x_L\bigr)^2+x(3)^2}\,^3}
-                 + \frac{4 x(2)^2 x(3) KM}
-                 {c^2\sqrt{\bigl(x(1)-x_L\bigr)^2+x(3)^2}\,^3}\\
-    \dot{x}(3) &= x(4)\\
-    \dot{x}(4) &= +\frac{4x(2)x(4)\bigl(x(1)-x_L\bigr)KM}
-                 {c^2\sqrt{\bigl(x(1)-x_L\bigr)^2+x(3)^2}\,^3}
-                 - \frac{2 \left(x(2)^2-x(4)^2\right) x(3) KM}
-                 {c^2\sqrt{\bigl(x(1)-x_L\bigr)^2+x(3)^2}\,^3}
+    \dot{x}_1 &= x_2\\
+    \dot{x}_2 &= -\frac{2\left(-x_2^2+x_4^2\right)\bigl(x_1-x_L\bigr)KM}
+                {c^2\sqrt{\bigl(x_1-x_L\bigr)^2+x_3^2}\,^3}
+                + \frac{4 x_2x_3x_4 KM}
+                {c^2\sqrt{\bigl(x_1-x_L\bigr)^2+x_3^2}\,^3}\\
+    \dot{x}_3 &= x_4\\
+    \dot{x}_4 &= +\frac{4x_2x_4\bigl(x_1-x_L\bigr)KM}
+                {c^2\sqrt{\bigl(x_1-x_L\bigr)^2+x_3^2}\,^3}
+                - \frac{2 \left(x_2^2-x_4^2\right) x_3 KM}
+                {c^2\sqrt{\bigl(x_1-x_L\bigr)^2+x_3^2}\,^3}.
   \end{align*}
 
-  Setzt Man nun Werte der Sonne ein
+  In Octave wird \(x_k\) zu \texttt{x(k)}, was zu folgendem Code
+  führt:
+  \lstinputlisting[style=Octave]{cluster/source/dglSubCode.m}
+
+  Setzt Man nun die Werte
   \begin{align*}
     x_L &\approx \SI{150e6}{\kilo\meter} &M &\approx
                                               \SI{2e30}{\kilogram}
     &R &\approx \SI{700e3}{\kilo\meter}
   \end{align*}
-  erhält man eine Winkeländerung von \(\approx \SI{1.77}{''}\),
-  vergleicht man dies mit dem Werte aus der Literatur von
+  der Sonne ein,
+  erhält man eine Winkeländerung von \(\approx \SI{1.75}{''}\),
+  vergleicht man dies mit dem Wert aus der Literatur von
   \(\SI{1.75}{''}\) (\cite{misner1973gravitation} S.446), scheint
-  dieses Vorgehen ziemlich korrekt.
+  dieses Vorgehen ziemlich adäquat.
 
   Im Graphen \ref{fig:lichtablenkungSonne} ist der numerisch
   berechnete Lichtweg dargestellt.  Der Beobachter ist im Punkt (0,0)
   und die Sonne im Punkt (\SI{1.5e11}{\meter},0).  Der Lichtpfad
   startet von der Erde aus so, dass man direkt am Sonnenradius
-  vorbeischaut.  Da die Ablenkung nur \SI{1.77}{''} sieht der Lichtweg
+  vorbeischaut.  Da die Ablenkung nur \SI{1.75}{''} ist, sieht der Lichtweg
   von Auge betrachtet wie eine gerade Strecke aus.  (Eine Bogensekunde
   ist ein 3600stel eines Grades.)
 
@@ -474,7 +480,7 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
                     
       data [set=ch1,headline={x, y}, read from file=cluster/source/lichtablenkung300Sonne.csv];
     \end{tikzpicture}
-    \caption{Lichtablenkung an 300 Sonnemassen}
+    \caption{Lichtablenkung an 300 Sonnenmassen}
     \label{fig:lichtablenkung300Sonne}
   \end{figure}
   
@@ -499,7 +505,7 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
                     
       data [set=ch1,headline={x, y}, read from file=cluster/source/lichtablenkung600Sonne.csv];
     \end{tikzpicture}
-    \caption{Lichtablenkung an 600 Sonnemassen}
+    \caption{Lichtablenkung an 600 Sonnenmassen}
     \label{fig:lichtablenkung600Sonne}
   \end{figure}
 \end{beispiel}
@@ -531,7 +537,7 @@ sichtbar.
                     
     data [set=ch1,headline={x, y}, read from file=cluster/source/zoomLichtablenkung600Sonne.csv];
   \end{tikzpicture}
-  \caption{Lichtablenkung an 600 Sonnemassen (Zoom)}
+  \caption{Lichtablenkung an 600 Sonnenmassen (Zoom)}
   \label{fig:lichtablenkung600SonneZoom}
 \end{figure}
 
@@ -540,7 +546,7 @@ die nummerische Berechnung.  Die Algorithmen ode23 und ode45 in Octave
 waren nicht in der Lage den Weg zu berechnen.  Hingegen konnte die
 Lichtablenkung im Beispiel oben mit ode23s aus Octave berechnet
 werden.  Dieser Algorithmus ist fähig steife Probleme zu berechnen.
-Solche Probleme nennt man steif, wenn eine langsame Frequenz von einer
+Solche Probleme nennt man steif, wenn eine tiefe Frequenz von einer
 hohen Frequenz überlagert wird.  Im weiteren Sinn ist dieses Problem
 steif, da zwischen Beobachter, Gravitationslinse und Quelle sehr
 grosse Abstände vorhanden sind, in denen nichts passiert.  Zum Lösen
@@ -548,6 +554,40 @@ berechnet ode23s auf der gesamten vorgegebenen Strecke Punkte.  Für
 Sonnenabstände ist dies noch gut berechenbar, für Galaxienabstände
 jedoch nicht.
 
+\subsection{Bildverzerrung}
+\rhead{Bildverzerrung}
+Möchte man nun ein Bild der Lichtablenkung erzeugen, muss man für
+jedes Pixel den Lichtweg simuliert.  Wenn man den einfachsten Fall der
+Punktquelle beibehält, kann man die Symmetrie ausnützen und muss somit
+nur ein Achtel der Pixelauflösung berechnen.
+
+Für die Simulation wurde wieder der Abstand von der Erde zur Sonne
+verwendet.  Um die Lichtablenkung noch zu verstärken, wurde die
+tausendfache Sonnenmasse bei gleichem Radius angenommen.  Der
+Pixelabstand in der Sonnenebene liegt bei \SI{10e6}{\meter}.  Das
+Hintergrundbild, die Andromeda Galaxie aus Abbildung \ref{fig:m31},
+ist in rund 6.8 fachem Sonnenabstand von der Erde aus platziert.  Der
+Pixelabstand wurde gleich gewählt.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{cluster/images/m31_comolli_2193}
+  \caption{Andromeda Galaxie M31 \cite{nasa:andromedaM31}}
+  \label{fig:m31}
+\end{figure}
+
+In der Abbildung \ref{fig:einsteinringSim} sieht man, wie das Zentrum
+der Galaxie zu einem Ring verzogen wird.  Das schwarze Zentrum in der
+Abbildung ist die Position der ``Sonne''.  Die Abbildung hat eine
+Auflösung von \(300\times300\) Pixel und benötigte gut eineinhalb Tage
+Berechnungszeit bei vier Kernen mit Hyper-Threading.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.6\textwidth]{cluster/images/einsteinring}
+  \caption{Bildverzerrung durch 1000 Sonnenmassen}
+  \label{fig:einsteinringSim}
+\end{figure}
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
