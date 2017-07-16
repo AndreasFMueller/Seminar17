@@ -10,7 +10,7 @@
 \begin{figure}
 \centering
 \includegraphics{chapters/tikz/orbit.pdf}
-\caption{Periheldrehung um den Winkel $\alpha$ in jedem Umlauf um den
+\caption{Periastrondrehung um den Winkel $\alpha$ in jedem Umlauf um den
 Zentralkörper in einer Schwarzschild-Metrik mit Anfangsbedingungen
 \label{skript:schwarzschild:anfangsbedingung:normal}.
 \label{skript:schwarzschild:perihelorbit}}
@@ -18,7 +18,8 @@ Zentralkörper in einer Schwarzschild-Metrik mit Anfangsbedingungen
 Das erste Keplersche Gesetz sagt, dass ein Planet sich auf einer
 Ellipsenbahn bewegt.
 Die Newtonsche Gravitationstheorie bestätigt dies, die Differentialgleichungen
-für das Zweikörperproblem sind in geschlossener Form lösbar.
+für das Zweikörperproblem sind in geschlossener Form
+mit Parabeln und Ellipsen lösbar.
 Insbesondere zeigt die Richtung zum sonnennächsten Punkt, dem Perihel,
 immer in die gleiche Richtung.
 Für die Merkurbahn wurde jedoch eine Abweichung festgestellt, die
@@ -30,7 +31,6 @@ Von den gemessenen $571.91''$ Periheldrehung des Merkur pro Jahrhundert
 verblieben jedoch $43.11''$ pro Jahrhundert, die die Newtonsche
 Theorie nicht erklären konnte.
 
-
 Schon in seinem ursprünglichen Entwurf der allgemeinen Relativitätstheorie
 hat Einstein die durch die Abweichung von der Newtonschen Theorie
 verursachte Periheldrehung der Merkurbahn berechnet und gute Übereinstimmung
@@ -39,7 +39,8 @@ Damit hat er selbst bereits eine erste experimentelle Bestätigung
 der Theorie gegeben.
 
 Um den Effekt überhaupt darstellen zu können, muss die Bahn sehr nahe
-am Zentralkörper vorbeiführen, der nächste Punkt, das Apastron darf
+am Zentralkörper vorbeiführen.
+Der dem Zentralkörper nächste Punkt, das Periastron darf
 also nur wenige Gravitationsradien entfernt sein.
 In Abbildung~\ref{skript:schwarzschild:perihelorbit} ist die
 Umlaufbahn eines Körpers dargestellt, dessen Apastron-Entfernung
@@ -378,8 +379,8 @@ Durch numerische Lösung für geeignete Anfangswerte kann man jedoch die
 Drehung der Apsidenlinie sichtbar machen.
 
 \subsection{Numerische Lösung}
-Im Repository zu befinden sich einige Octave-Programme, mit denen man
-die Geodäten in einer Schwarzschild-Metrik berechnen kann.
+Im Repository zu diesem Buch befinden sich einige Octave-Programme,
+mit denen man die Geodäten in einer Schwarzschild-Metrik berechnen kann.
 Um zu etwas leichter verständlichen Zahlen zu kommen, rechnen wir
 in diesen Programmen immer mit Masseinheiten so, dass $r_g=1$ ist,
 d.~h.~der Gravitationsradius des Zentralkörpers ist die Längeneinheit,
@@ -389,7 +390,7 @@ im vorangegangenen Abschnitt diskutierten Vereinfachungen für
 $\vartheta=\frac{\pi}2$ nicht.
 
 Der Parameter $s$ der Geodätengleichung ist genau dann die Eigenzeit,
-wenn die Anfangsgeschwindigkeit den den Wert $-1$ hat.
+wenn die Anfangsgeschwindigkeit den Wert $-1$ hat.
 In den Rechnungen muss daher die Anfangs-Vierergschwindigkeit $u^\mu$
 so normiert werden, dass $g_{\mu\nu}u^\mu u^\nu=-1$ ist.
 
@@ -499,7 +500,7 @@ implementieren.
 
 Die Differentialgleichung lässt sich mit der Funktion \texttt{lsode}
 lösen.
-Die nötigen Schritt sind in der Funktion
+Die nötigen Schritte sind in der Funktion
 \lstinputlisting[style=Octave]{chapters/listings/geodesic-solution.m}
 zusammengefasst.
 

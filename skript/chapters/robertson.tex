@@ -115,7 +115,7 @@ statistisch zu untersuchen.
 \centering
 \includegraphics[width=\hsize]{chapters/images/orangepie-negative.jpg}
 \caption{Verteilung der Galaxiender Sloan Digital Sky Survey.
-Die beiden dunklen Sektoren stellen Bereiche dar, in denen unsere
+Die beiden leeren Sektoren stellen Bereiche dar, in denen unsere
 Milchstrasse zuverlässige Beobachtungen verunmöglicht.
 Jeder Punkt stellt eine Galaxie dar.
 \label{skript:robertson:orangepie}}
@@ -145,7 +145,7 @@ genaues Mass für die Entfernung.
 Abbildung~\ref{skript:robertson:orangepie} zeigt die Resultate.
 Auch auf diesem Bild erkennt man, dass Galaxien sich zu Clustern
 und Filamenten gruppieren.
-Dazwischen gibt es grosse Bereiche von leeren Räumen.
+Dazwischen gibt es grosse leere Räume.
 Jenseits der Dimensionen dieser Strukturen scheint die Verteilung jedoch
 ziemlich gleichmässig zu sein.
 Die Hypothese der Homogenität scheint also von den Beobachtungen der
@@ -165,8 +165,8 @@ T^{\mu\nu} = pg^{\mu\nu} + (p+\varepsilon)u^\mu u^\nu.
 Das Universum ist jedoch nicht nur mit Gas gefüllt, sondern auch
 mit Staub und Strahlung und eventuell weiteren, nicht bekannten
 Komponenten.
-Unabhängig von der Art der der Komponenten ist die Energiedichte
-im heutigen Universum sehr gering, nämlich nur wenige Wasserstoffatome
+Unabhängig von der Art der Komponenten ist die Energiedichte
+im heutigen Universum sehr gering, nämlich weniger als ein Wasserstoffatom
 pro Kubikmeter.
 Die Atome treffen äusserst selten aufeinander,
 der Druck des idealen Gases ist also sehr gering.
@@ -175,8 +175,7 @@ Staub als Komponenten zeichnet sich zum Beispiel dadurch aus, dass die Körner
 jeweils aus einer grossen Zahl von Atomen zusammengesetzt sind.
 Bei gleicher Dichte sind also Staubkörner noch seltener, und damit kommen
 Stösse praktsich nicht mehr vor.
-Staub als Komponente zeichnet sich also dadurch aus, dass der Druck
-verschwindet, der Energie-Impuls-Tensor vereinfacht sich zu
+Staub hat daher keinen Druck, der Energie-Impuls-Tensor vereinfacht sich zu
 \[
 T^{\mu\nu}
 =
@@ -187,6 +186,8 @@ Im kosmologischen Zusammenhang wird Strahlung meist wie ein
 ideales Gas modelliert mit dem einzigen Unterschied, dass
 die Energiedichte bei der Expansion schneller abnimmt, weil
 zusätzlich auch die Wellenlänge der Strahlung gestreckt wird.
+Damit kommen wir zum Schluss, dass unsere Hypothesen uns erlauben,
+die rechte Seite der Einsteingleichungen zu bestimmen.
 
 \section{Homogene und isotrope Metrik%
 \label{skript:robertson:himetrik}}
@@ -229,7 +230,7 @@ Damit kann die Metrik abgekürzt als
 ds^2 = dr^2 + r^2\,d\Omega^2
 \end{equation}
 geschrieben werden.
-Der Terme $r^2\,d\Omega^2$ beschreibt die Längenmessung auf der
+Der Term $r^2\,d\Omega^2$ beschreibt die Längenmessung auf der
 ``Kugel'' bei der Koordinaten $r$ um den Nullpunkt des
 Koordinatensystems.
 
@@ -263,11 +264,11 @@ muss weiterhin $S(0)=0$ gelten, wenn der Radius verschwindet, dann
 hat der zugehörige Kreis auch verschwindenden Umfang.
 Für kleine Radien $r$ muss ausserdem die Geometrie kaum von der
 euklidischen unterscheidbar sein, es muss also $S(r)\simeq r$ gelten,
-oder $S'(r)=1$,
+oder $S'(r)=1$.
 Die Funktion $S(r)$ muss daher die Anfangsbedingungen
 \begin{equation}
 \begin{aligned}
-S(0)&=0&&\qquad&S'(0)&=1
+S(0)&=0&&\qquad&&\text{und}&&\qquad&S'(0)&=1.
 \end{aligned}
 \label{skript:rwmetrik:Safangsbedingungen}
 \end{equation}
@@ -300,7 +301,7 @@ Begriff der Krümmung zu verwenden.
 In Abschnitt~\ref{skript:kurven:gaussflaeche} haben wir 
 einen Zusammenhang zwischen Flächeninhalt und Umfang eines Kreises
 in Abhängigkeit vom Radius des Kreises kennengelernt.
-Es hat sich gezeigt, dass die Gausskrümmung die Zusammenhang herstellen
+Es hat sich gezeigt, dass die Gausskrümmung diesen Zusammenhang herstellen
 kann.
 Wir vermuten daher, dass die Wahl der Funktion $S(r)$ darauf hinausläuft,
 die Krümmung des Raumes bei der Koordinate $r$ festzulegen.
@@ -360,7 +361,7 @@ R_c=\frac1{\sqrt{-2k}}.
 \label{skript:rwmetrik:sinhloesung}
 \end{equation}
 Diese Lösung gehört zu einem Raum mit negativer Krümmung.
-Sogar den euklidische Fall können wir für $k=0$ wiedergewinnen, es folgt
+Sogar den euklidischen Fall können wir für $k=0$ wiedergewinnen, es folgt
 dann $S(r)=r$.
 
 \begin{figure}
@@ -404,7 +405,7 @@ S'_\kappa(r)
 \end{cases}
 \end{align*}
 In Hinblick auf spätere Verwendung in der Friedmann-Gleichung drücken wir
-die rechte Seite durch $S_\kappa(r)$ aus. 
+die rechte Seite des Quadrates hiervon durch $S_\kappa(r)$ aus. 
 \begin{equation}
 S'_\kappa(r)^2
 =
@@ -446,7 +447,8 @@ S''_\kappa(r)
 -\kappa\displaystyle \frac{S_\kappa(r)}{R_c^2}
 \label{skript:robertson:zweiteableitung}
 \end{equation}
-schreiben.
+schreiben, was auch aus der Differentialgleichung~\ref{skript:rwmetrik:Sdgl}
+folgt.
 
 Eine homogene und isotrope Metrik eines dreidimensionalen Raumes
 hat daher die Form
@@ -455,7 +457,7 @@ ds^2=dr^2 + S_{\kappa}(r)d\Omega^2.
 \label{skript:rwmetrik:metrikS}
 \end{equation}
 Diese Metrik beschreibt einen Raum mit konstanter Krümmung.
-Der Ricci-Krümmungsskalar ist
+Der Ricci-Krümmungs\-skalar ist
 \begin{equation}
 R
 =
@@ -467,7 +469,7 @@ R
 \label{skript:rwmetrik:R}
 \end{equation}
 Der Parameter $\kappa$ kann nur die Werte $\pm 1$ und $0$ annehmen, er ist
-das Vorzeichen des Ricci-Krümmungsskalars \eqref{skript:rwmetri:R}.
+das Vorzeichen des Ricci-Krümmungs\-skalars \eqref{skript:rwmetrik:R}.
 Für $\kappa=1$ ist die Krümmung des Raumes positiv, für $\kappa=-1$ ist
 sie negativ, für $\kappa=0$ liegt ein euklidischer Raum vor.
 Der Krümmungsradius ist in den Fällen $\kappa=\pm1$ jeweils $R_c$.
@@ -621,7 +623,7 @@ bereits eindeutig festlegen.
 Ein mit einem idealen Gas gefülltes statisches Unversum kann also
 nur positiv gekrümmt sein, und es kann
 nur bei einer ganz bestimmten Temperatur existieren.
-Da die Sterne in einem geschlossenen Universum Strahlung produzieren
+Da die Sterne Strahlung produzieren
 und damit das Universum aufheizen, kann dies keine physikalische
 Lösung sein.
 Ein statisches Universum kann nicht existieren.
@@ -668,8 +670,8 @@ Sie schlossen daraus, dass das Universum expandieren muss, sie konnten
 sogar die Geschwindigkeit bestimmen, mit der dies geschieht\footnote{
 Später stellte sich heraus, dass die Kalibrierung der Entfernungsskala
 etwa um einen Faktor 10 falsch war. Die ersten Kosmologischen Modelle
-kamen daher auf ein Alter des Universums, welches viel zu kurz ist,
-dass Galaxien hätten entstehen können.}.
+kamen daher auf ein Alter des Universums, welches kürzer war als das
+den Geologen schon längst bekannte Mindestalter des Universums.}.
 
 Der belgische Physiker
 Georges Lemaître hatte auf der Basis von Einsteins allgemeiner
@@ -710,7 +712,7 @@ Wir geben der Funktion $a(t)$ willkürlich den Wert $1$ für die heutige
 Zeit, die wir im Folgenden mit $t_0$ bezeichnen.
 
 Die Tatsache, dass ein Beobachter alle Galaxien sich entfernen
-sieht bedeutet nicht, dass das Universum ein Zentrum.
+sieht, bedeutet nicht, dass das Universum ein Zentrum hat.
 Auch für jeden anderen Beobachter werden die Distanzen zu den
 Galaxien grösser und zwar um den gleichen Faktor
 (Abbildungen~\ref{skript:figure:expansion1} und
@@ -786,6 +788,15 @@ l > \frac{c}{H}
 ist.
 Die Distanz $c/H$ heist die {\em Hubble-Distanz}.
 \index{Hubble-Distanz}%
+Wieder aus aktuellen Zahlenwerten für $c$ und $H_0$ finden wird
+\[
+\frac{c}{H_0}
+=
+\frac{2.99792458\cdot 10^{-8}}{2.1951\cdot 10^{-18}}
+=
+1.3657\cdot 10^{10}\,\text{m}
+\]
+als aktuelle Hubble-Distanz.
 
 \section{Robertson-Walker-Metrik}
 %\rhead{Robertson-Walker-Metrik}
@@ -1042,7 +1053,7 @@ Steady-State-Hypothese.
 Die Steady-State-Hypothese widerspricht jedoch zwei
 im Folgenden diskutierten Beobachtungen.
 
-\subsection{Olbers Paradoxon}
+\subsection{Das Paradoxon von Olbers}
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{chapters/tikz/wald.pdf}
@@ -1063,7 +1074,7 @@ In einem grossen Wald (Abbildung~\ref{skript:robertson:olberswald})
 trift der Blick in jeder Richtung irgendwann auf einen Bausmstamm.
 Wenn das Universum unendlich alt und gross ist, dann wird man
 man in jeder beliebigen Richtung nicht beliebig weit sehen können,
-sondern der wie beim Wald wird der Blick irgendwann auf einen Stern treffen.
+sondern wie beim Wald wird der Blick irgendwann auf einen Stern treffen.
 Der ganze Himmel müsste daher die Helligkeit von Sternen haben.
 
 Nimmt man dagegen an, dass das Universum relativ jung ist, dann kann
@@ -1074,6 +1085,9 @@ Universum, in dem man beliebig weit sehen kann.
 Ein junges Universum erfüllt diese Voraussetzung nicht. 
 Es könnte aber auch sein, dass Staub den Blick versperrt, so dass selbst
 ein unendlich grosses und altes Universum nicht den Beobachtungen entspricht.
+Infrarotstrahlung wird jedoch weit weniger vom Staub blockiert, so dass
+mindestens im Infrarotlicht der Himmel immer noch strahlend hell sein
+müsste.
 Neuere Beobachtungen zeigen allerdings, dass die Menge an Staub im
 Universum viel zu gering ist, um den weissen Hintergrund des
 Olbers-Paradoxons zu verhindern.

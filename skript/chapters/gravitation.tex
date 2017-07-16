@@ -10,7 +10,7 @@
 Albert Einstein hat erkannt, dass die Wirkung der Gravitation 
 durch die Krümmung des Raumes beschrieben werden muss.
 \index{Einstein, Albert}
-In den folgenden Abschnitten geben wir einen Ausblick darauf, wie
+In den folgenden Abschnitten geben wir einen Überblick darüber, wie
 die moderne Physik unseren Raum als einen gekrümmten Raum beschreibt.
 An einfachen Modellen soll gezeigt werden, wie man sich die Gravitationswirkung
 als die Wirkung eines gekrümmten Raumes vorstellen kann, wie schwarze Löcher
@@ -22,18 +22,20 @@ werden können.
 Schon Galileo Galilei hat bemerkt, dass im Gravitationsfeld der Erde
 jeder Körper unabhängig von seiner Masse die gleiche Beschleunigung $g$
 erfährt.
-Auch das Newtonsche Gravitationsgesetz beschreibt den Betrag der Kraft
+Diese Eigenschaft der Schwerkraft wird auch vom Newtonschen Gravitationsgesetz
+bestätigt.
+Das Newtonsche Gravitationsgesetz beschreibt den Betrag der Kraft
 zwischen zwei Massen $M$ und $m$ als
 \[
 F=\frac{KMm}{r^2}.
 \]
 Ein Teilchen der Masse $m$ wird daher nach dem zweiten Newtonschen Gesetz
-$F=ma$ immer mit den Betrag
+$F=ma$ immer eine Beschleunigung mit den Betrag
 \[
 \frac{KM}{r^2}
 \]
-haben.
-Die Beschleunigung eines Teilchens ist daher unabhängig von der Masse.
+erfahren.
+Die Beschleunigung eines Teilchens ist offenbar unabhängig von der Masse.
 Diese {\em Äquivalenz\-prinzip} genannte Beobachtung wurde von
 Lor\'and Eötvös 1909 mit sehr grosser Genauigkeit nachgemessen und bestätigt.
 In neuerer Zeit wurde die Genauigkeit nochmals um den Faktor $10^4$
@@ -88,15 +90,15 @@ Wir lassen daher in Zukunft beliebige Koordinatentransformationen zulassen
 und daher auch Metriken $g_{\mu\nu}$, die von der
 Standardform~\eqref{skript:gravitation:standardform} abweichen.
 
-Wir wollen die Metrik berechnen, die im festen Koordinatensystem
-anzuwenden ist. 
+Wir wollen die Metrik berechnen, die im ruhenden Koordinatensystem
+anzuwenden ist, in dem wir die Gravitationsbeschleunigung $g$ spüren. 
 Dazu müssen wir die Transformation zuerst mit $x^0$ und $x'^0$ 
 darzustellen:
 \begin{equation}
 \left.
 \begin{aligned}
 x'^0 &= x^0 \\
-x'^1 &= x^1+\frac{1}{2c^2}(x^0)^2
+x'^1 &= x^1+\frac{g}{2c^2}(x^0)^2
 \end{aligned}
 \right\}
 \qquad
@@ -105,7 +107,7 @@ x'^1 &= x^1+\frac{1}{2c^2}(x^0)^2
 \left\{
 \begin{aligned}
 x^0 &= x'^0 \\
-x^1 &= x'^1 - \frac{1}{2c^2}(x'^0)^2
+x^1 &= x'^1 - \frac{g}{2c^2}(x'^0)^2
 \end{aligned}
 \right.
 \end{equation}
@@ -117,7 +119,7 @@ benötigt:
 &
 \frac{\partial x^0}{\partial x'^1}&=0,
 &
-\frac{\partial x^1}{\partial x'^0}&=-\frac{1}{c^2}x'^0,
+\frac{\partial x^1}{\partial x'^0}&=-\frac{g}{c^2}x'^0,
 &
 \frac{\partial x^1}{\partial x'^1}&=1,
 \\
@@ -125,7 +127,7 @@ benötigt:
 &
 \frac{\partial x'^0}{\partial x^1}&=0,
 &
-\frac{\partial x'^1}{\partial x^0}&=\frac{1}{c^2}x^0,
+\frac{\partial x'^1}{\partial x^0}&=\frac{g}{c^2}x^0,
 &
 \frac{\partial x'^1}{\partial x^1}&=1.
 \end{aligned}
@@ -136,14 +138,14 @@ Die zugehörige Transformationsmatrix ist also
 =
 \begin{pmatrix}
 1&0\\
--\frac1{c^2}x'^0&1
+-\frac{g}{c^2}x'^0&1
 \end{pmatrix},
 \qquad
 \frac{\partial (x'^0, x'^1)}{\partial (x^0, x^1)}
 =
 \begin{pmatrix}
 1&0\\
-\frac1{c^2}x^0&1
+\frac{g}{c^2}x^0&1
 \end{pmatrix}.
 \end{equation}
 Im $(x^0,x^1)$-Koordinatensystem wird die Metrik durch die Matrix
@@ -159,35 +161,35 @@ g'_{\mu\nu}
 &=
 \begin{pmatrix}
 1&0\\
-\frac1{c^2}x'^0&1
+\frac{g}{c^2}x'^0&1
 \end{pmatrix}
 \begin{pmatrix}
 -1&0\\0&1
 \end{pmatrix}
 \begin{pmatrix}
-1&\frac1{c^2}x'^0\\
+1&\frac{g}{c^2}x'^0\\
 0&1
 \end{pmatrix}
 =
 \begin{pmatrix}
 1&0\\
-\frac1{c^2}x'^0&1
+\frac{g}{c^2}x'^0&1
 \end{pmatrix}
 \begin{pmatrix}
--1&-\frac1{c^2}x'^0\\
+-1&-\frac{g}{c^2}x'^0\\
  0& 1
 \end{pmatrix}
 \\
 &=
 \begin{pmatrix}
--1&-\frac1{c^2}x'^0\\
--\frac1{c^2}x'^0&1+\frac1{c^4}(x'^0)^2
+-1&-\frac{g}{c^2}x'^0\\
+-\frac{g}{c^2}x'^0&1+\frac{g^2}{c^4}(x'^0)^2
 \end{pmatrix}.
 \end{align*}
 Die Metrik $g'_{\mu\nu}$ ist offenbar wieder symmetrisch.
 Wir könnten die Christoffelsymbole ausrechnen und die Geodäten
 bestimmen, wir würden die Transformation von Geraden aus dem
-$(x,t)$-Koordinatensystem finden.
+$(x,t)$-Koordinaten\-system finden.
 
 \section{Newtonsche Gravitationstheorie%
 \label{skript:section:newtonschegravitationstheorie}}
@@ -223,18 +225,23 @@ In den Geodätengleichungen
 \ddot x^\mu = -\Gamma^\mu_{\alpha\nu}\dot x^\alpha\dot x^\nu
 \]
 kommt dagegen auf der rechten Seite auch die Geschwindigkeit vor.
-Es ist daher nicht unmittelbar klar, wie die Bewegungsgleichung als
-Geodätengleichung geschrieben werden klar.
+Die Ortsabhängigkeit der Kräfte ist in der Ortsabhängigkeit der
+Christoffelsymbole $\Gamma^\mu_{\alpha\nu}$ versteckt.
+Es ist daher nicht unmittelbar klar, wie die Newtonschen Bewegungsgleichung,
+in denen die Geschwindigkti nicht vorkommt, als Geodätengleichung geschrieben
+werden kann.
 
-Wir beschreiben die Bewegung wieder in einem vierdimensionalen Raum,
+Dazu ist notwendig, die Bewegung wieder in einem vierdimensionalen Raum,
 also als Kurve
 \[
 t\mapsto (t,x^1(t),x^2(t),x^3(t)),
 \]
-also mit $x^0(t)=t$.
+also mit $x^0(t)=t$ zu beschrieben.
 Für eine solche Parametrisierung gilt $\dot x^0(t)=1$.
+Das Objekt bewegt sich also mit der Geschwindigkeit von einer Sekunde pro
+Sekunde entlang der Zeitachse.
 In der Geodätengleichung können wir daher die Terme mit mit Index $0$
-separat behandelt werden:
+separat behandeln:
 \[
 \ddot x^\mu
 =
@@ -262,7 +269,15 @@ verschwinden dagegen identisch.
 Diese Beschreibung der Gravitation führt also nicht auf das Modell
 eines gekrümmten Raumes.
 
-\subsection{Gravitationspotential}
+\subsection{Gravitationspotential -- Newtonsche Feldgleichungen}
+Wir möchten einen einfacheren mathematischen Ausdruck für das Gravitationsfeld,
+aus der wir die Gravitationskräfte ableiten können, und eine Gleichung,
+welche welche erklärt, das Gravitationsfeld von Massen erzeugt wird.
+Später in Abschnitt~\ref{skript:gravitation:section:einsteingl}
+werden wir versuchen, daraus eine Form der Feldgleichungen herzuleiten,
+die auch mit der speziellen Relativitätstheorie vereinbar ist.
+
+\subsubsection{Graviationspotential}
 Die potentielle Energie, die zur
 Gravitationskraft~\eqref{skript:gravitation:gkraft} gehört, kann
 mit Hilfe eines Wegintegrals berechnet werden.
@@ -270,7 +285,7 @@ Dazu verwenden wir einen Weg vom Punkt $P_1$ mit Radius $r_1$
 zum Punkt $P_2$ mit Radius $r_2$ führt.
 Da die Kraft immer radial wirkt, ist entlang des Weges nur die radiale
 Komponente des Tangentialvektors massgebend.
-Der Unterschied in der poteniellen Energie ist
+Der Unterschied in der potentiellen Energie ist
 \[
 \Delta E
 =
@@ -284,8 +299,8 @@ Der Unterschied in der poteniellen Energie ist
 =
 GM\biggl(\frac{1}{r_2}-\frac{1}{r_1}\biggr).
 \]
-Legt man den Nullpunkt der potentiellen Energie ins unendliche, dann ist
-das Potential einer Punktmasse mit Masse $M$ ist also
+Legt man den Nullpunkt der potentiellen Energie ins Unendliche, dann ist
+das Potential einer Punktmasse mit Masse $M$
 \begin{equation}
 \varphi = \frac{KM}{r}.
 \label{skript:gravitation:potential}
@@ -336,6 +351,7 @@ Form~\eqref{skript:gravitation:potential} berechnen.
 Eine solche Beschreibung
 ist allerdings für unsere Zwecke nicht sehr nützlich.
 
+\subsubsection{Divergenzsatz von Gauss}
 Eine besser geeignete Beschreibung können wir aus dem Gausschen
 Divergenzsatz erhalten.
 Eine zweidimensionale Version dieses Satzes können wir
@@ -408,11 +424,13 @@ dann gilt
 \int_D \operatorname{div}\vec v\,dx\,dy\,dz.
 \label{skript:gravitation:gausssatz}
 \end{equation}
-Darin ist $\vec o$ ein Vektor ein nach aussen zeigender Vektor, der
+Darin ist $\vec o$ ein nach aussen zeigender Vektor, der
 senkrecht auf der Oberfläche des Gebietes steht.
 \end{satz}
 
-Der Nutzen dieses Satzes ist, dass man den Fluss des Schwerkraftfeldes
+\subsubsection{Feldgleichungen der Gravitation}
+Der Nutzen des Satzes~\ref{skript:gravitation:gausssatz}
+ist, dass man den Fluss des Schwerkraftfeldes
 $\vec F$ einer Punktladung durch eine mit der Masse konzentrischen
 Kugel auch direkt berechnen kann.
 Dann hat nämlich $\vec F$ auf der Kugeloberfläche $S^2$ überall den gleichen
@@ -475,6 +493,7 @@ Es folgt, dass das Gravitationspotential $\varphi$ die Gleichung
 \label{skript:gravitation:potentialgleichung}
 \end{equation}
 erfüllen.
+Dies ist die Feldgleichung der newtonschen Gravitationstheorie.
 Diese Gleichung werden wir später dazu verwenden, die Verbindung zwischen
 der newtonschen und der einsteinschen Gravitationstheorie herzustellen.
 
@@ -483,7 +502,7 @@ der newtonschen und der einsteinschen Gravitationstheorie herzustellen.
 Für schache Gravitationsfelder hat die Newtonsche Theorie gute Dienste
 geleistet. 
 Wir gehen daher davon aus, dass eine neue, allgemeinere Theorie die
-newtonsche Theorie als Grenzfall erhalten muss.
+newtonsche Theorie als Grenzfall enthalten muss.
 Es muss also möglich sein, die Gravitationskräfte, die wir im 
 Abschnitt~\ref{skript:section:newtonschegravitationstheorie} bereits
 mit Hilfe des Zusammenhangs, also den Koeffizienten $\Gamma^\alpha_{\mu\nu}$
@@ -492,16 +511,18 @@ Die Zusammenhangskoeffizienten in
 Abschnitt~\ref{skript:section:newtonschegravitationstheorie} waren nicht
 die Christoffelsymbole einer Metrik.
 
-Wir möchten jetzt eine Metrik finden, die einerseits möglichst nahe
-an der Minkovski-Metrik ist, deren zugehörige Geodäten andererseits die
+Wir möchten jetzt eine Metrik finden, die möglichst nahe an der
+Minkovski-Metrik ist, die sich bei allen Experimenten mit
+vernachlässigbaren Schwerefeldern als korrekt erwiesen hat.
+Sie soll so beschaffen sein, dass die zugehörige Geodäten die
 Bewegung in einem schwachen Gravitationsfeld korrekt wiedergibt.
 Als Metrik verwenden wir daher
 \[
 g_{\mu\nu}=\eta_{\mu\nu} + h_{\mu\nu}.
 \]
-Der erste Summan ist $\eta_{\mu\nu}$, der die Minkovski-Metrik 
-wiedergibt, der zweite beschreibt die Abweichung,
-wobei wir annehmen, dass $h_{\mu\nu}$ sehr klein ist.
+Der erste Summand die Minkowski-Metrik $\eta_{\mu\nu}$.
+Der zweite beschreibt die Abweichung, wobei wir annehmen,
+dass $h_{\mu\nu}$ sehr klein ist.
 Die zugehörigen Christoffelsymbole sind mit einiger, vorzugsweise
 maschineller Rechnung zu finden.
 Aus der Beschreibung des newtonschen Gravitationsgesetzes können wir
@@ -540,10 +561,11 @@ Die gesuchte Theorie muss also in erster Näherung das newtonsche
 Gravitationspotential in der $00$-Komponente des metrischen Tensors
 verwenden.
 
-\section{Einstein-Gleichungen für das Gravitationsfeld}
+\section{Einstein-Gleichungen für das Gravitationsfeld%
+\label{skript:gravitation:section:einsteingl}}
 %\rhead{Einstein-Gleichungen für das Gravitationsfeld}
 Die Näherung für schwache Felder dient uns nun als Leitfaden, um die
-Einsteinschen Feldgleichungen herzleiten.
+Einsteinschen Feldgleichungen herzuleiten.
 Einerseits beinhaltet die $g_{00}$-Komponente das Potential $\varphi$ des
 Gravitationsfeldes, andererseits beschreibt die
 Gleichung~\eqref{skript:gravitation:potentialgleichung}
@@ -616,8 +638,9 @@ Gleichung der Energie-Impuls-Tensor $T_{\mu\nu}$ stehen soll.
 Auf der linken Seite der Gleichung erwarten wir ein Objekt, welches
 sich aus den zweiten Ableitungen der $g_{\mu\nu}$ berechnen lässt.
 Die Christoffel-Symbole enthalten die ersten Ableitungen von $g_{\mu\nu}$,
-aber der Riemannsche Krümmungstensor enthält alle zweiten Ableitungen.
-Wir müssen daher einen Tensor $G_{\mu\nu}$ konstruieren, der die Rolle
+aber erst der Riemannsche Krümmungstensor enthält alle zweiten Ableitungen.
+Wir müssen daher aus $R^\alpha\mathstrut_{\mu\nu\sigma}$
+einen Tensor $G_{\mu\nu}$ konstruieren, der die Rolle
 von $\Delta\varphi$ übernehmen kann.
 In Analogie zur
 Gleichung~\eqref{skript:gravitation:potentialgleichung}
@@ -682,7 +705,7 @@ Wir können allerdings nicht annehmen, dass diese Formel weiterhin
 gelten wird.
 Das Gravitationsfeld kann ja zum Beispiel ein Gas beschleunigen und 
 verdichten, so dass sich Energie- und Impuls-Inhalt verändern können.
-Dies können durch die kovariante Ableitung
+Dies können wir durch die kovariante Ableitung
 \begin{equation}
 0
 =
@@ -699,11 +722,11 @@ Energie und Impuls verändert.
 
 Die Koeffizienten $a$ und $b$ im Ansatz
 \label{skript:gravitation:einsteinansatz}
-für den Einstein-Tensor müssen daher so gewählt sein, dass der 
+für den Einstein-Tensor müssen so gewählt sein, dass der 
 Erhaltungssatz~\eqref{skript:gravitation:erhaltung} für $G^\mu_\nu$
 erfüllt ist.
-Wir müssen daher die kovarianten Ableitungen von $R^\mu_\nu$ und
-$\delta^\mu_\nu R$ bestimmen.
+Um dies zu erreichen müssen wir die kovarianten Ableitungen von $R^\mu_\nu$
+und $\delta^\mu_\nu R$ bestimmen.
 
 \subsubsection{Divergenz des Ricci-Tensors}
 Die Divergenz von $R^\mu_\nu$ ist
@@ -795,7 +818,7 @@ schliessen, dass
 \subsubsection{Divergenz des Terms $g_{\mu\nu}R$}
 Für die Divergenz müssen wir erste einen Index hochziehen, bevor
 wir die kovarianten Ableitungen berechnung und verjüngen können.
-Dies fühert auf
+Dies führt auf
 \begin{align}
 \nabla_\alpha g^{\alpha\mu}g_{\mu\nu}R
 &=

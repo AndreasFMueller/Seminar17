@@ -25,9 +25,10 @@ ds^2
 \label{skript:schwarzschild:metrik:polar}
 \end{equation}
 Ein alternativer Ansatz für die Berechnung der Lichtablenkung wird im
-Kapitel~\label{chapter:cluster} von Pascal Stump gezeigt.
+Kapitel~\ref{chapter:cluster} von Pascal Stump gezeigt.
 
-\subsection{Differentialgleichung}
+\subsection{Differentialgleichung%
+\label{skript:lichtablenkung:dgl}}
 Die gesuchte Kurve ist die Weltlinie eines Lichtstrahls, also ein Null-Geodäte. 
 Zusätzlich zur Geodätengleichung erfüllt der Vektor der Vierergeschwindigkeit
 auch noch die Bedingung $g_{\mu\nu}\dot x^\mu \dot x^\nu=0$.
@@ -221,20 +222,24 @@ wächst in der Nähe des Ablenkungswinkels über alle Grenzen.
 \label{skript:schwarzschild:abbildung:rphi}}
 \end{figure}
 Leider eignet sich die Differentialgleichung~\eqref{skript:schwarzschild:udgl}
-nicht wirklich zur Berechnung des Ablenkungswinkels.
+nicht zur Berechnung des Ablenkungswinkels.
 Schuld daran ist die Singularität, in der Nähe des Ablenkungswinkels
 wächst $r(\varphi)$ über alle Grenzen, wie
 Abbildung~\ref{skript:schwarzschild:abbildung:rphi} zeigt.
+Wir können sie daher nur für den Teil der Bahn verwenden, für den
+$\varphi$ nicht zu gross wird.
 
 \subsection{Differentialgleichung für den Winkel}
-Genau auf dem gleichen Weg wie wir eine Differentialgleichung für $r(\varphi)$
+Genau auf dem gleichen Weg, wie wir in
+Abschnitt~\ref{skript:lichtablenkung:dgl}
+eine Differentialgleichung für $r(\varphi)$
 abgeleitet haben, können wir auch eine Differentialgleichung für
 $\varphi$ als Funktion $r(\varphi)$ von $\varphi$ herleiten.
 Dazu beachten wir, dass
 \begin{align*}
 \frac{d\varphi}{dr}&=\frac{\dot \varphi(s)}{\dot r(s)}
-\qquad\text{und}
 \\
+\text{und}\qquad
 \frac{d^2\varphi}{dr^2}
 &=
 \frac{\ddot\varphi(s)\dot r(s)-\ddot r(s)\dot\varphi(s)}{\dot r(s)^3}
@@ -246,7 +251,7 @@ Wir erhalten
 \frac{d^2\varphi}{dr^2}
 &=
 -\frac{2}{r}\frac{d\varphi}{dr}
--\frac{2r-3r_g}{2}\biggl(\frac{d\varphi}{dr}\biggr)^3
+-\frac{2r-3r_g}{2}\biggl(\frac{d\varphi}{dr}\biggr)^3.
 %\\
 %&=
 %-{{4\,\left({{d}\over{d\,s}}\,\varphi\left(s\right)\right)\,\left(
@@ -264,13 +269,17 @@ einführen, die Differentialgleichung vereinfacht sich dann zu
 \label{skript:schwarzschild:phidgl}
 \end{equation}
 Für diese Differentialgleichung ist es unproblematisch, die
-Integration auch für grosse Werte von $u$ durchzuführen.
+Integration auch für grosse Werte von $u$ durchzuführen, aber für
+kleine Werte von $u$ entsteht ein Problem, weil 
+\eqref{skript:schwarzschild:phidgl} die kleine Zahl $u$ im Nenner
+enthält.
 
-Die Differentialgleichungen
+Die Lösung des Gesamtproblems erhalten wir daher erst, indem wir
+die Differentialgleichungen
 \eqref{skript:schwarzschild:udgl}
 und
 \eqref{skript:schwarzschild:phidgl}
-können in Kombination dazu verwendet werden, den Ablenkungswinkel
+in Kombination dazu verwenden, den Ablenkungswinkel
 numerisch zu berechnen.
 Dazu verwendet man erst die Differentialgleichung
 \eqref{skript:schwarzschild:udgl}
