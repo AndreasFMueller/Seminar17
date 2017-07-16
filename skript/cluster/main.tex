@@ -28,8 +28,6 @@ die Hintergrund-Galaxien zu Streifen verzogen werden und nicht mehr zu
 einem ganzen Kreis, da die Ausrichtungen zueinander nicht optimal
 sind.
 
-%Todo: Verwendung, Microlensing
-
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{cluster/images/LRG_3-757}
@@ -61,20 +59,20 @@ Eine ``normale'' Linse nutzt die Brechung zwischen dem Linsenmaterial
 und seiner Umgebung aus.  Durch diese Brechung kommt es zu einer
 Winkeländerung des Lichtstrahls.  Bei homogenen Materialien mit
 bekannten Brechungsindizes kann folgende Formel aus der geometrischen
-Optik verwendet werden.
+Optik verwendet werden:
 
 \begin{equation}
-  \frac{\sin \varepsilon_1}{\sin \varepsilon_2} = \frac{n_2}{n_1}
+  \frac{\sin \varepsilon_1}{\sin \varepsilon_2} = \frac{n_2}{n_1}.
 \end{equation}
 
 Darin kommen die Winkel zur Oberflächennormalen im Sinus-Bruch
 und die beiden Brechungsindizes vor.  Der
 Brechungsindex eines Mediums \(n\), ergibt sich aus der
 Lichtgeschwindigkeit im Vakuum \(c\) geteilt durch die
-Lichtgeschwindigkeit \(u\) im Medium.
+Lichtgeschwindigkeit \(u\) im Medium:
 
 \begin{equation}
-  n = \frac{c}{u}
+  n = \frac{c}{u}.
 \end{equation}
 \index{Brechungsindex}
 
@@ -150,13 +148,14 @@ Richtung des Sterns abgelenkt.)
 
 \section{Gravitationslinse}
 \rhead{Gravitationslinse}
-\subsection{Lichtkegel}
-\rhead{Lichtkegel}
-Als Start wird die Formel \eqref{skript:kruemmung:raumzeitabstand} aus
-dem Abschnitt über den Lichtkegel genommen.
+\subsection{Einfluss der Gravitation auf die Zeit}
+\rhead{Einfluss der Gravitation auf die Zeit}
+Als Start wird die Formel \eqref{skript:kruemmung:raumzeitabstand}
 \begin{equation*}
   s^2 = -c^2 (t_1-t_2)^2 + (x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2
 \end{equation*}
+aus dem Abschnitt über den Lichtkegel genommen.
+
 Die Gravitationslinse beugt Lichtwellen, somit ist \(s^2=0\), da sich
 die Wirkung mit Lichtgeschwindigkeit ausbreitet.  Wird zur
 Vereinfachung \(c=1\) gesetzt, ergibt sich:
@@ -165,17 +164,17 @@ Vereinfachung \(c=1\) gesetzt, ergibt sich:
 \end{equation*}
 oder anders geschrieben
 \begin{equation*}
-  0 = -dt^2 + dx^2 + dy^2 + dz^2
+  0 = -dt^2 + dx^2 + dy^2 + dz^2.
 \end{equation*}
 
 Die Lichtwellen bewegen sich in minimalen Wegen, was den Geodäten
 entspricht.  Die Lichtablenkung an Sternen und Galaxien befindet sich
 im Bereich von schwachen Gravitationsfeldern.  Zu diesen wurden die
-\(g_{\mu\nu}\) bereits berechnet (Formel
-\ref{skript:gravitation:naeherung}).
+\(g_{\mu\nu}\):
 \begin{align*}
   g_{00} &= -1 -\frac{2\varphi}{c^2} &g_{kk} &= 1,\quad k=1,2,3
 \end{align*}
+bereits berechnet (Formel \ref{skript:gravitation:naeherung}).
 Das Gravitationspotential \(\varphi\) ist für eine Punktmasse:
 \begin{equation*}
   \varphi = -\frac{KM}{r}
@@ -184,7 +183,7 @@ Das Gravitationspotential \(\varphi\) ist für eine Punktmasse:
 (oft als \(G\) bezeichnet) und \(r\) der Abstand zur Punktmasse.
 Setzt man dies nun zusammen, erhält man folgende \(g_{\mu\nu}\):
 \begin{align*}
-  g_{00} &= -1 +\frac{2KM}{rc^2} &g_{kk} &= 1,\quad k=1,2,3
+  g_{00} &= -1 +\frac{2KM}{rc^2} &g_{kk} &= 1,\quad k=1,2,3.
 \end{align*}
 Für grosse Abstände \(r\) wird \(g_{00}=-1\).  Was gleich der normalen
 Minkowski-Metrik ist.
@@ -195,7 +194,7 @@ Minkowski-Metrik ist.
   \begin{align*}
     K &= \SI{6.67e-11}{\meter\cubed\per\kilogram\per\second\squared}
     &M &= \SI{1.99e30}{\kilogram}
-    &c &= \SI{2.99e8}{\meter\per\second}
+    &c &= \SI{2.99e8}{\meter\per\second}.
   \end{align*}
   Die Zeitveränderung wird nur vom zweiten Teil von \(g_{00}\)
   bestimmt, wobei man erhält:
@@ -206,7 +205,7 @@ Minkowski-Metrik ist.
                               \cdot \si{\kilogram}
                               \cdot \si{\per\meter}
                               \cdot \si{\per\meter\squared\second\squared}
-                              = 1
+                              = 1.
   \end{align*}
   Einen Graphen mit den Werten von \(1\) bis \(0.05\) für
   \(\tilde{t}\) mit dem Abstand \(r\) kann in der Abbildung
@@ -287,19 +286,21 @@ Des Weiteren benötigt man für Euler-Lagrange nur den Teil im Integral:
   \cdot n\bigl(x(l),y(l),z(l)\bigr).
 \end{equation}
 Da die Wurzel die folgenden Rechenschritte verkompliziert, wird sie
-quadriert, was das Extremum nicht verändert.  Weiter wird die
-Abhängigkeit von \(l\) nicht mehr geschrieben, was es natürlich
-bleibt.
+quadriert, was das Extremum nicht verändert.  Dieser Schritt wurde
+bereits im Abschnitt
+\ref{skript:geodaeten:subsection:Parametrisierung} angewendet.  Weiter
+wird die Abhängigkeit von \(l\) nicht mehr geschrieben, was es
+natürlich bleibt:
 \begin{equation}
-  F = L^2 = (\dot{x}^2+\dot{y}^2+\dot{z}^2)n^2
+  F = L^2 = (\dot{x}^2+\dot{y}^2+\dot{z}^2)n^2.
 \end{equation}
 
 Für Euler-Lagrange muss man nun dieses \(F\) ableiten, im folgenden
-nur mit \(x\) gezeigt.
+nur mit \(x\) gezeigt:
 \begin{equation}
   \label{eq:cluster:euler}
   0 = \frac{\partial F}{\partial x} - \frac{d}{d l} \frac{\partial
-    F}{\partial \dot{x}}
+    F}{\partial \dot{x}}.
 \end{equation}
 Die Ableitungen sind
 \begin{align*}
@@ -317,19 +318,18 @@ löst diese Formel nach \(\ddot{x}\) auf, erhält man:
   \ddot{x} = (-\dot{x}^2+\dot{y}^2+\dot{z}^2)
   \frac{1}{n}\frac{\partial n}{\partial x} -
   2\dot{x}\dot{y} \frac{1}{n}\frac{\partial n}{\partial y} -
-  2\dot{x}\dot{z} \frac{1}{n}\frac{\partial n}{\partial z}
+  2\dot{x}\dot{z} \frac{1}{n}\frac{\partial n}{\partial z}.
 \end{equation}
 Mit der Hilfe der logarithmischen Differentiation
 \begin{equation*}
   \frac{1}{n} \frac{\partial n}{\partial x} = \frac{\partial \ln
     n}{\partial x}
 \end{equation*}
-kann man die Formel weiter vereinfachen.
-
+kann man die Formel weiter vereinfachen:
 \begin{equation}
   \ddot{x} = (-\dot{x}^2+\dot{y}^2+\dot{z}^2) \frac{\partial \ln
     n}{\partial x} - 2\dot{x}\dot{y} \frac{\partial \ln n}{\partial y}
-  - 2\dot{x}\dot{z} \frac{\partial \ln n}{\partial z}
+  - 2\dot{x}\dot{z} \frac{\partial \ln n}{\partial z}.
 \end{equation}
 Normalerweise ist ein Logarithmus nicht der einfachste Ansatz.  Die
 Vereinfachung entsteht durch die spezielle Form von \(n\)
@@ -346,16 +346,16 @@ ergibt sich
 \end{equation*}
 
 Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
-\(-\frac{2\varphi}{c^2}\) durchführen (d.h. man braucht,
+\(-\frac{2\varphi}{c^2}\) durchführen (d.h. man braucht
 \(\nabla\varphi=\) Gravitationskraft).  In einem Beispiel soll dies in
 2D gezeigt werden.
 
 \begin{beispiel}
   Im Folgenden wird die Lichtablenkung in einem zwei dimensionalen
   Raum numerisch berechnet.  Als \(\varphi\) wird eine Punktquelle
-  verwendet.
+  verwendet:
   \begin{equation*}
-    \varphi = -\frac{KM}{r}
+    \varphi = -\frac{KM}{r}.
   \end{equation*}
   Wobei
   \begin{equation*}
@@ -371,7 +371,7 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
                \frac{4\dot{x}y\dot{y}KM}{c^2\sqrt{(x-x_L)^2+y^2}\,^3}\\
     \ddot{y} &= +\frac{4\dot{x}\dot{y}(x-x_L)KM}{c^2\sqrt{(x-x_L)^2+y^2}\,^3}
                - \frac{2(\dot{x}^2-\dot{y}^2)yKM}
-               {c^2\sqrt{(x-x_L)^2+y^2}\,^3}
+               {c^2\sqrt{(x-x_L)^2+y^2}\,^3}.
   \end{align*}
   In diesem Beispiel befindet sich die Gravitationslinse auf \(x=0\),
   somit vereinfacht sich \(y-y_L\) zu \(y\).  Die soeben erhaltenen
@@ -389,8 +389,8 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
     x_1 &= x &x_2 &= \dot{x} &x_3 &= y &x_4 &= \dot{y}
   \end{align*}
   kann man die beiden Formeln in eine brauchbare Form bringen.  Die
-  gängigen Algorithmen fordern die Ableitungen von \(x(k)\) als
-  Parametern.
+  gängigen Algorithmen fordern die Ableitungen von \(x_k\) als
+  Parametern:
   \begin{align*}
     \dot{x}_1 &= x_2\\
     \dot{x}_2 &= -\frac{2\left(-x_2^2+x_4^2\right)\bigl(x_1-x_L\bigr)KM}
@@ -401,10 +401,10 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
     \dot{x}_4 &= +\frac{4x_2x_4\bigl(x_1-x_L\bigr)KM}
                 {c^2\sqrt{\bigl(x_1-x_L\bigr)^2+x_3^2}\,^3}
                 - \frac{2 \left(x_2^2-x_4^2\right) x_3 KM}
-                {c^2\sqrt{\bigl(x_1-x_L\bigr)^2+x_3^2}\,^3}
+                {c^2\sqrt{\bigl(x_1-x_L\bigr)^2+x_3^2}\,^3}.
   \end{align*}
 
-  In Octave wird \(x_1\) zu \texttt{x(1)}, was zu folgendem Code
+  In Octave wird \(x_k\) zu \texttt{x(k)}, was zu folgendem Code
   führt:
   \lstinputlisting[style=Octave]{cluster/source/dglSubCode.m}
 
@@ -416,7 +416,7 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
   \end{align*}
   der Sonne ein,
   erhält man eine Winkeländerung von \(\approx \SI{1.75}{''}\),
-  vergleicht man dies mit dem Werte aus der Literatur von
+  vergleicht man dies mit dem Wert aus der Literatur von
   \(\SI{1.75}{''}\) (\cite{misner1973gravitation} S.446), scheint
   dieses Vorgehen ziemlich adäquat.
 
@@ -424,7 +424,7 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
   berechnete Lichtweg dargestellt.  Der Beobachter ist im Punkt (0,0)
   und die Sonne im Punkt (\SI{1.5e11}{\meter},0).  Der Lichtpfad
   startet von der Erde aus so, dass man direkt am Sonnenradius
-  vorbeischaut.  Da die Ablenkung nur \SI{1.75}{''} sieht der Lichtweg
+  vorbeischaut.  Da die Ablenkung nur \SI{1.75}{''} ist, sieht der Lichtweg
   von Auge betrachtet wie eine gerade Strecke aus.  (Eine Bogensekunde
   ist ein 3600stel eines Grades.)
 
@@ -480,7 +480,7 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
                     
       data [set=ch1,headline={x, y}, read from file=cluster/source/lichtablenkung300Sonne.csv];
     \end{tikzpicture}
-    \caption{Lichtablenkung an 300 Sonnemassen}
+    \caption{Lichtablenkung an 300 Sonnenmassen}
     \label{fig:lichtablenkung300Sonne}
   \end{figure}
   
@@ -505,7 +505,7 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
                     
       data [set=ch1,headline={x, y}, read from file=cluster/source/lichtablenkung600Sonne.csv];
     \end{tikzpicture}
-    \caption{Lichtablenkung an 600 Sonnemassen}
+    \caption{Lichtablenkung an 600 Sonnenmassen}
     \label{fig:lichtablenkung600Sonne}
   \end{figure}
 \end{beispiel}
@@ -537,7 +537,7 @@ sichtbar.
                     
     data [set=ch1,headline={x, y}, read from file=cluster/source/zoomLichtablenkung600Sonne.csv];
   \end{tikzpicture}
-  \caption{Lichtablenkung an 600 Sonnemassen (Zoom)}
+  \caption{Lichtablenkung an 600 Sonnenmassen (Zoom)}
   \label{fig:lichtablenkung600SonneZoom}
 \end{figure}
 
