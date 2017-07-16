@@ -1,0 +1,14 @@
+# Source-Code zum Zeitreisen-Projekt
+
+## Unterstützte Version
+Getestet unter Matlab R2016b und R2017a.
+
+## Start
+`schwarschild.m` oder `perhildrehung.m` aufrufen.
+
+GUI startet automatisch. Resultate in Matrixform könne in der Kommandozeile mit `solution` aufgerufen werden.
+
+## Initialbedingungen
+Im `schwarzschild.m` kann der Anfangsvektor angepasst werden.
+
+Min und Max Werte der Schieber im GUI können im `myui.m angepasst werden.

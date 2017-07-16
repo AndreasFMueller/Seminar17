@@ -12,8 +12,6 @@
 *.swp
 *.synctex.gz
 *.toc
-
-# ignore all pdf files
-*.pdf
+skript.pdf
 
 # Files to allow (start with !)

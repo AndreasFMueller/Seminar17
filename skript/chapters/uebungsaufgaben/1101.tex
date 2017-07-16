@@ -1,0 +1,102 @@
+Für die Wärmeleitungsgleichung
+\begin{equation}
+\frac{\partial T}{\partial t}=\frac{\partial^2 T}{\partial x^2}
+\label{skript:1101:pdgl}
+\end{equation}
+auf einem Kreis (d.~h.~$T(x,t)$ ist periodisch  in $x$)
+soll eine Lösung in Form einer Fourier-Reihe
+\begin{equation}
+T(x,t)
+=
+\frac{a_0(t)}{2} + \sum_{k=1}^\infty\bigl(a_k(t)\cos kx + b_k(t)\sin kx\bigr)
+\label{skript:1101:ansatz}
+\end{equation}
+gefunden werden.
+Ausserdem soll die folgende, ebenfalls in Form einer Fourier-Reihe
+gegebene Anfangsbedingung für $t=0$ erfüllt sein:
+\begin{equation}
+T(x,0)
+=
+\frac{c_0}2 + \sum_{k=1}^\infty \bigl(c_k\cos kx+d_k\sin kx\bigr).
+\label{skript:1101:anfangsbedingung}
+\end{equation}
+\begin{teilaufgaben}
+\item
+Stellen Sie gewöhnliche Differentialgleichungen für die Koeffizienten 
+von $a_k(t)$ und $b_k(t)$ auf.
+\item
+Finden Sie Anfangsbedingungen für $a_k(t)$ und $b_k(t)$.
+\item
+Lösen Sie die Differentialgleichungen.
+\end{teilaufgaben}
+
+
+\begin{loesung}
+\begin{teilaufgaben}
+\item
+Wir müssen die Fourier-Reihe~\eqref{skript:1101:ansatz} für
+$T(x,t)$ in die Differentialgleichung~\eqref{skript:1101:pdgl}
+einsetzen.
+Dazu berechnen wir erst die Ableitungen nach $t$ und $x$:
+\begin{align*}
+\frac{\partial T}{\partial t}
+&=
+\frac{\dot a_0(t)}{2}
++
+\sum_{k=1}^\infty\bigl(\dot a_k(t)\cos kx+\dot b_k(t)\sin kx\bigr)
+\\
+\frac{\partial^2 T}{\partial x^2}
+&=
+\phantom{\frac{\dot a_0(t)}{2}}
+\mathstrut
+-
+\sum_{k=1}^\infty k^2\bigl(a_k(t)\cos kx+\dot b_k(t)\sin kx\bigr)
+\end{align*}
+Die Differentialgleichung verlangt, dass diese beiden Terme übereinstimmen,
+also folgen die gewöhnlichen Differentialgleichungen
+\begin{align}
+\dot a_0(t)&=0
+\label{skript:1101:konstant}
+\\
+\dot a_k(t)&=-k^2 a_k(t)&
+\dot b_k(t)&=-k^2 b_k(t)
+\label{skript:1101:ab}
+\end{align}
+Man beachte, dass die erste Gleichung als Speziallfall in der ersten
+Gleichung der zweiten Zeile enthalten ist.
+\item
+Die Anfangsbedingungen finden wir, indem wir in der
+Fourier-Reihe~\eqref{skript:1101:ansatz}
+$t=0$ einsetzen und mit der 
+Anfangsbedingung~\eqref{skript:1101:anfangsbedingung}
+vergleichen.
+Wir erhalten
+\begin{align*}
+T(x,0)
+&=
+\frac{a_0(0)}{2}+\sum_{k=1}^\infty \bigl(a_k(0)\cos kx+b_k(0)\sin kx\bigr)
+=
+\frac{c_0}2 + \sum_{k=1}^\infty \bigl(c_k\cos kx+d_k\sin kx\bigr)
+\end{align*}
+und daraus durch Koeffizientenvergleich
+\begin{align*}
+a_k(0)&=c_k&&k\ge 0\\
+b_k(0)&=d_k&&k>0
+\end{align*}
+als Anfangsbedingungen für die Funktionen $a_k(t)$ und $b_k(t)$.
+\item
+Die Differentialgleichung~\eqref{skript:1101:konstant} hat eine 
+Konstante als Lösung, also $a_0(t)=c_0$.
+
+Die Differentialgleichungen~\eqref{skript:1101:ab} können mit der
+Exponentialfunktion gelöst werden, es folgt
+\begin{align*}
+a_k(t)&=c_ke^{-k^2 t}
+&
+&\text{und}&
+b_k(t)&=d_ke^{-k^2 t}.
+\qedhere
+\end{align*}
+\end{teilaufgaben}
+\end{loesung}
+

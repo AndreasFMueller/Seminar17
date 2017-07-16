@@ -1,0 +1,25 @@
+
+\renewcommand\refname{Quellen} 
+\bibliography{}
+
+\begin{thebibliography}{1}
+\bibitem{latexcompanion} 
+Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
+\textit{The \LaTeX\ Companion}. 
+Addison-Wesley, Reading, Massachusetts, 1993.
+ 
+\bibitem{einstein} 
+Albert Einstein. 
+\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
+[\textit{On the electrodynamics of moving bodies}]. 
+Annalen der Physik, 322(10):891–921, 1905.
+ 
+\bibitem{knuthwebsite} 
+Knuth: Computers and Typesetting,
+\\\texttt{http://www-cs-faculty.stanford.edu/\~{}uno/abcde.html}
+
+
+\bibitem{Zipfel2003}Warren~R. Zipfel, Rebecca~M. Williams, and Watt~W. Webb.\newblock Nonlinear magic: multiphoton microscopy in the biosciences.\newblock {\em Nature Biotechnology}, 21(11):1369--1377, 2003.
+
+
+\end{thebibliography}

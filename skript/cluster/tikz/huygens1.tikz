@@ -1,0 +1,23 @@
+%
+% Brechung nach dem Prinzip von Huygens
+
+
+\begin{tikzpicture}
+
+  
+  % Delta t
+  \foreach \y in {-1,0,1}
+    \draw [very thick, color=red] (0,\y) -- (6,\y);
+
+  \foreach \x in {1,2,3,4,5}
+    \draw [black, fill=white] (\x,0) circle (.6mm);
+
+  \foreach \x in {1,2,3,4,5}
+    \draw [blue] (\x,0) ++ (0,1) arc (90:160:1cm)
+                 (\x,0) ++ (0,1) arc (90:20:1cm);
+
+  \draw [very thick, color=red, ->, >=stealth] (-.5,-.5) -- (-.5,0.5);
+  \draw [very thick, color=red, ->, >=stealth] (6.5,-.5) -- (6.5,0.5);
+
+
+\end{tikzpicture}

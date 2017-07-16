@@ -5,25 +5,30 @@
 %
 \section{Lichtablenkung}
 \rhead{Lichtablenkung}
+\index{Lichtablenkung}
 Die Ablenkung von Licht an der Sonne war eine der ersten Vorhersagen der
 allgmeinen Relativitätstheorie.
 Sie wurde 1918 während einer Sonnenfinsternisbeobachtung durch
 Arthur Eddington nachgewiesen, und machte Einstein über Nacht zu einem Star.
+\index{Eddington, Arthur}
 Ziel dieses Abschnitts ist, die Bahn eines Lichstrahls numerisch
 mit Hilfe der Schwarzschild Metrik zu berechnen.
 Wir dürfen ohne Beschränkung der Allgemeinheit annehmen, dass der Lichtstrahl
 sich in der $r$-$\varphi$-Ebene bewegt, dass also $\vartheta=\frac\pi2$ ist.
-Wir arbeiten daher zur Vereinfachung mit in Polarkoordinaten mit der Metrik
+Wir arbeiten daher zur Vereinfachung in Polarkoordinaten mit der Metrik
 \begin{equation}
 ds^2
 =
 -\biggl(1-\frac{r_g}{r}\biggr)\,dt^2
 + \frac{1}{\displaystyle 1-\frac{r_g}{r}}\,dr^2
-+ r^2d\,d\varphi^2.
++ r^2\,d\varphi^2.
 \label{skript:schwarzschild:metrik:polar}
 \end{equation}
+Ein alternativer Ansatz für die Berechnung der Lichtablenkung wird im
+Kapitel~\ref{chapter:cluster} von Pascal Stump gezeigt.
 
-\subsection{Differentialgleichung}
+\subsection{Differentialgleichung%
+\label{skript:lichtablenkung:dgl}}
 Die gesuchte Kurve ist die Weltlinie eines Lichtstrahls, also ein Null-Geodäte. 
 Zusätzlich zur Geodätengleichung erfüllt der Vektor der Vierergeschwindigkeit
 auch noch die Bedingung $g_{\mu\nu}\dot x^\mu \dot x^\nu=0$.
@@ -38,7 +43,7 @@ wird daraus die Bedingung
 \end{equation}
 Wir können mit Hilfe von \eqref{skript:schwarzschild:dott2}
 den Term $\dot t(s)^2$ durch Ableitungen von $r(s)$ und $\varphi(s)$
-ausdrückenm und so die Variable $t$ eliminieren.
+ausdrücken und so die Variable $t$ eliminieren.
 Auf diesem Weg versuchen wir ein Differentialgleichung für $r$
 als Funktion von $\varphi$ zu finden.
 
@@ -67,8 +72,33 @@ Maxima findet die Gleichungen
 \end{align}
 In Gleichung~\eqref{skript:schwarzschild:rddotgleichung} können wir jetzt
 $\dot t(s)^2$ ersetzen durch den Ausdruck~\eqref{skript:schwarzschild:dott2}.
-Wir erhalten dann eine Differentialgleichung, die nur noch $\dot r(s)$ und
-$\dot t(s)$ enthält.
+Wir erhalten dann das Differentialgleichungssystem
+\begin{align}
+\ddot r(s)
+&=
+-\frac{r_g}{2r(s)^2}\biggl(
+\frac{1}{\displaystyle 1-\frac{r_g}{r(s)}}\,\dot r(s)^2
++ r(s)^2\dot \varphi(s)^2
+\biggr)
++
+\frac{r_g}{2\biggl(1-\displaystyle\frac{r_g}{r(s)}\biggr) r(s)^2}\dot r(s)^2
++
+(r(s)-r_g)\dot\varphi(s)^2
+\\
+&=
+-\frac{r_g}{2}\dot\varphi(s)^2
++
+(r(s)-r_g)\dot\varphi(s)^2
+=
+\frac{2r(s)-3r_g}{2}\dot\varphi(s)^2
+\\
+\ddot\varphi(s)
+&=
+-\frac{2\dot r(s)\dot \varphi(s)}{r(s)},
+\label{skript:schwarzschild:phiddotgleichung2}
+\end{align}
+welches nur noch $\dot r(s)$ und
+$\dot\varphi(s)$ enthält.
 
 Wir wollen aber auch den Parameter $s$ zum Verschwindem bringen und
 stattdessen $r$ als Funktion von $\varphi$ schreiben.
@@ -145,21 +175,32 @@ R\frac{\sin \varphi}{\cos ^2\varphi},
 R
 \frac{2\sin ^2\varphi}{\cos ^3\varphi}+\frac{R}{\cos \varphi}.
 \end{aligned}
+\label{skript:schwarzschild:d2rdphi2}
 \end{equation}
 Setzt man $r(\varphi)$ und die erste Ableitung in die rechte Seite der
 Differentialgleichung~\eqref{skript:schwarzschild:rphidgl}
 ein, erhält man
-\[
+\begin{equation}
 \frac{2\cos\varphi}{R}\biggl(
 R\frac{\sin\varphi}{\cos^2\varphi}
 \biggr)^2
 +\frac{R}{\cos\varphi}
 -\frac{r_g}2
 =
-R\frac{2\sin^2\varphi}{\cos^3\varphi}+\frac{R}{\cos\varphi},
-\]
-also bis auf den Term $-r_g/2$ die zweite Ableitung von $r(\varphi)$.
-Keine Lichtablenkung ist also gleichbedeutend damit, dass $r_g=0$ ist.
+R\frac{2\sin^2\varphi}{\cos^3\varphi}+\frac{R}{\cos\varphi}
+-\frac{r_g}2
+=
+\frac{d^2r}{d\varphi^2} - \frac{r_g}2,
+\label{skript:schwarzschild:ansatz}
+\end{equation}
+wobei im letzten Schritt~\eqref{skript:schwarzschild:d2rdphi2}
+verwendet worden ist.
+Die rechte Seite \eqref{skript:schwarzschild:ansatz} der Differentialgleichung
+ist also bis auf den Term $-r_g/2$ die zweite Ableitung von $r(\varphi)$,
+die Differentialgleichung ist also genau dann für die Gerade erfüllt,
+wenn $r_g=0$ ist.
+Anders ausgedrückt:
+Keine Lichtablenkung ist gleichbedeutend damit, dass $r_g=0$ ist.
 
 \subsubsection{Dimensionslose Gleichung}
 Schreiben wir $u=r/r_g$, dann wird die
@@ -181,20 +222,24 @@ wächst in der Nähe des Ablenkungswinkels über alle Grenzen.
 \label{skript:schwarzschild:abbildung:rphi}}
 \end{figure}
 Leider eignet sich die Differentialgleichung~\eqref{skript:schwarzschild:udgl}
-nicht wirklich zur Berechnung des Ablenkungswinkels.
+nicht zur Berechnung des Ablenkungswinkels.
 Schuld daran ist die Singularität, in der Nähe des Ablenkungswinkels
 wächst $r(\varphi)$ über alle Grenzen, wie
 Abbildung~\ref{skript:schwarzschild:abbildung:rphi} zeigt.
+Wir können sie daher nur für den Teil der Bahn verwenden, für den
+$\varphi$ nicht zu gross wird.
 
 \subsection{Differentialgleichung für den Winkel}
-Genau auf dem gleichen Weg wie wir eine Differentialgleichung für $r(\varphi)$
+Genau auf dem gleichen Weg, wie wir in
+Abschnitt~\ref{skript:lichtablenkung:dgl}
+eine Differentialgleichung für $r(\varphi)$
 abgeleitet haben, können wir auch eine Differentialgleichung für
 $\varphi$ als Funktion $r(\varphi)$ von $\varphi$ herleiten.
 Dazu beachten wir, dass
 \begin{align*}
 \frac{d\varphi}{dr}&=\frac{\dot \varphi(s)}{\dot r(s)}
-\qquad\text{und}
 \\
+\text{und}\qquad
 \frac{d^2\varphi}{dr^2}
 &=
 \frac{\ddot\varphi(s)\dot r(s)-\ddot r(s)\dot\varphi(s)}{\dot r(s)^3}
@@ -206,7 +251,7 @@ Wir erhalten
 \frac{d^2\varphi}{dr^2}
 &=
 -\frac{2}{r}\frac{d\varphi}{dr}
--\frac{2r-3r_g}{2}\biggl(\frac{d\varphi}{dr}\biggr)^3
+-\frac{2r-3r_g}{2}\biggl(\frac{d\varphi}{dr}\biggr)^3.
 %\\
 %&=
 %-{{4\,\left({{d}\over{d\,s}}\,\varphi\left(s\right)\right)\,\left(
@@ -224,13 +269,17 @@ einführen, die Differentialgleichung vereinfacht sich dann zu
 \label{skript:schwarzschild:phidgl}
 \end{equation}
 Für diese Differentialgleichung ist es unproblematisch, die
-Integration auch für grosse Werte von $u$ durchzuführen.
+Integration auch für grosse Werte von $u$ durchzuführen, aber für
+kleine Werte von $u$ entsteht ein Problem, weil 
+\eqref{skript:schwarzschild:phidgl} die kleine Zahl $u$ im Nenner
+enthält.
 
-Die Differentialgleichungen
+Die Lösung des Gesamtproblems erhalten wir daher erst, indem wir
+die Differentialgleichungen
 \eqref{skript:schwarzschild:udgl}
 und
 \eqref{skript:schwarzschild:phidgl}
-können in Kombination dazu verwendet werden, den Ablenkungswinkel
+in Kombination dazu verwenden, den Ablenkungswinkel
 numerisch zu berechnen.
 Dazu verwendet man erst die Differentialgleichung
 \eqref{skript:schwarzschild:udgl}

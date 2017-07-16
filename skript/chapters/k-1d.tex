@@ -24,6 +24,51 @@ ist.
 Wir bezeichnen die Ableitung mit einem Punkt.
 
 \subsection{Bogenlängenparameter}
+Wir betrachten die folgenden beiden Parametrisierungen einer ebenen Kurve:
+\begin{equation}
+\begin{aligned}
+c_1\colon
+[-1,1]\to\mathbb{R}^2
+&\colon
+t\mapsto\begin{pmatrix}x\\\sqrt{1-t^2}\end{pmatrix}
+&&\text{und}&
+c_2\colon
+[0,\pi]\to\mathbb{R}^2
+&
+\colon
+s\mapsto\begin{pmatrix}-\cos s\\\sin s\end{pmatrix}
+\end{aligned}
+\end{equation}
+Beide beschreiben den Einheitskreisbogen, der den Punkt $(-1,0)$ mit
+dem Punkt $(1,0)$ verbindet (Abbildung \ref{skript:1dim:kreisbogen}).
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/kreisbogen.pdf}
+\caption{Kreisbogen zwischen $(-1,0)$ und $(1,0)$. Im Text werden
+zwei verschiedene Parametrisierungen dafür vorgestellt.
+\label{skript:1dim:kreisbogen}}
+\end{figure}
+Die Parametrisierungen unterscheiden sich aber in der Ableitung,
+die Tangentialvektoren für die beiden Ableitungen sind
+\begin{equation}
+\begin{aligned}
+\frac{dc_1}{dt}
+&=
+\begin{pmatrix}
+1\\-\frac{1}{\sqrt{1-t^2}}
+\end{pmatrix}
+&&\text{und}&
+\frac{dc_2}{ds}
+&=
+\begin{pmatrix}
+\sin s\\\cos s
+\end{pmatrix}.
+\end{aligned}
+\end{equation}
+Der Tangentialvektor hat in der zweiten Parametrisierung konstant
+die Länge $1$, während sie in der ersten Parametrisierung nahe bei
+$t=\pm1$ über alle Grenzen wächst.
+
 Interpretieren wir den Parameter $t$ als die Zeit der Bewegung eines 
 Teilchens entlang der Kurve, dann ist die zeitliche Änderung der Strecke,
 die das Teilchen zurück gelegt hat, gerade die Länge des

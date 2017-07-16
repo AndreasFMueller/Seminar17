@@ -19,9 +19,8 @@ global_settings {
 #if (kruemmung > 0)
 #declare R = 1 / kruemmung;
 #declare a = 0;
-#end
-#if (kruemmung < 0)
-#declare a = -kruemmung;
+#else
+#declare a = -kruemmung / 5;
 #declare R = 0;
 #end
 

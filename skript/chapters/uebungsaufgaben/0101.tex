@@ -1,0 +1,110 @@
+Die Sinus-Kurve kann parametrisiert werden durch
+\[
+c\colon \mathbb R\to \mathbb R^2 : t\mapsto (t,\sin t).
+\]
+\begin{teilaufgaben}
+\item
+Man berechne den Krümmungsradius in der Stelle $c(t)$.
+\item
+Man bestimme den Mittelpunkt des Krümmungskreises, der sich im Punkt $c(t)$
+an die Sinus-Kurve anschmiegt.
+\end{teilaufgaben}
+
+
+\begin{loesung}
+Wir brauchen die Ableitungen von $c(t)$
+\begin{align*}
+\dot c(t)
+&=
+(1,\cos t)
+\\
+\ddot c(t)
+&=
+(0,-\sin t)
+\end{align*}
+Wegen $|\dot c(t)|=\sqrt{1+\cos^2t}\ge 1$ ist dies sicher keine Bogenlängenparameter.
+\begin{teilaufgaben}
+\item
+Die Formeln für die Krümmung sind
+\begin{align*}
+\kappa(t)
+&=
+\frac{\det(\dot c(t),\ddot c(t))}{|\dot c(t)|^3}
+=
+\frac{\left|\begin{matrix}1&0\\\cos t&-\sin t\end{matrix}\right|}{(1+\cos^2t)^\frac32}
+=
+\frac{-\sin t}{(1+\cos^2t)^\frac32}
+\end{align*}
+Der Krümmungsradius ist daher
+\[
+\varrho(t)
+=
+\frac{|\sin t|}{(1+\cos^2t)^\frac32}.
+\]
+\item
+Wir brauchen die Tangente und die Normale.
+Dazu müssen wir $\dot c(t)$ und $\ddot c(t)$ orthonormalisieren:
+\begin{align*}
+e_1(t)
+&=
+\frac{\dot c(t)}{|\dot c(t)|}
+=
+\frac1{\sqrt{1+\cos^2t}}
+\begin{pmatrix}1\\ \cos t\end{pmatrix}
+\\
+e_2(t)
+&=
+\frac{\ddot c(t) - (e_1(t)\cdot \ddot c(t))\;\ddot c(t)}{|\ddot c(t) - (e_1(t)\cdot \ddot c(t))\;\ddot c(t)|}
+\\
+&=
+\frac{1}{\dots}\left(
+\begin{pmatrix}0\\-\sin t\end{pmatrix}
+-
+\left(
+\frac{1}{\sqrt{1+\cos^2t}}
+\begin{pmatrix}1\\\cos t\end{pmatrix}
+\cdot
+\begin{pmatrix}0\\-\sin t\end{pmatrix}
+\right)
+\frac{1}{\sqrt{1+\cos^2t}}
+\begin{pmatrix}1\\\cos t\end{pmatrix}
+\right)
+\\
+&=
+\frac{1}{\dots}
+\left(
+\begin{pmatrix}0\\-\sin t\end{pmatrix}
++
+\frac{\sin t\cos t}{1+\cos^2t}
+\begin{pmatrix}1\\\cos t\end{pmatrix}
+\right)
+\\
+&=
+\frac{1}{\dots}
+\frac{\sin t\cos t}{1+\cos^2t}
+\left(
+\begin{pmatrix}0\\-\sin t(1+\cos^2t)\end{pmatrix}
++
+\begin{pmatrix}1\\\cos t\end{pmatrix}
+\right)
+\\
+&=
+\frac{1}{\dots}
+\frac{\sin t\cos t}{1+\cos^2t}
+\begin{pmatrix}
+1
+\\
+-\sin t(1+\cos^2t)
++
+\cos t\end{pmatrix}
+\end{align*}
+Der Mittelpunkt $m(t)$ des Krümmungskreises ist
+\[
+m(t)
+=
+c(t) + e_2(t)/\kappa(t)
+\qedhere
+\]
+\end{teilaufgaben}
+\end{loesung}
+

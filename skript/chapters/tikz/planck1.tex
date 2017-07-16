@@ -1,0 +1,26 @@
+%
+% planck1.tex
+%
+% (c) 2017 Prof Dr Andreas Müller,
+%
+\documentclass[tikz]{standalone}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows,intersections}
+\begin{document}
+\begin{tikzpicture}[thick,scale=2]
+\coordinate (O) at (0,0);
+
+\draw[->] (-2.1,-2.88)--( 2.4,-2.88) coordinate[label = {below:$\log(\nu)$}];
+\draw[->] (-2,-2.98)--(-2  , 0.5) coordinate[label = {right:$\log U$}];
+
+\begin{scope}
+\clip (-2,-2.88) rectangle(2.4,0.5);
+\draw[red,domain=0.1:9.70,samples=200,line width=1.4] plot ({ln(\x)},{3*ln(\x)-ln(exp(\x)-1)});
+\end{scope}
+
+\end{tikzpicture}
+\end{document}
+
+

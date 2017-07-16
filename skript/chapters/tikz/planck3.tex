@@ -1,0 +1,169 @@
+%
+% planck3.tex -- Plancksches Strahlungsgesetz
+%
+% (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz]{standalone}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections}
+\begin{document}
+\begin{tikzpicture}[thick,scale=8]
+\coordinate (O) at (0,0);
+\begin{scope}
+\clip (0.2,0.75) rectangle (1.7,1.8);
+\csvreader[head to column names,%
+	late after head=\xdef\told{\t}\xdef\old{\a},%
+	after line=\xdef\told{\t}\xdef\old{\a}]%
+	{planck.csv}{}{%
+	{\ifthenelse{\lengthtest{\b pt > 0.001pt}}{%
+		\draw[red,line width=1.5] (\told,\old)--(\t,\a) node {};
+	}{}};
+}
+
+\csvreader[head to column names,%
+	late after head=\xdef\told{\t}\xdef\old{\b},%
+	after line=\xdef\told{\t}\xdef\old{\b}]%
+	{planck.csv}{}{%
+	{\ifthenelse{\lengthtest{\b pt > 0.001pt}}{%
+		\draw[red,line width=1.5] (\told,\old)--(\t,\b) node {};
+	}{}};
+}
+
+\csvreader[head to column names,%
+	late after head=\xdef\told{\t}\xdef\old{\c},%
+	after line=\xdef\told{\t}\xdef\old{\c}]%
+	{planck.csv}{}{%
+	{\ifthenelse{\lengthtest{\c pt > 0.001pt}}{%
+		\draw[red,line width=1.5] (\told,\old)--(\t,\c) node {};
+	}{}};
+}
+
+\csvreader[head to column names,%
+	late after head=\xdef\told{\t}\xdef\old{\d},%
+	after line=\xdef\told{\t}\xdef\old{\d}]%
+	{planck.csv}{}{%
+	{\ifthenelse{\lengthtest{\d pt > 0.001pt}}{%
+		\draw[red,line width=1.5] (\told,\old)--(\t,\d) node {};
+	}{}};
+}
+
+\csvreader[head to column names,%
+	late after head=\xdef\told{\t}\xdef\old{\e},%
+	after line=\xdef\told{\t}\xdef\old{\e}]%
+	{planck.csv}{}{%
+	{\ifthenelse{\lengthtest{\e pt > 0.001pt}}{%
+		\draw[red,line width=1.5] (\told,\old)--(\t,\e) node {};
+	}{}};
+}
+
+%\csvreader[head to column names,%
+%	late after head=\xdef\told{\t}\xdef\old{\f},%
+%	after line=\xdef\told{\t}\xdef\old{\f}]%
+%	{planck.csv}{}{%
+%	{\ifthenelse{\lengthtest{\f pt > 0.001pt}}{%
+%		\draw[red,line width=1.5] (\told,\old)--(\t,\f) node {};
+%	}{}};
+%}
+%
+%\csvreader[head to column names,%
+%	late after head=\xdef\told{\t}\xdef\old{\g},%
+%	after line=\xdef\told{\t}\xdef\old{\g}]%
+%	{planck.csv}{}{%
+%	{\ifthenelse{\lengthtest{\g pt > 0.001pt}}{%
+%		\draw[red,line width=1.5] (\told,\old)--(\t,\g) node {};
+%	}{}};
+%}
+\end{scope}
+
+\draw[->] (0.1, 0.75)--(1.8,0.75) coordinate[label = {above:$\nu\,\hbox{[Hz]}$}];
+\draw[->] (0.2, 0.65)--(0.2,1.8 ) coordinate[label = {right:$U(\nu,T)\,\hbox{[Js]}$}];
+
+%\draw (0.0,0.75)--(0.0,0.73); \node at (0.0,0.73) [below] {$10^0$};
+%\draw (0.1,0.75)--(0.1,0.73); \node at (0.1,0.72) [below] {$10^1$};
+%\draw (0.2,0.75)--(0.2,0.72); \node at (0.2,0.73) [below] {$10^2$};
+\draw (0.3,0.75)--(0.3,0.72); \node at (0.3,0.73) [below] {$10^3$};
+\draw (0.4,0.75)--(0.4,0.72); \node at (0.4,0.73) [below] {$10^4$};
+\draw (0.5,0.75)--(0.5,0.72); \node at (0.5,0.73) [below] {$10^5$};
+\draw (0.6,0.75)--(0.6,0.72); \node at (0.6,0.73) [below] {$10^6$};
+\draw (0.7,0.75)--(0.7,0.72); \node at (0.7,0.73) [below] {$10^7$};
+\draw (0.8,0.75)--(0.8,0.72); \node at (0.8,0.73) [below] {$10^8$};
+\draw (0.9,0.75)--(0.9,0.72); \node at (0.9,0.73) [below] {$10^9$};
+\draw (1.0,0.75)--(1.0,0.72); \node at (1.0,0.73) [below] {$10^{10}$};
+\draw (1.1,0.75)--(1.1,0.72); \node at (1.1,0.73) [below] {$10^{11}$};
+\draw (1.2,0.75)--(1.2,0.72); \node at (1.2,0.73) [below] {$10^{12}$};
+\draw (1.3,0.75)--(1.3,0.72); \node at (1.3,0.73) [below] {$10^{13}$};
+\draw (1.4,0.75)--(1.4,0.72); \node at (1.4,0.73) [below] {$10^{14}$};
+\draw (1.5,0.75)--(1.5,0.72); \node at (1.5,0.73) [below] {$10^{15}$};
+\draw (1.6,0.75)--(1.6,0.72); \node at (1.6,0.73) [below] {$10^{16}$};
+\draw (1.7,0.75)--(1.7,0.72); \node at (1.7,0.73) [below] {$10^{17}$};
+%\draw (1.8,0.75)--(1.8,0.72); \node at (1.8,0.73) [below] {$10^{18}$};
+%\draw (1.9,0.75)--(1.9,0.72); \node at (1.9,0.73) [below] {$10^{19}$};
+%\draw (2.0,0.75)--(2.0,0.72); \node at (2.0,0.73) [below] {$10^{20}$};
+
+\node at(1.12,1.28) {2.73K};
+\node at(1.22,1.38) {27.3K};
+\node at(1.32,1.48) {273K};
+\node at(1.42,1.58) {2730K};
+%\node at(1.52,1.68) {27.3kK};
+\node at(1.57,1.78) {27300K};
+
+\draw (0.2,0.75 )--(0.19,0.75 ); \node at (0.2,0.75) [below left] {$10^{-70}$};
+\draw (0.2,0.775)--(0.19,0.775);
+
+\draw (0.2,0.8  )--(0.19,0.8  );
+\draw (0.2,0.825)--(0.19,0.825);
+\draw (0.2,0.85 )--(0.19,0.85 );
+\draw (0.2,0.875)--(0.19,0.875);
+
+\draw (0.2,0.9  )--(0.19,0.9  );
+\draw (0.2,0.925)--(0.19,0.925);
+\draw (0.2,0.95 )--(0.19,0.95 );
+\draw (0.2,0.975)--(0.19,0.975);
+
+\draw (0.2,1.0  )--(0.19,1.0  ); \node at (0.2,1.00) [left] {$10^{-60}$};
+\draw (0.2,1.025)--(0.19,1.025);
+\draw (0.2,1.05 )--(0.19,1.05 );
+\draw (0.2,1.075)--(0.19,1.075);
+
+\draw (0.2,1.1  )--(0.19,1.1  );
+\draw (0.2,1.125)--(0.19,1.125);
+\draw (0.2,1.15 )--(0.19,1.15 );
+\draw (0.2,1.175)--(0.19,1.175);
+
+\draw (0.2,1.2  )--(0.19,1.2  );
+\draw (0.2,1.225)--(0.19,1.225);
+\draw (0.2,1.25 )--(0.19,1.25 ); \node at (0.2,1.25) [left] {$10^{-50}$};
+\draw (0.2,1.275)--(0.19,1.275);
+
+\draw (0.2,1.3  )--(0.19,1.3  );
+\draw (0.2,1.325)--(0.19,1.325);
+\draw (0.2,1.35 )--(0.19,1.35 );
+\draw (0.2,1.375)--(0.19,1.375);
+
+\draw (0.2,1.4  )--(0.19,1.4  );
+\draw (0.2,1.425)--(0.19,1.425);
+\draw (0.2,1.45 )--(0.19,1.45 );
+\draw (0.2,1.475)--(0.19,1.475);
+
+\draw (0.2,1.5  )--(0.19,1.5  ); \node at (0.2,1.50) [left] {$10^{-40}$};
+\draw (0.2,1.525)--(0.19,1.525);
+\draw (0.2,1.55 )--(0.19,1.55 );
+\draw (0.2,1.575)--(0.19,1.575);
+
+\draw (0.2,1.6  )--(0.19,1.6  );
+\draw (0.2,1.625)--(0.19,1.625);
+\draw (0.2,1.65 )--(0.19,1.65 );
+\draw (0.2,1.675)--(0.19,1.675);
+
+\draw (0.2,1.7  )--(0.19,1.7  );
+\draw (0.2,1.725)--(0.19,1.725);
+\draw (0.2,1.75 )--(0.19,1.75 ); \node at (0.2,1.75) [left] {$10^{-30}$};
+\draw (0.2,1.775)--(0.19,1.775);
+
+\end{tikzpicture}
+\end{document}
+
+

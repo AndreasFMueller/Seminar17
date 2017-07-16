@@ -1,0 +1,69 @@
+%
+% Brechung nach dem Prinzip von Huygens
+
+
+\begin{tikzpicture}
+  [every label/.style={color=black}]
+
+  
+  %
+
+  \shade [inner color=blue!50!white, outer color=white] (-.6,0.55) circle (1.5cm);
+
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3,0);
+  \draw [very thick, color=red] (A) -- (B);
+
+  \path (B) ++ (97:1cm) coordinate (Bs);
+  \path (Bs) ++ ($ (A)!1!187:(B) $) coordinate (As);
+  \draw [very thick, color=red] (As) -- (Bs);
+
+  \path (Bs) ++ (104:1cm) coordinate (Bss);
+  \path (Bss) ++ ($ (A)!1!194:(B) $) coordinate (Ass);
+  \draw [very thick, color=red] (Ass) -- (Bss);
+
+  \draw [very thick, color=red] (A) ++ (0,-1) --++ ($ (B)-(A) $);
+  \draw [very thick, color=red] (Bss) ++ (104:1cm) --++ ($ (A)!1!194:(B) $);
+
+  
+  % \fill [fill=blue!15!white] (0,0) rectangle (6,-2);
+  % \draw [thick] (0,0) -- (6,0);
+  % \coordinate[label=below left:$A$] (A) at (3,0);
+  % \path (A) ++ (2,0) coordinate[label=below right:$D$] (D);
+
+  % \draw [very thick, color=red, -<, >=stealth] (A) --++ (150:2.5) node(ray1Start){};
+  % \path [name path=rayStart] (ray1Start.center) --++ (60:2.5);
+  % \path [name path=ray2] (A) ++ (2,0) --++ (150:6);
+  % \draw [very thick, color=red, name intersections={of=rayStart and ray2,
+  %   by=ray2Start}, -<, >=stealth] (A) ++ (2,0) -- (ray2Start);
+
+  % \path (ray2Start) ++ (-30:2.5) coordinate[label=above:$B$] (B);
+  % \draw [color=red] (A) -- (B);
+
+
+  % \draw [thick, color=blue] (A) ++ (.8,0) arc (0:-180:.8cm);
+  % \draw [thick, color=blue]
+  %   let \p1 = ($(B)-(D)$)
+  %   in (B) ++ (-30:{veclen(\x1,\y1)}) arc (-30:140:{veclen(\x1,\y1)})
+  %      (B) ++ (150:{veclen(\x1,\y1)}) coordinate (Bs)
+  %      (A) ++ (150:{veclen(\x1,\y1)}) coordinate (As);
+
+  % \draw [color=red] (As) -- (Bs);
+
+  % \node [circle] (circleSmall) at (A) [minimum size=2*.8cm,
+  %   inner sep=0]{};
+  % \draw [color=red] (D) -- (tangent cs:node=circleSmall, point={(D)},
+  %   solution=2) coordinate[label=below left:$C$] (C);
+
+
+  % \path (C) ++ ($ (C)-(A) $) coordinate (Cs);
+  % \path (D) ++ ($ (C)-(A) $) coordinate (Ds);
+  % \draw [very thick, color=red, ->, >=stealth] (A) -- (C) -- ($ (C)!1.4!(Cs) $);
+  % \draw [very thick, color=red, ->, >=stealth] (D) -- ($ (D)!1.4!(Ds) $);
+  % \draw [color=red] (Cs) -- (Ds);
+
+  % \foreach \point in {A,B,C,D}
+  %   \draw [black, fill=white] (\point) circle (.6mm);
+
+
+\end{tikzpicture}
