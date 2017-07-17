@@ -35,7 +35,7 @@ Kreise auf einer Kugeloberfläche lassen sich in zwei verschiedene Arten einteil
 
 \subsection{Grosskreise}
 %BILD GROSSKREISE
-\begin{figure}[hbtp]
+\begin{figure}
 \centering
 \includegraphics[width=0.4\textwidth]{kugel/Grosskreise.jpg}
 \caption{Verschiedene Grosskreise auf einer Kugel, mit dem Zentrum der Kugel als einheitlichen Mittelpunkt $M_{\text{Kugel}}$ und einem einheitlichen Radius $r$ aller Kreise.}
@@ -88,7 +88,6 @@ Dabei können wir sphärische Dreiecke in vier für uns wesentliche Dreiecksarte
 \item Allgemeine Kugeldreiecke (Nicht Eulersche Dreiecke)
 \item Kugelzweiecke
 \item Eulersche Dreiecke
-\item Polardreiecke
 \end{itemize}
 
 
@@ -175,9 +174,9 @@ Für jedes sphärische Dreieck auf der Kugeloberfläche gibt es das zugehörige 
 Das Polardreieck verdient seinen Namen den beiden Polen der Erdkugel, dem Nord- und Südpol, denn sie bilden die beiden Pole des Äquators ab.}. Wenn man einen Grosskreis auf die Kugeloberfläche projiziert, bilden die Schnittpunkte der Senkrechten durch den Mittelpunkt $M$ dabei die beiden Pole. 
 
 %ERKLAERUNG
-\begin{figure}[htbp]
+\begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{kugel/Polar.jpg}
+\includegraphics[width=1\textwidth]{kugel/Polar.jpg}
 \caption{Die Polarbögen zweier Grosskreise bilden einen Schnittwinkel $\alpha$, welche durch einen Grosskreisbogen (Polarbogen) der Seitenlänge $a’$ verbunden werden.}
 \label{V8}
 \end{figure}
@@ -186,7 +185,6 @@ Betrachten wir nun die Abbildung \eqref{V8}, wird ersichtlich, dass die Beziehun
 \begin{align*}
 {\alpha + a’} = {\pi}
 \end{align*}
-
 gilt. 
 
 %POLARDREIECK
@@ -197,26 +195,20 @@ gilt.
 \end{figure}
 
 Somit können wir das Polardreieck eines sphärischen Dreieckes bestimmen und stellen fest, dass die Längen des Polardreiecks und die gegenüberliegenden Winkel des sphärischen Dreiecks sich immer zu $\pi$ ergänzen lassen. Die folgenden Beziehungen
-
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{cc}
-$\alpha + a^{\prime}$ = $\pi$ & $\alpha^{\prime}$ + a = $\pi$ \\
-$\beta + b^{\prime}$ = $\pi$ & $\beta^{\prime}$ + b = $\pi$ \\
-$\gamma + c^{\prime}$ = $\pi$ & $\gamma^{\prime}$ + c = $\pi$
-\end{tabular}
-\end{center} 
-
+\begin{align*}
+\alpha + a^{\prime} &= \pi & \alpha^{\prime} + a &= \pi \\
+\beta + b^{\prime} &= \pi & \beta^{\prime} + b &= \pi \\
+\gamma + c^{\prime} &= \pi & \gamma^{\prime} + c &= \pi
+\end{align*}
 entstehen.
 
 
 \section{Dreiecksfläche und sphärischer Exzess} \label{Flaeche}
 Betrachten wir das hellgraue Dreieck in der Abbildung \eqref{V10} ist $A_{\triangle{ABC}}$ dessen Flächeninhalt. Dieser lässt sich folgendermassen berechnen
 \begin{align*}
-A_{\triangle{ABC}} &= r^{2}(\alpha + \beta + \gamma - \pi)
+A_{\triangle{ABC}} &= r^{2}(\alpha + \beta + \gamma - \pi).
 \end{align*}
-
-Das diese Formel zum gewünschten Flächeninhalt führt, lässt sich folgendermassen beweisen:
+Dass diese Formel zum gewünschten Flächeninhalt führt, lässt sich folgendermassen beweisen:
 Als erstes berechnen wir die einzelnen Flächeninhalte der Zweiecke $A$, $B$ und $C$
 \begin{align*}
 \text{Zweieck A}
@@ -229,7 +221,6 @@ Als erstes berechnen wir die einzelnen Flächeninhalte der Zweiecke $A$, $B$ und
 &=
 \triangle{ABC} + \triangle{ABC’} = 2 \gamma r^{ 2 } = A_{ \gamma }
 \end{align*}
-
 Die drei Zweiecke und die beiden kleinen grauen Eulersche Dreiecke bedecken zusammen die halbe Kugel, was in der Abbildung \eqref{V9} ersichtlich wird.
 
 %BILD DREIECKSFLÄCHE
@@ -242,12 +233,11 @@ Die drei Zweiecke und die beiden kleinen grauen Eulersche Dreiecke bedecken zusa
 
 Nun setzen wir die Summe der Flächeninhalte der Zweiecke mit dieser der halben Kugel gleich
 \begin{align*}
-2 \alpha r^2 + 2 \beta r^2 + 2 \gamma  r^2 = \pi r^2 + A_{ \triangle{ ABC }}
+2 \alpha r^2 + 2 \beta r^2 + 2 \gamma  r^2 = \pi r^2 + A_{ \triangle{ ABC }}.
 \end{align*}
-
 Für den Flächeninhalt erhalten wir
 \begin{align*}
-A_{ \triangle{ ABC }}  &= r^{ 2 }\underbrace{(\alpha + \beta + \gamma - \pi)}_{\text{Sphärischer Exzess}}
+A_{ \triangle{ ABC }}  &= r^{ 2 }\underbrace{(\alpha + \beta + \gamma - \pi)}_{\text{Sphärischer Exzess}}.
 \end{align*}
 
 \begin{definition}
@@ -257,48 +247,32 @@ Der Flächeninhalt eines Eulerschen Dreiecks ist die Summe seiner Winkel multipl
 \end{definition}
 
 
-Die Winkelsumme abzüglich $\pi$ ist der sphärische Exzess $\epsilon$. $\epsilon$ gibt die Abweichung zu $\pi$ an und somit der Innenwinkelsumme von $180^{\circ}$.
+Die Winkelsumme abzüglich $\pi$ ist der sphärische Exzess $\epsilon$. $\epsilon$ gibt die Abweichung zu $\pi$ an und somit der Innenwinkelsumme von $180^{\circ}$
 \begin{equation}
-\epsilon = \alpha + \beta + \gamma - \pi
+\epsilon = \alpha + \beta + \gamma - \pi.
 \end{equation}
-
-
 Folglich ist der Exzess direkt mit dem Flächeninhalt $\triangle A$ eines Eulerschen Dreiecks verbunden
 \begin{align*}
-\epsilon =\frac{A_{\triangle{ ABC }}}{r^2} = \frac{\alpha + \beta + \gamma - \pi}{r^2}
+\epsilon =\frac{A_{\triangle{ ABC }}}{r^2} = {\alpha + \beta + \gamma - \pi}.
 \end{align*}
 
-Ist der sphärische Exzess und der Flächeninhalt bekannt, kann man mit dessen Hilfe auf einem beliebigen Eulerschen Dreieck auf dessen Radius
-\begin{align*}
-r = \sqrt{\frac{\alpha + \beta + \gamma - \pi}{\epsilon}}
-\end{align*}
-
-schliessen. Mit einer maximalen Innenwinkelsumme bei Eulerschen Dreiecken von $540^{\circ}$ ist der Exzess maximal $360^{\circ}$.
+Mit einer maximalen Innenwinkelsumme bei Eulerschen Dreiecken von $540^{\circ}$ ist der Exzess maximal $360^{\circ}$.
 \[
-\begin{aligned}
 0^{\circ} \le \epsilon \le 360^{\circ}
-&
-&\text{oder}
-&
-&\pi \le \epsilon \le 2\pi \\
-&\Rightarrow
-& 0 \le \text{Fläche} \le 2 \pi r^2
-\end{aligned}
+\qquad \text{oder} \qquad
+\pi \le \epsilon \le 2\pi
+\qquad \Rightarrow \qquad
+0 \le \text{Fläche} \le 2 \pi r^2
 \]
 
 Berechnen wir den maximalen sphärischen Exzess bei allgemeinen Kugeldreiecken würde dieser maximal $720^{\circ}$ annehmen können.
 \[
-\begin{aligned}
 0^{\circ} \le \epsilon \le 720^{\circ}
-&
-&\text{oder}
-&
-&\pi \le \epsilon \le 4\pi \\
-&\Rightarrow
-& 0 \le A_{\triangle{ ABC }} \le 4 \pi r^2
-\end{aligned}
+\qquad \text{oder} \qquad
+\pi \le \epsilon \le 4\pi
+\qquad \Rightarrow \qquad
+0 \le A_{\triangle{ ABC }} \le 4 \pi r^2
 \]
-
 
 
 \subsection{Grenzfall - Satz von Legendre}
@@ -324,30 +298,29 @@ Winkel des sphärischen Dreiecks nimmt. \\
 Durch den \textit{Satz von Legendre} lässt sich ein Zusammenhang zwischen der Trigonometrie der Ebene und jener auf der Kugel herstellen.
 
 
-\section{Sphärisch Analoge Winkelfunktionen}
+\section{Sphärisch analoge Winkelfunktionen}
 Euklid von Alexandria\footnote{%
-Euklid war ein griechischer Mathematiker. Er lebte wahrscheinlich 3 Jahrhunderte vor Christus. In seinem berühmtesten Werk \textit{Elemente} fasst er die Arithmetik und Geometrie seiner Zeit zusammen. Sein Werk \textit{Elemente} war 2000 Jahre lang als Lehrbuch in Gebrauch und war bis Mitte des 19. Jahrhunderts nach der Bibel das weit verbreitetste Buch der Weltliteratur.}  beschrieb die Grundbegriffe der Ebenen Geometrie mittels Punkt, Gerade, Ebene, Winkel und Dreieck. Ebendiese Dreiecke lassen sich mithilfe der ebenen Trigonometrie beschreiben. Dabei gelten die uns bekannten trigonometrischen Winkelfunktionen:
+Euklid war ein griechischer Mathematiker. Er lebte wahrscheinlich 3 Jahrhunderte vor Christus. In seinem berühmtesten Werk \textit{Elemente} fasst er die Arithmetik und Geometrie seiner Zeit zusammen. Sein Werk \textit{Elemente} war 2000 Jahre lang als Lehrbuch in Gebrauch und war bis Mitte des 19. Jahrhunderts nach der Bibel das weit verbreitetste Buch der Weltliteratur.}  beschrieb die Grundbegriffe der Ebenen Geometrie mittels Punkt, Gerade, Ebene, Winkel und Dreieck. Ebendiese Dreiecke lassen sich mithilfe der ebenen Trigonometrie beschreiben. Dabei gelten die uns bekannten trigonometrischen Winkelsätze.
+Der Sinussatz ist nichts anderes als der Strahlensatz des ebenen Dreiecks:
 
-Der Sinussatz,
+\begin{satz}
+Das Verhältnis der Längen zweier Seiten ist gleich dem Verhältnis der Sinuswerte der gegenüberliegenden Winkel:
 \begin{align*}
 \frac{ a }{\sin(\alpha) } &= \frac{ b }{\sin(\beta)} = \frac{ c }{\sin(\gamma)}
 \end{align*}
-welcher nichts anderes ist, als der Strahlensatz des ebenen Dreiecks. 
-
-\begin{satz}\textit{Das Verhältnis der Längen zweier Seiten ist gleich dem Verhältnis der Sinuswerte der gegenüberliegenden Winkel.}
 \label{skript:kugel:satz:SinussatzEbene}
 \index{Sinussatz Ebene}
 \end{satz}
 
-Der Kosinussatz,
+Der Kosinussatz stellt Beziehungen zwischen den Seiten und den Kosinuswerten der Winkel im Dreieck der Ebene her.
+
+\begin{satz}
+Die Beziehung zwischen den drei Seiten und dem Kosinus eines der Winkel.
 \begin{align*}
 c^{ 2 } &= a^{ 2 } + b^{ 2 } - 2ab\cdot \cos(\gamma)\\
 b^{ 2 } &= a^{ 2 } + c^{ 2 } - 2ab\cdot \cos(\beta)\\
 a^{ 2 } &= b^{ 2 } + c^{ 2 } - 2ab\cdot \cos(\alpha)
 \end{align*}
-welcher Beziehungen zwischen den Seiten und den Kosinuswerten der Winkel im Dreieck der Ebene aufstellt.
-
-\begin{satz}\textit{Die Beziehung zwischen den drei Seiten und dem Kosinus eines der Winkel.}
 \label{skript:kugel:satz:KosinussatzEbene}
 \index{Kosinussatz Ebene}
 \end{satz}
@@ -367,53 +340,50 @@ Wir betrachten das folgende sphärische Dreieck auf einem Teilstück der Kugelob
 
 Um den Sphärischen Sinussatz zu beweisen, möchten wir die Höhe $h_{A}$ auf zwei verschiedene Arten schreiben
 \begin{align}
-h_{A} = \overline{AF} &= \overline{AD} \cdot \sin(\beta) = r \cdot \sin(c) \cdot \sin(\beta)  
+h_{A} = \overline{AF} &= \overline{AD} \cdot \sin(\beta) = r \cdot \sin(c) \cdot \sin(\beta).  
 \label {V1}
 \end{align}
-
 Aus einer anderen Sichtweise lässt sich die Strecke $h_{A}$ wie folgt schreiben
 \begin{align}
-h_{A} = r \cdot \sin(b) \cdot \sin(\gamma)  
+h_{A} = r \cdot \sin(b) \cdot \sin(\gamma).  
 \label {V2}
 \end{align}
-
-Durch gleichsetzen der Ausdrücke \eqref{V1} und \eqref{V2}, eliminieren wir den Radius $r$ und es entsteht der Ausdruck
+Durch Gleichsetzen der Ausdrücke \eqref{V1} und \eqref{V2} eliminieren wir den Radius $r$ und es entsteht der Ausdruck
 \begin{align*}
 \sin(c) \cdot \sin(\beta) &= \sin(b) \cdot \sin(\gamma) \\
 \Rightarrow \quad \quad
-\frac{\sin (b)}{\sin (c)} &= \frac{\sin (\beta)}{\sin (\gamma)}
+\frac{\sin (b)}{\sin (c)} &= \frac{\sin (\beta)}{\sin (\gamma)}.
 \end{align*}
-
 Analog dazu könnte man auch die Höhe $h_{B}$ nehmen und würde erhalten
 \begin{align*}
 \sin(c) \cdot \sin(\alpha) &= \sin(a) \cdot \sin(\gamma) \\
 \Rightarrow \quad \quad
-\frac{\sin (a)}{\sin (c)} &= \frac{\sin (\alpha)}{\sin (\gamma)}
+\frac{\sin (a)}{\sin (c)} &= \frac{\sin (\alpha)}{\sin (\gamma)}.
 \end{align*}
+Aus diesen Erkenntnissen lässt sich der Sinussatz zusammenfassen:
 
-Aus diesen Erkenntnissen lässt sich der Sinussatz zusammenfassen
-\begin{satz}\textit{Die Sinuswerte der Seiten, verhalten sich wie die Sinuswerte der gegenüberliegenden Winkel.}
-\label{skript:kugel:satz:Sinussatz}
-\index{Sinussatz}
-\end{satz}
-
+\begin{satz}
+Die Sinuswerte der Seiten, verhalten sich wie die Sinuswerte der gegenüberliegenden Winkel.
 \begin{align*}
 \sin a : \sin b : \sin c &= \sin \alpha : \sin \beta : \sin \gamma \\
 \Rightarrow \quad \quad
-\frac{\sin \alpha} {\sin a} &= \frac{\sin \beta} {\sin b} = \frac{\sin \gamma} {\sin c}
+\frac{\sin \alpha} {\sin a} &= \frac{\sin \beta} {\sin b} = \frac{\sin \gamma} {\sin c}.
 \end{align*} 
-
-Es fällt auf, dass der sphärische Sinussatz sehr ähnlich ist, zu diesem in der Ebenen Trigonometrie.
-Der Grund weshalb man auch bei den Seiten den Sinuswert nehmen muss, ist folgender:
+\label{skript:kugel:satz:Sinussatz}
+\index{Sinussatz}
+\end{satz}
 
 %BILD SINUSSATZ BEWEIS
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{kugel/SinussatzB.jpg}
 \caption{Sobald die Seite $a$ ihr Maximum erreicht, sinkt der Betrag der Seite wieder bis auf 0. Aus diesem Grund ist sowohl beim Winkel, als auch bei der Seite die Verwendung des Sinus vonnöten.}
+\label{Beweissinus}
 \end{figure}
 
-Das Verhältnis zwischen den Seiten und Winkeln wird nicht unendlich lange grösser je weiter man sich vom gesuchten Winkel entfernt. Auf der Kugel steigt der Wert nur bis in die Mitte des Zweiecks an. Dort angelangt sinkt das Verhältnis wieder solange, bis es beim Eckpunkt $A’$ angekommen ist.
+Es fällt auf, dass der sphärische Sinussatz sehr ähnlich ist, zu diesem in der ebenen Trigonometrie.
+Der Grund weshalb man auch bei den Seiten den Sinuswert nehmen muss, ist folgender:
+Das Verhältnis zwischen den Seiten und Winkeln wird nicht unendlich lange grösser je weiter man sich vom gesuchten Winkel entfernt. Auf der Kugel steigt der Wert nur bis in die Mitte des Zweiecks an (Abbildung \ref{Beweissinus}). Dort angelangt sinkt das Verhältnis wieder solange, bis es beim Eckpunkt $A’$ angekommen ist.
 
 
 \subsection{Seitenkosinussatz}
@@ -435,12 +405,11 @@ Die Strecken lassen sich nach den bekannten Regeln der Trigonometrie beschreiben
 \end{align*} 
 
 Um die Beziehung zwischen $a,b,c$ und $\gamma$ zu beweisen, berechnen wir die Strecke $\overline{A’B’}$ auf zwei verschiedene Arten.
-Als erstes mithilfe des Kosinussatzes im Dreieck $\triangle{A’B’C’}$. (Siehe Formel \eqref{V3}).
-
+Als erstes mithilfe des Kosinussatzes im Dreieck $\triangle{A’B’C’}$:
 \begin{align}
 \overline{A'B'}^{ 2 } &= \overline{ C'B' }^{ 2 } + \overline{ C'A' }^{ 2 } - 2 \cdot \overline{C'B'} \cdot \overline{ C'A' } \cdot \cos(\gamma) \nonumber \\ 
 \Rightarrow \quad \quad
-\overline{A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(\tan^{ 2 }(a) + \tan^{ 2 }(b)\right) - 2\cdot \tan(a) \cdot \tan(b) \cdot \cos(\gamma)\right) 
+\overline{A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(\tan^{ 2 }(a) + \tan^{ 2 }(b)\right) - 2\cdot \tan(a) \cdot \tan(b) \cdot \cos(\gamma)\right).
 \label {V3} 
 \end{align}
 
@@ -450,44 +419,42 @@ Ebenso kann man die Strecke $\overline{A’B’}$ mithilfe des Kosinussatzes im 
 \end{align*}
 \begin{align}
 \Rightarrow \quad \quad
-\overline{A'B'}^{ 2 } &= \left(\frac{ d }{\cos(a) }  \right)^{ 2 } + \left(\frac{ d }{\cos(b)}  \right)^{ 2 } - 2 \cdot \frac{ d }{\cos(a)} \cdot \frac{ d }{\cos(b)} \cdot \cos(c) 
+\overline{A'B'}^{ 2 } &= \left(\frac{ d }{\cos(a) }  \right)^{ 2 } + \left(\frac{ d }{\cos(b)}  \right)^{ 2 } - 2 \cdot \frac{ d }{\cos(a)} \cdot \frac{ d }{\cos(b)} \cdot \cos(c).
 \label{V4}
 \end{align}
-
 Durch die Beziehung $\frac{1}{\cos^{2}(x)}=\tan^{2}(x)+1$ wird \eqref{V4} zu 
 \begin{align}
-\overline{ A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(\tan^{ 2 }(a) + 1\right) + \left(\tan^{ 2 }(b) + 1\right) - \left(2 \cdot \frac{\cos©}{\cos(a) \cdot \cos(b)}\right)\right)
+\overline{ A'B'}^{ 2 } &= d^{ 2 } \cdot \left(\left(\tan^{ 2 }(a) + 1\right) + \left(\tan^{ 2 }(b) + 1\right) - \left(2 \cdot \frac{\cos(c)}{\cos(a) \cdot \cos(b)}\right)\right).
 \label {V6}
 \end{align}
 
 Nach Gleichsetzen der beiden Gleichungen \eqref{V3} und \eqref{V6} erhalten wir den vereinfachten Ausdruck 
-
 \begin{align*}
--2 \cdot \tan(a) \cdot \tan(b) \cdot cos(\gamma) &= -2+2 \cdot \frac{\cos©}{\cos(a) \cdot \cos(b)}
+-2 \cdot \tan(a) \cdot \tan(b) \cdot cos(\gamma) &= -2+2 \cdot \frac{\cos©}{\cos(a) \cdot \cos(b)}.
 \end{align*}
 
 
-Umgeformt und unter Einhaltung der Distribution $\tan(a)=\frac{\sin(a)}{\cos(a)}$ (und der Multiplikation mit $\frac{1}{2}$) ergibt sich
+Umgeformt und unter Einhaltung der Definition $\tan(a)=\frac{\sin(a)}{\cos(a)}$ (und der Multiplikation mit $\frac{1}{2}$) ergibt sich
 \begin{align*}
-\frac{\sin(a)}{\cos(a)} \cdot \frac{\sin(b)}{\cos(b)} \cdot \cos(\gamma) &= -1 + \frac{\cos(c)}{\cos(a) \cdot \cos(b)}
+\frac{\sin(a)}{\cos(a)} \cdot \frac{\sin(b)}{\cos(b)} \cdot \cos(\gamma) &= -1 + \frac{\cos(c)}{\cos(a) \cdot \cos(b)}.
 \end{align*}
-
-Durch vereinfachen erhalten wir den Seitenkosinussatz der Seite $c$
+Durch Vereinfachen erhalten wir den Seitenkosinussatz der Seite $c$
 \begin{align*}
-\cos(a) \cdot \cos(b) + \sin(a) \cdot \sin(b) \cdot \cos(\gamma) = \cos(c)
+\cos(a) \cdot \cos(b) + \sin(a) \cdot \sin(b) \cdot \cos(\gamma) = \cos(c) .
 \end{align*}
 
 Um die Sätze für die Seiten $a$ und $b$ zu erhalten, vertauschen wir die Variablen zyklisch und erhalten den Seitenkosinussatz dieser Seiten.
 
-\begin{satz}\textit{Im sphärischen Dreieck ist der Kosinus einer Seite gleich der Summe der Kosinusprodukte der beiden anderen Seiten und dem mit dem Kosinus des eingeschlossenen Winkels multiplizierten Sinusprodukt dieser Seiten.}
-\label{skript:kugel:satz:Seitenkosinussatz}
-\index{Seitenkosinussatz}
-\end{satz}
+\begin{satz}Im sphärischen Dreieck ist der Kosinus einer Seite gleich der Summe der Kosinusprodukte der beiden anderen Seiten und dem mit dem Kosinus des eingeschlossenen Winkels multiplizierten Sinusprodukt dieser Seiten.
 \begin{align*}
 {\cos a} &= {\cos b} \cdot {\cos c} + {\sin b} \cdot {\sin c} \cdot {\cos \alpha}\\
 {\cos b} &= {\cos c} \cdot {\cos a} + {\sin c} \cdot {\sin a} \cdot {\cos \beta}\\
 {\cos c} &= {\cos a} \cdot {\cos b} + {\sin a} \cdot {\sin b} \cdot {\cos \gamma}\\
 \end{align*}
+\label{skript:kugel:satz:Seitenkosinussatz}
+\index{Seitenkosinussatz}
+\end{satz}
+
 Mithilfe des Seitenkosinussatzes lassen sich die Dreiecksseiten durch den jeweiligen gegenüberliegenden Winkel berechnen.
 
 
@@ -507,38 +474,36 @@ Wenden wir den sphärischen Seitenkosinussatz auf dem Polardreieck an, erhalten 
 
 Durch die Beziehung zwischen dem Polardreieck und dem sphärischen Dreieck, lässt sich der Seitenkosinussatz folgendermassen umformen
 \begin{align*}
-{\cos (\pi-\alpha)} &= {\cos (\pi-\beta)} \cdot {\cos (\pi-\gamma)} + {\sin(\pi-\beta)} \cdot {\sin(\pi-\gamma)} \cdot {\cos (\pi-a)}
+{\cos (\pi-\alpha)} &= {\cos (\pi-\beta)} \cdot {\cos (\pi-\gamma)} + {\sin(\pi-\beta)} \cdot {\sin(\pi-\gamma)} \cdot {\cos (\pi-a)}.
 \end{align*}
-
 Durch die Quadrantenbeziehung der trigonometrischen Funktionen im Einheitskreis folgt
 \begin{align*}
 \sin (\pi-\alpha) &= \sin \alpha\\
-\cos (\pi-\alpha) &= - \cos \alpha\\
+\cos (\pi-\alpha) &= - \cos \alpha.
 \end{align*}
-
 Dies ergibt
 \begin{align*}
-{-\cos \alpha} &= {(-\cos \beta)} \cdot {(-\cos \gamma)} + {\sin \beta} \cdot {\sin \gamma} \cdot {(-\cos a)}
+{-\cos \alpha} &= {(-\cos \beta)} \cdot {(-\cos \gamma)} + {\sin \beta} \cdot {\sin \gamma} \cdot {(-\cos a)}.
 \end{align*}
-
 Mittels Vertauschen der Vorzeichen, erhalten wir den Winkelkosinussatz
 
-\begin{satz}\textit{Im sphärischen Dreieck ist der Kosinus eines Winkels gleich der Summe aus dem negativen Produkt der Kosinusse der beiden anderen Winkel und dem mit dem Kosinus der gegenüberliegenden Seite multiplizierten Sinusprodukt der beiden anderen Winkel.}
-\label{skript:kugel:satz:Winkelkosinussatz}
-\index{Winkelkosinussatz}
-\end{satz}
+\begin{satz}Im sphärischen Dreieck ist der Kosinus eines Winkels gleich der Summe aus dem negativen Produkt der Kosinusse der beiden anderen Winkel und dem mit dem Kosinus der gegenüberliegenden Seite multiplizierten Sinusprodukt der beiden anderen Winkel.
 \begin{align*}
 {\cos \alpha} &= {-\cos \beta} \cdot {\cos \gamma} + {\sin \beta} \cdot {\sin \gamma} \cdot {\cos a}\\
 {\cos \beta} &= {-\cos \gamma} \cdot {\cos \alpha} + {\sin \gamma} \cdot {\sin \alpha} \cdot {\cos b}\\
 {\cos \gamma} &= {-\cos \alpha} \cdot {\cos \beta} + {\sin \alpha} \cdot {\sin \beta} \cdot {\cos c}\\
 \end{align*}
+\label{skript:kugel:satz:Winkelkosinussatz}
+\index{Winkelkosinussatz}
+\end{satz}
+
 Auf der Kugel können wir demnach zwei Kosinussätze anwenden und nicht nur einen wie in der Ebene. Dies ist darauf zurückzuführen, dass wir uns nicht damit behelfen können, eine definierte Innenwinkelsumme von $180^{\circ}$ vorzufinden. Doch mit beiden Sätzen können wir alle Unbekannten auf der Kugel herausfinden.
 
 
 
 \section{Dualität auf der Kugel}
 Die Herleitung des Winkelkosinussatzes illustriert die Idee der Dualität in der Geometrie. In der projektiven Geometrie lassen sich Sätze dadurch dualisieren, dass die Begriffe Punkt und Geraden vertauscht werden. Das Polardreieck präzisiert dies für die sphärische Geometrie.
-Daher lässt sich der Winkelkosinussatz auch durch zyklische Vertauschung in den Seitenkosinussatz umwandeln. Dieser Vorgang ist reversibel und zeigt ebenfalls die Dualität der Kugel auf.
+Daher lässt sich der Winkelkosinussatz durch Übergang zum Polardreieck in den Seitenkosinussatz umwandeln. Dieser Vorgang ist umkehrbar und zeigt ebenfalls die Dualität der Kugel auf.
 
 \begin{satz}\textit{Die sphärische Geometrie ist eine projektive Geometrie. In der projektiven Geometrie lassen sich alle Sätze dualisieren. Sprich die Begriffe Punkt und Geraden werden vertauscht; demzufolge auch Längen und Winkel.}
 \label{skript:kugel:satz:Dualitaet}
@@ -566,14 +531,13 @@ Dieser kleine Unterschied zeigt die Notwendigkeit auf, die Position und den Kurs
 
 \subsection{Geografische Koordinaten}
 Bereits der griechische Astronom Claudius Ptolemäus verwendete in seiner \textit{Geographike Hyphegesis} ein Gradnetz aus Längen- und Breitengraden. Doch sein Werk  blieb lange verschollen. Im Mittelalter beschäftigten sich die Gelehrten lieber mit dem Jenseits als mit dem Diesseits und vergassen so einige Entdeckungen der Antike.
-Ptolemäus Vermächtnis wurde erst anfangs des 15. Jahrhunderts wiederentdeckt und in die Lateinische Sprache übersetzt. Das Ptolemäische Gradsystem setzte sich allmählich durch.
+Ptolemäus Vermächtnis wurde erst anfangs des 15. Jahrhunderts wiederentdeckt und in die lateinische Sprache übersetzt. Das ptolemäische Gradsystem setzte sich allmählich durch.
 Mit dem Vertrag von Tordesillas 1494 gewann sein Gradnetz an politischer Bedeutung und wurde zum Standard Gradsystem. Der dabei verwendete Nullmeridian (Ferro-Meridian\footnote{%
 Die Insel Ferro liegt in den Kanaren und war in der Antike der damals westlichste bekannte Punkt der Erde. Dieser Referenzpunkt bildete den Ferro-Meridian. Seine Festlegung beruht auf Claudio Ptolemäus.}) wurde bis ins 19. Jahrhundert verwendet, als er dann im Jahr 1884 durch den noch heute gültigen Greenwich Meridian\footnote{%
 Der Greenwich Meridian war bereits seit 1738 in Grossbritannien in Gebrauch. Er führt durch das \textit{Royal Greenwich Observatory}, welches im Bezirk \textit{Royal Borough of Greenwich}, südöstlich von London liegt.}
 ersetzt wurde.
 Zur geografischen Ortsbestimmung und damit der Festlegung seines eigenen Standortes auf einer Kugel sind Längen- und Breitengrad nötig. 
 Die Koordinaten werden traditionell im Sexagesimalsystem angegeben und setzen sich aus folgenden Komponenten zusammen:
-
 \begin{center}
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ccc}
@@ -582,9 +546,8 @@ Grad $(^{\circ})$ & Bogenminuten (`) & Bogensekunden (``)
 \end{center}
 
 Die Erdoberfläche wurde in je 360 Breiten- und Längengrade eingeteilt. Die Breitengrade haben zueinander einen Abstand von 111.31 km, dies entspricht auch dem Abstand der Längengrade am Äquator, welcher mit zunehmender Nähe zu den Polen abnimmt.
-\begin{table}[htbp]
 \begin{center}
-\renewcommand{\arraystretch}{2}
+\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ccc}
 \textbf{Gradmass} & \textbf{Umrechnung in Zeitmass} & \textbf{Umrechnung in Kilometer}  \\
 $1^{\circ}$ & 4 Minuten & 111.31km \\
@@ -593,7 +556,6 @@ $0.004166^{\circ}$ & 1 Sekunde & 463m
 \label {V7}
 \end{tabular}
 \end{center}
-\end{table}
  
 Eine ganze Erdumdrehung beinhaltet $360 ^{\circ}$, was 1440 Minuten entspricht. Umgerechnet in Kilometer erhält man bei einer Umdrehung um den Äquator genau den Erdumfang von 40’071 km.
 Nach einer vollen Umdrehung der Erde stellt sie sich wieder in ihrer Ursprungsposition ein und ein neuer Tag beginnt. Dies zeigt, dass die Koordinaten in direktem Zusammenhang mit der Zeit stehen. Diese Erkenntnis wird später für die Navigation auf See von grosser Bedeutung sein.
@@ -651,7 +613,7 @@ Der Sextant ist ein nautisches Messinstrument zur Winkelmessung von Horizont und
 \caption{Mit dem Sextant wird gleichzeitig der Horizont und die Sonne (Fixstern) angepeilt. Mit dem Winkel zwischen Horizont und Gestirn lässt sich dann der Breitengrad ermitteln.}
 \end{figure}
 
-Wenn man sich auf der Nordhalbkugel befindet, ist der Polarstern ein sehr guter Fixstern. Befindet sich ein Schiff nun sehr nahe am Nordpol, steht dieser nahezu senkrecht am Himmels bei $90^{\circ}$. Würde es sich aber nahe des Äquators befinden, erscheint dieser am Horizont bei $0^{\circ}$ und wäre je nachdem nicht mehr zu sehen.
+Wenn man sich auf der Nordhalbkugel befindet, ist der Polarstern ein für die Navigation gut geeigneter Fixstern. Befindet sich ein Schiff nun sehr nahe am Nordpol, steht dieser nahezu senkrecht am Himmels bei $90^{\circ}$. Würde es sich aber nahe des Äquators befinden, erscheint dieser am Horizont bei $0^{\circ}$ und wäre je nachdem nicht mehr zu sehen.
 
 
 \subsection{Korrekturbeiwert}
@@ -692,15 +654,15 @@ Die geografische Länge $\lambda$ ist der Winkel an der Erdachse zum Nullmeridia
 \end{figure}
 
 \subsection{Navigation mit den Längengraden}
-Die geografische Länge lässt sich nicht so einfach bestimmen wie deren Breite.
+Die geografische Länge eines Punktes lässt sich nicht so einfach bestimmen wie seine Breite.
 Für die Berechnung auf See wird eine Referenzzeit eines Ortes mit bekannter Länge benötigt.
 In der Zeit der Entdecker im 15. Jahrhundert gab es noch keine mechanischen Uhren. Die Sonnenuhr war zudem ungeeignet, da diese nur die Tageszeit am Standort mass und nicht die am Referenzort selbst.
 
 Die erste Pendeluhr wurde Mitte des 17. Jahrhunderts erfunden, was in der Schifffahrt aber auch nicht die Lösung brachte. Pendeluhren auf einem Schiff sind ungeeignet, da das Pendel mit dem Wellengang aus dem Takt gebracht wird und somit die Uhr falsch geht.
-Zu ungenau und gegen äussere Erschütterungen sehr empfindlich waren später die federgetriebene Uhren und die Unruh. Die verschiedenen Klimazonen, welche mit dem Schiff durchquert wurden, stellten ebenfalls ein grosses Problem dar. Das Metall zog sich fest zusammen oder dehnte sich aus, was dazu führte, dass die Uhr unregelmässig lief.
+Zu ungenau und gegen äussere Erschütterungen sehr empfindlich waren später die federgetriebene Uhren mit Unruh. Die verschiedenen Klimazonen, welche mit dem Schiff durchquert wurden, stellten ebenfalls ein grosses Problem dar. Das Metall zog sich zusammen oder dehnte sich aus, was dazu führte, dass die Uhr unregelmässig lief.
 
 \subsection{Das Längenproblem}
-Das sogenannte „Längenproblem“ stellte nicht nur in der Navigation auf See ein Problem dar, auch die Wirtschaft hatte darunter zu leiden.Die Schiffe mussten bis zur gewünschten geografischen Breite navigieren und segelten dann dem Breitengrad entlang, um auch wirklich an der gewünschten Position anzukommen. Dabei waren die Schiffe oft wochenlang unterwegs und segelten die „Breiten ab“, um die gewünschten Positionen zu erreichen. Dies führte zu erheblichen Zeitverlusten und viel längeren Reisezeiten.
+Das sogenannte „Längenproblem“ stellte nicht nur in der Navigation auf See ein Problem dar, auch die Wirtschaft hatte darunter zu leiden. Die Schiffe mussten bis zur gewünschten geografischen Breite navigieren und segelten dann dem Breitengrad entlang, um auch wirklich an der gewünschten Position anzukommen. Dabei waren die Schiffe oft wochenlang unterwegs und segelten die „Breiten ab“, um die gewünschten Positionen zu erreichen. Dies führte zu erheblichen Zeitverlusten und viel längeren Reisezeiten.
 
 
 %BREITENSEGELN
@@ -718,9 +680,8 @@ Bereits um 1600 hatte der König von Spanien ein Preisgeld ausgeschrieben für d
 Nach einem tragischen Unglück im Jahr 1707, bei dem der siegreiche Admiral Sir Cloudesley und seine 1’450 Mann ihr Leben liessen, indem sie auf die Scilly-Inseln kurz vor Land’s End aufliefen und dabei die 21 Schiffe sanken, rückte das Problem wieder in den Vordergrund.
 Sieben Jahre später und mithilfe einer Petition von William Whiston und Humphry Ditton, welche von Sir Isaac Newton und Edmond Halley unterstützt wurde, reagierte das britische Parlament.
 Es schrieb folgende Preisgelder für eine praktische und brauchbare Lösung aus:
-
 \begin{center}
-\renewcommand{\arraystretch}{2}
+\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ccc}
 \textbf{Preissumme £} & \textbf{Max. Längenfehler in Grad} & \textbf{Max. Längenfehler in km am Äquator}  \\
 20’000£ & max. $\frac{1}{2}^{\circ}$ & 55.5 km \\
@@ -739,7 +700,7 @@ Damit die Lösungsvorschläge kontrolliert und verwaltet werden konnten, wurde d
 
 
 \subsection{John Harrison}
-Harrison brachte sich das Handwerk des Uhrmachers selbst bei. Im Jahr 1713 und im Alter von 20 Jahren konstruierte er seine erste Pendeluhr. Später folgten weitere Pendel- und Standuhren. Durch seine Erfindungen der Grasshopper-Hemmung und des Rostpendels erreichten seine Uhren eine aussergewöhnliche Genauigkeit für die damalige Zeit. Die Abweichung pro Monat betrug dabei nur etwa eine Sekunde.
+John Harrison brachte sich das Handwerk des Uhrmachers selbst bei. Im Jahr 1713 und im Alter von 20 Jahren konstruierte er seine erste Pendeluhr. Später folgten weitere Pendel- und Standuhren. Durch seine Erfindungen der Grasshopper-Hemmung und des Rostpendels erreichten seine Uhren eine aussergewöhnliche Genauigkeit für die damalige Zeit. Die Abweichung pro Monat betrug dabei nur etwa eine Sekunde.
 
 %JOHN
 \begin{figure}[htbp]
@@ -773,7 +734,7 @@ Harrison erhielt vom britischen Parlament ein Preisgeld von 10’000£, um eine 
 Der bekannte Londoner Uhrmacher Larcum Kendall fertigte danach eine Kopie der H4 an und zeigte somit, dass die Uhr den Anforderungen entsprach.
 Das Geld blieb für Harrison aber weiterhin aus. Erst nachdem der britische König Georg III dem Parlament angedroht hatte, persönlich zu erscheinen und Harrison das Geld zuzusprechen, schrieben diese ihm 3 Jahre vor seinem Ableben weitere 8750£ zu.
 
-8 Monate vor seinem Tod und der Rückkehr der K1 (Kopie der H4) ging die Vision Harrisons in Erfüllung. Es war nun definitiv bewiesen, dass seine Uhr auf dem offenen Meer zur Bestimmung des Längengrades taugte. James Cook, der berühmte britische Seefahrer und Entdecker, welcher die Uhr K1 auf See mitnehmen und testen durfte, nannte die Uhr liebevoll seinen \textit{nie versagenden Führer}.
+Acht Monate vor seinem Tod und der Rückkehr der K1 (Kopie der H4) ging die Vision Harrisons in Erfüllung. Es war nun definitiv bewiesen, dass seine Uhr auf dem offenen Meer zur Bestimmung des Längengrades taugte. James Cook, der berühmte britische Seefahrer und Entdecker, welcher die Uhr K1 auf See mitnehmen und testen durfte, nannte die Uhr liebevoll seinen \textit{nie versagenden Führer}.
 Auf der Grundlage Harrisons Uhr H4 wurden die Schiffschronometer noch lange Zeit gebaut.
 
 
@@ -799,10 +760,10 @@ Mit ihnen konnte man die geografische Länge bis auf 5 Bogensekunden genau besti
 Eine Lösung für das Längenproblem war gefunden. Die Publikation seiner Mondtafeln fand 1767 unter dem Titel \textit{Theoria lunae juxta systema Newtonianum} in London statt, 5 Jahre nach Mayers Tod. 
 Seine Witwe schickte die publizierten Mondkarten über die Universität Göttingen nach Grossbritannien. Sie erhielt von der britischen Regierung eine Prämie in der Höhe von £ 3’000.-.
 
-Im Jahr 1935 wurde ein Krater auf der westlichen Mondvorderseite nach dem deutschen Astronomen benannt. Er trägt fortan den Namen T.Mayer.
+Im Jahr 1935 wurde ein Krater auf der westlichen Mondvorderseite nach dem deutschen Astronomen benannt. Er trägt fortan den Namen T.~Mayer.
 
 \section{Nautisches Dreieck (Astronomisches Dreieck)}
-Um seine Koordinaten bestimmen zu können, genauer gesagt um den Längengrad zu ermitteln, ohne moderne GPS-Geräte, ziehen wir ein altbewährtes Hilfsmittel aus der Seefahrt zu Hilfe - das Nautische Dreieck.
+Um seine Koordinaten bestimmen zu können, genauer um den Längengrad ohne moderne GPS-Geräte zu ermitteln, ziehen wir ein altbewährtes Hilfsmittel aus der Seefahrt zu Hilfe --- das Nautische Dreieck.
 
 Es dient zur Positionsbestimmung auf dem offenen Meer oder anderen Gebieten, in denen keine Orientierungspunkte wie Landzungen oder Gebirgsketten zu Hilfe genommen werden können.
 
@@ -825,54 +786,45 @@ Der Himmelsnordpol ist von einem Schiff aus nicht ersichtlich, da es sich um ein
 Dieses Kugeldreieck wird “nautisches Dreieck“ genannt und wird zur Navigation auf See und dem Bestimmen seiner Koordinaten verwendet.
 
 \subsection{Das Nautische Dreieck an der Himmelskugel}
-
-Das Nautische Dreieck hat folgende Dreiecksseiten, welche zu berechnen sind:
-
+%
 %Bestimmung Seiten
-\begin{figure}[htbp]
+\begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{kugel/Bestimmung.jpg}
 \caption{Das Nautische Dreieck an der Himmelskugel mit den zu ermittelnden Längen}
+\label{NautischeDreieck}
 \end{figure}
-
+%
+%
+Das Nautische Dreieck hat folgende Dreiecksseiten, welche zu berechnen sind:
 \begin{align*}
 \overline{ZS} = 90^{\circ} - h \quad \quad \quad \quad \quad \quad 
 \overline{NZ} = 90^{\circ} - \phi \\
 \overline{NS} = 90^{\circ} - \delta \quad \quad \quad \quad \quad \quad 
 \tau = t - e_\delta - \lambda 
 \end{align*}
+(Abbildung \ref{NautischeDreieck})
 
 \subsection{Bestimmung des Längengrades} \label{BestimmungL} 
 Zur Bestimmung des Längengrades verwenden wir den Seitenkosinussatz:
 \begin{align*}
-\cos(c) = \cos(a)\cos(b) + \sin(a)\sin(b)\cos(\gamma)
+\cos(c) = \cos(a)\cos(b) + \sin(a)\sin(b)\cos(\gamma).
 \end{align*}
-
 Auf unsere Seiten angewendet können wir einsetzen
-
 \begin{align*}
 \cos(\overline{ZS}) &= \cos(\overline{NZ}) \cos(\overline{NS}) + \sin(\overline{NZ}) \sin(\overline{NS}) \cos(\tau) \\
 \Rightarrow \quad \quad
-\cos(90^{\circ} - h) &= \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta) + \sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta) \cos(\tau)
+\cos(90^{\circ} - h) &= \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta) + \sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta) \cos(\tau).
 \end{align*}
-
 Nach dem uns unbekannten Winkel $\tau$ aufgelöst ergibt die Gleichung
 \begin{align*}
 \tau &= \arccos 
-\frac{ \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta) - \cos(90^{\circ} - h)} {\sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta)}
+\frac{ \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta) - \cos(90^{\circ} - h)} {\sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta)}.
 \end{align*}
-
 Der Winkel $\tau$ setzt sich aus folgenden Komponenten zusammen
 \begin{align*}
-\cos (\tau) &= \cos (t - e_\delta - \lambda) 
+\cos (\tau) &= \cos (t - e_\delta - \lambda).
 \end{align*}
-
-%BILD MIT UHR
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.4\textwidth]{kugel/Uhr.jpg}
-\caption{Illustrierter Zusammenhang mit der Zeit und dem Längengrad}
-\end{figure}
 
 Die zugehörigen bekannten Grössen sind:
 \begin{itemize}
@@ -883,27 +835,25 @@ Die zugehörigen bekannten Grössen sind:
 
 
 \subsection{Sternzeit}
-Für die Positionsbestimmung auf der Erde ist die Sonne nicht der beste Stern, welchen man auswählen kann. Sie ist nur am Tag zu sehen und man kann nur eine Messung durchführen, was zu einem relativ ungenauen Ergebnis führt. Zudem kann man die Messergebnisse nur verwenden, wenn die Sonne zu diesem Zeitpunkt im Zenit stand. Ansonsten ist das Messergebnis unbrauchbar. Aufgrund ihrer Grösse am Himmel ist es auch schwierig einen Punkt anzupeilen. Hinzukommt die Helligkeit der Sonne. Würde man sie direkt ansehen, führt das eher zu Blindheit als zu einem Messergebnis.
+Für die Positionsbestimmung auf der Erde ist die Sonne nicht der beste Stern, welchen man auswählen kann. Sie ist nur am Tag zu sehen und man kann nur eine Messung durchführen, was zu einem relativ ungenauen Ergebnis führt. Zudem kann man die Messergebnisse nur verwenden, wenn die Sonne zu diesem Zeitpunkt im Meridian stand. Ansonsten ist das Messergebnis unbrauchbar. Aufgrund ihrer Grösse am Himmel ist es auch schwierig einen Punkt anzupeilen. Hinzukommt die Helligkeit der Sonne. Würde man sie direkt ansehen, führt das eher zu Blindheit als zu einem Messergebnis.
 Nichts desto trotz haben die Menschen schon jeher Aufzeichnungen über die verschiedenen Sonnenstände an der Himmelskugel gemacht. Auch heute noch werden nautische Karten verwendet, um den genauen Sonnenstand zu ermitteln oder die Abweichung zu erhalten, welche von der nicht exakten elliptischen Erdumlaufbahn entsteht.
 
-Sterne eignen sich zur Bestimmung der Position dafür umso besser. Sie befinden sich immer am selben Ort und bewegen sich nicht. Zudem kann man mehrere Sterne messen, was zu einem genaueren Ergebnis führt. Da die Erdumdrehung nicht exakt 24 Stunden dauert, wird zwischen Sonnen- und Sternzeit unterschieden.
+Sterne eignen sich zur Bestimmung der Position dafür umso besser. Sie befinden sich immer am selben Ort und bewegen sich nicht. Zudem kann man mehrere Sterne messen, was zu einem genaueren Ergebnis führt. Da die Erdumdrehung nicht exakt 24 Stunden dauert, wird zwischen Sonnen- und Sternzeit unterschieden. Die Sonne braucht von einem zum nächsten Meridiandurchgang 24 Stunden, genauso lange wie unser Erdentag lang ist. Die Zeit zwischen zwei Meridiandurchgängen eines Sterns ist kürzer, daher ist ihr Tag auch kürzer. Der Sterntag ist somit etwa 4 Minuten kürzer als der Sonnentag. Dies lässt sich damit begründen, dass sich die Sonne ein wenig langsamer als die Sterne um die Erde bewegt. Dies lässt sich auf die Bewegung der Erde um die Sonne abstützen:
 \begin{center}
 \begin{tabular}{ll}
-Sonnenzeit & 24:00:00 Stunden \\
-Sternzeit & 23:56:04 Stunden
+Sonnenzeit: & 24:00:00 Stunden \\
+Sternzeit: & 23:56:04 Stunden
 \end{tabular}
 \end{center}
-
-Der Sterntag ist somit etwa 4 Minuten kürzer als der Sonnentag. Dies lässt sich damit begründen, dass sich die Sonne ein wenig langsamer als die Sterne um die Erde bewegt. Dies lässt sich auf die Bewegung der Erde um die Sonne abstützen.
 
 Wenn man nun Sterne zur Positionsbestimmung verwenden möchte, muss man die Sternzeit zuerst in die Sonnenzeit umrechnen, um auf das richtige Ergebnis zu kommen. Auf dieses Thema gehen wir in dieser Arbeit aber nicht genauer ein.
 
 
-\subsection{Breitengrad bekannt? - Breite nicht bekannt!}
+\subsection{Breitengrad bekannt? --- Breite nicht bekannt!}
 
 In den vorherigen Berechnungen sind wir immer davon ausgegangen, dass uns die Breite bekannt ist. Dies ist in Wirklichkeit aber nicht so, denn auf dem offenen Meer hat man keinerlei Anhaltspunkte, wo man sein könnte.
 
-Im Kapitel~\ref{BreitengradM} \nameref{BreitengradM} haben wir aber gesehen, dass sich der Breitengrad relativ einfach und ohne grossen Aufwand bestimmen lässt. Damit wir auf See eine verlässliche Messung erhalten, benötigen wir mindestens zwei Sterne. Mit diesen beiden Messungen kann man den Messfehler minimieren und den Standort relativ genau bestimmen.
+Im Abschnitt~\ref{BreitengradM} \nameref{BreitengradM} haben wir aber gesehen, dass sich der Breitengrad relativ einfach und ohne grossen Aufwand bestimmen lässt. Damit wir auf See eine verlässliche Messung erhalten, benötigen wir mindestens zwei Sterne. Mit diesen beiden Messungen kann man den Messfehler minimieren und den Standort relativ genau bestimmen.
 
 Da wir zwei Sterne haben, benötigen wir auch zwei Gleichungen mit zwei Unbekannten
 \begin{align*}
@@ -920,16 +870,26 @@ Diese Gleichungen lassen sich nur mit Hilfe eines Computers oder viel Geduld und
 
 
 \section{Übungsaufgabe}
-Um es den alten Seefahrern gleichzutun und seinen eigenen Standort herauszufinden, können Sie in der folgenden Übungsaufgabe in ihre Fussstapfen treten und die alten Berechnungsmethoden anwenden. \\
+Um es den alten Seefahrern gleichzutun und seinen eigenen Standort herauszufinden, können Sie in der folgenden Übungsaufgabe in ihre Fussstapfen treten und die alten Berechnungsmethoden anwenden.
+Mithilfe der Kulmination der Sonne das heisst, der Zeitpunkt wann die Sonne ihren höchsten Stand am Himmel erreicht kann ein Zusammenhang zwischen der Zeit und dem Längengrad hergestellt werden. Dies erlaubt einfache Navigationsaufgaben lösen zu können.
+\bigskip
+
+%BILD MIT UHR
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{kugel/Uhr.jpg}
+\caption{Illustrierter Zusammenhang zwischen Zeit und Längengrad}
+\label{Uhr}
+\end{figure}
 
 \textbf{1.} Erstellen Sie mit den vorhandenen Angaben das Nautische Dreieck und berechnen sie dessen Seiten und den Zeitwinkel $\tau$.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{llll}
-\textbf{Messwerte Sextant} & \textbf{Aufzeichnungen Nautisches Jahrbuch} \\
-Elevation der Sonne ($h$) $26^{\circ}$ $18^{\prime}$ $00.000^{\prime \prime}$ & Deklination der Sonne ($\delta$)  $17^{\circ}$ $16^{\prime}$ $01.200^{\prime \prime}$ \\
-Geografische Breite ($\phi$) $47^{\circ}$ $13^{\prime}$ $24.751^{\prime \prime}$ N
+\textbf{Messwerte Sextant} & &\textbf{Aufzeichnungen Nautisches Jahrbuch} \\
+Elevation der Sonne ($h$) &$26^{\circ}$ $18^{\prime}$ $00.000^{\prime \prime}$ & Deklination der Sonne ($\delta$)  \quad$17^{\circ}$ $16^{\prime}$ $01.200^{\prime \prime}$ \\
+Geografische Breite ($\phi$) &$47^{\circ}$ $13^{\prime}$ $24.751^{\prime \prime}$ N
 \end{tabular}
 \end{center}
 
@@ -940,23 +900,22 @@ Geografische Breite ($\phi$) $47^{\circ}$ $13^{\prime}$ $24.751^{\prime \prime}$
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ll}
 \textbf{Aufzeichnungen Nautisches Jahrbuch} \\
-Rektaszension der Sonne\footnote{%
-Winkel zwischen dem Frühlingspunkt und dem Stundenkreis (Längengrad)} ($e_\delta$) $03^{\circ}$ $03^{\prime}$ $14.400^{\prime \prime}$ \\
-Kulmination der Sonne\footnote{%
-Der Zeitpunkt wenn die Sonne ihren Höchsten Stand am Himme erreicht (im Zenit steht)} 13h 21min 18s \\
-Meridiandurchgang der Sonne 11h 56min 29s
+Rektaszension der Sonne\footnotemark ($e_\delta$) &$03^{\circ}$ $03^{\prime}$ $14.400^{\prime \prime}$ \\
+Kulmination der Sonne &13h 21min 18s \\
+Meridiandurchgang der Sonne &11h 56min 29s
 \end{tabular}
 \end{center}
+\footnotetext{%
+Winkel zwischen dem Frühlingspunkt und dem Stundenkreis (Längengrad).}
 
 Die Zeitdifferenz zur \textit{Coordinated Universal Time (UTC)} beträgt $\triangle{t}=01.00$h. \\
 
 \textit{Hinweis.} Beziehen Sie die Zeit für die Ermittlung des Längengrades mit ein und berücksichtigen Sie die Sommerzeit. \\
 
-\textit{Lösung.} \quad a) Der Lösungsansatz, verbirgt sich hinter dem Seitenkosinussatz welchen wir nach $\tau$ umformen
-
+\textit{Lösung.} \quad a) Der Lösungsansatz verbirgt sich hinter dem Seitenkosinussatz welchen wir nach $\tau$ umformen
 \begin{align*}
 \tau &= \arccos 
-\frac{ \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta) - \cos(90^{\circ} - h)} {\sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta)}
+\frac{ \cos(90^{\circ} - \phi) \cos(90^{\circ} - \delta) - \cos(90^{\circ} - h)} {\sin(90^{\circ} - \phi)\sin(90^{\circ} - \delta)}.
 \end{align*}
 Die gesuchten Werte können wir mithilfe der Informationen des Sextanten und des nautischen Jahrbuchs berechnen. Es ergeben sich die Werte
 \begin{align*}
@@ -964,15 +923,14 @@ Die gesuchten Werte können wir mithilfe der Informationen des Sextanten und des
 \\
 90^{\circ} - \delta &= 72.733^{\circ}
 \\
-90^{\circ} - h &= 63.700^{\circ}
+90^{\circ} - h &= 63.700^{\circ}.
 \end{align*}
-
 In die Formel eingesetzt erhalten wir
 \begin{align*}
 \tau = \arccos 
-\frac{ \cos(42.778^{\circ}) \cos(72.733^{\circ}) - \cos(63.700^{\circ})} {\sin(42.778^{\circ})\sin(72.733^{\circ})} \\
-\Rightarrow \quad \quad
-\tau = 110.319^{\circ} 
+\frac{ \cos(42.778^{\circ}) \cos(72.733^{\circ}) - \cos(63.700^{\circ})} {\sin(42.778^{\circ})\sin(72.733^{\circ})}
+\qquad \Rightarrow \qquad
+\tau = 110.319^{\circ}.
 \end{align*}
 
 b) \quad  Durch den direkten Zusammenhang der Koordinaten und dem Zeitmass lassen sich Gradmasse direkt in Stunden umrechnen
@@ -992,49 +950,41 @@ Befinden wir uns nicht am selben Standort, kulminiert die Sonne nicht genau um 1
 In unserem Fall, findet diese 13.355h nach Mitternacht statt. Für diese Zeitangabe benötigten die Seefahrer die Uhr, um eine exakte Zeitangabe zu treffen. Kleine Abweichungen in der Zeitmessung, hätten Kilometerweite Abweichungen in der Standortbestimmung zur Folge.
 Um die Zeitdifferenz zu berechnen, subtrahieren wir die Kulmination unseres Standortes mit dieser von London unseres Heimathafens und erhalten
 \begin{align*}
-13.355 \text{h} - 12.000 \text{h} &= 1.3555 \text{h}
+13.355 \text{h} - 12.000 \text{h} &= 1.3555 \text{h}.
 \end{align*}
 
-Um die Differenz der Zeit und somit die Zeitzonen der Erde noch miteinzubeziehen, müssen wir den Zeitunterschied zwischen den beiden Zeitzonen \textit{Coordinated Universal Time (UTC)} und \textit{Greenwich Mean Time (GMT)} miteinbeziehen. \\
+Um die Differenz der Zeit und somit die Zeitzonen der Erde noch miteinzubeziehen, müssen wir den Zeitunterschied zwischen den beiden Zeitzonen \textit{Coordinated Universal Time (UTC)} und \textit{Greenwich Mean Time (GMT)} miteinbeziehen.
+
 Achtung: Es ist Sommer, also sind es zwei Stunden Zeitunterschied, sprich $\triangle{t}=02.00$h
 \begin{align*}
-1.3555 \text{h} - 2.000 \text{h} &= -0.645 \text{h}
+1.3555 \text{h} - 2.000 \text{h} &= -0.645 \text{h}.
 \end{align*}
-
 Die Rektaszension der Sonne $e_\delta$ lässt sich aus dem Sternatlas herauslesen und ist in Stunden
 \begin{align*}
-03^{\circ} 03^{\prime} 14.400^{\prime \prime} &= 0.2036 \text{h}
+03^{\circ} 03' 14.400'' &= 0.2036 \text{h}.
 \end{align*}
 
 Der Meridiandurchgang eines Tages ist nicht immer gleich, sprich nicht jeder Sonnentag ist gleich lang. Dies muss berücksichtigt werden, da sich kleinste Abweichungen direkt auf die Genauigkeit des Längengrades niederschlagen.
 Die Zeitdifferenz berechnet sich aus dem vollen Sonnentag von 12.00h und dem aktuellen Meridiandurchgang
 \begin{align*}
-\text{12:00:00h - 11:56:29h = 0:03:31h = 0.0586}
-\Rightarrow \quad \quad
-00:03:31h = 0.0586
+\text{12:00:00h} - \text{11:56:29h} = \text{0:03:31h} = 0.0586
+\qquad \Rightarrow \qquad
+00:03:31h = 0.0586.
 \end{align*}
-
-
-
-
-
-
 Dieser Betrag dazu addiert ergibt
 \begin{align*}
--0.645 h + 0.0586 h = - 0.5863 h = \lambda
+-0.645 h + 0.0586 h = - 0.5863 h = \lambda.
 \end{align*}
-
 Umgerechnet in Bogenmass ergibt sich für $\lambda$
 \begin{align*}
-\lambda = - 8.7945^{\circ} = -8^{\circ} 47^{\prime} 40.2^{\prime \prime}
+\lambda = - 8.7945^{\circ} = -8^{\circ} 47' 40.2''.
 \end{align*}
-
-
+(Abbildung \ref{Uhr})
 
 Daraus ergeben sich folgende Koordinaten, mit welchen wir unseren Standort genau ermitteln können
 \begin{align*}
-8^{\circ}  47^{\prime}  40.2^{\prime \prime} \text{E} \\
-47^{\circ}  13^{\prime}  24.751^{\prime \prime} \text{N}
+8^{\circ}  47'  40.2'' \text{E} \\
+47^{\circ}  13'  24.751'' \text{N}
 \end{align*}
 
 
