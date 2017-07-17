@@ -16,3 +16,11 @@ x: [t, r, theta, phi];
 batchload("curvature.maxima");
 
 ratsimp(Einstein(1, 1));
+
+s: ratsimp(
+    sum(
+	sum(ginverse[i, j] * Einstein(i, j), i, 1, length(g)),
+        j, 1, length(g)
+    )
+);
+tex(s);
