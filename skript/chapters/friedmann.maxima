@@ -1,0 +1,18 @@
+/*
+ * Herleitung der Friedmann-Gleichungen
+ */
+
+/*
+ * Metrik
+ */
+g: matrix(
+    [ -c^2,      0,               0,                              0 ], 
+    [    0, a(t)^2,               0,                              0 ],
+    [    0,      0, a(t)^2 * S(r)^2,                              0 ],
+    [    0,      0,               0, a(t)^2 * S(r)^2 * sin(theta)^2 ]
+);
+x: [t, r, theta, phi];
+
+batchload("curvature.maxima");
+
+ratsimp(Einstein(1, 1));
