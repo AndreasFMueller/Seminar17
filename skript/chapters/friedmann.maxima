@@ -2,9 +2,6 @@
  * Herleitung der Friedmann-Gleichungen
  */
 
-/*
- * Metrik
- */
 g: matrix(
     [ -c^2,      0,               0,                              0 ], 
     [    0, a(t)^2,               0,                              0 ],
@@ -23,4 +20,3 @@ s: ratsimp(
         j, 1, length(g)
     )
 );
-tex(s);
