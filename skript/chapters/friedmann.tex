@@ -77,7 +77,9 @@ G_{00} = \frac{8\pi K}{c^4} T_{00}=\frac{8\pi K\varrho}{c^2}.
 \label{skript:friedmann:einstein}
 \end{equation}
 Wir berechnen den Einstein-Tensor der Robertson-Walker-Metrik
-wieder mit Maxima, und bekommen.
+mit dem folgenden Maxima-Pro\-gramm:
+\lstinputlisting[style=Maxima]{chapters/friedmann.maxima}
+Wir bekommen so
 %(%i5)                       ratsimp(Einstein(1, 1))
 %                                         2
 %         2     d         2      2       d              2  d         2    2
@@ -100,7 +102,7 @@ G_{00}
 3\frac{\dot a(t)^2}{a(t)^2}
 -\frac{2c^2}{a(t)^2}\frac{S''_\kappa(r)}{S_\kappa(r)}
 -\frac{c^2}{a(t)^2}
-\frac{S'_\kappa(r)^2-1}{S_\kappa(r)^2}
+\frac{S'_\kappa(r)^2-1}{S_\kappa(r)^2}.
 \end{equation}
 Die rechte Seite können wir mit Hilfe der im
 Kapitel~\ref{skript:chapter:kosmologie} bereitgestellten Formeln
@@ -158,6 +160,7 @@ T^\mu_\mu = \frac{8\pi K}{c^4}(-\varrho c^2 + 3p).
 \]
 Für die linke Seite muss die Verjüngung des Einstein-Tensors ausgerechnet
 werden.
+Das oben gezeigte Maxima-Programm führte dies bereits durch.
 %(%i16) s : ratsimp(sum(sum(ginverse     Einstein(i, j), i, 1, length(g)), j, 
 %                                   i, j
 %                                                                 1, length(g)))
@@ -202,8 +205,10 @@ G^\mu_\mu
 -\frac{6}{c^2}\biggl(\frac{\ddot a(t)}{a(t)} + \frac{\dot a(t)^2}{a(t)^2}\biggr)
 -\frac{6}{a(t)^2}\frac{\kappa }{R_c^2}
 &=
-\frac{8\pi K}{c^4}(-\varrho c^2 + 3p)
+\frac{8\pi K}{c^4}(-\varrho c^2 + 3p).
 \\
+\intertext{Wir dividieren durch $-6/c^2$ und bringen den Krümmungsterm
+auf die rechte Seite, so erhalten wir}
 \frac{\ddot a(t)}{a(t)} + \frac{\dot a(t)^2}{a(t)^2}
 &=
 -\frac{4\pi K}{3c^4}(-\varrho c^2 + 3p)
@@ -214,23 +219,25 @@ Den zweiten Term auf der linken Seite können wir mit Hilfe der Gleichung
 eliminieren und bekommen
 \begin{align}
 \frac{\ddot a(t)}{a(t)}
+-
+\frac{c^2\kappa }{a(t)^2R_c^2}
 &=
 -\frac{4\pi K}{3c^4}(-\varrho c^2 + 3p)
 -\frac{c^2}{a(t)^2}\frac{\kappa }{R_c^2}
--\frac{8\pi K}{3c^2}\varrho c^2
-+
-\frac{c^2\kappa }{a(t)^2R_c^2}
+-\frac{8\pi K}{3c^4}\varrho c^2
 \notag
 \\
 \Rightarrow\qquad
 \frac{\ddot a(t)}{a(t)}
 &=
+-\frac{4\pi K}{3c^4}(-\varrho c^2 + 3p + 2 \varrho c^2)
+=
 -\frac{4\pi K}{3c^4}(\varrho c^2 + 3p).
 \label{skript:friedmann:beschleunigung}
 \end{align}
 Dies ist die {\em Beschleunigungsgleichung}, sie ist eine
 Differentialgleichung zweiter Ordnung für den Skalenfaktor.
-\index{Beschleunigungsgleichung}
+\index{Beschleunigungsgleichung}%
 
 Man kann die linke Seite auch durch $H$ und seine erste Ableitung
 ausdrücken:
@@ -256,7 +263,7 @@ für $H$ schreiben:
 \begin{equation}
 \dot H+H^2
 =
--\frac{4\pi K}{3c^2}(\varrho c^2 + 3p).
+-\frac{4\pi K}{3c^4}(\varrho c^2 + 3p).
 \end{equation}
 Natürlich muss $\varrho$ und $p$ in Abhängigkeit von $H$ ausgedrückt
 werden, bevor diese Form der Beschleunigungsgleichung zur Berechnung
@@ -443,8 +450,8 @@ für die heutige Zeit $t=t_0$ ist
 \varrho_c = \frac{3c^2H^2(t_0)}{8\pi K}=\frac{3c^2H_0^2}{8\pi K}
 \]
 und heisst die {\em kritische Dichte}.
-\index{Dichte, kritische}
-\index{kritische Dichte}
+\index{Dichte, kritische}%
+\index{kritische Dichte}%
 Ein üblicher Zahlenwert für die kritische Dichte unseres Universums ist
 \[
 \varrho_c = \frac{3H_0^2}{8\pi K}\simeq 10^{-26}\frac{\text{kg}}{\text{m}^3}
@@ -1026,13 +1033,15 @@ bestätigt werden.
 
 \section{Rotverschiebung als Zeitskala%
 \label{skript:section:rotverschiebung}}
-\rhead{Rotverschiebung als Zeitskala}
+%\rhead{Rotverschiebung als Zeitskala}
 Wir gehen heute davon aus, dass das Universum flach ist, dass die
 Ausdehnung also nicht zum Stillstand kommen wird.
 Insbesondere ist also $\dot a(t)>0$ für alle Zeiten $t$, die Funktion
 $a(t)$ ist streng monoton wachsend.
 Da $a(t)$ umkehrbar ist, kann man den Wert von $a(t)$ als kosmische
 Zeitskala wählen.
+
+\rhead{Rotverschiebung als Zeitskala}
 
 Der Skalenfaktor ist der Messung jedoch nicht direkt zugänglich,
 viel praktischer wäre, die Rotverschiebung als Zeitskala zu wählen.

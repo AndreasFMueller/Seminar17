@@ -12,17 +12,23 @@ Warum passen sie in den Kontext dieses Buches?
 Diese Fragestellungen werden im Laufe dieses Kapitel an Hand von Beispielen illustriert und erörtert.
 
 Wie der Name erahnen lässt, beschreiben Minimalflächen Flächen mit minimalem Flächeninhalt. 
-Ein gängiges Beispiel aus der Physik sind Seifenfilme. Wenn die Luft auf beiden Seiten eines Seifenfilms den gleichen Druck hat, dann nimmt der Seifenfilm die Form einer Minimalfläche an.
+Ein gängiges Beispiel aus der Physik sind Seifenfilme.
+\index{Seifenfilm}%
+Wenn die Luft auf beiden Seiten eines Seifenfilms den gleichen Druck hat, dann nimmt der Seifenfilm die Form einer Minimalfläche an.
 
 
 \section{Katenoid}
  \label{A_Katenoid}
 \rhead{Katenoid}
 Wenn man zwei koaxiale Drahtringe parallel zueinander in Seifenwasser taucht, entsteht eine Rotationsfläche, (Abbildung \ref{KatenoidSeifenfilm}) welche Katenoid genannt wird. 
+\index{Katenoid}%
 
 Das Katenoid ist die erste entdeckte Minimalfläche.
 Sie wurde schon 1776 von Jean Baptiste Meusnier erstmals beschrieben.
+\index{Meusnier, Jean Baptiste}%
 In diesem Abschnitt wird die Funktion des Katenoids mit Hilfe der Eulerschen Differentialgleichung der Variationsrechnung hergeleitet.
+\index{Eulersche Differentialgleichung}%
+\index{Variationsrechnung}%
 \subsubsection{Beispiel Katenoid als Rotationsfläche}
 
 \begin{figure}
@@ -71,7 +77,7 @@ noch etwas übersichtlicher schreiben kann.
 
 Um dieses Integral \eqref{S2} zu minimieren kann man sich der Eulerschen Differentialgleichung der Variationsrechnung bedienen. 
 \subsubsection{Variationsrechnung}
-Die Eulersche Differentialgleichung der Variationsrechnung wird im Kapitel \ref{skript:geodaeten:section:variationsprinzip}  der Geodäten genauer erklärt.
+Die Eulersche Differentialgleichung der Variationsrechnung wird im Kapitel \ref{skript:geodaeten:section:variationsprinzip} über Geodäten genauer erklärt.
 Das Anwendungsprinzip wird hier kurz zusammengefasst. Hat man ein Integral $I$, welches von einer Funktion $y(x)$ abhängt, kann man die Eulersche Differentialgleichung anwenden, um die Funktion $y(x)$ zu finden, für welche das Integral $I$ extrem wird. Die Eulersche Differentialgleichung besagt, dass anstelle des Ausrechnens  einer Integralfunktion der Art \begin{equation} \label{E_DGL1}  
   I(y)= \int_a^b F(x,y(x),\dot y(x))\,dx ,       
 \end{equation}
@@ -95,7 +101,13 @@ Setzt man $F$ aus der Gleichung \eqref{F} ein, erhält man
 \end{equation}
 Dies wird nun schrittweise umgeformt, zunächst durch Ausrechnen der Ableitung
 \begin{equation} \label{K_DGL_H2}
-\left(1+{\dot {r}}^2  \right)^{-1/2}-\bigg(r \frac{ -1 }{2  } \left({1+{\dot {r}}^2}  \right)^{-3/2} 2 \dot{r} \ddot{r}  \dot{r}+ r \left({1+{\dot {r}}^2}  \right)^{-1/2} \ddot{r} +\dot{r} \left({1+{\dot {r}}^2}  \right)^{-1/2} \dot{r}\bigg)=0
+(1+{\dot {r}}^2)^{-1/2}
+-
+\bigg(r \frac{ -1 }{2  } ({1+{\dot {r}}^2}  )^{-3/2} 2 \dot{r} \ddot{r}  \dot{r}
++
+r ({1+{\dot {r}}^2} )^{-1/2} \ddot{r}
++
+\dot{r} ({1+{\dot {r}}^2} )^{-1/2} \dot{r}\bigg)=0
 \end{equation}
 bis die Differentialgleichung zweiter Ordnung  
 \begin{equation} \label{K_DGL_R}
@@ -162,10 +174,11 @@ Stellt man sich vor, dass man die beiden Drahtringe immer weiter auseinander zie
 
 \section{Sattelfläche}
 \rhead{Sattelfläche}
-Anfangs dieses Kapitels wurde im Abschnitt \ref{A_Einleitung} definiert, dass eine Minimalfläche minimalen Flächeninhalt hat. Diese Eigenschaft wurde im Abschnitt \ref{A_Katenoid} genutzt, um mittels Variationsrechnung eine Minimalfläche, hier das Katenoid, zu parametrisieren. Die Variationsrechnung ist im allgemeinen jedoch ein recht umfangreiches Verfahren. Tricks wie bei Gleichung \ref{K_hTrigoU} sind nur selten vorzufinden. Eine weitere Möglichkeit Minimalflächen zu parametrisieren nutzt die Eigenschaft, dass Minimalflächen eine mittlere Krümmung von null haben. Was die mittlere Krümmung ist, wird im Abschnitt \ref{KruemmungEinerFlaeche} beschrieben. Im Abschnitt \ref{minimal:ScherkSattel} wird aufgezeigt, wie man mittels einer Formel für die mittlere Krümmung eine partielle Differentialgleichung für Minimalflächen erhält. Diese Differentialgleichung wird anschliessend für den Fall der Scherkschen Sattelfläche gelöst. In \ref{Young-Laplace} wird abschliessend bewiesen, dass bei Minimalflächen die mittlere Krümmung tatsächlich gleich null ist.
+\index{Sattelfläche}%
+Anfangs dieses Kapitels wurde im Abschnitt \ref{A_Einleitung} definiert, dass eine Minimalfläche minimalen Flächeninhalt hat. Diese Eigenschaft wurde im Abschnitt \ref{A_Katenoid} genutzt, um mittels Variationsrechnung eine Minimalfläche, hier das Katenoid, zu parametrisieren. Die Variationsrechnung ist im allgemeinen jedoch ein recht umfangreiches Verfahren. Tricks wie bei Gleichung \eqref{K_hTrigoU} sind nur selten vorzufinden. Eine weitere Möglichkeit Minimalflächen zu parametrisieren nutzt die Eigenschaft, dass Minimalflächen eine mittlere Krümmung von null haben. Was die mittlere Krümmung ist, wird im Abschnitt \ref{KruemmungEinerFlaeche} beschrieben. Im Abschnitt \ref{minimal:ScherkSattel} wird aufgezeigt, wie man mittels einer Formel für die mittlere Krümmung eine partielle Differentialgleichung für Minimalflächen erhält. Diese Differentialgleichung wird anschliessend für den Fall der Scherkschen Sattelfläche gelöst. In \ref{Young-Laplace} wird abschliessend bewiesen, dass bei Minimalflächen die mittlere Krümmung tatsächlich gleich null ist.
 
 \subsection{Krümmung einer Fläche}
-\index{Krümmung einer Fläche}
+\index{Krümmung!einer Fläche}
 \label{KruemmungEinerFlaeche}
 %Intuitiv ist Krümmung einer Fläche für uns ein Mass der Abweichung der Fläche. 
 
@@ -181,7 +194,7 @@ Anfangs dieses Kapitels wurde im Abschnitt \ref{A_Einleitung} definiert, dass ei
 
 \begin{figure} 
   \centering
-  \includegraphics[scale=0.1]{minimal/Kruemmungsradius.png}
+  \includegraphics[scale=0.2]{minimal/Kruemmungsradius.png}
   \caption{Krümmungsradius} 
   \label{Kruemmungsradius}
 \end{figure}
@@ -193,7 +206,7 @@ Anfangs dieses Kapitels wurde im Abschnitt \ref{A_Einleitung} definiert, dass ei
 
 
 
-\index{Gausskrümmung}
+\index{Gausskrümmung}%
 \subsubsection{Gauss Krümmung}
 %Die Gauss Krümmung einer Fläche im Punkt $P$ ist definiert als das Produkt der zwei Hauptkrümmungen %$k_1$ und $k_2$.
 %
@@ -217,7 +230,7 @@ Wir schreiben damit die Gausskrümmung
  K=k_1\, k_2= \frac{1}{R_1}\frac{1}{R_2}.
 \end{equation}
 
-\index{mittlere Krümmung}
+\index{mittlere Krümmung}%
 \subsubsection{Mittlere Krümmung} 
 %Die mittlere Krümmung einer Fläche im Punkt $P$ ist definiert durch den Mittelwert der zwei Hauptkrümmungen $k_1$ und $k_2$.
 
@@ -267,6 +280,8 @@ In diesem besonderen Fall ist die Sattelfläche ein Beispiel für eine Minimalfl
 
 
 \subsection{Beispiel Scherksche Sattelfläche}
+\index{Scherksche Sattefläche}%
+\index{Sattefläche von Scherck}%
 \label{minimal:ScherkSattel}
 \begin{figure}
   \centering
@@ -275,6 +290,7 @@ In diesem besonderen Fall ist die Sattelfläche ein Beispiel für eine Minimalfl
   \label{fig:Scherk}
 \end{figure}
 Die Scherksche Sattelfläche wurde erstmals 1834 von H. F. Scherk beschrieben \cite{minimal:JournalAM}. Sie war nach der in 1776 von Meusnier beschriebene Katenoid die erste neue Minimalfläche. 
+\index{Scherk, Heinrich Ferdinand}%
 
 Die Scherksche Sattelfläche \, (Abbildung \ref{fig:Scherk})\, hat neben den zwingenden Eigenschaften einer Minimalfläche, deren Gausskrümmung kleiner als null ist und eine mittlere Krümmung von genau null hat. Die Eigenschaft, dass sie im Gegensatz zur Rotationsfläche des Katenoids, der Graph einer Funktion $z=Z(x,y)$ ist. 
 
@@ -299,12 +315,15 @@ Wie wir im Abschnitt \ref{Young-Laplace} sehen werden, muss die mittlere Krümmu
 Z_{xx}(Z_y^2+1) - 2 Z_xZ_yZ_{xy}+Z_{yy}(Z_x^2+1)=0.
 \end{equation}
 Diese Gleichung ist als Minimalflächengleichung (im Englischen Minimal Surface Equation \cite{minimal:Osserman}) bekannt.
+\index{Minimalflächengleichung}%
+\index{minimal surface equation}%
 
 Mittels dieser partiellen Differentialgleichung kann die noch unbekannte Funktion $z=Z(x,y)$ berechnet werden. Was im folgenden Abschnitt auch getan wird.
 
 
 \subsubsection{Lösen der partiellen Differentialgleichung}\label{Scherk Berechnung}
 Angenommen $z=Z(x,y)$ ist der Graph einer Funktion. Um die Minimalflächengleichung zu lösen nehmen wir an, dass die Funktion $Z(x,y)$ eine lineare Zusammensetzung von zwei Funktionen ist. Die einfachste Möglichkeit dies zu erreichen, ist die Addition von zwei Funktionen: $z=Z(x,y)=f(x)+g(y)$. Dieser Separationsansatz ist nur eine von vielen Möglichkeit eine partielle Differentialgleichung zu lösen.
+\index{Separationsansatz}%
 
 Zusätzlich stellen wir zwei Nebenbedingungen. Die erste Bedingung, $Z(0,0)=0$, bedingt, dass der Graph im Nullpunkt auf der Höhe null ist. Die Zweite, $\nabla Z(0,0)=0$, fordert, dass im Nullpunkt der Graph horizontal ist.
 
@@ -313,6 +332,7 @@ Wir setzen die benötigten Ableitungen und mehrfachen Ableitungen der Funktion $
 (1+g'(y)^2)f''(x)+(1+f'(x)^2)g''(y)=0
 \end{equation}
 Durch Separieren von $f$ und $g$ erhalten wir zwei gewöhnliche Differentialgleichungen zweiter Ordnung
+\index{Separieren}%
 \begin{equation}\label{MFG Scherk2}
 -\dfrac{f''(x)}{1+(f'(x))^2}=\dfrac{g''(y)}{1+(g'(y))^2}=c
 \end{equation}
@@ -339,7 +359,7 @@ Wir führen eine Rücksubstitution durch und erhalten
 \begin{equation}\label{SchreckDGL2}
 f'(x) = -\tan(cx+k_1).
 \end{equation}
-Um die Lösung der Differentialgleichung zu erhalten integrieren wir erneut
+Um die Lösung der Differentialgleichung zu erhalten, integrieren wir erneut
 \begin{equation}
 \int f'(x)\ dx = \int -\tan(cx+k_1)\ dx.
 \end{equation}
@@ -360,9 +380,10 @@ Somit lautet die Funktion $Z(x,y)$ der Scherkschen Minimalfläche
 Z(x,y)=\dfrac{\log(\cos(cx))}{c}-\dfrac{\log(\cos(cy))}{c}.
 \end{equation}
 
-\subsection{Beispiel Young–Laplace - Oberflächenspannung}
+\subsection{Beispiel Young–Laplace --- Oberflächenspannung}
 \rhead{Young–Laplace}
 \label{Young-Laplace}
+\index{Young-Laplace-Gleichung}%
 
 \label{YL-Beschreibung}
 In den vorangegangenen Beispielen wurde jeweils eine Lösung gesucht, bei der die mittlere Krümmung $H=0$ ist. Bei den meisten Oberflächen ist dies jedoch nicht der Fall. Beispielsweise haben Seifenblasen innen und aussen einen anderen Druck. Oder in einem Blutgefäss herrscht innen der Blutdruck und außerhalb der Druck durch das Gewebe. Diese Druckdifferenz wirkt eine Kraft auf eine Oberfläche ein und verunmöglicht damit eine minimale Oberfläche wie bei einer Minimalfläche.
@@ -387,6 +408,7 @@ Angenommen zwei Medien (z.B. Luft/Wasser) werden durch eine Oberfläche \, (Abbi
 \delta W=\int(-p_1+p_2)\,\delta\zeta\,dA.
 \end{equation}
 Die gesamte Arbeit ergibt sich, wenn zur Arbeit der Volumenänderung die Arbeit der Veränderung der Oberfläche $\delta W=\gamma \, \delta A $ dazu addiert wird, wobei $\gamma$ die Oberflächenspannung und $\delta A$ die veränderte Oberfläche ist. Wir erhalten
+\index{Oberflächenspannung}%
 \begin{equation}\label{YL-Arbeit_1}
 \delta W=\int(-p_1+p_2)\,\delta\zeta dA + \gamma \,\delta A.
 \end{equation}
@@ -459,6 +481,7 @@ Ist der Druckunterschied $\Delta p =0$, was beispielsweise bei einem Seifenfilm 
 Durch die in der Schlussfolgerung gewonnene Erkenntnis ist klar, dass eine Seifenblase keine Minimalfläche sein kann, da zwischen der Luft innen und aussen der Seifenblase immer ein Druckunterschied vorhanden ist.
 
 \subsection{Anwendung: Druck innerhalb eines Regentropfens}
+\index{Regentropfen}%
 Nehmen wir an, ein Regentropfen wird nicht durch den Luftwiderstand verformt, so bildet er eine Kugel. Da bei einer Kugel $R_1=R_2=r$ gilt, vereinfacht sich die Young-Laplace Gleichung \ref{Young-Laplace-Equation} zu
 \begin{equation}
 \Delta p = 2\gamma \, \bigg(\frac{1}{r}\bigg).
