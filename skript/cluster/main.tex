@@ -7,11 +7,13 @@
 \rhead{Einleitung}
 Wenn ein sehr massereiches Objekt zwischen einem Betrachter und einer
 Lichtquelle platziert ist, tritt ein Gravitationslinseneffekt auf.  In
+\index{Gravitationslinse}%
 der Abbildung \ref{fig:lrg3-757} sieht man ein Beispiel, bei welchem
 die Vordergrund-Galaxie (gelb/orange) praktisch in einer Linie zur
 Hintergrund-Galaxie (blau) steht.  Durch die beinahe optimale
 Ausrichtung in einer Linie wird die Hintergrund-Galaxie zu einem
 Kreis verzerrt.  Der dabei entstehende Kreis wird auch Einsteinring
+\index{Einsteinring}%
 genannt.
 
 Wenn die Vordergrund-Galaxie nicht rotationssymmetrisch ist, kann die
@@ -79,7 +81,8 @@ Lichtgeschwindigkeit \(u\) im Medium:
 
 \subsection{Prinzip von Huygens}
 \rhead{Prinzip von Huygens}
-\index{Huygens!Prinzip von}
+\index{Huygens!Prinzip von}%
+\index{Prinzip von Huygens}%
 Wie sich das Licht ausbreitet lässt sich anschaulich mit dem Prinzip
 von Huygens aufzeigen.  In der Abbildung \ref{fig:huygens1} ist die
 Lichtwellenausbreitung in einem homogenen Medium gezeigt.  Die
@@ -214,7 +217,7 @@ Minkowski-Metrik ist.
   \(\tilde{t}=1\) desto langsamer bewegt sich das Licht, da
   \(g_{00} \rightarrow 0\) wird.  Es ist zu beachten, dass das
   geplotete maximale \(r\) von \SI{60000}{\meter} immer noch innerhalb
-  der Sonne ist, da der Sonnenradius \SI{\approx 700e6}{\meter}
+  der Sonne ist, da der Sonnenradius \SI{\approx\, 700e6}{\meter}
   entspricht.
   \begin{figure}
     \centering
@@ -231,6 +234,7 @@ geformt sein, wie ein Weinglasboden.  In der Abbildung
 Ist der Weinglasboden in einer Linie mit der Kerze (unten links)
 erhält man ein Einsteinring ähnliches Gebilde.  Bei einem gekippten
 Boden (oben rechts) erhält man beinahe ein Einsteinkreuz.  Und unten
+\index{Einsteinkreuz}%
 rechts sieht man ein Beispiel was passiert, wenn die Linse und die
 Quelle nicht in einer Linie stehen (wie im Cluster Bild
 \ref{fig:abell}).
@@ -245,8 +249,9 @@ Quelle nicht in einer Linie stehen (wie im Cluster Bild
 
 \subsection{Euler-Lagrange}
 \rhead{Euler-Lagrange}
-\index{Euler-Lagrange-Gleichungen}
+\index{Euler-Lagrange-Gleichungen}%
 Um die Lichtablenkung zu berechnen, benötigt man den Weg des Lichts
+\index{Lichtablenkung}%
 und nicht nur wie stark die Lichtgeschwindigkeit abgebremst wird.  Das
 Licht nimmt den Weg mit der kürzesten Laufzeit.  Aus der Physik kennt
 man, dass die Zeit gleich der Strecke durch die Geschwindigkeit ist:
@@ -321,6 +326,8 @@ löst diese Formel nach \(\ddot{x}\) auf, erhält man:
   2\dot{x}\dot{z} \frac{1}{n}\frac{\partial n}{\partial z}.
 \end{equation}
 Mit der Hilfe der logarithmischen Differentiation
+\index{logarithmische Differentiation}%
+\index{Differentiation, logarithmische}%
 \begin{equation*}
   \frac{1}{n} \frac{\partial n}{\partial x} = \frac{\partial \ln
     n}{\partial x}
@@ -364,6 +371,7 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
   der Abstand zwischen dem aktuellen Punkt und der Linse ist.
 
   Berechnet man mit Hilfe von Maxima Euler-Lagrange nach den beiden
+\index{Maxima}%
   Koordinatenachsen, erhält man:
   \begin{align*}
     \ddot{x} &= -\frac{2(-\dot{x}^2+\dot{y}^2)(x-x_L)KM}
@@ -377,11 +385,11 @@ Somit muss man nun keine partielle Ableitung von \(\ln n\), sondern von
   somit vereinfacht sich \(y-y_L\) zu \(y\).  Die soeben erhaltenen
   Formeln kann man in dieser Form noch nicht verwenden.  Man hat ein
   Differentialgleichungssystem zweiter Ordnung.  Was von geläufigen
-  Computer Algorithmen nicht gelöst werden kann, da sie ein DGL-System
+  Computer Algorithmen nicht gelöst werden kann, da sie ein Differentialgleichungssystem
   erster Ordnung benötigen.
 
   Mit Substitution kann man eine Differentialgleichung zweiter Ordnung
-  in ein DGL-System erster Ordnung überführen.  Macht man diese
+  in ein Differentialgleichungssystem erster Ordnung überführen.  Macht man diese
   Substitution mit beiden Formeln, erhält man ein Gleichungssystem
   erster Ordnung, welche beide Formeln enthält.  Wählt man folgende
   Substitutionen
@@ -542,15 +550,15 @@ sichtbar.
 \end{figure}
 
 Das Verhalten, dass über eine lange Strecke nichts passiert, erschwert
-die nummerische Berechnung.  Die Algorithmen ode23 und ode45 in Octave
+die nummerische Berechnung.  Die Algorithmen \texttt{ode23} und \texttt{ode45} in Octave
 waren nicht in der Lage den Weg zu berechnen.  Hingegen konnte die
-Lichtablenkung im Beispiel oben mit ode23s aus Octave berechnet
+Lichtablenkung im Beispiel oben mit \texttt{ode23s} aus Octave berechnet
 werden.  Dieser Algorithmus ist fähig steife Probleme zu berechnen.
 Solche Probleme nennt man steif, wenn eine tiefe Frequenz von einer
 hohen Frequenz überlagert wird.  Im weiteren Sinn ist dieses Problem
 steif, da zwischen Beobachter, Gravitationslinse und Quelle sehr
 grosse Abstände vorhanden sind, in denen nichts passiert.  Zum Lösen
-berechnet ode23s auf der gesamten vorgegebenen Strecke Punkte.  Für
+berechnet \texttt{ode23s} auf der gesamten vorgegebenen Strecke Punkte.  Für
 Sonnenabstände ist dies noch gut berechenbar, für Galaxienabstände
 jedoch nicht.
 
