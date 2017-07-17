@@ -77,7 +77,9 @@ G_{00} = \frac{8\pi K}{c^4} T_{00}=\frac{8\pi K\varrho}{c^2}.
 \label{skript:friedmann:einstein}
 \end{equation}
 Wir berechnen den Einstein-Tensor der Robertson-Walker-Metrik
-wieder mit Maxima, und bekommen.
+mit dem folgenden Maxima-Programm:
+\lstinputlisting[style=Maxima]{chapters/friedmann.maxima}
+Wir bekommen so
 %(%i5)                       ratsimp(Einstein(1, 1))
 %                                         2
 %         2     d         2      2       d              2  d         2    2
@@ -100,7 +102,7 @@ G_{00}
 3\frac{\dot a(t)^2}{a(t)^2}
 -\frac{2c^2}{a(t)^2}\frac{S''_\kappa(r)}{S_\kappa(r)}
 -\frac{c^2}{a(t)^2}
-\frac{S'_\kappa(r)^2-1}{S_\kappa(r)^2}
+\frac{S'_\kappa(r)^2-1}{S_\kappa(r)^2}.
 \end{equation}
 Die rechte Seite können wir mit Hilfe der im
 Kapitel~\ref{skript:chapter:kosmologie} bereitgestellten Formeln
@@ -158,6 +160,7 @@ T^\mu_\mu = \frac{8\pi K}{c^4}(-\varrho c^2 + 3p).
 \]
 Für die linke Seite muss die Verjüngung des Einstein-Tensors ausgerechnet
 werden.
+Das oben gezeigte Maxima-Programm führte dies bereits durch.
 %(%i16) s : ratsimp(sum(sum(ginverse     Einstein(i, j), i, 1, length(g)), j, 
 %                                   i, j
 %                                                                 1, length(g)))
@@ -221,7 +224,7 @@ eliminieren und bekommen
 &=
 -\frac{4\pi K}{3c^4}(-\varrho c^2 + 3p)
 -\frac{c^2}{a(t)^2}\frac{\kappa }{R_c^2}
--\frac{8\pi K}{3c^2}\varrho c^2
+-\frac{8\pi K}{3c^4}\varrho c^2
 \notag
 \\
 \Rightarrow\qquad
@@ -260,7 +263,7 @@ für $H$ schreiben:
 \begin{equation}
 \dot H+H^2
 =
--\frac{4\pi K}{3c^2}(\varrho c^2 + 3p).
+-\frac{4\pi K}{3c^4}(\varrho c^2 + 3p).
 \end{equation}
 Natürlich muss $\varrho$ und $p$ in Abhängigkeit von $H$ ausgedrückt
 werden, bevor diese Form der Beschleunigungsgleichung zur Berechnung
