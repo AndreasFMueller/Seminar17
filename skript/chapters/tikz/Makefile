@@ -10,7 +10,7 @@ all:	lagrange.pdf lichtkegel.pdf absturz.pdf interferometer.pdf \
 	dipol2.pdf ionisation.pdf kreisbogen.pdf tangente.pdf kruemmung.pdf \
 	wald.pdf 4pifu2.pdf dipol3.pdf quadrupol.pdf quadrupol1.pdf \
 	hexapol.pdf hexapol1.pdf monopol.pdf planck1.pdf planck2.pdf \
-	planck3.pdf rekombination.pdf kruemmung2.pdf kruemmun3.pdf \
+	planck3.pdf rekombination.pdf kruemmung2.pdf kruemmung3.pdf \
 	riemann.pdf pfad
 
 pfad: pfad.pdf pfadx.pdf pfady.pdf pfadc.pdf
