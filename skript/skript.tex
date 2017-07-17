@@ -9,6 +9,7 @@
 \geometry{papersize={170mm,240mm},total={140mm,200mm},top=21mm,bindingoffset=10mm}
 \usepackage[english,ngerman]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{cancel}
 \usepackage{times}
 \usepackage{amsmath,amscd}
@@ -47,6 +48,7 @@
 \usetikzlibrary{patterns,decorations.pathreplacing}
 \usetikzlibrary{decorations.pathreplacing}
 \usetikzlibrary{external}
+\usetikzlibrary{datavisualization}
 \usepackage[europeanvoltages,
             europeancurrents,
             europeanresistors,   % rectangular shape
@@ -63,6 +65,8 @@
 
 \usepackage{algpseudocode}
 \usepackage{algorithm}
+\usepackage{gensymb}
+\usepackage{mathtools}
 
 % Matlab
 \usepackage{listings}
@@ -104,8 +108,8 @@
 \lstdefinelanguage{Maxima}{
   keywords={addrow,addcol,zeromatrix,ident,augcoefmatrix,ratsubst,sum,diff,ev,tex,%
     with_stdout,nouns,express,depends,load,length,submatrix,div,grad,curl,matrix,%
-    invert,lambda,facsum,expand,false,then,if,else,subst,%
-    rootscontract,solve,part,assume,sqrt,integrate,abs,inf,exp,sin,cos,sinh,cosh},
+    invert,lambda,facsum,expand,false,then,if,else,subst,batchload,%
+    rootscontract,solve,part,assume,sqrt,integrate,abs,inf,exp,sin,cos,sinh,cosh,taylor},
   sensitive=true,
   comment=[n][\itshape]{/*}{*/}
 }
@@ -317,7 +321,7 @@ Hochschule f"ur Technik, Rapperswil, 2017
 \newtheorem{annahme}[satz]{Annahme}
 \newtheorem{problem}[satz]{Problem}
 \newtheorem*{problem*}{Problem}
-\renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\floatpagefraction}{0.7}
 \mainmatter
 \input{vorwort.tex}
 \part{Grundlagen}
@@ -339,6 +343,7 @@ Hochschule f"ur Technik, Rapperswil, 2017
 %\input{kapitel.tex}
 \begin{appendices}
 \input{chapters/sinh.tex}
+\input{chapters/konstanten.tex}
 %\input{chapters/komplexezahlen.tex}
 \end{appendices}
 \vfill
@@ -357,12 +362,12 @@ Hochschule f"ur Technik, Rapperswil, 2017
 % Artikel
 \input{kugel/main.tex}
 \input{minimal/main.tex}
-\input{adaptiv/main.tex}
-\input{gps/main.tex}
 \input{zeitreisen/main.tex}
+\input{gps/main.tex}
 \input{cmb/main.tex}
-\input{cluster/main.tex}
 \input{klima/main.tex}
+\input{adaptiv/main.tex}
+\input{cluster/main.tex}
 \vfill
 \pagebreak
 \ifodd\value{page}\else\null\clearpage\fi

@@ -1,0 +1,13 @@
+# C++ ignores
+*.o
+*.a
+*.d
+*.so
+*.so.*
+
+# Release and Debug folder
+**/Debug
+**/Release
+
+# Binary
+cmb-analyzer*

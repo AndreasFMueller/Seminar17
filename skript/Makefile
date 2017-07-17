@@ -6,7 +6,7 @@
 all:	skript.pdf
 
 #SUBDIRECTORIES = chapters uebungsaufgaben 
-SUBDIRECTORIES = chapters 
+SUBDIRECTORIES = chapters
 
 images:
 	for d in $(SUBDIRECTORIES); \
@@ -15,26 +15,30 @@ images:
 	done
 
 CHAPTERS = 								\
-	chapters/einleitung.tex						\
-	chapters/kruemmung.tex						\
-	chapters/k-1d.tex						\
-	chapters/k-geodaeten.tex					\
-	chapters/k-gravitation.tex					\
-	chapters/k-kruemmung.tex					\
-	chapters/k-laenge.tex						\
-	chapters/k-schwarzschild.tex					\
-	chapters/k-speziell.tex						\
+	chapters/cmb.tex						\
+	chapters/einleitung.tex                                         \
+	chapters/f-beispiele.tex                                        \
+	chapters/f-friedmann.tex                                        \
+	chapters/friedmann.tex                                          \
+	chapters/geodaeten.tex                                          \
+	chapters/k-1d.tex                                               \
+	chapters/k-geodaeten.tex                                        \
+	chapters/k-gravitation.tex                                      \
+	chapters/k-kruemmung.tex                                        \
+	chapters/k-laenge.tex                                           \
+	chapters/k-schwarzschild.tex                                    \
+	chapters/k-speziell.tex                                         \
+	chapters/koordtrafo.tex                                         \
+	chapters/kruemmung.tex                                          \
+	chapters/tensoren.tex                                           \
+	chapters/m-1dim.tex                                             \
+	chapters/m-kugelfunktionen.tex                                  \
+	chapters/m-multipole.tex                                        \
+	chapters/multipol.tex                                           \
+	chapters/s-lichtablenkung.tex                                   \
+	chapters/s-perihel.tex                                          \
 	chapters/schwarzschild.tex					\
-	chapters/s-perihel.tex						\
-	chapters/s-lichtablenkung.tex					\
-	chapters/multipol.tex						\
-	chapters/m-1dim.tex						\
-	chapters/m-kugelfunktionen.tex					\
-	chapters/m-multipole.tex					\
-	chapters/friedmann.tex						\
-	chapters/f-beispiele.tex					\
-	chapters/f-friedmann.tex					\
-	chapters/cmb.tex
+	chapters/konstanten.tex
 
 SKRIPTFILES = vorwort.tex uebersicht.tex \
 	$(CHAPTERS) \
@@ -51,6 +55,7 @@ TEXFILES = $(SKRIPTFILES) \
 	$(THEMA_FILES)
 
 BLXFILES = \
+	skript.bbl \
 	skript1-blx.bbl \
  	skript2-blx.bbl skript3-blx.bbl skript4-blx.bbl skript5-blx.bbl \
 	skript6-blx.bbl skript7-blx.bbl skript8-blx.bbl skript9-blx.bbl

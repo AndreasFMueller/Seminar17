@@ -1,4 +1,4 @@
-%
+%%
 % k-geodaeten.tex -- Gleichung der Geodäten, Christoffel-Symbole
 %
 % (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
@@ -14,14 +14,15 @@ indem man die Fläche in eine Ebene abrollt, und dann dort verwendet,
 dass die kürzeste Verbindung in der Ebene eine Gerade ist.
 Dies zeigt, dass die kürzesten Verbindung nichts mit der speziellen
 Einbettung einer Fläche zu tun hat, sondern eine Eigenschaft ist,
-die sich allein aus der Längenmessung in der Fläche ist, man nennt
-dies auch eine intrinsische Eigenschaft.
+die allein durch Längenmessung in der Fläche bestimmt ist.
+Man nennt dies auch eine intrinsische Eigenschaft.
 
 Auf einer Kugeloberfläche kann man die kürzesten Verbindungen ebenfalls
-direkt angeben, es sind die Grosskreise.
+direkt angeben, es sind die Grosskreise (Im Kapitel~\ref{chapter:kugel}
+findet man eine ausführliche Diskussion der Geometrie der Kugeloberfläche).
 \begin{figure}
 \centering
-\includegraphics[width=\hsize]{chapters/3d/geodaete.jpg}
+\includegraphics[width=0.7\hsize]{chapters/3d/geodaete.jpg}
 \caption{Ein Ausschnitt aus einem Grosskreis (rot) ist die kürzestmögliche
 Verbindung zwischen zwei Punkten auf einer Kugeloberfläche.
 Alle anderen Kurven (blau) in der Kugeloberfläche haben grössere Länge.
@@ -51,18 +52,18 @@ der üblichen \eqref{skript:kruemmung:pytagoras} ab, der Raum ist
 gekrümmt.
 
 In diesem Abschnitt suchen wir daher nach einer allgemeinen Methode,
-die kürzeste Verbindung, die sogenannten Geodäten zu finden.
+die kürzeste Verbindung, die sogenannten Geodäten, zu finden.
 
-\section{Paralleltransport}
-\rhead{Paralleltransport}
+\section{Paralleltransport und kovariante Ableitung}
+\rhead{Paralleltransport und kovariante Ableitung}
 \begin{figure}
 \centering
-\includegraphics[width=\hsize]{chapters/3d/transport.jpg}
+\includegraphics[width=0.7\hsize]{chapters/3d/transport.jpg}
 \caption{Paralleltransport eines Vektors entlang einer Kurve auf
 einer Kugeloberfläche%
 \label{skript:geodaten:fig:transport}}
 \end{figure}
-Die Beispiele von kürzesten Verbindungen suggerieren, dass die kürzeste
+Die obigen Beispiele von kürzesten Verbindungen suggerieren, dass die kürzeste
 Verbindung auch die ``geradeste'' ist, sie weicht möglichst wenig von
 der Richtung des aktuellen Tangentialvektors ab.
 Das Problem bei dieser Interpretation ist allerdings, dass wir Vektoren
@@ -82,13 +83,14 @@ Es ist aber klar, dass die Komponenten des transportierten Vektors
 sowohl von der Transportrichtung wie auch vom ursprünglichen Vektor
 abhängen.
 
+\subsection{Kovariante Ableitung}
 Seien $A^\mu$ die Komponenten eines Vektors, die Richtung mit Komponenten
 $\Delta x^\nu$ transport werden soll.
 Wenn wir uns entlang einer Kurve in diese Richtung bewegen, werden sich
 die Komponenten $A^\mu$ einfach deshalb ändern, weil die Komponenten von
 den Koordinaten abhängig sind.
 Bei einem paralleltransportierten Vektor wird ein Teil dieser Änderung
-komponsiert auf geeignete Art komponsiert sein müssen.
+auf geeignete Art kompensiert sein müssen.
 Die Kompensation wird linear vom Vektor $A^\mu$ und von der
 Bewegungsrichtung abhängen.
 Wir schreiben dafür
@@ -104,8 +106,8 @@ wir werden sie noch bestimmen müssen.
 
 \begin{definition}
 Die {\em kovariante Ableitung} eines Vektorfeldes $A^\mu$ ist der 
-\index{kovariante Ableitung}
-\index{Ableitung, kovariante}
+\index{kovariante Ableitung}%
+\index{Ableitung, kovariante}%
 Ausdruck
 \begin{equation}
 \nabla_\nu A^\mu
@@ -117,13 +119,13 @@ Ausdruck
 \end{equation}
 die Koeffizienten $\Gamma^\mu_{\alpha\nu}$ heissen Christoffelsymbole
 zweiter Art oder Zusammenhangskoeffizienten.
-Eine weiter verbreitete Schreibweise für die kovariante Ableitung
-ist
-\[
+Eine weit verbreitete, aber in diesem Buch nicht verwendete,
+alternative Schreibweise für die kovariante Ableitung ist
+$
 \nabla_\nu A^\mu
 =
-A^\mu\mathstrut_{;\nu}.
-\]
+A^\mu\mathstrut_{;\nu}
+$.
 \end{definition}
 
 Die kovariante Ableitung soll ausdrücken, wie sich die Komponenten eines
@@ -133,9 +135,11 @@ Paralleltransport soll heissen, dass sich entlang einer Kurve die
 Komponenten eines Vektors nicht ändern,
 dass also $\nabla_\nu A^\mu=0$.
 Insbesondere möchten wir später den Tangentialvektor einer Kurve entlang
-der Kurve selbst transportieren.
+der Kurve selbst transportieren, wir erwarten, dass dies die 
+``geradestmögliche'' Kurve ergibt.
+
 Die kovariante Ableitung des Tangentialvektors $\dot x^\mu$ entlang
-einer Kurve wird dann sein
+einer Kurve wird sein
 \[
 \nabla_\nu\dot x^\mu
 =
@@ -161,16 +165,19 @@ Wir fordern daher zusätzlich, dass die Zusammenhangskoeffizienten
 symmetrisch sein sollen.
 Es wird sich gleich zeigen, dass dies tatsächlich möglich ist.
 
+\subsection{Paralleltransport}
 Bis jetzt haben wir die Metrik nicht verwendet.
-Wir möchten, dass der Paralleltransport die Länge des Vektors beim
-Transport entlang einer Kurve nicht verändert.
+Wir möchten, dass der Paralleltransport die Länge des Vektors
+paralleltransportierten Vektors $\tilde A^\mu$
+beim Transport entlang einer Kurve nicht verändert.
 Die Länge des Vektors wird durch $g_{\mu\nu}\tilde A^\mu \tilde A^\nu$
 gegeben.
 Die Ableitung entlang der Kurve $x^\mu(t)$ ist
 \[
 \frac{d}{dt} g_{\mu\nu}\tilde A^\mu \tilde A^\nu\bigg|_{t=0}
 =
-\frac{\partial g_{\mu\nu}}{\partial x^\alpha}A^\mu A^\nu\dot x^\alpha
+\dot x^\alpha
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}A^\mu A^\nu
 -
 g_{\mu\nu}A^\mu\Gamma_{\alpha\beta}^\nu A^\alpha \dot x^\beta
 -
@@ -181,7 +188,7 @@ g_{\mu\nu}\Gamma_{\alpha\beta}^\mu A^\alpha \dot x^\beta A^\nu
 In diesem Ausdruck kommen in allen Termen $A^\mu$ und $\dot x^\beta$ mit
 verschiedenen Indizes vor.
 Damit wir diese Faktoren ausklammern können, benennen wir die Indizes um,
-so dass sie in allen Termen gleich sind.
+so dass sie in allen Termen gleich benannt sind.
 Wir erhalten dann die Gleichung
 \[
 \biggl(
@@ -195,11 +202,11 @@ A^\mu A^\nu\dot x^\alpha
 =
 0
 \]
-F"ur die Koeffizienten $\Gamma$.
-Diese Gleichung muss f"ur jede beliebige Wahl von $A^\mu$ und jede
-beliebige Richtung der Kurve $\dot x^\alpha$ erfüllt sein, wenn der
-Klammerausdruck verschwindet für alle Werte der freien, also nicht durch
-die Summationskonvention als Laufindizes ausgezeichneten, Indizes.
+für die Koeffizienten $\Gamma$.
+Diese Gleichung muss für jede beliebige Wahl von $A^\mu$ und jede
+beliebige Richtung der Kurve $\dot x^\alpha$ erfüllt sein.
+Es folgt, dass der Klammerausdruck für alle Werte der freien, also nicht durch
+die Summationskonvention als Laufindizes ausgezeichneten, Indizes verschwindet.
 Wir erhalten also
 \begin{equation}
 \frac{\partial g_{\mu\nu}}{\partial x^\alpha}
@@ -284,7 +291,7 @@ g_{\alpha\beta}\Gamma_{\nu\mu}^\beta
 \biggr).
 \]
 Bezeichen wir die inverse Matrix von $g_{\alpha\beta}$ mit
-$g^{\alpha\beta}$, dann k"onnen wir nach $\Gamma_{\mu\nu}^\beta$ aufl"osen:
+$g^{\alpha\beta}$, dann können wir nach $\Gamma_{\mu\nu}^\beta$ auflösen:
 \[
 g^{\sigma\alpha}
 \biggl(
@@ -318,7 +325,7 @@ Dann heissen die
 \frac{\partial g_{\mu\nu}}{\partial x^\alpha}
 \biggr)
 \]
-die {\em Christoffelsymbole 1.~Art}
+die {\em Christoffelsymbole erster Art}
 und
 \begin{equation}
 \Gamma_{\mu\nu}^\sigma
@@ -336,15 +343,22 @@ g^{\sigma\alpha}
 \biggr)
 \label{skript:definition:christoffel2}
 \end{equation}
-heissen {\em Christoffelsymbole 2.~Art} oder {\em Zusammenhangskoeffizienten}.
+heissen {\em Christoffelsymbole zweiter Art} oder
+{\em Zusammenhangskoeffizienten}.
 Die auf diese Weise aus der Metrik gewonnenen Zusammenhangskoeffizienten
 sind auch als der
 {\em Levi-Cività-Zusammenhang} bekannt.
-\index{Levi-Cività-Zusammenhang}
+\index{Levi-Cività-Zusammenhang}%
 \end{definition}
 
+%Die Christoffelsymbole erster und zweiter Art bilden keinen Tensor.
+%Im allgemeinen gilt
+%\[
+%
+%\]
+
 \section{Rechenregeln für die kovariante Ableitung}
-\rhead{Kovariante Ableitung}
+\rhead{Rechenregeln für die kovariante Ableitung}
 Die kovariante Ableitung eines Vektorfeldes wurde in 
 \eqref{skript:geodaeten:kovarianteableitung}
 für ein Vektorfeld $A^\mu$ definiert.
@@ -353,31 +367,35 @@ dass der Paralleltransport, der als geometrische Vorstellung der
 Formel~\eqref{skript:geodaeten:kovarianteableitung} zu Grunde lag,
 Skalarprodukte erhält.
 Für zwei Vektorfelder, die beide verschwindende
-kovariante Ableitung in beine bestimmte Richtung haben,
+kovariante Ableitung in eine bestimmte Richtung haben,
 verschwindet dann auch die Ableitung in diese Richtung.
 Doch wie verhält sich die Ableitung eines Skalarprodukts, wenn
 die einzelnen Faktoren nicht verschwindende kovariante Ableitung haben?
 Ziel dieses Abschnittes ist, Rechenregeln für die kovariante Ableitung
 zusammenzustellen.
 
+\subsection{Ableitung eines Skalarproduktes}
 Wir betrachten zwei Vektorfelder $A^\mu$ und $B^\mu$ und möchten wissen,
 wie sich der Wert des Skalarproduktes $g_{\mu\nu}A^\mu B^\nu$ entlang
 einer Kurve mit Tangentenrichtung $C^\mu$ ändert.
 Seien $A^\mu$  und $B^\nu$ beliebige Vektorfelder,
-dann gilt entlang einer Kurve mit
-Richtungsvektor $C^\mu$ im Punkt mit Parameterwert $s=0$
+dann gilt entlang einer Kurve $x^\alpha(s)$ mit
+Richtungsvektor $C^\alpha = dx^\alpha/ds$ im Punkt mit Parameterwert $s=0$
 \begin{align*}
 \frac{d}{ds}(g_{\mu\nu}A^\mu B^\nu)\bigg|_{s=0}
 &=
 \frac{\partial g_{\mu\nu}}{\partial x^\alpha}A^\mu B^\nu
+\frac{dx^\alpha(0)}{ds}
 +
 g_{\mu\nu}\frac{\partial A^\mu}{\partial x^\alpha}C^\alpha B^\nu
+\frac{dx^\alpha(0)}{ds}
 +
 g_{\mu\nu}A^\mu \frac{\partial B^\nu}{\partial x^\alpha}C^\alpha
+\frac{dx^\alpha(0)}{ds}
 \\
 &=
 \biggl(
-\frac{\partial g_{\mu\nu}}{\partial x^\alpha}C^\alpha A^\mu B^\nu
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha} A^\mu B^\nu
 +
 g_{\mu\nu}
 \biggl(\nabla_\alpha A^\mu - \Gamma^\mu_{\beta\alpha}A^\beta \biggr)
@@ -428,6 +446,7 @@ g_{\mu\nu}A^\mu\nabla_\alpha B^\nu.
 \end{equation}
 \end{satz}
 
+\subsection{Kovariante Ableitung kontravarianter Vektoren}
 Bis jetzt können wir nur die kovariante Ableitung von Vektorkomponenten
 $A^\mu$ berechnen, eine kovariante Ableitung von Komponenten $B_\nu$
 ist noch gar nicht definiert.
@@ -435,7 +454,7 @@ Wir können aber jeden Vektor $B_\nu$ also das Resultat einer Operation
 $B_\nu=B^\alpha g_{\alpha\nu}$ betrachten.
 Das Skalarprodukt $A^\mu B_\mu=A^\mu B^\nu g_{\mu\nu}$ erfüllt dann
 wieder die Produktregel~\eqref{skript:geodaeten:produktregel},
-als
+es folgt
 \[
 \frac{\partial}{\partial x^\alpha}A^\mu B_\mu
 =
@@ -472,7 +491,7 @@ g_{\mu\nu}\Gamma^\mu_{\alpha\beta}g^{\beta\sigma}B_\sigma
 &=
 g_{\mu\nu}\frac{\partial g^{\mu\beta}}{\partial x^\alpha} B_\beta
 +
-\underbrace{g_{\mu\nu}g^{\mu\beta}}_{=\delta_\nu^\beta}\frac{\partial B_\beta}{\partial x^\alpha}
+\underbrace{g_{\mu\nu}g^{\mu\beta}}_{\displaystyle=\delta_\nu^\beta}\frac{\partial B_\beta}{\partial x^\alpha}
 +
 g_{\mu\nu}\Gamma^\mu_{\alpha\beta}g^{\beta\sigma}B_\sigma
 \notag
@@ -544,7 +563,7 @@ g^{\beta\sigma}
 \\
 &=
 \biggl(
--\frac{\partial g_{\beta\nu}}{\partial x^\alpha} g^{\beta\sigma}
+-\frac{\partial g_{\beta\nu}}{\partial x^\alpha}
 +
 \delta_\nu^\gamma
 \frac12
@@ -561,7 +580,7 @@ g^{\beta\sigma}
 &=
 \frac12
 \biggl(
--2\frac{\partial g_{\beta\nu}}{\partial x^\alpha} g^{\beta\sigma}
+-2\frac{\partial g_{\beta\nu}}{\partial x^\alpha}
 +
 \frac{\partial g_{\alpha\nu}}{\partial x^\beta}
 +
@@ -581,11 +600,13 @@ g^{\beta\sigma}
 \frac{\partial g_{\alpha\nu}}{\partial x^\beta}
 \biggr)
 g^{\beta\sigma}
+=
+\Gamma_{\beta,\alpha\nu}g^{\beta\sigma}
 \\
 &=-\Gamma^\sigma_{\alpha\nu}.
 \end{align*}
 Die rechte Seite der kovarianten Ableitung für einen kovarianten Vektor
-kann daher mit den bereits bekannten Christophel-Symbolen zweiter Art
+kann daher mit den bereits bekannten Christoffel-Symbolen zweiter Art
 ausgedrückt werden.
 
 \begin{definition}
@@ -595,22 +616,28 @@ ist
 \begin{equation}
 \nabla_\alpha B_\nu
 =
-\frac{\partial B_\nu}{\partial\alpha}
+\frac{\partial B_\nu}{\partial x^\alpha}
 -\Gamma^{\sigma}_{\alpha\nu}B_\sigma,
 \label{skript:geodaeten:kovabl2}
 \end{equation}
-Diese wird auch $\nabla_\alpha B_\nu=B_{\nu;\alpha}$ geschrieben.
+diese wird auch $\nabla_\alpha B_\nu=B_{\nu;\alpha}$ geschrieben.
 \end{definition}
 
-% TODO: kovariante Ableitung und Verjüngung
-
+\subsection{Kovariante Ableitung von Tensoren beliebiger Stufe}
 Wir möchten die kovariante Ableitung jetzt auf beliebige Tensoren
 verallgemeinern.
-Sie soll natürlich linear bleiben und die Produktregel muss ebenfalls
-erhalten bleiben.
+Sie soll natürlich linear bleiben und die Produktregel, die für jede
+Art von Ableitung gilt, muss ebenfalls erhalten bleiben.
+Aus diesen Voraussetzungen lässt sich eine allgemeine Formel für
+die kovariante Ableitung eines beliebigen Tensors herleiten.
+
 Ein Tensor der Form $t_{\mu\nu}$ kann immer geschrieben werden
-als eine Summe von Tensoren der Form $a_\mu b_\nu$.
-Auf einem solchen Tensor muss die kovariante Ableitung die Form
+als Linearkombination von Tensoren der Form $a_\mu b_\nu$, es reicht
+also wegen der Linearität der kovarianten Ableitung, wenn wir solche
+Produkte ableiten können.
+Dafür muss aber die Produktregel gelten.
+
+Auf einem Produkt $a_\mu b_\nu$ muss die kovariante Ableitung die Form
 \begin{align*}
 \nabla_\alpha (a_\mu b_\nu)
 &=
@@ -635,17 +662,155 @@ a_\mu
 &=
 \frac{\partial a_\mu b_\nu}{\partial x^\alpha}
 -\Gamma^\sigma_{\alpha\mu}a_\sigma b_\nu
--\Gamma^\sigma_{\alpha\nu}
+-\Gamma^\sigma_{\alpha\nu}a_\mu b_\sigma.
 \end{align*}
-
+Auf analoge Art können auch obere Indizes behandelt werden.
+Dies führt uns auf die folgende allgemeine Definition für die 
+koveriante Ableitung von Tensonren beliebiger Stufe.
 
 \begin{definition}
+Sei $A$ ein beliebiger Tensor, von dem wir nur die Indizes
+$\mu$ und $\nu$ in der Form
+$A^{\dots \mu\dots}\mathstrut_{\dots\nu\dots}$
+explizit ausschreiben wollen.
+Die kovariante Ableitung von $A$ ist
+\begin{equation}
+\nabla_\alpha A^{\dots \mu\dots}\mathstrut_{\dots\nu\dots}
+=
+\frac{\partial A^{\dots \mu\dots}\mathstrut_{\dots\nu\dots}}{\partial x^\alpha}
++
+\dotsc
++
+\Gamma^\mu_{\sigma\alpha}
+A^{\dots \sigma\dots}\mathstrut_{\dots\nu\dots}
++
+\dotsc
+-
+\Gamma^\sigma_{\alpha\nu}
+A^{\dots \mu\dots}\mathstrut_{\dots\sigma\dots}
++
+\dotsc,
+\label{skript:geodaten:kovablbel}
+\end{equation}
+wobei für jeden kontravarianten Index ein Term mit positivem
+Vorzeichen und für jeden kovarianten Index ein Term mit negativem
+Vorzeichen hinzukommen.
 \end{definition}
 
+Aus der Formel~\eqref{skript:geodaten:kovablbel} können wir jetzt eine
+ganze Reihen von Schlussfolgerungen über das Rechnen mit der kovarianten
+ableiten.
+In den folgenden Abschnitten soll gezeigt werden, dass die kovariante
+Ableitung mit den Tensoroperationen Verjüngung und Index hoch-
+bzw.~herunterziehen verträglich ist.
+
+\subsubsection{Kovariante Ableitung und Verjüngung%
+\label{skript:geodaeten:kovablverj}}
+Wir betrachten jetzt einen Tensor der Form $T^\mu_\nu$, seine kovariante
+Ableitung ist nach \eqref{skript:geodaeten:kovabl2}
+\begin{equation}
+\nabla_\alpha T^\mu_\nu
+=
+\frac{\partial T^\mu\nu}{\partial x^\alpha}
++\Gamma^\mu_{\sigma\alpha} T^\sigma_\nu
+-\Gamma^\sigma_{\alpha\nu} T^\mu_\sigma.
+\end{equation}
+Verjüngen wir die beiden Indizes $\mu$ und $\nu$ wird daraus 
+\begin{equation}
+\nabla_\alpha T^\mu_\mu
+=
+\frac{\partial T^\mu\mu}{\partial x^\alpha}
++\Gamma^\mu_{\sigma\alpha} T^\sigma_\mu
+-\Gamma^\sigma_{\alpha\mu} T^\mu_\sigma.
+\label{skript:geodaeten:kovablverj1}
+\end{equation}
+Die letzten zwei Terme sind bis auf die Benennung der Indizes, über die
+summiert wird, gleich, sie heben sich daher weg.
+Wir schliessen daher, dass 
+\begin{equation}
+\nabla T^\mu_\mu = \frac{\partial}{\partial x^\alpha}T^\mu_\mu
+\label{skript:geodaeten:kovablverj2}
+\end{equation}
+ist.
+
+Man beachte, dass in der Notation von
+\eqref{skript:geodaeten:kovablverj1}
+und
+eine Zweideutigkeit steckt.
+Es ist daraus nämlich klar, ab zuerst die Verjüngung gebildet werden muss
+und dann die kovariante Ableitung oder Umgekehrt.
+Da die Verjüngung ein Skalar ist, ist die kovariante Ableitung einfach
+nur die partielle Ableitung.
+Die Schlussfolgerung~\eqref{skript:geodaeten:kovablverj2} besagt daher
+einfach nur, dass man auch erst die kovariante Ableitung bilden und
+dann erst verjüngen kann, dass die Zweideutigkeit der Notation also
+kein Problem ist.
+
+\subsubsection{Kovariante Ableitung der Metrik}
+Mit Hilfe der Formel~\eqref{skript:geodaten:kovablbel} erlaubt uns nun
+auch, die kovariante Ableitung des metrischen Tensors zu berechnen.
+Die Rechnung ergibt
+\begin{align*}
+\nabla_\alpha g_{\mu\nu}
+&=
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+-\Gamma^\sigma_{\alpha\mu}g_{\sigma\nu}
+-\Gamma^\sigma_{\alpha\nu}g_{\mu\sigma}
+=
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+-\Gamma_{\nu,\alpha\mu}
+-\Gamma_{\mu,\alpha\nu}
+\\
+&=
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
+-
+\frac12\biggl(
+\frac{\partial g_{\mu\nu}}{\partial x^\alpha}
++
+\frac{\partial g_{\alpha\nu}}{\partial x^\mu}
+-
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+\biggr)
+-
+\frac12\biggl(
+\frac{\partial g_{\nu\mu}}{\partial x^\alpha}
++
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+-
+\frac{\partial g_{\alpha\nu}}{\partial x^\mu}
+\biggr)
+=0.
+\end{align*}
+Die kovariante Ableitung des metrischen Tensors verschwindet.
+Dies ist nicht überraschend, die kovariante Ableitung war ja mit dem Ziel
+konstruiert worden, dass sie ausdrücken kann, dass sich Längen und
+Winkel, die mit dem metrischen Tensor konstruiert werden, nicht ändern.
+
+\subsubsection{Index Herunterziehen und kovariante Ableitung}
+Sie $A^\mu$ ein kontravarianter Vektor.
+Der zugehörige kovariante Vektor $A_\nu=A^\mu g_{\mu\nu}$ entsteht
+durch Herunterziehen des Index mit Hilfe der Metrik.
+Aus Abschnitt \ref{skript:geodaeten:kovablverj} wissen wir, dass es nicht
+auf die Reihenfolge von kovarianter Ableitung und Verjüngung ankommt.
+Wir schliessen daher aus der Rechnung
+\begin{align*}
+\nabla_\alpha A_\nu
+&=
+\nabla_\alpha(A^\mu g_{\mu\nu})
+=
+\nabla_\alpha A^\mu g_{\mu\nu} + A^\mu\nabla_\alpha g_{\mu\nu}
+=
+\nabla_\alpha A^\mu g_{\mu\nu},
+\end{align*}
+dass herunterziehen eines Index ebenfalls mit der kovarianten Ableitung
+vertauscht.
+
 \section{Beispiele}
-\rhead{Beispiele}
+%\rhead{Beispiele}
 In den nachfolgenden Beispielen wollen wir die Christoffelsymbole erster
 und zweiter Art für Zylinder- und Kugeloberfläche berechnen.
+
+\rhead{Beispiele}
 
 \subsection{Polarkoordinaten}
 Die nicht verschwinden Komponenten
@@ -708,7 +873,7 @@ alle Ableitungen
 
 \subsection{Kugelkoordinaten}
 Die Kugeloberfläche verwendet die Koordinaten $(\vartheta,\varphi)$.
-Zun"achst brauchen wir die Ableitungen der Komponenten des metrischen
+Zunächst brauchen wir die Ableitungen der Komponenten des metrischen
 Tensors
 \begin{align*}
 \frac{\partial g_{11}}{\partial \vartheta} &=0,
@@ -827,7 +992,7 @@ erhalten die Differentialgleichung
 \ddot x^\alpha+\Gamma_{\mu\nu}^\alpha \dot x^\mu\dot x^\nu=0.
 \label{skript:kruemmung:geodatengleichung}
 \end{equation}
-\index{Geodäte}
+\index{Geodäte}%
 
 \begin{definition}
 Eine Kurve in einem Riemannschen Raum heisst eine Geodäte, wenn sie
@@ -843,7 +1008,7 @@ haben.
 % XXX Geschwindigkeitsinvarianz
 %
 
-\subsection{Flache R"aume}
+\subsection{Flache Räume}
 In flachen Räumen wie der Ebene oder der Zylinderoberfläche verschwinden
 alle Christoffelsymbole.
 Die Geodätengleichung ist daher nur noch
@@ -890,7 +1055,7 @@ r(t)&=\sqrt{x_0^2+t^2}
 Wir prüfen durch einsetzen, ob diese Funktionen die
 Geodätendifferentialgleichung~\eqref{skript:geodaeten:dglpolar}
 erfüllen.
-Die Ableitungen von $r(t)$ und $\varphi(t)$ sind
+Die ersten und zweiten Ableitungen von $r(t)$ und $\varphi(t)$ sind
 \begin{align*}
 \dot r(t)
 &=\frac{t}{r},
@@ -995,8 +1160,8 @@ Drehung des dreidimensionalen Raumes.
 Die Eigenschaft einer Kurve, eine Geodäte zu sein, hängt aber nur von
 der Metrik ab, die sich bei einer solchen Drehung nicht ändert.
 Jeder andere Grosskreis ist also automatisch auch eine Geodäte.
-Trotzdem wollen wir im folgenden für jeden beliebigen Grosskreis
-zeigen, dass er die Differentialgleichung der Geodäten erfüllt.
+Trotzdem wollen wir die Frage für Breitenkreise und Meridiane
+gesondert untersuchen.
 
 Ein Breitenkreis ist nach der gleichen Rechnung keine Geodäte.
 Er ist charakterisiert durch $x^1(t)=\vartheta(t)\ne\frac{\pi}2$,
@@ -1065,8 +1230,9 @@ damit ist gezeigt, dass Meridiane Geodäten sind.
 Die Berechnung für einen beliebigen Grosskreis ist dagegen sehr 
 kompliziert und nicht sehr instruktiv.
 
-\section{Variationsprinzip}
-\rhead{Variationsprinzip}
+\section{Geodäten und Variationsprinzipien%
+\label{skript:geodaeten:section:variationsprinzip}}
+\rhead{Variationsprinzipien}
 Wir möchten in diesem Abschnitt verstehen, dass die Geodäten tatsächlich 
 die kürzesten Kurven sind.
 Dazu müssen wir für eine beliebige mit dem Parameter $t$ parametrisierte
@@ -1081,7 +1247,8 @@ Gesucht wird jetzt unter allen möglichen Kurven, die zwei Punkte miteinander
 verbinden, diejenige für die das Integral \eqref{skript:variation:laenge}
 minimal wird.
 
-\subsection{Euler-Lagrange-Gleichung}
+\subsection{Euler-Lagrange-Gleichung%
+\label{skript:geodaeten:subsection:Euler-Lagrange-Gleichung}}
 \begin{figure}
 \includegraphics{chapters/tikz/lagrange.pdf}
 \caption{Nachbarkurven der Lösungskurve eines Variationsproblems
@@ -1100,11 +1267,21 @@ und das Integral
 \label{skript:variation:funktional}
 \end{equation}
 minimiert.
+Das Problem, eine kürzeste Kurve zu finden, ist der Fall
+\[
+F(x^\alpha(t),\dot x^\alpha(t),t)
+=
+\sqrt{g_{\mu\nu}(x^\alpha(t)) \dot x^\mu(t)\dot x^\nu(t)},
+\]
+wie man durch Vergleich mit \eqref{skript:variation:laenge}
+erkennen kann.
 
 Wenn $x^\alpha(t)$ das Integral \eqref{skript:variation:funktional}
 minimiert, dann wird es grösser, wenn man die Kurve etwas ändert.
 Wir wählen also eine Kurve $\eta^\alpha(t)$ und berechnen, die
-um $\eta^\mu(t)$ verschobene Kurve wird ein grösseres Integral
+um $\eta^\mu(t)$ verschobene Kurve
+(Abbildung~\ref{skript:geodaeten:fig:lagrange})
+wird ein grösseres Integral
 \eqref{skript:variation:funktional} ergeben.
 Wir bilden daher
 \[
@@ -1116,7 +1293,7 @@ F(x^\alpha(t) + s\eta^\alpha(t), \dot x^\alpha(t) + s \dot \eta^\alpha(t), t)
 \]
 Dieses Integral soll minimal werden für $s=0$, also muss die Ableitung
 dort verschwinden.
-Wir leiten daher nach $s$ ab:
+Wir leiten daher $I(s)$ nach $s$ ab:
 \begin{align*}
 \frac{dI(s)}{ds}
 &=
@@ -1126,8 +1303,10 @@ Wir leiten daher nach $s$ ab:
 +
 \frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t) + s\eta^\alpha(t),
 \dot x^\alpha(t) + s\dot\eta^\alpha(t), t) \dot\eta^\alpha(t)
-\,dt
-\\
+\,dt.
+\end{align*}
+Wir brauchen nur den Wert an der Stelle $s=0$:
+\begin{align*}
 \frac{dI(0)}{ds}
 &=
 \int_{t_0}^{t_1}
@@ -1137,7 +1316,7 @@ Wir leiten daher nach $s$ ab:
 \frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t),
 \dot x^\alpha(t), t)
 \dot\eta^\alpha(t)
-\,dt
+\,dt.
 \\
 \intertext{
 Den zweiten Term können wir mit partieller Integration vereinfachen
@@ -1159,7 +1338,7 @@ und erhalten}
 \frac{d}{dt}\frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t),
 \dot x^\alpha(t), t)
 \eta^\alpha(t)
-\,dt
+\,dt.
 \intertext{Da die verschobene Kurve immer noch die beiden Punkte
 $x^\alpha(t_0)$ und $x^\alpha(t_1)$ verbindet, ist $\eta^\alpha(t_0)=0$
 und $\eta^\alpha(t_1)=0$, und damit verschwindet der mittlere Term.
@@ -1195,7 +1374,8 @@ Etwas kompakter geschrieben lauten diese
 \label{skript:variation:euler-lagrange}
 \end{equation}
 
-\subsection{Parametrisierung}
+\subsection{Parametrisierung%
+\label{skript:geodaeten:subsection:Parametrisierung}}
 Wir vermuten, dass Geodäten die kürzesten Verbindungen sind.
 Mit den Euler-Lagrange-Gleichungen können wir dies nachprüfen.
 Wenn die Vermutung stimmt, müssten die Euler-Lagrange-Gleichungen 
@@ -1244,6 +1424,7 @@ Damit können wir jetzt die Euler-Lagrange-Gleichungen für $F$ aufstellen:
 +
 L\frac{d}{dt}\frac{\partial L}{\partial\dot x^\alpha}
 \\
+\Rightarrow\qquad
 \frac{d}{dt}
 \frac{\partial F}{\partial \dot x^\alpha}
 -
@@ -1269,10 +1450,14 @@ Wenn wir also $dL/dt=0$ voraussetzen, dann ist die Euler-Lagrange-Gleichung
 für $L$ gleichbedeutend mit der Euler-Lagrange-Gleichung für $F$.
 
 \subsection{Lagrange-Gleichung für Geodäten}
-Wir suchen jetzt also die Euler-Lagrange-Gleichungen f"ur die Funktion
+Wir suchen jetzt also die Euler-Lagrange-Gleichungen für die Funktion
 \[
 F(x^\alpha, \dot x^\alpha) = \frac12 g_{\mu\nu} \dot x^\mu \dot x^\nu.
 \]
+Wir erwarten, dass die Euler-Lagrange-Gleichungen zu dieser Funktion $F$
+die Gleichungen~\eqref{skript:kruemmung:geodatengleichung}
+der der Geodäten ergeben.
+
 Wir berechnen daher die Ableitungen
 \begin{align*}
 \frac{\partial F}{\partial x^\alpha}
@@ -1322,11 +1507,12 @@ g_{\alpha\nu}\ddot x^\nu
 \frac12
 g_{\mu\alpha}\ddot x^\mu
 -
-\frac12\frac{\partial g_{\mu\nu}}{\partial x^\alpha} \dot x^\mu \dot x^\nu
+\frac12\frac{\partial g_{\mu\nu}}{\partial x^\alpha} \dot x^\mu \dot x^\nu.
 \\
-\intertext{Darin fassen im ersten Term auf der rechten Seite
+\intertext{Darin ersetzen wir im ersten Term auf der rechten Seite
 $\beta$ durch $\mu$ und im zweiten Term $\beta$ durch $\nu$.
-Ausserdem fassen wir die zwei Terme mit zweiten Ableitungen zusammen:}
+Ausserdem fassen wir die zwei Terme mit zweiten Ableitungen von $x^\nu$
+zusammen:}
 &=
 g_{\alpha\nu}\ddot x^\nu
 +
@@ -1338,7 +1524,8 @@ g_{\alpha\nu}\ddot x^\nu
 -
 \frac{\partial g_{\mu\nu}}{\partial x^\alpha}
 \biggr)\dot x^\mu\dot x^\nu.
-\end{align*}
+\\
+\intertext{%
 Wir multiplizieren mit $g^{\sigma\alpha}$ und verwenden,
 dass $g^{\sigma\alpha}g_{\alpha\nu} = \delta_\nu^\alpha$, da $g^{\sigma\alpha}$
 die zu $g_{\mu\nu}$ inverse Matrix ist.
@@ -1348,9 +1535,8 @@ $g^{\sigma\alpha}g_{\alpha\nu}\ddot x^\nu
 \delta_\nu^\alpha\ddot x^\nu
 =
 \ddot x^\alpha$, und
-wir bekommen für die Differentialgleichung der Geodäten:
-\begin{align*}
-0=
+wir bekommen für die Differentialgleichung der Geodäten:}
+0&=
 \ddot x^\sigma
 -
 g^{\sigma\alpha}\frac12\biggl(
@@ -1368,6 +1554,8 @@ g^{\sigma\alpha}\frac12\biggl(
 \end{align*}
 Damit ist gezeigt, dass die Lösungen der Geodäten-Gleichung tatsächlich
 kürzeste Verbindungen sind.
+
+\input{chapters/koordtrafo.tex}
 
 \section{"Ubungsaufgaben}
 \rhead{"Ubungsaufgaben}

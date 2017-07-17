@@ -4,10 +4,10 @@
  * (c) 2017 Prof Dr Andreas Mueller, Hochschule Rapperswil
  */
 g: matrix(
-    [-1+rg/r,          0,   0,                  0 ],
-    [      0, 1/(1-rg/r),   0,                  0 ],
-    [      0,          0, r^2,                  0 ],
-    [      0,          0,   0, r^2 * sin(theta)^2 ]
+    [-(1-rg/r)*c^2,          0,   0,                  0 ],
+    [            0, 1/(1-rg/r),   0,                  0 ],
+    [            0,          0, r^2,                  0 ],
+    [            0,          0,   0, r^2 * sin(theta)^2 ]
 );
 x: [t, r, theta, phi];
 

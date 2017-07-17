@@ -1,0 +1,30 @@
+%
+% ionisation.tex -- Ionistationsgrad des Universums in Abhängigkeit von S
+%
+% (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\documentclass[tikz]{standalone}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{fp}
+\usepackage{ifthen}
+\usepackage[utf8]{inputenc}
+\usetikzlibrary{arrows,intersections}
+\usetikzlibrary{fixedpointarithmetic}
+\begin{document}
+\begin{tikzpicture}[>=latex, thick, scale=4]
+
+\draw[->] (-0.1,0)--(5.0,0) coordinate[label={above:$T$}];
+\draw[->] (0,-0.1)--(0,1.1) coordinate[label={left:$X$}];
+
+%\draw[red,domain=0:1.4436,line width=1.5] plot (\x,{sinh(\x)});
+
+%(sqrt(\x)^3 * exp(1/\x))
+
+
+%\draw[red,domain=0.001:5,line width=1.5]
+%plot (\x,
+%{(sqrt(4* (sqrt(\x)^3 * exp(1/\x)) +1)-1)/(2*(sqrt(\x)^3 * exp(1/\x)))});
+
+\end{tikzpicture}
+\end{document}

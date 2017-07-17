@@ -1,0 +1,28 @@
+/* 2D Differentialgleichung mit Punktquelle */
+
+
+/* Abstand Punktquelle zu x-y Ort */
+r : sqrt( (x(l)-xc)^2 + y(l)^2 );
+
+/* Gravitationsfeld einer Punktquelle */
+phi : -K*M/r;
+lnn : -2*phi/c^2;
+
+display2d : false;
+xddot : (- diff(x(l),l)^2 + diff(y(l),l)^2) * diff(lnn, x(l))
+        - 2*diff(x(l),l)*diff(y(l),l) * diff(lnn,y(l));
+
+/* Substitution für ode solver */
+subx2: subst(x(2), diff(x(l),l), xddot);
+subx1: subst(x(1), x(l), subx2);
+subx4: subst(x(4), diff(y(l),l), subx1);
+subx3: subst(x(3), y(l), subx4);
+
+yddot : (-2*diff(x(l),l)*diff(y(l),l) * diff(lnn,x(l)))
+        + (diff(x(l),l)^2-diff(y(l),l)^2) * diff(lnn,y(l));
+
+/* Substitution für ode solver */
+subx2y: subst(x(2), diff(x(l),l), yddot);
+subx1y: subst(x(1), x(l), subx2y);
+subx4y: subst(x(4), diff(y(l),l), subx1y);
+subx3y: subst(x(3), y(l), subx4y);

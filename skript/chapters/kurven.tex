@@ -4,45 +4,177 @@
 % (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 %
 \chapter{Kurven%
-\label{skript:kruemmung:section:kurve}}
+\label{skript:chapter:kurven}}
 \lhead{Kurven}
 \rhead{}
 Das Konzept der Krümmung einer Kurve wird bereits im ersten Semester
-in der Analysis eingeführt.
-Die Kurve kann zum Beispiel durch die Länge entlang der Kurve
-parametrisiert werden.
-Durch Festlegung eines Nullpunkts der Längenmessung erhält die
-Kurve damit ein Koordinatensystem, welches die Punkte auf der
-Kurve eindeutig identifizieren lässt.
-Es stellt sich heraus, dass Krümmung eine Eigenschaft der Einbettung
-einer Kurve in einen höherdimensionalen Raum ist.
-Durch Messungen allein innerhalb der Kurve, also durch Verwendung
-des eben beschriebenen Koordinatensystems lassen sich verschiedene
-gekrümmte Kurven nicht unterscheiden.
+in der Analysis eingeführt,
+die Formeln dafür sollen in diesem Kapitel kurz in Erinnerung gerufen werden.
+Wichtiger aber ist die Erkenntnis, dass eine Kurve nur eine sehr simple
+innere Geometrie hat.
+Nach Wahl eines Anfangspunktes definiert die Bogenlänge entlang der Kurve 
+ein Koordinatensystem für die Kurve vollständig.
+Die Krümmung der Kurve ist also eine Eigenschaft der Einbettung einer Kurve.
 
-\section{Definitionen}
+Diese innere Einfachheit von Kurven macht sie zum idealen Werkzeug, mit
+dem wir höher\-dimensionale Räume untersuchen können.
+Wir können zum Beispiel Dreiecke in einer Fläche untersuchen,
+und werden dabei erkennen, dass die Winkelsumme Auskunft geben kann
+über die Krümmung der Fläche.
+In diesem Kapitel werden wir die Krümmung von Kurven in einer Fläche
+studieren, um die Krümmung der Fläche selbst zu charakterisieren.
+Dabei werden wir verschiedene Arten von Krümmungsbegriffen finden.
+Die mittlere Krümmung hängt von der Einbettung einer Fläche ab und
+dient zum Beispiel zur Beschreibung von Minimalflächen in
+Kapitel~\ref{chapter:minimal}.
+Die Gausskrümmung dagegen ist eine innere Eigenschaft der Fläche und
+wird in Kapitel~\ref{skript:chapter:kruemmung} für beliebige Räume
+verallgemeinert.
+
+\section{Länge einer Kurve}
 \rhead{Definitionen}
-Wir betrachten eine Kurve in der Ebene durch einen Parameterdarstellung
-$c\colon [a,b] \to\mathbb R^2:t\mapsto c(t)$.
-Darin ist $c(t)$ als Vektor in der Ebene zu betrachten selbst wenn
+Wir betrachten eine Kurve in der Ebene gegeben durch einen Parameterdarstellung
+\[
+c\colon [a,b] \to\mathbb R^2:t\mapsto c(t).
+\]
+Darin ist $c(t)$ als Vektor in der Ebene zu betrachten, selbst wenn
 wir dies nicht explizit durch Vektorpfeile anzeigen.
+
+Alle unsere Untersuchungen werden die Analysis als Werkzeug verwenden,
+wir wollen daher nur Kurven verwenden, für die eine ausreichend glatte
+Parametrisierung vorliegt.
+Wir verlangen daher, dass die Parameterisierung nach genügend oft nach
+dem Parameter abgeleitet werden kann.
+Die Ableitung 
+\[
+v(t)
+=
+\frac{dc(t)}{dt}
+=
+\dot c(t)
+\]
+ist ein Vektor, der im Punkt $c(t)$ tangential ist an die Kurve 
+(Abbildung~\ref{skript:kurve:tangente}).
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/tangente.pdf}
+\caption{Kurve $c(t)$ parametrisiert mit dem Parameter $t$ und Tangentialvektor
+$\dot c(t)$
+\label{skript:kurve:tangente}}
+\end{figure}
+
 Man kann die Parametrisierung als die Wahl eines Koordinatensystems
 für die Kurve interpretieren.
 Es stellt sich daher die Frage, inwieweit Aussagen über die Kurve von
-der Wahl des Koordinatensystems abhängig sind.
+der Wahl dieses Koordinatensystems abhängig sind.
 
 In $\mathbb R^2$ haben wir eine Längenmessung zur Verfügung, welche
 wir dazu verwenden können, die Länge der Kurve zu berechnen.
-Die Funktion $s(t)$ soll die Länge der Kurve zwischen den Parameterwerten
-$a$ und $t$ berechnen, wir wissen also insbesondere, dass $s(0)=0$.
-Damit das Konzept der Länge der Kurve überhaupt sinnvoll ist, müssen
-wir verlangen, dass die Kurve ausreichend glatt ist.
-Wir verlangen daher, dass die Funktion $c(t)$ einmal stetig differenzierbar
-ist.
-Wir bezeichnen die Ableitung mit einem Punkt.
+Dazu betrachten wir zwei benachbarte Punkte $c(t)$ und $c(t+\Delta t)$
+der Kurve.
+Ihre Entfernung ist $|c(t+\Delta t) - c(t)|$.
+Um daraus die Länge der Kurve zu berechnen, müssen wir die Kurve
+an den Stellen $t_1,t_2,\dots,t_n$
+beliebig fein in Teile aufteilen, und die Längen der Teilstrecken
+aufaddieren.
+Die Summe
+\[
+l\simeq\sum_{k=1}^{n-1} |c(t_{i+1})-c(t_i)|
+\]
+ist daher eine Approximation für die Länge der Kurve.
+Die Differenzen können wir mit Hilfe der Ableitung durch
+\[
+c(t_{i+1})-c(t_i) = \dot c(t_i)\cdot (t_{i+1}-t_i)
+\]
+approximieren.
+Beim Grenzübergang zu einer beliebig feinen Unterteilung wird daraus
+das Integral
+\begin{equation}
+l=\int_a^b |\dot c(t)|\,dt.
+\end{equation}
+Die Funktion
+\begin{equation}
+s(t)
+=
+\int_a^t |\dot c(\tau)|\,d\tau
+\label{skript:kurve:s(t)}
+\end{equation}
+berechnet die Länge der Kurve zwischen den Parameterwerten
+$a$ und $t$, insbesondere ist $s(0)=0$.
+Die Funktion $s(t)$ ist die {\em Bogenlänge} entlang der Kurve.
+\index{Bogenlänge}%
 
 \section{Bogenlängenparameter}
 \rhead{Bogenlängenparameter}
+In diesem Abschnitt soll illustriert werden, dass wir bei der Wahl
+einer Parametrisierung ein und derselben Kurve zwar viel Freiheit haben,
+dass jedoch für geometrische Untersuchungen sich meistens gewisse
+Parametrisierungen besonders eignen.
+Sowohl hier als auch später beim Studium der Geodäten ist eine
+Parametrisierung mit der Bogenlänge besonders nützlich.
+
+\subsubsection{Ein Beispiel}
+Wir betrachten die folgenden beiden Parametrisierungen einer ebenen Kurve:
+\begin{equation}
+\begin{aligned}
+c_1\colon
+[-1,1]\to\mathbb{R}^2
+&\colon
+t\mapsto\begin{pmatrix}t\\\sqrt{1-t^2}\end{pmatrix}
+&&\text{und}&
+c_2\colon
+[0,\pi]\to\mathbb{R}^2
+&
+\colon
+s\mapsto\begin{pmatrix}-\cos s\\\sin s\end{pmatrix}.
+\end{aligned}
+\end{equation}
+Beide beschreiben den Einheitskreisbogen, der den Punkt $(-1,0)$ mit
+dem Punkt $(1,0)$ verbindet (Abbildung \ref{skript:1dim:kreisbogen}).
+Die Parametrisierungen unterscheiden sich aber in der Ableitung,
+die Tangentialvektoren für die beiden Ableitungen sind
+\begin{equation}
+\begin{aligned}
+\frac{dc_1}{dt}
+&=
+\begin{pmatrix}
+1\\-\frac{t}{\sqrt{1-t^2}}
+\end{pmatrix}
+&&\text{und}&
+\frac{dc_2}{ds}
+&=
+\begin{pmatrix}
+\sin s\\\cos s
+\end{pmatrix}.
+\end{aligned}
+\end{equation}
+Der Tangentialvektor hat in der zweiten Parametrisierung konstant
+die Länge $1$, während sie in der ersten Parametrisierung nahe bei
+$t=\pm1$ über alle Grenzen wächst.
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/kreisbogen.pdf}
+\caption{Kreisbogen zwischen $(-1,0)$ und $(1,0)$. Im Text werden
+zwei verschiedene Parametrisierungen dafür vorgestellt.
+\label{skript:1dim:kreisbogen}}
+\end{figure}
+
+Wir verwenden \eqref{skript:kurve:s(t)}, um die Kurvenlänge für die
+Parametrisierung $c_1$ zu berechnen.
+Dazu berechnen wir
+\[
+s(t)
+=
+\int_{-1}^t \sqrt{1+\frac{t^2}{1-\tau^2}}\,d\tau
+=
+\int_{-1}^t \sqrt{\frac{1-t^2  +t^2}{1-\tau^2}}\,d\tau
+=
+\int_{-1}^t \frac{1}{\sqrt{1-t^2}} \,d\tau
+=
+\arcsin t + \frac{\pi}2.
+\]
+
+\subsubsection{Bogenlänge als Lösung einer Differentialgleichung}
 Interpretieren wir den Parameter $t$ als die Zeit der Bewegung eines 
 Teilchens entlang der Kurve, dann ist die zeitliche Änderung der Strecke,
 die das Teilchen zurück gelegt hat, gerade die Länge des
@@ -57,11 +189,11 @@ Die Funktion $s(t)$ ist also die Lösung der Differentialgleichung
 \text{ mit der Anfangsbedingung }\quad s(a)=0.
 \label{skript:kruemmung:laengedgl}
 \end{equation}
-Da $|\dot c(t)|$ eine stetige Funktion ist können wir nach allgemeinen
+Da $|\dot c(t)|$ eine stetige Funktion ist, können wir nach allgemeinen
 Sätzen der Theorie der gewöhnlichen Differentialgleichungen davon ausgehen,
 dass diese Differentialgleichung eine eindeutig bestimmte Lösung hat.
 
-Die Differentialgleichung \eqref{skript:kruemmung:laengedgl} kann 
+Die Lösung der Differentialgleichung \eqref{skript:kruemmung:laengedgl} kann 
 durch Integrieren sofort gefunden werden, sie ist
 \begin{equation}
 s(t)
@@ -74,7 +206,10 @@ s(t)
 \label{skript:kruemmung:laenge}
 \end{equation}
 wie man auch durch Ableiten nach $t$ sofort nachprüfen kann.
+Dies stimmt natürlich mit der Kurvenlängenformel~\eqref{skript:kurve:s(t)}
+überein.
 
+\subsubsection{Charakterisierung von Bogenlängenparametrisierung}
 Verlangen wir von der Kurvenparametrisierung $c(t)$ zusätzlich,
 dass $|\dot c(t)|\ne 0$ für alle Parameterwerte $t$, dann ist
 $s(t)$ sogar eine streng monoton wachsende Funktion, insbesondere
@@ -84,8 +219,8 @@ Anwendung der inversen Funktion sofort einen Parameterwert $t$
 finden, bei dem der Wert $s$ der Länge erreicht wird, also
 $s(t)=s$.
 Wir schreiben diesen Wert auch abkürzen als $t(s)$, dies ist eine
-vereinfachte Notation für die inverse Funktion von $s(t)$.
-Die Ableitung der Funktion $s(t)$ ist
+übliche, vereinfachte Notation für die inverse Funktion von $s(t)$.
+Die Ableitung der Funktion $t(s)$ ist
 \begin{equation}
 \frac{d}{ds} t(s) = \frac{1}{\dot s(t(s))} = \frac1{|\dot c(t(s))|}
 \label{skript:kruemmung:abllaengeinv}
@@ -99,8 +234,8 @@ Länge entlang der Kurve gerade die Kurvenlänge ist, die durchlaufen
 wird.
 Wir nennen $s$ auch den {\em Kurvenlängenparameter} entlang der
 Kurve.
-\index{Kurvenlängenparameter}
-Wir sagen auch, $c(s)$ ist durch Kurvenlänge parametrisiert.
+\index{Kurvenlängenparameter}%
+Wir sagen auch, $c(s)$ ist durch die Kurvenlänge parametrisiert.
 
 Die neue Parametrisierung hat als ``Geschwindigkeitsvektor''
 \[
@@ -108,7 +243,7 @@ Die neue Parametrisierung hat als ``Geschwindigkeitsvektor''
 =
 \frac{d}{ds} c(t(s))
 =
-\dot c(t(s)) \frac{d}{ds}t(s)
+\dot c(t(s)) \frac{d}{ds}t(s),
 \]
 seine Länge wird unter Verwendung von
 \eqref{skript:kruemmung:abllaengeinv}
@@ -119,9 +254,9 @@ seine Länge wird unter Verwendung von
 =
 \biggl|\dot c(t(s))\frac1{|\dot c(t(s))|}\biggr|
 =
-1,
+1.
 \]
-bei Verwendung eines Kurvenlängenparameters wird der Tangentialvektor
+Bei Verwendung eines Kurvenlängenparameters wird der Tangentialvektor
 immer ein Einheitsvektor sein.
 
 Umgekehrt wird die Differentialgleichung \eqref{skript:kruemmung:laengedgl}
@@ -130,6 +265,7 @@ der Lösung $s(t)=t$.
 Die Bedingung $|\dot c(t)|=1$ charaktersiert also $t$ als einen
 Kurvenlängenparameter.
 
+\subsubsection{Beispiele}
 \begin{beispiel}
 Wir betrachten eine Gerade 
 \[
@@ -146,7 +282,7 @@ mit der Lösung
 \[
 s(t)=|v|t.
 \]
-Da $v\ne 0$ ist $s(t)$ monoton wachsend, und wir können sofort nach
+Da $v\ne 0$ ist $s(t)$ monoton wachsend und wir können sofort nach
 $t$ auflösen, es ist
 \[
 t(s)=\frac{s}{|\vec v|}.
@@ -193,7 +329,7 @@ s(t)
 =
 \int_{-1}^t \frac{1}{\sqrt{1-\tau^2}}\,d\tau
 \]
-Das Integral auf der rechten Seite kann man aber in geschlossener
+Das Integral auf der rechten Seite kann man in geschlossener
 Form auswerten, es ist
 \[
 s(t)=\arcsin(t) + \frac{\pi}{2}
@@ -204,7 +340,7 @@ t(s)
 =
 \sin\biggl(s-\frac{\pi}2\biggr)
 =
--\cos(s)
+-\cos(s).
 \]
 Setzen wir dies in die Parametrisierung ein, erhalten wir
 \[
@@ -234,8 +370,16 @@ die sie entlang der Kurve zurückgelegt hat, die einzige geometrische
 Information, die ihr zugänglich ist.
 Sie kann verschiedene Kurven im Raum nicht voneinander unterscheiden.
 
-\section{Krümmung}
+\section{Krümmung%
+\label{section:kurve:kruemmung}}
 \rhead{Krümmung}
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/kruemmung.pdf}
+\caption{Krümmung $\kappa(t)$ und Krümmungsradius $\varrho(t)$
+der Sinus-Kurve im Punkt $c(t)$
+\label{skript:kurven:fig:kruemmung}}
+\end{figure}
 Wir möchten in diesem Abschnitt zeigen, dass die Krümmung einer Kurve
 ausschliesslich eine Eigenschaft der Einbettung der Kurve in den
 Raum ist.
@@ -320,33 +464,49 @@ berechnen:
 \begin{align}
 \frac{d}{dt} \frac{\dot c(t)}{|\dot c(t)|}
 &=
-\frac{\ddot c(t) |\dot c(t)| - \dot c(t) \frac{d}{dt}|\dot c(t)|}{|\dot c(t)|^2}
+\frac{\displaystyle\ddot c(t) |\dot c(t)| - \dot c(t) \frac{d}{dt}|\dot c(t)|}{|\dot c(t)|^2}
 =
-\frac{\ddot c(t) |\dot c(t)| - \dot c(t) \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)}{|\dot c(t)|^2}
+\frac{\displaystyle\ddot c(t) |\dot c(t)| - \dot c(t) \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)}{|\dot c(t)|^2}
 =
-\frac{\ddot c(t) - \frac{\dot c(t)}{|\dot c(t)|} \left( \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)\right)}{|\dot c(t)|}
+\frac{\displaystyle\ddot c(t) - \frac{\dot c(t)}{|\dot c(t)|} \left( \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)\right)}{|\dot c(t)|}
 \label{skript:kruemmung:krallg1}
 \end{align}
+\begin{figure}[t!]
+\centering
+\subfigure{}{\includegraphics[]{chapters/tikz/kruemmung2.pdf}}
+\hfill
+\subfigure{}{\includegraphics[]{chapters/tikz/kruemmung3.pdf}}
+\caption{Berechnung der Krümmung aus den ersten zwei Ableitungen
+$\dot c(t)$ und $\ddot c(t)$ der Kurve.
+Die Krümmung ist proportional zur Projektion der zweiten Ableitung
+$\ddot c(t)$ auf die Normale auf der Tangentenrichtung $\dot c(t)$.
+Die Projektion ist in beiden Abbildungen {\color{red}rot} eingezeichnet.
+Auf der rechten Abbildung sieht man, dass dies auch die Höhe des
+von $\dot c(t)$ und $\ddot c(t)$ aufgespannten Parallelogramms ist.
+\label{skript:chapter:kruemmungsberechnung}}
+\end{figure}
 Schreiben wir den Einheitstangentialvektor
 \[
-\vec e(t)= \frac{\dot c(t)}{|\dot c(t)|},
+e(t)= \frac{\dot c(t)}{|\dot c(t)|},
 \]
 wird der Zähler etwas übersichtlicher zu
 \[
 \ddot c(t) - \frac{\dot c(t)}{|\dot c(t)|} \biggl( \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)\biggr)
 =
-\ddot c(t) - \vec e(t)\; \bigl(\vec{e}(t)\cdot \ddot c(t)\bigr).
+\ddot c(t) - e(t)\; \bigl(e(t)\cdot \ddot c(t)\bigr).
 \]
-Da $\vec e(t)$ ein Einheitsvektor ist, ist
-$\vec e(t) \;(\vec e(t)\cdot\ddot c(t))$ die Projektion des Vektors
-$\ddot c(t)$ auf den Vektor $\vec e(t)$.
-Der Nenner ist also die Komponenten von $\ddot c(t)$ senkrecht auf dem
+Da $e(t)$ ein Einheitsvektor ist, ist
+$e(t) \;(e(t)\cdot\ddot c(t))$ die Projektion des Vektors
+$\ddot c(t)$ auf den Vektor $e(t)$
+(Abbildung~\ref{skript:chapter:kruemmungsberechnung} links).
+Der Zähler ist also die Komponenten von $\ddot c(t)$ senkrecht auf dem
 Tangentialvektor.
 Wir brauchen davon aber nur den Betrag, also die Höhe des Parallelograms
-mit den Seiten $\vec e(t)$ und $\ddot c(t)$.
+mit den Seiten $e(t)$ und $\ddot c(t)$
+(Abbildung~\ref{skript:chapter:kruemmungsberechnung} rechts).
 Diese können wir aber auch dadurch erhalten, dass wir den orientierten
 Parallelogramminhalt berechnen, und durch die Länge der Grundseite
-$\vec e(t)$ teilen, die aber ein Einheitsvektor ist.
+$e(t)$ teilen, die aber ein Einheitsvektor ist.
 Den Parallelogramminhalt können wir mit der Determinante berechnen:
 \[
 \biggl|\ddot c(t) - \frac{\dot c(t)}{|\dot c(t)|}
@@ -361,19 +521,20 @@ Zunächst müssen wir den Faktor $|\dot c(t)|$ im Nenner wieder
 hinzufügen, den wir in~\eqref{skript:kruemmung:krallg1} gefunden hatten.
 Ausserdem brauchen wir einen weiteren Faktor $|\dot c(t)|$ im Nenner
 aus der Definition~\eqref{skript:kruemmung:krallg2}.
-Damit wird die allgemeine Formel
+Damit wird
 \begin{equation}
 \kappa(t)
 =
 \frac{\det(\dot c(t),\ddot c(t))}{|\dot c(t)|^3}
 \label{skript:kruemmung:krkurveallg}
 \end{equation}
-für die Krümmung einer ebenen Kurve.
+die allgemeine Formel für die Krümmung einer ebenen Kurve.
 
 
 \begin{beispiel}
-Wir berechnen die Krümmung einer Ellipse mit den Halbachsen
-$a$ und $b$, und verwenden dazu die Parametrisierung mit Hilfe des
+\index{Ellipse!Krümmung}
+Wir berechnen die Krümmung einer {\em Ellipse mit den Halbachsen
+$a$ und $b$}, und verwenden dazu die Parametrisierung mit Hilfe des
 Zentriwinkels, also
 \[
 c
@@ -422,14 +583,75 @@ und $t=\pi$ erreicht, sie ist $ab/b^3=a/b^2$.
 Die minimale Krümmung wird dagegen bei $t=\pm\frac{\pi}2$ angenommen,
 sie ist $ab/a^3=b/a^2$.
 
-Ein Kreis ist eine Ellipse, bei der $a$ und $b$ übereinstimmen, dann sind
-die beiden Extremwerte gleich gross, nämlich
+Ein Kreis ist eine Ellipse, bei der $a$ und $b$ übereinstimmen.
+Für einen Kreis sind die beiden Extremwerte der Krümmung
+gleich gross, nämlich
 \[
 \frac{a}{b^2}=\frac{r}{r^2}=\frac1r
 \qquad\text{und}\qquad
 \frac{b}{a^2}=\frac{r}{r^2}=\frac1r,
 \]
 wie wir früher bereits gefunden haben.
+\end{beispiel}
+
+\begin{beispiel}
+\index{Parabel!Krümmung}
+Für spätere Anwendungen berechnen wir noch die Krümmung einer {\em Parabel},
+genauer des Graphen der Funktion
+\[
+y = ax^2 + bx + c.
+\]
+Als Parameterdarstellung ausgedrückt geht es also um die Kurve
+\[
+t\mapsto c(t)
+=
+\begin{pmatrix}
+t\\
+at^2+bt+c
+\end{pmatrix}.
+\]
+Davon sind zunächst die Ableitungen nach $t$ zu bestimmen, sie sind
+\begin{align*}
+\dot c(t)
+&=
+\begin{pmatrix}1\\2at+b\end{pmatrix},
+\\
+\ddot c(t)
+&=
+\begin{pmatrix}0\\2a\end{pmatrix}.
+\end{align*}
+Die Krümmung ist nach Formel~\eqref{skript:kruemmung:krkurveallg}
+\begin{align}
+\kappa(t)
+&=
+\frac{\left|\begin{matrix}1&0\\2at+b&2a\end{matrix}\right|}{
+(1+(2at+b)^2)^{\frac32}
+}
+=
+\frac{2a}{(1+(2at+b)^2)^{\frac32}}.
+\label{skript:kruemmung:parabelkruemmung}
+\end{align}
+Der Scheitelpunkt befindet sich bei $t=-b/2a$, an dieser Stelle verschwindet
+die innere Klammer im Nenner von~\eqref{skript:kruemmung:parabelkruemmung}.
+Am Scheitel ist die Krümmung daher viel einfacher
+\begin{equation}
+\kappa_{\text{Scheitel}}
+=
+\kappa\biggl(-\frac{b}{2a}\biggr)
+=
+2a
+\qquad
+\Rightarrow
+\qquad
+\varrho_{\text{Scheitel}}
+=
+\frac1{\kappa_{\text{Scheitel}}}
+=
+\frac1{2a}.
+\label{skript:kruemmung:parabel:scheitel}
+\end{equation}
+Der Krümmungsradius im Scheitel der Normalparabel $y=x^2$ ist also
+$\varrho=\frac12$.
 \end{beispiel}
 
 Für eine Kurve in drei Dimension lässt sich das bei der Herleitung
@@ -456,7 +678,7 @@ eingebettet vorstellt.
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{chapters/3d/kurve.jpg}
-\caption{Kurven $t\mapsto(t,t^2,0)$ (rot) und $t\mapsto(t,t^2,t^3)$ (geld).
+\caption{Kurven $t\mapsto(t,t^2,0)$ (rot) und $t\mapsto(t,t^2,t^3)$ (gelb).
 \label{skript:kruemmung:fig:kurvekr}}
 \end{figure}
 Wir betrachten die beiden Kurven
@@ -524,8 +746,7 @@ allgemeine Sätze über Existenz und Eindeutigkeit der Lösung von
 gewöhnlichen Differentialgleichungen werden unsere Aussage dann
 als Konsequenz haben.
 
-In dieser speziellen Wahl der Parametrisierung ist $\dot x = 1$ und
-$\ddot x=0$.
+In dieser speziellen Wahl der Parametrisierung ist $x(0)=0$ und $\dot x(0)=1$.
 Die Ableitung von $y$ nach dem Parameter ist dann $\dot y=y'(x)$.
 Somit wird die Formel für die Krümmung
 \[
@@ -537,7 +758,7 @@ Somit wird die Formel für die Krümmung
 =
 \frac{y''}{(1+y'(x))^{\frac32}}
 \]
-der in expliziter Form:
+oder in expliziter Form:
 \[
 y''(x)=\kappa(x) (1+y'(x)^2)^{\frac32}.
 \]
@@ -552,8 +773,8 @@ müssen.
 Anders formuliert: zwei ebene Kurven mit gleicher Krümmung in Abhängigkeit
 von einem Bogenlängenparameter sind kongruent.
 
-In drei Dimensionen kann die Krümmung allein eine Raumkurve nicht bestimmen.
-Man kann dies zum Beispiel so einsehen.
+In drei Dimensionen kann die Krümmung eine Raumkurve nicht festlegen.
+Man kann dies zum Beispiel wie folgt einsehen.
 Ist $c(t)$ eine gegeben Raumkurve, dann können wir deren Krümmung
 $\kappa(t)$ berechnen.
 In jeder Ebene durch den Punkt $c(0)$, die auch den Tangentenvektor
@@ -570,17 +791,23 @@ Diese {\em Torsion} genannt Grösse bestimmt dann die Kurve vollständig.
 \index{Torsion}
 Für eine ebene Kurve verschwindget die Torsion.
 
-Die Kurventheorie lässt sich sogar auf eine beliebig grosse Zahl
-von Dimensionen verallgemeinern.
-Es stellt sich heraus, dass mit jeder zusätzlichen Dimension eine
-zusätzliche Funktion notwendig wird.
-Für eine Kurve in $n$ Dimensionen braucht es also $n-1$ Funktionen,
-die beschreiben, wie sich ein entlang der Kurve mitbewegtes Koordinatensystem,
-das sogenannte Frenet-$n$-Bein ändert.
-\index{Frenet-$n$-Bein}
-Diese Funktionen legen dann die Kurve bis auf die Wahl einer Anfangslage
-des Koordinatensystem eindeutig fest.
-Mit anderen Worten, wenn zwei Kurven in $n$ Dimensionen in den genannten
-$n-1$ Funtionen übereinstimmen, dann sind sie kongruent.
+%Die Kurventheorie lässt sich sogar auf eine beliebig grosse Zahl
+%von Dimensionen verallgemeinern.
+%Es stellt sich heraus, dass mit jeder zusätzlichen Dimension eine
+%zusätzliche Funktion notwendig wird.
+%Für eine Kurve in $n$ Dimensionen braucht es also $n-1$ Funktionen,
+%die beschreiben, wie sich ein entlang der Kurve mitbewegtes Koordinatensystem,
+%das sogenannte Frenet-$n$-Bein ändert.
+%\index{Frenet-$n$-Bein}
+%Diese Funktionen legen dann die Kurve bis auf die Wahl einer Anfangslage
+%des Koordinatensystem eindeutig fest.
+%Mit anderen Worten, wenn zwei Kurven in $n$ Dimensionen in den genannten
+%$n-1$ Funtionen übereinstimmen, dann sind sie kongruent.
 
+\input{chapters/schnittkruemmung.tex}
+\input{chapters/hauptkruemmungen.tex}
+
+\section*{Übungsaufgaben}
+\rhead{Übungsaufgaben}
+\uebungsaufgabe{0101}
 
