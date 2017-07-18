@@ -50,7 +50,7 @@ werden wird erst im Kapitel~\ref{skript:chapter:gravitation} klären.
 
 \section{Krümmungstensor}
 %\rhead{Krümmungstensor}
-Wir möchten Berechnen, wie sich ein Vektor beim Paralleltransport entlang
+Wir möchten berechnen, wie sich ein Vektor beim Paralleltransport entlang
 einer geschlossenen Kurve ändert.
 In dieser Form ist das Problem sicher zu kompliziert, die Wahl
 einer geschlossenen Kurve beinhaltet viel zu viele Freiheitsgrade.
@@ -76,7 +76,7 @@ auf einen Polygonzug beschränken, bei dem wir den Geodäten folgen,
 die als Tangentialrichtung die Richtung der beiden gegebenen
 Tangentialvektoren haben.
 Abbildung~\ref{skript:kruemmung:parallelogramm} zeigt, wie ein Vektor
-entlang eines Koordinatenparallelogramms transport wird und sich
+entlang eines Koordinatenparallelogramms transportert wird und sich
 dabei dreht.
 
 Wenn wir einen Vektor $A^\mu$ entlang einer solchen Kurve parallel
@@ -131,7 +131,8 @@ Ebene ist ein Vektor
 zugeordnet.
 
 \begin{definition}
-Das Wegintegral des $\vec v$ entlang der Kurve $c(t)=(x(t),y(t))$ ist
+Das Wegintegral des Vektorfeldes $\vec v$ entlang der Kurve $c(t)=(x(t),y(t))$
+ist
 \[
 \oint_c (f\,dx + g\,dy)
 = 
@@ -151,13 +152,13 @@ $x_1(y)$ und $x_2(y)$ in Abhängigkeit von $y$ beschreiben werden.
 \end{figure}
 Zu dem gegebenen Gebiet $D$ kann man aber auch für jede beliebige
 Funktion $h(x,y)$ das Gebietsintegral bilden.
-Wir tun dies im Detail nur für Gebiete deren Rand sich durch zwei
+Wir tun dies im Detail nur für Gebiete, deren Rand sich durch zwei
 Funktionen $y_1(x)$ und $y_2(x)$ beschreiben lassen, so dass das
 Gebiet $D$ die Menge
 \[
 D=\{ (x,y) \,|\, y_1(x) \le y \le y_2(x), x_1\le x\le x_2\}
 \]
-ist (Abbildung~\ref{skript:kruemmung:gebiet}).
+ist (Abbildung~\ref{skript:kruemmung:gebiet} links).
 Dann definieren wir
 
 \begin{definition}
@@ -172,7 +173,8 @@ in der Form
 \[
 D=\{(x,y)\,|\, x_1(y)\le x\le x_2(y), y_1\le y\le y\le y_2\}
 \]
-beschreiben, dann kann man das Gebietsintegral auch als
+beschreiben (Abbildung~\ref{skript:kruemmung:gebiet} rechts),
+dann kann man das Gebietsintegral auch als
 \[
 \int_Dh(x,y)\,dx\,dy
 =
@@ -193,7 +195,7 @@ von der Kurve $c$ berandet ist, dann gilt
 \oint_c (f\,dx + g\,dy)
 =
 \int_D \biggl(\frac{\partial g}{\partial x}
-   -\frac{\partial f}{\partial y}\biggr)\,dx\,dy
+   -\frac{\partial f}{\partial y}\biggr)\,dx\,dy.
 \]
 \end{satz}
 \index{Green!Satz von}%
@@ -222,7 +224,7 @@ Wir berechnen jetzt die einzelnen Summanden der rechten Seite.
 \int_{x_1}^{x_2} f(x,y_1(x))\,dx - \int_{x_1}^{x_2} f(x,y_2(x))\,dx
 \\
 &=
-\int_{x_1}^{x_2} f(x,y_1(x))\,dx + \int_{x_2}^{x_1} f(x,y_2(x))\,dx
+\int_{x_1}^{x_2} f(x,y_1(x))\,dx + \int_{x_2}^{x_1} f(x,y_2(x))\,dx.
 \end{align*}
 Der erste Term ist das Wegintegral entlang des unteren Randes des
 Gebietes $D$ mit der Parametrisierung $x\mapsto(x,y_1(x))$,
@@ -250,7 +252,7 @@ Beschreibung der Gebietsränder finden
 &=
 \int_{y_1}^{y_2} g(x_2(y),y) \,dy + \int_{y_2}^{y_1} g(x_1(y),y)\,dy
 =
-\oint_c g\,dy
+\oint_c g\,dy.
 \end{align*}
 Das letzte Gleichheitszeichen folgt wieder, weil $y\mapsto (x_2(y),y)$ den
 rechten Rand von $D$ beschreibt, $y\mapsto (x_1(y),y)$ den linken,
@@ -269,7 +271,7 @@ also die Aussage des Satzes von Green.
 \label{skript:kruemmung:section:stokes}}
 Der Satz von Stokes verallgemeinert das zweidimensionale Resultat des
 Satzes von Green auf beliebige Dimensionen.
-Die Form, die wir hier formulieren, ist noch nicht die allgemeinst
+Die Form, in der wir ihn hier formulieren, ist noch nicht die allgemeinst
 mögliche.
 Der allgemeine Satz von Stokes stellt einen Zusammenhang her zwischen
 einem Integral über die ``Ableitung'' in einem Gebiet und einem
@@ -303,9 +305,9 @@ Flächenintegral in Beziehung setzt.
 %Wir erwarten in drei Dimensionen also eine spezielle Form des
 %Satzes von Stokes.
 
-Als erstes müssen wir jetzt eine Beschreibung eines Flächenstückes
+Als Erstes müssen wir jetzt eine Beschreibung eines Flächenstückes
 und seines Randes haben.
-Wir brauchen dazu Gebiet $D\subset\mathbb R^2$, die Koordinaten darin
+Wir brauchen dazu ein Gebiet $D\subset\mathbb R^2$, die Koordinaten darin
 schreiben wir $u$ und $v$.
 Ein Flächenstück im Raum ist dann gegeben durch eine Abbildung
 \[
@@ -353,7 +355,7 @@ A_\mu(x(t))
 \underbrace{A_\mu \frac{\partial x^\mu}{\partial u}}_{\displaystyle=f}\,du
 +
 \underbrace{A_\mu \frac{\partial x^\mu}{\partial v}}_{\displaystyle=g}\,dv
-\biggr)
+\biggr),
 \notag
 \\
 \intertext{%
@@ -376,7 +378,7 @@ Wir wenden den Satz von Green darauf an und erhalten}
 -
 \frac{\partial A_\mu}{\partial v}\frac{\partial x^\mu}{\partial u}
 -A_\mu\frac{\partial^2 x^\mu}{\partial v\,\partial u}
-\,du\,dv
+\,du\,dv.
 \notag
 \\
 \intertext{Die zweiten Ableitungen stimmen überein, diese Terme heben
@@ -482,6 +484,7 @@ welches entsteht, wenn man ein kleines Rechteck von $u$- und $v$-Koordinaten
 abbildet.
 Es ist daher gerechtfertigt, diesen Term zusammen mit den formalen
 Faktoren $du\,dv$ als das {\em Flächenelement} zu bezeichnen.
+\index{Flächenelement}%
 \begin{definition}
 Ist $x^\mu\colon D\to\mathbb R^n:(u,v)\mapsto x^\mu(u,v)$ die Parametrisierung
 eines Flächenstücks in $\mathbb R^n$, dann heisst 
@@ -513,6 +516,7 @@ Dann gilt
 Man beachte, dass wegen der Einsteinschen Summenkonvention über all
 Indexpaare $\nu,\mu$ summiert werden muss.
 \end{satz}
+\index{Stokes, Satz von}%
 
 Natürlich ist der ursprüngliche Satz von Green als Spezialfall in dieser
 Formel enthalten.
@@ -598,7 +602,7 @@ Da die Vertauschung der Indizes in beiden Faktoren das Vorzeichen
 kehrt, kann man auch einfach nur jeweils einen Summanden doppelt
 zählen, wodurch der Faktor $\frac12$ wegfällt.
 In drei Dimensionen kann man also die drei Flächenelement als Vektor
-schreiben $d\vec f$.
+$d\vec f$ schreiben.
 
 Aus den Termen
 \[
@@ -707,13 +711,13 @@ Krümmung äussert sich dadurch, dass beim Paralleltransport eines Vektors
 entlang eines geschlossenen Weges die Richtung des Vektors ändert.
 Der Satz von Stokes besagt, dass wir Information, die wir entlang eines
 Weges zusammentragen können, wie die Drehung eines Vektors, auch durch
-Integration über die vom Weg umschlossenen Fläche gefunden werden kann.
+Integration über die vom Weg umschlossenen Fläche finden können.
 Wir suchen daher eine Grösse, die das Ausmass der krümmungsbedingten
 Drehung in einem beliebigen kleinen Parallelogram beschreibt.
 
 \subsubsection{Was erwartet man in zwei Dimensionen?}
 Um eine klarere Vorstellung davon zu bekommen, was wir überhaupt erwarten
-können beginnen mit der Diskussion im Falle $n=2$, also einer gekrümmten
+können, beginnen mit der Diskussion im Falle $n=2$, also einer gekrümmten
 Fläche.
 Wir möchten also wissen, wie ein Vektor sich verändert, wenn wir ihn
 entlang einer geschlossene Kurve transportieren.
@@ -872,8 +876,8 @@ transportiert wird.
 
 \subsubsection{Definition des Krümmungstensors}
 Wir betrachten einen Weg, der ein zweidimensionales Fächenstück berandet.
-Wir wissen bereits, wie wir den Paralleltransport eines Vektors entlang
-EINes geschlossenen Pfades funktionert, die Änderung des Vektors ist
+Wir wissen bereits, wie der Paralleltransport eines Vektors entlang
+eines geschlossenen Pfades funktionert, die Änderung des Vektors ist
 \[
 \Delta A_\mu
 = 
@@ -902,7 +906,7 @@ und bekommen
 -
 \Gamma_{\mu\varrho}^\nu
 \frac{\partial A_\nu}{\partial x^\sigma}
-\,df^{\varrho\sigma}
+\,df^{\varrho\sigma}.
 \end{align*}
 Die Ableitungen von $A_\mu$ können berechnet werden, da wir ja aus
 den Formeln für den Paralleltransport wissen, dass
@@ -932,7 +936,7 @@ im Bezug auf ein Flächenelement $\Delta f^{\nu\sigma}$, so dass wir
 das Integral weglassen können.
 Ausserdem wollen wir den Faktor $A$ ausklammern, dazu müssen wir aber
 sicherstellen, dass überall der gleiche Index vorkommt.
-Wir können dies erreichen, indem wir im zweitletzen Term die
+Wir können dies erreichen, indem wir im zweitletzten Term die
 Summationsindizes $\alpha$ und $\sigma$ vertauschen.
 So bekommen wir
 \[
@@ -1142,7 +1146,7 @@ R_{\mu\nu\varrho\sigma}
 +g_{\alpha\beta}(
 \Gamma^\alpha_{\nu\varrho}\Gamma^\beta_{\mu\sigma}
 - \Gamma^\alpha_{\nu\sigma}\Gamma^\beta_{\mu\varrho}
-)
+).
 \label{skript:kruemmung:riemann2abl}
 \end{equation}
 Für einen vollständigen Beweis dieser Formel muss man die Darstellung
@@ -1150,7 +1154,7 @@ der Christoffelsymbole durch die metrischen Koeffizienten in die
 Definition~\eqref{skript:kruemmung:riemannmixed} des Riemannschen
 Krümmungstensors einsetzen.
 Die danach notwendigen Umformungen, die
-auf~\eqref{skript:kruemmung:riemann2abl}
+auf~\eqref{skript:kruemmung:riemann2abl} führen,
 sind nicht schwierig, aber etwas mühsehlig, und werden daher hier
 nicht durchgeführt.
 
@@ -1266,7 +1270,6 @@ den Wert $0$ haben, wie wir im Folgenden zeigen wollen.
 Ein solches Koordinatensystem heisst {\em lokalgeodätisch}.
 \index{lokalgeodätisch}%
 
-
 \begin{proof}
 % Landau-Lifshitz, p 288
 Wir dürfen ohne Beschränkung der Allgmeinheit annehmen, dass der betrachtete
@@ -1275,7 +1278,7 @@ Sei $(\Gamma^\alpha_{\mu\nu})_0$ der Wert des Christoffelsymbols im
 Nullpunkt.
 Wir betrachten jetzt die Transformation
 \[
-x'^\alpha = x^\alpha + \frac12(\Gamma^\alpha_{\mu\nu})_0x^\mu x^\nu,
+x'^\alpha = x^\alpha + \frac12(\Gamma^\alpha_{\mu\nu})_0x^\mu x^\nu.
 \]
 Für die ersten und zweiten Ableitungen im Nullpunkt gilt
 \begin{align*}
@@ -1288,8 +1291,7 @@ Für die ersten und zweiten Ableitungen im Nullpunkt gilt
 \frac12\bigl(
 (\Gamma^\alpha_{\beta\gamma})_0 + (\Gamma^\alpha_{\beta\gamma})_0
 \bigr)
-\\
-&=
+=
 (\Gamma^\alpha_{\beta\gamma})_0,
 \end{align*}
 wobei im letzten Schritt die Symmetrie der Christoffelsymbole verwendet wurde.
