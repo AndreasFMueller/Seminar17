@@ -4,7 +4,7 @@
 \chapterauthor{Matthias Schneider}
 
 \section{Einleitung}
-In diesem Kapitel wird das Thema Adaptive Optik behandelt, dazu werde ich zuerst eine kurze Übersicht über das Thema geben und anschliessend einige Aspekte genauer erklären. \newline
+In diesem Kapitel wird das Thema Adaptive Optik behandelt, dazu werde ich zuerst eine kurze Übersicht über das Thema geben und anschliessend einige Aspekte genauer erklären. Beim kürzesten Weg geht geht es darum zu zeigen, welchen Weg ein Lichtstrahl geht wenn er von $A$ nach $B$ muss und auch dem Weg eine Phasengrenze ist, was bedeutet, dass sich auch die Ausbreitungsgeschwindigkeit verändert. Bei Teleskopen mit adaptiver Optik wird mit Laser ein Leitstern erzeugt, welcher als Kugelförmige Lichtquelle dient, trotzdem rechnen wir mit ebenen Wellen im Abschnitt Wellenfront wird erklärt weshalb das möglich ist. Im letzten Abschnitt wird die Idee vom kürzesten Weg Verallgemeinert, was dann zur Eikonalgleichung führt. 
 
 \section{Adaptive Optik und ihre Anwendungen}
 Adaptive Optik (AO) ist eine Technik mit der optische Systeme verbessert werden können. Dabei können aber nur Fehler korrigiert werden, welche im Medium zwischen der Quelle des Lichtes und dem Sensor entstehen, hauptsächlich geht es also darum, Fehler die durch die Atmosphärenunruhe entstehen zu kompensieren. Die erdgebundene Astronomie ist heute auf diese Technologie angewiesen, denn Beobachtungen im optischen und infraroten Bereich sind nur möglich, wenn die negativen Effekte der Atmosphäre korrigiert werden können. Ein schönen Beispiel dazu ist die Abbildung \ref{fig:jupiter}, sie zeigt eine Aufnahme vom Jupiter mit dem Very Large Telescope (VLT) der European Southern Observatory (ESO).
@@ -15,8 +15,10 @@ Adaptive Optik (AO) ist eine Technik mit der optische Systeme verbessert werden 
     \cite{eso:jupiter}}
   \label{fig:jupiter}
 \end{figure}
-Adaptive Optik wird heute aber auch bei anderen Anwendungen eingesetzt, um die Präzision von Optischen Apparaturen zu erhöhen, so gibt es heute Mikroskope mit AO. Ein weiterer Einsatzbereich dieser Technologie ist der Fokusiserspiegel von Laserschneidanlagen, womit eine deutliche Steigerung der Präzision beim schneiden erreicht werden kann.\newline
-Ein System mit einer adaptiven Optik ist aus drei Hauptkomponenten aufgebaut. Es braucht einen Sensor, der die Störung der Wellenfront messen kann, einen Computer der die benötigte Korrektur berechnet und einen beweglichen Spiegel, mit welchem die Wellenfront korrigiert werden kann. So ist es möglich auf den Messinstrument, welchen das Nutzsignal misst, ein möglichst scharfes Bild zu haben, trotz nicht optimalen Bedingungen.\newline
+Adaptive Optik wird heute aber auch bei anderen Anwendungen eingesetzt, um die Präzision von Optischen Apparaturen zu erhöhen, so gibt es heute Mikroskope mit AO. Ein weiterer Einsatzbereich dieser Technologie ist der Fokusiserspiegel von Laserschneidanlagen, womit eine deutliche Steigerung der Präzision beim schneiden erreicht werden kann.
+
+Ein System mit einer adaptiven Optik ist aus drei Hauptkomponenten aufgebaut. Es braucht einen Sensor, der die Störung der Wellenfront messen kann, einen Computer der die benötigte Korrektur berechnet und einen beweglichen Spiegel, mit welchem die Wellenfront korrigiert werden kann. So ist es möglich auf den Messinstrument, welchen das Nutzsignal misst, ein möglichst scharfes Bild zu haben, trotz nicht optimalen Bedingungen.
+
 Als Sensor wird für gewöhnlich eine Hartmannplatte verwendet, welche aus einem Mikrolinsenarray besteht und pro Linse einen CMOS oder CCD-Sensor, mit welchem die Verkippung der Wellenfront im Bereich einer einzelnen Linse bestimmt werden kann. Auf der Abbildung \ref{fig:hartmannplatte} ist gut zu erkennen, was geschieht, wenn die Wellenfront nicht mehr eben, sondern durch die Atmosphäre leicht gestört wird. Das Licht des Leitsterns wird nun durch die einzelnen Linsen des Arrays nicht mehr in die Mitte des Sensors fokussiert, sondern leicht verschoben. Diese Verschiebung wird gemessen und daraus die benötigte Korrektur berechnet und damit der bewegliche Spiegle in Stellung gebracht, damit die Wellenfront nahezu ohne Störung der in das Messinstrument geleitet werden kann. Dieser Zyklus auf Störung messen, Korrektur berechnen und Spiegel in Stellung bringen, wird etwas 1000 mal pro Sekunde wiederholt, was auch eine hohe Leistung und Spezialisierung des Korrekturrechners erfordert. Dazu wird oft eine Regelstrecke aufgebaut mit welcher dieser Zyklus geregelt werden kann, auf der Abbildung \ref{fig:schematischAO} ist dieser Regelkreis schematisch dargestellt.
 
 \begin{figure}
@@ -80,11 +82,12 @@ t=\dfrac{s}{s}=\dfrac{\overline{AP}}{v_{1}}+\dfrac{\overline{PB}}{v_{2}}=
 Die Geschwindigkeit $ v_{1}$ ist gleich $\frac{c}{n_{1}} $ und $ v_{2}$ ist gleich $\frac{c}{n_{2}}$, dabei ist $v_{i}$ die Lichtgeschwindigkeit im jeweiligen Medium. Wird nun in die Gleichung \eqref{partdiff} $ v_{1}$ und $ v_{2}$ eingesetzt und anschliessend mit $c$ multipliziert, erhält man die Gleichung \eqref{glp1} aus welchen dann der Punkt $P$ respektive die Koordinate $p_{x}$ von $P$ bestimmt werden kann.
 Auf der Abbildung \ref{fig:nullstelle} ist eine grafische Darstellung der der Ableitungen zu sehen, dabei wird der Brechungsindex variiert, die Position des Punktes $P$ auf der Abbildung \ref{fig:weg} verändert seine Position in X-Richtung. Die  Punkte haben dabei die folgenden Koordinaten $A = (0,6)$, $P=(p_{x},3)$ und $B=(10,0)$, für die Situation $n_{1}=n_{2}$ gibt es keine Übergang der Punkt $P$ hat die Koordinaten $(5,3)$ was genau dem direkten Weg entspricht. Mit den geeigneten Hilfsmitteln (Matlab) ist es möglich die Gleichung \eqref{glp} nach $p_{x}$ umzustellen, die Lösung ist aber unübersichtlich und sehr lang, die Abbildung \ref{fig:nullstelle} ist da aussagekräftiger.
 Damit ist der Strahlengang von $A$ nach $B$ via $P$ bestimmt. Dieser Weg ist nun minimal bezüglich der Laufzeit. \newline
-Zur besseren Verständlichkeit noch eine kleiner Vergleich:\newline
+Zur besseren Verständlichkeit noch eine kleiner Vergleich:
+
 Es ist nun kein Photon das den Weg zurücklegen muss, sondern ein ausgesprochen intelligenter Hund der bei $A$ startet und bei $B$ einen Ball im Wasser holen muss, die schwarz horizontale Linie auf der Abbildung \ref{fig:weg} ist dabei das Ufer. Wenn nun der Hund den zuvor beschrieben Weg wählt, ist er am schnellsten beim Ball. Der Grund dafür ist, er rennt an Land schneller als er schwimmen kann. Der Punkt $P$ ist also der optimale Punkt für den Hund um uns Wasser zu springen.
 \begin{figure}
   \centering
-  \includegraphics[width=0.5\textwidth]{adaptiv/images/Nullstellen}
+  \includegraphics[width=0.7\textwidth]{adaptiv/images/Nullstellen}
   \caption{Nullstellen der Ableitung abhängig vom Brechungsindex}
   \label{fig:nullstelle}
 \end{figure}
@@ -129,10 +132,27 @@ h = \dfrac{f_{xx} \cdot f_{yy} -f_{xy}^{2}}{(1+f_{x}^{2}+f_{y}^{2})^{2}} = \dfra
 Nach dem einsetzen und vereinfachen der Gleichung \eqref{gausskrümmung} bekommt man die den sehr einfachen Ausdruck $\frac{1}{r^{2}}$ für die Krümmung der Kugeloberfläche. Wie zu erwarten war, ist die Krümmung der nicht von der Position auf der Kugel abhängigd. 
 Der daraus Berechnete Wert ist mit $1.234\cdot 10^{-10}$ so klein, dass die Krümmung der Wellenfront vernachlässigt werden darf, ohne dass die Qualität der adaptiven Optik sich merklich verändert.
 
-
+\section{Eikonalgleichung}
+Beim kürzesten Weg haben wir gesehen, wie sich ein Lichtstrahl verhält, wenn er eine Phasengrenze überschreitet. Die Atmosphäre ist aber nicht aus einzelnen Schichten aufgebaut, welche scharfe Grenzen hat, sie besteht aus stetigen Übergängen, zudem ist sie auch immer in Bewegung. Der kürzeste Weg ist also eine gute Veranschaulichung von einem einzelnen Übergang, um aber den Weg eines Stahls durch die ganze Atmosphäre zu berechnen, muss eine Verallgemeinerung gemacht werden. Diese Verallgemeinerung führt dann schlussendlich zur Eikonalgleichung \eqref{eikonal} $n(r)^{2}$, ist dabei der Brechungsindex in Abhängigkeit von der Höhe. 
+\begin{equation}\label{eikonal}
+\left( \dfrac{\partial f}{\partial x}\right)^{2} + \left( \dfrac{\partial f}{\partial y}\right) ^{2} = n(r)^{2}
+\end{equation}
+Es handelt sich dabei um eine partielle nicht lineare Differential Gleichung deren Lösung nicht ohne weiteres gefunden wegen kann. Beim lösen wird normalerweise nur eine nummeriche Lösung gesucht, welche mit dem Computer berechnet wird. Es gibt aber eine einfache Lösung, die ohne Computer gefunden werden kann. Wir nehmen an, dass unser $n(r)$ konstant ist und setzen $f(x,y)=n\cdot\vec{e}\cdot\vec{x}= n(e_{1}x_{1}+e_{2}x_{2}+e_{3}x_{3})$, $\vec{e}$ ist der Normalenvektor der Wellenfront und $\vec{x}$ ist der Ortsvektor. Die partiellen Ableitungen davon sind die Gleichungen \eqref{eikdfx} und \eqref{eikdfy}.
+\begin{equation}\label{eikdfx}
+\dfrac{\partial f}{\partial x} = ne_{1}
+\end{equation}
+\begin{equation}\label{eikdfy}
+\dfrac{\partial f}{\partial y} = ne_{2}
+\end{equation}
+Die Gleichungen \eqref{eikdfx} und \eqref{eikdfy} werden nun in die Gleichung \eqref{eikonal} eingesetzt.
+\begin{equation}\label{eikonal}
+\left( \dfrac{\partial f}{\partial x}\right)^{2} + \left( \dfrac{\partial f}{\partial y}\right) ^{2} = \left( ne_{1}\right) ^{2}+\left( ne_{2}\right)^{2}=n^{2}(e_{1}^{2}+e_{2}^{2})=n^{2}
+\end{equation}
+Was bedeutet das nun diese Lösung, für den einfachen Fall, dass $n(r)$ konstant ist. Die Erklärung dazu ist ziemlich einfach, es ist die selbe Situation wie beim kürzesten Weg, wenn beide Brechungsindizes gleich sind. Es kommt zu keiner Störung der Wellenfront, sie bleibt somit eine ebene Wellenfront und das Licht bewegt sich auf Strahlen die Senkrecht zu der Wellenfront sind.
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
+
 
 
 
