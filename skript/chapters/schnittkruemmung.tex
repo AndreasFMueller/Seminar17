@@ -20,6 +20,7 @@ g\colon \Omega\to\mathbb R^3: (u,v)\mapsto g(u,v),
 wobei $\Omega\subset\mathbb R^2$
 eine offene Teilmenge von $\mathbb R^2$ ist, heisst eine Fläche.
 \end{definition}
+\index{Parameterdarstellung!einer Fläche}!
 
 \begin{beispiel}
 Sei eine Funktion $f(x,y)$ von zwei Variablen gegeben.
@@ -30,10 +31,12 @@ g\colon\mathbb R^2\to \mathbb R^3
 \]
 eine Fläche.
 Sie heisst auch der Graph der Funktion $f(x,y)$.
+\index{Graph einer Funktion $f(x,y)$}%
 \end{beispiel}
 
 Jede Fläche enthält zwei Scharen von Kurven, die durch die Koordinaten $u$
 bzw.~$v$ parametrisiert sind, wir nennen sie die Koordinatenlinien.
+\index{Koordinatenlinie}%
 Zu jedem $v$-Wert $v_0$ gibt es eine $u$-Koordinatenlinie
 \[
 c_{v_0}
@@ -57,6 +60,11 @@ c_{u_0}(v) = g(u_0, v).
 Die Oberfläche der Einheitskugel im dreidimensionalen Raum kann mit
 geographischer Länge $\lambda$ und geographischer Breite $\varphi$
 parametrisiert werden.
+\index{geographische Länge}%
+\index{Länge, geographische}%
+\index{geographische Breite}%
+\index{Breite, geographische}%
+\index{Einheitskugel}%
 Die Funktion $g(\lambda,\varphi)$ hat die Form
 \begin{equation}
 g(\lambda,\varphi)
@@ -70,6 +78,8 @@ g(\lambda,\varphi)
 -\frac{\pi}2 \le \varphi \le \frac{\pi}2
 .
 \end{equation}
+Man nennt $(\vartheta,\varphi)$ auch Kugelkoordinaten.
+\index{Kugelkoordinaten}%
 Die Koordinatenlinien auf einer Kugeloberfläche sind wohlbekannt. 
 Die Koordinatenlinie zu einem vorgegebenen $\varphi_0$ wird durch
 $\lambda$ parametrisiert und hat die Form
@@ -83,6 +93,7 @@ $\lambda$ parametrisiert und hat die Form
 \end{pmatrix},\qquad -\pi\le\lambda\le\pi,
 \]
 dies ist ein Breitenkreis.
+\index{Breitenkreis}%
 Die Koordinatenlinie zu einem vorgegebenen $\lambda_0$ wird durch
 $\varphi$ parametrisiert und hat die Form
 \[
@@ -95,6 +106,7 @@ $\varphi$ parametrisiert und hat die Form
 \end{pmatrix},\qquad -\frac{\pi}2 \le \varphi\le \frac{\pi}2,
 \]
 dies ist ein Längenkreis.
+\index{Längenkreis}%
 Man beachte, dass Werte $-\frac{\pi}2\le \varphi \le \frac{\pi}2$ nur einen
 Halbkreis zwischen Süd- und Nordpol beschreiben.
 \end{beispiel}
@@ -131,7 +143,8 @@ Daher soll im Folgenden immer angenommen sein, dass $g$ genügend oft stetig
 differenzierbar ist, und dass die ersten Ableitungen nach den Flächenparametern
 nicht verschwinden.
 
-\subsection{Schnittkurven}
+\subsection{Schnittkurven%
+\label{skript:kurven:schnittkurven}}
 \begin{figure}
 \centering
 \includegraphics[width=\hsize]{chapters/3d/schnittkruemmung.jpg}
@@ -143,15 +156,15 @@ Der Krümmungskreis und sein Mittelpunkt $Q$ sind gelb eingezeichnet.
 \end{figure}
 Sei jetzt also eine Fläche $g(u,v)$ gegeben.
 Im Punkt $P=g(u_0,v_0)$ betrachten wir Ebenen, die die Normale $n(P)$
-enthalten.
+enthalten (grün in Abbildung~\ref{skript:schnittkruemmung}).
 Die Schnittkurve der Fläche mit einer solchen Ebene ist eine ebene
 Kurve, wir können also deren Krümmung bestimmen
-(Abbildung~\ref{skript:schnittkruemmung}).
+(rot Abbildung~\ref{skript:schnittkruemmung}).
 Der Mittelpunkt $Q$ des Krümmungskreises liegt auf der Normalen
 und ist daher von der Form $Q = P + \varrho \cdot n(P)$.
 Im Gegensatz zur Berechnung der Krümmung in
 Abschnitt~\ref{section:kurve:kruemmung}, die immer eine Zahl $\ge 0$
-als Wert der Krümmung geliefert hat, spielt es hier das Vorzeichen von
+als Wert der Krümmung geliefert hat, spielt hier das Vorzeichen von
 $\varrho$ eine Rolle.
 Ist die Kurve in Richtung von $n(P)$ gekrümmt, liegt der Punkte $Q$ auf der
 gleichen Seite der Fläche wie $n(P)$ und damit $\varrho\ge 0$.
@@ -207,9 +220,9 @@ wir darauf, diesen Formelapparat zu entwickeln.
 
 \subsection{Richtungsabhängigkeit%
 \label{skript:kruemmung:richtungsabhaengigkeit}}
-Im Beispiel auf Seite~\pageref{skript:sattelbeispiel} wurde gezeigt, wie
-die Krümmung der Schnittkurve von der Richtung der Schnittebene
-abhängt.
+Im Beispiel in Abschnitt~\ref{skript:kurven:schnittkurven}
+wurde gezeigt, wie die Krümmung der Schnittkurve von der Richtung
+der Schnittebene abhängt.
 Dabei entstand die einfache Formel~\eqref{skript:kruemmung:sattel}.
 In diesem Abschnitt möchten wir zeigen, dass eine ähnlich einfache
 Formel für jede beliebige Fläche gilt.
@@ -248,7 +261,8 @@ ax^2 + 2bxy + cy^2 + o(x^2+y^2).
 Die Normale auf die Fläche ist die $z$-Achse, die Schnittebene kann
 daher wie im Beispiel wieder durch
 \[
-x=t\cos\alpha,\quad y=t\sin\alpha
+x=t\cos\alpha,\quad y=t\sin\alpha,\quad
+t\ge 0,\; 0\le \alpha < 2\pi
 \]
 beschrieben werden.
 Die Schnittkurve in der Schnittebene hat die Gleichung
@@ -292,8 +306,9 @@ $f$ im Punkt $P$ vollständig bestimmt.
 In jedem Punkt gibt es also eine Abbildung, die jedem
 Tangentialeinheitsvektor $e$
 die Krümmung der Schnittkurve $\kappa(e)$ einer Ebene durch den Normalenvektor
-$n(P)$ und die Tangentenrichrtung $e$ mit der Fläche zuordnet.
+$n(P)$ und die Tangentenrichtung $e$ mit der Fläche zuordnet.
 Sie heisst die Schnittkrümmung der Fläche in Richtung $e$.
+\index{Schnittkrümmung}%
 Das Vorzeichen von $\kappa(e)$ ist so gewählt, dass $P+n(P)/\kappa(e)$ der
 Mittelpunkt des Krümmungskreises ist.
 \end{definition}
@@ -349,8 +364,9 @@ Der Mittelwert der Krümmung ist also die Spur der Hessischen Matrix
 
 \begin{definition}
 \label{skript:definition:mittlerekruemmung}
-Die {\em Mittlere Krümmung} $M$ ist der Mittelwert der Schnittkrümmung
+Die {\em mittlere Krümmung} $M$ ist der Mittelwert der Schnittkrümmung
 $\kappa(\alpha)$ über alle Winkel $\alpha$.
+\index{mittlere Krümmung}
 \end{definition}
 
 Man beachte, dass die Beziehung $M=\operatorname{Spur}H$ nur 

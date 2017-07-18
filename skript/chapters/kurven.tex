@@ -39,6 +39,8 @@ c\colon [a,b] \to\mathbb R^2:t\mapsto c(t).
 \]
 Darin ist $c(t)$ als Vektor in der Ebene zu betrachten, selbst wenn
 wir dies nicht explizit durch Vektorpfeile anzeigen.
+\index{Parameterdarstellung!einer Kurve}%
+\index{Parametrisierung!einer Kurve}%
 
 Alle unsere Untersuchungen werden die Analysis als Werkzeug verwenden,
 wir wollen daher nur Kurven verwenden, für die eine ausreichend glatte
@@ -62,6 +64,7 @@ ist ein Vektor, der im Punkt $c(t)$ tangential ist an die Kurve
 $\dot c(t)$
 \label{skript:kurve:tangente}}
 \end{figure}
+\index{Tangentialvektor}%
 
 Man kann die Parametrisierung als die Wahl eines Koordinatensystems
 für die Kurve interpretieren.
@@ -106,6 +109,7 @@ Die Funktion $s(t)$ ist die {\em Bogenlänge} entlang der Kurve.
 
 \section{Bogenlängenparameter}
 \rhead{Bogenlängenparameter}
+\index{Bogenlängenparameter}%
 In diesem Abschnitt soll illustriert werden, dass wir bei der Wahl
 einer Parametrisierung ein und derselben Kurve zwar viel Freiheit haben,
 dass jedoch für geometrische Untersuchungen sich meistens gewisse
@@ -131,6 +135,7 @@ s\mapsto\begin{pmatrix}-\cos s\\\sin s\end{pmatrix}.
 \end{equation}
 Beide beschreiben den Einheitskreisbogen, der den Punkt $(-1,0)$ mit
 dem Punkt $(1,0)$ verbindet (Abbildung \ref{skript:1dim:kreisbogen}).
+\index{Einheitskreis}%
 Die Parametrisierungen unterscheiden sich aber in der Ableitung,
 die Tangentialvektoren für die beiden Ableitungen sind
 \begin{equation}
@@ -159,7 +164,7 @@ zwei verschiedene Parametrisierungen dafür vorgestellt.
 \label{skript:1dim:kreisbogen}}
 \end{figure}
 
-Wir verwenden \eqref{skript:kurve:s(t)}, um die Kurvenlänge für die
+Wir verwenden \eqref{skript:kurve:s(t)}, um die Bogenlänge für die
 Parametrisierung $c_1$ zu berechnen.
 Dazu berechnen wir
 \[
@@ -175,10 +180,12 @@ s(t)
 \]
 
 \subsubsection{Bogenlänge als Lösung einer Differentialgleichung}
+\index{Bogenlänge!als Lösung einer Differentialgleichung}%
 Interpretieren wir den Parameter $t$ als die Zeit der Bewegung eines 
 Teilchens entlang der Kurve, dann ist die zeitliche Änderung der Strecke,
 die das Teilchen zurück gelegt hat, gerade die Länge des
 Geschwindigkeitsvektors, also
+\index{Geschwindigkeit}%
 \[
 \frac{d}{dt} s(t) = \biggl|\frac{d}{dt}c(t)\biggr| = |\dot c(t)|.
 \]
@@ -206,19 +213,22 @@ s(t)
 \label{skript:kruemmung:laenge}
 \end{equation}
 wie man auch durch Ableiten nach $t$ sofort nachprüfen kann.
-Dies stimmt natürlich mit der Kurvenlängenformel~\eqref{skript:kurve:s(t)}
+Dies stimmt natürlich mit der Bogenlängenformel~\eqref{skript:kurve:s(t)}
 überein.
 
 \subsubsection{Charakterisierung von Bogenlängenparametrisierung}
 Verlangen wir von der Kurvenparametrisierung $c(t)$ zusätzlich,
 dass $|\dot c(t)|\ne 0$ für alle Parameterwerte $t$, dann ist
-$s(t)$ sogar eine streng monoton wachsende Funktion, insbesondere
+die Funktion
+$s(t)$
+wie in \eqref{skript:kruemmung:laenge} definiert
+sogar eine streng monoton wachsende Funktion, insbesondere
 kann sie invertiert werden.
 Wir können daher zu jedem gegebenen Wert der Länge $s$ durch
 Anwendung der inversen Funktion sofort einen Parameterwert $t$
 finden, bei dem der Wert $s$ der Länge erreicht wird, also
 $s(t)=s$.
-Wir schreiben diesen Wert auch abkürzen als $t(s)$, dies ist eine
+Wir schreiben diesen Wert auch abgekürzt als $t(s)$, dies ist eine
 übliche, vereinfachte Notation für die inverse Funktion von $s(t)$.
 Die Ableitung der Funktion $t(s)$ ist
 \begin{equation}
@@ -230,14 +240,15 @@ nach der Formel für die Ableitung der inversen Funktion.
 Zu einer beliebigen differenzierbaren Kurve mit der Eigenschaft
 $|\dot c(t)|\ne 0$ können wir also immer eine neue Parametrisierung
 $c(s)=c(t(s))$ finden, welche die Eigenschaft hat, dass $s$ die
-Länge entlang der Kurve gerade die Kurvenlänge ist, die durchlaufen
+Länge entlang der Kurve gerade die Bogenlänge ist, die durchlaufen
 wird.
-Wir nennen $s$ auch den {\em Kurvenlängenparameter} entlang der
-Kurve.
-\index{Kurvenlängenparameter}%
-Wir sagen auch, $c(s)$ ist durch die Kurvenlänge parametrisiert.
+Wir nennen $s$ auch den {\em Bogenlängenparameter} entlang der Kurve.
+\index{Bogenlängenparameter}%
+Wir sagen auch, $c(s)$ ist durch die Bogenlänge parametrisiert.
+\index{Bogenlänge}%
 
 Die neue Parametrisierung hat als ``Geschwindigkeitsvektor''
+\index{Geschwindigkeit}%
 \[
 \frac{d}{ds} c(s)
 =
@@ -256,14 +267,14 @@ seine Länge wird unter Verwendung von
 =
 1.
 \]
-Bei Verwendung eines Kurvenlängenparameters wird der Tangentialvektor
+Bei Verwendung eines Bogenlängenparameters wird der Tangentialvektor
 immer ein Einheitsvektor sein.
 
 Umgekehrt wird die Differentialgleichung \eqref{skript:kruemmung:laengedgl}
 besonderes einfach, wenn $|\dot c(t)|=1$ ist, nämlich $\dot s(t)=1$ mit
 der Lösung $s(t)=t$.
 Die Bedingung $|\dot c(t)|=1$ charaktersiert also $t$ als einen
-Kurvenlängenparameter.
+Bogenlängenparameter.
 
 \subsubsection{Beispiele}
 \begin{beispiel}
@@ -313,13 +324,13 @@ c\colon
 \colon
 t\mapsto (-t,\sqrt{1-t^2}).
 \]
-Ganz offensichtlich ist dies kein Kurvenlängenparameter.
-Für die Kurvenlänge brauchen wir die Ableitung nach dem Parameter $t$,
+Ganz offensichtlich ist dies kein Bogenlängenparameter.
+Für die Bogenlänge brauchen wir die Ableitung nach dem Parameter $t$,
 sie ist
 \[
 \dot c(t)=\biggl(-1, -\frac{t}{\sqrt{1-t^2}}\biggr).
 \]
-Die Kurvenlänge ist das Integral der Länge der Ableitung:
+Die Bogenlänge ist das Integral der Länge der Ableitung:
 \[
 s(t)
 =
@@ -384,7 +395,7 @@ Wir möchten in diesem Abschnitt zeigen, dass die Krümmung einer Kurve
 ausschliesslich eine Eigenschaft der Einbettung der Kurve in den
 Raum ist.
 Wir tun das, indem wir davon ausgehen, dass eine Kurve bereits mit
-der Kurvenlänge parametrisiert ist, dass wir also die Standardparametrisierung
+der Bogenlänge parametrisiert ist, dass wir also die Standardparametrisierung
 gewählt haben, in der über die innere Geometrie der Kurve verfügbare
 Information bereits vollständig verwertet worden ist.
 
@@ -398,6 +409,10 @@ Krümmung ist also die Änderung des Tangentialvektors oder
 \kappa(s)=|\ddot c(s)|.
 \]
 \index{Krümmung!einer Kurve}%
+Das nachfolgende Beispiel und die Abbildung~\ref{skript:kurven:fig:kruemmung}
+zeigen, dass eine Kurve mit Krümmung $\kappa(s)$ durch einen Kreis mit
+Radius $1/\kappa(s)$, den sogenannten Krümmungskreis, approximiert wird.
+\index{Krümmungskreis}%
 
 \begin{beispiel}
 Der Kreis mit Radius $r$ kann parametrisiert werden durch die Funktion
@@ -470,7 +485,7 @@ berechnen:
 =
 \frac{\displaystyle\ddot c(t) |\dot c(t)| - \dot c(t) \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)}{|\dot c(t)|^2}
 =
-\frac{\displaystyle\ddot c(t) - \frac{\dot c(t)}{|\dot c(t)|} \left( \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)\right)}{|\dot c(t)|}
+\frac{\displaystyle\ddot c(t) - \frac{\dot c(t)}{|\dot c(t)|} \left( \frac{\dot c(t)}{|\dot c(t)|}\cdot \ddot c(t)\right)}{|\dot c(t)|}.
 \label{skript:kruemmung:krallg1}
 \end{align}
 \begin{figure}[t!]
@@ -486,7 +501,7 @@ Die Projektion ist in beiden Abbildungen {\color{red}rot} eingezeichnet.
 Auf der rechten Abbildung sieht man, dass dies auch die Höhe des
 von $\dot c(t)$ und $\ddot c(t)$ aufgespannten Parallelogramms ist.
 \label{skript:chapter:kruemmungsberechnung}}
-\end{figure}
+\end{figure}%
 Schreiben wir den Einheitstangentialvektor
 \[
 e(t)= \frac{\dot c(t)}{|\dot c(t)|},
@@ -739,7 +754,7 @@ Für den Parameterwert $t=0$ stimmen die beiden Krümmungen überein.
 
 \section{Rekonstruktion einer ebenen Kurve aus der Krümmung}
 %\rhead{Rekonstruktion aus der Krümmung}
-Die Krümmung bestimmt eine Kurve eindeutig.
+Die Krümmung bestimmt eine Kurve in der Ebene eindeutig.
 Um dies einzusehen, parametrisieren wir eine ebene Kurve mit
 $x$, schreiben also $c(x)=(x,y(x))$.
 Wir müssen jetzt nachrechnen, dass die Vorgabe der Krümmung $\kappa(x)$
