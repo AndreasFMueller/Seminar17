@@ -19,6 +19,7 @@ Man nennt dies auch eine intrinsische Eigenschaft.
 
 Auf einer Kugeloberfläche kann man die kürzesten Verbindungen ebenfalls
 direkt angeben, es sind die Grosskreise (Im Kapitel~\ref{chapter:kugel}
+\index{Grosskreis}%
 findet man eine ausführliche Diskussion der Geometrie der Kugeloberfläche).
 \begin{figure}
 \centering
@@ -63,6 +64,9 @@ die kürzeste Verbindung, die sogenannten Geodäten, zu finden.
 einer Kugeloberfläche%
 \label{skript:geodaten:fig:transport}}
 \end{figure}
+\index{Paralleltransport}%
+\index{kovariante Ableitung}%
+\index{Ableitung, kovariante}%
 Die obigen Beispiele von kürzesten Verbindungen suggerieren, dass die kürzeste
 Verbindung auch die ``geradeste'' ist, sie weicht möglichst wenig von
 der Richtung des aktuellen Tangentialvektors ab.
@@ -76,8 +80,8 @@ an die Kugel.
 Wir müssen also zunächst in der Lage sein, Vektoren in zwei verschiedenen
 Punkten miteinander zu vergleichen.
 Wir können das tun, indem wir einen Vektor entlang einer Kurve transportieren,
-wobei wir versuchen, in so parallel zu sich selbst wie möglich zu sich
-selbst zu halten (Abbildung~\ref{skript:geodaten:fig:transport}).
+wobei wir versuchen, in so parallel zu sich selbst wie möglich
+zu halten (Abbildung~\ref{skript:geodaten:fig:transport}).
 Auch dies ist im Moment noch ein etwas schwammiger Begriff. 
 Es ist aber klar, dass die Komponenten des transportierten Vektors
 sowohl von der Transportrichtung wie auch vom ursprünglichen Vektor
@@ -134,9 +138,9 @@ des Koordinatensystems.
 Paralleltransport soll heissen, dass sich entlang einer Kurve die
 Komponenten eines Vektors nicht ändern,
 dass also $\nabla_\nu A^\mu=0$.
-Insbesondere möchten wir später den Tangentialvektor einer Kurve entlang
-der Kurve selbst transportieren, wir erwarten, dass dies die 
-``geradestmögliche'' Kurve ergibt.
+Insbesondere möchten wir später eine Kurve so konstruieren, dass
+sie ihren Tangentialvektor selbst parallel transportiert,
+wir erwarten, dass dies die ``geradestmögliche'' Kurve ergibt.
 
 Die kovariante Ableitung des Tangentialvektors $\dot x^\mu$ entlang
 einer Kurve wird sein
@@ -248,7 +252,7 @@ g_{\beta\mu}\Gamma_{\alpha\nu}^\beta
 &+&g_{\alpha\beta}\Gamma_{\mu\nu}^\beta 
 &=&
 \displaystyle
-\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}.
 \end{linsys}
 \]
 Da sowohl $g$ als auch $\Gamma$ in den unteren Indizes symmetrisch
@@ -274,7 +278,7 @@ g_{\mu\beta}\Gamma_{\nu\alpha}^\beta
 		&+&g_{\alpha\beta}\Gamma_{\nu\mu}^\beta 
 &=&
 \displaystyle
-\frac{\partial g_{\alpha\mu}}{\partial x^\nu}
+\frac{\partial g_{\alpha\mu}}{\partial x^\nu}.
 \end{linsys}
 \]
 Subtrahieren wir die erste Zeile von der Summe der letzten beiden,
@@ -290,8 +294,9 @@ g_{\alpha\beta}\Gamma_{\nu\mu}^\beta
 \frac{\partial g_{\mu\nu}}{\partial x^\alpha}
 \biggr).
 \]
-Bezeichen wir die inverse Matrix von $g_{\alpha\beta}$ mit
-$g^{\alpha\beta}$, dann können wir nach $\Gamma_{\mu\nu}^\beta$ auflösen:
+Die zu $g_{\alpha\beta}$ inverse Matrix ist $g^{\alpha\beta}$,
+durch Multiplikation mit $g^{\sigma\alpha}$
+können wir nach $\Gamma_{\mu\nu}^\beta$ auflösen:
 \[
 g^{\sigma\alpha}
 \biggl(
@@ -350,6 +355,8 @@ sind auch als der
 {\em Levi-Cività-Zusammenhang} bekannt.
 \index{Levi-Cività-Zusammenhang}%
 \end{definition}
+\index{Christoffelsymbole erster Art}%
+\index{Christoffelsymbole zweiter Art}%
 
 %Die Christoffelsymbole erster und zweiter Art bilden keinen Tensor.
 %Im allgemeinen gilt
@@ -411,11 +418,13 @@ g_{\mu\nu}\nabla_\alpha A^\mu B^\nu
 +
 g_{\mu\nu}A^\mu\nabla_\alpha B^\nu
 +
+\underbrace{
 \biggl(
 \frac{\partial g_{\mu\nu}}{\partial x^\alpha}
 -g_{\beta\nu}\Gamma^\beta_{\mu\alpha}
 -g_{\mu\beta}\Gamma^\beta_{\nu\alpha}
-\biggr)A^\mu B^\nu
+\biggr)}_{\displaystyle = 0}
+A^\mu B^\nu
 \biggr)
 \end{align*}
 Der innere Klammerausdruck in der letzten Gleichung ist aber identisch
@@ -699,7 +708,7 @@ Vorzeichen hinzukommen.
 
 Aus der Formel~\eqref{skript:geodaten:kovablbel} können wir jetzt eine
 ganze Reihen von Schlussfolgerungen über das Rechnen mit der kovarianten
-ableiten.
+Ableitung gewinnen.
 In den folgenden Abschnitten soll gezeigt werden, dass die kovariante
 Ableitung mit den Tensoroperationen Verjüngung und Index hoch-
 bzw.~herunterziehen verträglich ist.
@@ -728,7 +737,7 @@ Die letzten zwei Terme sind bis auf die Benennung der Indizes, über die
 summiert wird, gleich, sie heben sich daher weg.
 Wir schliessen daher, dass 
 \begin{equation}
-\nabla T^\mu_\mu = \frac{\partial}{\partial x^\alpha}T^\mu_\mu
+\nabla_\alpha T^\mu_\mu = \frac{\partial}{\partial x^\alpha}T^\mu_\mu
 \label{skript:geodaeten:kovablverj2}
 \end{equation}
 ist.
@@ -736,8 +745,9 @@ ist.
 Man beachte, dass in der Notation von
 \eqref{skript:geodaeten:kovablverj1}
 und
+\eqref{skript:geodaeten:kovablverj2}
 eine Zweideutigkeit steckt.
-Es ist daraus nämlich klar, ab zuerst die Verjüngung gebildet werden muss
+Es ist daraus nämlich nicht klar, ab zuerst die Verjüngung gebildet werden muss
 und dann die kovariante Ableitung oder Umgekehrt.
 Da die Verjüngung ein Skalar ist, ist die kovariante Ableitung einfach
 nur die partielle Ableitung.
@@ -784,7 +794,7 @@ Die Rechnung ergibt
 Die kovariante Ableitung des metrischen Tensors verschwindet.
 Dies ist nicht überraschend, die kovariante Ableitung war ja mit dem Ziel
 konstruiert worden, dass sie ausdrücken kann, dass sich Längen und
-Winkel, die mit dem metrischen Tensor konstruiert werden, nicht ändern.
+Winkel, die mit dem metrischen Tensor definiert werden, nicht ändern.
 
 \subsubsection{Index Herunterziehen und kovariante Ableitung}
 Sie $A^\mu$ ein kontravarianter Vektor.
@@ -802,7 +812,7 @@ Wir schliessen daher aus der Rechnung
 =
 \nabla_\alpha A^\mu g_{\mu\nu},
 \end{align*}
-dass herunterziehen eines Index ebenfalls mit der kovarianten Ableitung
+dass Herunterziehen eines Index ebenfalls mit der kovarianten Ableitung
 vertauscht.
 
 \section{Beispiele}
@@ -975,9 +985,10 @@ und die Christoffelsymbole 2.~Art
 \rhead{Geodätengleichung}
 Die Rolle der Geraden in der Ebene müssen diejenigen Kurven auf der
 Fläche übernehmen, die so gerade wie möglich sind. 
-Eine Gerade ist dadurch charakterisiert, dass sie überall die gleiche
-Richtung hat. 
-Diese Formulierung ist aber nur möglich, weil Tangentialvektoren in
+Eine Gerade in $\mathbb R^2$ ist dadurch charakterisiert, dass sie überall
+die gleiche Richtung hat. 
+Diese Formulierung ist aber nur möglich, weil Tangentialvektoren
+in $\mathbb R^2$ in
 beliebigen Punkten unmittelbar miteinander vergleichen können.
 Für einen allgemeinen Raum müssen wir diesen Vergleich mit Hilfe
 des Paralleltransportes durchführen.
@@ -986,7 +997,7 @@ an die Kurve durch Paralleltransport wieder in einen Tangentialvektor
 an die Kurve übergeht.
 
 Etwas formaler setzen wir den Tangentialvektor $\dot x^\mu$ an die
-Kurve in die Gleichung \eqref{skript:kruemmung:ableitung} ein und
+Kurve in die Gleichung \eqref{skript:kruemmung:kovarianteableitung} ein und
 erhalten die Differentialgleichung 
 \begin{equation}
 \ddot x^\alpha+\Gamma_{\mu\nu}^\alpha \dot x^\mu\dot x^\nu=0.
@@ -1041,7 +1052,7 @@ durchlaufene Geraden.
 
 Wir dürfen natürlich davon ausgehen, dass jede beliebige andere Gerade
 ebenfalls eine Geodäte ist.
-Um dies nachzuprüfen betrachten wir eine Gerade senkrecht auf die
+Um dies nachzuprüfen, betrachten wir eine Gerade senkrecht auf die
 $r=0$-Achse, in $x$-$y$-Koordinaten können wir sie als
 $t\mapsto (x_0,t)$ beschreiben.
 Die zugehörigen Polarkoordinaten sind
@@ -1052,7 +1063,7 @@ r(t)&=\sqrt{x_0^2+t^2}
 \varphi(t)&=\arctan\frac{t}{x_0}.
 \end{aligned}
 \]
-Wir prüfen durch einsetzen, ob diese Funktionen die
+Wir prüfen durch Einsetzen, ob diese Funktionen die
 Geodätendifferentialgleichung~\eqref{skript:geodaeten:dglpolar}
 erfüllen.
 Die ersten und zweiten Ableitungen von $r(t)$ und $\varphi(t)$ sind
@@ -1096,7 +1107,7 @@ r\frac{x_0^2}{r^4}
 =
 \ddot\varphi.
 \end{align*}
-Wie erwartet erfüllt also die Gerade die Geodätengleichung.
+Wie erwartet erfüllt die Gerade die Geodätengleichung.
 
 \subsection{Kugeloberfläche}
 Die Christoffelsymbole zweiter Art für die Kugeloberfläche haben wir
@@ -1106,10 +1117,11 @@ wir nur, die Parameterdarstellung eines Grosskreises in die
 Differentialgleichung einzusetzen und damit zu zeigen, dass die
 Grosskreise Lösungen der Geodätengleichung sind.
 Da es durch jeden Punkt der Kugeloberflächen und zu jeder Tangentialrichtung
-einen Grosskreis gibt, und die Lösungen der Geodätengleichung eindeutig
+einen Grosskreis gibt und die Lösungen der Geodätengleichung eindeutig
 sind, können wir schliessen, dass alle Geodäten Grosskreise sind.
 
 Der Äquator der Kugel hat eine besonders einfache Parametrisierung mit
+\index{Äquator}%
 \[
 \begin{aligned}
 x^1(t)=\vartheta(t)&=\frac{\pi}2,
@@ -1163,7 +1175,8 @@ Jeder andere Grosskreis ist also automatisch auch eine Geodäte.
 Trotzdem wollen wir die Frage für Breitenkreise und Meridiane
 gesondert untersuchen.
 
-Ein Breitenkreis ist nach der gleichen Rechnung keine Geodäte.
+Ein {\em Breitenkreis} ist nach der gleichen Rechnung keine Geodäte.
+\index{Breitenkreis}%
 Er ist charakterisiert durch $x^1(t)=\vartheta(t)\ne\frac{\pi}2$,
 die Differentialgleichung
 \eqref{skript:kruemmung:geodaete:breitenkreis}
@@ -1185,7 +1198,8 @@ im Bezug zu einer Geodäten so gekrümmt ist, dass er ganz
 auf einer Seite des Grosskreises mit gleichem Anfangspunkt und
 Anfangsgeschwindigkeit liegt.
 
-Als nächstes betrachten wir die Meridiane der Kugel.
+Als nächstes betrachten wir die {\em Meridiane} der Kugel.
+\index{Meridian}%
 Ein Meridian hat die Parameterdarstellung
 \[
 \begin{aligned}
@@ -1244,7 +1258,7 @@ l=\int_{t_0}^{t_1} \sqrt{g_{\mu\nu}(x^\alpha(t)) \dot x^\mu(t)\dot x^\nu(t)}\,dt
 \end{equation}
 geschehen.
 Gesucht wird jetzt unter allen möglichen Kurven, die zwei Punkte miteinander
-verbinden, diejenige für die das Integral \eqref{skript:variation:laenge}
+verbinden, diejenige, für die das Integral \eqref{skript:variation:laenge}
 minimal wird.
 
 \subsection{Euler-Lagrange-Gleichung%
@@ -1278,8 +1292,9 @@ erkennen kann.
 
 Wenn $x^\alpha(t)$ das Integral \eqref{skript:variation:funktional}
 minimiert, dann wird es grösser, wenn man die Kurve etwas ändert.
-Wir wählen also eine Kurve $\eta^\alpha(t)$ und berechnen, die
-um $\eta^\mu(t)$ verschobene Kurve
+Wir wählen also eine Kurve $\eta^\alpha(t)$, mit der wir die Kurve
+$x^\alpha(t)$ verschieben wollen.
+Die um um $s\eta^\mu(t)$ verschobene Kurve
 (Abbildung~\ref{skript:geodaeten:fig:lagrange})
 wird ein grösseres Integral
 \eqref{skript:variation:funktional} ergeben.
@@ -1373,11 +1388,15 @@ Etwas kompakter geschrieben lauten diese
 =0.
 \label{skript:variation:euler-lagrange}
 \end{equation}
+Für jeden Index $\alpha$ ist \eqref{skript:variation:euler-lagrange}
+eine gewöhnliche Differentiagleichung zweiter Ordnung.
+Die Euler-Lagrange-Gleichungen bilden also ein System von $n$ gewöhnlichen
+Differentialgleichungen.
 
 \subsection{Parametrisierung%
 \label{skript:geodaeten:subsection:Parametrisierung}}
 Wir vermuten, dass Geodäten die kürzesten Verbindungen sind.
-Mit den Euler-Lagrange-Gleichungen können wir dies nachprüfen.
+Mit den Euler-Lagrange-Glei\-chung\-en können wir dies nachprüfen.
 Wenn die Vermutung stimmt, müssten die Euler-Lagrange-Gleichungen 
 \eqref{skript:variation:euler-lagrange}
 für die Funktion
@@ -1386,7 +1405,7 @@ L(x^\alpha, \dot x^\beta) =\sqrt{g_{\mu\nu}(x^\alpha)\dot x^\mu\dot x^\nu}
 \]
 die Differentialgleichungen der Geodäten liefern.
 Wegen der Wurzel ist allerdings damit zu rechnen, dass die
-Ableitungen, die wir für die Euler-Lagrange-Gleichungen brauchen sehr
+Ableitungen, die wir für die Euler-Lagrange-Gleichungen brauchen, sehr
 kompliziert werden.
 
 Die Geodäten-Gleichungen haben aber noch eine zusätzliche Eigenschaft.
@@ -1456,7 +1475,7 @@ F(x^\alpha, \dot x^\alpha) = \frac12 g_{\mu\nu} \dot x^\mu \dot x^\nu.
 \]
 Wir erwarten, dass die Euler-Lagrange-Gleichungen zu dieser Funktion $F$
 die Gleichungen~\eqref{skript:kruemmung:geodatengleichung}
-der der Geodäten ergeben.
+der Geodäten ergeben.
 
 Wir berechnen daher die Ableitungen
 \begin{align*}
@@ -1547,7 +1566,7 @@ g^{\sigma\alpha}\frac12\biggl(
 \frac{\partial g_{\mu\alpha}}{\partial x_{\nu}}
 \biggr)
 \dot x^\mu\dot x^\nu
-&=
+=
 \ddot x^\sigma
 -
 \Gamma_{\mu\nu}^\sigma \dot x^\mu\dot x^\nu.
