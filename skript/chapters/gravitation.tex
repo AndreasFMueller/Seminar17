@@ -14,16 +14,21 @@ In den folgenden Abschnitten geben wir einen Überblick darüber, wie
 die moderne Physik unseren Raum als einen gekrümmten Raum beschreibt.
 An einfachen Modellen soll gezeigt werden, wie man sich die Gravitationswirkung
 als die Wirkung eines gekrümmten Raumes vorstellen kann, wie schwarze Löcher
+\index{Loch, schwarzes}%
+\index{schwarzes Loch}%
 beschrieben werden können, und wie alle diese Dinge tatsächlich gemessen
 werden können.
 
 \section{Äquivalenzprinzip}
 \rhead{Äquivalenzprinzip}
 Schon Galileo Galilei hat bemerkt, dass im Gravitationsfeld der Erde
+\index{Galilei, Galileo}%
+\index{Newton, Isaac}%
 jeder Körper unabhängig von seiner Masse die gleiche Beschleunigung $g$
 erfährt.
 Diese Eigenschaft der Schwerkraft wird auch vom Newtonschen Gravitationsgesetz
 bestätigt.
+\index{Gravitationsgesetz}%
 Das Newtonsche Gravitationsgesetz beschreibt den Betrag der Kraft
 zwischen zwei Massen $M$ und $m$ als
 \[
@@ -40,6 +45,8 @@ Diese {\em Äquivalenz\-prinzip} genannte Beobachtung wurde von
 Lor\'and Eötvös 1909 mit sehr grosser Genauigkeit nachgemessen und bestätigt.
 In neuerer Zeit wurde die Genauigkeit nochmals um den Faktor $10^4$
 verbessert.
+\index{Eötvös, Lor\'and}%
+\index{Äquivalenzprinzip}%
 
 Eine Folge des Äquivalenzprinzips ist auch, dass sich ein konstant
 beschleunigtes Labor und ein Labor in einem homogenen Gravitationsfeld
@@ -195,7 +202,7 @@ $(x,t)$-Koordinaten\-system finden.
 \label{skript:section:newtonschegravitationstheorie}}
 \rhead{Newtonsche Gravitationstheorie}
 Als ersten Schritt in Richtung auf eine allgemeine Gravitationstheorie
-zeigen wir, wie auch die Bahnen in einem Newtonschen Gravitationsfeld 
+zeigen wir, wie sich auch die Bahnen in einem Newtonschen Gravitationsfeld 
 als Geodäten eines Zusammenhangs schreiben lassen.
 Wer verwenden dazu aber nicht die Metrik und den daraus abgeleiteten 
 Zusammenhang, dies hat erst die Einsteinsche Theorie geschafft.
@@ -227,8 +234,8 @@ In den Geodätengleichungen
 kommt dagegen auf der rechten Seite auch die Geschwindigkeit vor.
 Die Ortsabhängigkeit der Kräfte ist in der Ortsabhängigkeit der
 Christoffelsymbole $\Gamma^\mu_{\alpha\nu}$ versteckt.
-Es ist daher nicht unmittelbar klar, wie die Newtonschen Bewegungsgleichung,
-in denen die Geschwindigkti nicht vorkommt, als Geodätengleichung geschrieben
+Es ist daher nicht unmittelbar klar, wie die Newtonsche Bewegungsgleichung,
+in der die Geschwindigkeit nicht vorkommt, als Geodätengleichung geschrieben
 werden kann.
 
 Dazu ist notwendig, die Bewegung wieder in einem vierdimensionalen Raum,
@@ -265,14 +272,15 @@ Man kann für den Zusammenhang~\eqref{skript:gravitation:newtonzusammenhang}
 auch die Definition des Riemann-Krümmungstensors anwenden.
 Die Rechnung zeigt aber, dass zwar einzelne Komponenten des Riemann-Tensors
 nicht verschwinden, der Ricci-Tensor und damit auch der Einstein-Tensor
+(siehe auch Abschnitt~\ref{skript:gravitation:einstein-tensor})
 verschwinden dagegen identisch.
 Diese Beschreibung der Gravitation führt also nicht auf das Modell
 eines gekrümmten Raumes.
 
-\subsection{Gravitationspotential -- Newtonsche Feldgleichungen}
+\subsection{Gravitationspotential --- Newtonsche Feldgleichungen}
 Wir möchten einen einfacheren mathematischen Ausdruck für das Gravitationsfeld,
 aus der wir die Gravitationskräfte ableiten können, und eine Gleichung,
-welche welche erklärt, das Gravitationsfeld von Massen erzeugt wird.
+welche erklärt, wie das Gravitationsfeld von Massen erzeugt wird.
 Später in Abschnitt~\ref{skript:gravitation:section:einsteingl}
 werden wir versuchen, daraus eine Form der Feldgleichungen herzuleiten,
 die auch mit der speziellen Relativitätstheorie vereinbar ist.
@@ -400,14 +408,24 @@ Der Satz von Gauss besagt daher
 \[
 \oint_{C} \vec F\cdot d\vec o
 =
-\int_{D} \Delta\varphi\,dx\,dy.
+\int_{D} \Delta\varphi\,dx\,dy,
 \]
+mit der Abkürzung
+\begin{equation*}
+\Delta \varphi
+=
+\frac{\partial^2\varphi}{\partial x^2}+
+\frac{\partial^2\varphi}{\partial y^2}
+\end{equation*}
+dem Laplace-Operator.
 In dieser zweidimensionalen Darstellung nützt uns der Satz allerdings
 wenig, denn das Gravita\-tions\-feld ist natürlich dreidimensional.
 Die dreidimensionale Version kann jedoch mit ganz ähnlichen Ideen
 bewiesen werden wie der Satz von Green:
 
-\begin{satz}[Gauss] Ist $\vec v$ ein Vektorfeld in
+\begin{satz}[Gauss]
+\label{skript:gravitation:gausssatz}
+Ist $\vec v$ ein Vektorfeld in
 einem dreidimensionalen Gebiet $D\subset R^3$ mit Randfläche $S=\partial D$,
 dann gilt
 \begin{equation}
@@ -422,7 +440,7 @@ dann gilt
 \,dx\,dy\,dz
 =
 \int_D \operatorname{div}\vec v\,dx\,dy\,dz.
-\label{skript:gravitation:gausssatz}
+\label{skript:gravitation:gausssatzf}
 \end{equation}
 Darin ist $\vec o$ ein nach aussen zeigender Vektor, der
 senkrecht auf der Oberfläche des Gebietes steht.
@@ -433,9 +451,10 @@ Der Nutzen des Satzes~\ref{skript:gravitation:gausssatz}
 ist, dass man den Fluss des Schwerkraftfeldes
 $\vec F$ einer Punktladung durch eine mit der Masse konzentrischen
 Kugel auch direkt berechnen kann.
-Dann hat nämlich $\vec F$ auf der Kugeloberfläche $S^2$ überall den gleichen
+Dann hat nämlich $\vec F$ auf der Kugeloberfläche $S^2_r$ mit
+Radius $r$ überall den gleichen
 Betrag, und die Richtung ist immer senkrecht auf der Kugeloberfläche.
-Das Skalarprodukt in~\eqref{skript:gravitation:gausssatz} ist daher
+Das Skalarprodukt in~\eqref{skript:gravitation:gausssatzf} ist daher
 einfach ein Produkt der Beträge und das Integral bekommt man durch
 Multiplikation mit der Kugeloberfläche:
 \[
@@ -475,15 +494,16 @@ Seite berechnen:
 \int_{B_r} \Delta\varphi\,dx\,dy\,dz.
 \label{skript:gravitation:poisson-integral}
 \end{align}
-mit der Abkürzung
-\begin{equation*}
+In drei Dimension ist der Laplace-Operator
+\[
 \Delta \varphi
 =
-\frac{\partial^2\varphi}{\partial x^2}+
-\frac{\partial^2\varphi}{\partial y^2}+
-\frac{\partial^2\varphi}{\partial z^2},
-\end{equation*}
-dem Laplace-Operator.
+\frac{\partial^2 \varphi}{\partial x^2}
++
+\frac{\partial^2 \varphi}{\partial y^2}
++
+\frac{\partial^2 \varphi}{\partial z^2}.
+\]
 Da dies für Kugeln an beliebigen Punkten mit beliebigen Radien 
 gilt, müssen die Integranden in~\eqref{skript:gravitation:poisson-integral}
 übereinstimmen.
@@ -557,6 +577,9 @@ g_{kk} &= 1,\quad k=1,2,3.
 \end{aligned}
 \label{skript:gravitation:naeherung}
 \end{equation}
+das Gravitationsfeld mit dem Potential $\varphi$ in dem Sinne, dass
+die aus den Christoffelsymbolen bestimmten Kräfte den Kräften der
+klassischen Theorie entsprechen.
 Die gesuchte Theorie muss also in erster Näherung das newtonsche
 Gravitationspotential in der $00$-Komponente des metrischen Tensors
 verwenden.
@@ -634,7 +657,8 @@ des Energie-Impuls-Tensors wieder.
 Es ist daher naheliegend, dass auf der rechten Seite der gesuchten
 Gleichung der Energie-Impuls-Tensor $T_{\mu\nu}$ stehen soll.
 
-\subsection{Ricci- und Einstein-Tensor}
+\subsection{Ricci- und Einstein-Tensor%
+\label{skript:gravitation:einstein-tensor}}
 Auf der linken Seite der Gleichung erwarten wir ein Objekt, welches
 sich aus den zweiten Ableitungen der $g_{\mu\nu}$ berechnen lässt.
 Die Christoffel-Symbole enthalten die ersten Ableitungen von $g_{\mu\nu}$,
