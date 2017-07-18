@@ -14,9 +14,10 @@ das Gravitationsfeld in der Umgegung eines Sterns beschreiben kann.
 Schon wenige Monate nachdem Einstein seine allgemeine Relativitätstheorie
 veröffentlich hat, hat Karl Schwarzschild eine Lösung der Einsteinschen
 Feldgleichungen gefunden.
+\index{Schwarzschild, Karl}%
 Daraus lassen sich die Bewegungsgleichungen eines Körpers in der Nähe
 eines Sterns ableiten und es sollte möglich sein, den Unterschied zwischen
-der Newtonschen Gravitations-Theorie und Einsteinschen  zu quantifizieren
+der Newtonschen und Einsteinschen Gravitations-Theorie zu quantifizieren
 damit die allgmeine Relativitätstheorie zu testen.
 
 \section{Eine kugelsymmetrische, statische Lösung}
@@ -52,7 +53,7 @@ im Raum mit Kugelkoordinaten ist natürlich eine solche Metrik.
 Die Schreibweise $d\Omega^2$ soll daran erinnern, dass dieser Teil der
 Metrik nicht von der Richtung abhängt.
 Kugelkoordinaten sind jedoch nur eine andere Parametrisierung des euklidischen
-Raumes, dessen Geometrie ist flach.
+Raumes, dessen Geometrie flach ist.
 Diese Metrik kann also sich nicht Modell eines Sternes sein.
 
 Man kann eine Lösung der Feldgleichungen finden, indem man den
@@ -60,7 +61,7 @@ einzelnen Termen der euklidischen Metrik~\eqref{skript:kruemmung:euklid}
 zunächst unbestimmte Faktoren hinzufügt, die nur von $r$ abhängen,
 und dann mit Hilfe der Feldgleichungen dafür Differentialgleichungen
 herleitet.
-Wir wollen diesen beschwerlichen Weg nicht gehen, und uns mit dem
+Wir wollen diesen beschwerlichen Weg nicht gehen und uns mit dem
 Resultate zufriedenstellen, es lautet
 \begin{equation}
 ds^2
@@ -137,7 +138,7 @@ c^2\,dt^2 + 2\frac{c}{\displaystyle\biggl(1-\frac{r_g}{r}\biggr)f(r)}\,dt\,dr
 Wir müssen diese beiden Ausdrücke so kombinieren, dass der gemischte
 Term $dt\,dr$ wegfällt, denn dieser kommt in der Schwarzschild-Metrik
 nicht vor.
-Dazu multiplizieren wir die zweite Zeile mit $f(r)^2$, und subtrahieren.
+Dazu multiplizieren wir die zweite Zeile mit $f(r)^2$ und subtrahieren.
 Wir erhalten
 \begin{equation}
 c^2\,d\tau^2 - f(r)^2\,dR^2
@@ -147,14 +148,14 @@ c^2\,d\tau^2 - f(r)^2\,dR^2
 \end{equation}
 Damit daraus die Schwarzschild-Metrik wird, müssen wir vor dem $dt^2$
 Term einen Faktor der Form $(1-r_g/r)$ haben, wir müssen also zunächst
-alles durch $1-f(r)^2$ dividieren, und dann mit $1-r_g/r$ multiplizieren.
+alles durch $1-f(r)^2$ dividieren und dann mit $1-r_g/r$ multiplizieren.
 Wir kehren ausserdem das Vorzeichen und erhalten
 \[
 \frac{\displaystyle 1-\frac{r_g}{r}}{1-f(r)^2}
 (-c^2\,d\tau^2 + f(r)^2\,dR^2)
 =
 -\biggl(1-\frac{r_g}{r}\biggr)c^2\,dt^2
-+\frac{1}{\displaystyle 1-\frac{r_g}{r}}\,dr^2
++\frac{1}{\displaystyle 1-\frac{r_g}{r}}\,dr^2.
 \]
 Bis auf die Terme $d\Omega^2$ steht auf der rechten Seite die
 Schwarzschild-Metrik.
@@ -247,7 +248,7 @@ In Finkelstein-Koordinaten verschwindet die Singularität bei $r=r_g$,
 es sollte daher auch einfacher werden, die Bahn eines radial ins
 Zentrum des Feldes stürzenden Teilchens zu berechnen.
 Dazu können wir die Winkel-Koordinaten $\vartheta$ und $\varphi$
-vernachlässigen, und nur mit den Koordinaten $\tau$ und $R$ und der
+vernachlässigen und nur mit den Koordinaten $\tau$ und $R$ und der
 Metrik
 \[
 ds^2
@@ -292,7 +293,9 @@ $\ddot R=0$, $\dot R$ kann sich also nicht ändern.
 Wenn aber $\dot R=0$ für alle Werte von $s$, dann ist nach der ersten
 Gleichung auch $\ddot \tau=0$ und damit $\dot \tau=1$.
 Die Lösungskurve ist also $R=R_0$ und $\tau=s$, rot dargestellt in
-Abbildung~\ref{skript:kruemmung:fig:absturz}.
+Abbildung~\ref{skript:kruemmung:fig:absturz}
+und
+Abbildung~\ref{skript:kruemmung:fig:lichtkegel-finkel}.
 
 Mit Hilfe der Formel~\eqref{skript:kruemmung:finkelsteinr}
 kann man damit auch $r$ in Abhängigkeit von $\tau$ für den radialen Absturz
@@ -300,6 +303,8 @@ angeben:
 \[
 r(\tau)=\biggl(\frac32(R_0-c\tau)\biggr)^{\frac23}r_g^{\frac13}.
 \]
+Die Weltlinie eines radialen Absturzes in diesen Koordinaten ist in
+Abbildung~\ref{skript:kruemmung:fig:blackhole} dargestellt.
 
 \section{Ereignishorizont%
 \label{skript:section:ereignishorizont}}
@@ -345,6 +350,10 @@ Sobald ein Teilchen sich innerhalb des Radius $r_g$ befindet, kann
 sein Radius nur noch abnehmen.
 Die Berechnung der Bahn eines solchen Teilchens zeigt auch, dass
 es unausweichlich in endlicher Zeit ins Zentrum stürzen wird.
+In Abbildung~\ref{skript:kruemmung:fig:lichtkegel-finkel} erkennt 
+man dies daran, dass der Lichtkegel beim Überschreiten von $r=r_g$
+so eng wird, dass zeitartige Vektoren die Linie $r=r_g$ in umgekehrter
+Richtung nicht mehr kreuzen können.
 
 \begin{figure}
 \centering
@@ -371,8 +380,9 @@ Die Berechnung des Riemann-Tensors mit Maxima ergibt aber:
 R_{1212}&=-\frac{r_g}{r^3},
 \end{align*}
 die Gezeitenkräfte in radialer Richtung werden für den Astronauten
-also zwar immer grösser, er wird in die Länge gezogen und schliesslich 
+zwar immer grösser, er wird in die Länge gezogen und schliesslich 
 zerrissen, darüber hinaus aber spürt er bei $r=r_g$ nichts Besonderes.
+\index{Ereignishorizont}%
 
 \section{Bedeutung von $r_g$%
 \label{skript:schwarzschild:rg}}
