@@ -8,7 +8,9 @@
 \lhead{Längenmessung}
 \rhead{}
 
-Die Physik seit Galileo und Newton machte die Annahme, dass die
+Die Physik seit Galilei und Newton machte die Annahme, dass die
+\index{Galilei, Galileo}%
+\index{Newton, Isaac}%
 Geometrie des Raumes durch ein dreidimensionales rechtwinkliges
 Koordinatensystem mit der Längenmessungsformel
 \begin{equation}
@@ -19,14 +21,20 @@ adäquat beschrieben wird.
 Diese Annahme entsprach zwar der Erfahrung, doch es gab keine
 Begründung dafür.
 Der Philosoph Emanuel Kant konnte sich zwar keine andere Geometrie
-vorstellen, doch mit den Erkenntnissen von Bolyai, Lobaschevski
+\index{Kant, Emanuel}%
+vorstellen, doch mit den Erkenntnissen von Bolyai, Lobatschevski
+\index{Bolyai, J\'anos}%
+\index{Lobatschevski, Nikolai Iwanowitsch}%
+\index{Gauss, Karl Friedrich}%
 und Gauss wurde klar, dass es durchaus denkbare andere Geometrien
 gibt.
 Bernhard Riemann hat mathematische Methoden entwickelt, wie man die
+\index{Riemann, Bernhard}%
 Geometrie studieren kann, indem man ausschliesslich die Längenmessung
 innerhalb des Raumes verwendet.
 Damit ist die Geometrie unseres Raumes nicht länger einfach das
 Resultat einer axiomatischen Beschreibung, wie Euklid sie gegeben hat,
+\index{Euklid}%
 vielmehr ist sie zu einer experimentellen Wissenschaft geworden.
 
 Da wir nicht weiter annehmen wollen, dass sich der Raum mit Hilfe
@@ -55,11 +63,13 @@ ist die Dimension des Raumes.
 Die etwas ungewohnte Schreibweise für die Indizes
 hat einen tieferen Grund in der Tensorrechnung und wird später
 verständlich werden.
-Im Folgenden werden $k$-te Potenzen einer Koordinate $x^\mu$ durch
+Fortan werden $k$-te Potenzen einer Koordinate $x^\mu$ durch
 Klammern wie in $(x^\mu)^k$ deutlich gemacht.
 
 Uns interessiert vor allem die Beschreibung von Bahnkurven, wir möchten
 zum Beispiel den Absturz eines Astronauten in ein schwarzes Loch berechnen
+\index{schwarzes Loch}%
+\index{Loch, schwarzes}%
 können.
 Eine Bahnkurve erhält man, indem man die Koordinaten von der Zeit
 abhängen lässt.
@@ -100,6 +110,7 @@ t\mapsto y^\alpha(t)=y^\alpha(x^1(t),\dots,x^n(t))
 \]
 beschrieben werden.
 Der Tangentenvektor ist die Ableitung 
+\index{Tangentialvektor}%
 \begin{equation}
 \frac{dy^\alpha(t)}{dt}
 =
@@ -112,9 +123,10 @@ Der Tangentenvektor ist die Ableitung
 \label{skript::summenformel}
 \end{equation}
 nach $t$, nach der Kettenregel für Funktionen mehrere Variablen.
+\index{Kettenregel}%
+
 Wir können zwei Erkenntnisse aus der Formel~\eqref{skript::summenformel}
 gewinnen.
-
 Es ist zwar nicht möglich, vom Koordinatensystem unabhängige
 Geschwindigkeitskomponenten zu definieren, doch immerhin kann man
 angeben, wie die Geschwindigkeitskomponenten zwischen verschiedenen
@@ -125,8 +137,8 @@ annehmen können, dass dessen Komponenten koordinatenunabhängig sind,
 aber wir können fordern, dass wir immer eine Koordinatenumrechnungsformel
 analog zu \eqref{skript::summenformel} aufstellen können, die nur die
 ersten partiellen Ableitungen verwendet.
-Solche Grössen werden wir in Kapitel~\ref{skript:chapter:geodaeten}
-genauer definieren.
+Solche Grössen, sogenannte Tensoren, werden wir in
+Abschnitt~\ref{skript:section:tensoren} genauer definieren.
 
 Die zweite Lehre ist, dass es sehr häufig vorkommen wird, dass wir
 wie in 
@@ -184,7 +196,7 @@ Wir müssen zulassen, dass die Koordinaten entlang verschiedener
 Achsen nicht mehr direkt der Länge entlang dieser Achsen entsprechen,
 dass wir also entlang der Achsen Skalierungsfaktoren haben.
 Weiter ist damit zu rechnen, dass auch gemischte Termen auftauchen, ein
-Ausdruck der Tatsache, dass Koordinatenrichtungen nicht senkrecht aufeinander
+Ausdruck der Tatsache, dass Koordinatenlinien nicht senkrecht aufeinander
 stehen müssen.
 Die allgemeinstmögliche Form einer Längenmessungsformel ist daher
 \begin{equation}
@@ -579,9 +591,10 @@ schreiben.
 \index{Längenelement!in Kugelkoordinaten}%
 
 \subsubsection{Isotropie}
+\index{Isotropie}%
 Die hinteren zwei Terme der Metrik
 \eqref{skript:laengenmessung:kugelkoordinaten}
-beschreiben die Längenmessung entlang von Kurven auf Kugel mit Radius $r$.
+beschreiben die Längenmessung entlang von Kurven auf einer Kugel mit Radius $r$.
 Aus der Konstruktion ist klar, dass diese Längenmessung unabhängig ist
 von Position der Kurve auf einer solchen Kugel.
 Eine Drehung des Raumes ändert an diesem Beitrag nichts, man sagt, die
@@ -646,10 +659,10 @@ das Längenelement auf der Kugeloberfläche.
 Man erkennt, dass der Koeffizient $g_{22}$ bei $\vartheta \in\{0,\pi\}$
 verschwindet.
 Man spricht von einer Singularität der Längenmessung an den Polen der Kugel.
-Dies ist jedoch nur ein Artefakt der Tatsache, dass die Kugelkoordinaten
+Dies ist jedoch nur eine Folge der Tatsache, dass die Kugelkoordinaten
 bei den Polen nicht mehr eindeutig sind.
 Zur Beschreibung der Pole sind alle möglichen Werte der geographischen
-Länge gleichermassen geeignet.
+Länge $\varphi$ gleichermassen geeignet.
 
 Die Metrik 
 \eqref{skript:laengenmessung:kugelkoordinaten}

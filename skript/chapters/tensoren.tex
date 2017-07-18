@@ -3,11 +3,12 @@
 %
 % (c) 2017 Prof Dr Andreas Müller, Hochschule Rapperswil
 %
-\section{Tensoren}
+\section{Tensoren%
+\label{skript:section:tensoren}}
 \rhead{Tensoren}
 Der bisher entwickelte Formalismus zielt darauf ab, dass die Formeln der
 Theorie in jedem beliebigen Koordinatensystem aufgestellt werden können.
-Sie müssen also derart formuliert sein, dass sie bei Koordinatenwechsel
+Sie müssen derart formuliert sein, dass sie bei Koordinatenwechsel
 der Form nach unverändert bleiben.
 Das heisst natürlich nicht, dass zum Beispiel die metrischen Koeffizienten
 $g_{\mu\nu}$ in jedem Koordinatensystem gleich aussehen müssen, sondern
@@ -38,6 +39,7 @@ einem Querstrich bezeichnet.
 \subsection{Vektoren}
 
 \subsubsection{Tangentialvektoren}
+\index{Tangentialvektor}%
 Als einfachstes Beispiel eines Vektors betrachten wir den Tangentialvektor
 einer Kurve $x^\mu(s)$.
 Die Komponenten des Tangentialvektors sind in diesem Koordinatensystem
@@ -70,6 +72,7 @@ in der Formel~\eqref{skript:trafo:kontra}
 die Einsteinsche Summationskonvention rechtfertigt.
 
 \subsubsection{Linearformen}
+\index{Linearform}%
 Bei der Berechnung der Arbeit entlang eines Weges wird in der klassischen
 Physik das Skalarprodukt des Tangentialvektors $v^\mu$ mit dem Kraftvektor
 gebildet und integriert.
@@ -97,8 +100,8 @@ A_\mu.
 \end{equation}
 
 \subsubsection{Kovariante und kontravariante Vektoren}
-Man erkennt, dass sich die Transformationsformel~\eqref{skript:trafo:kov}
-für $A_\mu$ von der Transformationsformel~\eqref{skript:trafo:kontra}
+Man erkennt, dass sich die Transformationsformel \eqref{skript:trafo:kov}
+für $A_\mu$ von der Transformationsformel \eqref{skript:trafo:kontra}
 für $\dot x^\mu$ durch die Position der partiellen Ableitungen unterscheiden.
 Man nennt den Vektor $\dot x^\mu$ einen {\em kontravarianten Vektor},
 \index{Vektor, kontravarianter}%
@@ -308,7 +311,7 @@ A^{\delta\epsilon}\mathstrut_{\alpha\beta\gamma}
 \]
 gilt.
 
-Tensoren sollen dazu dienen, vom koordinatensystem unabhängige
+Tensoren sollen dazu dienen, vom Koordinatensystem unabhängige
 geometrische Aussagen oder Naturgesetze zu formulieren.
 Dazu sind Rechenregeln nötig, die aus Tensoren neue Tensoren
 machen.
@@ -317,7 +320,8 @@ mit dieser Eigenschaft zusammen.
 
 \subsubsection{Index hochziehen}
 Zum {\em Hochziehen eines Index} wird ein Tensor mit einem kovarianten
-Index $\mu$ mit dem kontravarianten metrischen Tensor multipliziert.
+Index $\mu$ mit dem kontravarianten metrischen Tensor $g^{\mu\nu}$
+multipliziert.
 \index{Index!hochziehen}%
 \index{Hochziehen eines Index}%
 Die anderen Indizes des Tensors spielen dabei offenbar keine Rolle,
@@ -364,7 +368,7 @@ Für die Indizes $\mu$ und $\alpha$ bedeutet dies
 \[
 A^{\sigma\nu}\mathstrut_{\sigma\beta\gamma}
 =
-B^\nu\mathstrut_{\beta\gamma},
+B^\nu\mathstrut_{\beta\gamma}.
 \]
 Man kann die Verjüngung auch etwas komplizierter als
 \begin{equation}
