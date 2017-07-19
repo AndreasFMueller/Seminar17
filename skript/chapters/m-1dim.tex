@@ -8,9 +8,9 @@
 \rhead{Ein eindimensionales Beispiel}
 In diesem Abschnitt betrachten wir eine Funktion, die nur von einer
 Variablen $x$ abhängt.
-Ausserdem interessiert uns in erster Linie das Verhalten der Funktion
+Es interessiert uns in erster Linie ihr Verhalten 
 für $x\to\pm\infty$.
-Wir verwenden dazu eine Methode, die sich leicht auf die dreidimensionale
+Wir führen dazu eine Methode vor, die sich leicht auf die dreidimensionale
 Situation ausweiten lässt.
 
 \subsection{Monopol und Dipol}
@@ -67,12 +67,13 @@ Wir sind nur an den Funktionswerten interessiert für $x$-Werte, die
 wesentlich grösser sind als $a$, als in grosser Entfernung von
 den Ladungen.
 Wir interessieren uns also für $x$-Werte so, dass $x/a$ sehr gross ist,
-oder umgekehrt dass $a/x$ sehr klein ist.
+oder umgekehrt, dass $a/x$ sehr klein ist.
 
 Wenn man in Gleichung \eqref{skript:multipol:1dipol} das Vorzeichen
 von $x$ kehrt, dann ändert das Vorzeichen von $f$, also $f_2(-x)=-f_2(x)$,
 $f$ ist eine ungerade Funktion.
-Es reicht daher, die Funktion $f_2(x)$ für $x\gg a$ zu untersuchen.
+Es reicht daher, die Funktion $f_2(x)$ für $x\gg a$ zu untersuchen,
+für Werte $x\ll -a$ verwendet man $f_2(x)=-f_2(-x)$.
 
 Verwenden wir die Gleichung \eqref{skript:multipol:1abfall} in $f_2(x)$,
 erhalten wir
@@ -247,13 +248,13 @@ exakt wiederzugeben:
 &=
 1+\frac{a}{x}+\frac{a^2}{x^2}+\dots
 =
-\sum_{k=0}^\infty \frac{a^k}{x^k}
+\sum_{k=0}^\infty \frac{a^k}{x^k},
 \\
 \frac{1}{1-\displaystyle\frac{a^2}{x^2}}
 &=
 1+\frac{a^2}{x^2}+\frac{a^4}{x^4}+\dots
 =
-\sum_{k=0}^\infty \frac{a^{2k}}{x^{2k}}
+\sum_{k=0}^\infty \frac{a^{2k}}{x^{2k}},
 \\
 \frac{1}{1+\displaystyle\frac{a^2}{x^2}}
 &=

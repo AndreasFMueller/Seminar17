@@ -79,9 +79,9 @@ Dazu betrachten wir nur einen einzelnen Term
 =
 \frac{1}{\sqrt{x^2+z^2\pm 2az+a^2}}
 =
-\frac{1}{\sqrt{x^2+z^2}} \cdot \frac{1}{\sqrt{1+\frac{\pm 2az+a^2}{x^2+z^2}}}
+\frac{1}{\sqrt{x^2+z^2}} \cdot \frac{1}{\sqrt{\displaystyle 1+\frac{\pm 2az+a^2}{x^2+z^2}}}
 =
-\frac{1}{r} \cdot \frac{1}{\sqrt{1+\frac{\pm 2az+a^2}{r^2}}}
+\frac{1}{r} \cdot \frac{1}{\sqrt{\displaystyle 1+\frac{\pm 2az+a^2}{r^2}}}
 \]
 Für grosse Werte von $r$ verschwindet der zweite Term in der Wurzel,
 in erster Näherung verhält sich die Funktion daher wie $1/r$.
@@ -131,16 +131,16 @@ g^{(n)}(t)
 &=
 \alpha(\alpha-1)(\alpha-2)\dots(\alpha-n+1) (1+t)^{\alpha -n}
 &
-g^{(n)}(0)&=\alpha(\alpha-1)(\alpha-2)\dots(\alpha -n +1)
+g^{(n)}(0)&=\alpha(\alpha-1)(\alpha-2)\dots(\alpha -n +1).
 \end{align*}
 Der Term zur Potenz $n$ in der Taylor-Reihe von $g(t)$ ist
 \[
-\frac{\alpha(\alpha-1)(\alpha-2)\dots(\alpha-n+1)}{n!} t^n
+\frac{\alpha(\alpha-1)(\alpha-2)\dots(\alpha-n+1)}{n!} t^n.
 \]
 Wäre $\alpha$ eine ganze Zahl, dann sähe der Bruch
-genau so aus wie der Binomialkoeffizient $\binom{\alpha}{k}$.
+genauso aus wie der Binomialkoeffizient $\binom{\alpha}{k}$.
 In Erweiterung der üblichen Definition des Binomialkoeffizienten
-schreibt man auch für nicht ganzzahlige $\alpha$
+schreibt man daher auch für nicht ganzzahlige $\alpha$
 \[
 \binom{\alpha}{n}
 =
@@ -200,7 +200,7 @@ t=\frac{\pm 2az+a^2}{r^2}
 \]
 in der binomischen Reihe, erhalten wir
 \[
-\frac{1}{\sqrt{1+\frac{\pm 2az+a^2}{r^2}}}
+\frac{1}{\sqrt{\displaystyle 1+\frac{\pm 2az+a^2}{r^2}}}
 =
 1-\frac12\frac{\pm 2az+a^2}{r^2}
 +
@@ -237,7 +237,7 @@ f(x,z) = -\frac{d}{4\pi\varepsilon_0 r^2}\frac{z}{r}+\dots
 \label{skript:multipol:dipolpotential}
 \end{equation}
 Darin haben wir statt $z$ den Bruch $z/r$ abgespalten, da dieser
-entlang eines vom Nullpunkt ausgehenden Strahls vom Zentrum jeweils
+entlang eines vom Nullpunkt ausgehenden Strahls vom Zentrum
 konstant ist.
 Wir haben daher das Potential in Faktoren aufgeteilt, die verschiedene
 geometrische Bedeutung haben.
@@ -287,6 +287,7 @@ parallel zur $z$-Achse
 \end{figure}
 
 \subsection{Quadrupol}
+\index{Quadrupol}%
 Wie in der eindimensionalen Situation vermuten wir, dass sich
 das Potential komplizierterer Ladungsverteilungen ebenfalls durch
 eine Reihe darstellen lässt, deren nächster Term von der Form
@@ -296,7 +297,7 @@ eine Reihe darstellen lässt, deren nächster Term von der Form
 \end{equation}
 sein muss.
 Darin ist $p$ ein Ausdruck, der in beiden Argumenten linear ist.
-Wir nennen \label{skript:multipol:quadropolterm} den {\em Quadrupolterm}.
+Wir nennen \eqref{skript:multipol:quadropolterm} den {\em Quadrupolterm}.
 \index{Quadrupol}%
 
 Schreiben wir die Koordinaten als $(x_1,x_2,x_3)$, dann wird 
@@ -332,13 +333,13 @@ Nimmt man für $Q$ die Einheitsmatrix, dann erhält man einfach nur
 \[
 \sum_{k,l=1}^3 Q_{kl}x_kx_l=\sum_{i=1}^3 x_i^2 = \vec{r}\cdot\vec{r}=r^2,
 \]
-der Quadrupol-Term wird also 
+der Quadrupol-Term wird also  zu
 \[
 \frac1{4\pi\varepsilon_0}\cdot\frac{r^2}{r^3}
 =
 \frac1{4\pi\varepsilon_0}\cdot\frac{1}{r},
 \]
-also das Potential einer Punktladung, welches bereits im ersten Term
+das Potential einer Punktladung, welches bereits im ersten Term
 der Multipolreihe berücksichtigt wurde.
 Damit also der Quadrupol-Term kein Punktladungspotential mitbringt,
 darf in der Summe
@@ -349,11 +350,11 @@ kein Summand übrig bleiben, der sich auf ein Vielfaches von $r^2$
 reduzieren lässt.
 Man kann eine beliebige Matrix $Q$ immer schreiben als
 \[
-Q = \underbrace{(Q - \operatorname{Spur}(Q)\, E)}_{\displaystyle \tilde Q} + \operatorname{Spur} (Q)\, E.
+Q = \underbrace{(Q - {\textstyle \frac13}\operatorname{Spur}(Q)\, E)}_{\displaystyle \tilde Q} + {\textstyle\frac13}\operatorname{Spur} (Q)\, E.
 \]
-Die Matrix $\tilde Q$ hat $\operatorname{Spur}(\tilde Q)=0$.
-Der Quadrupol-Term, der zur Matrix $\operatorname{Spur}(Q)\,E$ gehört,
-ist eigentlich ein Monopolterm mit Ladung $q=\operatorname{Spur}(Q)$.
+Die Matrix $\tilde Q$ hat $\frac13\operatorname{Spur}(\tilde Q)=0$.
+Der Quadrupol-Term, der zur Matrix $\frac13\operatorname{Spur}(Q)\,E$ gehört,
+ist eigentlich ein Monopolterm mit Ladung $q=\frac13\operatorname{Spur}(Q)$.
 Nur die spurfreie Matrix $\tilde Q$ führt auf einen ``echten'' Quadrupolterm.
 Wir dürfen also ohne Einschränkung annehmen, dass die Matrix $Q$ verschwindende
 Spur hat.
@@ -376,6 +377,7 @@ gemäss \eqref{skript:multipol:qmatrix}.
 Links der Fall $q_0=1,q_1=0$, rechts $q_0=0,q_1=1$.
 \label{chapter:multipol:hexapolniveaux}}
 \end{figure}
+\index{Hexapol}%
 
 \subsubsection{Quadrupolterme in zwei Dimensionen}
 In zwei Dimensionen gibt es nur zwei linear unabhängige Matrizen, die die
@@ -425,10 +427,11 @@ Q_{kl}
 \]
 Das Wachstum des Quadrupolterms~\eqref{skript:multipol:quadropolterm}
 ist also von der Ordnung $r^{-3}$.
-Auch dieser Term geht wieder einer Potenz schneller gegen $0$ als der
+Auch dieser Term geht wieder eine Potenz schneller gegen $0$ als der
 Dipolterm.
 
 \subsection{Höhere Multipole}
+\index{Multipole, höhere}
 Die Entwicklung Entwicklung in Dipol und Quadrupol lässt sich noch
 weiter führen.
 Dabei werden sukzessive Terme entstehen, die immer schneller gegen $0$
@@ -477,7 +480,7 @@ Dazu beachten wir, dass wegen der vollständigen Symmetrie alle
 $Q_{i_1\dots i_n}$ mit der gleichen Anzahl Index $2$ gleich sein
 müssen.
 Wir können die $Q_{i_1\dots i_n}$ daher als $q_k$ abkürzen, wobei $k$ die
-Anzahl der Indizes $2$ von unter den $i_1,\dots,i_n$ ist.
+Anzahl der Indizes $2$ unter den $i_1,\dots,i_n$ ist.
 Es ist also zum Beispiel
 $Q_{1\dots 1}=q_0$ und $Q_{2\dots 2}=q_n$.
 
@@ -493,7 +496,7 @@ Q_{i_1\dots 11\dots i_n}
 =-
 Q_{i_1\dots 22\dots i_n}
 \qquad\Rightarrow\qquad
-q_{k+2}=-q_k
+q_{k+2}=-q_k.
 \]
 Es gibt also nur zwei linear unabhängige $Q_{i_1\dots i_n}$, die durch
 die Wahl von $q_0$ bzw.~$q_1$ festgelegt sind, die wir ohne Einschränkung

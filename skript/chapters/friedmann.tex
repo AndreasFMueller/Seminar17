@@ -15,8 +15,8 @@ die Anzahl der zu berücksichtigenden Variablen reduzieren auf eine
 Art, die immer noch gestattet, die gestellten Fragen mit ausreichender
 Genauigkeit zu beantworten.
 
-In diesem Kapitel betrachten wir ein Modell für das Universum, welches
-das dieses derart vereinfacht, dass es über die langfristige
+In diesem Kapitel betrachten wir ein geeignet vereinfachtes
+Modell für das Universum, welches über die langfristige
 Geschichte des Universums konkrete Aussagen zu machen gestattet.
 Mit diesen sogenannten Friedmann-Gleichungen kann man sodann zum
 Beispiel das Alter des Universums bestimmen.
@@ -36,7 +36,7 @@ dr^2 + S_\kappa(r)^2d\Omega^2
 \]
 mit der noch unbekannten Funktion $a(t)$ hat.
 Ausserdem muss die Metrik eine Lösung der Einstein-Gleichungen sein.
-Auf deren rechten Seite steht der Energie-Impuls-Tensor des Universums.
+Auf deren rechter Seite steht der Energie-Impuls-Tensor des Universums.
 Da das Universum isotrop und homogen ist, muss auch der Energie-Impuls-Tensor
 isotrop und homogen sein.
 Für einen mit Gas der Dichte $\varrho$ und Druck $p$ gefülltes Universum
@@ -52,6 +52,12 @@ T^{\mu\nu}
 \end{pmatrix}
 \]
 beschrieben.
+Man beachte, dass in diesem $T^{\mu\nu}$ keine Impulskomponente vorkommt.
+Unsere Annahme der Isotropie besagt nämlich auch, dass es keine
+bevorzugte Richtung geben darf, in der sich die Materie im Universum
+bewegt.
+Isotropie verlangt also, dass es ein bevorzugtes Ruhesystem gibt.
+\index{Ruhesystem}%
 
 Die noch unbekannte Funktion $a(t)$ sollte sich aus der
 Einstein-Gleichung bestimmen lassen, sofern wir den Energie-Impuls-Tensor
@@ -64,7 +70,7 @@ Die Einstein-Gleichungen werden einen Zusammenhang zwischen den
 Ableitungen von $a(t)$ und der Dichte herstellen,
 andererseits müssen wir aus unserer Kenntnis des Verhaltens von
 Materie und Strahlung herleiten, wie sich die Dichte mit dem
-Streckungsfaktor  $a(t)$ des Universums ändert.
+Skalenfaktor  $a(t)$ des Universums ändert.
 Dieses Differentialgleichungssystem wird die Entwicklung des homogenen
 und isotropen Universums vollständig beschreiben.
 
@@ -207,8 +213,8 @@ G^\mu_\mu
 &=
 \frac{8\pi K}{c^4}(-\varrho c^2 + 3p).
 \\
-\intertext{Wir dividieren durch $-6/c^2$ und bringen den Krümmungsterm
-auf die rechte Seite, so erhalten wir}
+\intertext{Wir dividieren durch $-6/c^2$, bringen den Krümmungsterm
+auf die rechte Seite und erhalten so}
 \frac{\ddot a(t)}{a(t)} + \frac{\dot a(t)^2}{a(t)^2}
 &=
 -\frac{4\pi K}{3c^4}(-\varrho c^2 + 3p)
@@ -274,128 +280,47 @@ der Geschichte des Universums genutzt werden kann.
 Die Friedmann-Gleichung kann dazu verwendet werden, die Geschichte
 des Universums zu rekonstruieren.
 Dazu müssen wir die Differentialgleichung aussgehend von der
-aktuellen Zeit $t_0$ lösen, als Anfangsbedingung für den
+aktuellen Zeit $t_0$ in die Vergangenheit lösen, als Anfangsbedingung für den
 Skalenfaktor verwenden wir per Konvention $a(t_0)=1$.
 Auf der rechten Seite der Gleichung brauchen wir die vorerst noch
 unbekannte Funktion $\varrho(t)$.
 
-\subsection{Der Einfluss des Krümmungsparameters $\kappa$}
-Es fällt aber auch auf, dass in der Friedmann-Gleichung die Ableitung
-$\dot a(t)$ im Quadrat vorkommt.
-Das Vorzeichen von $\dot a(t)$ ist also nur dadurch bestimmt, dass
-wir aus Hubbles Beobachtungen wissen, dass sich das Universum
-ausdehnt und damit $\dot a(t_0) > 0$.
-Solange also die rechte Seite der Friedmann-Gleichung keine Nullstelle
-hat, wird sich das Universum weiter ausdehnen.
-Dies trifft zum Beispiel für $\kappa=-1$ zu.
-
-\subsubsection{Positiv gekrümmtes Universum: $\kappa=1$}
-In einem Universum mit $\kappa=1$ gibt es dagegen einen Zeitpunkt, für
-den die rechte Seite eine Nullstelle hat:
-\[
-\frac{8\pi K}{3c^2}\varrho -\frac{c^2\kappa}{a(t)^2R_c^2}=0
-\qquad\Rightarrow\qquad
-\frac{8\pi K}{3c^2}\varrho(t)=\frac{c^2}{a(t)^2R_c^2}.
-\]
-In einem sich ausdehnenden Universum nimmt die Dichte $\varrho(t)$ mit
-der dritten Potenz von $a(t)$ ab, es gilt
-\[
-\varrho(t) = \frac{\varrho_0}{a(t)^3},
-\]
-wo $\varrho_0$ die heute Materiedichte ist.
-Die Friedmanngleichung wird damit zu
+\subsection{Materie, Strahlung und der Skalenfaktor}
+Auf der rechten Seite der Friedmann-Gleichung tritt die Energiedichte
+$\varrho c^2$ im Universum auf.
+Wenn sich das Universum ausdehnt, wird sich die Materiedichte $\varrho$
+verändern, da die gleiche Materie ein um den linearen Faktor
+$a(t)$ gestrecktes Volumen ausfüllt.
+Es gilt also 
 \begin{equation}
-\frac{8\pi K}{3c^2}\frac{\varrho_0}{a(t)^3}=\frac{c^2}{a(t)^2R_c^2}
-\qquad\Rightarrow\qquad
-a(t)
-=
-\frac{8\pi K R_c^2\varrho_0}{3c^4}.
-\label{skript:friedmann:reversetime}
+\varrho(t) = \frac{\varrho_0}{a(t)^3}
+\label{skript:friedmann:zustandmaterie}
 \end{equation}
-Inbesondere gibt es einen Zeitpunkt $t$, nach dem das Universum sich
-wieder zusammenziehen wird, den man durch Lösen der Gleichung
-\eqref{skript:friedmann:reversetime}
-finden kann.
+für die Dichte der Materie.
 
-\subsubsection{Flaches Universum: $\kappa=0$}
-In einem Universum mit $\kappa=0$ fällt der Krümmungsterm in 
-der Friedmann-Gleichung ganz weg.
-Die Entwicklung des Universums wird allein bestimmt von der Dichte.
-Die rechte Seite der Friedmann-Gleichung ist immer positiv, ein
-solches Universum dehnt sich daher aus.
+Für Energie, die in Form von Strahlung vorliegt, trifft dies jedoch nicht
+zu.
+Die Energie verteilt sich zwar auf ein grösseres Volumn, 
+aber die Wellenlänge wird ebenfalls gestreckt, was
+die Energie zusätzlich reduziert.
+Es gilt daher die Zustandsgleichung
+\index{Zustandsgleichung}%
+\begin{equation}
+\varepsilon(t) = \frac{\varepsilon_0}{a(t)^4}
+\label{skript:friedmann:zustandstrahlung}
+\end{equation}
+für Strahlung.
 
-\subsection{Das leere Universum}
-\begin{figure}
-\centering
-\includegraphics{chapters/tikz/friedmann-leer.pdf}
-\caption{Zeitabhängigkeit des Skalenfaktors $a(t)$ in einem leeren
-Universum mit $\kappa = -1$.
-$a(t)$ verschwindet eine Hubble-Zeit $1/H_0$ vor heute ($t_0$).
-\label{chapter:friedmann:graph:leer}}
-\end{figure}
-Für ein leeres Universum können wir die Friedmann-Gleichung vollständig
-lösen.
-Die Differentialgleichung wird dann zu
-\[
-\frac{\dot a(t)^2}{a(t)^2}
-=
--\frac{c^2\kappa}{a(t)^2R_c^2}.
-\]
-Die linke Seite dieser Gleichung ist immer postiv.
+Da die Energiedichte der Materie langsamer abnimmt als die Energiedichte
+der Strahlung, wird die im Laufe der Geschichte des Universums die
+Bedeutung der Strahlung gegenüber der Materie immer kleiner werden.
+Das Universum beginnt in einem Zustand, in dem die Strahlung der
+dominierende Einfluss auf den Skalenfaktor ist. 
+Später geht es über in einen Zustand, in dem Materie dominiert.
 
-\subsubsection{Leeres Universum mit positiver Krümmung: $\kappa=1$}
-Für $\kappa=1$ ist die rechte Seite negativ, die Differentialgleichung
-kann also gar keine Lösung haben.
-Ein leeres Universum muss also automatisch $\kappa=-1$ oder $\kappa=0$
-erfüllen.
-
-\subsubsection{Leeres, flaches Universum: $\kappa=0$}
-Für $\kappa=0$ ist die rechte Seite $0$, woraus man schliessen kann,
-dass $\dot a(t)=0$ sein muss.
-Ein leeres, flaches Universum ist also auch statisch und entspricht
-damit nicht unserem Universum.
-
-\subsubsection{Leeres Universum mit negativer Krümmung: $\kappa=-1$}
-Für ein leeres Universum mit $\kappa=-1$ kann die Friedmann-Gleichung sofort
-gelöst werden, man erhält
-\[
-\dot a(t)^2
-=
-\frac{c^2}{R_c^2}
-\qquad\Rightarrow\qquad
-\dot a(t) = \frac{c}{R_c} = 
-\qquad\Rightarrow\qquad
-a(t)= 1 + \frac{c}{R_c}(t-t_0).
-%= 1 + H_0(t-t_0).
-\]
-Diese Lösung ist in Abbildung~\ref{chapter:friedmann:graph:leer} dargestellt.
-Der Skalenfaktor wächst also linear mit der Zeit.
-Aus den Messungen von Hubble und Humason ist die
-$H_0=H(t_0)=\dot a(t_0)/a(t_0)=\dot a(t_0)$
-bekannt.
-Damit kann man den Skalenfaktor auch mit der Hubble-Konstanten
-bestimmen:
-\[
-H(t) =  \frac{\dot a(t)}{a(t)} = 1 + H_0(t-t_0).
-\]
-Für $t=1/H_0$ wird $H(t)=0$, dann sind alle Distanzen im
-Universum auf $0$ geschrumpft.
-
-
-\subsection{Das nicht leere Universum}
-Wenn das Universum sich ausdehnt, dehnt sich das darin enthaltene
-Gas, der Staub und die Strahlung mit aus.
-Ist der Energieinhalt des Universums als Funktion von $a(t)$ bekannt,
-kann die Friedmann-Gleichung gelöst werden.
-
-Neuere Messungen zeigen, dass unser Universum flach ist.
-Die Rechnungen für $\kappa=1$ in den nachfolgenden Unterabschnitten
-sind daher für unser Universum nicht anwendbar.
-In späteren Abschnitten, insbesondere im Abschnitt über verschiedene
-Komponenten des Universums, wird daher nur noch der Fall $\kappa=0$
-durchgerechnet.
-
-\subsubsection{Geschlossenes Universum}
+\subsection{Expansion oder Kontraktion?}
+\index{Expansion}%
+\index{Kontraktion}%
 Wir untersuchen jetzt, was für langfristige Lösungen die
 Friedmann-Gleichung~\eqref{skript:friedmann:friedmann}
 überhaupt erlaubt.
@@ -469,9 +394,123 @@ Die Energiedichte
 \]
 ausgedrück in Einheiten der kritische Dichte heisst
 der {\em Dichteparameter}.
+\index{Dichteparameter}%
 
-\section{Komponenten}
-\rhead{Komponenten}
+%\subsection{Der Einfluss des Krümmungsparameters $\kappa$}
+%Es fällt auf, dass in der Friedmann-Gleichung die Ableitung
+%$\dot a(t)$ im Quadrat vorkommt.
+%Das Vorzeichen von $\dot a(t)$ ist also nur dadurch bestimmt, dass
+%wir aus Hubbles Beobachtungen wissen, dass sich das Universum
+%ausdehnt und damit $\dot a(t_0) > 0$.
+%Solange also die rechte Seite der Friedmann-Gleichung keine Nullstelle
+%hat, wird sich das Universum weiter ausdehnen.
+%Dies trifft zum Beispiel für $\kappa=-1$ zu.
+%
+%\subsubsection{Positiv gekrümmtes Universum: $\kappa=1$}
+%In einem Universum mit $\kappa=1$ gibt es dagegen einen Zeitpunkt, für
+%den die rechte Seite eine Nullstelle hat:
+%\[
+%\frac{8\pi K}{3c^2}\varrho -\frac{c^2\kappa}{a(t)^2R_c^2}=0
+%\qquad\Rightarrow\qquad
+%\frac{8\pi K}{3c^2}\varrho(t)=\frac{c^2}{a(t)^2R_c^2}.
+%\]
+%In einem sich ausdehnenden Universum nimmt die Dichte $\varrho(t)$
+%nach \eqref{skript:friedmann:zustandmaterie} mit
+%der dritten Potenz von $a(t)$ ab, es gilt
+%Die Friedmanngleichung wird damit zu
+%\begin{equation}
+%\frac{8\pi K}{3c^2}\frac{\varrho_0}{a(t)^3}=\frac{c^2}{a(t)^2R_c^2}
+%\qquad\Rightarrow\qquad
+%a(t)
+%=
+%\frac{8\pi K R_c^2\varrho_0}{3c^4}.
+%\label{skript:friedmann:reversetime}
+%\end{equation}
+%Inbesondere gibt es einen Zeitpunkt $t$, nach dem das Universum sich
+%wieder zusammenziehen wird, den man durch Lösen der Gleichung
+%\eqref{skript:friedmann:reversetime}
+%finden kann.
+%
+%\subsubsection{Flaches Universum: $\kappa=0$}
+%In einem Universum mit $\kappa=0$ fällt der Krümmungsterm in 
+%der Friedmann-Gleichung ganz weg.
+%Die Entwicklung des Universums wird allein bestimmt von der Dichte.
+%Die rechte Seite der Friedmann-Gleichung ist immer positiv, ein
+%solches Universum dehnt sich daher aus.
+%
+\subsection{Das leere Universum}
+\begin{figure}
+\centering
+\includegraphics{chapters/tikz/friedmann-leer.pdf}
+\caption{Zeitabhängigkeit des Skalenfaktors $a(t)$ in einem leeren
+Universum mit $\kappa = -1$.
+$a(t)$ verschwindet eine Hubble-Zeit $1/H_0$ vor heute ($t_0$).
+\label{chapter:friedmann:graph:leer}}
+\end{figure}
+Für ein leeres Universum können wir die Friedmann-Gleichung vollständig
+lösen.
+Die Differentialgleichung wird dann zu
+\[
+\frac{\dot a(t)^2}{a(t)^2}
+=
+-\frac{c^2\kappa}{a(t)^2R_c^2}.
+\]
+Die linke Seite dieser Gleichung ist immer postiv.
+
+\subsubsection{Positive Krümmung: $\kappa=1$}
+Für $\kappa=1$ ist die rechte Seite negativ, die Differentialgleichung
+kann also gar keine Lösung haben.
+Ein leeres Universum muss also automatisch $\kappa=-1$ oder $\kappa=0$
+erfüllen.
+
+\subsubsection{Flaches Universum: $\kappa=0$}
+Für $\kappa=0$ ist die rechte Seite $0$, woraus man schliessen kann,
+dass $\dot a(t)=0$ sein muss.
+Ein leeres, flaches Universum ist also auch statisch und entspricht
+damit nicht unserem Universum.
+
+\subsubsection{Negative Krümmung: $\kappa=-1$}
+Für ein leeres Universum mit $\kappa=-1$ kann die Friedmann-Gleichung sofort
+gelöst werden, man erhält
+\[
+\dot a(t)^2
+=
+\frac{c^2}{R_c^2}
+\qquad\Rightarrow\qquad
+\dot a(t) = \frac{c}{R_c} = 
+\qquad\Rightarrow\qquad
+a(t)= 1 + \frac{c}{R_c}(t-t_0).
+%= 1 + H_0(t-t_0).
+\]
+Diese Lösung ist in Abbildung~\ref{chapter:friedmann:graph:leer} dargestellt.
+Der Skalenfaktor wächst also linear mit der Zeit.
+Aus den Messungen von Hubble und Humason ist die
+$H_0=H(t_0)=\dot a(t_0)/a(t_0)=\dot a(t_0)$
+bekannt.
+Damit kann man den Skalenfaktor auch mit der Hubble-Konstanten
+bestimmen:
+\[
+H(t) =  \frac{\dot a(t)}{a(t)} = 1 + H_0(t-t_0).
+\]
+Für $t=1/H_0$ wird $H(t)=0$, dann sind alle Distanzen im
+Universum auf $0$ geschrumpft.
+
+
+%\subsection{Das nicht leere Universum}
+%Wenn das Universum sich ausdehnt, dehnt sich das darin enthaltene
+%Gas, der Staub und die Strahlung mit aus.
+%Ist der Energieinhalt des Universums als Funktion von $a(t)$ bekannt,
+%kann die Friedmann-Gleichung gelöst werden.
+%
+%Neuere Messungen zeigen, dass unser Universum flach ist.
+%Die Rechnungen für $\kappa=1$ in den nachfolgenden Unterabschnitten
+%sind daher für unser Universum nicht anwendbar.
+%In späteren Abschnitten, insbesondere im Abschnitt über verschiedene
+%Komponenten des Universums, wird daher nur noch der Fall $\kappa=0$
+%durchgerechnet.
+
+\section{Komponenten in einem flachen Universum}
+\rhead{Komponenten in einem flachen Universum}
 Das reale Universum ist nicht leer, in den Beispielen haben wir den
 Fall gewöhnlicher Materie bereits näher angeschaut.
 Die Funktionen $\varrho(t)$ und $p(t)$ sind für verschiedene
@@ -480,7 +519,8 @@ Wir sprechen von verschiedenen Komponenten des Universums.
 Jede Komponente hat ihre eigene Zustandsgleichung und führt
 daher zu einer anderen Lösung der Friedmann-Gleichung.
 In den folgenden Unterabschnitten wird jeweils die Lösung für
-ein flaches Universum mit nur einer Komponente durchgerechnet.
+ein flaches Universum, also der Fall $\kappa=0$ mit nur einer
+Komponente durchgerechnet.
 
 \subsection{Materie}
 Die offensichtlichste Komponente ist die sogenannte baryonische Materie.
@@ -488,45 +528,8 @@ Sie macht jedoch nur etwa 5\% des Energieinhalts des Universums aus.
 Sie wird so genannt, weil ihre Masse vor allem durch die Masse der Atomkerne
 bestimmt ist, aus der sie sich zusammensetzt.
 
-Im sich ausdehnenden Universum bleibt die Masse erhalten, die Dichte wird
-daher mit der dritten Potenz von $a(t)$ abnehmen, wie wir im Folgenden
-nachrechnen wollen.
-Ein Würfel mit Kantenlänge $l$ zur Zeit $t_0$ enthält die Masse
-$m=l^3 \varrho(t_0)$.
-Zur Zeit $t$ ist die Kantenlänge $a(t)l$, das Volumen $a(t)^3l^3$
-und die darin enthaltene Masse $m=a(t)^3l^3\varrho(t)$.
-Da die Masse erhalten bleibt, folgt
-\[
-l^3 \varrho(t_0)
-=
-a(t)^3l^3\varrho(t)
-\qquad\Rightarrow\qquad
-\varrho(t)=\frac{\varrho(t_0)}{a(t)^3}.
-\]
-Die Friedmann-Gleichung wird daher
-\begin{equation}
-\frac{\dot a(t)^2}{a(t)^2}
-=
-\frac{8\pi K\varrho_0}{3c^2a(t)^3}-\frac{c^2\kappa}{a(t)^2R_c^2}.
-\end{equation}
-
-Da die mittlere Materiedichte im Universum sehr klein ist, kann man davon
-ausgehen, dass Atome praktisch nie kollidieren, dass diese Komponenten
-also keinen Druck aufweist.
-Staubteilchen werden trotz grösserer Masse noch seltener kollidieren.
-
-%Die baryonische Materie wird also durch die Zustandsgleichungen
-%\begin{equation}
-%\varrho(t)=\frac{\varrho_0}{a(t)^3}
-%\qquad\text{und}\qquad
-%p(t)=0
-%\end{equation}
-%vollständig charakterisiert.
-
-\subsubsection{Das flache, gasgefüllte Universum}
-In einem flachen, gasgefüllten Universum ist $\kappa=0$,
-der Krümmungsterm fällt weg und
-es erfüllt daher die vereinfachte Friedmann-Gleichung
+Einem flaches, gasgefüllten Universum 
+erfüllt die vereinfachte Friedmann-Gleichung
 \[
 \frac{\dot a(t)^2}{a(t)^2}
 =
@@ -557,7 +560,7 @@ separieren und integrieren:
 \]
 Auflösen nach $a(t)$ führt auf
 \[
-a(t)=\biggl(\pm\sqrt{\frac{6\pi K\varrho_0}{c^2}}t+C'\biggr)^{\frac23}
+a(t)=\biggl(\pm\sqrt{\frac{6\pi K\varrho_0}{c^2}}t+C'\biggr)^{\frac23},
 \]
 wobei die Integrationskonstante $C'$ noch so bestimmt werden muss,
 dass $a(t_0)=1$ gilt.
@@ -598,7 +601,7 @@ a(t) = \biggl(\frac32H_0(t-t_0)+1\biggr)^\frac23
 \end{equation}
 für den Skalenfaktor in einem materiegefüllten Universum.
 Abbildung~\ref{skript:friedmann:graph:materie} zeigt den Verlauf
-des Skalenfaktors.
+des Skalenfaktors in Abhängigkeit von der Zeit.
 
 \begin{figure}
 \centering
@@ -608,7 +611,8 @@ in einem Universum, welches nur Materie enthält.
 Im Vergleich dazu {\color{blue}blau} die Entwicklung für linear von der
 Zeit abhängigen Skalenfaktor, die Steigung der Geraden ist die
 Hubble-Konstanten $H_0$.
-Das Alter des Universums ist nur zwei Drittel der Hubble-Zeit.
+Das Alter des Universums ist nur zwei Drittel der Hubble-Zeit und damit
+deutlich zu kurz.
 \label{skript:friedmann:graph:materie}}
 \end{figure}
 
@@ -634,72 +638,38 @@ deutlich zu wenig Zeit.
 
 \subsection{Strahlung}
 Im frühen Universum war Strahlung die dominierende Komponente.
-Mit der Expansion verändert sich nicht nur die Dichte der Photonen 
-analog zu einem Gas, es verändert sich auch deren Wellenlänge.
-Da die Energie eines Photons proportional ist zur Wellenlänge,
-nimmt die Energiedichte der Strahlung mit der vierten Potenz des
-Skalenfaktors $a(t)$ ab:
-\[
-\varrho(t)=\frac{\varrho_0}{a(t)^4}.
-\]
-Die Bedeutung der Strahlung nimmt also schneller ab als jene der Materie.
-% XXX Graphik, die a^-3 und a^-4 vergleicht
-Dies gilt nicht nur für Strahlung, sondern auch für Teilchen, die
-sich mit relativistischer Geschwindigkeit bewegen, zum Beispiel für
-Neutrinos.
-Daher werden solche Teilchen normalerweise ebenfalls unter dem
-Strahlungsterm in der Friedmann-Gleichung subsumiert.
-
-Die Friedmann-Gleichung für ein mit Strahlung gefülltes Universum ist
-\begin{equation}
-\biggl(
-\frac{\dot a(t)}{a(t)}
-\biggr)^2
-=
-\frac{8\pi K \varrho_0}{3c^2a(t)^4}
--
-\frac{c^2\kappa }{a(t)^2R_c^2}.
-\end{equation}
-Leider lässt sich diese Differentialgleichung im allgemeinen
-nicht in geschlossener Form integrieren.
-Wir beschränken uns daher auf den einfacheren Spezialfall $\kappa=0$.
-%wir verschieben die Diskussion der
-%Lösung auf einen späteren Abschnitt, wo wir die Gleichung numerisch lösen
-%können.
-
-\subsubsection{Das flache, strahlungserfüllte Universum}
-Für ein flaches Universum ist $\kappa=0$, der Krümmungsterm fällt wieder
-weg und die Friedmann-Gleichung vereinfacht sich zu
+Es erfüllt die Friedmann-Gleichung für ein flaches, mit Strahlung
+der Energiedichte $\varepsilon_0$ gefülltes Universum
 \begin{equation*}
 \frac{\dot a(t)^2}{a(t)^2}
 =
-\frac{8\pi K\varrho_0}{3c^2 a(t)^4}.
+\frac{8\pi K\varepsilon_0}{3c^4 a(t)^4}.
 \end{equation*}
 Auch hier können wir die Wurzel ziehen und mit $a(t)$ multiplizeren,
 wir erhalten
 \begin{equation*}
 \dot a(t)
 =
-\sqrt{\frac{8\pi K\varrho_0}{3c^2}}\frac1{a(t)}.
+\sqrt{\frac{8\pi K\varepsilon_0}{3c^4}}\frac1{a(t)}.
 \end{equation*}
 Diese Gleichung lässt sich ebenfalls separieren:
 \begin{align*}
 a\frac{da}{dt}
 &=
-\sqrt{\frac{8\pi K\varrho_0}{3c^2}}
+\sqrt{\frac{8\pi K\varepsilon_0}{3c^4}}
 \\
 \Rightarrow\qquad
 \int a\,da
 =
 \frac12a(t)^2
 &=
-\sqrt{\frac{8\pi K\varrho_0}{3c^2}}t + C.
+\sqrt{\frac{8\pi K\varepsilon_0}{3c^4}}t + C.
 \end{align*}
 Auflösen nach $a(t)$ liefert
 \[
 a(t)
 =
-\sqrt{\pm\frac{16\pi K\varrho_0}{3c^2}t + 2C}.
+\sqrt{\pm\frac{16\pi K\varepsilon_0}{3c^4}t + 2C}.
 \]
 Die Integrationskonstante muss so bestimmt werden, dass die
 Anfangsbedingung $a(t_0)=1$  erfüllt ist.
@@ -707,13 +677,13 @@ Setzt man $a(t_0)=1$ ein, erhält man
 \[
 C
 =
-\mp\frac{8\pi K\varrho_0}{3c^2}t_0+1
+\mp\frac{8\pi K\varepsilon_0}{3c^4}t_0+1
 \]
 oder
 \begin{equation}
 a(t)
 = 
-\sqrt{\pm\frac{16\pi K\varrho_0}{3c^2}(t-t_0) + 1}.
+\sqrt{\pm\frac{16\pi K\varepsilon_0}{3c^4}(t-t_0) + 1}.
 \label{skript:friedmann:a(t)}
 \end{equation}
 Diese Wurzelfunktion beschreibt je nach gewähltem Vorzeichen ein
@@ -740,10 +710,10 @@ Wir müssen den Zusammenhang zu unserem Universum herstellen, welches
 aktuell mit $\dot a(t_0)= H_0$ ausdehnt.
 Dazu berechnen wir die Ableitung
 \[
-\dot a(t_0)=\frac{8\pi K\varrho_0}{3c^2}=H_0
+\dot a(t_0)=\frac{8\pi K\varepsilon_0}{3c^4}=H_0
 \]
 von~\eqref{skript:friedmann:a(t)}.
-Damit können wir den Skalenfaktor auch durch die Hubble-Konstane ausdrücken,
+Damit können wir den Skalenfaktor auch durch die Hubble-Konstante ausdrücken,
 es gilt
 \begin{equation}
 a(t)=\sqrt{2H_0(t-t_0)+1}.
@@ -762,7 +732,7 @@ Vielmehr müssen wir die Zeit $t$ als Nullstelle der Funktion
 \[
 a(t)=\sqrt{2H_0(t-t_0)+1}
 \]
-bestimmt werden.
+bestimmen.
 Für $t-t_0$ finden wir
 \[
 H_0(t-t_0)
@@ -782,9 +752,8 @@ diese Zeit ist jedoch zu kurz, unsere Sonne müsste schon etwa
 2 Milliarden Jahre nach der Entstehung des Universums entstanden
 sein.
 Dies ist darauf zurückzuführen, dass unsere Modellierung des
-Energieinhaltes unvollständig ist.
-
-
+Energieinhaltes des Universums nicht zutreffend ist.
+Tatsächlich fehlt eine wichtige Komponente, die dunkle Energie.
 
 \section{Dunkle Energie}
 \rhead{Dunkle Energie}
@@ -849,8 +818,8 @@ Der $\Lambda$-Term als zusätzlicher Summand im Energie-Impuls-Tensor
 wird {\em dunkle Energie} genannt.
 Aus Messungen ist bekannt, dass er zum heutigen Zeitpunkt etwa 70\%
 des Energieinhalts des Universums ausmacht.
-Die dunkle Energie ist daher heute der dominante Faktor für die
-Ausdehnung des Universums.
+Die dunkle Energie ist daher heute die dominante Komponente und
+bestimmt weitgehend die Ausdehnung des Universums.
 \begin{figure}
 \centering
 \includegraphics{chapters/tikz/darkenergy.pdf}
@@ -923,7 +892,7 @@ In Abbildung~\ref{skript:friedman:graph:darkenergy} sind die numerisch
 gewonnenen Lösungen
 der Differentialgleichung~\eqref{skript:friedmann:de:dgl} für verschiedene
 Werte von $\Lambda$ dargestellt.
-Man kann erkennen dass grössere Werte von $\Lambda$ zu einer stärkeren
+Man kann erkennen, dass grössere Werte von $\Lambda$ zu einer stärkeren
 Beschleunigung der Expansion des Universums führt.
 Ausserdem wächst das Alter des Universums von $2/3H_3$ für ein
 Universum ohne dunkle Energie auch über die Hubble Zeit an.
@@ -937,17 +906,17 @@ Die Terme auf der rechten Seite der
 Friedmann-Gleichung~\eqref{skript:friedmann:friedmann}
 können in Einheiten der kritischen Dichte geschrieben werden.
 Die verschiedenen Terme auf der rechten Seite der Friedmann-Gleichung
-unterscheiden sich durch deren Veränderung in Abhängigkeit vom
-Skalenfaktor $a(t)$.
+unterscheiden sich vor allem durch deren Abhängigkeit vom Skalenfaktor $a(t)$.
 Wir können die Energiedichte der einzelnen Komponenten jetzt in
 Einheiten der kritischen Energie, also als ein Dichteparameter
 für jede einzelne Komponenten schreiben.
+\index{Dichteparameter}%
 Wir wählen die Bezeichungen
 \begin{align*}
-\Omega_{0,m}&=\text{Materie},\\
-\Omega_{0,s}&=\text{Strahlung},\\
-\Omega_{0,k}&=\text{Krümmung},\\
-\Omega_{0,\Lambda}&=\text{dunkle Energie}.
+\Omega_{0,m}&=\text{Materie in Einheiten von $\varrho_c$},\\
+\Omega_{0,s}&=\text{Strahlung in Einheiten von $\varrho_c$},\\
+\Omega_{0,k}&=\text{Krümmung in Einheiten von $\varrho_c$},\\
+\Omega_{0,\Lambda}&=\text{dunkle Energie in Einheiten von $\varrho_c$}.
 \end{align*}
 Damit können wir die Friedmann-Gleichungen schreiben als
 \begin{equation}
@@ -1002,7 +971,7 @@ und der zukünftigen Entwicklung des Universums
 \label{skript:friedmann:tabelle}}
 \end{table}
 Im Rahmen der gegenwärtig möglichen Messgenauigkeit ist
-$\Omega_{\text{tot}}=1$ wir leben also höchstwahrscheinlich in
+$\Omega_{\text{tot}}=1$. Wir leben höchstwahrscheinlich in
 einem flachen Universum, also einem Universum mit $\Omega_{0,k}=0$.
 
 Da unser Universum schon ziemlich alt ist, spielt die Strahlung
@@ -1014,13 +983,13 @@ zusammen $1$ ergeben müssen.
 Die Beobachtung der beschleunigten Expansion des Universums 
 legt $\Omega_{0,\Lambda}\simeq 0.7$ fest.
 Wegen $1=\Omega_{0,m}+\Omega_{0,\Lambda}$ folgt, dass das
-Universum aktuelle Universum nur zu etwa einem Drittel aus 
+aktuelle Universum nur zu etwa einem Drittel aus 
 Materie bestehen kann, der grössere Teil des Universums ist
 dunkle Energie.
 
 Den Materie-Anteil $\Omega_{0,m}$ beobachten wir allerdings auch
 nicht.
-Nur etwas 5\% der Energiedichte des Universums ist auf beobachtbare
+Nur etwa 5\% der Energiedichte des Universums ist auf beobachtbare
 Materie zurückzuführen.
 Beobachtungen an der Bewegung von Galaxien in einem Galaxiencluster
 oder der Rotationsgeschwindigkeit von Galaxien zeigen, dass zur Erzeugung
@@ -1038,8 +1007,9 @@ Wir gehen heute davon aus, dass das Universum flach ist, dass die
 Ausdehnung also nicht zum Stillstand kommen wird.
 Insbesondere ist also $\dot a(t)>0$ für alle Zeiten $t$, die Funktion
 $a(t)$ ist streng monoton wachsend.
-Da $a(t)$ umkehrbar ist, kann man den Wert von $a(t)$ als kosmische
+Da $a(t)$ somit umkehrbar ist, kann man den Wert von $a(t)$ als kosmische
 Zeitskala wählen.
+\index{Rotverschiebung}%
 
 \rhead{Rotverschiebung als Zeitskala}
 
@@ -1088,7 +1058,7 @@ In Abhängigkeit von der Rotverschiebung lassen sich jetzt viele Fragen
 sehr einfach beantworten.
 Zum Beispiel: Bei welcher Rotverschiebung geht das strahlungsdominierte
 Universum in ein materiedominiertes Universum über?
-Wir verwenden~\eqref{skript:friedmann:zgl} under erhalten
+Wir verwenden~\eqref{skript:friedmann:zgl} und erhalten
 \[
 \Omega_{0,m}(1+z)^3 = \Omega_{0,s}(1+z)^4
 \qquad\Rightarrow\qquad
