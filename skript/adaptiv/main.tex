@@ -307,6 +307,18 @@ Die Gleichungen \eqref{eikdfx} und \eqref{eikdfy} werden nun in die Gleichung \e
 Was bedeutet nun diese Lösung? Im Fall, dass $n(r)$ konstant ist. Die Erklärung dafür ist relativ einfach, es ist die selbe Situation wie beim kürzesten Weg, wenn beide Brechungsindizes gleich sind. Es kommt zu keiner Störung der Wellenfront, sie bleibt somit eine ebene Wellenfront und das Licht bewegt sich auf Strahlen, die Senkrecht zur Wellenfront verlaufen.
 
 \subsection{Lösung durch Separation}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.85\textwidth]{adaptiv/images/plotwf1}
+  \caption{Ausbreitung der Wellenfront in X-Richtung, für $n(r)=y$}
+  \label{fig:plotwf1}
+\end{figure}%
+\begin{figure}
+  \centering
+  \includegraphics[width=0.85\textwidth]{adaptiv/images/plotwf2}
+  \caption{Ausbreitung der Wellenfront in X-Richtung, für $n(r)=\sqrt{y}$}
+  \label{fig:plotwf2}
+\end{figure}%
 \index{Separation}%
 \index{Separationsansatz}%
 Eine weitere Möglichkeit zur Lösung zu kommen, ist der
@@ -346,19 +358,6 @@ f(x,y)= \sqrt{c}\cdot x + \dfrac{1}{2}\biggl(y \sqrt{c-y^{2}}+c \cdot \arctan\bi
 \end{equation}
 In der Gleichung \eqref{f(x,y)} wird $f(x,y)$ als Parameter gesetzt, dadurch erhalten wir eine Implizite Gleichung, die sich darstellen lässt. 
 Auf der Abbildung \ref{fig:plotwf1} ist die Ausbreitung der Wellenfront für $n(r)=y$ dargestellt, es ist gut zu erkennen, dass mit zunehmender Entfernung von der Quelle sich die Front immer weiter verformt. Bei der Abbildung \ref{fig:plotwf2} ist $n(r)= \sqrt{y}$, die Störung ist immer noch vorhanden, aber durch zunehmende Entfernung der Front von der Quelle, verändert sich die Front immer weniger, der Grund dafür ist die Charakteristik der Wurzelfunktion.
-\begin{figure}
-  \centering
-  \includegraphics[width=0.9\textwidth]{adaptiv/images/plotwf1}
-  \caption{Ausbreitung der Wellenfront in X-Richtung, für $n(r)=y$}
-  \label{fig:plotwf1}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.9\textwidth]{adaptiv/images/plotwf2}
-  \caption{Ausbreitung der Wellenfront in X-Richtung, für $n(r)=\sqrt{y}$}
-  \label{fig:plotwf2}
-\end{figure}
 
 \printbibliography[heading=subbibliography]
 \end{refsection}
