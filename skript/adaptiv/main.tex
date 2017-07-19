@@ -15,6 +15,7 @@ Adaptive Optik (AO) ist eine Technik, mit der optische Systeme verbessert werden
     \cite{eso:jupiter}}
   \label{fig:jupiter}
 \end{figure}
+
 Adaptive Optik wird heute aber auch bei anderen Anwendungen eingesetzt, um die Präzision von optischen Apparaturen zu erhöhen, so gibt es beispielsweise Mikroskope mit AO. Ein weiterer Einsatzbereich dieser Technologie ist der Fokusiserspiegel von Laserschneidanlagen, womit eine deutliche Steigerung der Präzision beim Schneiden erreicht werden kann.
 
 Ein System mit einer adaptiven Optik ist aus drei Hauptkomponenten aufgebaut. Ein Sensor misst die Störung der Wellenfront, einen Computer berechnet die benötigte Korrektur und mit einem beweglichen Spiegel kann die Wellenfront korrigiert werden. So ist es möglich, auf dem Messinstrument, welches das Nutzsignal misst, trotz nicht optimalen Bedingungen ein möglichst scharfes Bild zu haben.
@@ -37,7 +38,7 @@ Als Sensor wird für gewöhnlich eine Hartmannplatte verwendet, welche aus einem
   \label{fig:hartmannplatte}
 \end{figure}
 
-Ein weiteres wichtiges Element bei der adaptiven Optik ist das Erzeugen einer Referenzquelle, durch welche ein Signal entsteht, das bekannt ist und wodurch der Einfluss der Atmosphäre gemessen werden kann. In der Astronomie wird dazu mit Laser ein künstlicher Stern erzeugt, der sogenannte Leitstern. Er wird in einer Höhe von etwa 90$km$ erzeugt, also am oberen Ende der Mesosphäre. Dazu wird oft ein Natrium-Laser verwendet, der eine Wellenlänge von 589$nm$ hat. Damit wird die beim Natrium die D-Linie angeregt, was der Farbe der Strassenbeleuchtung entspricht . Das Licht des Natrium-Lasers wird von den Natriumatomen in der Höhe von 90$km$ zurückgeworfen. Dabei wird angenommen, dass dabei ein Stern entsteht, dessen Licht sich Kugelförmig ausbreitet. Wichtig ist dabei, dass der Stern in Beobachtungsrichtung des Teleskops erzeugt wird, damit nur die Atmosphäre, in welcher störende Einflüsse sind, gemessen wird. 
+Ein weiteres wichtiges Element bei der adaptiven Optik ist das Erzeugen einer Referenzquelle, durch welche ein Signal entsteht, das bekannt ist und wodurch der Einfluss der Atmosphäre gemessen werden kann. In der Astronomie wird dazu mit Laser ein künstlicher Stern erzeugt, der sogenannte Leitstern. Er wird in einer Höhe von etwa 90$km$ erzeugt, also am oberen Ende der Mesosphäre. Dazu wird oft ein Natrium-Laser verwendet, der eine Wellenlänge von 589$nm$ hat. Damit wird die beim Natrium die D-Linie angeregt, was der Farbe der Strassenbeleuchtung entspricht. Das Licht des Natrium-Lasers wird von den Natriumatomen in der Höhe von 90$km$ zurückgeworfen. Dabei wird angenommen, dass dabei ein Stern entsteht, dessen Licht sich Kugelförmig ausbreitet. Wichtig ist dabei, dass der Stern in Beobachtungsrichtung des Teleskops erzeugt wird, damit nur die Atmosphäre, in welcher störende Einflüsse sind, gemessen wird. 
 
 
 \begin{figure}
@@ -50,6 +51,7 @@ Ein weiteres wichtiges Element bei der adaptiven Optik ist das Erzeugen einer Re
 
 \section{Kürzester Weg}
 Wenn wir zwei Punkte im Raum betrachten und den kürzesten Weg zwischen ihnen suchen, so würden wir intuitiv die Punkte mit einer Geraden verbinden und diesen Weg als den kürzesten definieren. Wenn nun aber Licht den kürzesten Weg zwischen zwei Punkten sucht, wird nicht wie beim klassischen Weg die Strecke, sondern die Laufzeit, die das Licht benötigt, um den Punkt zu erreichen, minimiert. Weil zwischen den zwei Punkten eine Phasengrenze liegt, führt das dazu, dass der kürzeste Weg nicht mehr die direkteste Verbindung ist, sondern eine Streckte, die abhängig von Brechungsindex der beiden Phasen einem der möglichen Wege auf der Abbildung \ref{fig:weg} entspricht. Dieses Verhalten wird von Fermat's Prinzip beschrieben, welches besagt, dass der Weg des Lichtes zwischen zwei Punkten bezüglich der Laufzeit optimiert wird. Beim Suchen des kürzesten Weges befinden wir uns im Themengebiet der geometrischen Optik, Licht ist also nur ein Strahl. 
+
 \begin{figure}
   \centering
   \includegraphics[width=0.6\textwidth]{adaptiv/images/Weg}
@@ -64,7 +66,7 @@ Welchen Weg nimmt aber Licht, wenn es wie in Abbildung \ref{fig:weg} von $A$ nac
 Um $t$ zu bestimmen, werden nun die Strecken $\overline{AP}$ und $\overline{PB}$ benötigt, die Punkte haben die folgenden Koordinaten $A = (0,a)$, $P=(p_{x},p_{y})$ und $B=(b,0)$. Die Gleichung \eqref{tbest} erklärt, wie aus Abbildung \ref{fig:weg} die jeweiligen Strecken bestimmt werden können. In einem weiteren Schritt wird die Gleichung \eqref{tbest} partiell nach $p_{x}$ abgeleitet und die Ableitung gleich Null gesetzt.
 
 \begin{equation}\label{tbest}
-t=\dfrac{s}{s}=\dfrac{\overline{AP}}{v_{1}}+\dfrac{\overline{PB}}{v_{2}}= 
+t=\dfrac{s}{v}=\dfrac{\overline{AP}}{v_{1}}+\dfrac{\overline{PB}}{v_{2}}= 
 \dfrac{\sqrt{(a-p_{y})^{2}+p_{x}^{2}}}{v_{1}}+ 
 \dfrac{\sqrt{(b-p_{x})^{2}+p_{y}^{2}}}{v_{2}}
 \end{equation}
@@ -80,12 +82,12 @@ t=\dfrac{s}{s}=\dfrac{\overline{AP}}{v_{1}}+\dfrac{\overline{PB}}{v_{2}}=
 \dfrac{-n_{2}\cdot 2(b-p_{x})}{\sqrt{(b-p_{x})^{2}+p_{y}^{2}}}= 0
 \end{equation}
 
-Die Geschwindigkeit $ v_{1}$ ist gleich $\frac{c}{n_{1}} $ und $ v_{2}$ ist gleich $\frac{c}{n_{2}}$, dabei ist $v_{i}$ die Lichtgeschwindigkeit im jeweiligen Medium. Wird nun in die Gleichung \eqref{partdiff} $ v_{1}$ und $ v_{2}$ eingesetzt und anschliessend mit $c$ multipliziert, erhält man die Gleichung \eqref{glp1} aus welcher der Punkt $P$, respektive die Koordinate $p_{x}$ von $P$ bestimmt werden kann.
-Abbildung \ref{fig:nullstelle} enthält eine grafische Darstellung der Ableitungen, dabei wird der Brechungsindex variiert und die Position des Punktes $P$ auf der Abbildung \ref{fig:weg} verändert seine Position in X-Richtung. Die  Punkte haben dabei die folgenden Koordinaten $A = (0,6)$, $P=(p_{x},3)$ und $B=(10,0)$. Für die Situation $n_{1}=n_{2}$ gibt es keinen Übergang, der Punkt $P$ hat die Koordinaten $(5,3)$ was genau dem direkten Weg entspricht. Mit den geeigneten Hilfsmitteln (Matlab) ist es möglich die Gleichung \eqref{glp} nach $p_{x}$ umzustellen, die Lösung ist aber unübersichtlich und sehr lang, die Abbildung \ref{fig:nullstelle} ist somit aussagekräftiger.
+Die Geschwindigkeit $ v_{1}$ ist gleich $\frac{c}{n_{1}} $ und $ v_{2}$ ist gleich $\frac{c}{n_{2}}$, dabei ist $v_{i}$ die Lichtgeschwindigkeit im jeweiligen Medium. Wird nun in die Gleichung \eqref{partdiff} $ v_{1}$ und $ v_{2}$ eingesetzt und anschliessend mit $c$ multipliziert, erhält man die Gleichung \eqref{glp} aus welcher der Punkt $P$, respektive die Koordinate $p_{x}$ von $P$ bestimmt werden kann.
+Abbildung \ref{fig:nullstelle} enthält eine grafische Darstellung der Ableitungen, dabei wird der Brechungsindex variiert und die Position des Punktes $P$ auf der Abbildung \ref{fig:weg} verändert seine Position in X-Richtung. Die  Punkte haben dabei die folgenden Koordinaten $A = (0,6)$, $P=(p_{x},3)$ und $B=(10,0)$. Für die Situation $n_{1}=n_{2}$ gibt es keinen Übergang, der Punkt $P$ hat die Koordinaten $(5,3)$ was genau dem direkten Weg entspricht. Mit den geeigneten Hilfsmitteln (Matlab) ist es möglich die Gleichung \eqref{glp} nach $p_{x}$ umzustellen, die Lösung ist aber unübersichtlich und sehr lang, die Abbildung \ref{fig:nullstelle} ist somit aussagekräftiger, der Schnittpunkt der X-Achse mit der Kurve entspricht dabei dem Wert $p_{x}$.
 Damit ist der Strahlengang von $A$ nach $B$ via $P$ bestimmt. Dieser Weg ist minimal bezüglich der Laufzeit. \newline
 Zur besseren Verständlichkeit noch eine kleiner Vergleich:
 
-Gehen wir davon aus, dass kein Photon den Weg zurücklegen muss, sondern ein ausgesprochen intelligenter Hund. Er startet bei $A$ und muss bei $B$ einen Ball aus dem Wasser holen, die schwarze horizontale Linie auf der Abbildung \ref{fig:weg} stellt dabei das Ufer dar. Wenn der Hund den zuvor beschrieben Weg wählt, ist er am schnellsten beim Ball, da er sich an Land schneller fortbewegen kann als im Wasser. Der Punkt $P$ ist somit der optimale Punkt für den Hund, um ins Wasser zu springen.
+Gehen wir davon aus, dass kein Photon den Weg zurücklegen muss, sondern ein ausgesprochen intelligenter Hund. Er startet bei $A$ und muss bei $B$ einen Ball aus dem Wasser holen, die schwarze horizontale Linie auf der Abbildung \ref{fig:weg} stellt dabei das Ufer dar. Wenn der Hund den zuvor beschrieben Weg wählt, abhängig von seiner Geschwindigkeit an Land und im Wasser, ist er am schnellsten beim Ball, da er sich an Land schneller fortbewegen kann als im Wasser. Der Punkt $P$ ist somit der optimale Punkt für den Hund, um ins Wasser zu springen.
 
 \begin{figure}
   \centering
@@ -95,13 +97,13 @@ Gehen wir davon aus, dass kein Photon den Weg zurücklegen muss, sondern ein aus
 \end{figure}
 
 \subsection{Warum der kürzeste Weg}
-Auf dem Weg von der Lichtquelle, in der Astronomie sind dies oft Sterne, Sternhaufen, Galaxien oder sogar ganze Cluster von Galaxien, trifft das Licht immer wieder auf Störeinflüsse. Störungen, die auf dem Weg durch das All entstehen, werden im nächsten Kapitel besprochen. Dieser Abschnitt handelt von Störungen, die in der Atmosphäre entstehen. Wenn mit einem Teleskop Sterne beobachtet werden, kann man immer von sehr gutem Wetter ausgehen und obwohl die Atmosphäre vielschichtig aufgebaut. Das Licht sucht sich den schnellsten Weg durch die verschiedenen Schichten, dabei kommt es bei jedem Übergang zwischen zwei Schichten zu "Richtungsänderung" des Lichtes, wie in Abbildung \ref{fig:weg} dargestellt.
+Auf dem Weg von der Lichtquelle, in der Astronomie sind dies oft Sterne, Sternhaufen, Galaxien oder sogar ganze Cluster von Galaxien, trifft das Licht immer wieder auf Störeinflüsse. Störungen, die auf dem Weg durch das All entstehen, werden im nächsten Kapitel besprochen. Dieser Abschnitt handelt von Störungen, die in der Atmosphäre entstehen. Wenn mit einem Teleskop Sterne beobachtet werden, kann man immer von sehr gutem Wetter ausgehen und trotzdem die Atmosphäre vielschichtig aufgebaut und verursacht so Störungen. Das Licht sucht sich den schnellsten Weg durch die verschiedenen Schichten, dabei kommt es bei jedem Übergang zwischen zwei Schichten zu "Richtungsänderung" des Lichtes, wie in Abbildung \ref{fig:weg} dargestellt.
 
 \section{Wellenfront}
 Das Licht des Leitsterns, der mit dem Laser erzeugt wird, ist die Referenzlichtquelle, mit welcher man die Atmosphärenstörung messen kann. Die Atmosphärenstörung ist die Störung, die das Licht beim Passieren der jeweiligen Schicht erfährt. Dabei werden einige Näherungen gemacht, eine davon ist, dass auf der Hartmannplatte mit einer ebenen Wellenfront gerechnet wird, wie in Abbildung \ref{fig:hartmannplatte} zu erkennen ist. Der künstliche Leitstern ist aber eigentlich eine kugelförmige Quelle, warum also darf diese Näherung gemacht werden? Die Näherung ist möglich, da der Leitstern 90$km$ vom Sensor entfernt und die Krümmung der Wellenfront damit so gering ist, dass sie nur noch eine kleinen Einfluss hat und somit vernachlässigt werden kann, was die Berechnung vereinfacht. In Kapitel 4 wird das Thema der Krümmung behandelt, als kleine Anwendungsdemonstration wird im folgenden Abschnitt die Krümmung der kugelförmigen Welle berechnet.
 
 \subsection{Krümmung der Wellenfront}
-Die Wellenfront wird durch die Funktion \eqref{kugelfunktion} beschrieben. Davon soll nun die Krümmung berechnet werden, um den Fehler durch die Näherung bestimmen zu können. Korrekterweise müsste vor der Wurzel noch $\pm$ stehen, da sonst nur die obere Hälfte der Kugel betrachtet wird. Wir sind aber nur an der Krümmung der Kugel interessiert, die auf der ganzen Kugel gleich ist, weswegen  $\pm$ hier weggelassen werden.
+Die Wellenfront wird durch die Funktion \eqref{kugelfunktion} beschrieben. Davon soll nun die Krümmung berechnet werden, um den Fehler durch die Näherung bestimmen zu können. Korrekterweise müsste vor der Wurzel noch $\pm$ stehen, da sonst nur die obere Hälfte der Kugel betrachtet wird. Wir sind aber nur an der Krümmung der Kugel interessiert, die auf der ganzen Kugel gleich ist, weswegen  $\pm$ hier weggelassen wird.
 \begin{equation}\label{kugelfunktion}
 z=f(x,y)=\sqrt{r^{2}-x^{2}-y^{2})}
 \end{equation}
@@ -112,7 +114,7 @@ f_{x}=\dfrac{\partial f(x,y)}{\partial x}= \dfrac{-x}{\sqrt{r^{2}-x^{2}-y^{2}}}
 \end{equation}
 
 \begin{equation}\label{Ableitungen xx}
-f_{xx}=\dfrac{\partial f(x,y)}{\partial x^{2}}= \dfrac{- x^2}{(r^2 - x^2 - y^2)^{\frac{2}{3}}}+\dfrac{ - 1}{(r^2 - x^2 - y^2)^{\frac{1}{2}}}
+f_{xx}=\dfrac{\partial f(x,y)}{\partial x^{2}}= \dfrac{- x^2}{(r^2 - x^2 - y^2)^{\frac{2}{3}}}+\dfrac{ - 1}{\sqrt{r^2 - x^2 - y^2}}
 \end{equation}
 
 \begin{equation}\label{Ableitungen y}
@@ -120,7 +122,7 @@ f_{y} =\dfrac{\partial f(x,y)}{\partial x}= \dfrac{-y}{\sqrt{r^{2}-x^{2}-y^{2}}}
 \end{equation}
 
 \begin{equation}\label{Ableitungen yy}
-f_{yy}=\dfrac{\partial f(x,y)}{\partial y^{2}}= \dfrac{- x^2}{(r^2 - x^2 - y^2)^{\frac{2}{3}}}+\dfrac{ - 1}{(r^2 - x^2 - y^2)^{\frac{1}{2}}}
+f_{yy}=\dfrac{\partial f(x,y)}{\partial y^{2}}= \dfrac{- x^2}{(r^2 - x^2 - y^2)^{\frac{2}{3}}}+\dfrac{ - 1}{\sqrt{r^2 - x^2 - y^2}}
 \end{equation}
 
 \begin{equation}\label{Ableitungen xy}
@@ -148,15 +150,15 @@ Hier handelt  es sich um eine partielle nichtlineare Differentialgleichung, dere
 \begin{equation}\label{eikdfy}
 \dfrac{\partial f}{\partial y} = ne_{2}
 \end{equation}
-Die Gleichungen \eqref{eikdfx} und \eqref{eikdfy} werden nun in die Gleichung \eqref{eikonal} eingesetzt:
+Die Gleichungen \eqref{eikdfx} und \eqref{eikdfy} werden nun in die Gleichung \eqref{eikonal} eingesetzt, badei ist $(e_{1}^{2}+e_{2}^{2})=1$ die Länge des Einheitsvektors:
 
 \begin{equation}\label{lösung_eik}
 \left( \dfrac{\partial f}{\partial x}\right)^{2} + \left( \dfrac{\partial f}{\partial y}\right) ^{2} = \left( ne_{1}\right) ^{2}+\left( ne_{2}\right)^{2}=n^{2}(e_{1}^{2}+e_{2}^{2})=n^{2}
 \end{equation}
-Was bedeutet nun diese Lösung? Im einfachen Fall, dass $n(r)$ konstant ist. Die Erklärung dafür ist relativ einfach, es ist die selbe Situation wie beim kürzesten Weg, wenn beide Brechungsindizes gleich sind. Es kommt zu keiner Störung der Wellenfront, sie bleibt somit eine ebene Wellenfront und das Licht bewegt sich auf Strahlen, die Senkrecht zur Wellenfront verlaufen.
+Was bedeutet nun diese Lösung? Im Fall, dass $n(r)$ konstant ist. Die Erklärung dafür ist relativ einfach, es ist die selbe Situation wie beim kürzesten Weg, wenn beide Brechungsindizes gleich sind. Es kommt zu keiner Störung der Wellenfront, sie bleibt somit eine ebene Wellenfront und das Licht bewegt sich auf Strahlen, die Senkrecht zur Wellenfront verlaufen.
 
 \subsection{Lösung durch Separation}
-Eine weitere Möglichkeit zur Lösung zu kommen, ist der Separationsansatz. Die Idee dabei ist, dass die Funktion $f$ aus zwei einzelnen Funktionen aufgebaut ist, die nur von einer Variabel abhängig sind, was beim Ableiten einen erheblichen Vorteil bringt. $f$ hat bei diesem Ansatz die Form der Gleichung \eqref{ansatzsep}, dieser Ansatz wird in die Gleichung \eqref{eikonal} eingesetzt:  
+Eine weitere Möglichkeit zur Lösung zu kommen, ist der Separationsansatz. Die Idee dabei ist, dass die Funktion $f$ aus zwei einzelnen Funktionen aufgebaut ist, die nur von einer Variable abhängig sind, was beim Ableiten einen erheblichen Vorteil bringt. $f$ hat bei diesem Ansatz die Form der Gleichung \eqref{ansatzsep}, dieser Ansatz wird in die Gleichung \eqref{eikonal} eingesetzt:  
 
 \begin{equation}\label{ansatzsep}
 f(x,y)=X(x) + Y(y)
@@ -180,15 +182,15 @@ In der Gleichung \eqref{eikmitsansatz} wird einmal $x$ und einmal $y$ als konsta
 X(x)=\sqrt{c}\cdot x
 \end{equation}
 \begin{equation}\label{Y}
-Y(y)=\dfrac{1}{2}\left(y \sqrt{c-y^{2}}+c \cdot arctan\left(  \dfrac{y}{\sqrt{c-y^{2}}}\right) \right) 
+Y(y)=\dfrac{1}{2}\left(y \sqrt{c-y^{2}}+c \cdot \arctan\left(  \dfrac{y}{\sqrt{c-y^{2}}}\right) \right) 
 \end{equation}
 Die beiden Funktionen können wieder mir einander addiert werden, womit eine weitere Lösung für $f(x,y)$  Gl\eqref{f(x,y)} gefunden wurde.
 
 \begin{equation}\label{f(x,y)}
-f(x,y)= \sqrt{c}\cdot x + \dfrac{1}{2}\left(y \sqrt{c-y^{2}}+c \cdot arctan\left(  \dfrac{y}{\sqrt{c-y^{2}}}\right) \right) 
+f(x,y)= \sqrt{c}\cdot x + \dfrac{1}{2}\left(y \sqrt{c-y^{2}}+c \cdot \arctan\left(  \dfrac{y}{\sqrt{c-y^{2}}}\right) \right) 
 \end{equation}
-In der Gleichung \eqref{f(x,y)} wird $f(x,y)$ auch als Konstante angenommen, dadurch erhalten wir eine Implizite Gleichung, die sich darstellen lässt. 
-Auf der Abbildung \ref{fig:plotwf1} ist die Ausbreitung der Wellenfront für $n(r)=y$ dargestellt, es ist gut zu erkennen, dass mit zunehmender Entfernung von der Quelle sich die Front immer weiter verformt. Bei der Abbildung \ref{fig:plotwf2} ist $n(r)= \sqrt{y}$, die Störung ist immer noch vorhanden, aber durch zunehmende Entfernung der Front von der Quelle, verändert sich die Front immer weniger, da die Wurzelfunktion die grossen Werte stark abschwächt.
+In der Gleichung \eqref{f(x,y)} wird $f(x,y)$ als Parameter gesetzt, dadurch erhalten wir eine Implizite Gleichung, die sich darstellen lässt. 
+Auf der Abbildung \ref{fig:plotwf1} ist die Ausbreitung der Wellenfront für $n(r)=y$ dargestellt, es ist gut zu erkennen, dass mit zunehmender Entfernung von der Quelle sich die Front immer weiter verformt. Bei der Abbildung \ref{fig:plotwf2} ist $n(r)= \sqrt{y}$, die Störung ist immer noch vorhanden, aber durch zunehmende Entfernung der Front von der Quelle, verändert sich die Front immer weniger, der Grund dafür ist die Charakteristik der Wurzelfunktion.
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{adaptiv/images/plotwf1}
