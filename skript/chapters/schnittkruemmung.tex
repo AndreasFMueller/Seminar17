@@ -20,7 +20,7 @@ g\colon \Omega\to\mathbb R^3: (u,v)\mapsto g(u,v),
 wobei $\Omega\subset\mathbb R^2$
 eine offene Teilmenge von $\mathbb R^2$ ist, heisst eine Fläche.
 \end{definition}
-\index{Parameterdarstellung!einer Fläche}!
+\index{Parameterdarstellung!einer Fläche}
 
 \begin{beispiel}
 Sei eine Funktion $f(x,y)$ von zwei Variablen gegeben.
@@ -78,7 +78,6 @@ g(\lambda,\varphi)
 -\frac{\pi}2 \le \varphi \le \frac{\pi}2
 .
 \end{equation}
-Man nennt $(\vartheta,\varphi)$ auch Kugelkoordinaten.
 \index{Kugelkoordinaten}%
 Die Koordinatenlinien auf einer Kugeloberfläche sind wohlbekannt. 
 Die Koordinatenlinie zu einem vorgegebenen $\varphi_0$ wird durch
@@ -109,6 +108,12 @@ dies ist ein Längenkreis.
 \index{Längenkreis}%
 Man beachte, dass Werte $-\frac{\pi}2\le \varphi \le \frac{\pi}2$ nur einen
 Halbkreis zwischen Süd- und Nordpol beschreiben.
+
+Man bezeichnet $\vartheta = \frac{\pi}2-\varphi$ auch als den
+Polabstand.
+Man nennt $(\vartheta,\lambda)$ auch Kugelkoordinaten, schreibt
+dann aber meistens $\varphi$ für die geographische Länge.
+Wir werden dies im Folgenden ebenfalls tun.
 \end{beispiel}
 
 Wir betrachten jetzt den Punkt $P=g(u_0,v_0)$ auf der Fläche.
@@ -141,7 +146,7 @@ müssen wir verlangen, dass die partiellen Ableitungen von $g$ nach $u$ und $v$
 wohldefiniert sind und nicht verschwinden.
 Daher soll im Folgenden immer angenommen sein, dass $g$ genügend oft stetig
 differenzierbar ist und dass die ersten Ableitungen nach den Flächenparametern
-nicht verschwinden.
+nicht alle verschwinden.
 
 \subsection{Schnittkurven%
 \label{skript:kurven:schnittkurven}}
@@ -156,7 +161,8 @@ Der Krümmungskreis und sein Mittelpunkt $Q$ sind gelb eingezeichnet.
 \end{figure}
 Sei jetzt also eine Fläche $g(u,v)$ gegeben.
 Im Punkt $P=g(u_0,v_0)$ betrachten wir Ebenen, die die Normale $n(P)$
-enthalten (grün in Abbildung~\ref{skript:schnittkruemmung}).
+(grün in Abbildung~\ref{skript:schnittkruemmung})
+enthalten.
 Die Schnittkurve der Fläche mit einer solchen Ebene ist eine ebene
 Kurve, wir können also deren Krümmung bestimmen
 (rot Abbildung~\ref{skript:schnittkruemmung}).
@@ -360,6 +366,7 @@ Darin wurde
 \end{align*}
 verwendet.
 Der Mittelwert der Krümmung ist also die Spur der Hessischen Matrix
+der zweiten partiellen Ableitungen von $f$
 (Siehe auch Abschnitt~\ref{skript:kurven:section:hauptkruemmungen}).
 
 \begin{definition}

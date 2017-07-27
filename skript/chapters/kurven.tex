@@ -18,7 +18,7 @@ Die Krümmung der Kurve ist also eine Eigenschaft der Einbettung einer Kurve.
 
 Diese innere Einfachheit von Kurven macht sie zum idealen Werkzeug, mit
 dem wir höher\-dimensionale Räume untersuchen können.
-Wir können zum Beispiel Dreiecke in einer Fläche untersuchen,
+Wir können zum Beispiel Dreiecke in einer Fläche untersuchen
 und werden dabei erkennen, dass die Winkelsumme Auskunft geben kann
 über die Krümmung der Fläche.
 In diesem Kapitel werden wir die Krümmung von Kurven in einer Fläche
@@ -45,7 +45,7 @@ wir dies nicht explizit durch Vektorpfeile anzeigen.
 Alle unsere Untersuchungen werden die Analysis als Werkzeug verwenden,
 wir wollen daher nur Kurven verwenden, für die eine ausreichend glatte
 Parametrisierung vorliegt.
-Wir verlangen daher, dass die Parameterisierung nach genügend oft nach
+Wir verlangen daher, dass die Parameterisierung genügend oft nach
 dem Parameter abgeleitet werden kann.
 Die Ableitung 
 \[
@@ -78,7 +78,7 @@ der Kurve.
 Ihre Entfernung ist $|c(t+\Delta t) - c(t)|$.
 Um daraus die Länge der Kurve zu berechnen, müssen wir die Kurve
 an den Stellen $t_1,t_2,\dots,t_n$
-beliebig fein in Teile aufteilen und die Längen der Teilstrecken
+in Teilstrecken aufteilen und die Längen der Teilstrecken
 aufaddieren.
 Die Summe
 \[
@@ -170,11 +170,11 @@ Dazu berechnen wir
 \[
 s(t)
 =
-\int_{-1}^t \sqrt{1+\frac{t^2}{1-\tau^2}}\,d\tau
+\int_{-1}^t \sqrt{1+\frac{\tau^2}{1-\tau^2}}\,d\tau
 =
-\int_{-1}^t \sqrt{\frac{1-t^2  +t^2}{1-\tau^2}}\,d\tau
+\int_{-1}^t \sqrt{\frac{1-\tau^2  +\tau^2}{1-\tau^2}}\,d\tau
 =
-\int_{-1}^t \frac{1}{\sqrt{1-t^2}} \,d\tau
+\int_{-1}^t \frac{1}{\sqrt{1-\tau^2}} \,d\tau
 =
 \arcsin t + \frac{\pi}2.
 \]
@@ -218,7 +218,7 @@ Dies stimmt natürlich mit der Bogenlängenformel~\eqref{skript:kurve:s(t)}
 
 \subsubsection{Charakterisierung von Bogenlängenparametrisierung}
 Verlangen wir von der Kurvenparametrisierung $c(t)$ zusätzlich,
-dass $|\dot c(t)|\ne 0$ für alle Parameterwerte $t$, dann ist
+dass $|\dot c(t)|\ne 0$ ist für alle Parameterwerte $t$, dann ist
 die Funktion
 $s(t)$
 wie in \eqref{skript:kruemmung:laenge} definiert
@@ -287,13 +287,13 @@ Wir legen $a=0$ willkürlich fest.
 Die Differentialgleichung~\eqref{skript:kruemmung:laengedgl} für die
 Kurven\-längen\-funktion $s(t)$ wird
 \[
-\dot s(t) = |\dot c(t)| = |v|
+\dot s(t) = |\dot c(t)| = |\vec{v}|
 \]
 mit der Lösung
 \[
-s(t)=|v|t.
+s(t)=|\vec{v}|t.
 \]
-Da $v\ne 0$ ist $s(t)$ monoton wachsend und wir können sofort nach
+Da $\vec{v}\ne 0$ ist $s(t)$ monoton wachsend und wir können sofort nach
 $t$ auflösen, es ist
 \[
 t(s)=\frac{s}{|\vec v|}.
@@ -309,7 +309,7 @@ c(s(t))
 =
 \vec p + \frac{s}{|\vec v|}\vec v
 =
-\vec p + s\frac{v}{|v|},
+\vec p + s\frac{\vec{v}}{|\vec{v}|},
 \]
 Die Ableitung nach $s$ hiervon ist ein Einheitsvektor, wie zu erwarten
 war.
@@ -566,11 +566,11 @@ die ersten beiden Ableitungen, diese sind
 \begin{align*}
 \dot c(t)
 &=
-(-a\sin t, b\cos t)
+(-a\sin t, b\cos t),
 \\
 \ddot c(t)
 &=
-(-a\cos t, -b\sin t)
+(-a\cos t, -b\sin t).
 \end{align*}
 Die Determinante von $\dot c(t)$ und $\ddot c(t)$ ist
 \[
@@ -700,7 +700,7 @@ eingebettet vorstellt.
 \caption{Kurven $t\mapsto(t,t^2,0)$ (rot) und $t\mapsto(t,t^2,t^3)$ (gelb).
 \label{skript:kruemmung:fig:kurvekr}}
 \end{figure}
-Wir betrachten die beiden Kurven
+Wir betrachten die beiden Raumkurven
 \begin{align*}
 c_1(t)&=(t,t^2,0)
 &
