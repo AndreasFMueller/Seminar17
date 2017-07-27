@@ -180,7 +180,7 @@ dann kann man das Gebietsintegral auch als
 =
 \int_{y_1}^{y_2}\int_{x_1(y)}^{x_2(y)} h(x,y)\,dx\,dy
 \]
-schreiben, und die beiden Formeln stimmen überein.
+schreiben, und die beiden Werte stimmen überein.
 
 \subsection{Der Satz von Green%
 \label{skript:kruemmung:section:green}}
@@ -203,9 +203,9 @@ von der Kurve $c$ berandet ist, dann gilt
 \begin{proof}[Beweis]
 Wir gehen davon aus, dass wir das Gebiet $D$ durch die Kurven $x_1(y)$
 und $x_2(y)$ bzw.~$y_1(x)$ und $y_2(x)$ beschreiben können.
-Sollte dies nicht möglich sein, muss das Gebiet in Teilgebiet zerlegt
+Sollte dies nicht möglich sein, muss das Gebiet in Teilgebiete zerlegt
 werden, für die dies möglich ist.
-Die Wegintegral über die gemeinsamen Teile des Ränder der Teilgebiet 
+Die Wegintegrale über die gemeinsamen Teile des Ränder der Teilgebiet 
 heben sich weg.
 
 Wir berechnen jetzt die einzelnen Summanden der rechten Seite.
@@ -321,7 +321,7 @@ t\mapsto x^\mu(u(t),v(t)) = x^\mu(t)
 \]
 der Randkurve des Flächenstückes in $\mathbb R^n$.
 
-Sei also $A_i$ ein Vektorfeld und $x^i(t)$ eine Kurve.
+Sei also $A_\mu$ ein Vektorfeld und $x^\mu(t)$ eine Kurve.
 Dann kann man das Kurvenintegral entlang der Kurve auf die gleiche Art
 wie in zwei Dimensionen definieren als
 \[
@@ -590,7 +590,7 @@ sind die Komponenten des Vektorproduktes dieser Tagentialvektoren:
 \frac{\partial x^2}{\partial u}\frac{\partial x^1}{\partial v}
 \end{pmatrix}.
 \]
-Dies ist ein Vektor, der senkrecht steht auf dem Parallelogramm,
+Dies ist ein Vektor, der senkrecht steht auf dem Parallelogramm
 aufgespannt von den beiden Tangentialvektoren, und seine Länge ist
 der Flächeninhalt des Parallelogramms.
 Die Summe (man beachte die Einsteinsche Summenkonvention) umfasst
@@ -809,10 +809,10 @@ derart, dass die Summationskonvention gerade dazu führt, dass
 R^\mu\mathstrut_{\nu\alpha\beta}u^\alpha v^\beta
 \]
 die gesuchte Matrix ergibt (die beiden Indizes $\mu$ und $\nu$ sind frei).
-Der Vektor $A_\mu$ würde dann entlang des Parallelogramms um den
+Der Vektor $A^\nu$ würde dann entlang des Parallelogramms um den
 Vektor
 \[
-R^\mu\mathstrut_{\nu\alpha\beta} A_\mu u^\alpha v^\beta
+R^\mu\mathstrut_{\nu\alpha\beta} A^\nu u^\alpha v^\beta
 \]
 verändert.
 
@@ -880,6 +880,12 @@ Wir wissen bereits, wie der Paralleltransport eines Vektors entlang
 eines geschlossenen Pfades funktionert, die Änderung des Vektors ist
 \[
 \Delta A_\mu
+=
+\oint \nabla_\sigma A_\mu\,dx^\sigma
+=
+\oint \frac{\partial A_\mu}{\partial x^\sigma}
++
+\Gamma^\nu_{\mu\sigma} A_\nu \,x^\sigma
 = 
 \oint \Gamma_{\mu\sigma}^\nu A_\nu\,dx^\sigma.
 \]
@@ -1051,7 +1057,7 @@ Bis auf den Faktor $\sin^2\vartheta$, der vom Flächenelement herrührt,
 ist die Krümmung konstant.
 \end{beispiel}
 
-Zusätzlich zum eben berechneten Riemann-Tensor wird auf auch ein
+Zusätzlich zum eben berechneten Riemann-Tensor wird oft auch ein
 modifizierter Tensor gebildet, bei dem alle Indizes unten sind,
 also
 \[
@@ -1335,7 +1341,8 @@ nur die Terme der zweiten Ableitungen stehen.
 Als Anwendung dieses Prinzip wird im nächsten Abschnitt die zweite
 Bianchi-Identität bewiesen.
 
-Wir werden später sehen, dass die Christoffelsymbole physikalisch die
+Wir werden später in Abschnitt~\ref{skript:speziell:kraefte}
+sehen, dass die Christoffelsymbole physikalisch die
 Scheinkräfte im gewählten Koordinatensystem beschreiben.
 Die Tatsache, dass man sie in einem Punkt durch Wahl des Koordinatensystems
 zum Verschwinden bringen kann, bedeutet physikalisch, dass es immer
