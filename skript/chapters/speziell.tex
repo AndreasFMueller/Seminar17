@@ -28,7 +28,7 @@ der tiefgreifendsten Umwälzungen unseres Weltbildes geführt.
 Die Mechanik kann zwischen Ruhe und gleichförmiger Bewegung nicht 
 unterschieden.
 Mit mechanischen Experimenten kann man ein Labor, welches weit von
-allen Sternen entfernt im Universum schwebt nicht von einem ähnlichen
+allen Sternen entfernt im Universum schwebt, nicht von einem ähnlichen
 Labor unterschieden, welches sich mit einer Geschwindigkeit von 1000m/s
 relativ dazu bewegt.
 Um dies genauer verstehen zu können, verwenden wir in dem ruhenden Labor
@@ -134,7 +134,8 @@ die universelle Anwendbarkeit der Galilei-Transformation
 \eqref{skript:kruemmung:galileitransformation} in Frage gestellt.
 Diese intuitiv einleuchtende Transformation kann dann nur noch eine
 Approximation sein, deren Fehler bisher nur deshalb nicht aufgefallen
-sind, zum Beispiel weil sie erst bei sehr grossen Geschwindigkeiten
+sind, weil sie
+zum Beispiel erst bei sehr grossen Geschwindigkeiten
 sichbar werden.
 
 \begin{figure}
@@ -312,7 +313,7 @@ g_{\mu\nu}
 \label{skript:speziell:metrik}
 \end{equation}
 der sogenannten
-{\em Minkowski-Metrik}
+{\em Minkowski-Metrik},
 \index{Minkowski-Metrik}%
 berechnet werden.
 Die spezielle Relativitätstheorie beschreibt die Welt also als einen
@@ -400,8 +401,8 @@ der Kausalität erhalten will.
 Zunächst sind Koordinatentransformationen zulässig, die nur die Raumkoordinaten
 $x$, $y$ und $z$ beeinflussen und den räumlichen Abstand nicht ändern.
 Diese Transformationen sind aber wohlbekannt.
-In der Linearen Algebra lernt man, dass genau die orthogonalen
-Matrizen $A\in \textrm{O}(3)$, also Matrizen mit $A^tA=E$ diese
+In der linearen Algebra lernt man, dass genau die orthogonalen
+Matrizen $A\in \textrm{O}(3)$, also Matrizen mit $A^tA=E$, diese
 Eigenschaft haben.
 Diese entsprechen räumlichen Drehungen und Spiegelungen.
 
@@ -665,7 +666,7 @@ Die im bewegten Koordinatensystem gemessene Zeit ist
 \\
 &=
 \int
-\sqrt{-(-c^2\dot t(s)^2+\dot x(s)^2 + \dot y(s)^2 + \dot z(s)^2}\frac{1}{c\dot t(s))}
+\sqrt{-(-c^2\dot t(s)^2+\dot x(s)^2 + \dot y(s)^2 + \dot z(s)^2)}\frac{1}{c\dot t(s))}
 \dot t(s)\,ds
 \\
 &=
@@ -859,7 +860,7 @@ Masse und Geschwindigkeit nicht unabhängig voneinander betrachtet
 werden können.
 Andererseits zeigt das newtonsche Gravitationsgesetz, dass die Schwerkraft
 von der Masse eines Körpers ausgeht.
-Die Newtonsche Theorie ist daher schon im Ansatz nicht der
+Die Newtonsche Theorie ist daher schon im Ansatz nicht mit der
 speziellen Relativitätstheorie verträglich.
 Die Masse allein kann bestensfalls in einem Koordinatensystem als
 Quelle der Schwerkraft dienen, in dem die Masse ruht.
@@ -880,7 +881,7 @@ bestehend aus den Komponenten $j^\mu=\varrho u^\mu$,
 wobei $u^\mu$ die Komponenten der Vierergeschwindigkeit des Gases sind.
 
 Gesucht ist jetzt also eine Grösse, die zu jeder Zeit und in jedem
-Punkt des Raumes den Viererimpuls der dort vorhandenen Materie zu
+Punkt des Raumes den Vierer\-impuls der dort vorhandenen Materie zu
 berechnen gestattet.
 Im Ruhesystem des Gases reicht die Dichte des Gases zur Beschreibung.
 In einem bewegten System wird man aber feststellen, dass das Gas auch
@@ -905,12 +906,12 @@ Eine Wand können wir dadurch beschreiben, dass dort eine der Koordinaten
 konstant ist, also durch einen Standardbasisvektor, oder durch einen
 Koordinatenindex.
 Zu jeder Koordinate $\mu$ gibt es also den Vektor des Viererimpulses
-\[
+$
 T^{\mu\nu}
-\]
+$
 der durch die zu $\mu$ gehörende Seitenfläche fliesst.
 
-Um dieses Konzept zu illustrieren beschränken wir uns für den Moment
+Um dieses Konzept zu illustrieren, beschränken wir uns für den Moment
 auf zwei Dimensionen, also auf die Koordinaten $x^0=ct$ und $x^1=x$.
 Eine Box ist ein Rechteck, die Kanten des Rechtecks sind definiert
 dadurch, dass $x^0$ bzw.~$x^1$ konstant sind.
@@ -970,8 +971,8 @@ Viererimpuls.
 
 \subsection{Energie-Impuls-Tensor eines idealen Gases%
 \label{skript:speziell:subsection:idealesgas}}
-Ein ideales Gas ist isotrop, Kräfte wirken alle in die gleiche
-Richtung.
+Ein ideales Gas ist isotrop, in alle Richtungen wirken die gleichen 
+Druckkräfte.
 Der Energie-Impuls-Tensor des ruhenden Gases muss daher durch die
 Dichte $\varrho$ des Gases und den Druck $p$ beschrieben werden können.
 Da sich das Gas nicht bewegt, fliesst kein Impuls durch eine Fläche
@@ -996,7 +997,7 @@ Da in einem idealen Gas keine Spannungen herschen, muss $T^{ik}$ diagonal
 sein und $T^{ii}=p$.
 Also ist
 \[
-T^{ik}
+T^{\mu\nu}
 =
 \begin{pmatrix}
 \varepsilon&0&0&0\\
@@ -1053,8 +1054,8 @@ ausdrücken können.
 
 \subsubsection{Kontinuitätsgleichung}
 Betrachten wir zunächst die Strömung eines Mediums in drei Dimensionen.
-Materie kann nicht einfach entstehen oder zerstört werden, dafür muss
-es einen mathematischen Ausdruck geben.
+Materie kann nicht einfach entstehen oder zerstört werden, für diese 
+Tatsache muss es einen mathematischen Ausdruck geben.
 Sei $\varrho(x,y,z,t)$ die Dichte des Mediums und $\vec v(x,y,z,t)$ 
 seine Geschwindigkeit.
 Wir berechnen, wie sich die Masse des Mediums in einem kleinen
@@ -1077,7 +1078,7 @@ v_x(x+\Delta x,y,z,t) -\varrho(x,y,z,t) v_x(x,y,z,t)\bigr) F_x\,\Delta t
 \frac{\partial \varrho v_x}{\partial x}(x,y,z,t)\Delta x\, F_x\,\Delta t,
 \end{align*}
 wobei $F_x=\Delta y\,\Delta z$ der Flächeninhalt der Seitenfläche senkrecht
-auf $x$ ist.
+auf der $x$-Achse ist.
 
 Dasselbe passiert durch die anderen Wände, so dass
 die gesamte Masseänderung im Zeitinterval $\Delta t$
@@ -1093,7 +1094,7 @@ die gesamte Masseänderung im Zeitinterval $\Delta t$
 \biggr)V\Delta t
 \]
 ist, darin ist $V$ das Volumen des Quaders.
-Aus der Dichte können wir die Masseänderung aber auch berechnen,
+Aus der Dichte können wir die Masseänderung aber ebenfalls berechnen,
 es ist
 \[
 \Delta m
@@ -1214,9 +1215,7 @@ zu $(T^{12}-T^{21})L^{-2}$, was für $L\to 0$ beliebig gross würde.
 Ein beliebig kleiner Würfel würde daher zu beliebig grossen 
 Drehgeschwindigkeit beschleunigt.
 Da dies nicht sein kann, folgt $T^{12}-T^{21}=0$ oder allgemeine
-\[
-T^{\mu\nu}=T^{\nu\mu}.
-\]
+$T^{\mu\nu}=T^{\nu\mu}$.
 
 \section{Kräfte%
 \label{skript:speziell:kraefte}}
@@ -1244,7 +1243,7 @@ Leider passt \eqref{skript:speziell:newton2}
 
 Die Physik hilft uns jedoch nochmals weiter, da
 eine Weltlinie nur zeitartig sein kann.
-Für langsam bewegt Objekte sind die Raumkomponenten $\dot x^i(t)$
+Für langsam bewegte Objekte sind die Raumkomponenten $\dot x^i(t)$
 der Vierergeschwindigkeit sehr klein, $\dot x^i(t)\simeq 0$,
 ($1\le k\le 3$), während
 die Zeitkomponente $\dot x^0(t)\simeq 1$ ist.
