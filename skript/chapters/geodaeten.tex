@@ -10,7 +10,7 @@
 In der Ebene ist die kürzeste Verbindung zwischen zwei Punkten
 eine Gerade.
 Auf einem Zylinder oder Kegel kann man die kürzeste Verbindung finden,
-indem man die Fläche in eine Ebene abrollt, und dann dort verwendet,
+indem man die Fläche in eine Ebene abrollt, und dann verwendet,
 dass die kürzeste Verbindung in der Ebene eine Gerade ist.
 Dies zeigt, dass die kürzesten Verbindung nichts mit der speziellen
 Einbettung einer Fläche zu tun hat, sondern eine Eigenschaft ist,
@@ -30,7 +30,7 @@ Alle anderen Kurven (blau) in der Kugeloberfläche haben grössere Länge.
 \label{skript:kruemmung:fig:geodaete}}
 \end{figure}
 Man kann dabei so argumentieren: von allen Schnitten der Kugeloberfläche
-mit Ebenen durch die zwei gegeben Punkte ist der Grosskreis derjenige
+mit Ebenen durch die zwei gegebenen Punkte ist der Grosskreis derjenige
 mit der kleinsten Krümmung, und daher die ``direkteste'' Verbindung.
 Dieses Argument ist allerdings nicht ganz exakt, denn man vergisst dabei,
 dass es noch viele weitere Kurven gibt, die die beiden Punkte verbinden
@@ -143,7 +143,7 @@ sie ihren Tangentialvektor selbst parallel transportiert,
 wir erwarten, dass dies die ``geradestmögliche'' Kurve ergibt.
 
 Die kovariante Ableitung des Tangentialvektors $\dot x^\mu$ entlang
-einer Kurve wird sein
+einer Kurve wird
 \[
 \nabla_\nu\dot x^\mu
 =
@@ -151,7 +151,7 @@ einer Kurve wird sein
 +
 \Gamma^\mu_{\alpha\nu}\dot x^\alpha
 \]
-und die zeitliche Änderung entlang der Kurve wird
+sein und die zeitliche Änderung entlang der Kurve wird
 \[
 \nabla_\nu\dot x^\mu\cdot \dot x^\nu
 =
@@ -210,7 +210,7 @@ für die Koeffizienten $\Gamma$.
 Diese Gleichung muss für jede beliebige Wahl von $A^\mu$ und jede
 beliebige Richtung der Kurve $\dot x^\alpha$ erfüllt sein.
 Es folgt, dass der Klammerausdruck für alle Werte der freien, also nicht durch
-die Summationskonvention als Laufindizes ausgezeichneten, Indizes verschwindet.
+die Summationskonvention als Lauf{}indizes ausgezeichneten, Indizes verschwindet.
 Wir erhalten also
 \begin{equation}
 \frac{\partial g_{\mu\nu}}{\partial x^\alpha}
@@ -282,7 +282,7 @@ g_{\mu\beta}\Gamma_{\nu\alpha}^\beta
 \end{linsys}
 \]
 Subtrahieren wir die erste Zeile von der Summe der letzten beiden,
-heben sich ersten Terme weg, es bleibt
+heben sich die ersten Terme weg, es bleibt
 \[
 g_{\alpha\beta}\Gamma_{\nu\mu}^\beta
 =
@@ -425,7 +425,7 @@ g_{\mu\nu}A^\mu\nabla_\alpha B^\nu
 -g_{\mu\beta}\Gamma^\beta_{\nu\alpha}
 \biggr)}_{\displaystyle = 0}
 A^\mu B^\nu
-\biggr)
+\biggr).
 \end{align*}
 Der innere Klammerausdruck in der letzten Gleichung ist aber identisch
 mit \eqref{skript:geodaeten:gammaidentitaet}, er verschwindet also.
@@ -548,7 +548,7 @@ g_{\mu\nu}
 \biggr)B_\sigma
 \end{align*}
 In der Klammer ersetzen wir $\Gamma^\mu_{\alpha\beta}$ durch
-\eqref{skript:definition:christoffel2} und erhalten
+die Definition \eqref{skript:definition:christoffel2} und erhalten
 \begin{align*}
 -\frac{\partial g_{\mu\nu}}{\partial x^\alpha} g^{\mu\sigma}
 +
@@ -716,7 +716,7 @@ bzw.~herunterziehen verträglich ist.
 \subsubsection{Kovariante Ableitung und Verjüngung%
 \label{skript:geodaeten:kovablverj}}
 Wir betrachten jetzt einen Tensor der Form $T^\mu_\nu$, seine kovariante
-Ableitung ist nach \eqref{skript:geodaeten:kovabl2}
+Ableitung ist nach \eqref{skript:geodaeten:kovablbel}
 \begin{equation}
 \nabla_\alpha T^\mu_\nu
 =
@@ -724,7 +724,7 @@ Ableitung ist nach \eqref{skript:geodaeten:kovabl2}
 +\Gamma^\mu_{\sigma\alpha} T^\sigma_\nu
 -\Gamma^\sigma_{\alpha\nu} T^\mu_\sigma.
 \end{equation}
-Verjüngen wir die beiden Indizes $\mu$ und $\nu$ wird daraus 
+Verjüngen wir die beiden Indizes $\mu$ und $\nu$, wird daraus 
 \begin{equation}
 \nabla_\alpha T^\mu_\mu
 =
@@ -735,7 +735,7 @@ Verjüngen wir die beiden Indizes $\mu$ und $\nu$ wird daraus
 \end{equation}
 Die letzten zwei Terme sind bis auf die Benennung der Indizes, über die
 summiert wird, gleich, sie heben sich daher weg.
-Wir schliessen daher, dass 
+Wir schliessen daraus, dass 
 \begin{equation}
 \nabla_\alpha T^\mu_\mu = \frac{\partial}{\partial x^\alpha}T^\mu_\mu
 \label{skript:geodaeten:kovablverj2}
@@ -748,7 +748,7 @@ und
 \eqref{skript:geodaeten:kovablverj2}
 eine Zweideutigkeit steckt.
 Es ist daraus nämlich nicht klar, ab zuerst die Verjüngung gebildet werden muss
-und dann die kovariante Ableitung oder Umgekehrt.
+und dann die kovariante Ableitung oder umgekehrt.
 Da die Verjüngung ein Skalar ist, ist die kovariante Ableitung einfach
 nur die partielle Ableitung.
 Die Schlussfolgerung~\eqref{skript:geodaeten:kovablverj2} besagt daher
@@ -818,12 +818,12 @@ vertauscht.
 \section{Beispiele}
 %\rhead{Beispiele}
 In den nachfolgenden Beispielen wollen wir die Christoffelsymbole erster
-und zweiter Art für Zylinder- und Kugeloberfläche berechnen.
+und zweiter Art für Zy\-lin\-der- und Kugeloberfläche berechnen.
 
 \rhead{Beispiele}
 
 \subsection{Polarkoordinaten}
-Die nicht verschwinden Komponenten
+Die nicht verschwindenden Komponenten
 des metrischen Tensors in Polarkoordinaten $(r,\varphi)$
 sind $g_{11}=1$ und $g_{22}=r^2$.
 Davon brauchen wir die Ableitungen
@@ -871,7 +871,7 @@ und die Christoffelsymbole zweiter Art sind
 \end{equation}
 
 \subsection{Zylinderkoordinaten}
-Da die Komponenten des metrischen Tensors sind konstant, damit verschwinden
+Da die Komponenten des metrischen Tensors konstant sind, verschwinden
 alle Ableitungen
 \[
 \frac{\partial g_{\mu\nu}}{\partial x^\alpha}=0
@@ -1055,7 +1055,7 @@ durchlaufene Geraden.
 Wir dürfen natürlich davon ausgehen, dass jede beliebige andere Gerade
 ebenfalls eine Geodäte ist.
 Um dies nachzuprüfen, betrachten wir eine Gerade senkrecht auf die
-$r=0$-Achse, in $x$-$y$-Koordinaten können wir sie als
+$\varphi=0$-Achse, in $x$-$y$-Koordinaten können wir sie als
 $t\mapsto (x_0,t)$ beschreiben.
 Die zugehörigen Polarkoordinaten sind
 \[
@@ -1328,11 +1328,11 @@ Wir brauchen nur den Wert an der Stelle $s=0$:
 &=
 \int_{t_0}^{t_1}
 \frac{\partial F}{\partial x^\alpha}(x^\alpha(t), \dot x^\alpha(t), t)
-\eta^\alpha(t)
+\,\eta^\alpha(t)
 +
 \frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t),
 \dot x^\alpha(t), t)
-\dot\eta^\alpha(t)
+\,\dot\eta^\alpha(t)
 \,dt.
 \\
 \intertext{
@@ -1341,12 +1341,12 @@ und erhalten}
 &=
 \int_{t_0}^{t_1}
 \frac{\partial F}{\partial x^\alpha}(x^\alpha(t), \dot x^\alpha(t), t)
-\eta^\alpha(t)\,dt
+\,\eta^\alpha(t)\,dt
 +
 \biggl[
 \frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t),
 \dot x^\alpha(t), t)
-\eta^\alpha(t)
+\,\eta^\alpha(t)
 \biggr]_{t_0}^{t_1}
 \\
 &\qquad\qquad
@@ -1354,7 +1354,7 @@ und erhalten}
 \int_{t_0}^{t_1}
 \frac{d}{dt}\frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t),
 \dot x^\alpha(t), t)
-\eta^\alpha(t)
+\,\eta^\alpha(t)
 \,dt.
 \intertext{Da die verschobene Kurve immer noch die beiden Punkte
 $x^\alpha(t_0)$ und $x^\alpha(t_1)$ verbindet, ist $\eta^\alpha(t_0)=0$
@@ -1368,8 +1368,8 @@ Die rechte Seite wird damit zu}
 \frac{d}{dt}\frac{\partial F}{\partial \dot x^\alpha}(x^\alpha(t),
 \dot x^\alpha(t), t)
 \biggr)
-\eta^\alpha(t)
-\,dt
+\,\eta^\alpha(t)
+\,dt.
 \end{align*}
 Das Integral auf der rechten Seite verschwindet nur dann für jede
 beliebige Wahl der Verschiebung $\eta^\alpha(t)$, wenn die grosse Klammer
@@ -1399,7 +1399,7 @@ Differentialgleichungen.
 \label{skript:geodaeten:subsection:Parametrisierung}}
 Wir vermuten, dass Geodäten die kürzesten Verbindungen sind.
 Mit den Euler-Lagrange-Glei\-chung\-en können wir dies nachprüfen.
-Wenn die Vermutung stimmt, müssten die Euler-Lagrange-Gleichungen 
+Wenn die Vermutung stimmt, müssten die Euler-Lagrange-Gleichun\-gen 
 \eqref{skript:variation:euler-lagrange}
 für die Funktion
 \[
