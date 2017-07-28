@@ -46,7 +46,7 @@ der Theorie gegeben.
 
 Um den Effekt überhaupt darstellen zu können, muss die Bahn sehr nahe
 am Zentralkörper vorbeiführen.
-Der dem Zentralkörper nächste Punkt, das Periastron darf
+Der dem Zentralkörper nächste Punkt, das Periastron, darf
 also nur wenige Gravitationsradien entfernt sein.
 In Abbildung~\ref{skript:schwarzschild:perihelorbit} ist die
 Umlaufbahn eines Körpers dargestellt, dessen Apastron-Entfernung
@@ -165,7 +165,7 @@ d.~h.~wir verwenden den Gravitationsradius als Längeneinheit.
 %(%i44) 		        ratsimp(Christoffel2(4, 4, 4))
 %(%o44) 				       0
 %
-Für die Geodätengleichungen brauchen wir die Christoffsymbole 
+Für die Geodätengleichungen brauchen wir die Christoffelsymbole 
 für die Schwarzschild Metrik.
 Mit Maxima kann man die folgenden nicht verschwindenden
 $\Gamma^\mu_{\alpha\beta}$ 
@@ -266,24 +266,24 @@ Die zugehörigen Geodätengleichungen sind
 \begin{align*}
 \ddot t(s)
 &=
--\frac{1}{1-\displaystyle\frac{r_g}{r}}\frac{r_g}{r}\frac{1}{r}\dot t(s)\,\dot r(s)
+-\frac{1}{1-\displaystyle\frac{r_g}{r}}\frac{r_g}{r}\frac{1}{r}\dot t(s)\,\dot r(s),
 \\
 \ddot r(s)
 &=
 -\biggl(1-\frac{r_g}{r}\biggr)\frac{r_g}{r}\frac1{2r}c^2\dot t(s)^2
 +\frac{1}{1-\displaystyle\frac{r_g}{r}} \frac{r_g}{r}\frac1{2r}\dot r(s)^2
 -(r_g-r)\dot \vartheta(s)^2
--(r_g-r)\sin^2 \vartheta \cdot \dot \varphi(s)^2
+-(r_g-r)\sin^2 \vartheta \cdot \dot \varphi(s)^2,
 \\
 \ddot \vartheta(s)
 &=
 -\frac{2}{r} \dot r(s)\, \dot \vartheta(s)
-+\cos\vartheta\sin\vartheta \cdot \dot\varphi(s)^2
++\cos\vartheta\sin\vartheta \cdot \dot\varphi(s)^2,
 \\
 \ddot \varphi(s)
 &=
 -\frac{2}{r} \dot r(s)\,\dot \varphi(s)
--2\cot\vartheta \cdot \dot r(s)\,\dot\varphi(s)
+-2\cot\vartheta \cdot \dot r(s)\,\dot\varphi(s).
 \end{align*}
 Darin ist natürlich $r$ in den Koeffizienten jeweils als $r(s)$ zu lesen.
 
@@ -388,10 +388,8 @@ Drehung der Apsidenlinie sichtbar machen.
 \subsection{Numerische Lösung}
 Im Repository zu diesem Buch befinden sich einige Octave-Programme,
 mit denen man die Geodäten in einer Schwarzschild-Metrik berechnen kann.
-Um zu etwas leichter verständlichen Zahlen zu kommen, rechnen wir
-in diesen Programmen immer mit Masseinheiten so, dass $r_g=1$ ist,
-d.~h.~der Gravitationsradius des Zentralkörpers ist die Längeneinheit,
-und $c=1$, d.~h.~$r_g/c$ ist die Zeiteinheit.
+Wie bereits erwähnt wird mit $r_g$ als Längeneinheit, $c=1$ und $r_g/c$
+als Zeiteinheit gerechnet.
 Die Programme berücksichtigen auch $\vartheta(s)$, machen also die 
 im vorangegangenen Abschnitt diskutierten Vereinfachungen für
 $\vartheta=\frac{\pi}2$ nicht.
@@ -416,7 +414,7 @@ der Eigenzeit übereinstimmt.
 Aus dem Vektor $X$ lässt sich jederzeit die Position und die
 Vierergeschwindigkeit extrahieren.
 Im File \texttt{geodesic.m} dienen dazu die Funktionen
-\texttt{position} und \texttt{velocity}
+\texttt{position} und \texttt{velocity}:
 \lstinputlisting[style=Octave]{chapters/listings/schwarzschild-extract.m}
 Mit der Funktion \texttt{mrescale} kann man im Vektor $X$ den
 Geschwindigkeitsanteil um einen gegebenen Faktor strecken:
@@ -535,8 +533,8 @@ das
 erste Teilinterval, in dem das Vorzeichen von $\dot r(s)$ wechselt.
 Mit den zugehörigen Zuständen wird \texttt{apsidbetween}
 in Zeile 26
-rekursiv augerufen, bis auf Zeile~6 die Differenz der Winkel $\phi(s)$ zwischen
-den beiden Zuständen kleiner als $10^{-6}$ ist.
+rekursiv augerufen, bis auf Zeile~6 die Differenz der Winkel $\varphi(s)$
+zwischen den beiden Zuständen kleiner als $10^{-6}$ ist.
 
 Der folgende Code berechnet die Werte von $\varphi(s)$ für alle
 Extrema von $r(s)$ und ermittelt den Mittelwert:

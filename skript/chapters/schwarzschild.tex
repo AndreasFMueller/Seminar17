@@ -323,9 +323,9 @@ Da der Koeffizient von $dt^2$
 -\biggl(1-\frac{r_g}{r}\biggr)
 \quad
 \begin{cases}
-<0&\qquad r > r_g
+<0&\qquad\text{für}\quad r > r_g
 \\
->0&\qquad r < r_g
+>0&\qquad\text{für}\quad r < r_g
 \end{cases}
 \]
 für $r>r_g$
@@ -339,9 +339,9 @@ Für $r<r_g$ wechselt aber auch das Vorzeichen des Koeffizienten
 \frac1{\displaystyle1-\frac{r_g}{r}}
 \quad
 \begin{cases}
->0&\qquad r>r_g
+>0&\qquad \text{für}\quad r>r_g
 \\
-<0&\qquad r<r_g
+<0&\qquad \text{für}\quad r<r_g
 \end{cases}
 \]
 von $dr^2$, damit wird plötzlich der Vektor $\dot t=0$, $\dot r\ne 0$,
@@ -357,7 +357,14 @@ Richtung nicht mehr kreuzen können.
 
 \begin{figure}
 \centering
-\includegraphics[width=\hsize]{chapters/3d/blackhole.jpg}
+%\includegraphics[width=\hsize]{chapters/3d/blackhole.jpg}
+\begin{tikzpicture}[]
+\coordinate (O) at (0,0);
+\node at (0,0) {\includegraphics[width=\hsize]{chapters/3d/blackhole.jpg}};
+\node at (4.1,-1.5) {$y$};
+\node at (1.1,-5.5) {$x$};
+\node at (-0.9,5.8) {$\tau$};
+\end{tikzpicture}
 \caption{Absturz eines Teilchens durch den Ereignishorizont in
 $(\tau,r,\varphi)$-Koordinaten.
 Sobald das Teilchen durch den Ereignishorizont gefallen ist,
@@ -418,7 +425,7 @@ r_g = \frac{2K}{c^2}M
 \cdot
 \frac1{(2.99792458\cdot 10^{8}\frac{\text{m}}{\text{s}})^2}\cdot M
 =
-1.485183\cdot 10^{-27}\frac{\text{m}}{\text{kg}}\cdot M
+1.485183\cdot 10^{-27}\frac{\text{m}}{\text{kg}}\cdot M.
 \]
 Der Gravitationsradius der Sonne ist 
 \begin{align*}

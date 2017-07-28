@@ -132,6 +132,22 @@
   stringstyle=\color{orange},
   numberstyle=\ttfamily\tiny
 }
+\lstset{language=Octave,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={function,global,size,zeros,switch,case,otherwise,end,sin,cos,cot,floor,ode45,hold,polarplot,endfunction,size,endswitch,cat,printf,for,endfor,if,return,endif,abs,while,endwhile},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    %numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
 \lstdefinestyle{Octave}{
   numbers=left,
   belowcaptionskip=1\baselineskip,

@@ -11,7 +11,7 @@ Albert Einstein hat erkannt, dass die Wirkung der Gravitation
 durch die Krümmung des Raumes beschrieben werden muss.
 \index{Einstein, Albert}%
 In den folgenden Abschnitten geben wir einen Überblick darüber, wie
-die moderne Physik unseren Raum als einen gekrümmten Raum beschreibt.
+die moderne Physik unseren Raum als eine gekrümmte Raumzeit beschreibt.
 An einfachen Modellen soll gezeigt werden, wie man sich die Gravitationswirkung
 als die Wirkung eines gekrümmten Raumes vorstellen kann, wie schwarze Löcher
 \index{Loch, schwarzes}%
@@ -41,7 +41,7 @@ $F=ma$ immer eine Beschleunigung mit den Betrag
 \]
 erfahren.
 Die Beschleunigung eines Teilchens ist offenbar unabhängig von der Masse.
-Diese {\em Äquivalenz\-prinzip} genannte Beobachtung wurde von
+Diese {\em Äqui\-va\-lenz\-prinzip} genannte Beobachtung wurde von
 Lor\'and Eötvös 1909 mit sehr grosser Genauigkeit nachgemessen und bestätigt.
 In neuerer Zeit wurde die Genauigkeit nochmals um den Faktor $10^4$
 verbessert.
@@ -59,7 +59,7 @@ Ein einem gleichmässig mit $g$ beschleunigten Labor (rechts)
 misst man die gleiche Beschleunigung wie in einem homogenen
 Gravitationsfeld (links).
 \label{skript:gravitation:labor}}
-\end{figure}
+\end{figure}%
 Ein beschleunigtes Koordinatensystem kann man zwar durch die
 Koordinatentransformation
 \begin{equation}
@@ -162,7 +162,7 @@ g_{\mu\nu}
 \begin{pmatrix}-1&0\\0&1\end{pmatrix}
 \]
 ausgedrückt.
-In $(x'^0,x'^1)$-Koordinaten muss die Matrix daher sein
+In $(x'^0,x'^1)$-Koordinaten muss die Matrix daher
 \begin{align*}
 g'_{\mu\nu}
 &=
@@ -191,8 +191,9 @@ g'_{\mu\nu}
 \begin{pmatrix}
 -1&-\frac{g}{c^2}x'^0\\
 -\frac{g}{c^2}x'^0&1+\frac{g^2}{c^4}(x'^0)^2
-\end{pmatrix}.
+\end{pmatrix}
 \end{align*}
+sein.
 Die Metrik $g'_{\mu\nu}$ ist offenbar wieder symmetrisch.
 Wir könnten die Christoffelsymbole ausrechnen und die Geodäten
 bestimmen, wir würden die Transformation von Geraden aus dem
@@ -207,7 +208,8 @@ als Geodäten eines Zusammenhangs schreiben lassen.
 Wer verwenden dazu aber nicht die Metrik und den daraus abgeleiteten 
 Zusammenhang, dies hat erst die Einsteinsche Theorie geschafft.
 
-\subsection{Schwerkraft}
+\subsection{Schwerkraft%
+\label{skript:section:schwerkraft}}
 Das Newtonsche Gravitationsgesetz beschreibt die Beschleunigung, die
 auf ein Teilchen in einem Gravitationsfeld wirkt, welches von einer
 Masse $m$ erzeugt wird.
@@ -241,13 +243,13 @@ werden kann.
 Dazu ist notwendig, die Bewegung wieder in einem vierdimensionalen Raum,
 also als Kurve
 \[
-t\mapsto (t,x^1(t),x^2(t),x^3(t)),
+t\mapsto (t,x^1(t),x^2(t),x^3(t))
 \]
-also mit $x^0(t)=t$ zu beschrieben.
+mit $x^0(t)=t$ zu beschrieben.
 Für eine solche Parametrisierung gilt $\dot x^0(t)=1$.
 Das Objekt bewegt sich also mit der Geschwindigkeit von einer Sekunde pro
 Sekunde entlang der Zeitachse.
-In der Geodätengleichung können wir daher die Terme mit mit Index $0$
+In der Geodätengleichung können wir daher die Terme mit Index $0$
 separat behandeln:
 \[
 \ddot x^\mu
@@ -310,7 +312,7 @@ GM\biggl(\frac{1}{r_2}-\frac{1}{r_1}\biggr).
 Legt man den Nullpunkt der potentiellen Energie ins Unendliche, dann ist
 das Potential einer Punktmasse mit Masse $M$
 \begin{equation}
-\varphi = \frac{KM}{r}.
+\varphi = -\frac{KM}{r}.
 \label{skript:gravitation:potential}
 \end{equation}
 
@@ -329,7 +331,7 @@ r=\sqrt{x^2+y^2+z^2}
 \]
 Damit können wir jetzt die Ableitung des Potentials berechnen:
 \begin{align*}
-\frac{\partial}{\partial x}\frac1{r}
+-\frac{\partial}{\partial x}\frac1{r}
 &=
 -\frac{1}{r^2} \frac{\partial r}{\partial x}
 =
@@ -364,7 +366,7 @@ Eine besser geeignete Beschreibung können wir aus dem Gausschen
 Divergenzsatz erhalten.
 Eine zweidimensionale Version dieses Satzes können wir
 aus dem Satz von Green~\eqref{skript:kruemmung:satz:green}
-erhalten.
+ableiten.
 Dazu verwenden wir die Funktionen 
 \[
 f(x)=-\frac{\partial \varphi}{\partial x}
@@ -415,7 +417,7 @@ mit der Abkürzung
 \Delta \varphi
 =
 \frac{\partial^2\varphi}{\partial x^2}+
-\frac{\partial^2\varphi}{\partial y^2}
+\frac{\partial^2\varphi}{\partial y^2},
 \end{equation*}
 dem Laplace-Operator.
 In dieser zweidimensionalen Darstellung nützt uns der Satz allerdings
@@ -473,7 +475,17 @@ sehr kleinen Ball $B_r$ mit Radius $r$ hat daher den Wert
 4\pi K\int_{B_r} \varrho\,dx\,dy\,dz.
 \]
 Andererseits kann man nach dem Satz von Gauss auch die rechte 
-Seite berechnen:
+Seite berechnen\footnote{
+In drei Dimension ist der Laplace-Operator
+\[
+\Delta \varphi
+=
+\frac{\partial^2 \varphi}{\partial x^2}
++
+\frac{\partial^2 \varphi}{\partial y^2}
++
+\frac{\partial^2 \varphi}{\partial z^2}.
+\]}:
 \begin{align}
 \int_{B_r} 4\pi K\varrho\,dx\,dy\,dz
 &=
@@ -484,26 +496,17 @@ Seite berechnen:
 \,dx\,dy\,dz
 =
 \int_{B_r}
+\underbrace{
 \frac{\partial^2\varphi}{\partial x^2}+
 \frac{\partial^2\varphi}{\partial y^2}+
-\frac{\partial^2\varphi}{\partial z^2}
+\frac{\partial^2\varphi}{\partial z^2}}_{\displaystyle \Delta \varphi}
 \,dx\,dy\,dz
-\notag
-\\
-&=
-\int_{B_r} \Delta\varphi\,dx\,dy\,dz.
+%\notag
+%\\
+%&=
+%\int_{B_r} \Delta\varphi\,dx\,dy\,dz.
 \label{skript:gravitation:poisson-integral}
 \end{align}
-In drei Dimension ist der Laplace-Operator
-\[
-\Delta \varphi
-=
-\frac{\partial^2 \varphi}{\partial x^2}
-+
-\frac{\partial^2 \varphi}{\partial y^2}
-+
-\frac{\partial^2 \varphi}{\partial z^2}.
-\]
 Da dies für Kugeln an beliebigen Punkten mit beliebigen Radien 
 gilt, müssen die Integranden in~\eqref{skript:gravitation:poisson-integral}
 übereinstimmen.
@@ -540,12 +543,13 @@ Als Metrik verwenden wir daher
 \[
 g_{\mu\nu}=\eta_{\mu\nu} + h_{\mu\nu}.
 \]
-Der erste Summand die Minkowski-Metrik $\eta_{\mu\nu}$.
+Der erste Summand ist die Minkowski-Metrik $\eta_{\mu\nu}$.
 Der zweite beschreibt die Abweichung, wobei wir annehmen,
 dass $h_{\mu\nu}$ sehr klein ist.
 Die zugehörigen Christoffelsymbole sind mit einiger, vorzugsweise
 maschineller Rechnung zu finden.
-Aus der Beschreibung des newtonschen Gravitationsgesetzes können wir
+Aus der Beschreibung des newtonschen Gravitationsgesetzes
+in Abschnitt~\ref{skript:section:schwerkraft} können wir
 ablesen, dass wir die klassisch beobachteten Kräfte in Gestalt
 des Christoffelsymbols
 \[
