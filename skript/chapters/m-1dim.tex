@@ -180,13 +180,13 @@ Wir behaupten nicht, dass die Summe auf der rechten Seite mit dem Potential
 der Ladungsverteilung übereinstimmen.
 Vielmehr ist die Summe eine Zerlegung des Feldes
 nach ``Abfalls-Geschwindigkeit'' in grosser Entfernung,
-ganz ähnlich wie die Fourier-Koeffizienten einer im Intervall
-$[-\pi,\pi]$ definierten Funktion $f(x)$
+ganz ähnlich wie die Fourier-Koeffizienten
 \[
 a_k=\frac1{2\pi}\int_{-\pi}^\pi f(x)\cos kx\,dx
 \qquad\text{und}\qquad
 b_k=\frac1{2\pi}\int_{-\pi}^\pi f(x)\sin kx\,dx
 \]
+einer im Intervall $[-\pi,\pi]$ definierten Funktion $f(x)$
 eine Analyse nach Frequenzen bilden.
 Die Fourierreihe
 \[
@@ -229,9 +229,9 @@ q(a+aq+aq^2+\dots + aq^n)-(a+aq+aq^2+\dots + aq^n)
 &=
 a(q+q^2+q^3\dots+q^{n+1}-1-q-q^2-\dots-q^n)
 =
-a(q^{n+1}-1)
+a(q^{n+1}-1).
 \end{align*}
-und schliesst
+Daraus schliesst man
 \[
 s=a\frac{q^{n+1}-1}{q-1}.
 \]
@@ -327,9 +327,8 @@ Im vorangegangenen Abschnitt haben wir gesehen, dass für grosse Werte von
 $x$ die zur Diskussion stehende Funktion im Wesentlichen als Reihe
 der inverse Potenzen $1/x^k$ beschrieben werden kann, also
 \[
-f(x)=\sum_{k=0}^\infty b_k\frac1{x^{k+1}}
+f(x)=\sum_{k=0}^\infty b_k\frac1{x^{k+1}}.
 \]
-werden.
 Schreiben wir $z=1/x$, dann wird daraus eine gewöhnliche Potenzreihe
 \[
 \tilde f(z)=\sum_{k=0}^\infty b_k z^{k+1}.
@@ -350,7 +349,7 @@ den Punkt $\infty$.
 
 Man nennt eine Reihe der Form
 \[
-\sum_{k=-\infty}^{\infty} (z-a)^k
+\sum_{k=-\infty}^{\infty} b_k(z-a)^k
 \]
 eine {\em Laurent-Reihe} im Punkt $a$.
 \index{Laurent-Reihe}
