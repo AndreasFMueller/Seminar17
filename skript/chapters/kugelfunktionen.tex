@@ -36,7 +36,7 @@ ist, und einer Funktion, die die Entfernungsabhängigkeit vom Nullpunkt
 ausdrückt.
 
 Daraus ergibt sich dann eine Familie von Funktionen auf der Kugeloberfläche,
-die also nur von $\vartheta$ und $\varphi$ abhängen.
+die nur von $\vartheta$ und $\varphi$ abhängen.
 Diese Funktionen haben eine grosse Zahl von Anwendungen:
 
 \begin{enumerate}
@@ -122,8 +122,8 @@ Resultates.
 Die in Satz~\ref{skript:satz:weierstrass} verwendeten Polynome entstehen
 durch algebraische Operationen aus den Funktionen
 \[
-f_1(x_1,\dots,x_n)=x_1,\qquad
-f_2(x_1,\dots,x_n)=x_2,\dots
+f_1(x_1,\dots,x_n)=x_1,\quad
+f_2(x_1,\dots,x_n)=x_2,\quad\dots\quad
 f_n(x_1,\dots,x_n)=x_n.
 \]
 Diese Funktionen haben die Eigenschaft, dass es für zwei verschiedene
@@ -148,7 +148,7 @@ von Funktionen mit einer Zahl definiert.
 Man sagt, die Menge $C(X)$ sei eine Algebra.
 \index{Algebra}%
 Ausserdem gibt es in $C(X)$ einen Begriff für die Norm einer Funktion,
-wir setzen
+nämlich
 \begin{equation}
 \| f\| = \sup_{x\in X}|f(x)|.
 \label{skript:multipol:supremum-norm}
@@ -219,19 +219,19 @@ die Funktionen $f_i$ Punkte trennen müssen, ist auch hinreichend.
 
 \section{Fourier-Theorie}
 %\rhead{Fourier-Theorie}
-Wir betrachten wieder eine Funktion $f(x,y)$ in der Ebenen
+Wir betrachten wieder eine Funktion $f(x,y)$ in der Ebene
 $(x,y)\in\mathbb R^2$.
-Der Satz von Weierstrasse genauso wie die Erfahrungen im
+Der Satz von Weierstrass genauso wie die Erfahrungen im
 Kapitel~\ref{skript:chapter:multipol} zeigen, dass sich die Funktion
 $f(x,y)$ beliebig genau approximieren lässt als Summe von Termen der
-Form $p(x,y)r^k$, wobei $p(x,y)$ ein homogenes Polynom ist.
+Form $p(x,y)r^k$, $k\in\mathbb Z$, wobei $p(x,y)$ ein homogenes Polynom ist.
 
 Im Moment interessiert uns nur die Richtungsabhängigkeit, so dass wir
 die Funktion $f(x,y)$ auf einen Kreis mit Radius $r$ einschränken können.
 Aus Abschnitt~\ref{skript:section:approximation} wissen wir ausserdem,
 dass wir nach dem Satz~\ref{skript:satz:weierstrass} von Weierstrass
 eine stetige Funktionen auf dem Kreis, einer offensichtlich
-abgeschlossenen und beschränkten Menge, durch Polynome belieibig
+abgeschlossenen und beschränkten Menge, durch Polynome beliebig
 genau approximieren können.
 
 \rhead{Fourier-Theorie}
@@ -262,8 +262,8 @@ können als
 p(x,y)=r^l p(\cos\varphi,\sin\varphi).
 \]
 Für eine Funktion $f(x,y)$ auf einem Kreis um dem Nullpunkt erwarten wir
-daher, dass wir sie in Polarkoordinaten schreiben können also eine
-Linearkombination Funktionen der Form
+daher, dass wir sie in Polarkoordinaten schreiben können als eine
+Linearkombination von Funktionen der Form
 \begin{equation}
 \cos^k\varphi \sin^{l-k}\varphi,\qquad 0\le k\le l.
 \label{skript:kugelfunktionen:produkte}
@@ -710,7 +710,7 @@ die berzüglich des Skalarproduktes
 \begin{equation}
 \langle f,g\rangle
 =
-\int_{-\pi}^{\pi} \int_0^\pi 
+\int_{0}^{2\pi} \int_0^\pi 
 f(\varphi,\vartheta) g(\varphi,\vartheta)
 \sin\vartheta\,d\vartheta\,d\varphi
 \label{skript:kugelfunktionen:skalarprodukt}.
@@ -777,7 +777,7 @@ mit Hilfe der Formel
 \begin{equation}
 c_l^m
 =
-\int_{-\pi}^\pi
+\int_{0}^{2\pi}
 \int_0^\pi
 f(\varphi,\vartheta)Y^m_l(\varphi,\vartheta)
 \sin\vartheta
