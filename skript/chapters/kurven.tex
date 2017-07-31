@@ -696,7 +696,12 @@ eingebettet vorstellt.
 \begin{beispiel}
 \begin{figure}
 \centering
-\includegraphics[width=\hsize]{chapters/3d/kurve.jpg}
+\begin{tikzpicture}[]
+\node at (0,0) {\includegraphics[width=\hsize]{chapters/3d/kurve.jpg}};
+\node at (1.1,4.5) {$z$};
+\node at (-0.9,1.3) {$x$};
+\node at (-3.4,-0.1) {$y$};
+\end{tikzpicture}
 \caption{Kurven $t\mapsto(t,t^2,0)$ (rot) und $t\mapsto(t,t^2,t^3)$ (gelb).
 \label{skript:kruemmung:fig:kurvekr}}
 \end{figure}

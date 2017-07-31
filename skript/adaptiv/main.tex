@@ -31,7 +31,9 @@ Effekte der Atmosphäre korrigiert werden können. Ein Beispiel dazu ist
 die Abbildung \ref{fig:jupiter}, sie zeigt eine Aufnahme des Jupiters mit
 dem Very Large Telescope (VLT) des European Southern Observatory (ESO).
 \index{Very Large Telescope}%
+\index{VLT}%
 \index{European Southern Observatory}%
+\index{ESO}%
 \begin{figure}
   \centering
   \includegraphics[width=0.6\textwidth]{adaptiv/images/Jupiter_adaptiv}
@@ -145,22 +147,22 @@ Welchen Weg nimmt aber Licht, wenn es wie in Abbildung \ref{fig:weg} von $A$ nac
 \end{equation}
 Um $t$ zu bestimmen, werden nun die Strecken $\overline{AP}$ und $\overline{PB}$ benötigt, die Punkte haben die folgenden Koordinaten $A = (0,a)$, $P=(p_{x},p_{y})$ und $B=(b,0)$. Die Gleichung \eqref{tbest} erklärt, wie aus Abbildung \ref{fig:weg} die jeweiligen Strecken bestimmt werden können. In einem weiteren Schritt wird die Gleichung \eqref{tbest} partiell nach $p_{x}$ abgeleitet und die Ableitung gleich Null gesetzt.
 
-\begin{equation}\label{tbest}
-t=\dfrac{s}{v}=\dfrac{\overline{AP}}{v_{1}}+\dfrac{\overline{PB}}{v_{2}}= 
+\begin{align}
+t&=\dfrac{s}{v}=\dfrac{\overline{AP}}{v_{1}}+\dfrac{\overline{PB}}{v_{2}}= 
 \dfrac{\sqrt{(a-p_{y})^{2}+p_{x}^{2}}}{v_{1}}+ 
 \dfrac{\sqrt{(b-p_{x})^{2}+p_{y}^{2}}}{v_{2}}
-\end{equation}
-
-\begin{equation}\label{partdiff}
-\dfrac{\partial t}{\partial p_{x}}=
+\label{tbest}
+\\
+\dfrac{\partial t}{\partial p_{x}}&=
 \dfrac{1}{v_{1}}\cdot \dfrac{1}{2 \sqrt{(a-p_{y})^{2}+p_{x}^{2}}}\cdot 2p_{x} +
 \dfrac{1}{v_{2}}\cdot \dfrac{-1}{2 \sqrt{(b-p_{x})^{2}+p_{y}^{2}}}\cdot 2(b-p_{x})= 0
-\end{equation}
-
-\begin{equation}\label{glp}
+\label{partdiff}
+\\
+0&=
 \dfrac{n_{1}\cdot 2p_{x} }{\sqrt{(a-p_{y})^{2}+p_{x}^{2}}}+
-\dfrac{-n_{2}\cdot 2(b-p_{x})}{\sqrt{(b-p_{x})^{2}+p_{y}^{2}}}= 0.
-\end{equation}
+\dfrac{-n_{2}\cdot 2(b-p_{x})}{\sqrt{(b-p_{x})^{2}+p_{y}^{2}}}.
+\label{glp}
+\end{align}
 
 Die Geschwindigkeit $ v_{1}$ ist gleich $\frac{c}{n_{1}} $ und $ v_{2}$
 ist gleich $\frac{c}{n_{2}}$, dabei ist $v_{i}$ die Lichtgeschwindigkeit
@@ -232,31 +234,36 @@ die Krümmung der kugelförmigen Welle berechnet.
 \index{Wellenfront}
 
 \subsection{Krümmung der Wellenfront}
-Die Wellenfront wird durch die Funktion \eqref{kugelfunktion} beschrieben. Davon soll nun die Krümmung berechnet werden, um den Fehler durch die Näherung bestimmen zu können. Korrekterweise müsste vor der Wurzel noch $\pm$ stehen, da sonst nur die obere Hälfte der Kugel betrachtet wird. Wir sind aber nur an der Krümmung der Kugel interessiert, die auf der ganzen Kugel gleich ist, weswegen  $\pm$ hier weggelassen wird.
+Die Wellenfront wird durch die Funktion \eqref{kugelfunktion}
+beschrieben. Davon soll nun die Krümmung berechnet werden, um den
+Fehler durch die Näherung bestimmen zu können. Korrekterweise müsste
+vor der Wurzel noch $\pm$ stehen, da sonst nur die obere Hälfte der
+Kugel betrachtet wird. Wir sind aber nur an der Krümmung der Kugel
+interessiert, die auf der ganzen Kugel gleich ist, weswegen  $\pm$
+hier weggelassen wird.
 \begin{equation}\label{kugelfunktion}
 z=f(x,y)=\sqrt{r^{2}-x^{2}-y^{2})}
 \end{equation}
-Um die gausssche Krümmung zu berechnen, werden die ersten und zweiten partiellen Ableitungen und die Ableitung $ \frac{df}{dxdy}$ benötigt:
+Um die gausssche Krümmung zu berechnen, werden die ersten und zweiten
+partiellen Ableitungen und die Ableitung $ \frac{\partial^2 f}{\partial
+x \partial y}$ benötigt:
 
-\begin{equation}\label{Ableitungen x}
-f_{x}=\dfrac{\partial f(x,y)}{\partial x}= \dfrac{-x}{\sqrt{r^{2}-x^{2}-y^{2}}}
-\end{equation}
-
-\begin{equation}\label{Ableitungen xx}
-f_{xx}=\dfrac{\partial f(x,y)}{\partial x^{2}}= \dfrac{- x^2}{(r^2 - x^2 - y^2)^{\frac{2}{3}}}+\dfrac{ - 1}{\sqrt{r^2 - x^2 - y^2}}
-\end{equation}
-
-\begin{equation}\label{Ableitungen y}
-f_{y} =\dfrac{\partial f(x,y)}{\partial x}= \dfrac{-y}{\sqrt{r^{2}-x^{2}-y^{2}}}
-\end{equation}
-
-\begin{equation}\label{Ableitungen yy}
-f_{yy}=\dfrac{\partial f(x,y)}{\partial y^{2}}= \dfrac{- x^2}{(r^2 - x^2 - y^2)^{\frac{2}{3}}}+\dfrac{ - 1}{\sqrt{r^2 - x^2 - y^2}}
-\end{equation}
-
-\begin{equation}\label{Ableitungen xy}
-f_{xy}=\dfrac{\partial f(x,y)}{\partial x \partial y}=  \dfrac{-xy}{\sqrt{r^{2}-x^{2}-y^{2}}}.
-\end{equation}
+\begin{align}
+f_{x}&=\dfrac{\partial f(x,y)}{\partial x}= \dfrac{-x}{\sqrt{r^{2}-x^{2}-y^{2}}}
+\label{Ableitungen x}
+\\
+f_{xx}&=\dfrac{\partial f(x,y)}{\partial x^{2}}= \dfrac{- x^2}{(r^2 - x^2 - y^2)^{\frac{2}{3}}}+\dfrac{ - 1}{\sqrt{r^2 - x^2 - y^2}}
+\label{Ableitungen xx}
+\\
+f_{y}&=\dfrac{\partial f(x,y)}{\partial x}= \dfrac{-y}{\sqrt{r^{2}-x^{2}-y^{2}}}
+\label{Ableitungen y}
+\\
+f_{yy}&=\dfrac{\partial f(x,y)}{\partial y^{2}}= \dfrac{- x^2}{(r^2 - x^2 - y^2)^{\frac{2}{3}}}+\dfrac{ - 1}{\sqrt{r^2 - x^2 - y^2}}
+\label{Ableitungen yy}
+\\
+f_{xy}&=\dfrac{\partial f(x,y)}{\partial x \partial y}=  \dfrac{-xy}{\sqrt{r^{2}-x^{2}-y^{2}}}.
+\label{Ableitungen xy}
+\end{align}
 Die Herleitung der Krümmung und die entsprechenden Beweise dazu sind in Kapitel 4 zu finden. Die gausssche Krümmung lässt sich berechnen, indem man die Gleichungen \eqref{Ableitungen x} bis \eqref{Ableitungen xy} in die Gleichung \eqref{gausskrümmung} einsetzt:  
 
 \begin{equation}\label{gausskrümmung}

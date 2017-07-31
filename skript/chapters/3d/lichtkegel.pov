@@ -119,6 +119,7 @@ cone {
 	}
 }
 
+/*
 text {
 	internal 1 "x"
 	0.2, <0,0,0>
@@ -164,3 +165,4 @@ text {
 	translate <si + 0.2, 0, -0.1>
 	rotate <0,-90,0>
 }
+*/
